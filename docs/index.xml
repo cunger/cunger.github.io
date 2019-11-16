@@ -6,7 +6,7 @@
     <description>Recent content in Docs on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 16 Nov 2019 12:37:22 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 16 Nov 2019 12:19:28 +0100</lastBuildDate>
     
 	<atom:link href="http://cunger.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -44,7 +44,7 @@
       <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/electromagnetic-radiation/</guid>
-      <description>&amp;hellip;</description>
+      <description>Waves.</description>
     </item>
     
     <item>
@@ -95,10 +95,10 @@
     <item>
       <title>Transport</title>
       <link>http://cunger.github.io/docs/transport/</link>
-      <pubDate>Sat, 16 Nov 2019 12:37:22 +0100</pubDate>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/transport/</guid>
-      <description>Mass and heat transport. Concentration diffusion and temperature conduction.</description>
+      <description>Mass and heat transport.</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@
       <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
       
       <guid>http://cunger.github.io/docs/complex-numbers/</guid>
-      <description>&amp;hellip;</description>
+      <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
     </item>
     
     <item>
