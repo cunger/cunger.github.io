@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Alata:400,700|Lexend+Deca:400,700|Open+Sans:300,400,500,700|Roboto+Mono:300,400');
+
+body, html {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+#kube-component {
+  font-family: "Roboto Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #313439;
+}
+
+h1.title,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Alata", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #0d0d0e;
+  text-rendering: optimizeLegibility;
+  /* text-transform: uppercase; */
+  margin-bottom: 16px;
+}
+
+h1.title {
+  font-size: 60px;
+  line-height: 64px;
+  margin-bottom: 8px;
+}
+
+h1, .h1 {
+  font-size: 2.2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+h2, .h2 {
+  font-size: 1.6em;
+  margin-bottom: 1em;
+  margin-top: 1.6em;
+}
+
+h3, .h3 {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  color: #333;
+}
+
+.hero-lead {
+  /* font-style: italic; */
+  text-rendering: optimizeLegibility;
+  margin-bottom: 16px;
+}
+
+#kube-component a {
+  color: #ff3366;
+  text-decoration: none;
+}
+
+#kube-component a:hover {
+  background: #efefef;
+}
+
+li {
+  margin-top: 0.4em;
+}
