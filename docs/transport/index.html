@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.60.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,18 +123,13 @@ headingSelector: 'h1'
 
 
 
-    
-
-<p>Heat transfer can be due to:</p>
-
+    <p>Heat transfer can be due to:</p>
 <ul>
 <li>convection (transport of heat by a flowing fluid)</li>
 <li>conduction (transfer of heat by collision of particles in fluids)</li>
 <li>radiation (transfer of heat by means of wave motion in space)</li>
 </ul>
-
 <h2 id="flux-and-flow">Flux and flow</h2>
-
 <p><strong>Flux</strong> 
 <span>
                   
@@ -142,7 +137,6 @@ headingSelector: 'h1'
     
 </span>
  is the rate of transfer per unit area normal to the direction of the transfer.</p>
-
 <p><strong>Flow</strong> 
 <span>
                   
@@ -156,28 +150,20 @@ headingSelector: 'h1'
     
 </span>
 .</p>
-
 <p>In general:</p>
-
 <ul>
 <li>flux = conductivity x driving force</li>
 <li>flow = conductivity x driving force x cross-sectional area</li>
 </ul>
-
 <p>In a steady state, the flux is constant.</p>
-
 <p>The driving force for conductive and convective heat transfer is a temperature difference.</p>
-
 <p>When starting to analyze a situation, get clear about what kind of situation this is:</p>
-
 <ul>
 <li>conduction vs convection</li>
 <li>steady vs unsteady</li>
 <li>short time (penetration) vs long time (permeation)</li>
 </ul>
-
-<h1 id="heat-conduction-fourier-s-law">Heat conduction (Fourier&rsquo;s law)</h1>
-
+<h1 id="heat-conduction-fouriers-law">Heat conduction (Fourier's law)</h1>
 <p>In the one-dimensional case of conduction in the 
 <span>
                   
@@ -192,7 +178,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <ul>
 <li>
 <span>
@@ -206,7 +191,7 @@ headingSelector: 'h1'
         \(J/msK\)
     
 </span>
-] is the conductivity coefficient of the material (the substance&rsquo;s ability to transfer heat by conduction)</li>
+] is the conductivity coefficient of the material (the substance's ability to transfer heat by conduction)</li>
 <li>
 <span>
                   
@@ -215,7 +200,6 @@ headingSelector: 'h1'
 </span>
  is the temperature gradient</li>
 </ul>
-
 <p>If the temperature gradient is linear, it can be simplified to:
 
 <span>
@@ -224,7 +208,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>The <em>heat flux</em> is 
 <span>
                   
@@ -232,9 +215,7 @@ headingSelector: 'h1'
     
 </span>
 .</p>
-
-<h1 id="mass-conduction-a-k-a-concentration-diffusion-or-fick-s-first-law">Mass conduction (a.k.a. concentration diffusion or Fick&rsquo;s first law)</h1>
-
+<h1 id="mass-conduction-aka-concentration-diffusion-or-ficks-first-law">Mass conduction (a.k.a. concentration diffusion or Fick's first law)</h1>
 <p>Diffusion is mass transport across a concentration gradient. The driving force is a concentration difference. In the one-dimensional case of diffusion in the 
 <span>
                   
@@ -243,13 +224,11 @@ headingSelector: 'h1'
 </span>
  dimension, the rate of diffusion is:</p>
 
-
 <span>
      
         $$\phi_m = -D A \frac{dc}{dx}$$
     
 </span>
-
 
 <ul>
 <li>
@@ -273,8 +252,7 @@ headingSelector: 'h1'
 </span>
  is the concentration gradient</li>
 </ul>
-
-<p>If the concentration gradient is linear, we can simplify Fick&rsquo;s law:
+<p>If the concentration gradient is linear, we can simplify Fick's law:
 
 <span>
      
@@ -282,7 +260,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>The <em>mass flux</em> is 
 <span>
                   
@@ -290,9 +267,7 @@ headingSelector: 'h1'
     
 </span>
 .</p>
-
 <p>In order to calculate the temperature or concentration at a specific point:</p>
-
 <ol>
 <li>Substitute 
 <span>
@@ -310,7 +285,6 @@ headingSelector: 'h1'
 <li>Solve the differential equation by separation of variables and integrating.</li>
 <li>Use the boundary condition(s) to determine the integration constant.</li>
 </ol>
-
 <p>The concentration profile 
 <span>
                   
@@ -318,7 +292,6 @@ headingSelector: 'h1'
     
 </span>
  varies for different geometries.</p>
-
 <ul>
 <li>Flat (e.g. membrane): 
 <span>
@@ -342,8 +315,7 @@ headingSelector: 'h1'
 </span>
 </li>
 </ul>
-
-<p>If the concentration profile is linear, we can simplify Fick&rsquo;s law:
+<p>If the concentration profile is linear, we can simplify Fick's law:
 
 <span>
      
@@ -351,9 +323,7 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
-<h1 id="heat-convection-newton-s-law-of-cooling">Heat convection (Newton&rsquo;s law of cooling)</h1>
-
+<h1 id="heat-convection-newtons-law-of-cooling">Heat convection (Newton's law of cooling)</h1>
 <p>Convective heat transport:
 
 <span>
@@ -362,7 +332,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <ul>
 <li>
 <span>
@@ -386,13 +355,11 @@ headingSelector: 'h1'
  can be seen as the resistance to heat transfer). For multiple layers, the heat transfer coefficient can be calculated as:</li>
 </ul>
 
-
 <span>
      
         $$\frac{1}{U} = \frac{1}{h_1} &#43; \frac{1}{h_2} &#43; ...$$
     
 </span>
-
 
 <p>Note that the the heat transfer coefficient 
 <span>
@@ -407,7 +374,6 @@ headingSelector: 'h1'
     
 </span>
 ] relates to conductivity depending on the geometry:</p>
-
 <ul>
 <li>flat plate: 
 <span>
@@ -431,20 +397,15 @@ headingSelector: 'h1'
 </span>
 </li>
 </ul>
-
 <p>Also, cf. <em>Nusselt number</em>.</p>
-
 <h1 id="mass-convection">Mass convection</h1>
-
 <p>Convective mass transport:</p>
-
 
 <span>
      
         $$\phi_m = k A \Delta c$$
     
 </span>
-
 
 <ul>
 <li>
@@ -467,9 +428,7 @@ headingSelector: 'h1'
 </span>
  can be seen as the resistance to mass transfer)</li>
 </ul>
-
 <h1 id="analytical-solution-for-mass-and-heat-conduction">Analytical solution for mass and heat conduction</h1>
-
 <p><strong>Temperature conduction:</strong> 
 <span>
                   
@@ -477,7 +436,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>Where 
 <span>
                   
@@ -509,7 +467,6 @@ headingSelector: 'h1'
     
 </span>
 , the equation means that the rate of cooling of the substance is proportional to the temperature difference.</p>
-
 <p><strong>Concentration diffusion:</strong> 
 <span>
                   
@@ -517,7 +474,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>Where 
 <span>
                   
@@ -531,7 +487,6 @@ headingSelector: 'h1'
     
 </span>
  the concentration in the surrounding solution.</p>
-
 <p><strong>Standard form:</strong> 
 <span>
                   
@@ -545,7 +500,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>Or, with 
 <span>
                   
@@ -584,13 +538,11 @@ headingSelector: 'h1'
 </span>
 :</p>
 
-
 <span>
      
         $$\cfrac{dy}{dt}&#43;ky=kx$$
     
 </span>
-
 
 <p><strong>General solution:</strong> 
 <span>
@@ -599,7 +551,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>Here, 
 <span>
                   

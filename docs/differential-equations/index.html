@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.60.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,17 +123,12 @@ headingSelector: 'h1'
 
 
 
-    
-
-<p>Differential equations contain functions as well as their derivatives. The order of the equation corresponds to the order of the highest derivative.</p>
-
+    <p>Differential equations contain functions as well as their derivatives. The order of the equation corresponds to the order of the highest derivative.</p>
 <ul>
 <li>An <em>ordinary differential equation</em> (ODE) contains functions of only one independent variable.</li>
 <li>A <em>partial differential equation</em> (PDE) contains functions of more than one independent variables.</li>
 </ul>
-
-<h1 id="first-order-linear-odes">First-order linear ODEs</h1>
-
+<h1 id="firstorder-linear-odes">First-order linear ODEs</h1>
 <p><strong>Standard form:</strong> 
 <span>
                   
@@ -141,7 +136,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>Where 
 <span>
                   
@@ -149,7 +143,6 @@ headingSelector: 'h1'
     
 </span>
  is the independent variable (in models this is often time).</p>
-
 <p>The equation is <em>homogeneous</em> if 
 <span>
                   
@@ -157,11 +150,8 @@ headingSelector: 'h1'
     
 </span>
 , and <em>inhomogeneous</em> otherwise.</p>
-
-<h2 id="homogeneous-first-order-linear-odes">Homogeneous first-order linear ODEs</h2>
-
+<h2 id="homogeneous-firstorder-linear-odes">Homogeneous first-order linear ODEs</h2>
 <p>Can always be solved by separation of variables:</p>
-
 <p>
 <span>
                   
@@ -175,7 +165,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p><strong>General solution:</strong> 
 <span>
                   
@@ -183,7 +172,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>Steps: Integrating both sides gives 
 <span>
                   
@@ -210,13 +198,11 @@ headingSelector: 'h1'
 </span>
 :</p>
 
-
 <span>
                   
         \(|y|=e^{-P(t) &#43; C}\)
     
 </span>
-
 
 
 <span>
@@ -226,13 +212,11 @@ headingSelector: 'h1'
 </span>
 
 
-
 <span>
                   
         \(y=\pm e^{-P(t)}e^{C}\)
     
 </span>
-
 
 
 <span>
@@ -241,11 +225,8 @@ headingSelector: 'h1'
     
 </span>
 
-
-<h2 id="inhomogeneous-first-order-linear-odes">Inhomogeneous first-order linear ODEs</h2>
-
+<h2 id="inhomogeneous-firstorder-linear-odes">Inhomogeneous first-order linear ODEs</h2>
 <p>Can be solved by variation of parameters.</p>
-
 <p><strong>General solution:</strong> 
 <span>
                   
@@ -253,7 +234,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>Where 
 <span>
                   
@@ -274,16 +254,13 @@ headingSelector: 'h1'
 </span>
  into the inhomogeneous equation:</p>
 
-
 <span>
                   
         \(\cfrac{d}{dt}(uy_h) &#43; puy_h=q\)
     
 </span>
 
-
 <p>Applying the product rule:</p>
-
 <p>
 <span>
                   
@@ -298,7 +275,6 @@ headingSelector: 'h1'
     
 </span>
 </p>
-
 <p>Note that 
 <span>
                   
@@ -330,7 +306,6 @@ headingSelector: 'h1'
     
 </span>
 .</p>
-
 <p>This is equivalent to finding the <strong>integrating factor</strong>. The idea is to find a factor 
 <span>
                   
@@ -357,13 +332,11 @@ headingSelector: 'h1'
 </span>
 , which is a homogeneous ODE that can be solved by separation of variables and gives as integrating factor:</p>
 
-
 <span>
      
         $$u=e^{\int p(t)dt}$$
     
 </span>
-
 
 <p>After calculating the integrating factor 
 <span>
@@ -384,9 +357,7 @@ headingSelector: 'h1'
     
 </span>
 . Then integrate.</p>
-
 <h2 id="linear-combinations">Linear combinations</h2>
-
 <p>A linear combination of functions 
 <span>
                   
@@ -406,18 +377,14 @@ headingSelector: 'h1'
     
 </span>
  any numbers.</p>
-
 <p>Superposition principles:
-<img src="images/docs/superposition.png" alt="Superposition principles" /></p>
-
+<img src="images/docs/superposition.png" alt="Superposition principles"></p>
 <p>That is, for linear homogeneous ODEs, all linear combinations of solutions are solutions:</p>
-
 <ul>
 <li>0 is a solution.</li>
 <li>Multiplying any solution by a scalar gives another solution.</li>
 <li>Adding any two solutions gives another solution.</li>
 </ul>
-
 <p>Also the general inhomogeneous solution 
 <span>
                   
@@ -425,7 +392,6 @@ headingSelector: 'h1'
     
 </span>
 , where</p>
-
 <ul>
 <li>
 <span>
@@ -442,9 +408,7 @@ headingSelector: 'h1'
 </span>
  is the general homogeneous solution.</li>
 </ul>
-
 <h2 id="special-cases">Special cases</h2>
-
 <p>If we have an <strong>inhomogeneous linear ODE where 
 <span>
                   
@@ -471,13 +435,11 @@ headingSelector: 'h1'
 </span>
 . Using the superposition principle, all solutions take the form:</p>
 
-
 <span>
      
         $$y=\frac{q}{p(t)} &#43; Ce^{p(t)t}$$
     
 </span>
-
 
 <p>Solutions to 
 <span>
@@ -504,7 +466,6 @@ headingSelector: 'h1'
     
 </span>
 .</p>
-
 <p>Solutions to 
 <span>
                   

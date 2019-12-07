@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.60.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,12 +123,8 @@ headingSelector: 'h1'
 
 
 
-    
-
-<p>Fluids comprise both liquids (generally incompressible, i.e. volume does not change in response to a pressure change) and gases (compressible).</p>
-
+    <p>Fluids comprise both liquids (generally incompressible, i.e. volume does not change in response to a pressure change) and gases (compressible).</p>
 <h1 id="steady-flow">Steady flow</h1>
-
 <p><strong>Flow rate</strong>: 
 <span>
                   
@@ -136,7 +132,6 @@ headingSelector: 'h1'
     
 </span>
 .</p>
-
 <p><strong>Velocity</strong>: 
 <span>
                   
@@ -151,14 +146,11 @@ With
     
 </span>
  the cross-sectional area.</p>
-
 <p>The flow rate has an impact on whether the flow is laminar (usually at low velocities), turbulant (usually at high velocities) or in some transition phase between the two types.</p>
-
 <ul>
 <li><em>Laminar flow</em> is ordered, characterized by smooth layers of fluid. Viscous forces dominate.</li>
 <li><em>Turbulant flow</em> is disordered. Inertial forces dominate.</li>
 </ul>
-
 <p><strong>Continuity</strong> states that for an incompressible fluid flowing in a pipe, the flow rate is the same everywhere in the pipe:
 
 <span>
@@ -186,23 +178,14 @@ With
     
 </span>
  the velocity.</p>
-
 <h1 id="drag-force">Drag force</h1>
-
 <p>A solid object moving through a fluid generates a drag force.</p>
-
-<p><img src="http://code7700.com/images/forces_g450_fictitious.png" alt="The four forces in flight" /></p>
-
+<p><img src="http://code7700.com/images/forces_g450_fictitious.png" alt="The four forces in flight"></p>
 <p>(Image source: <a href="http://code7700.com">7700.com</a>)</p>
-
 <p><strong>Friction drag</strong> mainly depends on the surface area parallel to the flow.</p>
-
-<p><img src="/images/docs/friction-drag.png" alt="Friction drag" /></p>
-
+<p><img src="/images/docs/friction-drag.png" alt="Friction drag"></p>
 <p><strong>Form drag</strong> mainly depends on the surface area perpendicular to the flow. It creates a pressure difference, due to an agglomeration of fluid in front of the object and a corresponding lack of fluid behind it.</p>
-
-<p><img src="/images/docs/form-drag.png" alt="Form drag" /></p>
-
+<p><img src="/images/docs/form-drag.png" alt="Form drag"></p>
 <p>The <strong>drag force</strong> is determined as follows:
 
 <span>
@@ -212,7 +195,6 @@ With
 </span>
 
 Where:</p>
-
 <ul>
 <li>
 <span>
@@ -253,10 +235,9 @@ Where:</p>
         \(C_D\)
     
 </span>
- is the object&rsquo;s drag coefficient.</li>
+ is the object's drag coefficient.</li>
 </ul>
-
-<p>The drag coefficient is a function of the object&rsquo;s shape and the <strong>Reynolds number</strong>:
+<p>The drag coefficient is a function of the object's shape and the <strong>Reynolds number</strong>:
 
 <span>
      
@@ -277,14 +258,13 @@ Where
     
 </span>
  the diameter of the object. The Reynolds number describes the ratio of inertial forces to viscous forces in a flowing fluid.</p>
-
 <p>Finding an analytical solution for the drag coefficient from the flow equations is possible only for low Reynolds number (&lt; 1) and simple shapes. In the case of spheres, the drag coefficient is 
 <span>
                   
         \(C_D=\frac{24}{Re}\)
     
 </span>
-, which yields a drag force following <strong>Stoke&rsquo;s law</strong>:
+, which yields a drag force following <strong>Stoke's law</strong>:
 
 <span>
      
@@ -311,7 +291,6 @@ Where form drag contributes
     
 </span>
  of the fluid is important, not its density.)</p>
-
 <p>For large Reynolds numbers (&gt; 
 <span>
                   
@@ -325,11 +304,8 @@ Where form drag contributes
     
 </span>
  is constant.</p>
-
 <p>For flows with a low Reynolds number, most drag is due to friction. These are <em>laminal</em> flows. For flows with a high Reynolds number, form drag increases due to the pressure difference becoming significant. These are <em>turbulent</em> flows.</p>
-
 <h2 id="determining-the-drag-coefficient-iteratively">Determining the drag coefficient iteratively</h2>
-
 <p>Start with a rough estimate for the drag coefficient. For a high Reynolds number, for example, we can start assuming 
 <span>
                   
@@ -337,7 +313,6 @@ Where form drag contributes
     
 </span>
 .</p>
-
 <ol>
 <li>Compute according velocity 
 <span>
@@ -359,9 +334,8 @@ Where form drag contributes
         \(C_D\)
     
 </span>
- for that Reynolds number (given the object&rsquo;s shape).<br /></li>
+ for that Reynolds number (given the object's shape).</li>
 </ol>
-
 <p>Iterate until 
 <span>
                   
@@ -374,12 +348,9 @@ Where form drag contributes
         \(v\)
     
 </span>
- don&rsquo;t change anymore.</p>
-
+ don't change anymore.</p>
 <h2 id="terminal-velocity">Terminal velocity</h2>
-
 <p>When an object is freely falling or rising through a fluid, as its velocity increases, so does the drag restraining the movement. At some point, these forces are balanced, and since there is no net force on the object, its acceleration is zero. It is then falling or rising with its <em>terminal velocity</em>, the steady-state velocity of an object in a fluid when its acceleration is zero and all upward and downward forces are balanced.</p>
-
 <p>For falling objects: 
 <span>
                   
@@ -387,7 +358,6 @@ Where form drag contributes
     
 </span>
 </p>
-
 <p>For rising objects: 
 <span>
                   
@@ -395,9 +365,7 @@ Where form drag contributes
     
 </span>
 </p>
-
 <p>Where:</p>
-
 <ul>
 <li>
 <span>
@@ -421,7 +389,6 @@ Where form drag contributes
 </span>
  (see above)</li>
 </ul>
-
 <p>Terminal velocity is the highest velocity the object can achieve falling freely through the fluid.</p>
 
 

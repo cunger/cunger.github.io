@@ -107,7 +107,7 @@
       <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
       
       <guid>http://cunger.github.io/docs/complex-numbers/</guid>
-      <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
+      <description>Cartesian and polar coordinates, arithmetic operations, Euler&#39;s formula.</description>
     </item>
     
     <item>
@@ -125,11 +125,11 @@
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>I&amp;rsquo;m a software engineer, currently developing and maintaining code at Mercury.ai. I love programming and scuba diving, and I&amp;rsquo;m sure I would also love flying to space. I have a formal degree in logic and now spend my early mornings learning the fundamentals of nuclear technology and the skills for helping to keep complex systems safe.
-&amp;nbsp;  &amp;nbsp;&amp;nbsp; 💾 GitHub.com/cunger
-&amp;nbsp;&amp;nbsp; 📝 christina@unger.dev
-&amp;nbsp;&amp;nbsp; 🌍 Bielefeld, Germany
-&amp;nbsp;&amp;nbsp; 🛠️ FP, OOP, Linux   &amp;nbsp;</description>
+      <description>I&#39;m a programmer, currently developing and maintaining code at Mercury.ai. I have a formal degree in logic and now spend my early mornings learning the fundamentals of nuclear technology and system safety. Besides those, I love scuba diving, and I&#39;m sure I would also love flying to space.
+  📝 christina@unger.dev
+ 🌍 Bielefeld, Germany
+ ️🛠 Fortran, Functional Programming, Git, Linux
+Learning  Advanced Transport Phenomena (DelftX | ongoing) The Basics of Transport Phenomena (DelftX | certificate) Understanding Nuclear Energy (GENTLE &amp;amp; DelftX | certificate) Space mission design and operations (EPFLx | certificate) Architecture and Systems Engineering: Models and Methods to Manage Complex Systems (MITxPro | ongoing)  Book shelf  Cucic: Modern Fortran: Building efficient parallel applications.</description>
     </item>
     
   </channel>
