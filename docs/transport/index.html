@@ -131,8 +131,8 @@ headingSelector: 'h1'
 </ul>
 <p>Transfer can be due to:</p>
 <ul>
-<li>convection (transport by a flowing fluid, where the flow can be due to an external force, for example, or an internal difference in temperature or density)</li>
-<li>conduction (transfer by collision of particles in fluids)</li>
+<li>convection (transport by a flowing fluid, where the flow can be due to an external force or an internal difference in temperature or density)</li>
+<li>conduction (transfer of heat by collision of particles in fluids)</li>
 <li>radiation (transfer of heat by means of wave motion in space)</li>
 </ul>
 <h1 id="flux-and-flow">Flux and flow</h1>
@@ -329,119 +329,7 @@ headingSelector: 'h1'
     
 </span>
 </p>
-<h1 id="heat-convection-newtons-law-of-cooling">Heat convection (Newton's law of cooling)</h1>
-<p>Convective heat transport:
-
-<span>
-     
-        $$\phi_q = U A \Delta T$$
-    
-</span>
-</p>
-<ul>
-<li>
-<span>
-                  
-        \(A\)
-    
-</span>
- is the cross-sectional area through which heat flows.</li>
-<li>
-<span>
-                  
-        \(\Delta T\)
-    
-</span>
- is the difference in temperature between the volume and the environment.</li>
-<li>
-<span>
-                  
-        \(U\)
-    
-</span>
- is the overall heat transfer coefficient (
-<span>
-                  
-        \(\frac{1}{U}\)
-    
-</span>
- can be seen as the resistance to heat transfer). For multiple layers, the heat transfer coefficient can be calculated as:</li>
-</ul>
-
-<span>
-     
-        $$\frac{1}{U} = \frac{1}{h_1} &#43; \frac{1}{h_2} &#43; ...$$
-    
-</span>
-
-<p>Note that the the heat transfer coefficient 
-<span>
-                  
-        \(h\)
-    
-</span>
- [
-<span>
-                  
-        \(W/m^2K\)
-    
-</span>
-] relates to conductivity depending on the geometry:</p>
-<ul>
-<li>flat plate: 
-<span>
-                  
-        \(h=\cfrac{k}{d}\)
-    
-</span>
-</li>
-<li>sphere: 
-<span>
-                  
-        \(h = \cfrac{k}{r}\)
-    
-</span>
-</li>
-<li>cylinder: 
-<span>
-                  
-        \(h = \cfrac{2k}{r_2\,\text{ln}(\frac{r_2}{r_1})}\)
-    
-</span>
-</li>
-</ul>
-<p>Also, cf. <em>Nusselt number</em>.</p>
-<h1 id="mass-convection">Mass convection</h1>
-<p>Convective mass transport:</p>
-
-<span>
-     
-        $$\phi_m = k A \Delta c$$
-    
-</span>
-
-<ul>
-<li>
-<span>
-                  
-        \(k\)
-    
-</span>
- [
-<span>
-                  
-        \(m/s\)
-    
-</span>
-] is the mass transfer coefficient (
-<span>
-                  
-        \(\frac{1}{k}\)
-    
-</span>
- can be seen as the resistance to mass transfer)</li>
-</ul>
-<h1 id="analytical-solution-for-mass-and-heat-conduction">Analytical solution for mass and heat conduction</h1>
+<h1 id="analytical-solution-for-heat-and-mass-conduction">Analytical solution for heat and mass conduction</h1>
 <p><strong>Temperature conduction:</strong> 
 <span>
                   
@@ -595,6 +483,118 @@ headingSelector: 'h1'
     
 </span>
 .</p>
+<h1 id="heat-convection-newtons-law-of-cooling">Heat convection (Newton's law of cooling)</h1>
+<p>Convective heat transport:
+
+<span>
+     
+        $$\phi_q = U A \Delta T$$
+    
+</span>
+</p>
+<ul>
+<li>
+<span>
+                  
+        \(A\)
+    
+</span>
+ is the cross-sectional area through which heat flows.</li>
+<li>
+<span>
+                  
+        \(\Delta T\)
+    
+</span>
+ is the difference in temperature between the volume and the environment.</li>
+<li>
+<span>
+                  
+        \(U\)
+    
+</span>
+ is the overall heat transfer coefficient (
+<span>
+                  
+        \(\frac{1}{U}\)
+    
+</span>
+ can be seen as the resistance to heat transfer). For multiple layers, the heat transfer coefficient can be calculated as:</li>
+</ul>
+
+<span>
+     
+        $$\frac{1}{U} = \frac{1}{h_1} &#43; \frac{1}{h_2} &#43; ...$$
+    
+</span>
+
+<p>Note that the the heat transfer coefficient 
+<span>
+                  
+        \(h\)
+    
+</span>
+ [
+<span>
+                  
+        \(W/m^2K\)
+    
+</span>
+] relates to conductivity depending on the geometry:</p>
+<ul>
+<li>flat plate: 
+<span>
+                  
+        \(h=\cfrac{k}{d}\)
+    
+</span>
+</li>
+<li>sphere: 
+<span>
+                  
+        \(h = \cfrac{k}{r}\)
+    
+</span>
+</li>
+<li>cylinder: 
+<span>
+                  
+        \(h = \cfrac{2k}{r_2\,\text{ln}(\frac{r_2}{r_1})}\)
+    
+</span>
+</li>
+</ul>
+<p>Also, cf. <em>Nusselt number</em>.</p>
+<h1 id="mass-convection">Mass convection</h1>
+<p>Convective mass transport:</p>
+
+<span>
+     
+        $$\phi_m = k A \Delta c$$
+    
+</span>
+
+<ul>
+<li>
+<span>
+                  
+        \(k\)
+    
+</span>
+ [
+<span>
+                  
+        \(m/s\)
+    
+</span>
+] is the mass transfer coefficient (
+<span>
+                  
+        \(\frac{1}{k}\)
+    
+</span>
+ can be seen as the resistance to mass transfer)</li>
+</ul>
 
 
     

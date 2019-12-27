@@ -8,6 +8,16 @@
   </url>
   
   <url>
+    <loc>http://cunger.github.io/docs/complex-numbers/</loc>
+    <lastmod>2019-11-16T12:02:48+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/docs/differential-equations/</loc>
+    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cunger.github.io/docs/energy/</loc>
     <lastmod>2019-11-16T11:38:21+01:00</lastmod>
   </url>
@@ -38,27 +48,17 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/balances/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cunger.github.io/docs/fluid-flow/</loc>
     <lastmod>2019-11-16T12:19:28+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/transport/</loc>
+    <loc>http://cunger.github.io/docs/balances/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/complex-numbers/</loc>
-    <lastmod>2019-11-16T12:02:48+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cunger.github.io/docs/differential-equations/</loc>
+    <loc>http://cunger.github.io/docs/transport/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
   

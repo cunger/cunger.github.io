@@ -21,6 +21,24 @@
     </item>
     
     <item>
+      <title>Complex numbers</title>
+      <link>http://cunger.github.io/docs/complex-numbers/</link>
+      <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/docs/complex-numbers/</guid>
+      <description>Cartesian and polar coordinates, arithmetic operations, Euler&#39;s formula.</description>
+    </item>
+    
+    <item>
+      <title>Differential equations</title>
+      <link>http://cunger.github.io/docs/differential-equations/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/differential-equations/</guid>
+      <description>Analytical solutions to first-order linear ODEs.</description>
+    </item>
+    
+    <item>
       <title>Energy</title>
       <link>http://cunger.github.io/docs/energy/</link>
       <pubDate>Sat, 16 Nov 2019 11:38:21 +0100</pubDate>
@@ -44,7 +62,7 @@
       <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/electromagnetic-radiation/</guid>
-      <description>Waves.</description>
+      <description>Making waves.</description>
     </item>
     
     <item>
@@ -75,15 +93,6 @@
     </item>
     
     <item>
-      <title>Balances</title>
-      <link>http://cunger.github.io/docs/balances/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/balances/</guid>
-      <description>Equations for mass and energy balances. Macro and micro balances.</description>
-    </item>
-    
-    <item>
       <title>Fluid flow</title>
       <link>http://cunger.github.io/docs/fluid-flow/</link>
       <pubDate>Sat, 16 Nov 2019 12:19:28 +0100</pubDate>
@@ -93,30 +102,21 @@
     </item>
     
     <item>
+      <title>Balances</title>
+      <link>http://cunger.github.io/docs/balances/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/balances/</guid>
+      <description>Equations for mass and energy balances. Macro and micro balances.</description>
+    </item>
+    
+    <item>
       <title>Transport</title>
       <link>http://cunger.github.io/docs/transport/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/transport/</guid>
       <description>Mass and heat transport.</description>
-    </item>
-    
-    <item>
-      <title>Complex numbers</title>
-      <link>http://cunger.github.io/docs/complex-numbers/</link>
-      <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
-      
-      <guid>http://cunger.github.io/docs/complex-numbers/</guid>
-      <description>Cartesian and polar coordinates, arithmetic operations, Euler&#39;s formula.</description>
-    </item>
-    
-    <item>
-      <title>Differential equations</title>
-      <link>http://cunger.github.io/docs/differential-equations/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/differential-equations/</guid>
-      <description>Analytical solutions to first-order linear ODEs.</description>
     </item>
     
     <item>
