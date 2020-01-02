@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.62.1" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Energy | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Energy" />
+<meta property="og:description" content="Kinetic and potential energy, enthalpy, mass-energy equivalence." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/docs/nuctec/energy/" />
+<meta property="article:published_time" content="2019-11-16T11:38:21+01:00" />
+<meta property="article:modified_time" content="2019-11-16T11:38:21+01:00" />
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/docs/nuctec/energy/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.demo.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+  
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/docs/nuctec">Nuclear Technology</a></li>
+       <li><a href="/docs/fortran">Fortran</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Energy </h1>
+      <p class="hero-lead">
+         Kinetic and potential energy, enthalpy, mass-energy equivalence.
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <p>Energy is defined as the capacity to do work or produce heat.</p>
+<p>Energy cannot be created or destroyed. It can only be converted from one form to another or transferred from one system to another.</p>
+<p><strong>Work</strong> is applying force on something causing it to move, thus transferring energy by mechanical movement, <strong>heat</strong> is transferring energy by thermal interactions.</p>
+<h1 id="forms-of-energy">Forms of energy</h1>
+<p>Besides mass, there are two main forms of energy: kinetic and potential energy. The sum of both is described as mechanical energy.</p>
+<p><strong>Kinetic energy</strong> is the energy associated with an object's motion.
+
+<span>
+     
+        $$E_\text{kin}=\frac{1}{2}mv^2$$
+    
+</span>
+
+With 
+<span>
+                  
+        \(m\)
+    
+</span>
+ the object's mass and 
+<span>
+                  
+        \(v\)
+    
+</span>
+ its velocity.</p>
+<p>Work is applying a force 
+<span>
+                  
+        \(F\)
+    
+</span>
+ for a distance 
+<span>
+                  
+        \(d\)
+    
+</span>
+: 
+<span>
+                  
+        \(W=Fd\)
+    
+</span>
+.</p>
+<p><strong>Potential energy</strong> is the energy of an object due to its position in a potential field. More specifically, the <em>gravitational energy</em> is the energy of an object due to its position in a gravitational field. (Also see the entry on <a href="/docs/forces/#gravitational-force">gravitation</a>.) On a planet, this is:
+
+<span>
+     
+        $$E_\text{pot}=mgh$$
+    
+</span>
+
+Where 
+<span>
+                  
+        \(g\)
+    
+</span>
+ is the gravitational acceleration (about 
+<span>
+                  
+        \(9.81 m/s^2\)
+    
+</span>
+ close to the Earth's surface), 
+<span>
+                  
+        \(m\)
+    
+</span>
+ is the object's mass and 
+<span>
+                  
+        \(h\)
+    
+</span>
+ is its height relative to some vertical reference point.</p>
+<p><strong>Internal energy</strong> 
+<span>
+                  
+        \(U\)
+    
+</span>
+ is all energy contained within a system.</p>
+<p><strong>Thermal energy</strong> is the kinetic energy associated with the random motion of atoms and molecules. <em>Temperature</em> is the average thermal energy of a group of molecules, and <em>heat</em> is the transfer of thermal energy between objects. When there is a difference in temperature between two points, heat flows from high to low temperature. By convention, heat is positive if it flows into the system (increasing its energy), and negative if it is transferred from the system to the surroundings (energy loss).</p>
+<p>A change in temperature 
+<span>
+                  
+        \(T\)
+    
+</span>
+ leads to a change in internal energy (where 
+<span>
+                  
+        \(c_p\)
+    
+</span>
+ is heat capacity, which might be a function of temperature):
+
+<span>
+     
+        $$\Delta U=mc_p\Delta T$$
+    
+</span>
+</p>
+<p><strong>Chemical energy</strong> is the energy stored in bonds between atoms within molecules. It is released when those bonds are broken up, e.g. through combustion. <strong>Nuclear energy</strong> is the energy stored in nuclei.</p>
+<h1 id="enthalpy">Enthalpy</h1>
+<p>Enthalpy 
+<span>
+                  
+        \(H\)
+    
+</span>
+ is a system's internal energy plus the amount of work required to make room for it within its surroundings:
+
+<span>
+     
+        $$H=U&#43;pV$$
+    
+</span>
+
+At constant pressure, change in enthalpy is basically the heat gained or lost by the system.
+
+<span>
+     
+        $$\Delta H= \Delta U &#43; p\Delta V$$
+    
+</span>
+</p>
+<h1 id="mass-energy-equivalence">Mass-energy equivalence</h1>
+<p>Mass and energy are equivalent, as described by Einstein's formula 
+<span>
+                  
+        \(E=mc^2\)
+    
+</span>
+, where 
+<span>
+                  
+        \(E\)
+    
+</span>
+ is the rest energy of an object and 
+<span>
+                  
+        \(m\)
+    
+</span>
+ is its mass. Since 
+<span>
+                  
+        \(c\)
+    
+</span>
+ is a large number, this means that there is a tremendous amount of energy in mass. So in a way, mass can be seen as concentrated energy.</p>
+<p>While neutrons usually have small kinetic energies in practice, many electrons have a large kinetic energy, so it's often necessary to use the relativistic version of Einstein's formula for electrons, stating that the kinetic energy of a particle is the difference between its total energy and its rest mass energy:
+
+<span>
+     
+        $$E=mc^2 - m_{\text{rest}}c^2$$
+    
+</span>
+
+Where the mass 
+<span>
+                  
+        \(m\)
+    
+</span>
+ of a particle in motion increases relative to an observer at rest, depending on its speed 
+<span>
+                  
+        \(v\)
+    
+</span>
+, according to:
+
+<span>
+     
+        $$m=\frac{m_{\text{rest}}}{\sqrt{1-v²/c²}}$$
+    
+</span>
+</p>
+<p>This does not apply to particles without mass, such as photons. Photons always travel at the speed of light, and their energy is 
+<span>
+                  
+        \(E=hv\)
+    
+</span>
+, where 
+<span>
+                  
+        \(v\)
+    
+</span>
+ is the frequency of the associated electromagnetic wave, and 
+<span>
+                  
+        \(h\)
+    
+</span>
+ is Planck's constant:</p>
+<pre><code>h = 4.136e-15 [eV*s]
+</code></pre><p>Mass and energy can be converted into one another.</p>
+<p><strong>Conversion factor:</strong> 931.49 
+<span>
+                  
+        \(\text{MeV}\cdot\text{amu}^{-1}\cdot c^{-2}\)
+    
+</span>
+</p>
+<p>This is the energy equivalent to 1 atomic mass unit.</p>
+<h1 id="mass-defect-and-binding-energy">Mass defect and binding energy</h1>
+<p>The <em>mass defect</em> is the difference between the sum of the masses of all nucleons and the observed mass of the nucleus. It corresponds to the <em>binding energy</em> in the nucleus. That is, some of the mass of the nucleons was released as binding energy when the nucleus was formed.</p>
+<p>Energy release in nuclear reactions happens on an MeV scale, while chemical reactions release energy on an eV scale.</p>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2019 &middot; Christina Unger</span></li>
+      <li>
+        Made with <a href="https://gohugo.io/">Hugo</a> ♥ Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
