@@ -95,6 +95,21 @@
   </url>
   
   <url>
+    <loc>http://cunger.github.io/docs/fortran/basics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/docs/fortran/numbers/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/goals/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://cunger.github.io/categories/</loc>
   </url>
   

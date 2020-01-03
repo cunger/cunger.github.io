@@ -29,5 +29,23 @@
       <description>Parallelizing code with co-arrays.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://cunger.github.io/docs/fortran/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/fortran/basics/</guid>
+      <description>Functions Subroutines Modules </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://cunger.github.io/docs/fortran/numbers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/fortran/numbers/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
