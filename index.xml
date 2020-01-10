@@ -17,7 +17,7 @@
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/dev/numbers/</guid>
-      <description>Coming soon.</description>
+      <description>And arithmetics.</description>
     </item>
     
     <item>
@@ -30,12 +30,12 @@
     </item>
     
     <item>
-      <title>Web Basics</title>
-      <link>http://cunger.github.io/docs/dev/web/</link>
+      <title>Bash</title>
+      <link>http://cunger.github.io/docs/dev/bash/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/dev/web/</guid>
-      <description>TCP/IP. HTTP. REST.</description>
+      <guid>http://cunger.github.io/docs/dev/bash/</guid>
+      <description>Boom. Bang.</description>
     </item>
     
     <item>
@@ -48,12 +48,12 @@
     </item>
     
     <item>
-      <title>JavaScript</title>
-      <link>http://cunger.github.io/docs/dev/javascript/</link>
+      <title>Web Basics</title>
+      <link>http://cunger.github.io/docs/dev/web/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/dev/javascript/</guid>
-      <description>Functions. Prototypes. Promises. Etc.</description>
+      <guid>http://cunger.github.io/docs/dev/web/</guid>
+      <description>TCP/IP. HTTP. REST.</description>
     </item>
     
     <item>
@@ -66,12 +66,12 @@
     </item>
     
     <item>
-      <title>Ruby</title>
-      <link>http://cunger.github.io/docs/dev/ruby/</link>
+      <title>Databases</title>
+      <link>http://cunger.github.io/docs/dev/databases/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/dev/ruby/</guid>
-      <description>Objects. Closures. Etc.</description>
+      <guid>http://cunger.github.io/docs/dev/databases/</guid>
+      <description>SQL. PostgreSQL.</description>
     </item>
     
     <item>
@@ -84,15 +84,6 @@
     </item>
     
     <item>
-      <title>Databases</title>
-      <link>http://cunger.github.io/docs/dev/databases/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/databases/</guid>
-      <description>SQL. PostgreSQL.</description>
-    </item>
-    
-    <item>
       <title>Forces</title>
       <link>http://cunger.github.io/docs/nuctec/forces/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
@@ -102,12 +93,12 @@
     </item>
     
     <item>
-      <title>Julia</title>
-      <link>http://cunger.github.io/docs/dev/julia/</link>
+      <title>JavaScript</title>
+      <link>http://cunger.github.io/docs/dev/javascript/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/dev/julia/</guid>
-      <description>Coming soon.</description>
+      <guid>http://cunger.github.io/docs/dev/javascript/</guid>
+      <description>Functions. Prototypes. Promises. Etc.</description>
     </item>
     
     <item>
@@ -120,12 +111,30 @@
     </item>
     
     <item>
+      <title>Ruby</title>
+      <link>http://cunger.github.io/docs/dev/ruby/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/dev/ruby/</guid>
+      <description>Objects. Closures. Etc.</description>
+    </item>
+    
+    <item>
       <title>Atoms</title>
       <link>http://cunger.github.io/docs/nuctec/atoms/</link>
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/nuctec/atoms/</guid>
       <description>What atoms are composed of, their energy, charge, mass, and stability.</description>
+    </item>
+    
+    <item>
+      <title>Julia</title>
+      <link>http://cunger.github.io/docs/dev/julia/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/dev/julia/</guid>
+      <description>Coming soon.</description>
     </item>
     
     <item>

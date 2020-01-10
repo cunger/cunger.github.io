@@ -17,7 +17,16 @@
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/dev/numbers/</guid>
-      <description>Coming soon.</description>
+      <description>And arithmetics.</description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>http://cunger.github.io/docs/dev/bash/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/dev/bash/</guid>
+      <description>Boom. Bang.</description>
     </item>
     
     <item>
@@ -27,6 +36,15 @@
       
       <guid>http://cunger.github.io/docs/dev/web/</guid>
       <description>TCP/IP. HTTP. REST.</description>
+    </item>
+    
+    <item>
+      <title>Databases</title>
+      <link>http://cunger.github.io/docs/dev/databases/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/dev/databases/</guid>
+      <description>SQL. PostgreSQL.</description>
     </item>
     
     <item>
@@ -45,15 +63,6 @@
       
       <guid>http://cunger.github.io/docs/dev/ruby/</guid>
       <description>Objects. Closures. Etc.</description>
-    </item>
-    
-    <item>
-      <title>Databases</title>
-      <link>http://cunger.github.io/docs/dev/databases/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/databases/</guid>
-      <description>SQL. PostgreSQL.</description>
     </item>
     
     <item>
