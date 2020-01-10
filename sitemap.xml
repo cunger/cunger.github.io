@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://cunger.github.io/docs/dev/numbers/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cunger.github.io/docs/nuctec/basics/</loc>
     <lastmod>2019-11-16T12:00:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/docs/dev/web/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,8 +23,18 @@
   </url>
   
   <url>
+    <loc>http://cunger.github.io/docs/dev/javascript/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cunger.github.io/docs/nuctec/differential-equations/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/docs/dev/ruby/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -23,8 +43,18 @@
   </url>
   
   <url>
+    <loc>http://cunger.github.io/docs/dev/databases/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cunger.github.io/docs/nuctec/forces/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/docs/dev/julia/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -48,18 +78,8 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/fortran/testing/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cunger.github.io/docs/nuctec/fluid-flow/</loc>
     <lastmod>2019-11-16T12:19:28+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cunger.github.io/docs/fortran/parallelization/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -73,14 +93,14 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/fortran/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/docs/dev/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://cunger.github.io/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -92,16 +112,6 @@
   <url>
     <loc>http://cunger.github.io/about/</loc>
     <lastmod>2019-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cunger.github.io/docs/fortran/basics/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://cunger.github.io/docs/fortran/numbers/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
