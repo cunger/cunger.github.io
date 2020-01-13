@@ -152,16 +152,16 @@ command || command
 <h1 id="exit-codes">Exit codes</h1>
 <p>If a script does not specify an exit code, its exit code will be the exit code of the last command run.
 The exit code of the last command run is accessible via <code>$?</code>, for example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch some.file
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">touch some.file
 
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
-<span style="color:#66d9ef">then</span>
-  echo <span style="color:#e6db74">&#34;Successfully touched file&#34;</span>
-  exit <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">else</span>
-  echo <span style="color:#e6db74">&#34;Could not touch file&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span>
-  exit <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">fi</span>
+<span style="color:#00a8c8">if</span> <span style="color:#f92672">[</span> <span style="color:#111">$?</span> -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
+<span style="color:#00a8c8">then</span>
+  <span style="color:#111">echo</span> <span style="color:#d88200">&#34;Successfully touched file&#34;</span>
+  <span style="color:#111">exit</span> <span style="color:#ae81ff">0</span>
+<span style="color:#00a8c8">else</span>
+  <span style="color:#111">echo</span> <span style="color:#d88200">&#34;Could not touch file&#34;</span> &gt;<span style="color:#111">&amp;</span><span style="color:#ae81ff">2</span>
+  <span style="color:#111">exit</span> <span style="color:#ae81ff">1</span>
+<span style="color:#00a8c8">fi</span>
 </code></pre></div><p>See also <a href="http://www.tldp.org/LDP/abs/html/exitcodes.html">reserved exit codes</a>.</p>
 <h1 id="file-descriptors">File descriptors</h1>
 <p>Bash has three standard file descriptors:</p>

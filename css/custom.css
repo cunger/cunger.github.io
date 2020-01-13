@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Alata:400,700|Open+Sans:300,400,500,700|Roboto+Mono:300,400');
+@import url('https://fonts.googleapis.com/css?family=Alata:400,700|Open+Sans:300,400,500,700|Roboto+Mono:300,400|Inconsolata');
 
 body, html {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -10,6 +10,11 @@ body, html {
   font-weight: 400;
   line-height: 1.4;
   color: #313439;
+}
+
+pre,
+.highlight {
+  font-family: "Inconsolata", monospace;
 }
 
 h1.title,
