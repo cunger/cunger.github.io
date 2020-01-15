@@ -938,9 +938,9 @@ to the target object and returns <code>target</code>.</p>
 <p><em>Promises</em> are objects that have a <code>then</code> method which takes two (optional) function arguments:</p>
 <ul>
 <li>a handler that is called when the promise is fulfilled, and</li>
-<li>a handler that is called when it is rejected.
-The return value of <code>then</code> is another promise that is fulfilled when the called handler finishes, and fails when the called handler throws an error.</li>
+<li>a handler that is called when it is rejected.</li>
 </ul>
+<p>The return value of <code>then</code> is another promise that is fulfilled when the called handler finishes, and fails when the called handler throws an error.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">promise</span><span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">onFulfilled</span><span style="color:#111">,</span> <span style="color:#75af00">onRejected</span><span style="color:#111">)</span><span style="color:#111">;</span>
 </code></pre></div><p>Syntactic sugar for <code>then(null, onRejected)</code>:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">promise</span><span style="color:#111">.</span><span style="color:#75af00">cath</span><span style="color:#111">(</span><span style="color:#75af00">onRejected</span><span style="color:#111">)</span><span style="color:#111">;</span>
@@ -962,10 +962,10 @@ The return value of <code>then</code> is another promise that is fulfilled when 
   <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">new</span> <span style="color:#111">Promise</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">fulfill</span><span style="color:#111">,</span> <span style="color:#75af00">reject</span><span style="color:#111">)</span> <span style="color:#111">{</span>
     <span style="color:#75af00">navigator</span><span style="color:#111">.</span><span style="color:#75af00">geolocation</span><span style="color:#111">.</span><span style="color:#75af00">getCurrentPosition</span><span style="color:#111">(</span>
       <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">position</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-	<span style="color:#75af00">fulfill</span><span style="color:#111">(</span><span style="color:#75af00">position</span><span style="color:#111">.</span><span style="color:#75af00">coords</span><span style="color:#111">)</span><span style="color:#111">;</span>
+	      <span style="color:#75af00">fulfill</span><span style="color:#111">(</span><span style="color:#75af00">position</span><span style="color:#111">.</span><span style="color:#75af00">coords</span><span style="color:#111">)</span><span style="color:#111">;</span>
       <span style="color:#111">}</span><span style="color:#111">,</span>
       <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-	<span style="color:#75af00">reject</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">)</span><span style="color:#111">;</span>
+	      <span style="color:#75af00">reject</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">)</span><span style="color:#111">;</span>
       <span style="color:#111">}</span>
     <span style="color:#111">)</span><span style="color:#111">;</span>
   <span style="color:#111">}</span><span style="color:#111">)</span><span style="color:#111">;</span>
@@ -1023,9 +1023,9 @@ The return value of <code>then</code> is another promise that is fulfilled when 
 <span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">firstFulfilled</span><span style="color:#111">,</span> <span style="color:#75af00">firstRejected</span><span style="color:#111">)</span><span style="color:#111">;</span>
 </code></pre></div><h1 id="references">References</h1>
 <ul>
-<li><a href="http://speakingjs.com/es5/index.html">Axel Rauschmayer: Speaking JavaScript</a></li>
-<li><a href="https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839">Alexey Samoshkin: JavaScript type coercion explained</a></li>
-<li><a href="https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">Nolan Lawson: We have a problem with promises</a></li>
+<li><a href="http://speakingjs.com/es5/index.html">Axel Rauschmayer: Speaking JavaScript.</a></li>
+<li><a href="https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839">Alexey Samoshkin: JavaScript type coercion explained.</a></li>
+<li><a href="https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">Nolan Lawson: We have a problem with promises.</a></li>
 </ul>
 
 
