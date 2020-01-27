@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.63.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -201,7 +201,7 @@ headingSelector: 'h1'
 </code></pre></div><p>Classes and modules are collections of methods and constants, and classes are, in fact, modules. Classes are instances of <code>Class</code>, modules are instances of <code>Module</code> (with <code>Class</code> being a direct subclass of <code>Module</code>).</p>
 <p>Also <em>classes</em> and <em>modules</em> are objects, namely instances of <code>Class</code> and <code>Module</code> (which themselves are objects).</p>
 <blockquote>
-<p>If you can reference it with a variable, it's an object.</p>
+<p>If you can reference it with a variable, it&rsquo;s an object.</p>
 </blockquote>
 <p>Technically there are two differences between classes and modules:</p>
 <ul>
@@ -254,7 +254,7 @@ headingSelector: 'h1'
 <blockquote>
 <p>Returns <code>arg</code> as a <code>String</code>. First tries to call its <code>to_str</code> method, then its <code>to_s</code> method.</p>
 </blockquote>
-<p>So they're methods for object conversion, transforming their argument using explicit and implicit object conversion.</p>
+<p>So they&rsquo;re methods for object conversion, transforming their argument using explicit and implicit object conversion.</p>
 <p><em>Explicit conversion</em> converts an object to the target type. For example, <code>obj.to_s</code> will give you a string representation of <code>obj</code>, and <code>obj.to_i</code> will give you an integer representation. If those methods are defined for <code>obj</code>, that is. The <code>Nil</code> class implements all of them:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_s</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#d88200">&#34;</span><span style="color:#d88200">&#34;</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_a</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span>
@@ -263,10 +263,10 @@ headingSelector: 'h1'
 <span style="color:#f92672"></span><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_f</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>
 <span style="color:#f92672"></span><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_r</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#111">)</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_c</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">+</span><span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#111">i</span><span style="color:#111">)</span>
-</code></pre></div><p>Ruby doesn't call explicit conversion methods unless you explicitly ask it to do so.</p>
+</code></pre></div><p>Ruby doesn&rsquo;t call explicit conversion methods unless you explicitly ask it to do so.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">&#34;</span><span style="color:#d88200">THX</span><span style="color:#d88200">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1138</span>      <span style="color:#f92672"></span><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#00a8c8">TypeError</span>
 <span style="color:#d88200">&#34;</span><span style="color:#d88200">THX</span><span style="color:#d88200">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1138</span><span style="color:#f92672"></span><span style="color:#f92672">.</span><span style="color:#111">to_s</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#d88200">&#34;</span><span style="color:#d88200">THX1138</span><span style="color:#d88200">&#34;</span>
-</code></pre></div><p><em>Implicit conversion</em> is defined for objects that can be considered as something target type-ish. So <code>to_int</code> would be implemented for integer-like objects, that is objects that act like integers and thus make sense everywhere an integer makes sense. It wouldn't be implemented for objects that are not integer-like. Analogously for <code>to_str</code>, <code>to_ary</code>, <code>to_hash</code> and a few others. Hence the behavior of <code>nil</code>:</p>
+</code></pre></div><p><em>Implicit conversion</em> is defined for objects that can be considered as something target type-ish. So <code>to_int</code> would be implemented for integer-like objects, that is objects that act like integers and thus make sense everywhere an integer makes sense. It wouldn&rsquo;t be implemented for objects that are not integer-like. Analogously for <code>to_str</code>, <code>to_ary</code>, <code>to_hash</code> and a few others. Hence the behavior of <code>nil</code>:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_str</span>  <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#00a8c8">NoMethodError</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_ary</span>  <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#00a8c8">NoMethodError</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_hash</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#00a8c8">NoMethodError</span>
@@ -276,7 +276,7 @@ headingSelector: 'h1'
 <span style="color:#f92672"></span><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#d88200">TypeError</span><span style="color:#111">:</span> <span style="color:#111">no</span> <span style="color:#111">implicit</span> <span style="color:#111">conversion</span> <span style="color:#111">of</span> <span style="color:#111">Integer</span> <span style="color:#111">into</span> <span style="color:#111">String</span>
 </code></pre></div><p>Similarly, <code>String#*</code> calls <code>to_int</code> on its argument and therefore is fine being provided a <code>Float</code> (fortunately or unfortunately not attempting to print the string <code>3.14</code> times):</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">&#34;</span><span style="color:#d88200">Yay!</span><span style="color:#d88200">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">.</span><span style="color:#ae81ff">14</span> <span style="color:#f92672"></span><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#d88200">&#34;</span><span style="color:#d88200">Yay!Yay!Yay!</span><span style="color:#d88200">&#34;</span>
-</code></pre></div><p>Now it makes perfect sense why <code>Array(arg)</code> first tries <code>to_ary</code>: <em>Let's see whether this is already something like an array.</em> And only if that is not defined or returns <code>nil</code>, it calls <code>to_a</code>: <em>Ok, if it's not an array, let's make it one!</em></p>
+</code></pre></div><p>Now it makes perfect sense why <code>Array(arg)</code> first tries <code>to_ary</code>: <em>Let&rsquo;s see whether this is already something like an array.</em> And only if that is not defined or returns <code>nil</code>, it calls <code>to_a</code>: <em>Ok, if it&rsquo;s not an array, let&rsquo;s make it one!</em></p>
 <p>What about hashes? <code>Hash(arg)</code> calls <code>to_hash</code>, and returns the empty hash for <code>[]</code> and <code>nil</code>. Period. No calling <code>to_h</code>.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">Hash</span><span style="color:#111">(</span><span style="color:#f92672">[</span><span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672"></span><span style="color:#f92672">]</span><span style="color:#f92672">]</span><span style="color:#111">)</span>   <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#d88200">TypeError</span><span style="color:#111">:</span> <span style="color:#111">can</span><span style="color:#d88200">&#39;t convert Array into Hash
 </span><span style="color:#d88200">[[1, 2]].to_hash =&gt; TypeError: can&#39;</span><span style="color:#111">t</span> <span style="color:#111">convert</span> <span style="color:#111">Array</span> <span style="color:#111">into</span> <span style="color:#00a8c8">Hash</span>
@@ -344,8 +344,8 @@ headingSelector: 'h1'
 </code></pre></div><h1 id="putting-and-printing">Putting and printing</h1>
 <p>What <code>puts</code> and <code>print</code> have in common: They both call <code>.to_s</code>, hand the result to <code>stdout</code>, and return <code>nil</code>. And they both allow for arbitrarily many arguments. The two main differences:</p>
 <ul>
-<li><code>puts</code> also adds a newline (which <code>print</code> doesn't)</li>
-<li><code>puts</code> treats arrays in a special way (which <code>print</code> doesn't)</li>
+<li><code>puts</code> also adds a newline (which <code>print</code> doesn&rsquo;t)</li>
+<li><code>puts</code> treats arrays in a special way (which <code>print</code> doesn&rsquo;t)</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">print</span> <span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672"></span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672"></span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span>
 
@@ -376,8 +376,8 @@ In eurem Bunde der Dritte!</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_s</span>    <span style="color:#75715e"># =&gt; &#34;&#34;</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">inspect</span> <span style="color:#75715e"># =&gt; &#34;nil&#34;</span>
 </code></pre></div><p>So what about <code>to_s</code> and <code>inspect</code>? The default implementations of <code>to_s</code> and <code>inspect</code> live in the class <code>Object</code>, where the former builds a string from the object class and ID, while the latter additionally includes instance variables and their values. Except for <code>Main</code>, for which both return <code>&quot;main&quot;</code>.</p>
-<p>In string interpolation, <code>to_s</code> is called. So as a rule of thumb: For getting a useful string representation of an object, it's a good idea to override <code>to_s</code>. For debugging purposes it's usually a good idea to not override <code>inspect</code>.</p>
-<p>For more printing power there's <code>format</code> and at least the following examples I hope to remember, so I don't have to look up the documentation every time:</p>
+<p>In string interpolation, <code>to_s</code> is called. So as a rule of thumb: For getting a useful string representation of an object, it&rsquo;s a good idea to override <code>to_s</code>. For debugging purposes it&rsquo;s usually a good idea to not override <code>inspect</code>.</p>
+<p>For more printing power there&rsquo;s <code>format</code> and at least the following examples I hope to remember, so I don&rsquo;t have to look up the documentation every time:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">format</span><span style="color:#111">(</span><span style="color:#d88200">&#34;</span><span style="color:#d88200">%{x} wants %{y}</span><span style="color:#d88200">&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">x</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;</span><span style="color:#d88200">Polly</span><span style="color:#d88200">&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">y</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;</span><span style="color:#d88200">crack</span><span style="color:#d88200">&#34;</span><span style="color:#111">)</span>
 <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#d88200">&#34;</span><span style="color:#d88200">Polly wants crack</span><span style="color:#d88200">&#34;</span>
 
@@ -423,7 +423,7 @@ In eurem Bunde der Dritte!</p>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">String</span>  <span style="color:#f92672">===</span> <span style="color:#d88200">&#39;Fnord!&#39;</span> <span style="color:#75715e"># =&gt; true  </span>
 <span style="color:#111">Integer</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">23</span>       <span style="color:#f92672"></span><span style="color:#75715e"># =&gt; true  </span>
-</code></pre></div><p>Now, important to know about <code>case</code> statements is that the receiver of <code>===</code> is the <code>when</code> clause, not the <code>case</code> clause. Then it's easy to see what happens behind the scenes to create such incredibly convenient case behaviour.</p>
+</code></pre></div><p>Now, important to know about <code>case</code> statements is that the receiver of <code>===</code> is the <code>when</code> clause, not the <code>case</code> clause. Then it&rsquo;s easy to see what happens behind the scenes to create such incredibly convenient case behaviour.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">case</span> <span style="color:#111">input</span>
 <span style="color:#00a8c8">when</span> <span style="color:#111">String</span> <span style="color:#00a8c8">then</span> <span style="color:#d88200">&#39;String!&#39;</span>
 <span style="color:#00a8c8">when</span> <span style="color:#d88200">/</span><span style="color:#d88200">cool</span><span style="color:#d88200">/</span> <span style="color:#00a8c8">then</span> <span style="color:#d88200">&#39;Match!&#39;</span>
@@ -461,7 +461,7 @@ In eurem Bunde der Dritte!</p>
 <h1 id="variablescope">Variable scope</h1>
 <h2 id="local">Local</h2>
 <p><strong>Methods create their own scope.</strong> In the sense of starting with an empty slate upon entering. As a result, local variables defined outside the method are not accessible within it. Likewise, what happens in a method, stays in the method; so local variables defined within a method are not accessible from outside. (Unless someone tells the outside.)</p>
-<p>Here's where local_variables is really handy, although its primary use case is certainly something much cooler:</p>
+<p>Here&rsquo;s where local_variables is really handy, although its primary use case is certainly something much cooler:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">outside</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>
 <span style="color:#f92672"></span><span style="color:#111">p</span> <span style="color:#111">local_variables</span>     <span style="color:#75715e"># =&gt; [:outside]</span>
 <span style="color:#00a8c8">def</span> <span style="color:#75af00"></span><span style="color:#f92672"></span><span style="color:#75af00">method</span>
@@ -517,7 +517,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <p><strong>Class variables <code>@@var</code> are scoped at the class level</strong>, i.e. they are available in all class methods, independently of where they have been initialized.</p>
 <p>There is only one copy of a class variable: All subclasses and also all instances of the class share that one copy. As a result of the latter, they are also available at object level, i.e. in all instance methods.</p>
 <p><strong>Instance variables <code>@var</code> are scoped at the instance level</strong>, i.e. they are available within instance methods. Instance variables that are used but not explicitly initialized evaluate to <code>nil</code>.</p>
-<p><strong>Class instance variables</strong> are instance variables at class level, and they belong to that class exclusively. They are thus good for storing class-specific stuff that you don't want to be shared across all subclasses and instances.</p>
+<p><strong>Class instance variables</strong> are instance variables at class level, and they belong to that class exclusively. They are thus good for storing class-specific stuff that you don&rsquo;t want to be shared across all subclasses and instances.</p>
 <p>Here is an overview of this:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Test</span>
   <span style="color:#111">@ivar1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672"></span><span style="color:#75715e"># class instance variable</span>
@@ -635,7 +635,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <li>its opposite <code>keep_if { |key, value| ... }</code> which deletes every key-value pair except for the ones for which the block evaluates to true</li>
 <li><code>update(other_hash)</code> and the equivalent <code>merge(other_hash)</code></li>
 </ul>
-<p>When merging, the values of duplicate keys will be overwritten. In case you don't want this to happen, you can provide a block that specifies what to do:
+<p>When merging, the values of duplicate keys will be overwritten. In case you don&rsquo;t want this to happen, you can provide a block that specifies what to do:
 <code>update(other_hash) { |key, old_value, new_value| ... }</code></p>
 <p><strong>Transforming the hash:</strong></p>
 <ul>
@@ -739,7 +739,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#75715e"># &gt; defining</span>
 <span style="color:#75715e"># Go!</span>
 <span style="color:#75715e"># =&gt; 42</span>
-</code></pre></div><p>Note that <code>return</code> is tied to the context at the time of creation of the <em>proc</em>. So if the <em>proc</em> is either defined at the top-level, from which you can't return, or if the creating context no longer exists upon calling, e.g. by calling the <em>proc</em> at the top-level of the program, this will result in a <code>LocalJumpError</code>.</p>
+</code></pre></div><p>Note that <code>return</code> is tied to the context at the time of creation of the <em>proc</em>. So if the <em>proc</em> is either defined at the top-level, from which you can&rsquo;t return, or if the creating context no longer exists upon calling, e.g. by calling the <em>proc</em> at the top-level of the program, this will result in a <code>LocalJumpError</code>.</p>
 <p>If there is a need to return early from a <em>proc</em>, use <code>next</code>, which returns from the current block (just like <code>return</code> in a <em>lambda</em>).</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00"></span><span style="color:#f92672"></span><span style="color:#75af00">meditate</span>
   <span style="color:#111">puts</span> <span style="color:#d88200">&#39;Adjusting posture...&#39;</span>
@@ -804,7 +804,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#111">m</span><span style="color:#f92672">.</span><span style="color:#111">call</span> <span style="color:#75715e"># =&gt; &#39;Hello world!&#39;</span>
 </code></pre></div><p>There are two main differences between methods on the one-hand side and blocks and <em>procs</em> on the other hand side. One concerns arity rules, the other concerns variable scope.</p>
 <h3 id="arity">Arity</h3>
-<p>While methods raise an <code>ArgumentError</code> when they are not provided arguments as specified in the method definition, blocks and non-lambda <em>procs</em> are very lenient when it comes to arguments: they don't care about the number of arguments they receive.</p>
+<p>While methods raise an <code>ArgumentError</code> when they are not provided arguments as specified in the method definition, blocks and non-lambda <em>procs</em> are very lenient when it comes to arguments: they don&rsquo;t care about the number of arguments they receive.</p>
 <ul>
 <li>missing arguments are bound to <code>nil</code></li>
 <li>additional arguments are ignored</li>
@@ -960,14 +960,14 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#d88200">&#34;</span><span style="color:#d88200">b</span><span style="color:#d88200">&#34;</span>
 <span style="color:#d88200">&#34;</span><span style="color:#d88200">y</span><span style="color:#d88200">&#34;</span>
 <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#d88200">&#34;</span><span style="color:#d88200">&#34;</span>
-</code></pre></div><p>In addition, classes that include <code>Enumerable</code> might define further variants of each that are specific for that class. For example, <code>Array</code> also defines <code>each_index</code>, in case you don't care about the elements but only their indices.</p>
+</code></pre></div><p>In addition, classes that include <code>Enumerable</code> might define further variants of each that are specific for that class. For example, <code>Array</code> also defines <code>each_index</code>, in case you don&rsquo;t care about the elements but only their indices.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">array</span><span style="color:#f92672">.</span><span style="color:#111">each_index</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">index</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#111">array</span>
 </code></pre></div><p>And <code>Hash</code> defines a few variants that are specific to hashes:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">hash</span><span style="color:#f92672">.</span><span style="color:#111">each_key</span>   <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">key</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 <span style="color:#111">hash</span><span style="color:#f92672">.</span><span style="color:#111">each_value</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">value</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 <span style="color:#111">hash</span><span style="color:#f92672">.</span><span style="color:#111">each_pair</span>  <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">key</span><span style="color:#111">,</span> <span style="color:#111">value</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
-</code></pre></div><p>They all return the hash they're called on, and <code>each_pair</code> is basically the same as <code>each</code>, just providing a more descriptive name.</p>
+</code></pre></div><p>They all return the hash they&rsquo;re called on, and <code>each_pair</code> is basically the same as <code>each</code>, just providing a more descriptive name.</p>
 <p>Note that <code>String</code> does not include <code>Enumerable</code> but also defines <code>each</code>-like methods, based on the different possibilities of viewing strings as collections:</p>
 <ul>
 <li><code>each_char</code></li>
@@ -986,9 +986,9 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">array</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672"></span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
 <span style="color:#111">array</span><span style="color:#f92672">.</span><span style="color:#111">each</span> <span style="color:#75715e"># same as: array.enum_for(:each), or: Enumerator.new(array, :each)</span>
 <span style="color:#111">array</span><span style="color:#f92672">.</span><span style="color:#111">map</span>  <span style="color:#75715e"># same as: array.enum_for(:map),  or: Enumerator.new(array, :map)</span>
-</code></pre></div><p>When implementing an iteration method like those, it's good practice to include this option as follows:</p>
+</code></pre></div><p>When implementing an iteration method like those, it&rsquo;s good practice to include this option as follows:</p>
 <pre><code class="language-rubby" data-lang="rubby">return enum_for(__callee__) unless block_given?
-</code></pre><p>An enumerator can also be constructed explicitly as instance of the <code>Enumerator</code> class. Construction requires a block that takes a yielder as argument. A yielder is an <code>Enumerator::Yielder</code> object that passes control around. It let's us yield each item of the enumerator to blocks passed to <code>Enumerable</code> method calls, like <code>next</code>, <code>peek</code>, <code>rewind</code>, etc.</p>
+</code></pre><p>An enumerator can also be constructed explicitly as instance of the <code>Enumerator</code> class. Construction requires a block that takes a yielder as argument. A yielder is an <code>Enumerator::Yielder</code> object that passes control around. It let&rsquo;s us yield each item of the enumerator to blocks passed to <code>Enumerable</code> method calls, like <code>next</code>, <code>peek</code>, <code>rewind</code>, etc.</p>
 <p><strong>Example: infinite sequence of natural numbers</strong></p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00"></span><span style="color:#f92672"></span><span style="color:#75af00">natural_numbers</span>
   <span style="color:#00a8c8">Enumerator</span><span style="color:#f92672">.</span><span style="color:#111">new</span> <span style="color:#00a8c8">do</span> <span style="color:#f92672">|</span><span style="color:#111">yielder</span><span style="color:#f92672">|</span>
@@ -1043,7 +1043,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 </ul>
 <p><strong>Best practises:</strong></p>
 <ul>
-<li>Use exceptions only for exceptional situations. Not every time you get an answer you don't like. And not for control flow. (Raising an exception is just another form of <code>goto</code> statement, and it's expensive performance-wise.) For example, invalid user input is not unexpected, since you can predict it will happen during normal operation.</li>
+<li>Use exceptions only for exceptional situations. Not every time you get an answer you don&rsquo;t like. And not for control flow. (Raising an exception is just another form of <code>goto</code> statement, and it&rsquo;s expensive performance-wise.) For example, invalid user input is not unexpected, since you can predict it will happen during normal operation.</li>
 <li>If unsure what is the best fallback strategy, leave the decision to the caller. E.g.</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00"></span><span style="color:#f92672"></span><span style="color:#75af00">fnord</span>
@@ -1058,7 +1058,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 
 <span style="color:#111">fnord</span> <span style="color:#111">{</span> <span style="color:#111">do_something_in_case_not_all_went_well</span> <span style="color:#111">}</span>
 </code></pre></div><ul>
-<li>Do not <code>return</code> from an <code>ensure</code> block, as this will hide the exception. Generally, don't suppress exceptions.</li>
+<li>Do not <code>return</code> from an <code>ensure</code> block, as this will hide the exception. Generally, don&rsquo;t suppress exceptions.</li>
 <li>When an exception occurs, make sure to either leave the object in a consistent state, or to roll it back to its original state.</li>
 <li>All application and library exceptions should be descendants of <code>StandardError</code>.</li>
 </ul>

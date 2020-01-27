@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.63.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -129,7 +129,7 @@ headingSelector: 'h1'
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;p&gt;...&lt;/p&gt; */</span>
 <span style="color:#f92672">p</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
 </code></pre></div><ul>
-<li><strong>Class selectors</strong> select elements based on the element's attribute value.</li>
+<li><strong>Class selectors</strong> select elements based on the element&rsquo;s attribute value.</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div class=&#34;awesome&#34;&gt;...&lt;/div&gt; */</span>
 <span style="color:#111">.</span><span style="color:#75af00">awesome</span> <span style="color:#111">{</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#111">}</span>
@@ -209,7 +209,7 @@ The universal selector <code>*</code> has a specificity of <code>0-0-0</code>.</
 <li><em>source order</em>:
 if all else is equal, the rule later in the source code is applied</li>
 </ul>
-<p>Since the specificity of anchor classes is the same for all of them, their order determines which one is applied last. That's why they should be specified in the following order:</p>
+<p>Since the specificity of anchor classes is the same for all of them, their order determines which one is applied last. That&rsquo;s why they should be specified in the following order:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">a</span><span style="color:#111">:</span><span style="color:#75af00">link</span>
 <span style="color:#f92672">a</span><span style="color:#111">:</span><span style="color:#75af00">visited</span>
 <span style="color:#f92672">a</span><span style="color:#111">:</span><span style="color:#75af00">hover</span>
@@ -244,7 +244,7 @@ if all else is equal, the rule later in the source code is applied</li>
 <li><code>p::first-line</code></li>
 </ul>
 <p>It needs to have <code>content</code> defined in order to be rendered, even if only <code>content: &quot;&quot;;</code>.
-Also, pseudo-elements don't work on replace elements (e.g. <code>img</code> and form elements, such as <code>input</code>, <code>button</code>, <code>textarea</code>, <code>select</code>).</p>
+Also, pseudo-elements don&rsquo;t work on replace elements (e.g. <code>img</code> and form elements, such as <code>input</code>, <code>button</code>, <code>textarea</code>, <code>select</code>).</p>
 <p><code>:n-th*(...)</code> pseudo elements allow for specifying a counter using the variable <code>n</code>, which will count up (i.e. <code>0, 1, 2, ...</code>), or <code>-n</code>, which will count down (i.e. <code>0, -1, -2, ...</code>). Examples:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*</span><span style="color:#f92672">(</span><span style="color:#f92672">2n</span><span style="color:#f92672">)</span>   <span style="color:#75715e">/* = element:n-th*(even)  */</span>
 <span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*</span><span style="color:#f92672">(</span><span style="color:#f92672">2n</span><span style="color:#f92672">+</span><span style="color:#f92672">1</span><span style="color:#f92672">)</span> <span style="color:#75715e">/* = element:n-th*(odd)  */</span>
@@ -271,12 +271,12 @@ with <code>0</code> black and <code>f</code> white
 <ul>
 <li><code>1em</code> represents the calculated font-size of the element, so <code>2em</code> is twice the font-size of the element (if <code>em</code> is used to specify <code>font-size</code>, <code>1em</code> corresponds to the inherited font-size of the element) - note that <code>em</code>s compound when elements are nested</li>
 <li><code>1rem</code> represents the calculated font-size of the root element</li>
-<li><code>1vh</code> and <code>1vw</code> represent 1% of the viewport's height and width, respectively (not universally supported, though), and is, e.g., useful for <em>viewport sized typography</em>:</li>
+<li><code>1vh</code> and <code>1vw</code> represent 1% of the viewport&rsquo;s height and width, respectively (not universally supported, though), and is, e.g., useful for <em>viewport sized typography</em>:</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">h1</span> <span style="color:#111">{</span> <span style="color:#00a8c8">font-size</span><span style="color:#111">:</span> <span style="color:#ae81ff">20</span><span style="color:#00a8c8">vw</span><span style="color:#111">;</span> <span style="color:#111">}</span>
 <span style="color:#f92672">p</span>  <span style="color:#111">{</span> <span style="color:#00a8c8">font-size</span><span style="color:#111">:</span> <span style="color:#ae81ff">2</span><span style="color:#00a8c8">vmin</span><span style="color:#111">;</span> <span style="color:#111">}</span>
 </code></pre></div><ul>
-<li><code>%</code> relates to the length of the same property of the parent element (for paddings and margins it always relates to the element's width)</li>
+<li><code>%</code> relates to the length of the same property of the parent element (for paddings and margins it always relates to the element&rsquo;s width)</li>
 </ul>
 <p>Use fallbacks when using units that are not universally supported, e.g.:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">p</span> <span style="color:#111">{</span>
@@ -285,7 +285,7 @@ with <code>0</code> black and <code>f</code> white
 <span style="color:#f92672">nav</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">width</span><span style="color:#111">:</span> <span style="color:#ae81ff">25</span><span style="color:#00a8c8">%</span><span style="color:#111">;</span> <span style="color:#00a8c8">width</span><span style="color:#111">:</span> <span style="color:#ae81ff">25</span><span style="color:#00a8c8">vw</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
-</code></pre></div><p>Default is <code>auto</code> that &ldquo;determines an appropriate length based on the content and the element's content&rdquo;.</p>
+</code></pre></div><p>Default is <code>auto</code> that &ldquo;determines an appropriate length based on the content and the element&rsquo;s content&rdquo;.</p>
 <h1 id="box-model">Box model</h1>
 <blockquote>
 <p>Every element in web design is a rectangular box.</p>
@@ -298,7 +298,7 @@ with <code>0</code> black and <code>f</code> white
 <li>height = content <code>height</code> + top and bottom <code>padding</code> + <code>border</code> + top and bottom <code>margin</code></li>
 </ul>
 <p><img src="https://learn.shayhowe.com/assets/images/courses/html-css/opening-the-box-model/box-model.png" alt="Box model"></p>
-<p>Padding is part of an element, while the margin is not (it's space between elements). Both padding and margin are transparent. As a result, padding shows the background of the element, margin the background of its container.</p>
+<p>Padding is part of an element, while the margin is not (it&rsquo;s space between elements). Both padding and margin are transparent. As a result, padding shows the background of the element, margin the background of its container.</p>
 <p>Shorthands for <code>margin</code> (and, analogously, for <code>padding</code>):</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">margin</span><span style="color:#111">:</span> <span style="color:#ae81ff">10</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>           <span style="color:#75715e">/* same value for all four sides */</span>
@@ -326,7 +326,7 @@ with <code>0</code> black and <code>f</code> white
 <li><code>-25px</code> and <code>-20px</code> leads to <code>-25px</code>.
 Exceptions are <code>inline-block</code> and floated elements.</li>
 </ul>
-<p>Left and right margins as well as paddings don't collapse.</p>
+<p>Left and right margins as well as paddings don&rsquo;t collapse.</p>
 <h3 id="borders">Borders</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">border</span><span style="color:#111">:</span> <span style="color:#ae81ff">1</span><span style="color:#00a8c8">px</span> <span style="color:#00a8c8">solid</span> <span style="color:#ae81ff">#000</span><span style="color:#111">;</span> <span style="color:#75715e">/* width style color */</span>
@@ -335,7 +335,7 @@ Exceptions are <code>inline-block</code> and floated elements.</li>
 </code></pre></div><p>And <code>border-radius</code> for rounding the corners of an element, where <code>border-radius: 50%</code> will yield a circle.</p>
 <p>&hellip; <code>box-sizing</code> property:</p>
 <ul>
-<li><code>content-box</code>: the default value, additive, i.e. padding and border are added to the box's width and height</li>
+<li><code>content-box</code>: the default value, additive, i.e. padding and border are added to the box&rsquo;s width and height</li>
 <li><code>border-box</code>: the padding and border are included in the box width and height (this should be used when nesting an element with width <code>100%</code> in another element, because otherwise any border or padding will make it spill out of the parent)</li>
 </ul>
 <h2 id="block-vs-inline-elements">Block vs inline elements</h2>
@@ -349,12 +349,12 @@ Exceptions are <code>inline-block</code> and floated elements.</li>
 </blockquote>
 <p><strong>Positioning:</strong></p>
 <ul>
-<li>Inline elements are placed on the same line, next to each other (until they exceed the parent's width, then they begin to wrap).</li>
+<li>Inline elements are placed on the same line, next to each other (until they exceed the parent&rsquo;s width, then they begin to wrap).</li>
 <li>Block elements begin a new line and are place there by themselves, thus they stack on top of each other.</li>
 </ul>
 <p><strong>Sizing:</strong></p>
 <ul>
-<li>The width and height of inline elements is determined by their content (up to 100% of their parent's width, then they begin to wrap). They cannot be set to a fixed size. Top and bottom margins are ignored (while left and right margins are applied), as inline elements are horizontal. Top and bottom padding is applied, but the content above and below the inline element will not be adjusted, so if an inline element has visible borders and padding, the borders may spill into content above and below the element.</li>
+<li>The width and height of inline elements is determined by their content (up to 100% of their parent&rsquo;s width, then they begin to wrap). They cannot be set to a fixed size. Top and bottom margins are ignored (while left and right margins are applied), as inline elements are horizontal. Top and bottom padding is applied, but the content above and below the inline element will not be adjusted, so if an inline element has visible borders and padding, the borders may spill into content above and below the element.</li>
 <li>Block elements have a default width such that width + padding + border adds up to 100%, and a default height that is necessary to accommodate their content.</li>
 </ul>
 <p><strong>Nesting:</strong></p>
@@ -362,20 +362,20 @@ Exceptions are <code>inline-block</code> and floated elements.</li>
 <li>Inline elements can contain other inline elements (like <code>&lt;strong&gt;&lt;a&gt;...&lt;/a&gt; ...&lt;/strong&gt;</code>), but no block elements (only exception: <code>a</code>).</li>
 <li>Block elements can contain inline as well as other block elements.</li>
 </ul>
-<p>See MDN's full list of <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements">block elements</a> (plus <code>body</code>) and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements">inline elements</a>. Note that <code>img</code> is <code>inline</code>, and that <code>input</code> and <code>textarea</code> are <code>inline</code> in some browsers and <code>inline-block</code> in others.</p>
-<p>This is determined by the element's <code>display</code> property. Each element has a default <code>display</code> property that can be overridden. Most common values:</p>
+<p>See MDN&rsquo;s full list of <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements">block elements</a> (plus <code>body</code>) and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements">inline elements</a>. Note that <code>img</code> is <code>inline</code>, and that <code>input</code> and <code>textarea</code> are <code>inline</code> in some browsers and <code>inline-block</code> in others.</p>
+<p>This is determined by the element&rsquo;s <code>display</code> property. Each element has a default <code>display</code> property that can be overridden. Most common values:</p>
 <ul>
 <li><code>block</code> (accepting all box model properties, like padding and margins)</li>
 <li><code>inline</code></li>
 <li><code>inline-block</code> (are positioned like inline elements, but otherwise behave like block elements),</li>
-<li><code>none</code> (the element and all elements nested inside it are hidden, i.e. the document is rendered as if the element didn't exist)</li>
+<li><code>none</code> (the element and all elements nested inside it are hidden, i.e. the document is rendered as if the element didn&rsquo;t exist)</li>
 <li><code>flex</code> and <code>grid</code></li>
 </ul>
 <p>The default vertical alignment of inline elements (<code>inline</code> and <code>inline-block</code>) is <code>vertical-align: baseline;</code>, other values are <code>middle</code> and <code>top</code>.</p>
 <h1 id="float">Float</h1>
 <p>Originally intended for elements like images that text should flow around, no matter what size they have.</p>
 <p>See: <a href="https://css-tricks.com/all-about-floats/">https://css-tricks.com/all-about-floats/</a></p>
-<p>The <code>float</code> property removes an element from the <em>normal</em> flow of a document, and moves it to the left or right edge of its parent element (or the page if there is no parent). It requires an element to be a block element, and will adapt its <code>display</code> value accordingly if it isn't.</p>
+<p>The <code>float</code> property removes an element from the <em>normal</em> flow of a document, and moves it to the left or right edge of its parent element (or the page if there is no parent). It requires an element to be a block element, and will adapt its <code>display</code> value accordingly if it isn&rsquo;t.</p>
 <p>Non-floated elements appearing after the floated ones will be positioned in the normal flow, and ignore the floated ones - only their content wraps around the floated ones. Example:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">nav</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">ul</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
@@ -407,7 +407,7 @@ After floating <code>nav</code> to the left:
   <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">img</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
 <span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
-</code></pre></div><p>Also note that since floated elements are not in the normal flow, they don't affect the size of their parent element. Therefore containers with only floated elements in them, collapse - as far as the container is concerned, it's empty. That's also the reason why the image in <a href="https://alistapart.com/d/css-floats-101/example_i.html">the second example</a> sticks out of the box.</p>
+</code></pre></div><p>Also note that since floated elements are not in the normal flow, they don&rsquo;t affect the size of their parent element. Therefore containers with only floated elements in them, collapse - as far as the container is concerned, it&rsquo;s empty. That&rsquo;s also the reason why the image in <a href="https://alistapart.com/d/css-floats-101/example_i.html">the second example</a> sticks out of the box.</p>
 <p>In order to contain floats, the containing element needs an element that clears the float. This can be done using pseudo-elements (see <a href="http://nicolasgallagher.com/micro-clearfix-hack/"><em>micro clearfix</em></a>):</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">group</span><span style="color:#111">::</span><span style="color:#75af00">before</span><span style="color:#f92672">,</span>
 <span style="color:#111">.</span><span style="color:#75af00">group</span><span style="color:#111">::</span><span style="color:#75af00">after</span> <span style="color:#111">{</span>
@@ -439,7 +439,7 @@ Since the margin area takes the background color of the containing element, this
 <h2 id="position">Position</h2>
 <ul>
 <li>
-<p><code>position: static;</code> is the default and means that an element is placed within the normal flow and doesn't accept box offset properties. All elements with a value different from <code>static</code> are said to be <em>positioned</em>, while a static element is not positioned.</p>
+<p><code>position: static;</code> is the default and means that an element is placed within the normal flow and doesn&rsquo;t accept box offset properties. All elements with a value different from <code>static</code> are said to be <em>positioned</em>, while a static element is not positioned.</p>
 </li>
 <li>
 <p><code>position: relative;</code> (together with <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>)
@@ -451,7 +451,7 @@ Without any of the properties <code>left</code>, <code>right</code>, <code>top</
 </ul>
 </li>
 <li>
-<p><code>position: absolute;</code> positions an element according to the specified box offsets relative to its closest positioned ancestor element (or <code>body</code> if there is none), i.e. relative to its closest parent with a position other than <code>static</code>. It removes the element from the normal flow, so you can put it anywhere, and it won't affect or be affected by any other elements in the flow. In particular:</p>
+<p><code>position: absolute;</code> positions an element according to the specified box offsets relative to its closest positioned ancestor element (or <code>body</code> if there is none), i.e. relative to its closest parent with a position other than <code>static</code>. It removes the element from the normal flow, so you can put it anywhere, and it won&rsquo;t affect or be affected by any other elements in the flow. In particular:</p>
 <ul>
 <li>its original position and space are not preserved</li>
 <li>other elements are not affected, so the positioned element might overlap them</li>
@@ -483,7 +483,7 @@ Without any of the properties <code>left</code>, <code>right</code>, <code>top</
 <p>For horizontal alignment of elements, changing them to <code>inline-block</code>s is usually sufficient. Use floats only when content is supposed to wrap around an element.</p>
 <p><strong>Also see:</strong> <code>flex</code> and <code>grid</code> properties</p>
 <h2 id="overflow">Overflow</h2>
-<p>The <code>overflow</code> property specifies what happens when an element has a fixed size and the content doesn't fit into it.</p>
+<p>The <code>overflow</code> property specifies what happens when an element has a fixed size and the content doesn&rsquo;t fit into it.</p>
 <ul>
 <li><code>visible</code> (the default) renders the content, which then flows outside of the box (but without affecting other elements)</li>
 <li><code>hidden</code> hides any content that extends beyond the box (and self-clears all floats in the element)</li>
@@ -532,7 +532,7 @@ And analogously for <code>height</code>.</p>
 <span style="color:#111">@</span><span style="color:#00a8c8">media</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">400px</span><span style="color:#f92672">,</span> <span style="color:#f92672">orientation</span><span style="color:#f92672">:</span> <span style="color:#f92672">landscape</span><span style="color:#f92672">)</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">800px</span><span style="color:#f92672">)</span> <span style="color:#111">{</span>
 <span style="color:#111">}</span>
 </code></pre></div><h1 id="guidelines">Guidelines</h1>
-<p>Also see <a href="https://learn.shayhowe.com/html-css/writing-your-best-code/">Shay Howe's guidelines</a>.</p>
+<p>Also see <a href="https://learn.shayhowe.com/html-css/writing-your-best-code/">Shay Howe&rsquo;s guidelines</a>.</p>
 <p><strong>Only be specific when you need to be.</strong></p>
 <ul>
 <li>Start with the least specific selectors, and add more specific ones only if the need arises. Very specific rules paint you into a corner.</li>
@@ -630,7 +630,7 @@ And analogously for <code>height</code>.</p>
 </code></pre></div><p><em>Floats vs inline blocks:</em></p>
 <p>If a parent element contains only &ldquo;floated&rdquo; elements,
 <code>display: inline-block</code> and <code>float: left, overflow: auto</code> both achieve the same thing
-(where the former displays whitespaces between the elements while the latter doesn't).</p>
+(where the former displays whitespaces between the elements while the latter doesn&rsquo;t).</p>
 <h2 id="lists">Lists</h2>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* How to style list elements with a custom style (with fallback bullets) */</span>
 <span style="color:#f92672">ul</span> <span style="color:#111">{</span>

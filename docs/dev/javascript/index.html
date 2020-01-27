@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.63.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -181,7 +181,7 @@ headingSelector: 'h1'
 <p>Objects are mutable, all other values are primitives and immutable.</p>
 <p>Primitives are compared by value (just beware that <code>NaN</code> does not equal anything, not even itself) and passed by value, while objects are compared by reference (thus are strictly equal only to themselves) and passed by reference.</p>
 <p>The primitive types Boolean, Number, String have object constructors that create wrapper objects holding the corresponding primitive value.
-When a function is called on a primitive value, as in <code>&quot;fnord&quot;.toUpperCase()</code>, the corresponding constructor is called in order to create a temporary object of the appropriate type. In this case, a function is called on a string, which leads to the creation of a temporary object by means of the <code>String</code> constructor function. That object has <code>String.prototype</code> as its prototype, which implements methods like <code>toUpperCase</code>. This method's return value will be returned an the temporary object again destroyed. In this way, primitive values can &ldquo;borrow&rdquo; methods from the relevant constructor's prototype object.</p>
+When a function is called on a primitive value, as in <code>&quot;fnord&quot;.toUpperCase()</code>, the corresponding constructor is called in order to create a temporary object of the appropriate type. In this case, a function is called on a string, which leads to the creation of a temporary object by means of the <code>String</code> constructor function. That object has <code>String.prototype</code> as its prototype, which implements methods like <code>toUpperCase</code>. This method&rsquo;s return value will be returned an the temporary object again destroyed. In this way, primitive values can &ldquo;borrow&rdquo; methods from the relevant constructor&rsquo;s prototype object.</p>
 <h2 id="type-coercion">Type coercion</h2>
 <p>Type coercion is the conversion of a value of one type to a value of another type. JavaScript can convert to String, Number, and Boolean.</p>
 <h3 id="explicit-type-coercion">Explicit type coercion</h3>
@@ -204,7 +204,7 @@ Alternatively use <code>+x</code>, or <code>parseInt(x, 10)</code> and <code>par
 </span></code></pre></div></li>
 <li>
 <p><code>String()</code> does the obvious (except for conversion to primitives, see end of <a href="http://speakingjs.com/es5/ch08.html">Chapter 8: Values</a>).
-Preferred over <code>x.toString()</code>, as the latter throws an error when called on <code>null</code> or <code>undefined</code> and can be overridden by individual objects (and thus lead to unexpected results). If you want a JSON string, use <code>JSON.stringify(x)</code>, which prints everything as <code>null</code> that doesn't convert into a JSON value (e.g. functions and <code>undefined</code>). When called on an object that implements <code>toJSON()</code>, it calls that method.</p>
+Preferred over <code>x.toString()</code>, as the latter throws an error when called on <code>null</code> or <code>undefined</code> and can be overridden by individual objects (and thus lead to unexpected results). If you want a JSON string, use <code>JSON.stringify(x)</code>, which prints everything as <code>null</code> that doesn&rsquo;t convert into a JSON value (e.g. functions and <code>undefined</code>). When called on an object that implements <code>toJSON()</code>, it calls that method.</p>
 </li>
 <li>
 <p><code>Boolean(x)</code> converts <code>x</code> to <code>false</code> if it is falsy, and to <code>true</code> otherwise. Falsy values are:</p>
@@ -225,7 +225,7 @@ Preferred over <code>x.toString()</code>, as the latter throws an error when cal
 <li>arithmetic operators (<code>-</code>, <code>+</code>, <code>*</code>, <code>/</code>, <code>%</code>)</li>
 <li>loose/lenient equality (<code>==</code>, <code>!=</code>)</li>
 </ul>
-<p>With the exception that comparison and equality operators don't trigger numeric conversion if both operands are strings, or any operand is <code>null</code> or <code>undefined</code>, and <code>+</code> triggers string conversion if any operand is a string.</p>
+<p>With the exception that comparison and equality operators don&rsquo;t trigger numeric conversion if both operands are strings, or any operand is <code>null</code> or <code>undefined</code>, and <code>+</code> triggers string conversion if any operand is a string.</p>
 <p>If an operand is an object, it is first converted to a primitive (meaning to a Number or String), roughly following <a href="https://gist.github.com/samoshkin/baf070ab19b73f4f39ec54149fb37c30#file-js-to-primitive-internal-js">this algorithm</a>. Note that, as a result, arrays are converted to strings.</p>
 <p>Also note that <code>{</code> at the beginning of a line is always interpreted as a block statement, not as an object, thus for the operation it is ignored:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">{</span><span style="color:#111">}</span><span style="color:#f92672">+</span><span style="color:#111">[</span><span style="color:#111">]</span><span style="color:#f92672">+</span><span style="color:#111">{</span><span style="color:#111">}</span>
@@ -252,7 +252,7 @@ If the first operand can be converted to <code>true</code>, return it. Otherwise
 <li>the property <code>length</code> is 1 larger than the highest such key (it is therefore not necessarily equal to the number of elements).</li>
 </ul>
 <p>Elements should be accessed via <code>array[index]</code> instead of dot notation.</p>
-<p>Note that negative integers don't count as array indices, thus <code>array[-1]</code> will try to look up the key <code>&quot;-1&quot;</code>. For accessing the last element in an array, use <code>array[array.length - 1]</code> or <code>array.slice(-1)[0]</code>.</p>
+<p>Note that negative integers don&rsquo;t count as array indices, thus <code>array[-1]</code> will try to look up the key <code>&quot;-1&quot;</code>. For accessing the last element in an array, use <code>array[array.length - 1]</code> or <code>array.slice(-1)[0]</code>.</p>
 <p>The <code>length</code> property can be explicitly set. Setting it to less than the current length truncates the array. Setting it to more does not create keys for the additional, non-present elements; however, empty slots will be shown when printing the array.</p>
 <h2 id="arrays-as-stacks-and-queues">Arrays as stacks and queues</h2>
 <p>The following methods are all mutating:</p>
@@ -318,7 +318,7 @@ If the first operand can be converted to <code>true</code>, return it. Otherwise
 <li>is referentially transparent, i.e. given the same inputs, the output is always the same, and</li>
 <li>does not produce any side effects.</li>
 </ul>
-<p>In particular, this means it doesn't depend on or modify variables outside of its scope.</p>
+<p>In particular, this means it doesn&rsquo;t depend on or modify variables outside of its scope.</p>
 <h2 id="input">Input</h2>
 <p>When invoked, the arguments passed to the function are bound to the function parameters. Missing parameters have <code>undefined</code> as value, excess parameters are ignored but are accessible within the function body via <code>arguments</code>. <code>arguments</code> is array-like, but not an array; in order to turn it into an array:</p>
 <ul>
@@ -363,7 +363,7 @@ It looks exactly the same as <a href="https://developer.mozilla.org/en-US/docs/W
 <blockquote>
 <p>A closure is a function plus the connection to the scope in which the function was created. The name stems from the fact that a closure “closes over” the free variables of a function[, i.e. the variables not declared within the function].</p>
 </blockquote>
-<p>Closures thus preserve the function's access to all variables in its own as well as in its surrounding scopes. This access is retained throughout the life-time of the function, independent in which scope it is invoked. Note that this means access to the identifiers; functions will look up the corresponding values only when invoked.</p>
+<p>Closures thus preserve the function&rsquo;s access to all variables in its own as well as in its surrounding scopes. This access is retained throughout the life-time of the function, independent in which scope it is invoked. Note that this means access to the identifiers; functions will look up the corresponding values only when invoked.</p>
 <p>Closures play a key role, for instance, in <a href="private-data.md">private data</a> and partial function application.</p>
 <h3 id="partial-function-application">Partial function application</h3>
 <p>Partial function application is the process of applying a function to some of its parameters and return a function that expects the rest of the parameters.</p>
@@ -406,7 +406,7 @@ Since functions are first-class citizens, they can be removed from their objects
 <p>Upon <strong>function invocation</strong> (e.g. <code>smile()</code>), the execution context, and thus <code>this</code>, is the global object, because the function is implicitly called on the global object. That is, <code>window</code> in the browser environment, and <code>global</code> in Node (and <code>module.exports</code> within a module).</p>
 <p><code>this</code> also refers to the global object outside of any function scope. Unless in strict mode, then it is <code>undefined</code>.</p>
 <p>Upon <strong>method invocation</strong> (e.g. <code>person.smile()</code>), there is an explicit receiver; the execution context, and thus <code>this</code>, is the calling object.
-Just don't get confused with <em>explicit</em> and <em>implicit</em>: When executing <code>person.smile()</code>, the execution context of <code>smile</code> is implicitly bound to <code>person</code>, as this is the explicit receiver of the function call.</p>
+Just don&rsquo;t get confused with <em>explicit</em> and <em>implicit</em>: When executing <code>person.smile()</code>, the execution context of <code>smile</code> is implicitly bound to <code>person</code>, as this is the explicit receiver of the function call.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
   <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#111">)</span> <span style="color:#111">{</span>
     <span style="color:#00a8c8">function</span> <span style="color:#75af00">whereAmI</span><span style="color:#111">(</span><span style="color:#111">)</span> <span style="color:#111">{</span>
@@ -424,14 +424,14 @@ Just don't get confused with <em>explicit</em> and <em>implicit</em>: When execu
 </span></code></pre></div><p>See also <em>context loss</em> below.</p>
 <h2 id="explicit-execution-context">Explicit execution context</h2>
 <p>The execution context can also be changed explicitly by means of <code>call</code>, <code>apply</code>, and <code>bind</code>.
-<code>call</code> and <code>apply</code> explicitly bind a function's execution context to an object when invoking the function:</p>
+<code>call</code> and <code>apply</code> explicitly bind a function&rsquo;s execution context to an object when invoking the function:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">func</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#75af00">obj</span><span style="color:#111">,</span> <span style="color:#75af00">arg1</span><span style="color:#111">,</span> <span style="color:#75af00">arg2</span><span style="color:#111">)</span><span style="color:#111">;</span> <span style="color:#75715e">// this === obj
 </span><span style="color:#75715e"></span><span style="color:#75af00">func</span><span style="color:#111">.</span><span style="color:#75af00">apply</span><span style="color:#111">(</span><span style="color:#75af00">obj</span><span style="color:#111">,</span> <span style="color:#75af00">args</span><span style="color:#111">)</span><span style="color:#111">;</span>      <span style="color:#75715e">// this === obj
 </span><span style="color:#75715e"></span>
 <span style="color:#75af00">func</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#111">)</span><span style="color:#111">;</span>                <span style="color:#75715e">// this === global
 </span><span style="color:#75715e"></span><span style="color:#75af00">obj</span><span style="color:#111">.</span><span style="color:#75af00">func</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#111">)</span><span style="color:#111">;</span>            <span style="color:#75715e">// this === global
 </span></code></pre></div><p><code>bind</code> permanently binds a function to a provided object. It creates and returns a new function that always uses the provided object as execution context. (Except for when the function is called as a constructor with <code>new</code>, then <code>this</code> will be the newly created object.)</p>
-<p>Here's roughly how <code>bind</code> works:</p>
+<p>Here&rsquo;s roughly how <code>bind</code> works:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">Function</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">bind</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">context</span><span style="color:#111">)</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">var</span> <span style="color:#75af00">args</span> <span style="color:#f92672">=</span> <span style="color:#111">Array</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">slice</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#75af00">arguments</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">var</span> <span style="color:#75af00">self</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">this</span><span style="color:#111">;</span>
@@ -582,7 +582,7 @@ When not finding an identifier doing right-hand side look-up, it throws a <code>
 </code></pre></div><p>Keep in mind that function expressions are not hoisted, i.e. <code>var f = function () {...}</code> behaves just like any other variable assignment, with the declaration being hoisted, the function definition not.</p>
 <h1 id="private-data">Private data</h1>
 <p>IIFEs are a way to create temporary, private scope, and closures turn that <em>temporary</em> into <em>as long as a reference to the function lives</em>.</p>
-<p>Here's an example from Douglas Crockford:</p>
+<p>Here&rsquo;s an example from Douglas Crockford:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">digitName</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#111">)</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">var</span> <span style="color:#75af00">names</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;zero&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;one&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;two&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;three&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;four&#39;</span><span style="color:#111">,</span>
                <span style="color:#d88200">&#39;five&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;six&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;seven&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;eight&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;nine&#39;</span><span style="color:#111">]</span><span style="color:#111">;</span>
@@ -654,8 +654,8 @@ When not finding an identifier doing right-hand side look-up, it throws a <code>
 </code></pre></div><h2 id="alternatives">Alternatives</h2>
 <p>For data that is not secret but simply should not be relied on when using an API,
 it can be enough to follow the convention to start names of private properties
-with an underscore, e.g. <code>_counter</code>. This way, they're accessible for testing
-and inspection, while others know that they're not meant as public interface.</p>
+with an underscore, e.g. <code>_counter</code>. This way, they&rsquo;re accessible for testing
+and inspection, while others know that they&rsquo;re not meant as public interface.</p>
 <h1 id="objects">Objects</h1>
 <p>Objects are roughly maps from strings to values. A key-value pair is called a <em>property</em>, and <em>methods</em> are properties whose values are functions.</p>
 <p>Objects are created by constructors (e.g. the pre-defined constructors <code>Object</code>, <code>Array,</code> etc.) or by means of special literals:</p>
@@ -681,11 +681,11 @@ Objects thus organize code by putting related data and functions together.</p>
 <h2 id="global-object">Global object</h2>
 <p>When running, JavaScript creates a global object, which serves as implicit execution context.</p>
 <ul>
-<li>In the browser this is <code>window</code> (standardized in the browser's DOM, not in ECMAScript).</li>
+<li>In the browser this is <code>window</code> (standardized in the browser&rsquo;s DOM, not in ECMAScript).</li>
 <li>In Node it is <code>global</code>.</li>
 </ul>
 <p>In the browser, declared variables and functions are added as properties to the global object.
-They carry a <em>Don't Delete</em> flag, so they cannot be deleted.</p>
+They carry a <em>Don&rsquo;t Delete</em> flag, so they cannot be deleted.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Bobbo&#39;</span><span style="color:#111">;</span>
 <span style="color:#00a8c8">function</span> <span style="color:#75af00">say</span><span style="color:#111">(</span><span style="color:#111">)</span> <span style="color:#111">{</span><span style="color:#111">}</span>
 
@@ -702,7 +702,7 @@ They carry a <em>Don't Delete</em> flag, so they cannot be deleted.</p>
 <span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>           <span style="color:#75715e">// =&gt; 1
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">delete</span> <span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>    <span style="color:#75715e">// true
 </span></code></pre></div><p>Node is a modular environment, therefore the execution context in the Node console is different.
-Declared variables are local variables within the module's scope.</p>
+Declared variables are local variables within the module&rsquo;s scope.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Bobbo&#39;</span><span style="color:#111">;</span>
 <span style="color:#00a8c8">function</span> <span style="color:#75af00">say</span><span style="color:#111">(</span><span style="color:#111">)</span> <span style="color:#111">{</span><span style="color:#111">}</span>
 
@@ -719,9 +719,9 @@ Declared variables are local variables within the module's scope.</p>
 <span style="color:#75af00">global</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>                <span style="color:#75715e">// =&gt; 1
 </span><span style="color:#75715e"></span><span style="color:#75af00">module</span><span style="color:#111">.</span><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>        <span style="color:#75715e">// =&gt; undefined
 </span></code></pre></div><h1 id="prototypes">Prototypes</h1>
-<p>There are no classes; objects inherit directly from other objects. More specifically: Every object has an internal <a href="http://2ality.com/2012/10/javascript-properties.html">property</a> <code>[[Prototype]]</code> that points to another object, its <em>prototype</em>. It can be accessed by <code>__proto__</code> or (for browser compatibility reasons much preferred) <code>Object.getPrototypeOf(obj)</code> and checked by <code>pobj.isPrototypOf(obj)</code>. For functions this is by default <code>Function.prototype</code>, for arrays it's <code>Array.prototype</code>, etc.</p>
-<p>Note that <code>foo.isPrototypeOf(bar)</code> is transitive, i.e. checks whether <code>foo</code> is anywhere in the prototype chain of <code>bar</code>, while <code>Object.getPrototypeOf(bar)</code> returns the object that is the value of <code>bar</code>'s internal <code>[[Prototype]]</code>&rsquo; property, i.e. it's immediate prototype.</p>
-<p>The <strong>prototype chain</strong> of an object is a sequence of objects starting with the object referenced by the object's internal <code>[[Prototype]]</code> property, followed by the reference of that object's <code>[[Prototype]]</code> property, and so on, until the referenced object is <code>Object.prototype</code>, which is each object's prototype and does not have a prototype itself. <code>Object.prototype</code> implements methods like <code>toString</code>, <code>valueOf</code>, <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, etc.</p>
+<p>There are no classes; objects inherit directly from other objects. More specifically: Every object has an internal <a href="http://2ality.com/2012/10/javascript-properties.html">property</a> <code>[[Prototype]]</code> that points to another object, its <em>prototype</em>. It can be accessed by <code>__proto__</code> or (for browser compatibility reasons much preferred) <code>Object.getPrototypeOf(obj)</code> and checked by <code>pobj.isPrototypOf(obj)</code>. For functions this is by default <code>Function.prototype</code>, for arrays it&rsquo;s <code>Array.prototype</code>, etc.</p>
+<p>Note that <code>foo.isPrototypeOf(bar)</code> is transitive, i.e. checks whether <code>foo</code> is anywhere in the prototype chain of <code>bar</code>, while <code>Object.getPrototypeOf(bar)</code> returns the object that is the value of <code>bar</code>'s internal <code>[[Prototype]]</code>&rsquo; property, i.e. it&rsquo;s immediate prototype.</p>
+<p>The <strong>prototype chain</strong> of an object is a sequence of objects starting with the object referenced by the object&rsquo;s internal <code>[[Prototype]]</code> property, followed by the reference of that object&rsquo;s <code>[[Prototype]]</code> property, and so on, until the referenced object is <code>Object.prototype</code>, which is each object&rsquo;s prototype and does not have a prototype itself. <code>Object.prototype</code> implements methods like <code>toString</code>, <code>valueOf</code>, <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, etc.</p>
 <p>Behaviour is shared between objects by <strong>delegation</strong>: When trying to access a property of an object, JavaScript first checks the object itself, and if it does not find a property of that name, walks through the prototype chain until it finds it or runs out of prototypes. An object thus delegates each property that is does not specify itself to the first object on its prototype chain that does specify it. At the same time it can override prototype behaviour by specifying the property as its own.</p>
 <p>In order to check whether a property exists on the object as opposed to one of its prototypes, use <code>obj.hasOwnProperty('key')</code> or <code>Object.getOwnPropertyNames(obj)</code>.</p>
 <h2 id="constructor-functions">Constructor functions</h2>
@@ -817,7 +817,7 @@ Declared variables are local variables within the module's scope.</p>
 <p>The constructor is responsible for setting up instance-specific data, the prototype contains shared data (i.e., the methods).
 &ndash; <a href="http://2ality.com/2012/01/js-inheritance-by-example.html">2ality</a></p>
 </blockquote>
-<p>If the created objects don't need a unique state at the beginning, the created object can be empty initially and delegate everything, for example:</p>
+<p>If the created objects don&rsquo;t need a unique state at the beginning, the created object can be empty initially and delegate everything, for example:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">MyObject</span><span style="color:#111">(</span><span style="color:#111">)</span> <span style="color:#111">{</span><span style="color:#111">}</span>
 
 <span style="color:#75af00">myObject</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">p1</span> <span style="color:#f92672">=</span> <span style="color:#111">...</span>

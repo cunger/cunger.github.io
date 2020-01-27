@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.63.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -315,7 +315,7 @@ Location: ...
 <p>Cookies can contain session information or a session identifier, which allows the server to relate different requests to each other.</p>
 <p>Pre-defined properties include an expiration date ( in <code>Wdy, DD-Mon-YYYY HH:MM:SS GMT</code> format) and a scope:</p>
 <ul>
-<li><em>Session cookies</em> is temporary data that is deleted when the client application (e.g. browser) is closed. They have a set <code>discard</code> parameter or don't have an <code>expires</code>/<code>max-age</code> parameter that indicates an extended life time. <em>Persistent cookies</em>, on the other hand side, are stored on the disk and can thus persist across browser sessions.</li>
+<li><em>Session cookies</em> is temporary data that is deleted when the client application (e.g. browser) is closed. They have a set <code>discard</code> parameter or don&rsquo;t have an <code>expires</code>/<code>max-age</code> parameter that indicates an extended life time. <em>Persistent cookies</em>, on the other hand side, are stored on the disk and can thus persist across browser sessions.</li>
 <li><em>Scoped cookies:</em> A <code>path</code> and <code>domain</code> attribute can be specified to limit the scope of the cookie to a specific domain, sub-domain, or path.</li>
 </ul>
 <p><strong>Example:</strong></p>
@@ -357,15 +357,15 @@ Location: ...
 </ul>
 <h1 id="rest">REST</h1>
 <p>REST (<em>Representational State Transfer</em>) is a set of conventions to expose URL endpoints that allow you to perform operations on resources that correlate with CRUD actions.</p>
-<p>When a client requests a resource via a GET request, the server sends back any machine-readable document containing any information about that resource - basically a representation of that resource and its state. So HTTP, in a way, provides read access to the representation of resources, and write access to the resource's state.</p>
+<p>When a client requests a resource via a GET request, the server sends back any machine-readable document containing any information about that resource - basically a representation of that resource and its state. So HTTP, in a way, provides read access to the representation of resources, and write access to the resource&rsquo;s state.</p>
 <p>Client and server keep different states:</p>
 <ul>
 <li>Client: application state</li>
 <li>Server: resource state</li>
 </ul>
-<p>And they neither know about nor have direct control over the other's state.</p>
+<p>And they neither know about nor have direct control over the other&rsquo;s state.</p>
 <p>A <em>web server</em> processes HTTP requests and serves responses back to the client. It implements HTTP and related TCP connection handling (in collaboration with the operating system, which provides hardware-close network support), and also manages its resources.</p>
-<p>Usually, a <em>web server</em> is a server responding to static assets (files, images, scripts, etc.) that don't require any data processing, while an <em>application server</em> hosts the application logic, handling complex requests for running server-side code, often consulting a persistent <em>data store</em>.</p>
+<p>Usually, a <em>web server</em> is a server responding to static assets (files, images, scripts, etc.) that don&rsquo;t require any data processing, while an <em>application server</em> hosts the application logic, handling complex requests for running server-side code, often consulting a persistent <em>data store</em>.</p>
 <p>Server-side code is run on the server before a page is served (e.g. running a template engine to render an HTML page).
 Client-side code is run on the client after a page is loaded (e.g. JavaScript updating the HTML page after it was loaded).
 The boundary is usually drawn upon considerations such as processing load and security (hiding all application logic vs exposing it to the client).</p>

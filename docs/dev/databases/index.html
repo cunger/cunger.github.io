@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.63.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -134,8 +134,8 @@ headingSelector: 'h1'
 <p><em>Many-to-many relationships</em> are implemented as a cross-reference table T3 that uses two foreign keys, to primary key of T1 and primary key of T2, together forming the primary key of T3.</p>
 </li>
 </ul>
-<p><strong>Visualization:</strong> <a href="http://www.conceptdraw.com/How-To-Guide/picture/erd-diagrams-software-tools-for-design-element-crows-foot/Crows-Foot-notation-symbols.png">Crow's Foot Notation</a></p>
-<p><img src="/images/docs/crows.png" alt="Crow's Foot Notation"></p>
+<p><strong>Visualization:</strong> <a href="http://www.conceptdraw.com/How-To-Guide/picture/erd-diagrams-software-tools-for-design-element-crows-foot/Crows-Foot-notation-symbols.png">Crow&rsquo;s Foot Notation</a></p>
+<p><img src="/images/docs/crows.png" alt="Crow&rsquo;s Foot Notation"></p>
 <h1 id="keys">Keys</h1>
 <p>Keys are specific kinds of constraints (i.e. rules on what kind of data is allowed in a column) and as such part of the schema definition. Their main purpose is to  ensure data integrity in the sense that data records can be uniquely identified and referenced.</p>
 <h2 id="primary-keys">Primary keys</h2>
@@ -144,8 +144,8 @@ headingSelector: 'h1'
 <p>Keys can be <em>natural</em>, i.e. one or several columns that happen to be unique, or more likely <em>surrogate</em>, i.e. created for the specific purpose of being a unique identifier, such as auto-incrementing integers or UUIDs.</p>
 <h2 id="foreign-keys">Foreign keys</h2>
 <p>A <em>foreign key</em> is a column that refers to the primary key of another table, thereby acting as a cross-reference between tables.
-Foreign key columns obviously need to have the same data type as the primary key column of the other table, and in most DBMS the foreign key constraint also prevents foreign key values that don't exist as primary key value (<em>referential integrity</em>).</p>
-<p>As opposed to primary keys, foreign keys don't need to be unique, can be <code>NULL</code>, and there can be arbitrarily many of them in one table.</p>
+Foreign key columns obviously need to have the same data type as the primary key column of the other table, and in most DBMS the foreign key constraint also prevents foreign key values that don&rsquo;t exist as primary key value (<em>referential integrity</em>).</p>
+<p>As opposed to primary keys, foreign keys don&rsquo;t need to be unique, can be <code>NULL</code>, and there can be arbitrarily many of them in one table.</p>
 <p>A column can be both a primary and a foreign key.</p>
 <h1 id="normalization">Normalization</h1>
 <p>The goal of <em>normalization</em> is to design the schema in a way that it avoids or at least minimizes anomalies, mainly by distributing information across separate tables.</p>
@@ -345,7 +345,7 @@ expression::type
 <p>The SQL vocabulary is categorized into three sub-vocabularies:</p>
 <ul>
 <li>
-<p>The <em>Data Definition Language (DDL)</em> is a vocabulary for specifying the database <strong>schema</strong>, in articular for creating, modifying and deleting databases, tables, and constraints. This comprises all SQL commands that define the structure and properties of data but don't actually manipulate any data records, such as <code>CREATE</code>, <code>ALTER</code>, and <code>DROP</code>. (The latter is partly also DML, as dropping a database also deletes all data records in it.)</p>
+<p>The <em>Data Definition Language (DDL)</em> is a vocabulary for specifying the database <strong>schema</strong>, in articular for creating, modifying and deleting databases, tables, and constraints. This comprises all SQL commands that define the structure and properties of data but don&rsquo;t actually manipulate any data records, such as <code>CREATE</code>, <code>ALTER</code>, and <code>DROP</code>. (The latter is partly also DML, as dropping a database also deletes all data records in it.)</p>
 </li>
 <li>
 <p>The <em>Data Manipulation Language (DML)</em> is a vocabulary for managing <strong>data</strong>, i.e. for retrieval of data records (querying) and manipulation of data records (inserting, modifying, deleting). Also known as CRUD, the four basic functions of persistent storage:
@@ -432,7 +432,7 @@ expression::type
 <li><code>ON DELETE SET DEFAULT</code></li>
 <li>and others</li>
 </ul>
-<p><code>FOREIGN KEY (c1) REFERENCES table (c2) ON DELETE CASCADE</code> means that if a value in the referenced column <code>c2</code> is deleted, all rows with that value in <code>c1</code> are deleted as well. Alternatively, the value in <code>c1</code> can be set to <code>NULL</code> or the column's default value.</p>
+<p><code>FOREIGN KEY (c1) REFERENCES table (c2) ON DELETE CASCADE</code> means that if a value in the referenced column <code>c2</code> is deleted, all rows with that value in <code>c1</code> are deleted as well. Alternatively, the value in <code>c1</code> can be set to <code>NULL</code> or the column&rsquo;s default value.</p>
 <p><code>FOREIGN KEY (c1) REFERENCES table (c2) ON UPDATE CASCADE</code> means that updates of values in <code>c2</code> are copied to the respective occurrences in <code>c1</code>.</p>
 <p>If no options are specified, the default is <code>ON UPDATE RESTRICT</code> and <code>ON DELETE RESTRICT</code>, i.e. updating and deleting values in <code>c2</code> is not allowed if they are referenced in <code>c1</code>.</p>
 <p>If a table has a multi-column primary key, the foreign key would be accordingly multi-column, e.g. <code>FOREIGN KEY (person_first_name, person_last_name) REFERENCES person (first_name, last_name)</code></p>
@@ -532,7 +532,7 @@ This includes arrays like <code>('value1', 'value2', ...)</code>: they cannot co
   <span style="color:#00a8c8">FROM</span> <span style="color:#111">employees</span>
  <span style="color:#00a8c8">WHERE</span> <span style="color:#00a8c8">year</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2013</span>
  <span style="color:#00a8c8">GROUP</span> <span style="color:#00a8c8">BY</span> <span style="color:#111">department</span><span style="color:#111">;</span>
-</code></pre></div><p>Columns other than <code>c</code> can have different values within one group, so it makes sense to aggregate on them, but it doesn't make sense to put them in a <code>SELECT</code> clause without aggregation (which of the values to return?).</p>
+</code></pre></div><p>Columns other than <code>c</code> can have different values within one group, so it makes sense to aggregate on them, but it doesn&rsquo;t make sense to put them in a <code>SELECT</code> clause without aggregation (which of the values to return?).</p>
 <p><code>GROUP BY column1, column2</code> groups by <code>(column1, column2)</code>, e.g. <code>GROUP BY last_name, first_name</code>.</p>
 <p>In addition, groups can be filtered by means of <code>HAVING</code>.</p>
 <p><em>Example:</em></p>
@@ -567,7 +567,7 @@ This includes arrays like <code>('value1', 'value2', ...)</code>: they cannot co
 <ul>
 <li><strong>LEFT (OUTER) JOIN</strong> contains all records in the left table, with matching records from the right table if present (otherwise <code>NULL</code>).</li>
 <li><strong>RIGHT (OUTER) JOIN</strong> contains all records in the right table, with matching records from the left table if present (otherwise <code>NULL</code>).</li>
-<li><strong>FULL (OUTER) JOIN</strong> combines the results of left and right join. This is particularly useful for including rows from T1 that don't have a match in T2 as well as rows in T2 that don't have a match in T1 without needing a full-blown cross join.</li>
+<li><strong>FULL (OUTER) JOIN</strong> combines the results of left and right join. This is particularly useful for including rows from T1 that don&rsquo;t have a match in T2 as well as rows in T2 that don&rsquo;t have a match in T1 without needing a full-blown cross join.</li>
 </ul>
 <p><em>Cross join:</em></p>
 <ul>
@@ -592,7 +592,7 @@ An inner join then is like <code>SELECT * FROM table1, table2 WHERE table1.table
 <p><code>EXPLAIN sql-statement</code> constructs a query plan and estimates the costs (in terms of system resources) for executing it.</p>
 <p><code>EXPLAIN ANAYLYZE sql-statement</code> in addition executes the query and displays the time needed for planning and execution.</p>
 <p>Useful to compare the efficiency of different queries, e.g. usually using sub-queries is much faster than using <code>JOIN</code>s.</p>
-<p>When it comes to <code>ORDER BY</code>, it makes a big difference whether you look at an <strong>unindexed</strong> column, on which sorting is pretty costly (as it needs several passes on the table), or an <strong>indexed</strong> column, for which sorting comes for free because the index already gives you an order (so retrieval actually doesn't need any additional sorting). For example:</p>
+<p>When it comes to <code>ORDER BY</code>, it makes a big difference whether you look at an <strong>unindexed</strong> column, on which sorting is pretty costly (as it needs several passes on the table), or an <strong>indexed</strong> column, for which sorting comes for free because the index already gives you an order (so retrieval actually doesn&rsquo;t need any additional sorting). For example:</p>
 <pre><code>auction=# EXPLAIN ANALYZE SELECT * FROM bids ORDER BY amount;
 
                                                 QUERY PLAN                                                
