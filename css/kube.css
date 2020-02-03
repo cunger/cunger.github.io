@@ -142,10 +142,13 @@ body {
   background-color: transparent; }
 
 a {
-  color: #3794de; }
+  /* color: #3794de;  */
+  color: #02c0dd;
+}
 
 a:hover {
-  color: #f03c69; }
+  color: #f03c69;
+}
 
 h1.title, h1, h2, h3, h4, h5, h6 {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;

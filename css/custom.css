@@ -60,6 +60,7 @@ h3, .h3 {
 
 #kube-component a {
   color: #ff3366;
+  /* color: #0091a8; */
   text-decoration: none;
 }
 
