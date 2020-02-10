@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
     #top #top-brand span,
     #top #top-brand a {
       text-decoration: none;
-      color: #66b9bf;
+      color: #1f2833;
       background: none;
       text-indent: -9999px;
       width: 70px;
@@ -892,13 +892,13 @@ body.page-account #hero {
     margin-top: 0;
     margin-bottom: 8px; }
     #components h4 a {
-      color: #4f8dbc;
+      color: #1f2833;
+      border-bottom: 2px solid #66fcf1;
       text-decoration: none; }
     #components h4 a:hover {
       -moz-transition: all linear 0.2s;
       transition: all linear 0.2s;
-      color: #000;
-      text-decoration: underline; }
+      background: #66fcf1; }
   #components ul {
     margin-left: 0;
     margin-top: 24px;

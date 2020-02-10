@@ -66,8 +66,9 @@ h3, .h3 {
 }
 
 #kube-component a {
-  color: #000;
-  background: #d6fcf9;
+  color: inherit;
+  background: #eafcfb;
+  border-bottom: 2px solid #66fcf1;
   text-decoration: none;
 }
 
@@ -78,10 +79,12 @@ h3, .h3 {
 
 #contents a {
   background: none;
+  border: none;
 }
 
 #contents a:hover {
   background: none;
+  border: none;
 }
 
 li {
