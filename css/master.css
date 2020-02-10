@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
       line-height: 11px;
       background-repeat: no-repeat; }
    #top #top-brand a:hover {
-      border-bottom: 2px solid #66b9bf;
+      border-bottom: 2px solid #66fcf1;
    }
 
   #top ul {
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
       #top #top-nav-main a:hover {
         color: rgba(0, 0, 0, 0.6);
         text-decoration: none;
-        border-bottom: 2px solid #66b9bf;
+        border-bottom: 2px solid #66fcf1;
       }
     #top #top-nav-main b a,
     #top #top-nav-main span {
@@ -254,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
       top: 0;
       left: 50%;
       margin-left: -20px;
-      background: #66b9bf; }
+      background: #66fcf1; }
 
 #intro {
   margin-top: 56px;
@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6 {
     top: -68px;
     left: 50%;
     margin-left: -20px;
-    background: #66b9bf; }
+    background: #66fcf1; }
   #intro h6 {
     color: rgba(0, 0, 0, 0.5);
     font-weight: normal; }
