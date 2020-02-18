@@ -100,9 +100,29 @@
     </div>
     <div id="kube-component" class="content">
     
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
 
 
-    <p><em>Mechanical waves</em> are caused by a disturbance or vibration in matter (solid, gas, liquid, plasma). For example, sound waves are formed by vibrations in air or water. They travel through their medium by causing the molecules to bump into each other, transferring energy from one to the next. In vacuum, there is no medium to transmit mechanical waves. So sound waves, for example, cannot travel in space.</p>
+
+
+    <p>A charge creates an electric field, and a current creates a magnetic field. Also, a changing electric field induces a magnetic field and vice versa.</p>
 <p><em>Electromagnetic waves</em> are a magnetic field 
 <span>
                   
@@ -115,11 +135,114 @@
         \(E\)
     
 </span>
- generating each other. This makes them travel without a medium.</p>
+ generating each other. They&rsquo;re self-sustaining and thus can travel without a medium.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/EM-Wave_noGIF.svg/1024px-EM-Wave_noGIF.svg.png" alt="Electromagnetic wave">
 (Image source: WikiMedia)</p>
-<p>Their speed is constant in vacuum (the speed of light), but they&rsquo;re slowed down when traveling through matter.</p>
-<p>The more energy an EM wave has, the shorter its wavelength, and vice versa. See the <a href="https://eo-college.org/wp-content/uploads/2017/09/electromagnetic-spectrum-nasa.jpeg">electromagnetic spectrum</a>. High-energy EM waves, starting somewhere in the ultraviolet, are ionizing, i.e. they have enough energy that they can knock electrons out of atoms. Earth&rsquo;s atmosphere has an optical window and a radio window, and absorbs most of the other wavelengths. This shields us especially from ionizing radiation from the sun. On the other hand, the atmosphere is transparent to radio waves and thus makes radar remote sensing possible (which is largely independent of cloud coverage and rain fall, as the size of those droplets is much smaller than the wavelength).</p>
+<p><em>Mechanical waves</em> are caused by a disturbance or vibration in matter (solid, gas, liquid, plasma). For example, sound waves are formed by vibrations in air or water. They travel through their medium by causing the molecules to bump into each other, transferring energy from one to the next. In vacuum, there is no medium to transmit mechanical waves. So sound waves, for example, cannot travel in space.</p>
+<h1 id="electromagnetic-spectrum">Electromagnetic spectrum</h1>
+<p>A wave&rsquo;s <strong>frequency</strong> 
+<span>
+                  
+        \(\nu\)
+    
+</span>
+ is the number of full wavelengths 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+ that pass by a given point in space every second. Its unit is Hertz (Hz), which is equivalent to per second (
+<span>
+                  
+        \(s^{-1}\)
+    
+</span>
+).</p>
+<p>In vacuum, electromagnetic waves travel at the constant speed of light, and they&rsquo;re slowed down when traveling through matter.</p>
+
+<span>
+     
+        $$c=\lambda\nu$$
+    
+</span>
+
+<p>The more energy an EM wave has, the shorter its wavelength, and vice versa. See the <a href="https://eo-college.org/wp-content/uploads/2017/09/electromagnetic-spectrum-nasa.jpeg">electromagnetic spectrum</a>. High-energy EM waves, starting somewhere in the ultraviolet, are ionizing, i.e. they have enough energy that they can give electrons enough energy to escape their atoms, forming ions. Earth&rsquo;s atmosphere has an optical window and a radio window, and absorbs most of the other wavelengths. This shields us especially from ionizing radiation from the sun. On the other hand, the atmosphere is transparent to radio waves and thus makes radar remote sensing possible (which is largely independent of cloud coverage and rain fall, as the size of those droplets is much smaller than the wavelength).</p>
+<h1 id="stefan-boltzmann-law">Stefan-Boltzmann law</h1>
+<p>Electromagnetic radiation (<em>light</em>) is the flow of energy in the form of electromagnetic waves. All objects with a temperature above absolute zero emit energy in the form of electromagnetic radiation, across all frequencies. The relationship between radiated energy and temperature of an object is captured by the <strong>Stefan-Boltzmann Law</strong>:</p>
+
+<span>
+     
+        $$P=eA\sigma T^4$$
+    
+</span>
+
+<p>Where</p>
+<ul>
+<li>
+<span>
+                  
+        \(P\)
+    
+</span>
+ is the power radiated (energy per unit time) per unit surface area</li>
+<li>
+<span>
+                  
+        \(A\)
+    
+</span>
+ is the surface area</li>
+<li>
+<span>
+                  
+        \(T\)
+    
+</span>
+ is the temperature of the object</li>
+<li>
+<span>
+                  
+        \(e\)
+    
+</span>
+ is the emission coefficient, a measure for how good of a radiator the object is, ranging from 0 to 1 (1 for a blackbody and a function of 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+ for real bodies)</li>
+<li>
+<span>
+                  
+        \(\sigma=5.67 * 10^{-8} \frac{W}{m^2K^4}\)
+    
+</span>
+ is the Stefan-Boltzmann constant (the power per unit area emitted by a black body, i.e. an object that absorbs all energy and reflects none)</li>
+</ul>
+<p>The Stefan-Boltzmann law can also be used to calculate the net heat flux between two objects that radiate toward each other.</p>
+<h1 id="photons">Photons</h1>
+<p>Energy is emitted and absorbed in whole number multiples of 
+<span>
+                  
+        \(h\nu\)
+    
+</span>
+, where 
+<span>
+                  
+        \(h=6.626 * 10^{-34} J\)
+    
+</span>
+ is <strong>Planck&rsquo;s constant</strong>. Energy thus is <em>quantized</em>. A quantum of an electromagnetic wave is a <strong>photon</strong>. When an atom or molecule loses energy, it emits a photon that carries exactly that energy. That energy is given by:</p>
+
+<span>
+     
+        $$E=h\nu$$
+    
+</span>
+
 
 
     
