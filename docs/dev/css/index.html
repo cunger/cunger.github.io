@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.64.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -125,22 +125,22 @@ headingSelector: 'h1'
 <li><strong>Type selectors</strong> select elements by their element type.</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;p&gt;...&lt;/p&gt; */</span>
-<span style="color:#f92672">p</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
+<span style="color:#f92672">p</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 </code></pre></div><ul>
 <li><strong>Class selectors</strong> select elements based on the element&rsquo;s attribute value.</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div class=&#34;awesome&#34;&gt;...&lt;/div&gt; */</span>
-<span style="color:#111">.</span><span style="color:#75af00">awesome</span> <span style="color:#111">{</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#111">}</span>
+<span style="color:#111">.</span><span style="color:#75af00">awesome</span> <span style="color:#111">{</span><span style="color:#960050;background-color:#1e0010">...</span><span style="color:#111">}</span>
 </code></pre></div><ul>
 <li><strong>ID selectors</strong> target a unique element with a specific ID attribute value.</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div id=&#34;justme&#34;&gt;...&lt;/div&gt; */</span>
-<span style="color:#111">#</span><span style="color:#111">justme</span> <span style="color:#111">{</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#111">}</span>
+<span style="color:#111">#</span><span style="color:#111">justme</span> <span style="color:#111">{</span><span style="color:#960050;background-color:#1e0010">...</span><span style="color:#111">}</span>
 </code></pre></div><p>Combining selectors:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* targets elements of type p with class=&#34;hotdog&#34; or class=&#34;burger&#34; */</span>
 <span style="color:#f92672">p</span><span style="color:#111">.</span><span style="color:#75af00">hotdog</span><span style="color:#f92672">,</span>
 <span style="color:#f92672">p</span><span style="color:#111">.</span><span style="color:#75af00">burger</span> <span style="color:#111">{</span>
-  <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span>
+  <span style="color:#960050;background-color:#1e0010">...</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>Spaces matter!</p>
 <ul>
@@ -149,38 +149,38 @@ headingSelector: 'h1'
 </ul>
 <h3 id="descendant-selectors">Descendant selectors</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Any descendant */</span>
-<span style="color:#f92672">header</span> <span style="color:#f92672">a</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span> <span style="color:#75715e">/* (targets elements of type a within elements of type header) */</span>
+<span style="color:#f92672">header</span> <span style="color:#f92672">a</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span> <span style="color:#75715e">/* (targets elements of type a within elements of type header) */</span>
 
 <span style="color:#75715e">/* Direct child */</span>
-<span style="color:#f92672">header</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">a</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span> <span style="color:#75715e">/* (targets elements of type a that are direct children of elements of type header) */</span>
+<span style="color:#f92672">header</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">a</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span> <span style="color:#75715e">/* (targets elements of type a that are direct children of elements of type header) */</span>
 
 <span style="color:#75715e">/* Sibling */</span>
-<span style="color:#f92672">header</span> <span style="color:#f92672">~</span> <span style="color:#f92672">p</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span> <span style="color:#75715e">/* (targets elements of type p that are siblings of elements of type header) */</span>
+<span style="color:#f92672">header</span> <span style="color:#f92672">~</span> <span style="color:#f92672">p</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span> <span style="color:#75715e">/* (targets elements of type p that are siblings of elements of type header) */</span>
 <span style="color:#75715e">/* Adjacent sibling */</span>
-<span style="color:#f92672">header</span> <span style="color:#f92672">+</span> <span style="color:#f92672">p</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
+<span style="color:#f92672">header</span> <span style="color:#f92672">+</span> <span style="color:#f92672">p</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 <span style="color:#75715e">/* Note that these selectors select p siblings following the header element,
 </span><span style="color:#75715e">   but do not select p elements preceding it. */</span>
 </code></pre></div><h3 id="attribute-selectors">Attribute selectors</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Element with attribute present, regardless of the value */</span>
-<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">target</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
+<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">target</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 <span style="color:#75715e">/* Element with attribute with a particular value */</span>
-<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;#&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
+<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;#&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 <span style="color:#75715e">/* Element with attribute value containing a given value */</span>
-<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">*</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;login&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
+<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">*=</span><span style="color:#d88200">&#34;login&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 <span style="color:#75715e">/* Element with attribute value starting with a given value */</span>
-<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">^</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;https://&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
+<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">^=</span><span style="color:#d88200">&#34;https://&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 <span style="color:#75715e">/* Element with attribute value ending with a given value */</span>
-<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">$</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;.pdf&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
+<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">$=</span><span style="color:#d88200">&#34;.pdf&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 
 <span style="color:#75715e">/* Combination: targets links of form http://.../folder/...pdf */</span>
-<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">^</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;http://&#34;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">*</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;/folder/&#34;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">$</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;.pdf&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">^=</span><span style="color:#d88200">&#34;http://&#34;</span><span style="color:#f92672">][</span><span style="color:#f92672">href</span><span style="color:#f92672">*=</span><span style="color:#d88200">&#34;/folder/&#34;</span><span style="color:#f92672">][</span><span style="color:#f92672">href</span><span style="color:#f92672">$=</span><span style="color:#d88200">&#34;.pdf&#34;</span><span style="color:#f92672">]</span>
 
 <span style="color:#75715e">/* Element with one of space-separated attribute values matching */</span>
-<span style="color:#f92672">div</span><span style="color:#f92672">[</span><span style="color:#f92672">role</span><span style="color:#f92672">~</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;tag&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#111">}</span>
+<span style="color:#f92672">div</span><span style="color:#f92672">[</span><span style="color:#f92672">role</span><span style="color:#f92672">~=</span><span style="color:#d88200">&#34;tag&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 <span style="color:#75715e">/* e.g. matches &lt;div role=&#34;tag button&#34;&gt; */</span>
 
 <span style="color:#75715e">/* Element with one part of a hyphenated value matching */</span>
-<span style="color:#f92672">div</span><span style="color:#f92672">[</span><span style="color:#f92672">lang</span><span style="color:#f92672">|</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;en&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">div</span><span style="color:#f92672">[</span><span style="color:#f92672">lang</span><span style="color:#f92672">|=</span><span style="color:#d88200">&#34;en&#34;</span><span style="color:#f92672">]</span>
 <span style="color:#75715e">/* e.g. matches &lt;div lang=&#34;en-US&#34;&gt; */</span>
 </code></pre></div><h2 id="the-cascade">The cascade</h2>
 <p>The cascade determines which properties apply to which elements. It allows styles to be added and overriden.</p>
@@ -244,9 +244,9 @@ if all else is equal, the rule later in the source code is applied</li>
 <p>It needs to have <code>content</code> defined in order to be rendered, even if only <code>content: &quot;&quot;;</code>.
 Also, pseudo-elements don&rsquo;t work on replace elements (e.g. <code>img</code> and form elements, such as <code>input</code>, <code>button</code>, <code>textarea</code>, <code>select</code>).</p>
 <p><code>:n-th*(...)</code> pseudo elements allow for specifying a counter using the variable <code>n</code>, which will count up (i.e. <code>0, 1, 2, ...</code>), or <code>-n</code>, which will count down (i.e. <code>0, -1, -2, ...</code>). Examples:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*</span><span style="color:#f92672">(</span><span style="color:#f92672">2n</span><span style="color:#f92672">)</span>   <span style="color:#75715e">/* = element:n-th*(even)  */</span>
-<span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*</span><span style="color:#f92672">(</span><span style="color:#f92672">2n</span><span style="color:#f92672">+</span><span style="color:#f92672">1</span><span style="color:#f92672">)</span> <span style="color:#75715e">/* = element:n-th*(odd)  */</span>
-<span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*</span><span style="color:#f92672">(</span><span style="color:#f92672">-n</span><span style="color:#f92672">+</span><span style="color:#f92672">2</span><span style="color:#f92672">)</span> <span style="color:#75715e">/* selects the first two elements (n =&gt; 2, 1, 0, -1, -2, ...) */</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*(</span><span style="color:#f92672">2n</span><span style="color:#f92672">)</span>   <span style="color:#75715e">/* = element:n-th*(even)  */</span>
+<span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*(</span><span style="color:#f92672">2n</span><span style="color:#f92672">+</span><span style="color:#f92672">1</span><span style="color:#f92672">)</span> <span style="color:#75715e">/* = element:n-th*(odd)  */</span>
+<span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*(</span><span style="color:#f92672">-n</span><span style="color:#f92672">+</span><span style="color:#f92672">2</span><span style="color:#f92672">)</span> <span style="color:#75715e">/* selects the first two elements (n =&gt; 2, 1, 0, -1, -2, ...) */</span>
 </code></pre></div><h2 id="colors">Colors</h2>
 <ul>
 <li>keyword (<code>black</code>, <code>white</code>, <code>gray</code>, <code>silver</code>, <code>maroon</code>, etc., see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">MDN &gt; color-value</a>)</li>
@@ -375,36 +375,36 @@ Exceptions are <code>inline-block</code> and floated elements.</li>
 <p>See: <a href="https://css-tricks.com/all-about-floats/">https://css-tricks.com/all-about-floats/</a></p>
 <p>The <code>float</code> property removes an element from the <em>normal</em> flow of a document, and moves it to the left or right edge of its parent element (or the page if there is no parent). It requires an element to be a block element, and will adapt its <code>display</code> value accordingly if it isn&rsquo;t.</p>
 <p>Non-floated elements appearing after the floated ones will be positioned in the normal flow, and ignore the floated ones - only their content wraps around the floated ones. Example:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">nav</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">ul</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>Home<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>Kapitel 1<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>Kapitel 2<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>Kapitel 3<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>...<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
-<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">nav</span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">nav</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
+    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Home<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Kapitel 1<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Kapitel 2<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Kapitel 3<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+    <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>...<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;/</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;/</span><span style="color:#f92672">nav</span><span style="color:#111">&gt;</span>
 
-<span style="color:#111">&lt;</span><span style="color:#f92672">main</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111"></span><span style="color:#111">&gt;</span>...<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111"></span><span style="color:#111">&gt;</span>...<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111"></span><span style="color:#111">&gt;</span>...<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
-<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">main</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;</span><span style="color:#f92672">main</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>...<span style="color:#111">&lt;/</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>...<span style="color:#111">&lt;/</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>...<span style="color:#111">&lt;/</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;/</span><span style="color:#f92672">main</span><span style="color:#111">&gt;</span>
 </code></pre></div><p>Before floating <code>nav</code> to the left:
 <img src="/images/docs/float-left.png" alt="nav and main appear below each other">
 After floating <code>nav</code> to the left:
 <img src="/images/docs/float-left-not.png" alt="the content of main wraps around nav"></p>
 <p>In order for a non-floated box to behave as if the floated one was in the normal flow, it has to clear the float with <code>clear: both | left | right</code>.</p>
 <p>Note that when floating an element, order in the HTML document matters. If, for example, an image is first removed from the normal flow, then the following text will wrap around it (see <a href="https://alistapart.com/d/css-floats-101/example_h.html):">https://alistapart.com/d/css-floats-101/example_h.html):</a></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">div</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">img</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">img</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
 </code></pre></div><p>But if the text is first set and the image is removed from the normal flow afterwards, it will affect the following elements but not the text (see <a href="https://alistapart.com/d/css-floats-101/example_i.html):">https://alistapart.com/d/css-floats-101/example_i.html):</a></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">div</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">img</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">img</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
 </code></pre></div><p>Also note that since floated elements are not in the normal flow, they don&rsquo;t affect the size of their parent element. Therefore containers with only floated elements in them, collapse - as far as the container is concerned, it&rsquo;s empty. That&rsquo;s also the reason why the image in <a href="https://alistapart.com/d/css-floats-101/example_i.html">the second example</a> sticks out of the box.</p>
 <p>In order to contain floats, the containing element needs an element that clears the float. This can be done using pseudo-elements (see <a href="http://nicolasgallagher.com/micro-clearfix-hack/"><em>micro clearfix</em></a>):</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">group</span><span style="color:#111">::</span><span style="color:#75af00">before</span><span style="color:#f92672">,</span>
@@ -424,12 +424,12 @@ After floating <code>nav</code> to the left:
 Since the margin area takes the background color of the containing element, this gives the impression of two columns.</p>
 <h2 id="horizontal-lists-with-floats">Horizontal lists with floats</h2>
 <p>Each floated box is taken out of the normal flow and floated as far up and left/right as possible, so consecutive floated boxes will appear next to each other (until they fill the width of their containing element, then they begin to wrap, called <em>float drop</em>).</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">ul</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>Item 1<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>Item 2<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>Item 3<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-  <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111"></span><span style="color:#111">&gt;</span>Item 4<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
-<span style="color:#111">&lt;</span><span style="color:#111">/</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Item 1<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Item 2<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Item 3<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+  <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Item 4<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;/</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
 </code></pre></div><p>When applying <code>float: left</code> to <code>li</code>:
 <img src="/images/docs/float-left-li.png" alt="List items arranged next to each other horizontally"></p>
 <h1 id="positioning">Positioning</h1>
@@ -475,7 +475,7 @@ Without any of the properties <code>left</code>, <code>right</code>, <code>top</
   <span style="color:#00a8c8">position</span><span style="color:#111">:</span> <span style="color:#00a8c8">fixed</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">top</span><span style="color:#111">:</span> <span style="color:#ae81ff">50</span><span style="color:#00a8c8">%</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">left</span><span style="color:#111">:</span> <span style="color:#ae81ff">50</span><span style="color:#00a8c8">%</span><span style="color:#111">;</span>
-  <span style="color:#00a8c8">transform</span><span style="color:#111">:</span> <span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">-50</span><span style="color:#00a8c8">%</span><span style="color:#111">,</span> <span style="color:#ae81ff">-50</span><span style="color:#00a8c8">%</span><span style="color:#111">)</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">transform</span><span style="color:#111">:</span> <span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">-50</span><span style="color:#00a8c8">%</span><span style="color:#111">,</span> <span style="color:#ae81ff">-50</span><span style="color:#00a8c8">%</span><span style="color:#111">);</span>
 <span style="color:#111">}</span>
 </code></pre></div><h2 id="others">Others</h2>
 <p>For horizontal alignment of elements, changing them to <code>inline-block</code>s is usually sufficient. Use floats only when content is supposed to wrap around an element.</p>
@@ -490,12 +490,12 @@ Without any of the properties <code>left</code>, <code>right</code>, <code>top</
 <p><em>Mobile first:</em> Write CSS for mobile version and use media queries to add rules (and images, etc.) for larger screens. This way, load time and bandwidth use on mobile devices can be minimized.</p>
 <h2 id="importing-css-with-media-queries">Importing CSS with media queries</h2>
 <p>HTML:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">link</span> <span style="color:#75af00">href</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;file.css&#34;</span> <span style="color:#75af00">rel</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;stylesheet&#34;</span> <span style="color:#75af00">media</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;media-query&#34;</span><span style="color:#111"></span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">link</span> <span style="color:#75af00">href</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;file.css&#34;</span> <span style="color:#75af00">rel</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;stylesheet&#34;</span> <span style="color:#75af00">media</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;media-query&#34;</span><span style="color:#111">&gt;</span>
 </code></pre></div><p>CSS:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">@</span><span style="color:#00a8c8">import</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#d88200">&#39;file.css&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">media-query</span><span style="color:#111">;</span>
 
 <span style="color:#111">@</span><span style="color:#00a8c8">media</span> <span style="color:#f92672">media-query</span> <span style="color:#111">{</span>
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+  <span style="color:#f92672">...</span>
 <span style="color:#111">}</span>
 </code></pre></div><h2 id="syntax">Syntax</h2>
 <pre><code>media-query := (logic)? media and (media features)
@@ -522,7 +522,7 @@ And analogously for <code>height</code>.</p>
 
 <span style="color:#111">@</span><span style="color:#00a8c8">media</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">400px</span><span style="color:#f92672">)</span> <span style="color:#111">{</span>
   <span style="color:#f92672">h1</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#39;large-image.jpg&#39;</span><span style="color:#111">)</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#39;large-image.jpg&#39;</span><span style="color:#111">);</span>
   <span style="color:#111">}</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>Expressions can be composed with <code>and</code> and <code>,</code> (meaning or). For example:</p>
@@ -566,7 +566,7 @@ And analogously for <code>height</code>.</p>
 <p>Not all browsers support <code>rgba</code> colors (e.g. IE8), so provide a safe fallback as well.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#ae81ff">#b2b2b2</span><span style="color:#111">;</span>
-  <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#111">rgba</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">.3</span><span style="color:#111">)</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#111">rgba</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">.3</span><span style="color:#111">);</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>Use <code>border-radius: 100%;</code> to create circular images.</p>
 <p>Scaling an image when viewport gets smaller than image size:</p>
@@ -578,7 +578,7 @@ And analogously for <code>height</code>.</p>
 <p>Include the sprite sheet as background image and shift it using
 <code>background-position: &lt;pixels shifted right&gt; &lt;pixels shifted down&gt;;</code>. For example:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">button</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;button_sprite.png&#34;</span><span style="color:#111">)</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;button_sprite.png&#34;</span><span style="color:#111">);</span>
   <span style="color:#00a8c8">height</span><span style="color:#111">:</span> <span style="color:#ae81ff">20</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">width</span><span style="color:#111">:</span> <span style="color:#ae81ff">20</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
@@ -612,7 +612,7 @@ And analogously for <code>height</code>.</p>
   <span style="color:#00a8c8">position</span><span style="color:#111">:</span> <span style="color:#00a8c8">fixed</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">top</span><span style="color:#111">:</span> <span style="color:#ae81ff">50</span><span style="color:#00a8c8">%</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">left</span><span style="color:#111">:</span> <span style="color:#ae81ff">50</span><span style="color:#00a8c8">%</span><span style="color:#111">;</span>
-  <span style="color:#00a8c8">transform</span><span style="color:#111">:</span> <span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">-50</span><span style="color:#00a8c8">%</span><span style="color:#111">,</span> <span style="color:#ae81ff">-50</span><span style="color:#00a8c8">%</span><span style="color:#111">)</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">transform</span><span style="color:#111">:</span> <span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">-50</span><span style="color:#00a8c8">%</span><span style="color:#111">,</span> <span style="color:#ae81ff">-50</span><span style="color:#00a8c8">%</span><span style="color:#111">);</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>For more comprehensive information, see <a href="https://css-tricks.com/centering-css-complete-guide/">CSS Tricks</a> and <a href="https://www.w3.org/Style/Examples/007/center.en.html">W3C</a>.</p>
 <h2 id="containing-floats-aka-clearfix">Containing floats (aka clearfix)</h2>
@@ -633,11 +633,11 @@ And analogously for <code>height</code>.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* How to style list elements with a custom style (with fallback bullets) */</span>
 <span style="color:#f92672">ul</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">list-style-type</span><span style="color:#111">:</span> <span style="color:#00a8c8">disc</span><span style="color:#111">;</span>
-  <span style="color:#00a8c8">list-style-image</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;arrow.png&#34;</span><span style="color:#111">)</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">list-style-image</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;arrow.png&#34;</span><span style="color:#111">);</span>
 <span style="color:#111">}</span>
 <span style="color:#75715e">/* or short-hand */</span>
 <span style="color:#f92672">ul</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">list-style</span><span style="color:#111">:</span> <span style="color:#00a8c8">disc</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;arrow.png&#34;</span><span style="color:#111">)</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">list-style</span><span style="color:#111">:</span> <span style="color:#00a8c8">disc</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;arrow.png&#34;</span><span style="color:#111">);</span>
 <span style="color:#111">}</span>
 
 <span style="color:#75715e">/* Alternative, with a bit more control on positioning and spaces */</span>
@@ -645,7 +645,7 @@ And analogously for <code>height</code>.</p>
   <span style="color:#00a8c8">list-style</span><span style="color:#111">:</span> <span style="color:#00a8c8">none</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
 <span style="color:#f92672">ul</span> <span style="color:#f92672">li</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">background-image</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;arrow.png&#34;</span><span style="color:#111">)</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">background-image</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;arrow.png&#34;</span><span style="color:#111">);</span>
   <span style="color:#00a8c8">background-repeat</span><span style="color:#111">:</span> <span style="color:#00a8c8">no-repeat</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
 

@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.64.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -100,9 +100,31 @@
     </div>
     <div id="kube-component" class="content">
     
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
 
 
-    <p><strong>Code:</strong> <a href="https://github.com/cunger/simulacron/blob/master/complex.exs">complex.exs</a></p>
+
+
+    <blockquote>
+<p>[Complex numbers] are essential to quantum physics, electromagnetism, and many more fields. They are naturally suited to describe anything that turns, waves, ripples, combines or interferes, with itself or with others. [&hellip;] Whenever we&rsquo;re describing wavelike phenomena, whether it&rsquo;s sound, electricity or subatomic particles, we&rsquo;re also interested in how the wave evolves and changes. Complex operations are eminently suited for this, because they naturally take place on circles. Numbers that oppose can cancel out, numbers in the same direction will amplify each other, just like two waves do when they meet. (<a href="http://acko.net/blog/how-to-fold-a-julia-fractal/">http://acko.net/blog/how-to-fold-a-julia-fractal/</a>)</p>
+</blockquote>
 <p>A complex number 
 <span>
                   
@@ -241,6 +263,7 @@ with magnitude
 <p>Figure from the <a href="http://www.feynmanlectures.caltech.edu/I_22.html">Feynman lectures on algebra</a>:</p>
 <p><img src="/images/docs/complex-number.png" alt="Unification of algebra and geometry"></p>
 <h1 id="arithmetic-operations">Arithmetic operations</h1>
+<p><strong>Code:</strong> <a href="https://github.com/cunger/simulacron/blob/master/complex.exs">complex.exs</a></p>
 <p>While addition is straight-forward in Cartesian form, most operations are much more intuitive in polar form, as they constitute transformations in the Cartesian plane.</p>
 <h3 id="addition">Addition</h3>
 <ul>
