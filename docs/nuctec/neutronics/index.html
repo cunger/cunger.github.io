@@ -150,9 +150,9 @@ headingSelector: 'h1'
 <h1 id="neutron-interactions">Neutron interactions</h1>
 <p>Since neutrons have no charge, they pass easily through electron clouds and directly interact with nuclei. Those interactions can be thought of as two steps: first the neutron is absorbed by the nucleus, forming a compound nucleus, which then decays.</p>
 <p>There are two main kinds of interactions: scattering and absorption.</p>
-<p><strong>Elastic scattering</strong> (n,n): The nucleus is in its ground state and is left unchanged. Q=0.</p>
-<p><strong>Inelastic scattering</strong> (n,n&rsquo;): The nucleus is left in an excited state. It then returns to its ground state by gamma decay.</p>
-<p>In general, #scattering refers to nuclear reactions in which the outgoing particle is the same as the incident particle.</p>
+<p><strong>Elastic scattering</strong> (n,n): The neutron and nucleus are left unchanged, no energy is transferred. Q=0. It can be understood as a collision where the neutron bounces off the nucleus, and is the only interaction that is not considered to form a compound nucleus.</p>
+<p><strong>Inelastic scattering</strong> (n,n&rsquo;): The neutron penetrates the nucleus, forming a compound nucleus in an excited state. This compound nucleus returns to its ground state by gamma decay, emitting a neutron.</p>
+<p>In general, scattering refers to nuclear reactions in which the outgoing particle is the same as the incident particle.</p>
 <p><strong>Radioactive capture</strong> (n,
 <span>
                   
@@ -197,9 +197,30 @@ This can also happen spontaneously, but it&rsquo;s unlikely. (Californium has an
 </span>
 
 <p>The energy of the resulting neutrons is a probability distribution, with the most likely energy ~700 keV and the average energy ~2 MeV. The are, however, too high-energy to engage in further fission events. In a reactor, they thus need to be slowed down by a moderator like water, where neutrons successively lose energy through elastic scattering.</p>
-<p><strong>Fission vs fusion:</strong>
+<p><strong>Fission vs fusion and the iron valley:</strong>
 <img src="/images/docs/ironvalley.png" alt="Iron valley">
 (Picture taken from MITx 22.011x course slides.)</p>
+<h1 id="cross-sections">Cross-sections</h1>
+<p>Cross-sections characterize the probability of a neutron interaction, quantified in terms of characteristic target areas (where a larger area means a larger probability of interaction).</p>
+<p>The <strong>microscopic cross-section</strong> 
+<span>
+                  
+        \(\sigma\)
+    
+</span>
+ specifies the probability of a particular neutron interaction with a target nucleus, depending on the energy of the neutron.</p>
+<p>The <strong>macroscopic cross-section</strong> 
+<span>
+                  
+        \(\Sigma\)
+    
+</span>
+ specifies this probability of a neutron interaction for the whole medium.
+It is considered per unit path length that the neutron travels. The average distance a neutron travels before interacting with a nucleus is its <strong>mean free path</strong>.</p>
+<p><strong>Resonance region:</strong></p>
+<blockquote>
+<p>When the sum of the kinetic energy of the neutron and the binding energy correspond to an energy level of the compound nucleus, the neutron cross section exhibits a spike in its probability of interaction which are called resonances.</p>
+</blockquote>
 
 
     
