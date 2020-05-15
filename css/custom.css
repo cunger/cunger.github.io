@@ -2,7 +2,17 @@
 
 body, html {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background-color: #fcfcfc;
+}
+
+main {
+  flex: 1;
 }
 
 #kube-component {
