@@ -1035,6 +1035,7 @@ tr.border-none td {
   margin: 0;
   padding: 28px 28px;
   font-size: 13px;
+  text-align: center;
   color: rgba(0, 0, 0, 0.5); }
   #footer p {
     order: 1; }
