@@ -122,13 +122,26 @@ headingSelector: 'h1'
 
 
 
-    <p>Atoms consist of a nucleus of protons (p+) and neutrons (n), called <em>nucleons</em>, together with surrounding electrons (e-).</p>
-<p>Elements are determined by their number of protons.</p>
-<ul>
-<li>A <em>neutral atom</em> has the same number of protons and electrons, thus has an overall net charge of 0.</li>
-<li>An <em>ion</em> has a different number of electrons, and thus has a positive or negative net charge. Ionizing radiation is anything that has enough energy to eject an electron from an atom, thus forming an ion.</li>
-<li>An <em>isotope</em> has a different number of neutrons, and thus has a different mass.</li>
-</ul>
+    <h1 id="composition">Composition</h1>
+<p>Atoms consist of a nucleus of protons (
+<span>
+                  
+        \({}^1_1p\)
+    
+</span>
+) and neutrons (
+<span>
+                  
+        \({}^1_0n\)
+    
+</span>
+), called <em>nucleons</em>, together with surrounding electrons (
+<span>
+                  
+        \({}^{\ \ \ 0}_{-1}e\)
+    
+</span>
+).</p>
 <p><strong>Notation:</strong> 
 <span>
                   
@@ -172,13 +185,29 @@ headingSelector: 'h1'
 </span>
  the overall charge of the atom</li>
 </ul>
-<p>For example, 
+<p>For example:</p>
+<ul>
+<li>
+<span>
+                  
+        \({}^1_1H\)
+    
+</span>
+ is a neutral Hydrogen atom consisting of 1 proton and 1 electron.</li>
+<li>
 <span>
                   
         \({}^4_2He^{&#43;}\)
     
 </span>
- is a Helium atom with 2 protons, 2 neutrons, and 1 electron.</p>
+ is a Helium atom with 2 protons, 2 neutrons, and 1 electron.</li>
+</ul>
+<p>Elements are determined by their number of protons.</p>
+<ul>
+<li>A <strong>neutral atom</strong> has the same number of protons and electrons, thus has an overall net charge of 0.</li>
+<li>An <strong>ion</strong> has a different number of electrons, and thus has a positive or negative net charge. Ionizing radiation is anything that has enough energy to eject an electron from an atom, thus forming an ion.</li>
+<li>An <strong>isotope</strong> has a different number of neutrons, and thus has a different mass.</li>
+</ul>
 <p>Nuclei are quantum mechanical systems, thus can be found in different energy states. 
 <span>
                   
@@ -192,17 +221,32 @@ headingSelector: 'h1'
     
 </span>
  denotes an <em>excited state</em> (with more energy). Long-lived excited states are called <em>isomeric states</em>.</p>
-<h1 id="electrical-charge-and-rest-mass">Electrical charge and rest mass</h1>
+<h1 id="electrical-charge">Electrical charge</h1>
 <p>Particles with different charge are subject to electrostatic attraction, particles with like charge are subject to electrostatic repulsion.</p>
-<p>Most protons have a positive charge, and most electrons have a negative charge. (Positive electrons e+ are called <em>positrons</em> and are relatively rare.)</p>
+<p>Most protons p+ have a positive charge, and most electrons e- have a negative charge. (Positive electrons e+ are called <em>positrons</em> and are relatively rare.)</p>
+<h1 id="mass">Mass</h1>
 <p>The <em>atomic weight</em> of an atom is defined as the mass of the neutral atom relative to the mass of a neutral carbon-12 atom (the most common isotope of carbon). Since it is a ratio, it is unitless, specified in terms atomic unit masses <code>amu</code>.</p>
 <pre><code>mass_proton   = 1.007276 amu
 mass_neutron  = 1.008665 amu
 mass_electron = 0.000549 amu
+</code></pre><pre><code>rest_mass(electron) = 9.1093837015e−31 kg
+rest_mass(proton)   = 1.67262e−27 kg
+rest_mass(neutron)  = 1.67493e−27 kg
 </code></pre><p>The actual mass of an atom is a bit smaller than the sum of its particles. This mass defect is the atom&rsquo;s binding energy - the energy needed to separate the particles in the nucleus.</p>
 <h1 id="energy">Energy</h1>
 <p>The electrons and nucleons in an atom can be in different states. The <em>ground state</em> is the state of lowest energy and constitutes the one in which the atom is normally found. When an atom possesses more energy than its ground state energy, it is in an <em>excited state</em>.</p>
 <p>Atoms do not remain in an excited state indefinitely, they will return to their ground state, usually by emitting a photon.</p>
+<h2 id="mass-defect-and-binding-energy">Mass defect and binding energy</h2>
+<p>The <em>mass defect</em> is the difference between the sum of the masses of all nucleons and the observed mass of the nucleus. It corresponds to the <em>binding energy</em> in the nucleus. That is, some of the mass of the nucleons was released as binding energy when the nucleus was formed.</p>
+<p><strong>Binding energy</strong> 
+<span>
+                  
+        \(B(A,Z) = (Z\times m_\text{proton} &#43; (A-Z)\times m_\text{neutron} - m_\text{atomic}(A,Z)) c^2\)
+    
+</span>
+</p>
+<p>Energy release in nuclear reactions happens on an MeV scale, while chemical reactions release energy on an eV scale.
+In order to raise the (kinetic) energy of a particle in the MeV range, we thus need particle accelerators (as chemical heating could raise the kinetic energy only in the eV range).</p>
 <h1 id="stability">Stability</h1>
 <p>Elements with 
 <span>
