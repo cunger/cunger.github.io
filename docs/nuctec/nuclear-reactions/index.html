@@ -199,20 +199,25 @@ headingSelector: 'h1'
     
 </span>
 , is very small compared to the other kinetic energies, and thus can be neglected.</p>
-<p>So a resulting energy surplus has to come from either the initial kinetic energy of the particle or from a conversion of mass to energy.</p>
-<p>[tbd]</p>
+<p>So a resulting energy surplus has to come from either the initial kinetic energy of the particle or from a conversion of mass to energy. And the Q-value is the difference in mass (or kinetic energy) between before and after the reaction:</p>
 
 <span>
      
-        $$Q=((m_a &#43; m_A) - (m_b &#43; m_B))\,c^2$$
+        $$Q=((m_a &#43; m_A) - (m_b &#43; m_B))\,c^2\ \text{[amu]}$$
     
 </span>
 
-<p>Or, when using the conversion factor (cf. <a href="/docs/energy">mass-energy equivalence</a>):</p>
+<p>Or, using the conversion factor 1 amu = 943.49 
+<span>
+                  
+        \(\frac{\text{MeV}}{c^2} \)
+    
+</span>
+:</p>
 
 <span>
      
-        $$Q=((m_a &#43; m_A) - (m_b &#43; m_B))\,931.49\,\text{MeV}$$
+        $$Q=((m_a &#43; m_A) - (m_b &#43; m_B))\time 931.49\ \text{[MeV]}$$
     
 </span>
 
@@ -223,6 +228,16 @@ headingSelector: 'h1'
     
 </span>
  can be both the mass of the nuclei and the mass of the neutral atoms (be aware which one, because it does make a difference).</p>
+<p>The Q-value can also be computed on the basis of the binding energies:</p>
+
+<span>
+     
+        $$Q=((BE_a &#43; BE_A) - (BE_b &#43; BE_B)) \text{[MeV]}$$
+    
+</span>
+
+<p>(Note that the binding energy of a neutron is 0, as it is not bound anywhere.)</p>
+<p>If the binding energy of the product nuclei is larger than that of the initial nucleus, i.e. when the reaction produces a more stable configuration, energy is released.</p>
 <p>When 
 <span>
                   
@@ -237,26 +252,20 @@ headingSelector: 'h1'
     
 </span>
  is negative, there is a net decrease in energy; the reaction is <strong>endothermic</strong> (kinetic energy was converted into mass).</p>
-<p>
+<p>And since the reaction results have equal (though opposite) momentum, and since momentum is 
 <span>
                   
-        \(Q\)
+        \(mv\)
     
 </span>
- can also be defined in terms of binding energy 
+, we also have:</p>
+
 <span>
-                  
-        \(BE\)
-    
-</span>
-, as: 
-<span>
-                  
-        \(Q=(BE_B &#43; BE_Bb) - (BE_A &#43; BE_a)\)
+     
+        $$m_b E_{b,\text{kin}} = m_B E_{B,\text{kin}}$$
     
 </span>
 
-So if the binding energy of the product nuclei is larger than that of the initial nucleus, i.e. when the reaction produces a more stable configuration, energy is released.</p>
 <h1 id="decay">Decay</h1>
 <p>Emitted particles are referred to by their Greek letters when they come from the nucleus. So its origin from the nucleus is what what makes Helium an alpha particle, what makes an electron or positron a beta particle, and what makes photons gamma rays.</p>
 <h2 id="alpha-decay">Alpha decay</h2>
@@ -297,7 +306,7 @@ So if the binding energy of the product nuclei is larger than that of the initia
 (The y-axis is released energy, the x-axis is atomic number Z. Arrow to the left means decreasing the number of protons.)</p>
 <h2 id="beta-decay">Beta decay</h2>
 <p>Beta decay comes in two flavors, with beta particles being electrons and positrons from the nucleus.</p>
-<h2 id="beta-minus-hahahugoshortcode-s22-hbhb-decay">Beta minus (
+<h2 id="beta-minus-hahahugoshortcode-s23-hbhb-decay">Beta minus (
 <span>
                   
         \(\beta^-\)
@@ -323,7 +332,7 @@ has a positive charge but is very quick in capturing an electron to become neutr
 <p><img src="/images/docs/decay_betaminus_b12.png" alt="Beta minus decay">
 <img src="/images/docs/decay_betaminus_c14.png" alt="Beta minus decay"></p>
 <p>(Arrow to the right means increase of protons.)</p>
-<h2 id="beta-plus-hahahugoshortcode-s25-hbhb-decay">Beta plus (
+<h2 id="beta-plus-hahahugoshortcode-s26-hbhb-decay">Beta plus (
 <span>
                   
         \(\beta^&#43;\)
