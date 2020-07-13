@@ -226,18 +226,27 @@ headingSelector: 'h1'
 <p>Most protons p+ have a positive charge, and most electrons e- have a negative charge. (Positive electrons e+ are called <em>positrons</em> and are relatively rare.)</p>
 <h1 id="mass">Mass</h1>
 <p>The <em>atomic weight</em> of an atom is defined as the mass of the neutral atom relative to the mass of a neutral carbon-12 atom (the most common isotope of carbon). Since it is a ratio, it is unitless, specified in terms atomic unit masses <code>amu</code>.</p>
-<pre><code>mass_proton   = 1.007276 amu
-mass_neutron  = 1.008665 amu
-mass_electron = 0.000549 amu
-</code></pre><pre><code>rest_mass(electron) = 9.1093837015e−31 kg
-rest_mass(proton)   = 1.67262e−27 kg
-rest_mass(neutron)  = 1.67493e−27 kg
-</code></pre><p>The actual mass of an atom is a bit smaller than the sum of its particles. This mass defect is the atom&rsquo;s binding energy - the energy needed to separate the particles in the nucleus.</p>
+<pre><code>mass_proton   = 1.0072766   amu = 938.256 MeV
+mass_neutron  = 1.0086654   amu = 939.550 MeV
+mass_electron = 0.000548597 amu = 0.511006 MeV
+</code></pre><p>The actual mass of an atom is a bit smaller than the sum of its particles. This mass defect (
+<span>
+                  
+        \(\Delta = m_\text{atomic} - A\)
+    
+</span>
+) is the atom&rsquo;s binding energy, see the section below.</p>
 <h1 id="energy">Energy</h1>
 <p>The electrons and nucleons in an atom can be in different states. The <em>ground state</em> is the state of lowest energy and constitutes the one in which the atom is normally found. When an atom possesses more energy than its ground state energy, it is in an <em>excited state</em>.</p>
 <p>Atoms do not remain in an excited state indefinitely, they will return to their ground state, usually by emitting a photon.</p>
 <h2 id="mass-defect-and-binding-energy">Mass defect and binding energy</h2>
-<p>The <em>mass defect</em> is the difference between the sum of the masses of all nucleons (greater) and the observed mass of the nucleus (smaller). This difference corresponds to the <em>binding energy</em> in the nucleus. That is, some of the mass of the nucleons was converted to binding energy when the nucleus was formed.</p>
+<p>The <em>mass defect</em> (
+<span>
+                  
+        \(\Delta = m_\text{atomic} - A\)
+    
+</span>
+) is the difference between the sum of the masses of all nucleons (greater) and the observed mass of the nucleus (smaller). This difference corresponds to the <em>binding energy</em> in the nucleus. That is, some of the mass of the nucleons was converted to binding energy when the nucleus was formed, and is required in order to separate the nucleons again.</p>
 <p><strong>Binding energy:</strong></p>
 
 <span>
@@ -260,14 +269,28 @@ rest_mass(neutron)  = 1.67493e−27 kg
     
 </span>
 
+<p>Note that binding energy and atomic mass are negatively related, i.e. the higher the binding energy of a nucleus, the lower its mass, and vice versa.</p>
 <p>Energy release in nuclear reactions happens on an MeV scale, while chemical reactions release energy on an eV scale.
 In order to raise the (kinetic) energy of a particle in the MeV range, we thus need particle accelerators (as chemical heating could raise the kinetic energy only in the eV range).</p>
-<p><img src="https://i.pinimg.com/originals/8b/e9/35/8be935dc4f331a4252f988b17cf80d17.gif" alt="Binding energy per nucleon"></p>
+<p><img src="/images/docs/bindingenergy.gif" alt="Binding energy per nucleon"></p>
 <p>From the right towards iron, fission reactions release binding energy.
 From the left towards iron, fusion reactions release binding energy.</p>
 <h1 id="stability">Stability</h1>
-<p>The stability of a nucleus depends, among others, on the number of nuclei and the ratio of protons vs neutrons.
-Also, the more binding energy a nucleus has, the more stable it is.</p>
+<p>The stability of a nucleus depends, among others, on the number of nuclei and the ratio of protons vs neutrons, including even vs odd numbers of protons and neutrons.
+Also, the more binding energy a nucleus has, the more stable it is.
+(On average, a mass defect 
+<span>
+                  
+        \(\Delta &gt; 0\)
+    
+</span>
+ means the nucleus is stable, while a mass defect 
+<span>
+                  
+        \(\Delta &lt; 0\)
+    
+</span>
+ means the nucleus is unstable.)</p>
 <p>Unstable elements decay (usually in a decay chain) in order to reach the most stable configuration.</p>
 <p>Elements with 
 <span>
@@ -281,7 +304,7 @@ Also, the more binding energy a nucleus has, the more stable it is.</p>
         \(\frac{N}{Z}=1\)
     
 </span>
-, i.e. if they have the same number of protons and neutrons in the nucleus. In contrast, e.g. 
+, i.e. if they have the same number of protons and neutrons in the nucleus. With exceptions, e.g. 
 <span>
                   
         \({}^{14}_{\ 6}C\)
@@ -300,14 +323,14 @@ Also, the more binding energy a nucleus has, the more stable it is.</p>
         \(\frac{N}{Z}=1.5\)
     
 </span>
-, i.e. if they have more neutrons than protons. The reason is that the strong force that holds together protons in the nucleus (overcoming their electrostatic repulsion) acts only at very short distances. In larger nuclei, the distances get too big and finally repulsion begins to win over. More neutrons can help keeping a balance, but only up to a certain point; elements with 
+, i.e. if they have more neutrons than protons. The reason is that the strong force that holds together protons in the nucleus (overcoming their electrostatic repulsion) acts only at very short distances. In larger nuclei, the distances get too big and finally repulsion begins to win over. More neutrons can help keeping a balance, but only up to a certain point. Elements with 
 <span>
                   
         \(Z&gt;83\)
     
 </span>
  are pretty much all unstable.</p>
-<p>Especially stable are nuclei with a <em>magic number</em> of 
+<p>Isotopes with even numbers of protons and neutrons tend to be more stable. Especially stable are nuclei with a <strong>magic number</strong> of 
 <span>
                   
         \(Z\)
@@ -319,7 +342,9 @@ Also, the more binding energy a nucleus has, the more stable it is.</p>
         \(N = 2, 8, 20, 28, 50, 82, 126\)
     
 </span>
-, as the average binding energy per nucleon is higher than expected (probably because they correspond to closed shells in the nucleus). Also, atoms with a magic number of neutrons are reluctant to absorb neutrons and thus make good materials where neutron absorption must be avoided.</p>
+, as the average binding energy per nucleon is higher than expected (maybe because they correspond to closed shells in the nucleus). Also, atoms with a magic number of neutrons are reluctant to absorb neutrons and thus make good materials where neutron absorption must be avoided.</p>
+<p><img src="/images/docs/stability.jpeg" alt="Stability"></p>
+<p>(Image source: <a href="https://chem.libretexts.org/Courses/University_of_Missouri/MU%3A__1330H_(Keller)/21%3A_Nuclear_Chemistry/21.2%3A_Patterns_of_Nuclear_Stability">Chemistry Libre Texts</a>)</p>
 
 
     
