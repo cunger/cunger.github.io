@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.74.1" />
+  <meta name="generator" content="Hugo 0.74.2" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -168,7 +168,7 @@ headingSelector: 'h1'
 <li>charge</li>
 </ul>
 <h1 id="q-value">Q-value</h1>
-<p>The <em>Q-value</em> of a nuclear reaction is a measure of energy transfer: the amount of mass that is turned into energy, i.e. the difference between the sum of the masses of the initial reactants and the sum of the masses of the final products.</p>
+<p>The <em>Q-value</em> of a nuclear reaction is a measure of energy transfer: the amount of mass that is turned into energy. Mathematically, it&rsquo;s the difference between the sum of the masses of the initial reactants and the sum of the masses of the final products.</p>
 <p>Given conservation of mass and energy (and the equivalence of mass and energy), for a reaction</p>
 
 <span>
@@ -313,13 +313,13 @@ headingSelector: 'h1'
 <img src="/images/docs/decay_alpha.png" alt="Alpha decay"></p>
 <h2 id="beta-decay">Beta decay</h2>
 <p>Beta decay comes in two flavors, with beta particles being electrons and positrons from the nucleus.</p>
-<h2 id="beta-minus-hahahugoshortcode-s23-hbhb-decay">Beta minus (
+<h3 id="beta-minus-hahahugoshortcode-s23-hbhb-decay">Beta minus (
 <span>
                   
         \(\beta^-\)
     
 </span>
-) decay</h2>
+) decay</h3>
 
 <span>
      
@@ -338,13 +338,13 @@ headingSelector: 'h1'
 <p><strong>Example:</strong></p>
 <p><img src="/images/docs/decay_betaminus_b12.png" alt="Beta minus decay">
 <img src="/images/docs/decay_betaminus_c14.png" alt="Beta minus decay"></p>
-<h2 id="beta-plus-hahahugoshortcode-s26-hbhb-decay">Beta plus (
+<h3 id="beta-plus-hahahugoshortcode-s26-hbhb-decay">Beta plus (
 <span>
                   
         \(\beta^&#43;\)
     
 </span>
-) decay</h2>
+) decay</h3>
 
 <span>
      
@@ -391,9 +391,11 @@ headingSelector: 'h1'
 <p>Usually, the de-excitement happens in an unmeasurable short time after the excited state was formed. When it is delayed, the longer-lived excited states are called <em>isomeric states</em>, and decays from these states are called <em>isomeric transitions</em> (IT).</p>
 <p><strong>Example:</strong>
 <img src="/images/docs/decay_gamma.png" alt="Gamma decay"></p>
-<p>IT competes with with <em>internal conversion</em> (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also hit an electron on the way out; the thus emitted electron is called Auger electron).</p>
-<h2 id="decay-rate-and-decay-probability">Decay rate and decay probability</h2>
-<p>The decay rate of nuclei is specified as:</p>
+<p>IT competes with with <em>internal conversion</em> (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also be thought of as hitting an electron on the way out; the thus emitted electron, usually from an outer shell, is called <em>Auger electron</em>).</p>
+<h2 id="spontaneous-fission">Spontaneous fission</h2>
+<p>Happens with very heavy (and unstable) elements, but usually with very low probability.</p>
+<h1 id="decay-rate-and-decay-probability">Decay rate and decay probability</h1>
+<p>The decay rate of a nucleus is specified as:</p>
 
 <span>
      
@@ -543,7 +545,7 @@ headingSelector: 'h1'
         $$\lambda = \cfrac{\text{ln}\,2}{T}$$
     
 </span>
-and 
+ and 
 <span>
                   
         \(T = \cfrac{\text{ln}\,2}{\lambda}\)
@@ -557,7 +559,103 @@ and
     
 </span>
 .</p>
+<p>Generally, the larger an element&rsquo;s decay constant 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+, the faster its decay and the shorter its half-life.</p>
 <p><strong>Code:</strong> <a href="https://github.com/cunger/lab/tree/master/nuclei">github.com/cunger/simulacron/nuclei</a></p>
+<h2 id="serial-radioactive-decay">Serial radioactive decay</h2>
+<p>In general, change = production - destruction. So for a linear decay chain:</p>
+
+<span>
+     
+        $$N_1 \xrightarrow{\lambda_1} N_2 \xrightarrow{\lambda_2} N3$$
+    
+</span>
+
+<p>We have the following set of differential equations:</p>
+<ul>
+<li>
+<span>
+                  
+        \(\cfrac{dN_1}{dt}=0 - \lambda_1 N_1\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\cfrac{dN_2}{dt}=\lambda_1 N_1 - \lambda_2 N_2\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\cfrac{dN_3}{dt}=\lambda_2 N_2 - 0\)
+    
+</span>
+</li>
+</ul>
+<p>With the following solutions:</p>
+<ul>
+<li>
+<span>
+                  
+        \(N_1=N_{1,0}e^{-\lambda_1 t}\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(N_2=\cfrac{\lambda_1 N_{1,0}}{\lambda_2 - \lambda_1} e^{-\lambda_1 t}\)
+    
+</span>
+ (assuming that 
+<span>
+                  
+        \(N_{2,0}=0\)
+    
+</span>
+)</li>
+<li>
+<span>
+                  
+        \(N_3= tbd\)
+    
+</span>
+ (using conversation 
+<span>
+                  
+        \(N_1 &#43; N_2 &#43; N_3 = N_{1,0}\)
+    
+</span>
+)</li>
+</ul>
+<p>(Referred to as <a href="https://www.nuclear-power.net/nuclear-power/reactor-physics/atomic-nuclear-physics/radioactive-decay/radioactive-equilibrium/bateman-equations/">Bateman equations</a>.)</p>
+<p>And you can add terms for production and destruction via nuclear reactions, e.g. including the reaction rate = cross-section 
+<span>
+                  
+        \(\sigma\)
+    
+</span>
+ times neutron flux 
+<span>
+                  
+        \(\Phi\)
+    
+</span>
+ times 
+<span>
+                  
+        \(N_i\)
+    
+</span>
+.</p>
 <h2 id="radioactive-dating">Radioactive dating</h2>
 <p>Solving the decay equation for 
 <span>
