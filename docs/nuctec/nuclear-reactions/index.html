@@ -21,7 +21,7 @@
 
 
   <meta property="og:title" content="Nuclear reactions" />
-<meta property="og:description" content="Q-value, alpha, beta, and gamma decay, decay rate and probability, radioactive dating." />
+<meta property="og:description" content="Q-value, alpha, beta, and gamma decay, activity and decay rate." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/docs/nuctec/nuclear-reactions/" />
 <meta property="article:published_time" content="2019-11-15T00:00:00+00:00" />
@@ -94,7 +94,7 @@
     <div id="hero">
       <h1> Nuclear reactions </h1>
       <p class="hero-lead">
-         Q-value, alpha, beta, and gamma decay, decay rate and probability, radioactive dating.
+         Q-value, alpha, beta, and gamma decay, activity and decay rate.
       </p>
 
     </div>
@@ -387,15 +387,78 @@ headingSelector: 'h1'
         \({}^0_0\gamma\)
     
 </span>
-. These high wave-length electromagnetic waves are <em>photons</em>, particles with zero rest mass and charge, traveling at the speed of light.</p>
-<p>Usually, the de-excitement happens in an unmeasurable short time after the excited state was formed. When it is delayed, the longer-lived excited states are called <em>isomeric states</em>, and decays from these states are called <em>isomeric transitions</em> (IT).</p>
-<p><strong>Example:</strong>
-<img src="/images/docs/decay_gamma.png" alt="Gamma decay"></p>
-<p>IT competes with with <em>internal conversion</em> (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also be thought of as hitting an electron on the way out; the thus emitted electron, usually from an outer shell, is called <em>Auger electron</em>).</p>
+. These high wave-length electromagnetic waves are photons, particles with zero rest mass and charge, traveling at the speed of light.</p>
+<p>Usually, the de-excitement happens in an unmeasurable short time after the excited state was formed. When it is delayed, the longer-lived excited states are called <strong>isomeric states</strong>, and decays from these states are called <strong>isomeric transitions</strong> (IT).</p>
+<p><strong>Example:</strong></p>
+<p><img src="/images/docs/decay_gamma.png" alt="Gamma decay"></p>
+<p>IT competes with with <strong>internal conversion</strong> (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also be thought of as hitting an electron on the way out; the thus emitted electron, usually from an outer shell, is called Auger electron).</p>
 <h2 id="spontaneous-fission">Spontaneous fission</h2>
+<p>Emission of neutrons.</p>
 <p>Happens with very heavy (and unstable) elements, but usually with very low probability.</p>
-<h1 id="decay-rate-and-decay-probability">Decay rate and decay probability</h1>
-<p>The decay rate of a nucleus is specified as:</p>
+<h1 id="activity-and-decay-rate">Activity and decay rate</h1>
+<p>The <strong>activity</strong> 
+<span>
+                  
+        \(A\)
+    
+</span>
+ [
+<span>
+                  
+        \(\frac{\text{decays}}{cm^3 s}\)
+    
+</span>
+] is defined as 
+<span>
+                  
+        \(A=\lambda N\)
+    
+</span>
+, where 
+<span>
+                  
+        \(N\)
+    
+</span>
+ is the number of nuclei present per volume [
+<span>
+                  
+        \(\frac{\text{atoms}}{cm^3}\)
+    
+</span>
+], and 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+ is the decay constant for the element [
+<span>
+                  
+        \(s^{-1}\)
+    
+</span>
+].</p>
+<p>Not regarding volume, 
+<span>
+                  
+        \(N\)
+    
+</span>
+ is simply the number of nuclei present and 
+<span>
+                  
+        \(A\)
+    
+</span>
+ is in 
+<span>
+                  
+        \(\frac{\text{decays}}{s}\)
+    
+</span>
+, which is named Bq (or Ci for more manageable numbers).</p>
+<p>The <strong>decay rate</strong> of a nucleus is specified as:</p>
 
 <span>
      
@@ -403,19 +466,7 @@ headingSelector: 'h1'
     
 </span>
 
-<p>Where 
-<span>
-                  
-        \(N\)
-    
-</span>
- is the number of nuclei present, and 
-<span>
-                  
-        \(\lambda\)
-    
-</span>
- is the decay constant for the element. If nuclides are also produced at a constant rate 
+<p>If nuclides are also produced at a constant rate 
 <span>
                   
         \(R\)
@@ -427,8 +478,7 @@ headingSelector: 'h1'
         \(-\lambda N &#43; R\)
     
 </span>
-.</p>
-<p>The analytical solution to this differential equation is:</p>
+. The analytical solution to the above differential equation is:</p>
 
 <span>
      
@@ -567,7 +617,28 @@ headingSelector: 'h1'
 </span>
 , the faster its decay and the shorter its half-life.</p>
 <p><strong>Code:</strong> <a href="https://github.com/cunger/lab/tree/master/nuclei">github.com/cunger/simulacron/nuclei</a></p>
-<h2 id="serial-radioactive-decay">Serial radioactive decay</h2>
+<h2 id="radioactive-dating">Radioactive dating</h2>
+<p>Solving the decay equation for 
+<span>
+                  
+        \(t\)
+    
+</span>
+ allows for radioactive dating, e.g. where 
+<span>
+                  
+        \(N(t)\)
+    
+</span>
+ is the current amount of carbon-14 present in the sample, 
+<span>
+                  
+        \(N(0)\)
+    
+</span>
+ is the amount of carbon-14 in living tissue, and the half life of carbon-14 is 5700 years.</p>
+<p><strong>Code:</strong> <a href="https://github.com/cunger/simulacron/blob/master/decay.exs">decay.exs</a></p>
+<h1 id="serial-radioactive-decay">Serial radioactive decay</h1>
 <p>In general, change = production - destruction. So for a linear decay chain:</p>
 
 <span>
@@ -600,83 +671,38 @@ headingSelector: 'h1'
 </span>
 </li>
 </ul>
-<p>With the following solutions:</p>
-<ul>
-<li>
+<p>(The general form is referred to as <a href="https://www.nuclear-power.net/nuclear-power/reactor-physics/atomic-nuclear-physics/radioactive-decay/radioactive-equilibrium/bateman-equations/">Bateman equations</a>.)</p>
+<p>If there is also other nuclear reactions involved, they can be added as additional terms for production and destruction, e.g. by including the reaction rate 
 <span>
                   
-        \(N_1=N_{1,0}e^{-\lambda_1 t}\)
+        \(\sigma \Phi N_i\)
     
 </span>
-</li>
-<li>
-<span>
-                  
-        \(N_2=\cfrac{\lambda_1 N_{1,0}}{\lambda_2 - \lambda_1} e^{-\lambda_1 t}\)
-    
-</span>
- (assuming that 
-<span>
-                  
-        \(N_{2,0}=0\)
-    
-</span>
-)</li>
-<li>
-<span>
-                  
-        \(N_3= tbd\)
-    
-</span>
- (using conversation 
-<span>
-                  
-        \(N_1 &#43; N_2 &#43; N_3 = N_{1,0}\)
-    
-</span>
-)</li>
-</ul>
-<p>(Referred to as <a href="https://www.nuclear-power.net/nuclear-power/reactor-physics/atomic-nuclear-physics/radioactive-decay/radioactive-equilibrium/bateman-equations/">Bateman equations</a>.)</p>
-<p>And you can add terms for production and destruction via nuclear reactions, e.g. including the reaction rate = cross-section 
+, where 
 <span>
                   
         \(\sigma\)
     
 </span>
- times neutron flux 
+ is the cross-section [
+<span>
+                  
+        \(cm^2\)
+    
+</span>
+] and 
 <span>
                   
         \(\Phi\)
     
 </span>
- times 
+ is the neutron flux [
 <span>
                   
-        \(N_i\)
+        \(\frac{\text{neutrons}}{cm^2 s}\)
     
 </span>
-.</p>
-<h2 id="radioactive-dating">Radioactive dating</h2>
-<p>Solving the decay equation for 
-<span>
-                  
-        \(t\)
-    
-</span>
- allows for radioactive dating, e.g. where 
-<span>
-                  
-        \(N(t)\)
-    
-</span>
- is the current amount of carbon-14 present in the sample, 
-<span>
-                  
-        \(N(0)\)
-    
-</span>
- is the amount of carbon-14 in living tissue, and the half life of carbon-14 is 5700 years.</p>
-<p><strong>Code:</strong> <a href="https://github.com/cunger/simulacron/blob/master/decay.exs">decay.exs</a></p>
+].</p>
 
 
     
