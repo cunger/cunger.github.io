@@ -40,10 +40,10 @@
     
     <item>
       <title>Complex numbers</title>
-      <link>http://cunger.github.io/docs/nuctec/complex-numbers/</link>
+      <link>http://cunger.github.io/docs/maths/complex-numbers/</link>
       <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/complex-numbers/</guid>
+      <guid>http://cunger.github.io/docs/maths/complex-numbers/</guid>
       <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
     </item>
     
@@ -58,10 +58,10 @@
     
     <item>
       <title>Differential equations</title>
-      <link>http://cunger.github.io/docs/nuctec/differential-equations/</link>
+      <link>http://cunger.github.io/docs/maths/differential-equations/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/differential-equations/</guid>
+      <guid>http://cunger.github.io/docs/maths/differential-equations/</guid>
       <description>Analytical solutions to first-order linear ODEs.</description>
     </item>
     
@@ -201,12 +201,13 @@
     </item>
     
     <item>
-      <title>Nuclear Engineering</title>
+      <title>Patchwork Studies</title>
       <link>http://cunger.github.io/patchwork/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/patchwork/</guid>
-      <description>Starting from Nuclear Engineering curriculi (such as the ones from MIT, Rensselaer, Texas A&amp;amp;M, and U-M), I aim to compile an ongoing learning journey towards nuclear proficiency. It&amp;rsquo;s not a degree from a traditional university, and it&amp;rsquo;s not supposed to be one. Just a patchwork of courses and books that help me acquiring the fundamental knowledge and skills of the field. Most importantly, it&amp;rsquo;s growing and evolving as I dive deeper into the topic.</description>
+      <description>This is a slow but steady learning journey towards nuclear proficiency. I greatly benefit from high-quality books and courses, forming a patchwork of resources that help me acquiring the fundamental knowledge and skills of the field, and that is growing and evolving as I dive deeper into the topic.
+Bookshelf  📖 S. Yip: Nuclear Radiation Interactions. 📖 B. Cox, J. Foreshaw: The Quantum Universe. 📚 I. Hutchinson: A Student&amp;rsquo;s Guide to Numerical Methods.</description>
     </item>
     
     <item>
@@ -220,7 +221,8 @@
  📝 Medium.com/@christina.unger
  📬 christina@unger.dev
  🌍 Bielefeld, Germany
- Education Patchwork studies  Nuclear Engineering  Formal degrees  Computational Linguistics (PhD) Logic and Linguistics (M.A., passed with distinction) Mathematics (B.A. level)  Volunteering I deeply care about marine conservation, and volunteering in this field has been among the most inspiring, energizing, and humbling experiences I had.</description>
+ These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly. I therefore keep several notebooks:
+ Mathematics Software Development Nuclear Engineering, including some of the necessary background in physics  Education  Mathematical-Technical Software Engineering (B.</description>
     </item>
     
   </channel>

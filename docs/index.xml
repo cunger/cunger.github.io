@@ -40,10 +40,10 @@
     
     <item>
       <title>Complex numbers</title>
-      <link>http://cunger.github.io/docs/nuctec/complex-numbers/</link>
+      <link>http://cunger.github.io/docs/maths/complex-numbers/</link>
       <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/complex-numbers/</guid>
+      <guid>http://cunger.github.io/docs/maths/complex-numbers/</guid>
       <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
     </item>
     
@@ -58,10 +58,10 @@
     
     <item>
       <title>Differential equations</title>
-      <link>http://cunger.github.io/docs/nuctec/differential-equations/</link>
+      <link>http://cunger.github.io/docs/maths/differential-equations/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/differential-equations/</guid>
+      <guid>http://cunger.github.io/docs/maths/differential-equations/</guid>
       <description>Analytical solutions to first-order linear ODEs.</description>
     </item>
     
