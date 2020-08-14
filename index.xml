@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 03 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,11 +22,20 @@
     
     <item>
       <title>Cheatsheets</title>
-      <link>http://cunger.github.io/docs/nuctec/basics/</link>
+      <link>http://cunger.github.io/docs/physics/basics/</link>
       <pubDate>Sat, 16 Nov 2019 12:00:51 +0100</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/basics/</guid>
+      <guid>http://cunger.github.io/docs/physics/basics/</guid>
       <description>Units, constants, cheatsheets.</description>
+    </item>
+    
+    <item>
+      <title>Atoms</title>
+      <link>http://cunger.github.io/docs/nuctec/atoms/</link>
+      <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/nuctec/atoms/</guid>
+      <description>What atoms are composed of, their energy, charge, mass, and stability.</description>
     </item>
     
     <item>
@@ -48,6 +57,24 @@
     </item>
     
     <item>
+      <title>Energy</title>
+      <link>http://cunger.github.io/docs/physics/energy/</link>
+      <pubDate>Sat, 16 Nov 2019 11:38:21 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/docs/physics/energy/</guid>
+      <description>Kinetic and potential energy, enthalpy, mass-energy equivalence.</description>
+    </item>
+    
+    <item>
+      <title>Nuclear reactions</title>
+      <link>http://cunger.github.io/docs/nuctec/nuclear-reactions/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/nuctec/nuclear-reactions/</guid>
+      <description>Q-value, alpha, beta, and gamma decay, activity and decay rate.</description>
+    </item>
+    
+    <item>
       <title>Web Basics</title>
       <link>http://cunger.github.io/docs/dev/web/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
@@ -66,84 +93,21 @@
     </item>
     
     <item>
+      <title>Forces</title>
+      <link>http://cunger.github.io/docs/physics/forces/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/physics/forces/</guid>
+      <description>The fundamental forces of physics.</description>
+    </item>
+    
+    <item>
       <title>Databases</title>
       <link>http://cunger.github.io/docs/dev/databases/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/dev/databases/</guid>
       <description>SQL. PostgreSQL.</description>
-    </item>
-    
-    <item>
-      <title>Energy</title>
-      <link>http://cunger.github.io/docs/nuctec/energy/</link>
-      <pubDate>Sat, 16 Nov 2019 11:38:21 +0100</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/energy/</guid>
-      <description>Kinetic and potential energy, enthalpy, mass-energy equivalence.</description>
-    </item>
-    
-    <item>
-      <title>Forces</title>
-      <link>http://cunger.github.io/docs/nuctec/forces/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/forces/</guid>
-      <description>The fundamental forces of physics.</description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>http://cunger.github.io/docs/dev/javascript/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/javascript/</guid>
-      <description>Functions. Prototypes. Promises. Etc.</description>
-    </item>
-    
-    <item>
-      <title>Electromagnetic radiation</title>
-      <link>http://cunger.github.io/docs/nuctec/electromagnetic-radiation/</link>
-      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/electromagnetic-radiation/</guid>
-      <description>Making waves.</description>
-    </item>
-    
-    <item>
-      <title>Ruby</title>
-      <link>http://cunger.github.io/docs/dev/ruby/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/ruby/</guid>
-      <description>Objects. Closures. Etc.</description>
-    </item>
-    
-    <item>
-      <title>Atoms</title>
-      <link>http://cunger.github.io/docs/nuctec/atoms/</link>
-      <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/atoms/</guid>
-      <description>What atoms are composed of, their energy, charge, mass, and stability.</description>
-    </item>
-    
-    <item>
-      <title>Nuclear reactions</title>
-      <link>http://cunger.github.io/docs/nuctec/nuclear-reactions/</link>
-      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/nuclear-reactions/</guid>
-      <description>Q-value, alpha, beta, and gamma decay, activity and decay rate.</description>
-    </item>
-    
-    <item>
-      <title>Fortran</title>
-      <link>http://cunger.github.io/docs/dev/fortran/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/fortran/</guid>
-      <description>A modern dinosaur.</description>
     </item>
     
     <item>
@@ -156,29 +120,29 @@
     </item>
     
     <item>
-      <title>TLA&#43;</title>
-      <link>http://cunger.github.io/docs/dev/tlaplus/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      <title>Transport</title>
+      <link>http://cunger.github.io/docs/physics/transport/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/dev/tlaplus/</guid>
-      <description>Formal methods for software verification.</description>
+      <guid>http://cunger.github.io/docs/physics/transport/</guid>
+      <description>Mass and heat transport.</description>
     </item>
     
     <item>
-      <title>Fluid flow</title>
-      <link>http://cunger.github.io/docs/nuctec/fluid-flow/</link>
-      <pubDate>Sat, 16 Nov 2019 12:19:28 +0100</pubDate>
+      <title>Ruby</title>
+      <link>http://cunger.github.io/docs/dev/ruby/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/fluid-flow/</guid>
-      <description>Flow rate. Drag force.</description>
+      <guid>http://cunger.github.io/docs/dev/ruby/</guid>
+      <description>Objects. Closures. Etc.</description>
     </item>
     
     <item>
       <title>Balances</title>
-      <link>http://cunger.github.io/docs/nuctec/balances/</link>
+      <link>http://cunger.github.io/docs/physics/balances/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/balances/</guid>
+      <guid>http://cunger.github.io/docs/physics/balances/</guid>
       <description>Equations for mass and energy balances. Macro and micro balances.</description>
     </item>
     
@@ -192,21 +156,57 @@
     </item>
     
     <item>
+      <title>JavaScript</title>
+      <link>http://cunger.github.io/docs/dev/javascript/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/dev/javascript/</guid>
+      <description>Functions. Prototypes. Promises. Etc.</description>
+    </item>
+    
+    <item>
+      <title>Electromagnetic radiation</title>
+      <link>http://cunger.github.io/docs/physics/electromagnetic-radiation/</link>
+      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/physics/electromagnetic-radiation/</guid>
+      <description>Making waves.</description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>http://cunger.github.io/docs/dev/rust/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/dev/rust/</guid>
+      <description>Coming soon.</description>
+    </item>
+    
+    <item>
+      <title>Fluid flow</title>
+      <link>http://cunger.github.io/docs/physics/fluid-flow/</link>
+      <pubDate>Sat, 16 Nov 2019 12:19:28 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/docs/physics/fluid-flow/</guid>
+      <description>Flow rate. Drag force.</description>
+    </item>
+    
+    <item>
+      <title>TLA&#43;</title>
+      <link>http://cunger.github.io/docs/dev/tlaplus/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/dev/tlaplus/</guid>
+      <description>Formal methods for software verification.</description>
+    </item>
+    
+    <item>
       <title>CSS</title>
       <link>http://cunger.github.io/docs/dev/css/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/dev/css/</guid>
-      <description>Selectors.</description>
-    </item>
-    
-    <item>
-      <title>Transport</title>
-      <link>http://cunger.github.io/docs/nuctec/transport/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/transport/</guid>
-      <description>Mass and heat transport.</description>
+      <description>Box model, selectors, positioning.</description>
     </item>
     
     <item>
@@ -230,7 +230,7 @@ Bookshelf  📖 S. Yip: Nuclear Radiation Interactions. 📖 B. Cox, J. Foreshaw
  📝 Medium.com/@christina.unger
  📬 christina@unger.dev
  🌍 Bielefeld, Germany
- These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly. I therefore keep several notebooks:</description>
+ These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly.</description>
     </item>
     
   </channel>

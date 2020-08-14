@@ -1030,10 +1030,10 @@ button:hover,
 
 .button.inverted {
   color: #000;
-  background-color: #fff; }
+  background-color: #ccc; }
   .button.inverted:hover {
     color: #000;
-    background-color: white; }
+    border-color: #000; }
   .button.inverted:disabled, .button.inverted.disabled {
     color: rgba(0, 0, 0, 0.7);
     background-color: #1f2833; }
@@ -1048,8 +1048,6 @@ button:hover,
       background: none;
       color: #1f2833;
       border-color: #1f2833; }
-  .button.inverted:hover {
-    opacity: .7; }
 
 .button.round {
   border-radius: 56px; }

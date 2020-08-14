@@ -6,64 +6,10 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 16 Nov 2019 12:19:28 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 16 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://cunger.github.io/docs/nuctec/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Cheatsheets</title>
-      <link>http://cunger.github.io/docs/nuctec/basics/</link>
-      <pubDate>Sat, 16 Nov 2019 12:00:51 +0100</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/basics/</guid>
-      <description>Units, constants, cheatsheets.</description>
-    </item>
-    
-    <item>
-      <title>Complex numbers</title>
-      <link>http://cunger.github.io/docs/nuctec/complex-numbers/</link>
-      <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/complex-numbers/</guid>
-      <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
-    </item>
-    
-    <item>
-      <title>Differential equations</title>
-      <link>http://cunger.github.io/docs/nuctec/differential-equations/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/differential-equations/</guid>
-      <description>Analytical solutions to first-order linear ODEs.</description>
-    </item>
-    
-    <item>
-      <title>Energy</title>
-      <link>http://cunger.github.io/docs/nuctec/energy/</link>
-      <pubDate>Sat, 16 Nov 2019 11:38:21 +0100</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/energy/</guid>
-      <description>Kinetic and potential energy, enthalpy, mass-energy equivalence.</description>
-    </item>
-    
-    <item>
-      <title>Forces</title>
-      <link>http://cunger.github.io/docs/nuctec/forces/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/forces/</guid>
-      <description>Gravitational force.</description>
-    </item>
-    
-    <item>
-      <title>Electromagnetic radiation</title>
-      <link>http://cunger.github.io/docs/nuctec/electromagnetic-radiation/</link>
-      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/electromagnetic-radiation/</guid>
-      <description>Making waves.</description>
-    </item>
     
     <item>
       <title>Atoms</title>
@@ -80,7 +26,7 @@
       <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/nuctec/nuclear-reactions/</guid>
-      <description>Q-value, alpha, beta, and gamma decay, decay rate and probability, radioactive dating.</description>
+      <description>Q-value, alpha, beta, and gamma decay, activity and decay rate.</description>
     </item>
     
     <item>
@@ -89,34 +35,16 @@
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/nuctec/neutronics/</guid>
-      <description>Neutrons, energy distribution, neutron interactions, iron valley.</description>
+      <description>Neutrons, energy distribution, neutron interactions.</description>
     </item>
     
     <item>
-      <title>Fluid flow</title>
-      <link>http://cunger.github.io/docs/nuctec/fluid-flow/</link>
-      <pubDate>Sat, 16 Nov 2019 12:19:28 +0100</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/fluid-flow/</guid>
-      <description>Flow rate. Drag force.</description>
-    </item>
-    
-    <item>
-      <title>Balances</title>
-      <link>http://cunger.github.io/docs/nuctec/balances/</link>
+      <title>Fission reactors</title>
+      <link>http://cunger.github.io/docs/nuctec/reactors/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/balances/</guid>
-      <description>Equations for mass and energy balances. Macro and micro balances.</description>
-    </item>
-    
-    <item>
-      <title>Transport</title>
-      <link>http://cunger.github.io/docs/nuctec/transport/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/nuctec/transport/</guid>
-      <description>Mass and heat transport.</description>
+      <guid>http://cunger.github.io/docs/nuctec/reactors/</guid>
+      <description>Draft.</description>
     </item>
     
   </channel>

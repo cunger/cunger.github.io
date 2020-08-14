@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Escape Velocity</title>
+    <link>http://cunger.github.io/docs/maths/</link>
+    <description>Recent content on Escape Velocity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 16 Nov 2019 12:02:48 +0100</lastBuildDate>
+    
+	<atom:link href="http://cunger.github.io/docs/maths/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Complex numbers</title>
+      <link>http://cunger.github.io/docs/maths/complex-numbers/</link>
+      <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/complex-numbers/</guid>
+      <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
+    </item>
+    
+    <item>
+      <title>Differential equations</title>
+      <link>http://cunger.github.io/docs/maths/differential-equations/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/differential-equations/</guid>
+      <description>Analytical solutions to first-order linear ODEs.</description>
+    </item>
+    
+  </channel>
+</rss>
