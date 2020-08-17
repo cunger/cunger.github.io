@@ -54,6 +54,11 @@
 
   
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+  
 </head>
 
 <body class="page-kube">
@@ -118,8 +123,10 @@ headingSelector: 'h1'
 
 
 
-    <h1 id="byte-ranges">Byte ranges</h1>
+    <h1 id="bits-and-byte-ranges">Bits and byte ranges</h1>
+<p>The smallest unit of information are the bits (<em>binary digits</em>) 1 and 0.</p>
 <p>Most computers don&rsquo;t access individual bits in memory, but use blocks of 8 bits (<em>bytes</em>) as smallest addressable unit of memory.</p>
+<p><strong>Byte ranges:</strong></p>
 <ul>
 <li>In binary notation: from <code>00000000</code> to <code>11111111</code></li>
 <li>In decimal notation: from <code>0</code> to <code>255</code> (there are <code>2^8 = 256</code> combinations of eight <code>0</code>s and <code>1</code>s)</li>
@@ -128,7 +135,187 @@ headingSelector: 'h1'
 <pre><code>Hex 0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 Dec 0    1    2    3    4    5    6    7    8    9    10   11   12   13   14   15
 Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
-</code></pre>
+</code></pre><p>Bytes are combined into <em>words</em> of 1 to 8 bytes. Most common architectures today use 32 or 64 bits in groups of 4 and 8 bytes, respectively, for addressing memory.</p>
+<h1 id="integers">Integers</h1>
+<p>Integers are represented using a series of bits, i.e. in a base-2 system.</p>
+<p>For example:</p>
+<pre><code>8    4    2    1     =
+2^3  2^2  2^1  2^0
+0    0    0    0     0
+0    0    0    1     1
+0    0    1    0     2
+0    0    1    1     3
+0    1    0    0     4
+0    1    0    1     5
+0    1    1    0     6
+0    1    1    1     7
+1    0    0    0     8
+1    0    0    1     9
+1    0    1    0    10
+1    0    1    1    11
+1    1    0    0    12
+1    1    0    1    13
+1    1    1    0    14
+1    1    1    1    15
+</code></pre><p>If integers are represented using 4 bytes (32 bits), then the range of integers that can be represented is 
+<span>
+                  
+        \(0\ldots 2^{32}-1 = 0\ldots 4\,294\,967\,295\)
+    
+</span>
+. Including negative numbers, the range is 
+<span>
+                  
+        \(-2^{31}\ldots 2^{31}-1 = -2\,147\,483\,648\ldots 2\,147\,483\,647\)
+    
+</span>
+ (because 
+<span>
+                  
+        \(2^{32} / 2 = 2^{31}\)
+    
+</span>
+).</p>
+<p>Negative numbers can be included in several ways:</p>
+<ul>
+<li><em>Sign and magnitude</em>: The left-most bit represents the sign and the rest denotes the number.</li>
+<li><em>One&rsquo;s complement</em>: A negative number is the result of applying bitwise NOT to its positive counterpart.</li>
+<li><em>Two&rsquo;s complement</em>: Extension of one&rsquo;s complement that avoids two representations for 0 and the need for end-around carry. Used on most computing devices today.</li>
+<li><em>Base -2</em>, which gives alternating signs (because 
+<span>
+                  
+        \((-2)^0=1\)
+    
+</span>
+, 
+<span>
+                  
+        \((-2)^1=-2\)
+    
+</span>
+, 
+<span>
+                  
+        \((-2)^2=4\)
+    
+</span>
+, and so on).</li>
+</ul>
+<h1 id="real-numbers">Real numbers</h1>
+<p>Real numbers are stored as floating-point representations (of which scientific notation is on example):</p>
+
+<span>
+     
+        $$z = m \times b^k$$
+    
+</span>
+
+<p>Where:</p>
+<ul>
+<li>
+<span>
+                  
+        \(b\in\N\)
+    
+</span>
+ the base (where 10 is usually used by humans and 2 by computers)</li>
+<li>
+<span>
+                  
+        \(m\in\mathbb{R}_&#43;: 1\leq m \lt b\)
+    
+</span>
+ the mantissa (signed; the normalization condition makes the representation unique)</li>
+<li>
+<span>
+                  
+        \(k\in\Z\)
+    
+</span>
+ the exponent (signed; expresses the order of magnitude)</li>
+</ul>
+<p>For example, 
+<span>
+                  
+        \(1.9 \times 10^3 = 1900\)
+    
+</span>
+ and 
+<span>
+                  
+        \(-1.9 \times 10^{-3} = -0.0019\)
+    
+</span>
+.</p>
+<h2 id="advantages">Advantages</h2>
+<ul>
+<li>It can represent numbers at very different magnitudes.</li>
+<li>It provides the same relative accuracy at all magnitudes.</li>
+<li>It allows for calculations across magnitudes.</li>
+</ul>
+<h2 id="storage">Storage</h2>
+<p>Floating-point representations are stored in 32 or 64 bits.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Bits</th>
+<th>Bits for 
+<span>
+                  
+        \(m\)
+    
+</span>
+</th>
+<th>Bits for 
+<span>
+                  
+        \(k\)
+    
+</span>
+</th>
+<th>Range (approximately)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single precision</td>
+<td>32</td>
+<td>24 (23 + 1 for sign)</td>
+<td>8</td>
+<td>
+<span>
+                  
+        \(1.2 \times 10^{-38} \ldots 3.4 \times 10^{38}\)
+    
+</span>
+</td>
+</tr>
+<tr>
+<td>Double precision</td>
+<td>64</td>
+<td>53 (52 + 1 for sign)</td>
+<td>11</td>
+<td>
+<span>
+                  
+        \(2.2 \times 10^{-308} \ldots 1.8 \times 10^{308}\)
+    
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Since the base is 2, the mantissa is always of form 1.x, so the leading 1 does not need to be stored.</p>
+<h2 id="rounding-errors">Rounding errors</h2>
+
 
     
     </div>
