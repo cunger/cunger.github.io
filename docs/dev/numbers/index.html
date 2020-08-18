@@ -206,7 +206,7 @@ Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1
 
 <span>
      
-        $$z = m \times b^k$$
+        $$z = s \times b^k$$
     
 </span>
 
@@ -218,14 +218,26 @@ Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1
         \(b\in\N\)
     
 </span>
- the base (where 10 is usually used by humans and 2 by computers)</li>
+ the base (usually 10 is used by humans and 2 by computers)</li>
 <li>
 <span>
                   
-        \(m\in\mathbb{R}_&#43;: 1\leq m \lt b\)
+        \(s\in\mathbb{R}_&#43;: 1\leq s \lt b\)
     
 </span>
- the mantissa (signed; the normalization condition makes the representation unique)</li>
+ the significand (signed; the normalization condition makes the representation unique; for precision 
+<span>
+                  
+        \(p\)
+    
+</span>
+, the significand has 
+<span>
+                  
+        \(p\)
+    
+</span>
+ digits)</li>
 <li>
 <span>
                   
@@ -234,7 +246,7 @@ Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1
 </span>
  the exponent (signed; expresses the order of magnitude)</li>
 </ul>
-<p>For example, 
+<p>For example, for base 10 and precision 2: 
 <span>
                   
         \(1.9 \times 10^3 = 1900\)
@@ -247,7 +259,7 @@ Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1
     
 </span>
 .</p>
-<h2 id="advantages">Advantages</h2>
+<p>Floating-point representation has advantages over fixed-point representation:</p>
 <ul>
 <li>It can represent numbers at very different magnitudes.</li>
 <li>It provides the same relative accuracy at all magnitudes.</li>
@@ -263,7 +275,7 @@ Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1
 <th>Bits for 
 <span>
                   
-        \(m\)
+        \(s\)
     
 </span>
 </th>
@@ -313,8 +325,96 @@ Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1
 </tr>
 </tbody>
 </table>
-<p>Since the base is 2, the mantissa is always of form 1.x, so the leading 1 does not need to be stored.</p>
-<h2 id="rounding-errors">Rounding errors</h2>
+<p>If the base is 2, the significand is always of form 1.x, so the leading 1 does not need to be stored.</p>
+<h2 id="errors">Errors</h2>
+<p>Most decimals have infinite representations in binary.</p>
+<p>In general, a number 
+<span>
+                  
+        \(x\)
+    
+</span>
+ has a terminating representation in base 
+<span>
+                  
+        \(b\)
+    
+</span>
+ if and only if there exists an integer 
+<span>
+                  
+        \(n\)
+    
+</span>
+ such that 
+<span>
+                  
+        \(x\times b^n\)
+    
+</span>
+ is an integer.
+For any rational 
+<span>
+                  
+        \(x = \frac{p}{q}\)
+    
+</span>
+, 
+<span>
+                  
+        \(x\)
+    
+</span>
+ has a terminating representation in 
+<span>
+                  
+        \(b\)
+    
+</span>
+ if all prime factors of 
+<span>
+                  
+        \(q\)
+    
+</span>
+ are also prime factors of 
+<span>
+                  
+        \(b\)
+    
+</span>
+. (If not, there is no suitable 
+<span>
+                  
+        \(n\)
+    
+</span>
+ to get rid of these factors.)</p>
+<p>Thus for base 10, any 
+<span>
+                  
+        \(x = \frac{p}{q}\)
+    
+</span>
+ where 
+<span>
+                  
+        \(q\)
+    
+</span>
+ has prime factors other than 2 or 5 will not have a terminating representation, and for base 2, any 
+<span>
+                  
+        \(x = \frac{p}{q}\)
+    
+</span>
+ where 
+<span>
+                  
+        \(q\)
+    
+</span>
+ has prime factors other than 2 will not have a terminating representation.</p>
 
 
     
