@@ -21,7 +21,7 @@
 
 
   <meta property="og:title" content="Fission reactors" />
-<meta property="og:description" content="Draft." />
+<meta property="og:description" content="Fission reaction, neutron transport, and reactor types. (Draft)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/docs/nuctec/reactors/" />
 <meta property="article:published_time" content="2019-11-16T00:00:00+00:00" />
@@ -95,7 +95,7 @@
     <div id="hero">
       <h1> Fission reactors </h1>
       <p class="hero-lead">
-         Draft.
+         Fission reaction, neutron transport, and reactor types. (Draft)
       </p>
 
     </div>
@@ -279,7 +279,10 @@ is the number of neutrons at each position
         $$\text{multiplier} \times \int_\text{stuff} \text{reaction rate}\ d\ \text{stuff}$$
     
 </span>
-</p>
+
+Where the reaction rate is a cross-section times flux.</p>
+<p>To make things easier, we neglect the angle of the neutrons and assume that the reactor is in a steady state and homogeneous (the latter doesn&rsquo;t hold in or near fuel and control rods, though). Also, the energy can be discretized in groups (for LWR, this can be a two-group approximation: thermal and non-thermal energy ranges), taking averages of the quantities depending on the energy (like cross-sections).
+This allows for transforming the complex <strong>neutron transport equation</strong> into a much simpler (and analytically solvable) <strong>neutron diffusion equation</strong>.</p>
 <h2 id="delayed-neutrons">Delayed neutrons</h2>
 <p>Not all neutron production is instantaneous.</p>
 <h1 id="reactor-types">Reactor types</h1>

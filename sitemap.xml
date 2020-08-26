@@ -23,11 +23,6 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/maths/complex-numbers/</loc>
-    <lastmod>2019-11-16T12:02:48+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cunger.github.io/docs/physics/energy/</loc>
     <lastmod>2019-11-16T11:38:21+01:00</lastmod>
   </url>
@@ -40,11 +35,6 @@
   <url>
     <loc>http://cunger.github.io/docs/dev/web/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cunger.github.io/docs/maths/differential-equations/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -105,6 +95,16 @@
   <url>
     <loc>http://cunger.github.io/docs/dev/tlaplus/</loc>
     <lastmod>2020-07-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/docs/maths/complex-numbers/</loc>
+    <lastmod>2019-11-16T12:02:48+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/docs/maths/differential-equations/</loc>
+    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>

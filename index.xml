@@ -48,15 +48,6 @@
     </item>
     
     <item>
-      <title>Complex numbers</title>
-      <link>http://cunger.github.io/docs/maths/complex-numbers/</link>
-      <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
-      
-      <guid>http://cunger.github.io/docs/maths/complex-numbers/</guid>
-      <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
-    </item>
-    
-    <item>
       <title>Energy</title>
       <link>http://cunger.github.io/docs/physics/energy/</link>
       <pubDate>Sat, 16 Nov 2019 11:38:21 +0100</pubDate>
@@ -81,15 +72,6 @@
       
       <guid>http://cunger.github.io/docs/dev/web/</guid>
       <description>TCP/IP. HTTP. REST.</description>
-    </item>
-    
-    <item>
-      <title>Differential equations</title>
-      <link>http://cunger.github.io/docs/maths/differential-equations/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/maths/differential-equations/</guid>
-      <description>Analytical solutions to first-order linear ODEs.</description>
     </item>
     
     <item>
@@ -152,7 +134,7 @@
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/nuctec/reactors/</guid>
-      <description>Draft.</description>
+      <description>Fission reaction, neutron transport, and reactor types. (Draft)</description>
     </item>
     
     <item>
@@ -198,6 +180,24 @@
       
       <guid>http://cunger.github.io/docs/dev/tlaplus/</guid>
       <description>Formal methods for software verification.</description>
+    </item>
+    
+    <item>
+      <title>Complex numbers</title>
+      <link>http://cunger.github.io/docs/maths/complex-numbers/</link>
+      <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/complex-numbers/</guid>
+      <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
+    </item>
+    
+    <item>
+      <title>Differential equations</title>
+      <link>http://cunger.github.io/docs/maths/differential-equations/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/differential-equations/</guid>
+      <description>Analytical solutions to first-order linear ODEs.</description>
     </item>
     
     <item>
