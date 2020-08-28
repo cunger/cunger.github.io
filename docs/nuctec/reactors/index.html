@@ -21,7 +21,7 @@
 
 
   <meta property="og:title" content="Fission reactors" />
-<meta property="og:description" content="Fission reaction, neutron transport, and reactor types. (Draft)" />
+<meta property="og:description" content="Fission reaction, neutron transport, criticality, and reactor types. (Draft)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/docs/nuctec/reactors/" />
 <meta property="article:published_time" content="2019-11-16T00:00:00+00:00" />
@@ -95,7 +95,7 @@
     <div id="hero">
       <h1> Fission reactors </h1>
       <p class="hero-lead">
-         Fission reaction, neutron transport, and reactor types. (Draft)
+         Fission reaction, neutron transport, criticality, and reactor types. (Draft)
       </p>
 
     </div>
@@ -285,6 +285,57 @@ Where the reaction rate is a cross-section times flux.</p>
 This allows for transforming the complex <strong>neutron transport equation</strong> into a much simpler (and analytically solvable) <strong>neutron diffusion equation</strong>.</p>
 <h2 id="delayed-neutrons">Delayed neutrons</h2>
 <p>Not all neutron production is instantaneous.</p>
+<h1 id="criticality">Criticality</h1>
+
+<span>
+     
+        $$k = \dfrac{\text{gains}}{\text{losses}}$$
+    
+</span>
+
+<ul>
+<li>If 
+<span>
+                  
+        \(k=1\)
+    
+</span>
+, the reactor is <strong>critical</strong>, i.e. in steady state.</li>
+<li>If 
+<span>
+                  
+        \(k&lt;1\)
+    
+</span>
+, the reactor is <strong>subcritical</strong>.</li>
+<li>If 
+<span>
+                  
+        \(k&gt;1\)
+    
+</span>
+, the reactor is <strong>supercritical</strong>.</li>
+</ul>
+<p>If the temperature is raised, macroscopic cross-sections 
+<span>
+                  
+        \(\Sigma = N \times \sigma\)
+    
+</span>
+ tend to go down, as atoms spread out and thus the number density 
+<span>
+                  
+        \(N\)
+    
+</span>
+ go down.
+The relative change of a physical property associated with a given change in temperature is the <strong>temperature coefficient</strong>, and we definitely don&rsquo;t want a positive temperature coefficient for 
+<span>
+                  
+        \(k\)
+    
+</span>
+ in a reactor.</p>
 <h1 id="reactor-types">Reactor types</h1>
 <h2 id="light-water-reactors-lwrs">Light water reactors (LWRs)</h2>
 <p>Coolant: Water
