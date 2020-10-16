@@ -6,11 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://cunger.github.io/docs/dev/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/docs/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Numbers</title>
       <link>http://cunger.github.io/docs/dev/numbers/</link>

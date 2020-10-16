@@ -6,11 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 16 Nov 2019 12:19:28 +0100</lastBuildDate>
-    
-	<atom:link href="http://cunger.github.io/docs/physics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 16 Nov 2019 12:19:28 +0100</lastBuildDate><atom:link href="http://cunger.github.io/docs/physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Units and constants</title>
       <link>http://cunger.github.io/docs/physics/basics/</link>

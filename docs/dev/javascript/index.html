@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.76.5" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -719,7 +719,7 @@ Declared variables are local variables within the module&rsquo;s scope.</p>
 </span><span style="color:#75715e"></span><span style="color:#75af00">module</span><span style="color:#111">.</span><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>        <span style="color:#75715e">// =&gt; undefined
 </span></code></pre></div><h1 id="prototypes">Prototypes</h1>
 <p>There are no classes; objects inherit directly from other objects. More specifically: Every object has an internal <a href="http://2ality.com/2012/10/javascript-properties.html">property</a> <code>[[Prototype]]</code> that points to another object, its <em>prototype</em>. It can be accessed by <code>__proto__</code> or (for browser compatibility reasons much preferred) <code>Object.getPrototypeOf(obj)</code> and checked by <code>pobj.isPrototypOf(obj)</code>. For functions this is by default <code>Function.prototype</code>, for arrays it&rsquo;s <code>Array.prototype</code>, etc.</p>
-<p>Note that <code>foo.isPrototypeOf(bar)</code> is transitive, i.e. checks whether <code>foo</code> is anywhere in the prototype chain of <code>bar</code>, while <code>Object.getPrototypeOf(bar)</code> returns the object that is the value of <code>bar</code>'s internal <code>[[Prototype]]</code>&rsquo; property, i.e. it&rsquo;s immediate prototype.</p>
+<p>Note that <code>foo.isPrototypeOf(bar)</code> is transitive, i.e. checks whether <code>foo</code> is anywhere in the prototype chain of <code>bar</code>, while <code>Object.getPrototypeOf(bar)</code> returns the object that is the value of <code>bar</code>&rsquo;s internal <code>[[Prototype]]</code>' property, i.e. it&rsquo;s immediate prototype.</p>
 <p>The <strong>prototype chain</strong> of an object is a sequence of objects starting with the object referenced by the object&rsquo;s internal <code>[[Prototype]]</code> property, followed by the reference of that object&rsquo;s <code>[[Prototype]]</code> property, and so on, until the referenced object is <code>Object.prototype</code>, which is each object&rsquo;s prototype and does not have a prototype itself. <code>Object.prototype</code> implements methods like <code>toString</code>, <code>valueOf</code>, <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, etc.</p>
 <p>Behaviour is shared between objects by <strong>delegation</strong>: When trying to access a property of an object, JavaScript first checks the object itself, and if it does not find a property of that name, walks through the prototype chain until it finds it or runs out of prototypes. An object thus delegates each property that is does not specify itself to the first object on its prototype chain that does specify it. At the same time it can override prototype behaviour by specifying the property as its own.</p>
 <p>In order to check whether a property exists on the object as opposed to one of its prototypes, use <code>obj.hasOwnProperty('key')</code> or <code>Object.getOwnPropertyNames(obj)</code>.</p>

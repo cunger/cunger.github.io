@@ -5,10 +5,6 @@
     <link>http://cunger.github.io/categories/</link>
     <description>Recent content in Categories on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    
-	<atom:link href="http://cunger.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-gb</language><atom:link href="http://cunger.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
