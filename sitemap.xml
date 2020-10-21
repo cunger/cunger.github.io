@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://cunger.github.io/docs/maths/algebra/</loc>
+    <lastmod>2020-10-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cunger.github.io/docs/dev/numbers/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
@@ -83,18 +88,8 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/dev/rust/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cunger.github.io/docs/physics/fluid-flow/</loc>
     <lastmod>2019-11-16T12:19:28+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cunger.github.io/docs/dev/tlaplus/</loc>
-    <lastmod>2020-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -113,18 +108,18 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/dev/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/docs/maths/</loc>
+    <lastmod>2020-10-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://cunger.github.io/docs/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://cunger.github.io/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -133,13 +128,13 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/physics/</loc>
-    <lastmod>2019-11-16T12:19:28+01:00</lastmod>
+    <loc>http://cunger.github.io/docs/dev/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/maths/</loc>
-    <lastmod>2019-11-16T12:02:48+01:00</lastmod>
+    <loc>http://cunger.github.io/docs/physics/</loc>
+    <lastmod>2019-11-16T12:19:28+01:00</lastmod>
   </url>
   
   <url>

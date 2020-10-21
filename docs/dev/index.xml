@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/docs/dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/docs/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Numbers</title>
       <link>http://cunger.github.io/docs/dev/numbers/</link>
@@ -59,24 +59,6 @@
       
       <guid>http://cunger.github.io/docs/dev/javascript/</guid>
       <description>Functions. Prototypes. Promises. Etc.</description>
-    </item>
-    
-    <item>
-      <title>Rust</title>
-      <link>http://cunger.github.io/docs/dev/rust/</link>
-      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/rust/</guid>
-      <description>Coming soon.</description>
-    </item>
-    
-    <item>
-      <title>TLA&#43;</title>
-      <link>http://cunger.github.io/docs/dev/tlaplus/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/tlaplus/</guid>
-      <description>Formal methods for software verification.</description>
     </item>
     
     <item>

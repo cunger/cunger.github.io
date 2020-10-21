@@ -6,7 +6,16 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear algebra</title>
+      <link>http://cunger.github.io/docs/maths/algebra/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/algebra/</guid>
+      <description>The gist of it. Draft.</description>
+    </item>
+    
     <item>
       <title>Numbers</title>
       <link>http://cunger.github.io/docs/dev/numbers/</link>
@@ -152,30 +161,12 @@
     </item>
     
     <item>
-      <title>Rust</title>
-      <link>http://cunger.github.io/docs/dev/rust/</link>
-      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/rust/</guid>
-      <description>Coming soon.</description>
-    </item>
-    
-    <item>
       <title>Fluid flow</title>
       <link>http://cunger.github.io/docs/physics/fluid-flow/</link>
       <pubDate>Sat, 16 Nov 2019 12:19:28 +0100</pubDate>
       
       <guid>http://cunger.github.io/docs/physics/fluid-flow/</guid>
       <description>Flow rate. Drag force.</description>
-    </item>
-    
-    <item>
-      <title>TLA&#43;</title>
-      <link>http://cunger.github.io/docs/dev/tlaplus/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/dev/tlaplus/</guid>
-      <description>Formal methods for software verification.</description>
     </item>
     
     <item>

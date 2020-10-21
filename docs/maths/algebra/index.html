@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.76.5" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linear algebra | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Linear algebra" />
+<meta property="og:description" content="The gist of it. Draft." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/docs/maths/algebra/" />
+<meta property="article:published_time" content="2020-10-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-21T00:00:00+00:00" />
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/docs/maths/algebra/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/docs/maths">Mathematics</a></li>
+       <li><a href="/docs/physics">Physics</a></li>
+       <li><a href="/docs/nuctec">Nuclear Engineering</a></li>
+       <li><a href="/docs/dev">Software Development</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Linear algebra </h1>
+      <p class="hero-lead">
+         The gist of it. Draft.
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <p>Algebra is a way to reason about the properties of mathematical objects under certain operations.</p>
+<h1 id="algebraic-structures">Algebraic structures</h1>
+<p>Algebraic structures are sets of mathematical objects together with operations (i.e. rules on how to combine them), so that the set is closed under those operations and the operations satisfy certain conditions.</p>
+<h2 id="fields">Fields</h2>
+<p>A <em>field</em> (<em>Körper</em>) is a set 
+<span>
+                  
+        \(\mathbb{F}\)
+    
+</span>
+ with two operations 
+<span>
+                  
+        \(&#43;\)
+    
+</span>
+ and 
+<span>
+                  
+        \(\times\)
+    
+</span>
+, and two distinct elements 0 and 1, such that:</p>
+<ul>
+<li>
+<span>
+                  
+        \(&#43;\)
+    
+</span>
+ is commutative and associative, has 0 as neutral element, and is invertible for each element of 
+<span>
+                  
+        \(\mathbb{F}\)
+    
+</span>
+.</li>
+<li>
+<span>
+                  
+        \(\times\)
+    
+</span>
+ is commutative and associative, has 1 as neutral element, and is invertible for each element of 
+<span>
+                  
+        \(\mathbb{F}\)
+    
+</span>
+ (with the possible exception of 0).</li>
+<li>
+<span>
+                  
+        \(\times\)
+    
+</span>
+ distributes over 
+<span>
+                  
+        \(&#43;\)
+    
+</span>
+.</li>
+</ul>
+<p>So fields are collections of mathematical objects, for which addition and multiplication are defined and behave in the way we are used to from the real numbers.</p>
+<p>
+<span>
+                  
+        \(\mathbb{Q}\)
+    
+</span>
+, 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ and 
+<span>
+                  
+        \(\mathbb{C}\)
+    
+</span>
+ with addition and multiplication are fields,
+while 
+<span>
+                  
+        \(\mathbb{N}\)
+    
+</span>
+ and 
+<span>
+                  
+        \(\mathbb{Z}\)
+    
+</span>
+ are not (because not all elements have an inverse with respect to multiplication, in 
+<span>
+                  
+        \(\mathbb{N}\)
+    
+</span>
+ not even with respect to addition).</p>
+<h2 id="groups">Groups</h2>
+<p>Groups capture the notion of symmetry.</p>
+<h2 id="vector-spaces">Vector spaces</h2>
+<p>A <em>vector space</em> (also called <em>linear space</em>) is a collection 
+<span>
+                  
+        \(V\)
+    
+</span>
+ of <em>vectors</em> together with two operations: addition (
+<span>
+                  
+        \(V\times V\to V\)
+    
+</span>
+) and scalar multiplication (
+<span>
+                  
+        \(\mathbb{F}\times V\to V\)
+    
+</span>
+ with 
+<span>
+                  
+        \(\mathbb{F}\)
+    
+</span>
+ a field), that satisfy the following conditions:</p>
+<ul>
+<li>Addition is commutative and associative, has a neutral element (the zero vector 0) and is invertible for every vector.</li>
+<li>Scalar multiplication is associative and has a neutral element (the scalar 1).</li>
+<li>Scalar multiplication distributes over addition.</li>
+</ul>
+<p>Vectors can be anything we can take linear combinations of (i.e. that we can add and scale by the elements of a field): coordinates or arrows in 
+<span>
+                  
+        \(n\)
+    
+</span>
+-dimensional space, matrices, functions.
+So a vector space is not so much determined not by what the vectors look like, but by what properties they have.</p>
+<h1 id="linear-operations">Linear operations</h1>
+<p>A map (<em>Abbildung</em>) 
+<span>
+                  
+        \(F\)
+    
+</span>
+ between vector spaces is <em>linear</em> if it respects the vector spaces' linear structure,
+i.e. if it distributes over addition and scalar multiplication:</p>
+<ul>
+<li>
+<span>
+                  
+        \(F(ax) = aF(x)\)
+    
+</span>
+, i.e. scaling the input is the same as scaling the output</li>
+<li>
+<span>
+                  
+        \(F(x&#43;y) = F(x)&#43;F(y)\)
+    
+</span>
+, i.e. adding inputs is the same as adding the outputs</li>
+</ul>
+<p>This way, linear operations allow one to divide work on complex inputs into work on simpler inputs.</p>
+<p>Examples of linear operations:</p>
+<ul>
+<li>The derivative 
+<span>
+                  
+        \(\frac{d}{dx}\)
+    
+</span>
+ over the vector space of functions from 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ to 
+<span>
+                  
+        \(\mathbb{R}^m\)
+    
+</span>
+ with addition and scalar multiplication defined the usual way.</li>
+</ul>
+<p><strong>Note:</strong> There are <a href="https://en.wikipedia.org/wiki/Linear_function">two distinct senses of <em>linear</em></a>. Polynomials of degree 
+<span>
+                  
+        \(\leq 1\)
+    
+</span>
+, i.e. functions of the form 
+<span>
+                  
+        \(f(x) = ax &#43; b\)
+    
+</span>
+, are also called linear functions, as their graph is a line. But they&rsquo;re not linear in the above sense, for example 
+<span>
+                  
+        \(f(2x)=2ax&#43;b\neq 2(ax&#43;b)=2f(x)\)
+    
+</span>
+.</p>
+<h1 id="applications">Applications</h1>
+<h2 id="matrices-as-transformations-on-vectors">Matrices as transformations on vectors</h2>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2020 &middot; Christina Unger</span></li>
+      <li>
+        Made with <a href="https://gohugo.io/">Hugo</a> ♥ Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
