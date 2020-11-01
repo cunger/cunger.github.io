@@ -203,7 +203,7 @@
       
       <guid>http://cunger.github.io/patchwork/</guid>
       <description>The list of resources below is growing and evolving as I proceed on a slow but steady learning journey towards nuclear proficiency and technical software engineering. As Marie Curie said: Now is the time to understand more.
-Bookshelf  📖 C. Baier, J.-P. Katoen: Principles of Model Checking. 📖 W. Ley, K. Wittmann, W. Hallmann (eds.): Handbuch der Raumfahrttechnik. 📚 L. Lamport: Specifying Systems. 📚 I. Hutchinson: A Student&amp;rsquo;s Guide to Numerical Methods.</description>
+Bookshelf  📖 G. Hager, G. Wellein: Introduction to High Performance Computing for Scientists and Engineers. 📚 I. Hutchinson: A Student&amp;rsquo;s Guide to Numerical Methods. S. Yip: Nuclear Radiation Interactions.  (📖 means &amp;ldquo;currently reading&amp;rdquo; and 📚 means &amp;ldquo;on the stack&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -218,7 +218,7 @@ I have a strong interest in nuclear technology and spaceflight.
  📝 Medium.com/@christina.unger
  📬 christina@unger.dev
  🌍 Bielefeld, Germany
- ️🛠 Scientific Programming, LaTeX, Linux, Git
+ ️🛠 Julia, Fortran, Git, Linux, LaTeX
  These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly.</description>
     </item>
     
