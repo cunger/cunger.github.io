@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.78.0" />
+  <meta name="generator" content="Hugo 0.78.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -158,8 +158,12 @@ Foreign key columns obviously need to have the same data type as the primary key
 <pre><code>$ psql -l
 </code></pre><p>Connect to database:</p>
 <pre><code>$ psql hero-database username
-</code></pre><p>List all tables the database:</p>
-<pre><code>hero-database=# \dt
+</code></pre><p>Or via postgres terminal:</p>
+<pre><code>$ sudo -i -u postgres
+$ psql
+postgres=# \l
+postgres=# \c hero-database
+hero-database=#
 </code></pre><h3 id="command-line">Command line</h3>
 <table>
 <thead>
@@ -225,13 +229,13 @@ Foreign key columns obviously need to have the same data type as the primary key
 <h2 id="importing-and-exporting-data">Importing and exporting data</h2>
 <p><em>Importing from SQL file:</em></p>
 <p>Command line:</p>
-<pre><code>psql -d demo &lt; dump.sql
+<pre><code>$ psql -d demo &lt; dump.sql
 </code></pre><p><code>psql</code> console:</p>
-<pre><code>\i /path/to/dump.sql
+<pre><code># \i /path/to/dump.sql
 </code></pre><p><em>Importing from CSV file:</em></p>
 <p><code>psql</code> console:</p>
-<pre><code>\copy table          from 'table.csv' with CSV HEADER DELIMITER ',';
-\copy table (c1, c2) from 'table.csv' with CSV HEADER DELIMITER ',';
+<pre><code># \copy table          from 'table.csv' with CSV HEADER DELIMITER ',';
+# \copy table (c1, c2) from 'table.csv' with CSV HEADER DELIMITER ',';
 </code></pre><p><code>\copy</code> invokes the corresponding SQL command <code>COPY</code>:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">COPY</span> <span style="color:#00a8c8">table</span>               <span style="color:#00a8c8">FROM</span> <span style="color:#d88200">&#39;absolute/path/to/table.csv&#39;</span> <span style="color:#00a8c8">WITH</span> <span style="color:#111">CSV</span> <span style="color:#111">HEADER</span> <span style="color:#00a8c8">DELIMITER</span> <span style="color:#d88200">&#39;,&#39;</span><span style="color:#111">;</span>
 <span style="color:#00a8c8">COPY</span> <span style="color:#00a8c8">table</span> <span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#111">)</span> <span style="color:#00a8c8">FROM</span> <span style="color:#d88200">&#39;absolute/path/to/table.csv&#39;</span> <span style="color:#00a8c8">WITH</span> <span style="color:#111">CSV</span> <span style="color:#111">HEADER</span> <span style="color:#00a8c8">DELIMITER</span> <span style="color:#d88200">&#39;,&#39;</span><span style="color:#111">;</span>
@@ -242,11 +246,13 @@ in the table schema, the columns have to be specified in the correct order
 in the <code>COPY</code> statement.</p>
 <p><em>Exporting a database or a specific table into an SQL file:</em></p>
 <p>Command line:</p>
-<pre><code>pg_dump -d demo [-t table] [--inserts] -f dump.sql
+<pre><code>$ pg_dump -d demo [-t table] [--inserts] -f dump.sql
 </code></pre><h2 id="data-types">Data types</h2>
 <p>Data types are used by databases to decide how much memory to allocate to the values, how to perform operations and calculations on them, and how to sort them.</p>
-<p><a href="https://www.w3schools.com/sql/sql_datatypes.asp">SQL datatypes</a>
-<a href="https://www.postgresql.org/docs/current/static/datatype.html">PostgreSQL datatypes</a></p>
+<ul>
+<li><a href="https://www.w3schools.com/sql/sql_datatypes.asp">SQL datatypes</a></li>
+<li><a href="https://www.postgresql.org/docs/current/static/datatype.html">PostgreSQL datatypes</a></li>
+</ul>
 <h3 id="serial">Serial</h3>
 <p><code>serial</code> is a notational shortcut for creating a sequence:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#111">items</span> <span style="color:#111">(</span>
