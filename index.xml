@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 21 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linear algebra</title>
       <link>http://cunger.github.io/docs/maths/algebra/</link>
@@ -68,6 +68,15 @@
       
       <guid>http://cunger.github.io/docs/nuctec/nuclear-reactions/</guid>
       <description>Q-value, alpha, beta, and gamma decay, activity and decay rate.</description>
+    </item>
+    
+    <item>
+      <title>Polynomials</title>
+      <link>http://cunger.github.io/docs/maths/polynomials/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/polynomials/</guid>
+      <description>German notes on polynomials. Draft.</description>
     </item>
     
     <item>
