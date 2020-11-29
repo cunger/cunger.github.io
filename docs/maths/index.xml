@@ -8,7 +8,7 @@
     <language>en-gb</language>
     <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/docs/maths/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linear algebra</title>
+      <title>Algebraic structures</title>
       <link>http://cunger.github.io/docs/maths/algebra/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       
@@ -23,6 +23,15 @@
       
       <guid>http://cunger.github.io/docs/maths/polynomials/</guid>
       <description>German notes on polynomials. Draft.</description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>http://cunger.github.io/docs/maths/functions/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/functions/</guid>
+      <description>German notes on functions, convergence, and so on. Draft.</description>
     </item>
     
     <item>
