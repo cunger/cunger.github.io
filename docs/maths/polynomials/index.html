@@ -123,8 +123,7 @@ headingSelector: 'h1'
 
 
 
-    <p><strong>Polynome</strong> sind Ausdrücke, die aus Konstanten und Variablen mithilfe von Addition, Subtraktion, Multiplikation, und nicht-negativen ganzzahligen Potenzen gebildet werden können.</p>
-<p>Ein Polynom 
+    <p>Ein <strong>Polynom</strong> 
 <span>
                   
         \(p\in\mathbb{K}[x]\)
@@ -142,13 +141,15 @@ headingSelector: 'h1'
         \(x\)
     
 </span>
- ist ein Ausdruck der Form 
+ ist ein Ausdruck der Form</p>
+
 <span>
      
-        $$\sum_{i=0}^n a_ix_i,$$
+        $$\sum_{i=0}^n a_ix_i=a_nx^n&#43;a_{n-1}x^{n-1}&#43;\ldots&#43;a_1x&#43;a_0,$$
     
 </span>
- wobei 
+
+<p>wobei 
 <span>
                   
         \(a_0,\ldots,a_n\in\mathbb{K}\)
@@ -167,6 +168,52 @@ headingSelector: 'h1'
     
 </span>
 .</p>
+<p><strong>Polynomfunktionen</strong> sind Funktionen der Form
+
+<span>
+     
+        $$p(x)=\sum_{i=0}^n a_ix_i=a_nx^n&#43;a_{n-1}x^{n-1}&#43;\ldots&#43;a_1x&#43;a_0.$$
+    
+</span>
+</p>
+<p>Jedes Polynom liefert also eine Polynomfunktion 
+<span>
+                  
+        \(f:\mathbb{R}\to\mathbb{R}\)
+    
+</span>
+.
+Für alle 
+<span>
+                  
+        \(r\in\mathbb{K}\)
+    
+</span>
+ ist 
+<span>
+                  
+        \(p(r)\)
+    
+</span>
+ das Resultat davon, 
+<span>
+                  
+        \(r\)
+    
+</span>
+ in 
+<span>
+                  
+        \(p\)
+    
+</span>
+ einzusetzen (d.h. 
+<span>
+                  
+        \(p(r) = \sum_{i=0}^n a_ir^i\)
+    
+</span>
+).</p>
 <h1 id="arithmetische-operationen">Arithmetische Operationen</h1>
 <p>Polynome drücken Zahlen aus und können wie diese addiert, subtrahiert und multipliziert werden. Das Ergebnis ist erneut ein Polynom.</p>
 <h2 id="multiplikation">Multiplikation</h2>
@@ -247,8 +294,47 @@ D.h. der Term mit Exponent
 </span>
 .</p>
 <h2 id="division-mit-rest">Division mit Rest</h2>
+<p>Im Gegensatz zu Addition, Subtraktion und Multiplikation von Polynomen, ergibt die Division von Polynomen nicht notwendig wieder ein Polynom. Z.B. ist 
+<span>
+                  
+        \(\frac{p}{q}=\frac{1}{x}\)
+    
+</span>
+ für 
+<span>
+                  
+        \(p=1\)
+    
+</span>
+ und 
+<span>
+                  
+        \(q=x\)
+    
+</span>
+ kein Polynom. Es gibt aber eindeutig bestimmte Polynome 
+<span>
+                  
+        \(f,r\)
+    
+</span>
+, so dass
+
+<span>
+     
+        $$p=fq&#43;r$$
+    
+</span>
+
+mit 
+<span>
+                  
+        \(\text{Grad}(r)&lt;\text{Grad}(q)\)
+    
+</span>
+.</p>
 <h2 id="faktorisierung">Faktorisierung</h2>
-<p>Polynome können äquivalent umgeformt werden als Produkt von Polynomen.</p>
+<p>Polynome können äquivalent umgeformt werden als Produkt von Polynomen. Zum Beispiel:</p>
 <ul>
 <li>
 <span>
@@ -257,54 +343,67 @@ D.h. der Term mit Exponent
     
 </span>
 </li>
+<li>
+<span>
+                  
+        \(x^3-2x^2-x&#43;1=(x-2)(x&#43;1)(x-1)\)
+    
+</span>
+</li>
 </ul>
 <h2 id="komposition">Komposition</h2>
-<h1 id="polynomfunktionen">Polynomfunktionen</h1>
-<p>Für alle 
+<h1 id="nullstellen">Nullstellen</h1>
+<p>Ein Polynom 
 <span>
                   
-        \(r\in\mathbb{K}\)
+        \(n\)
     
 </span>
- ist 
+-ten Grades hat höchstens 
 <span>
                   
-        \(p(r)\)
+        \(n\)
     
 </span>
- das Resultat davon, 
+ Nullstellen. 
 <span>
                   
         \(r\)
     
 </span>
- in 
+ ist eine Nullstelle genau dann, wenn 
 <span>
                   
-        \(p\)
+        \((x-r)\)
     
 </span>
- einzusetzen (d.h. 
+ ein Faktor des Polynoms ist. D.h. wenn 
 <span>
                   
-        \(p(r) = \sum_{i=0}^n a_ir^i\)
+        \(r_1,\ldots,r_n\)
     
 </span>
-).
-Jedes Polynom liefert also eine Polynomfunktion 
+ die Nullstellen des  Polynoms 
 <span>
                   
-        \(f:\mathbb{R}\to\mathbb{R}\)
+        \(p(x)\)
     
 </span>
- mit 
+ sind, ist<br>
+
+<span>
+     
+        $$p(x)=a_n(x-r_n)(x-r_{n-1})\cdots(x-r_2)(x-r_1)q(x)$$
+    
+</span>
+
+eine Faktorisierung des Polynoms (wobei 
 <span>
                   
-        \(f(x)=\sum_{i=0}^n a_ix_i\)
+        \(q(x)\)
     
 </span>
-.</p>
-<h1 id="nullstellen">Nullstellen</h1>
+ wieder ein Polynom ist).</p>
 <h1 id="gleichungen">Gleichungen</h1>
 <h1 id="anwendungen">Anwendungen</h1>
 
