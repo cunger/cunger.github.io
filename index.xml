@@ -8,12 +8,12 @@
     <language>en-gb</language>
     <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Algebraic structures</title>
-      <link>http://cunger.github.io/docs/maths/algebra/</link>
-      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <title>Analysis</title>
+      <link>http://cunger.github.io/docs/maths/analysis/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/algebra/</guid>
-      <description>The gist of it. Draft.</description>
+      <guid>http://cunger.github.io/docs/maths/analysis/</guid>
+      <description>German notes on analysis. In progress.</description>
     </item>
     
     <item>
@@ -41,6 +41,15 @@
       
       <guid>http://cunger.github.io/docs/nuctec/atoms/</guid>
       <description>What atoms are composed of, their energy, charge, mass, and stability.</description>
+    </item>
+    
+    <item>
+      <title>Algebraic structures</title>
+      <link>http://cunger.github.io/docs/maths/algebra/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/algebra/</guid>
+      <description>The gist of it. Draft.</description>
     </item>
     
     <item>
@@ -95,15 +104,6 @@
       
       <guid>http://cunger.github.io/docs/physics/forces/</guid>
       <description>The fundamental forces of physics.</description>
-    </item>
-    
-    <item>
-      <title>Functions</title>
-      <link>http://cunger.github.io/docs/maths/functions/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/maths/functions/</guid>
-      <description>German notes on functions, convergence, and so on. Draft.</description>
     </item>
     
     <item>

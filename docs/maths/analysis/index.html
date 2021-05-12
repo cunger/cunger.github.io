@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.83.1" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analysis | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Analysis" />
+<meta property="og:description" content="German notes on analysis. In progress." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/docs/maths/analysis/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2020-11-23T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-11-23T00:00:00&#43;00:00" />
+
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/docs/maths/analysis/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/docs/maths">Mathematics</a></li>
+       <li><a href="/docs/physics">Physics</a></li>
+       <li><a href="/docs/nuctec">Nuclear Engineering</a></li>
+       <li><a href="/docs/dev">Software Development</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Analysis </h1>
+      <p class="hero-lead">
+         German notes on analysis. In progress.
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <h1 id="normierte-und-metrische-räume">Normierte und metrische Räume</h1>
+<p>Viele Begriffe der Analysis, wie der der Umgebung, des Grenzwerts und der Konvergenz, benutzen das Konzept des Abstandes. Konvergenz, zum Beispiel, kann man über die 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+-Umgebung von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ definieren (so dass jedes Folgenglied ab einem bestimmten 
+<span>
+                  
+        \(n\)
+    
+</span>
+ einen Abstand zu 
+<span>
+                  
+        \(x\)
+    
+</span>
+ hat, der kleiner als 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+ ist) oder direkt über den Abstand 
+<span>
+                  
+        \(d\)
+    
+</span>
+ zweier reeller Zahlen:</p>
+<p>Eine reelle Folge 
+<span>
+                  
+        \((x_n)\)
+    
+</span>
+ konvergiert gegen 
+<span>
+                  
+        \(x\)
+    
+</span>
+ gdw 
+<span>
+                  
+        \(\text{lim}_{n\to\infty} d(x_n,x)=0\)
+    
+</span>
+.</p>
+<p>Will man diese Begriffe verallgemeinern für andere mathematische Objekte, wie Folgen von Vektoren, komplexe Zahlen und Funktionen, müsste man sie spezifisch für jedes dieser Objekte neu definieren.
+Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusammen mit einem allgemeinen Konzept für Abstand zwischen Objekten in diese Räumen und darauf aufbauend allgemeine Begriffe wie den der Konvergenz.</p>
+<p>Ein <strong>Raum</strong> ist eine Menge von mathematischen Objekten, typischerweise mit irgendeiner Art von Struktur.</p>
+<p><strong>Metrische Räume</strong> sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine <strong>Metrik</strong> ist eine Abbildung 
+<span>
+                  
+        \(d\)
+    
+</span>
+ zweier Vektoren auf eine reelle Zahl, die den Abstand zwischen diesen Vektoren ausdrückt.</p>
+<p><strong>Normierte Räume</strong> sind Vektorräume, auf denen eine Norm definiert ist, die die Länge eines Vektors ausdrückt.
+Eine <strong>Norm</strong> 
+<span>
+                  
+        \(\|x\|\)
+    
+</span>
+ ist eine Abbildung eines Vektors 
+<span>
+                  
+        \(x\)
+    
+</span>
+ auf eine reelle Zahl (die Länge des Vektors).
+Eine Norm setzt eine lineare Struktur voraus, ist also nur für Vektorräume definiert.
+Beispiele:</p>
+<ul>
+<li>
+<p>
+<span>
+                  
+        \(\mathbb{R}^1\)
+    
+</span>
+ mit dem Betrag 
+<span>
+                  
+        \(|\cdot|\)
+    
+</span>
+</p>
+</li>
+<li>
+<p>
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ mit der p-Norm 
+<span>
+                  
+        \(\|x\|_p := \left(\sum_{k=1}^n |x_k|^p\right)^{\frac{1}{p}}\)
+    
+</span>
+</p>
+<p>Spezialfälle:</p>
+<ul>
+<li>
+<span>
+                  
+        \(\|\cdot\|_1\)
+    
+</span>
+ Summennorm</li>
+<li>
+<span>
+                  
+        \(\|\cdot\|_2\)
+    
+</span>
+ euklidische Norm</li>
+<li>
+<span>
+                  
+        \(\|x\|_\infty := \text{max}\,\{|x_k|\,\mid\,1\leq k\leq n\}\)
+    
+</span>
+ Maximumnorm</li>
+</ul>
+</li>
+<li>
+<p>Vektorraum aller beschränkten Funktionen mit der Supremumsnorm 
+<span>
+                  
+        \(\|\cdot\|_\infty\)
+    
+</span>
+</p>
+</li>
+</ul>
+<p>Jede Norm induziert auch eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich
+
+<span>
+                  
+        \(d(x,y) = \|x-y\|\)
+    
+</span>
+, d.h. der Abstand zweier Vektoren wird definiert als die Länge des Differenzvektors.
+Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig umgekehrt: Ein metrischer Raum ist nicht unbedingt ein Vektorraum, denn eine Metrik muss die lineare Struktur eines Raumes nicht respektieren.</p>
+<p>Beispiele für Metriken, die von keiner Norm induziert werden:</p>
+<ul>
+<li>Diskrete Metrik 
+<span>
+                  
+        \(d(x,y) := \begin{cases} 0 &amp; \text{wenn }x=y \\ 1 &amp; \text{sonst}\end{cases}\)
+    
+</span>
+</li>
+<li>Französische Eisenbahnmetrik (wo die Abstandsmessung immer durch einen zentralen Punkt 
+<span>
+                  
+        \(P\)
+    
+</span>
+ gehen muss)
+
+<span>
+     
+        $$d(x,y) := \begin{cases} \|x-y\| &amp; \text{wenn }x,y\text{ auf einer Geraden durch }P\text{ liegen} \\ \|x-P\| &#43; \|P-y\| &amp; \text{sonst}\end{cases}$$
+    
+</span>
+</li>
+</ul>
+<p>Alle Normen über einem endlich-dimensionalen Vektorraum 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ sind bis auf eine Konstante (d.h. bis auf Streckung oder Stauchung) äquivalent, d.h. es gibt 
+<span>
+                  
+        \(c_1,c_2\)
+    
+</span>
+, so dass 
+<span>
+                  
+        \(\|x\|_a \leq c_1\|x\|_b\)
+    
+</span>
+ und 
+<span>
+                  
+        \(\|x\|_b\leq c_2 \|x\|_a\)
+    
+</span>
+. So kann man z.B. bestimmte Eigenschaften auf der Maximumsnorm zeigen, wo sie einfacher zu beweisen sind, und dann auf äquivalente Normen übertragen.</p>
+<p>Ein normierter Raum ist genau dann <strong>vollständig</strong>, wenn jede Cauchy-Folge konvergiert. Vollständige Räume umfassen immer geschlossene Mengen, es gibt also keine Lücken im Raum. Ein vollständiger normierter Raum heißt <strong>Banachraum</strong>. Zum Beispiel ist jeder endlich-dimensionale Raum über 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ (also 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+) mit einer beliebigen Norm vollständig.</p>
+<h1 id="mengen-in-metrischen-räumen">Mengen in metrischen Räumen</h1>
+<p>Häufungspunkte</p>
+<p>überdeckung</p>
+<p>Eine Menge 
+<span>
+                  
+        \(M\)
+    
+</span>
+ ist <strong>offen</strong> bzgl. einer Norm, wenn 
+<span>
+                  
+        \(M\)
+    
+</span>
+ Umgebung von jedem 
+<span>
+                  
+        \(a\in M\)
+    
+</span>
+ ist, d.h. wenn jede 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+-Umgebung von 
+<span>
+                  
+        \(a\)
+    
+</span>
+ ganz in 
+<span>
+                  
+        \(M\)
+    
+</span>
+ liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann <strong>geschlossen</strong> bzgl. der Norm. Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.</p>
+<p>Eine Teilmenge von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.</p>
+<p>Faustregel:</p>
+<ul>
+<li>Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen.</li>
+<li>Mengen, die mit 
+<span>
+                  
+        \(=,\leq,\geq\)
+    
+</span>
+ zwischen stetigen Funktionen definiert sind, sind abgeschlossen.</li>
+</ul>
+<p>Eine Menge ist <strong>kompakt</strong> &hellip;</p>
+<p>
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ ist nicht kompakt.</p>
+<p><strong>Satz von Heine-Borel</strong> Eine nicht-leere Teilmenge von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.</p>
+<h1 id="funktionen-über-metrischen-räumen">Funktionen über metrischen Räumen</h1>
+<p>Wir betrachten dann Abbildungen zwischen metrischen Räumen, insbesondere stetige Funktionen 
+<span>
+                  
+        \(f:X\to Y\)
+    
+</span>
+ zwischen metrischen Räumen 
+<span>
+                  
+        \((X,d_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,d_Y)\)
+    
+</span>
+
+(oder zwischen spezielleren metrischen Räumen 
+<span>
+                  
+        \((X,\|\cdot\|_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,\|\cdot\|_Y)\)
+    
+</span>
+, wenn 
+<span>
+                  
+        \(d(a,b)=\|a-b\|\)
+    
+</span>
+).</p>
+<p>Besonders wichtig für Anwendungen sind Abbildungen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+, also reellwertige Funktionen mehrerer Veränderlicher, und vektorwertige Funktionen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}^m\)
+    
+</span>
+. Inbesondere lineare Transformationen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}^m\)
+    
+</span>
+ (für die also gilt 
+<span>
+                  
+        \(f(x&#43;x&#39;)=f(x)&#43;f(x&#39;)\)
+    
+</span>
+ und 
+<span>
+                  
+        \(f(cx)=cf(x)\)
+    
+</span>
+), die durch eine eindeutige Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ beschrieben werden können, so dass 
+<span>
+                  
+        \({}^t(f(x))=A{\,}^tx\)
+    
+</span>
+.</p>
+<p>Eine Abbildung oder Funktion ist</p>
+<ul>
+<li><strong>surjektiv</strong>, wenn jedes Element des Wertebereichs im Bild von 
+<span>
+                  
+        \(f\)
+    
+</span>
+ liegt.</li>
+<li><strong>injektiv</strong>, wenn jedes Element im Bild von 
+<span>
+                  
+        \(f\)
+    
+</span>
+ genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.</li>
+</ul>
+<p>Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eigenschaften, d.h. sie hängen nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
+<h2 id="stetigkeit">Stetigkeit</h2>
+<ul>
+<li>
+<p><strong>
+<span>
+                  
+        \(\varepsilon-\delta\)
+    
+</span>
+-Kriterium:</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist stetig in 
+<span>
+                  
+        \(p\)
+    
+</span>
+, wenn es für alle 
+<span>
+                  
+        \(\varepsilon &gt; 0\)
+    
+</span>
+ ein 
+<span>
+                  
+        \(\delta &gt; 0\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(x\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_X(x,p) &lt; \delta \Rightarrow d_Y(f(x),f(p)) &lt; \varepsilon$$
+    
+</span>
+</p>
+</li>
+<li>
+<p><strong>Umgebungskriterium:</strong></p>
+</li>
+<li>
+<p><strong>Folgenkriterium:</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist stetig in 
+<span>
+                  
+        \(p\)
+    
+</span>
+, wenn für jede Folge 
+<span>
+                  
+        \((x_n)\)
+    
+</span>
+ in 
+<span>
+                  
+        \(X\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(\lim_{n\to\infty} x_n = p\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$\lim_{n\to\infty} f(x_n) = f(\lim_{n\to\infty} x_n) = f(p)$$
+    
+</span>
+</p>
+</li>
+</ul>
+<p>Weitere, stärkere Arten von Stetigkeit:</p>
+<ul>
+<li>
+<p><strong>Gleichmäßige Stetigkeit</strong></p>
+</li>
+<li>
+<p><strong>Lipschitz-Stetigkeit</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist Lipschitz-stetig mit Lipschitz-Konstante 
+<span>
+                  
+        \(L\)
+    
+</span>
+ (oder <em>dehnungsbeschränkt</em>), wenn für alle 
+<span>
+                  
+        \(p,q\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_Y(f(p),f(q)) \leq L\cdot d_X(p,q)$$
+    
+</span>
+
+
+<span>
+     
+        $$\|(f(p)-f(q))\|_Y \leq L\cdot \|p-q\|_X$$
+    
+</span>
+</p>
+<p>Das heißt, der Abstand zweier Punkte 
+<span>
+                  
+        \(x,x&#39;\)
+    
+</span>
+ wird durch Anwendung der Funktion höchstens um den Faktor 
+<span>
+                  
+        \(L\)
+    
+</span>
+ gestreckt (wenn 
+<span>
+                  
+        \(L &gt; 1\)
+    
+</span>
+) oder gestaucht (wenn 
+<span>
+                  
+        \(L&lt;1\)
+    
+</span>
+).</p>
+</li>
+<li>
+<p><strong>Hölder-Stetigkeit</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist Hölder-stetig zum Exponenten 
+<span>
+                  
+        \(\alpha\in(0,\infty)\)
+    
+</span>
+, wenn es eine Konstante 
+<span>
+                  
+        \(C&gt;0\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(p,q\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_Y(f(p),f(q)) \leq C\cdot d_X(p,q)^\alpha$$
+    
+</span>
+
+
+<span>
+     
+        $$\|(f(p)-f(q))\|_Y \leq C\cdot \|p-q\|_X^\alpha$$
+    
+</span>
+</p>
+</li>
+</ul>
+<p>Zum Beispiel ist 
+<span>
+                  
+        \(f(x)=x^2\)
+    
+</span>
+ stetig, aber nicht gleichmäßig stetig oder Lipschitz-stetig.</p>
+<p>In einem Punkt 
+<span>
+                  
+        \(a\)
+    
+</span>
+ stetig fortsetzbar?
+Wenn 
+<span>
+                  
+        \(a\)
+    
+</span>
+ kein Häufungspunkt, dann immer. Wenn 
+<span>
+                  
+        \(a\)
+    
+</span>
+ Häufungspunkt, dann nur wenn 
+<span>
+                  
+        \(f\)
+    
+</span>
+ in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ konvergiert.</p>
+<h2 id="differenzierbarkeit">Differenzierbarkeit</h2>
+<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts?
+Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen:</p>
+<ul>
+<li>
+<p>Die Ableitung ist der Differentialquotient, also der Proportionalitätsfaktor zwischen infinitesimalen änderungen des Eingabewertes und daraus resultierenden infinitesimalen änderungen des Funktionswertes. An einer Stelle 
+<span>
+                  
+        \(x_0\)
+    
+</span>
+:</p>
+
+<span>
+     
+        $$f&#39;(x_0) = \text{lim}_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$$
+    
+</span>
+
+<p>Das Problem bei Funktionen 
+<span>
+                  
+        \(f:\mathbb{R}^n\to\mathbb{R}^m\)
+    
+</span>
+ ist, dass 
+<span>
+                  
+        \(x-x_0\in \mathbb{R}^n\)
+    
+</span>
+ und 
+<span>
+                  
+        \(f(x)-f(x_0)\in \mathbb{R}^m\)
+    
+</span>
+, der Quotient beider ist also gar nicht vernünftig definiert. Deswegen weicht man da auf den anderen Ableitungsbegriff aus.</p>
+</li>
+<li>
+<p>Die Ableitung ist die Steigung der linearen Funktion, die die änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
+</li>
+</ul>
+<p>Differential</p>
+<p>Richtungsableitung: das lokale Verhalten der Komponentenfunktion bei änderung dieser Komponente.</p>
+<p>Gradient</p>
+<p>Die partielle Ableitung einer Funktion mehrerer Veränderlicher ist nichts anderes als die Ableitung der Funktion, die man erhält, wenn man alle Veränderlichen bis auf eine festhält.</p>
+<h2 id="umkehrfunktion">Umkehrfunktion</h2>
+<h1 id="folgen-und-reihen-in-metrischen-räumen">Folgen und Reihen in metrischen Räumen</h1>
+<p>Eine <strong>reelle Folge</strong> ist eine Abbildung 
+<span>
+                  
+        \(f:\mathbb{N}\to\mathbb{R}\)
+    
+</span>
+. (Eine Folge hat also immer unendlich viele Elemente.)</p>
+<p>Folgen von Punkten in einem metrischen Raum</p>
+<ul>
+<li>Konvergenz</li>
+</ul>
+<p>Folgen von Funktionen zwischen metrischen Räumen</p>
+<ul>
+<li>
+<p>Konvergenz:</p>
+<ul>
+<li>punktweise Konvergenz</li>
+<li>gleichmäßige Konvergenz</li>
+<li>andere Konvergenzen (z.B. 
+<span>
+                  
+        \(L^1\)
+    
+</span>
+- und 
+<span>
+                  
+        \(L^2\)
+    
+</span>
+-Konvergenz)</li>
+</ul>
+</li>
+</ul>
+<p>Reihen von Funktionen</p>
+<h1 id="literatur">Literatur</h1>
+<ul>
+<li>Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.</li>
+<li>Daniel Grieser: Skript zu Analysis II, Universität Oldenburg.</li>
+<li>Terrence Tao: Analysis II.</li>
+</ul>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2020 &middot; Christina Unger</span></li>
+      <li>
+        Made with <a href="https://gohugo.io/">Hugo</a> ♥ Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
