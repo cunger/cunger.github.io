@@ -220,8 +220,9 @@
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/patchwork/</guid>
-      <description>The list of resources below is growing and evolving as I proceed on a slow but steady learning journey. As Marie Curie said: Now is the time to understand more.
-Bookshelf 📖 Knapp, Langill: Industrial network security.
+      <description>The list of resources below is growing and evolving as I proceed on a learning journey that accelerates me to escape velocity.
+ Now is the time to understand more, so that we may fear less. (Marie Curie)
+ Bookshelf 📖 Knapp, Langill: Industrial network security.
 📚 Baier, Katoen: Principles of model checking.
 Selected courses  The Radio Sky: Science and Observations (EPFLx | ongoing) The Basics of Transport Phenomena (DelftX | certificate) Introduction to Nuclear Engineering and Ionizing Radiation</description>
     </item>
@@ -232,14 +233,11 @@ Selected courses  The Radio Sky: Science and Observations (EPFLx | ongoing) The 
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>I’m a software engineer, a technical writer, and an aspiring mathematician - with a strong interest in nuclear technology, space flight, radio astronomy, industrial security, and marine conservation.
-These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly.
+      <description>I’m a software engineer, a technical writer, and an aspiring mathematician; with a strong interest in nuclear technology, space flight, radio astronomy, industrial security, and marine conservation.
+These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly. All notes are (and will probably always be) work in progress.
   💾 GitHub
  📎 LinkedIn
- ✏️ Medium
- 📬 christina@unger.dev
- ️🛠 JavaScript, Java, Julia, Git, Linux
- 🌍 Bielefeld, Germany</description>
+ ️🛠 JavaScript, Java, Julia, Git, Linux</description>
     </item>
     
     <item>
