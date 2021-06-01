@@ -215,6 +215,15 @@
     </item>
     
     <item>
+      <title>Werte</title>
+      <link>http://cunger.github.io/werte/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/werte/</guid>
+      <description> Zeit Professionalität Selbstbestimmtheit Sinn Intuition  </description>
+    </item>
+    
+    <item>
       <title>Patchwork Studies</title>
       <link>http://cunger.github.io/patchwork/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
@@ -238,15 +247,6 @@ These pages are notes for my future self, as I&amp;rsquo;m sure it will need to 
   💾 GitHub
  📎 LinkedIn
  ️🛠 JavaScript, Java, Julia, Git, Linux</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://cunger.github.io/werte/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/werte/</guid>
-      <description> Sinn Freiheit Lernen Intuition Professionalität  </description>
     </item>
     
   </channel>
