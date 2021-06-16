@@ -898,16 +898,30 @@ Wenn
  konvergiert.</p>
 <h2 id="differenzierbarkeit">Differenzierbarkeit</h2>
 <p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts?
-Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen:</p>
-<ul>
-<li>
-<p>Die Ableitung ist der Differentialquotient, also der Proportionalitätsfaktor zwischen infinitesimalen änderungen des Eingabewertes und daraus resultierenden infinitesimalen änderungen des Funktionswertes. An einer Stelle 
+Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen.</p>
+<h3 id="differential">Differential</h3>
+<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes.</p>
+<p>Der erste Ableitungsbegriff entspricht dem Differentialquotienten (oder Differential), dem Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
+<span>
+                  
+        \([x,x_0]\)
+    
+</span>
+, das entspricht geometrisch der Sekantensteigung:
+
+<span>
+     
+        $$\frac{f(x)-f(x_0)}{x-x_0}$$
+    
+</span>
+
+Der Grenzwert davon, das Differential, ist dann die lokale Änderungsrate der Funktion an der Stelle 
 <span>
                   
         \(x_0\)
     
 </span>
-:</p>
+, das entspricht geometrisch der Tangentensteigung:
 
 <span>
      
@@ -915,7 +929,7 @@ Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, d
     
 </span>
 
-<p>Das Problem bei Funktionen 
+Das Problem bei Funktionen 
 <span>
                   
         \(f:\mathbb{R}^n\to\mathbb{R}^m\)
@@ -933,17 +947,136 @@ Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, d
         \(f(x)-f(x_0)\in \mathbb{R}^m\)
     
 </span>
-, der Quotient beider ist also gar nicht vernünftig definiert. Deswegen weicht man da auf den anderen Ableitungsbegriff aus.</p>
-</li>
-<li>
-<p>Die Ableitung ist die Steigung der linearen Funktion, die die änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
-</li>
-</ul>
-<p>Differential</p>
-<p>Richtungsableitung: das lokale Verhalten der Komponentenfunktion bei änderung dieser Komponente.</p>
-<p>Gradient</p>
-<p>Die partielle Ableitung einer Funktion mehrerer Veränderlicher ist nichts anderes als die Ableitung der Funktion, die man erhält, wenn man alle Veränderlichen bis auf eine festhält.</p>
+, der Quotient beider also gar nicht vernünftig definiert ist.</p>
+<p>Eine äquivalente Formulierung ergibt sich, wenn man 
+<span>
+                  
+        \(x\)
+    
+</span>
+ durch 
+<span>
+                  
+        \(x_0&#43;h\)
+    
+</span>
+ ersetzt. Der Grenzwert der Steigung der Sekanten durch die Punkte 
+<span>
+                  
+        \((x_0,f(x_0))\)
+    
+</span>
+ und 
+<span>
+                  
+        \((x_0&#43;h,f(x_0&#43;h))\)
+    
+</span>
+ ist dann:</p>
+
+<span>
+     
+        $$f&#39;(x_0)=\text{lim}_{h\to 0}\frac{f(x_0&#43;h)-f(x_0)}{h}$$
+    
+</span>
+
+<p>Das ist äquivalent zu:
+
+<span>
+     
+        $$\text{lim}_{h\to 0}\frac{f(x_0&#43;h)-f(x_0)-L(h)}{h} = 0$$
+    
+</span>
+
+Wobei 
+<span>
+                  
+        \(L(h)=f&#39;(x_0)(h)\)
+    
+</span>
+ das Differential ist.
+Dieser Begriff des Differentials lässt sich auch auf mehrdimensionale Funktionen übertragen. Das Differential ist die Abbildung 
+<span>
+                  
+        \(L:\mathbb{R}^n\to\mathbb{R}\)
+    
+</span>
+, so dass</p>
+
+<span>
+     
+        $$\text{lim}_{h\to 0}\frac{f(x_0&#43;h)-f(x_0)-L(h)}{\|h\|} = 0$$
+    
+</span>
+
+<p>Vor allem ist 
+<span>
+                  
+        \(L\)
+    
+</span>
+ eine lineare Abbildung. Daraus ergibt sich eine leicht andere Sichtweise:
+Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+ hängt annähernd linear von der Änderung des Wertes 
+<span>
+                  
+        \(x\)
+    
+</span>
+ (von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ zu 
+<span>
+                  
+        \(x&#43;h\)
+    
+</span>
+) ab. Das entspricht der Vorstellung, dass die Tangente der Graph derjenigen linearen Funktion 
+<span>
+                  
+        \(h\to L(h)\)
+    
+</span>
+ ist, die 
+<span>
+                  
+        \(f(x_0&#43;h)−f(x_0)\)
+    
+</span>
+ mit einem sehr kleinen Fehler approximiert.</p>
+<p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
+<p>Bei mehrdimensionalen Funktionen ist die <strong>Richtungsableitung</strong> die momentane relative Änderung des Funktionswertes 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+, wenn sich der Wert 
+<span>
+                  
+        \(x\)
+    
+</span>
+ mit dem Vektor 
+<span>
+                  
+        \(h\)
+    
+</span>
+ fortbewegt. Sie beschreibt also ist das lokale Verhalten der Komponentenfunktion bei Änderung dieser Komponente. Das Differential weist im Prinzip jedem Vektor die Richtungsableitung in Richtung des Vektors zu.</p>
+<p>Ein Spezialfall der Richtungsableitung ist die <strong>partielle Ableitung</strong>. Die partielle Ableitung einer Funktion mehrerer Veränderlicher ist nichts anderes als die Ableitung der Funktion, die man erhält, wenn man alle Veränderlichen bis auf eine festhält.</p>
+<h3 id="gradient">Gradient</h3>
 <h2 id="umkehrfunktion">Umkehrfunktion</h2>
+<p>[Tao 6.7 (p. 152ff)]</p>
 <h1 id="folgen-und-reihen-in-metrischen-räumen">Folgen und Reihen in metrischen Räumen</h1>
 <p>Eine <strong>reelle Folge</strong> ist eine Abbildung 
 <span>
