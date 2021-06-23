@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.84.0" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -900,8 +900,8 @@ Wenn
 <p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts?
 Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen.</p>
 <h3 id="differential">Differential</h3>
-<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes.</p>
-<p>Der erste Ableitungsbegriff entspricht dem Differentialquotienten (oder Differential), dem Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
+<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes. Es geht also um die Änderungsrate der Funktion.</p>
+<p>Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
 <span>
                   
         \([x,x_0]\)
@@ -1054,6 +1054,13 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
 </span>
  mit einem sehr kleinen Fehler approximiert.</p>
 <p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
+<p><strong>Differentialoperator:</strong> 
+<span>
+                  
+        \(\frac{d}{dx}:f\to f&#39;\)
+    
+</span>
+</p>
 <p>Bei mehrdimensionalen Funktionen ist die <strong>Richtungsableitung</strong> die momentane relative Änderung des Funktionswertes 
 <span>
                   
@@ -1074,7 +1081,26 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
 </span>
  fortbewegt. Sie beschreibt also ist das lokale Verhalten der Komponentenfunktion bei Änderung dieser Komponente. Das Differential weist im Prinzip jedem Vektor die Richtungsableitung in Richtung des Vektors zu.</p>
 <p>Ein Spezialfall der Richtungsableitung ist die <strong>partielle Ableitung</strong>. Die partielle Ableitung einer Funktion mehrerer Veränderlicher ist nichts anderes als die Ableitung der Funktion, die man erhält, wenn man alle Veränderlichen bis auf eine festhält.</p>
+<p><strong>Differentialoperator:</strong> 
+<span>
+                  
+        \(\frac{\partial}{\partial x_i}:f\to \frac{\partial f}{\partial x_i}\)
+    
+</span>
+</p>
 <h3 id="gradient">Gradient</h3>
+<p><strong>Differentialoperator:</strong> 
+<span>
+                  
+        \(\nabla\)
+    
+</span>
+ (grad, Vektoranalysis)</p>
+<blockquote>
+<p>In kartesischen Koordinaten sind die Komponenten des Gradientvektors die partiellen Ableitungen im Punkt P, der Gradient zeigt deshalb in die Richtung der größten Änderung. Der Betrag des Gradienten gibt den Wert der größten Änderungsrate an diesem Punkt an.
+(<a href="https://www.wikiwand.com/de/Gradient_(Mathematik)">https://www.wikiwand.com/de/Gradient_(Mathematik)</a>)</p>
+</blockquote>
+<p>(<a href="https://www.wikiwand.com/en/Differential_operator">https://www.wikiwand.com/en/Differential_operator</a>)</p>
 <h2 id="umkehrfunktion">Umkehrfunktion</h2>
 <p>[Tao 6.7 (p. 152ff)]</p>
 <h1 id="folgen-und-reihen-in-metrischen-räumen">Folgen und Reihen in metrischen Räumen</h1>
