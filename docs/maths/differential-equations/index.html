@@ -2,11 +2,11 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.84.0" />
+  <meta name="generator" content="Hugo 0.84.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Differential equations | Escape Velocity</title>
+  <title>Differentialgleichungen | Escape Velocity</title>
 
   
   
@@ -20,12 +20,12 @@
   <meta name="author" content="Christina Unger">
 
 
-  <meta property="og:title" content="Differential equations" />
-<meta property="og:description" content="Analytical solutions to first-order linear ODEs." />
+  <meta property="og:title" content="Differentialgleichungen" />
+<meta property="og:description" content="German notes on differential equations. In progress." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/docs/maths/differential-equations/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2019-11-16T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2019-11-16T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2021-06-25T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-25T00:00:00&#43;00:00" />
 
 
   
@@ -94,9 +94,9 @@
   <main>
   <div id="main">
     <div id="hero">
-      <h1> Differential equations </h1>
+      <h1> Differentialgleichungen </h1>
       <p class="hero-lead">
-         Analytical solutions to first-order linear ODEs.
+         German notes on differential equations. In progress.
       </p>
 
     </div>
@@ -124,368 +124,136 @@ headingSelector: 'h1'
 
 
 
-    <p>Differential equations contain functions as well as their derivatives. The order of the equation corresponds to the order of the highest derivative.</p>
+    <h1 id="definition">Definition</h1>
+<p>Eine <strong>gewöhnliche Differentialgleichung</strong> ist eine Gleichung, die eine Beziehung zwischen einer Funktion 
+<span>
+                  
+        \(y:x\to y(x)\)
+    
+</span>
+, ihrem Argument 
+<span>
+                  
+        \(x\)
+    
+</span>
+ und einer oder mehrerer ihrer Ableitungen 
+<span>
+                  
+        \(y&#39;,y&#39;&#39;,\ldots\)
+    
+</span>
+ ausdrückt.
+Also eine Gleichung der Form:
+
+<span>
+     
+        $$F(x,y,y&#39;,\ldots,y^{(k)}) = 0$$
+    
+</span>
+
+Wobei:</p>
 <ul>
-<li>An <em>ordinary differential equation</em> (ODE) contains functions of only one independent variable.</li>
-<li>A <em>partial differential equation</em> (PDE) contains functions of more than one independent variables.</li>
+<li>
+<span>
+                  
+        \(k\in\mathbb{N}\)
+    
+</span>
+ (die Ordnung der Differentialgleichung)</li>
+<li>
+<span>
+                  
+        \(F:I\times M\to{C}\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(I\subseteq\mathbb{R}\)
+    
+</span>
+ und 
+<span>
+                  
+        \(M\subseteq\mathbb{C}^{k&#43;1}\)
+    
+</span>
+</li>
 </ul>
-<h1 id="first-order-linear-odes">First-order linear ODEs</h1>
-<p><strong>Standard form:</strong> 
+<p>Eine Lösung der Differentialgleichung ist ein Intervall 
 <span>
                   
-        \(y&#39;&#43;p(t)\,y=q(t)\)
+        \(J\subseteq I\)
     
 </span>
-</p>
-<p>Where 
+ und eine 
 <span>
                   
-        \(t\)
+        \(k\)
     
 </span>
- is the independent variable (in models this is often time).</p>
-<p>The equation is <em>homogeneous</em> if 
+-mal differenzierbare Funktion 
 <span>
                   
-        \(q(t)=0\)
+        \(y:\mathbb{R}\to\mathbb{C}\)
     
 </span>
-, and <em>inhomogeneous</em> otherwise.</p>
-<h2 id="homogeneous-first-order-linear-odes">Homogeneous first-order linear ODEs</h2>
-<p>Can always be solved by separation of variables:</p>
-<p>
+, so dass für alle 
 <span>
                   
-        \(\cfrac{dy}{dt}&#43;p(t)\,y=0\)
+        \(x\in J\)
     
 </span>
- becomes 
+ gilt:
+
+<span>
+     
+        $$(x,y(x),y&#39;(x),\ldots,y^{(k)}(x))\in I\times M$$
+    
+</span>
+
+
+<span>
+     
+        $$F(x,y(x),y&#39;(x),\ldots,y^{(k)}(x)) = 0$$
+    
+</span>
+
+Oft ist zusätzlich eine Anfangsbedingung 
 <span>
                   
-        \(\cfrac{dy}{y}=-p(t)dt\)
+        \(y(a)=b\)
     
 </span>
-</p>
-<p><strong>General solution:</strong> 
+ gegeben.</p>
+<p>Bemerkungen:</p>
+<ul>
+<li>Implizite Form: 
 <span>
                   
-        \(y=c\,e^{-P(t)}\)
+        \(F(x,y,y&#39;,\ldots,y^{(k)}) = 0\)
     
 </span>
-</p>
-<p>Steps: Integrating both sides gives 
+</li>
+<li>Explizite Form: 
 <span>
                   
-        \(\int\cfrac{1}{y}dy=-\int p(t)dt\)
+        \(y^{(k)} = f(x,y,y&#39;,\ldots,y^{(k-1)})\)
     
 </span>
-, which is 
-<span>
-                  
-        \(ln|y|=-P(t) &#43; C\)
-    
-</span>
- with 
-<span>
-                  
-        \(P(t)=\int p(t)dt\)
-    
-</span>
-. Then solve for 
+</li>
+<li>In <strong>partiellen Differentialgleichungen</strong> hängt 
 <span>
                   
         \(y\)
     
 </span>
-:</p>
-
-<span>
-                  
-        \(|y|=e^{-P(t) &#43; C}\)
-    
-</span>
-
-
-<span>
-                  
-        \(y=\pm e^{-P(t) &#43; C}\)
-    
-</span>
-
-
-<span>
-                  
-        \(y=\pm e^{-P(t)}e^{C}\)
-    
-</span>
-
-
-<span>
-                  
-        \(y=c\,e^{-P(t)}\)
-    
-</span>
-
-<h2 id="inhomogeneous-first-order-linear-odes">Inhomogeneous first-order linear ODEs</h2>
-<p>Can be solved by variation of parameters.</p>
-<p><strong>General solution:</strong> 
-<span>
-                  
-        \(y=u(t)\,y_h\)
-    
-</span>
-</p>
-<p>Where 
-<span>
-                  
-        \(y_h\)
-    
-</span>
- is a non-zero solution to the associated homogeneous ODE, and 
-<span>
-                  
-        \(u\)
-    
-</span>
- is determined as follows. Substitute 
-<span>
-                  
-        \(y=u\,y_h\)
-    
-</span>
- into the inhomogeneous equation:</p>
-
-<span>
-                  
-        \(\cfrac{d}{dt}(uy_h) &#43; puy_h=q\)
-    
-</span>
-
-<p>Applying the product rule:</p>
-<p>
-<span>
-                  
-        \(u&#39;y_h&#43;uy_h&#39;&#43;puy_h=q\)
-    
-</span>
-
-
-<span>
-                  
-        \(u&#39;y_h&#43;u(y_h&#39;&#43;py_h)=q\)
-    
-</span>
-</p>
-<p>Note that 
-<span>
-                  
-        \(y_h&#39;&#43;py_h=0\)
-    
-</span>
-, because 
-<span>
-                  
-        \(y_h\)
-    
-</span>
- is a solution to the homogeneous ODE. Thus 
-<span>
-                  
-        \(u&#39;y_h=q\)
-    
-</span>
-. Then integrate 
-<span>
-                  
-        \(u&#39;=\cfrac{q}{y_h}\)
-    
-</span>
-, in order to solve for 
-<span>
-                  
-        \(u\)
-    
-</span>
-.</p>
-<p>This is equivalent to finding the <strong>integrating factor</strong>. The idea is to find a factor 
-<span>
-                  
-        \(u\)
-    
-</span>
- such that when multiplying both sides by it (
-<span>
-                  
-        \(uy&#39;&#43;puy=qu\)
-    
-</span>
-), the left-hand side corresponds to 
-<span>
-                  
-        \((uy)&#39;\)
-    
-</span>
- after applying the product rule. This is the case when 
-<span>
-                  
-        \(u&#39;=pu\)
-    
-</span>
-, which is a homogeneous ODE that can be solved by separation of variables and gives as integrating factor:</p>
-
-<span>
-     
-        $$u=e^{\int p(t)dt}$$
-    
-</span>
-
-<p>After calculating the integrating factor 
-<span>
-                  
-        \(u\)
-    
-</span>
-, multiply both sides of the equation by 
-<span>
-                  
-        \(u\)
-    
-</span>
-, and rewrite the left-hand side as 
-<span>
-                  
-        \((uy)&#39;\)
-    
-</span>
-. Then integrate.</p>
-<h2 id="linear-combinations">Linear combinations</h2>
-<p>A linear combination of functions 
-<span>
-                  
-        \(f_1,f_2,...\)
-    
-</span>
- are functions of the form 
-<span>
-                  
-        \(c_1f_1 &#43; c_2f_2 &#43; ...\)
-    
-</span>
- with 
-<span>
-                  
-        \(c_1,c_2,...\)
-    
-</span>
- any numbers.</p>
-<p>Superposition principles:
-<img src="images/docs/superposition.png" alt="Superposition principles"></p>
-<p>That is, for linear homogeneous ODEs, all linear combinations of solutions are solutions:</p>
-<ul>
-<li>0 is a solution.</li>
-<li>Multiplying any solution by a scalar gives another solution.</li>
-<li>Adding any two solutions gives another solution.</li>
+ von mehreren Veränderlichen ab.</li>
 </ul>
-<p>Also the general inhomogeneous solution 
-<span>
-                  
-        \(y=y_p&#43;y_h\)
-    
-</span>
-, where</p>
-<ul>
-<li>
-<span>
-                  
-        \(y_p\)
-    
-</span>
- is a particular inhomogenous solution and</li>
-<li>
-<span>
-                  
-        \(y_h\)
-    
-</span>
- is the general homogeneous solution.</li>
-</ul>
-<h2 id="special-cases">Special cases</h2>
-<p>If we have an <strong>inhomogeneous linear ODE where 
-<span>
-                  
-        \(q(t)\)
-    
-</span>
- is constant</strong>: If there is a constant solution, then 
-<span>
-                  
-        \(y&#39;=0\)
-    
-</span>
- and the equation simplifies to 
-<span>
-                  
-        \(p(t)y=q\)
-    
-</span>
-, thus one particular solution is 
-<span>
-                  
-        \(y=\frac{q}{p(t)}\)
-    
-</span>
-. Using the superposition principle, all solutions take the form:</p>
-
-<span>
-     
-        $$y=\frac{q}{p(t)} &#43; Ce^{p(t)t}$$
-    
-</span>
-
-<p>Solutions to 
-<span>
-                  
-        \(z^n=1\)
-    
-</span>
- with 
-<span>
-                  
-        \(z\)
-    
-</span>
- any <a href="/docs/nuctec/complex-numbers/">complex number</a> are 
-<span>
-                  
-        \(e^{i(\frac{2\pi k}{n})}\)
-    
-</span>
- for 
-<span>
-                  
-        \(k=0,1,...n-1\)
-    
-</span>
-.</p>
-<p>Solutions to 
-<span>
-                  
-        \(x&#39;&#39;&#43;x=0\)
-    
-</span>
- are all linear combinations of sine and cosine: 
-<span>
-                  
-        \(x=c_1\text{cos}(t)&#43;c_2\text{sin}(t)\)
-    
-</span>
- with 
-<span>
-                  
-        \(c_1,c_2\)
-    
-</span>
- any real number.</p>
+<h1 id="beispiele">Beispiele</h1>
+<h1 id="analytische-lösungsverfahren">Analytische Lösungsverfahren</h1>
+<h1 id="numerische-lösungsverfahren">Numerische Lösungsverfahren</h1>
 
 
     

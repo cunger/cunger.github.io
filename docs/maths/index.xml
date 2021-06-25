@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/docs/maths/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/docs/maths/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Analysis</title>
       <link>http://cunger.github.io/docs/maths/analysis/</link>
@@ -44,12 +44,12 @@
     </item>
     
     <item>
-      <title>Differential equations</title>
+      <title>Differentialgleichungen</title>
       <link>http://cunger.github.io/docs/maths/differential-equations/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/maths/differential-equations/</guid>
-      <description>Analytical solutions to first-order linear ODEs.</description>
+      <description>German notes on differential equations. In progress.</description>
     </item>
     
   </channel>
