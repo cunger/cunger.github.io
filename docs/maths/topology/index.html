@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.85.0" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topologie | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Topologie" />
+<meta property="og:description" content="German notes on topology. In progress." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/docs/maths/topology/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2020-08-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-26T00:00:00+00:00" />
+
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/docs/maths/topology/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/docs/maths">Mathematics</a></li>
+       <li><a href="/docs/physics">Physics</a></li>
+       <li><a href="/docs/nuctec">Nuclear Engineering</a></li>
+       <li><a href="/docs/dev">Software Development</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Topologie </h1>
+      <p class="hero-lead">
+         German notes on topology. In progress.
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <p>Ein <strong>Raum</strong> ist eine Menge von mathematischen Objekten, typischerweise mit irgendeiner Art von Struktur.</p>
+<h1 id="topologische-räume">Topologische Räume</h1>
+<p>Eine Topologie auf einer Menge 
+<span>
+                  
+        \(X\)
+    
+</span>
+ ist ein System 
+<span>
+                  
+        \(T\)
+    
+</span>
+ von Teilmengen von 
+<span>
+                  
+        \(X\)
+    
+</span>
+ mit folgenden Eigenschaften:</p>
+<ul>
+<li>
+<span>
+                  
+        \(\emptyset\in T\)
+    
+</span>
+ und 
+<span>
+                  
+        \(X\in T\)
+    
+</span>
+.</li>
+<li>Sind 
+<span>
+                  
+        \(U,V\in T\)
+    
+</span>
+, so auch 
+<span>
+                  
+        \(U\cap V\in T\)
+    
+</span>
+.</li>
+<li>Die Vereinigung beliebig vieler Mengen in 
+<span>
+                  
+        \(T\)
+    
+</span>
+ ist auch wieder in 
+<span>
+                  
+        \(T\)
+    
+</span>
+.</li>
+</ul>
+<p>
+<span>
+                  
+        \((X,T)\)
+    
+</span>
+ ist dann ein <strong>topologischer Raum</strong>. Man nennt die Mengen 
+<span>
+                  
+        \(U\subseteq T\)
+    
+</span>
+ offen, d.h. 
+<span>
+                  
+        \(T\)
+    
+</span>
+ umfasst alle offenen Mengen, sowie deren Durchschnitt und Vereinigung (wieder offene Mengen).</p>
+<p>Beispiele:</p>
+<ul>
+<li><em>Triviale Topologie:</em> 
+<span>
+                  
+        \(T=\{\emptyset,X\}\)
+    
+</span>
+</li>
+<li><em>Diskrete Topologie:</em> 
+<span>
+                  
+        \(T\)
+    
+</span>
+ ist die Potenzmenge von 
+<span>
+                  
+        \(X\)
+    
+</span>
+, d.h. alle Teilmengen von 
+<span>
+                  
+        \(X\)
+    
+</span>
+ sind offen.</li>
+<li>Die Menge 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ der reellen Zahlen, wobei die offenen Mengen genau die 
+<span>
+                  
+        \(U\subseteq\mathbb{R}\)
+    
+</span>
+ sind, die sich als Vereinigung von offenen Intervallen darstellen lassen.</li>
+</ul>
+<p>Eine Menge 
+<span>
+                  
+        \(U\)
+    
+</span>
+ ist <strong>abgeschlossen</strong>, wenn 
+<span>
+                  
+        \(X\U\)
+    
+</span>
+ offen ist. So sind z.B. 
+<span>
+                  
+        \(\emptyset\)
+    
+</span>
+ und 
+<span>
+                  
+        \(X\)
+    
+</span>
+ beide nicht nur offen, sondern auch abgeschlossen.</p>
+<p>Eine Menge 
+<span>
+                  
+        \(U\)
+    
+</span>
+ heißt <strong>Umgebung</strong> von 
+<span>
+                  
+        \(x\in X\)
+    
+</span>
+, wenn es eine offene Menge 
+<span>
+                  
+        \(V\subset U\)
+    
+</span>
+ gibt mit 
+<span>
+                  
+        \(x\in V\)
+    
+</span>
+, d.h. wenn es eine offene Teilmenge von 
+<span>
+                  
+        \(U\)
+    
+</span>
+ gibt, in der 
+<span>
+                  
+        \(x\)
+    
+</span>
+ liegt.</p>
+<h2 id="grundbegriffe">Grundbegriffe</h2>
+<p>Haeufugspunkt
+innerer und äusserer Punkt, Randpunkt,
+das Innere und abgeschlossene Huelle</p>
+<h2 id="trennungseigenschaften">Trennungseigenschaften</h2>
+<p><strong>Hausdorffsches Trennungsaxiom:</strong> Ein topologischer Raum heißt <strong>Hausdorff-Raum</strong>, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.</p>
+<p>In einem Hausdorff-Raum kann eine Folge hoechstens einen Grenzwert haben.
+Beispiele fuer Nicht-Hausdorff-Raume: Eine Menge X mit mehr als einem Element und der trivialen Topologie.
+In einem trivialen topologischen Raum konvergiert jede Folge gegen jeden Punkt.</p>
+<h2 id="kompaktheit">Kompaktheit</h2>
+<p>Ein topologischer Raum heißt <strong>kompakt</strong>, wenn &hellip;</p>
+<p>Kompaktheit erlaubt es, von lokalen Eigenschaften auf globale Eigenschaften zu schließen.</p>
+<p>Eine Teilmenge von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ ist <strong>kompakt</strong>, wenn sie alle Randpunkte enthält und sich nicht ins Unendliche erstreckt. 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ ist nicht kompakt.</p>
+<p><strong>Satz von Heine-Borel:</strong> Eine nicht-leere Teilmenge von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.</p>
+<p>Folgenkompakt</p>
+<p>Ueberdeckunsgkompakt</p>
+<h2 id="ueberleitung">Ueberleitung</h2>
+<p>Interessante Räume ergeben sich besonders dann, wenn eine Topologie mit einer anderen Struktur verträglich ist.
+Zum Beispiel topologische Vektorräume
+und darauf aufbauend normierte und metrische Räume (Vektorräume wo die Norm und Metrik eine zusätzliche Struktur vorgeben).</p>
+<h1 id="normierte-und-metrische-räume">Normierte und metrische Räume</h1>
+<p>Begriffe wie der der Umgebung, des Grenzwerts und der Konvergenz benutzen das Konzept des Abstandes. Konvergenz, zum Beispiel, kann man über die 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+-Umgebung von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ definieren (so dass jedes Folgenglied ab einem bestimmten 
+<span>
+                  
+        \(n\)
+    
+</span>
+ einen Abstand zu 
+<span>
+                  
+        \(x\)
+    
+</span>
+ hat, der kleiner als 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+ ist) oder direkt über den Abstand 
+<span>
+                  
+        \(d\)
+    
+</span>
+ zweier reeller Zahlen:</p>
+<p>Eine reelle Folge 
+<span>
+                  
+        \((x_n)\)
+    
+</span>
+ konvergiert gegen 
+<span>
+                  
+        \(x\)
+    
+</span>
+ gdw 
+<span>
+                  
+        \(\text{lim}_{n\to\infty} d(x_n,x)=0\)
+    
+</span>
+.</p>
+<p>Will man diese Begriffe verallgemeinern für andere mathematische Objekte, wie Folgen von Vektoren, komplexe Zahlen und Funktionen, müsste man sie spezifisch für jedes dieser Objekte neu definieren.
+Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusammen mit einem allgemeinen Konzept für Abstand zwischen Objekten in diese Räumen und darauf aufbauend allgemeine Begriffe wie den der Konvergenz.</p>
+<p><strong>Metrische Räume</strong> sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine <strong>Metrik</strong> ist eine Abbildung 
+<span>
+                  
+        \(d\)
+    
+</span>
+ zweier Vektoren auf eine reelle Zahl, die den Abstand zwischen diesen Vektoren ausdrückt.</p>
+<p><strong>Normierte Räume</strong> sind Vektorräume, auf denen eine Norm definiert ist, die die Länge eines Vektors ausdrückt.
+Eine <strong>Norm</strong> 
+<span>
+                  
+        \(\|x\|\)
+    
+</span>
+ ist eine Abbildung eines Vektors 
+<span>
+                  
+        \(x\)
+    
+</span>
+ auf eine reelle Zahl (die Länge des Vektors).
+Eine Norm setzt eine lineare Struktur voraus, ist also nur für Vektorräume definiert.
+Beispiele:</p>
+<ul>
+<li>
+<p>
+<span>
+                  
+        \(\mathbb{R}^1\)
+    
+</span>
+ mit dem Betrag 
+<span>
+                  
+        \(|\cdot|\)
+    
+</span>
+</p>
+</li>
+<li>
+<p>
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ mit der p-Norm 
+<span>
+                  
+        \(\|x\|_p := \left(\sum_{k=1}^n |x_k|^p\right)^{\frac{1}{p}}\)
+    
+</span>
+</p>
+<p>Spezialfälle:</p>
+<ul>
+<li>
+<span>
+                  
+        \(\|\cdot\|_1\)
+    
+</span>
+ Summennorm</li>
+<li>
+<span>
+                  
+        \(\|\cdot\|_2\)
+    
+</span>
+ euklidische Norm</li>
+<li>
+<span>
+                  
+        \(\|x\|_\infty := \text{max}\,\{|x_k|\,\mid\,1\leq k\leq n\}\)
+    
+</span>
+ Maximumnorm</li>
+</ul>
+</li>
+<li>
+<p>Vektorraum aller beschränkten Funktionen mit der Supremumsnorm 
+<span>
+                  
+        \(\|\cdot\|_\infty\)
+    
+</span>
+</p>
+</li>
+</ul>
+<p>Jede Norm induziert auch eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich
+
+<span>
+                  
+        \(d(x,y) = \|x-y\|\)
+    
+</span>
+, d.h. der Abstand zweier Vektoren wird definiert als die Länge des Differenzvektors.
+Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig umgekehrt: Ein metrischer Raum ist nicht unbedingt ein Vektorraum, denn eine Metrik muss die lineare Struktur eines Raumes nicht respektieren.</p>
+<p>Beispiele für Metriken, die von keiner Norm induziert werden:</p>
+<ul>
+<li>Diskrete Metrik 
+<span>
+                  
+        \(d(x,y) := \begin{cases} 0 &amp; \text{wenn }x=y \\ 1 &amp; \text{sonst}\end{cases}\)
+    
+</span>
+</li>
+<li>Französische Eisenbahnmetrik (wo die Abstandsmessung immer durch einen zentralen Punkt 
+<span>
+                  
+        \(P\)
+    
+</span>
+ gehen muss)
+
+<span>
+     
+        $$d(x,y) := \begin{cases} \|x-y\| &amp; \text{wenn }x,y\text{ auf einer Geraden durch }P\text{ liegen} \\ \|x-P\| &#43; \|P-y\| &amp; \text{sonst}\end{cases}$$
+    
+</span>
+</li>
+<li>p-adische Metrik auf 
+<span>
+                  
+        \(\mathbb{Z}\)
+    
+</span>
+</li>
+</ul>
+<p>Alle Normen über einem endlich-dimensionalen Vektorraum 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ sind bis auf eine Konstante (d.h. bis auf Streckung oder Stauchung) äquivalent, d.h. es gibt 
+<span>
+                  
+        \(c_1,c_2\)
+    
+</span>
+, so dass 
+<span>
+                  
+        \(\|x\|_a \leq c_1\|x\|_b\)
+    
+</span>
+ und 
+<span>
+                  
+        \(\|x\|_b\leq c_2 \|x\|_a\)
+    
+</span>
+. So kann man z.B. bestimmte Eigenschaften auf der Maximumsnorm zeigen, wo sie einfacher zu beweisen sind, und dann auf äquivalente Normen übertragen.</p>
+<p>Ein normierter Raum ist genau dann <strong>vollständig</strong>, wenn jede Cauchy-Folge konvergiert. Vollständige Räume umfassen immer geschlossene Mengen, es gibt also keine Lücken im Raum. Ein vollständiger normierter Raum heißt <strong>Banachraum</strong>. Zum Beispiel ist jeder endlich-dimensionale Raum über 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ (also 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+) mit einer beliebigen Norm vollständig.</p>
+<h2 id="metrische-räume-als-topologische-räume">Metrische Räume als topologische Räume</h2>
+<p>Häufungspunkte</p>
+<p>überdeckung</p>
+<p>Umgebung</p>
+<p>Eine Menge 
+<span>
+                  
+        \(M\)
+    
+</span>
+ ist <strong>offen</strong> bzgl. einer Norm, wenn 
+<span>
+                  
+        \(M\)
+    
+</span>
+ Umgebung von jedem 
+<span>
+                  
+        \(x\in M\)
+    
+</span>
+ ist, d.h. wenn es zu jedem 
+<span>
+                  
+        \(x\in M\)
+    
+</span>
+ eine 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+-Umgebung von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ gibt, die ganz in 
+<span>
+                  
+        \(M\)
+    
+</span>
+ liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann <strong>geschlossen</strong> bzgl. der Norm (also wenn es für jeden Punkt außerhalb der Menge eine 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+-Umgebung gibt, die auch außerhalb liegt). Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.</p>
+<p>Eine Teilmenge von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.</p>
+<p>Faustregel:</p>
+<ul>
+<li>Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen.</li>
+<li>Mengen, die mit 
+<span>
+                  
+        \(=,\leq,\geq\)
+    
+</span>
+ zwischen stetigen Funktionen definiert sind, sind abgeschlossen.</li>
+</ul>
+<p>Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
+Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.</p>
+<h1 id="literatur">Literatur</h1>
+<ul>
+<li>Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.</li>
+<li>Klaus Jänisch: Topologie.</li>
+</ul>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2020 &middot; Christina Unger</span></li>
+      <li>
+        Made with <a href="https://gohugo.io/">Hugo</a> ♥ Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

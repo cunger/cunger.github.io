@@ -8,12 +8,12 @@
     <language>en-gb</language>
     <lastBuildDate>Fri, 25 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Analysis</title>
-      <link>http://cunger.github.io/docs/maths/analysis/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      <title>Algebraic structures</title>
+      <link>http://cunger.github.io/docs/maths/algebra/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/analysis/</guid>
-      <description>German notes on analysis. In progress.</description>
+      <guid>http://cunger.github.io/docs/maths/algebra/</guid>
+      <description>The gist of it. Draft.</description>
     </item>
     
     <item>
@@ -44,12 +44,12 @@
     </item>
     
     <item>
-      <title>Algebraic structures</title>
-      <link>http://cunger.github.io/docs/maths/algebra/</link>
-      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <title>Topologie</title>
+      <link>http://cunger.github.io/docs/maths/topology/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/algebra/</guid>
-      <description>The gist of it. Draft.</description>
+      <guid>http://cunger.github.io/docs/maths/topology/</guid>
+      <description>German notes on topology. In progress.</description>
     </item>
     
     <item>
@@ -80,12 +80,12 @@
     </item>
     
     <item>
-      <title>Polynomials</title>
-      <link>http://cunger.github.io/docs/maths/polynomials/</link>
+      <title>Analysis</title>
+      <link>http://cunger.github.io/docs/maths/analysis/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/polynomials/</guid>
-      <description>German notes on polynomials. Draft.</description>
+      <guid>http://cunger.github.io/docs/maths/analysis/</guid>
+      <description>German notes on analysis. In progress.</description>
     </item>
     
     <item>
@@ -104,6 +104,15 @@
       
       <guid>http://cunger.github.io/docs/physics/forces/</guid>
       <description>The fundamental forces of physics.</description>
+    </item>
+    
+    <item>
+      <title>Polynomials</title>
+      <link>http://cunger.github.io/docs/maths/polynomials/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/maths/polynomials/</guid>
+      <description>German notes on polynomials. Draft.</description>
     </item>
     
     <item>
