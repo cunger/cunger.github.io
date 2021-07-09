@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Topologie | Escape Velocity</title>
+  <title>Topologische, normierte und metrische Räume | Escape Velocity</title>
 
   
   
@@ -20,8 +20,8 @@
   <meta name="author" content="Christina Unger">
 
 
-  <meta property="og:title" content="Topologie" />
-<meta property="og:description" content="German notes on topology. In progress." />
+  <meta property="og:title" content="Topologische, normierte und metrische Räume" />
+<meta property="og:description" content="Sowie Funktionen, Folgen und Reihen in metrischen Räumen." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/docs/maths/topology/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2020-08-26T00:00:00+00:00" />
@@ -94,9 +94,9 @@
   <main>
   <div id="main">
     <div id="hero">
-      <h1> Topologie </h1>
+      <h1> Topologische, normierte und metrische Räume </h1>
       <p class="hero-lead">
-         German notes on topology. In progress.
+         Sowie Funktionen, Folgen und Reihen in metrischen Räumen.
       </p>
 
     </div>
@@ -124,18 +124,21 @@ headingSelector: 'h1'
 
 
 
-    <p>Ein <strong>Raum</strong> ist eine Menge von mathematischen Objekten, typischerweise mit irgendeiner Art von Struktur.</p>
-<p>Interessante Räume ergeben sich besonders dann, wenn eine Topologie mit einer anderen Struktur verträglich ist.
-Zum Beispiel topologische Vektorräume
+    <p>Ein Raum ist eine Menge von mathematischen Objekten zusammen mit einer Struktur.
+Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt (eng verbunden mit den Begriffen Abstand, Umgebung und Konvergenz) und wo man von Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
+Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist die Dimension des Raumes, was wiederum für die <a href="analysis.md">Analysis</a> wichtig ist.</p>
+<p>Andere interessante Räume ergeben sich dann, wenn eine Topologie mit einer anderen Struktur verträglich ist:
+zum Beispiel topologische Gruppen, topologische Vektorräume
 und darauf aufbauend normierte und metrische Räume (Vektorräume, in denen eine Norm oder Metrik eine zusätzliche Struktur vorgeben).</p>
 <h1 id="topologische-räume">Topologische Räume</h1>
+<p>Die mengentheoretische Topologie ist die Theorie von offenen und abgeschlossenen Mengen.</p>
 <p>Eine Topologie auf einer Menge 
 <span>
                   
         \(X\)
     
 </span>
- ist ein System 
+ ist definiert als System 
 <span>
                   
         \(T\)
@@ -652,6 +655,404 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
 </ul>
 <p>Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
 Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.</p>
+<h1 id="funktionen-über-metrischen-räumen">Funktionen über metrischen Räumen</h1>
+<p>Wir betrachten Abbildungen zwischen metrischen Räumen, insbesondere stetige Funktionen 
+<span>
+                  
+        \(f:X\to Y\)
+    
+</span>
+ zwischen metrischen Räumen 
+<span>
+                  
+        \((X,d_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,d_Y)\)
+    
+</span>
+
+(oder zwischen spezielleren metrischen Räumen 
+<span>
+                  
+        \((X,\|\cdot\|_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,\|\cdot\|_Y)\)
+    
+</span>
+, wenn 
+<span>
+                  
+        \(d(a,b)=\|a-b\|\)
+    
+</span>
+).</p>
+<p>Besonders wichtig für Anwendungen sind Abbildungen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+, also reellwertige Funktionen mehrerer Veränderlicher, und vektorwertige Funktionen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}^m\)
+    
+</span>
+. Inbesondere lineare Transformationen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}^m\)
+    
+</span>
+ (für die also gilt 
+<span>
+                  
+        \(f(x&#43;x&#39;)=f(x)&#43;f(x&#39;)\)
+    
+</span>
+ und 
+<span>
+                  
+        \(f(cx)=cf(x)\)
+    
+</span>
+), die durch eine eindeutige Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ beschrieben werden können, so dass 
+<span>
+                  
+        \({}^t(f(x))=A{\,}^tx\)
+    
+</span>
+.</p>
+<p>Eine Abbildung oder Funktion ist</p>
+<ul>
+<li><strong>surjektiv</strong>, wenn jedes Element des Wertebereichs im Bild von 
+<span>
+                  
+        \(f\)
+    
+</span>
+ liegt.</li>
+<li><strong>injektiv</strong>, wenn jedes Element im Bild von 
+<span>
+                  
+        \(f\)
+    
+</span>
+ genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.</li>
+</ul>
+<p>Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eigenschaften, d.h. sie hängen nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
+<h2 id="stetigkeit">Stetigkeit</h2>
+<ul>
+<li>
+<p><strong>
+<span>
+                  
+        \(\varepsilon-\delta\)
+    
+</span>
+-Kriterium:</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist stetig in 
+<span>
+                  
+        \(p\)
+    
+</span>
+, wenn es für alle 
+<span>
+                  
+        \(\varepsilon &gt; 0\)
+    
+</span>
+ ein 
+<span>
+                  
+        \(\delta &gt; 0\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(x\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_X(x,p) &lt; \delta \Rightarrow d_Y(f(x),f(p)) &lt; \varepsilon$$
+    
+</span>
+</p>
+</li>
+<li>
+<p><strong>Umgebungskriterium:</strong></p>
+</li>
+<li>
+<p><strong>Folgenkriterium:</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist stetig in 
+<span>
+                  
+        \(p\)
+    
+</span>
+, wenn für jede Folge 
+<span>
+                  
+        \((x_n)\)
+    
+</span>
+ in 
+<span>
+                  
+        \(X\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(\lim_{n\to\infty} x_n = p\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$\lim_{n\to\infty} f(x_n) = f(\lim_{n\to\infty} x_n) = f(p)$$
+    
+</span>
+</p>
+</li>
+</ul>
+<p>Weitere, stärkere Arten von Stetigkeit:</p>
+<ul>
+<li>
+<p><strong>Gleichmäßige Stetigkeit</strong></p>
+</li>
+<li>
+<p><strong>Lipschitz-Stetigkeit</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist Lipschitz-stetig mit Lipschitz-Konstante 
+<span>
+                  
+        \(L\)
+    
+</span>
+ (oder <em>dehnungsbeschränkt</em>), wenn für alle 
+<span>
+                  
+        \(p,q\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_Y(f(p),f(q)) \leq L\cdot d_X(p,q)$$
+    
+</span>
+
+
+<span>
+     
+        $$\|(f(p)-f(q))\|_Y \leq L\cdot \|p-q\|_X$$
+    
+</span>
+</p>
+<p>Das heißt, der Abstand zweier Punkte 
+<span>
+                  
+        \(x,x&#39;\)
+    
+</span>
+ wird durch Anwendung der Funktion höchstens um den Faktor 
+<span>
+                  
+        \(L\)
+    
+</span>
+ gestreckt (wenn 
+<span>
+                  
+        \(L &gt; 1\)
+    
+</span>
+) oder gestaucht (wenn 
+<span>
+                  
+        \(L&lt;1\)
+    
+</span>
+).</p>
+</li>
+<li>
+<p><strong>Hölder-Stetigkeit</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist Hölder-stetig zum Exponenten 
+<span>
+                  
+        \(\alpha\in(0,\infty)\)
+    
+</span>
+, wenn es eine Konstante 
+<span>
+                  
+        \(C&gt;0\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(p,q\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_Y(f(p),f(q)) \leq C\cdot d_X(p,q)^\alpha$$
+    
+</span>
+
+
+<span>
+     
+        $$\|(f(p)-f(q))\|_Y \leq C\cdot \|p-q\|_X^\alpha$$
+    
+</span>
+</p>
+</li>
+</ul>
+<p>Zum Beispiel ist 
+<span>
+                  
+        \(f(x)=x^2\)
+    
+</span>
+ stetig, aber nicht gleichmäßig stetig oder Lipschitz-stetig.</p>
+<p>In einem Punkt 
+<span>
+                  
+        \(a\)
+    
+</span>
+ stetig fortsetzbar?
+Wenn 
+<span>
+                  
+        \(a\)
+    
+</span>
+ kein Häufungspunkt, dann immer. Wenn 
+<span>
+                  
+        \(a\)
+    
+</span>
+ Häufungspunkt, dann nur wenn 
+<span>
+                  
+        \(f\)
+    
+</span>
+ in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ konvergiert.</p>
+<h2 id="umkehrfunktionen">Umkehrfunktionen</h2>
+<p>[Tao 6.7 (p. 152ff)]</p>
+<h1 id="folgen-und-reihen-in-metrischen-räumen">Folgen und Reihen in metrischen Räumen</h1>
+<p>Eine <strong>reelle Folge</strong> ist eine Abbildung 
+<span>
+                  
+        \(f:\mathbb{N}\to\mathbb{R}\)
+    
+</span>
+. (Eine Folge hat also immer unendlich viele Elemente.)</p>
+<p>Folgen von Punkten in einem metrischen Raum</p>
+<ul>
+<li>Konvergenz</li>
+</ul>
+<p>Folgen von Funktionen zwischen metrischen Räumen</p>
+<ul>
+<li>
+<p>Konvergenz:</p>
+<ul>
+<li>punktweise Konvergenz</li>
+<li>gleichmäßige Konvergenz</li>
+<li>andere Konvergenzen (z.B. 
+<span>
+                  
+        \(L^1\)
+    
+</span>
+- und 
+<span>
+                  
+        \(L^2\)
+    
+</span>
+-Konvergenz)</li>
+</ul>
+</li>
+</ul>
+<p>Reihen von Funktionen</p>
 <h1 id="literatur">Literatur</h1>
 <ul>
 <li>Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.</li>

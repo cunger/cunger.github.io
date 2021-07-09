@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Analysis | Escape Velocity</title>
+  <title>Differentiale und Integrale | Escape Velocity</title>
 
   
   
@@ -20,7 +20,7 @@
   <meta name="author" content="Christina Unger">
 
 
-  <meta property="og:title" content="Analysis" />
+  <meta property="og:title" content="Differentiale und Integrale" />
 <meta property="og:description" content="German notes on analysis. In progress." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/docs/maths/analysis/" /><meta property="article:section" content="docs" />
@@ -94,7 +94,7 @@
   <main>
   <div id="main">
     <div id="hero">
-      <h1> Analysis </h1>
+      <h1> Differentiale und Integrale </h1>
       <p class="hero-lead">
          German notes on analysis. In progress.
       </p>
@@ -124,370 +124,10 @@ headingSelector: 'h1'
 
 
 
-    <h1 id="funktionen-über-metrischen-räumen">Funktionen über metrischen Räumen</h1>
-<p>Wir betrachten Abbildungen zwischen metrischen Räumen, insbesondere stetige Funktionen 
-<span>
-                  
-        \(f:X\to Y\)
-    
-</span>
- zwischen metrischen Räumen 
-<span>
-                  
-        \((X,d_X)\)
-    
-</span>
- und 
-<span>
-                  
-        \((Y,d_Y)\)
-    
-</span>
-
-(oder zwischen spezielleren metrischen Räumen 
-<span>
-                  
-        \((X,\|\cdot\|_X)\)
-    
-</span>
- und 
-<span>
-                  
-        \((Y,\|\cdot\|_Y)\)
-    
-</span>
-, wenn 
-<span>
-                  
-        \(d(a,b)=\|a-b\|\)
-    
-</span>
-).</p>
-<p>Besonders wichtig für Anwendungen sind Abbildungen von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- nach 
-<span>
-                  
-        \(\mathbb{R}\)
-    
-</span>
-, also reellwertige Funktionen mehrerer Veränderlicher, und vektorwertige Funktionen von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- nach 
-<span>
-                  
-        \(\mathbb{R}^m\)
-    
-</span>
-. Inbesondere lineare Transformationen von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- nach 
-<span>
-                  
-        \(\mathbb{R}^m\)
-    
-</span>
- (für die also gilt 
-<span>
-                  
-        \(f(x&#43;x&#39;)=f(x)&#43;f(x&#39;)\)
-    
-</span>
- und 
-<span>
-                  
-        \(f(cx)=cf(x)\)
-    
-</span>
-), die durch eine eindeutige Matrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- beschrieben werden können, so dass 
-<span>
-                  
-        \({}^t(f(x))=A{\,}^tx\)
-    
-</span>
-.</p>
-<p>Eine Abbildung oder Funktion ist</p>
-<ul>
-<li><strong>surjektiv</strong>, wenn jedes Element des Wertebereichs im Bild von 
-<span>
-                  
-        \(f\)
-    
-</span>
- liegt.</li>
-<li><strong>injektiv</strong>, wenn jedes Element im Bild von 
-<span>
-                  
-        \(f\)
-    
-</span>
- genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.</li>
-</ul>
-<p>Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eigenschaften, d.h. sie hängen nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
-<h2 id="stetigkeit">Stetigkeit</h2>
-<ul>
-<li>
-<p><strong>
-<span>
-                  
-        \(\varepsilon-\delta\)
-    
-</span>
--Kriterium:</strong></p>
-<p>
-<span>
-                  
-        \(f\)
-    
-</span>
- ist stetig in 
-<span>
-                  
-        \(p\)
-    
-</span>
-, wenn es für alle 
-<span>
-                  
-        \(\varepsilon &gt; 0\)
-    
-</span>
- ein 
-<span>
-                  
-        \(\delta &gt; 0\)
-    
-</span>
- gibt, so dass für alle 
-<span>
-                  
-        \(x\in X\)
-    
-</span>
- gilt:
-
-<span>
-     
-        $$d_X(x,p) &lt; \delta \Rightarrow d_Y(f(x),f(p)) &lt; \varepsilon$$
-    
-</span>
-</p>
-</li>
-<li>
-<p><strong>Umgebungskriterium:</strong></p>
-</li>
-<li>
-<p><strong>Folgenkriterium:</strong></p>
-<p>
-<span>
-                  
-        \(f\)
-    
-</span>
- ist stetig in 
-<span>
-                  
-        \(p\)
-    
-</span>
-, wenn für jede Folge 
-<span>
-                  
-        \((x_n)\)
-    
-</span>
- in 
-<span>
-                  
-        \(X\)
-    
-</span>
- mit 
-<span>
-                  
-        \(\lim_{n\to\infty} x_n = p\)
-    
-</span>
- gilt:
-
-<span>
-     
-        $$\lim_{n\to\infty} f(x_n) = f(\lim_{n\to\infty} x_n) = f(p)$$
-    
-</span>
-</p>
-</li>
-</ul>
-<p>Weitere, stärkere Arten von Stetigkeit:</p>
-<ul>
-<li>
-<p><strong>Gleichmäßige Stetigkeit</strong></p>
-</li>
-<li>
-<p><strong>Lipschitz-Stetigkeit</strong></p>
-<p>
-<span>
-                  
-        \(f\)
-    
-</span>
- ist Lipschitz-stetig mit Lipschitz-Konstante 
-<span>
-                  
-        \(L\)
-    
-</span>
- (oder <em>dehnungsbeschränkt</em>), wenn für alle 
-<span>
-                  
-        \(p,q\in X\)
-    
-</span>
- gilt:
-
-<span>
-     
-        $$d_Y(f(p),f(q)) \leq L\cdot d_X(p,q)$$
-    
-</span>
-
-
-<span>
-     
-        $$\|(f(p)-f(q))\|_Y \leq L\cdot \|p-q\|_X$$
-    
-</span>
-</p>
-<p>Das heißt, der Abstand zweier Punkte 
-<span>
-                  
-        \(x,x&#39;\)
-    
-</span>
- wird durch Anwendung der Funktion höchstens um den Faktor 
-<span>
-                  
-        \(L\)
-    
-</span>
- gestreckt (wenn 
-<span>
-                  
-        \(L &gt; 1\)
-    
-</span>
-) oder gestaucht (wenn 
-<span>
-                  
-        \(L&lt;1\)
-    
-</span>
-).</p>
-</li>
-<li>
-<p><strong>Hölder-Stetigkeit</strong></p>
-<p>
-<span>
-                  
-        \(f\)
-    
-</span>
- ist Hölder-stetig zum Exponenten 
-<span>
-                  
-        \(\alpha\in(0,\infty)\)
-    
-</span>
-, wenn es eine Konstante 
-<span>
-                  
-        \(C&gt;0\)
-    
-</span>
- gibt, so dass für alle 
-<span>
-                  
-        \(p,q\in X\)
-    
-</span>
- gilt:
-
-<span>
-     
-        $$d_Y(f(p),f(q)) \leq C\cdot d_X(p,q)^\alpha$$
-    
-</span>
-
-
-<span>
-     
-        $$\|(f(p)-f(q))\|_Y \leq C\cdot \|p-q\|_X^\alpha$$
-    
-</span>
-</p>
-</li>
-</ul>
-<p>Zum Beispiel ist 
-<span>
-                  
-        \(f(x)=x^2\)
-    
-</span>
- stetig, aber nicht gleichmäßig stetig oder Lipschitz-stetig.</p>
-<p>In einem Punkt 
-<span>
-                  
-        \(a\)
-    
-</span>
- stetig fortsetzbar?
-Wenn 
-<span>
-                  
-        \(a\)
-    
-</span>
- kein Häufungspunkt, dann immer. Wenn 
-<span>
-                  
-        \(a\)
-    
-</span>
- Häufungspunkt, dann nur wenn 
-<span>
-                  
-        \(f\)
-    
-</span>
- in 
-<span>
-                  
-        \(a\)
-    
-</span>
- konvergiert.</p>
-<h2 id="differenzierbarkeit">Differenzierbarkeit</h2>
+    <h1 id="differenzierbarkeit">Differenzierbarkeit</h1>
 <p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts?
 Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen.</p>
-<h3 id="differential">Differential</h3>
+<h2 id="differential">Differential</h2>
 <p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes. Es geht also um die Änderungsrate der Funktion.</p>
 <p>Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
 <span>
@@ -676,7 +316,7 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
     
 </span>
 </p>
-<h3 id="gradient">Gradient</h3>
+<h2 id="gradient">Gradient</h2>
 <p><strong>Differentialoperator:</strong> 
 <span>
                   
@@ -689,44 +329,7 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
 (<a href="https://www.wikiwand.com/de/Gradient_(Mathematik)">https://www.wikiwand.com/de/Gradient_(Mathematik)</a>)</p>
 </blockquote>
 <p>(<a href="https://www.wikiwand.com/en/Differential_operator">https://www.wikiwand.com/en/Differential_operator</a>)</p>
-<h2 id="umkehrfunktion">Umkehrfunktion</h2>
-<p>[Tao 6.7 (p. 152ff)]</p>
-<h1 id="folgen-und-reihen-in-metrischen-räumen">Folgen und Reihen in metrischen Räumen</h1>
-<p>Eine <strong>reelle Folge</strong> ist eine Abbildung 
-<span>
-                  
-        \(f:\mathbb{N}\to\mathbb{R}\)
-    
-</span>
-. (Eine Folge hat also immer unendlich viele Elemente.)</p>
-<p>Folgen von Punkten in einem metrischen Raum</p>
-<ul>
-<li>Konvergenz</li>
-</ul>
-<p>Folgen von Funktionen zwischen metrischen Räumen</p>
-<ul>
-<li>
-<p>Konvergenz:</p>
-<ul>
-<li>punktweise Konvergenz</li>
-<li>gleichmäßige Konvergenz</li>
-<li>andere Konvergenzen (z.B. 
-<span>
-                  
-        \(L^1\)
-    
-</span>
-- und 
-<span>
-                  
-        \(L^2\)
-    
-</span>
--Konvergenz)</li>
-</ul>
-</li>
-</ul>
-<p>Reihen von Funktionen</p>
+<h1 id="integrierbarkeit">Integrierbarkeit</h1>
 <h1 id="literatur">Literatur</h1>
 <ul>
 <li>Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.</li>
