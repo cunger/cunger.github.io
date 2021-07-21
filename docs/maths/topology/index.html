@@ -674,14 +674,69 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
     
 </span>
 ) mit einer beliebigen Norm vollständig.</p>
-<h2 id="normierte-räume-als-topologische-räume">Normierte Räume als topologische Räume</h2>
-<p>Eine Menge 
+<h2 id="metrische-und-normierte-räume-als-topologische-räume">Metrische und normierte Räume als topologische Räume</h2>
+<p>In einem metrischen Raum 
+<span>
+                  
+        \((M,d)\)
+    
+</span>
+ lässt sich eine 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+-Umgebung 
+<span>
+                  
+        \(U_\varepsilon\)
+    
+</span>
+ von 
+<span>
+                  
+        \(x_0\)
+    
+</span>
+ definieren als 
+<span>
+                  
+        \(\{ x\in M \,|\, d(x,x_0) &lt; \varepsilon \}\)
+    
+</span>
+. Eine Menge 
+<span>
+                  
+        \(U\)
+    
+</span>
+ heißt <strong>Umgebung</strong> von 
+<span>
+                  
+        \(x_0\)
+    
+</span>
+, wenn es ein 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+ gibt, so dass 
+<span>
+                  
+        \(U_\varepsilon(x_0)\subseteq U\)
+    
+</span>
+.</p>
+<p>Auf normierte Räume überträgt sich diese Definition, indem man die durch die Norm induzierte Metrik betrachtet. Eine Menge 
 <span>
                   
         \(M\)
     
 </span>
- ist <strong>offen</strong> bzgl. einer Norm, wenn 
+ ist also <strong>offen</strong> bzgl. einer Norm, wenn 
 <span>
                   
         \(M\)
@@ -717,13 +772,13 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
         \(M\)
     
 </span>
- liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann <strong>geschlossen</strong> bzgl. der Norm (also wenn es für jeden Punkt außerhalb der Menge eine 
+ liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann <strong>geschlossen</strong> bzgl. der Norm, also wenn es für jeden Punkt außerhalb der Menge eine 
 <span>
                   
         \(\varepsilon\)
     
 </span>
--Umgebung gibt, die auch außerhalb liegt). Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.</p>
+-Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.</p>
 <p>Eine Teilmenge von 
 <span>
                   
@@ -731,16 +786,35 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
     
 </span>
  ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.</p>
-<p>Faustregel:</p>
+<p><em>Faustregeln:</em></p>
 <ul>
-<li>Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen.</li>
+<li>Offene Intervalle in 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ sind offen, abgeschlossene Intervalle sind abgeschlossen.</li>
+<li>Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen (z.B. 
+<span>
+                  
+        \(\{(x,y)\in\mathbb{R}^2 \,|\, x&lt;y^2\}\)
+    
+</span>
+).</li>
 <li>Mengen, die mit 
 <span>
                   
         \(=,\leq,\geq\)
     
 </span>
- zwischen stetigen Funktionen definiert sind, sind abgeschlossen.</li>
+ zwischen stetigen Funktionen definiert sind, sind abgeschlossen (z.B. 
+<span>
+                  
+        \(\{(x,y)\in\mathbb{R}^2 \,|\, x\leq y^2\}\)
+    
+</span>
+).</li>
 </ul>
 <p>Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
 Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.</p>
