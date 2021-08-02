@@ -334,42 +334,186 @@ Eine Menge
         \(x\)
     
 </span>
- ist ein <strong>Häufungspunkt</strong> der Menge, wenn in jeder Umgebung von 
+ ist für eine Menge 
+<span>
+                  
+        \(M\)
+    
+</span>
+</p>
+<ul>
+<li>ein <strong>Häufungspunkt</strong>, wenn in jeder Umgebung von 
 <span>
                   
         \(x\)
     
 </span>
- unendlich viele Elemente der Menge liegen.</p>
-<p>innerer und äusserer Punkt, Randpunkt,
-das Innere und abgeschlossene Hülle</p>
+ unendlich viele Elemente der Menge liegen</li>
+<li>ein <strong>innerer Punkt</strong>, wenn 
+<span>
+                  
+        \(M\)
+    
+</span>
+ eine Umgebung von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ ist</li>
+<li>ein <strong>äußerer Punkt</strong>, wenn 
+<span>
+                  
+        \(X\backslash M\)
+    
+</span>
+ eine Umgebung von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ ist</li>
+<li>ein <strong>Randpunkt</strong>, wenn weder 
+<span>
+                  
+        \(M\)
+    
+</span>
+ noch 
+<span>
+                  
+        \(X\backslash M\)
+    
+</span>
+ eine Umgebung von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ ist</li>
+</ul>
+<p>Die Menge 
+<span>
+                  
+        \(\mathring{M}\)
+    
+</span>
+ aller inneren Punkte von 
+<span>
+                  
+        \(M\)
+    
+</span>
+ heißt das <strong>Innere</strong> oder der <strong>offene Kern</strong>.</p>
+<p>Die Menge 
+<span>
+                  
+        \(\overline{M}\)
+    
+</span>
+ aller Punkte, die nicht äußere Punkte von 
+<span>
+                  
+        \(M\)
+    
+</span>
+ sind, heißt die <strong>abgeschlossene Hülle</strong>.</p>
 <h2 id="kompaktheit">Kompaktheit</h2>
-<p>Ein topologischer Raum heißt <strong>kompakt</strong>, wenn &hellip;</p>
-<p>Kompaktheit erlaubt es, von lokalen Eigenschaften auf globale Eigenschaften zu schließen.</p>
+<p>Ein topologischer Raum 
+<span>
+                  
+        \((X,T)\)
+    
+</span>
+ heißt <strong>kompakt</strong>, wenn jede offene Überdeckung</p>
+<p>
+<span>
+                  
+        \(X=\bigcup_{i\in I} U_i\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(U_i\in T\)
+    
+</span>
+</p>
+<p>eine endliche Teilüberdeckung</p>
+<p>
+<span>
+                  
+        \(X=\bigcup_{j\in J} U_j\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(U_j\in T\)
+    
+</span>
+ und 
+<span>
+                  
+        \(J\subseteq I\)
+    
+</span>
+ endlich</p>
+<p>enthält.</p>
+<p>Kompakte Räume kann man verstehen als eine Verallgemeinerung endlicher Räume. Zum Beispiel kann man mithilfe der Kompatkheit den Schritt von unendlich vielen Umgebungen zu endlich vielen machen und Beweise dann sehr ähnlich führen wie im endlichen Fall.</p>
+<p>Eine Teilmenge 
+<span>
+                  
+        \(M\)
+    
+</span>
+ eines topologischen Raumes ist:</p>
+<ul>
+<li><strong>überdeckunsgkompakt</strong>, wenn es zu jeder offenen Überdeckung 
+<span>
+                  
+        \(M\subseteq \bigcup_{i\in I} U_i\)
+    
+</span>
+ eine endliche Teilüberdeckung 
+<span>
+                  
+        \(M\subseteq\bigcup_{j\in J} U_j\)
+    
+</span>
+ gibt;</li>
+<li><strong>folgenkompakt</strong>, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört.</li>
+</ul>
+<p>In beliebigen topologischen Räumen sind beide Arten von Kompaktheit nicht unbedingt gleich.</p>
 <p>Eine Teilmenge von 
 <span>
                   
         \(\mathbb{R}^n\)
     
 </span>
- ist <strong>kompakt</strong>, wenn sie alle Randpunkte enthält und sich nicht ins Unendliche erstreckt. 
+ ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist (<strong>Satz von Heine-Borel</strong>). Sie darf keine Folgen enthalten, die entweder keinen Grenzwert haben oder gegen einen Grenzwert konvergieren, der nicht in der Menge liegt.</p>
+<p>So sind zum Beispiele alle abgeschlossenen Intervalle in 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ (wie 
+<span>
+                  
+        \([0,1]\)
+    
+</span>
+) kompakt, während offene und halboffene Intervalle nicht kompakt sind. 
 <span>
                   
         \(\mathbb{R}^n\)
     
 </span>
  selber ist nicht kompakt.</p>
-<p><strong>Satz von Heine-Borel:</strong> Eine nicht-leere Teilmenge von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.</p>
-<ul>
-<li>folgenkompakt</li>
-<li>überdeckunsgkompakt</li>
-</ul>
 <h2 id="trennungseigenschaften">Trennungseigenschaften</h2>
 <p><strong>Hausdorffsches Trennungsaxiom:</strong> Ein topologischer Raum heißt <strong>Hausdorff-Raum</strong>, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.</p>
 <p>Beispiele für Nicht-Hausdorff-Räume:</p>
@@ -457,21 +601,21 @@ Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusam
         \(d(x,y)\geq 0\)
     
 </span>
-</li>
+ (Positive Definitheit)</li>
 <li>
 <span>
                   
         \(d(x,y)=d(y,x)\)
     
 </span>
-</li>
+ (Symmetrie)</li>
 <li>
 <span>
                   
         \(d(x,y)\leq d(x,z) &#43; d(z,y)\)
     
 </span>
-</li>
+ (Dreiecksungleichung)</li>
 </ul>
 <p><strong>Normierte Räume</strong> sind Vektorräume, auf denen eine Norm definiert ist, die die Länge bzw. Größe eines Vektors ausdrückt.
 Eine <strong>Norm</strong> 
@@ -506,7 +650,13 @@ Eine <strong>Norm</strong>
         \(x = 0\)
     
 </span>
-</li>
+ (Definitheit, es reicht zu zeigen: 
+<span>
+                  
+        \(\|x\| = 0\Rightarrow x = 0\)
+    
+</span>
+)</li>
 <li>
 <span>
                   
@@ -519,14 +669,14 @@ Eine <strong>Norm</strong>
         \(\alpha\in\mathbb{R}\)
     
 </span>
-</li>
+ (Homogenität)</li>
 <li>
 <span>
                   
         \(\|x&#43;y\| \leq \|x\| &#43; \|y\|\)
     
 </span>
-</li>
+ (Dreiecksungleichung)</li>
 </ul>
 <p>Eine Norm setzt eine lineare Struktur voraus, ist also nur für Vektorräume definiert.
 Beispiele:</p>
@@ -595,15 +745,29 @@ Beispiele:</p>
 </p>
 </li>
 </ul>
-<p>Eine Norm kann vom Skalarprodukt abgeleitet werden.
-Und jede Norm induziert eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich
-
+<p>Eine Norm kann vom Skalarprodukt 
 <span>
                   
-        \(d(x,y) = \|x-y\|\)
+        \(\langle\cdot,\cdot\rangle\)
     
 </span>
-, d.h. der Abstand zweier Vektoren wird definiert als die Länge des Differenzvektors.
+ abgeleitet werden:
+
+<span>
+     
+        $$\|x\| = \sqrt{\langle x,x\rangle}$$
+    
+</span>
+
+Und jede Norm induziert eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich:
+
+<span>
+     
+        $$d(x,y) = \|x-y\|$$
+    
+</span>
+
+D.h. der Abstand zweier Vektoren wird definiert als die Länge des Differenzvektors.
 Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig umgekehrt: Ein metrischer Raum ist nicht unbedingt ein Vektorraum, denn eine Metrik muss die lineare Struktur eines Raumes nicht respektieren.</p>
 <p>Beispiele für Metriken, die von keiner Norm induziert werden:</p>
 <ul>
@@ -730,13 +894,48 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
     
 </span>
 .</p>
-<p>Auf normierte Räume überträgt sich diese Definition, indem man die durch die Norm induzierte Metrik betrachtet. Eine Menge 
+<p>Ein Punkt 
+<span>
+                  
+        \(x\)
+    
+</span>
+ ist <strong>Häufungspunkt</strong> einer Menge, wenn in jeder 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+-Umgebung 
+<span>
+                  
+        \(U_\varepsilon(x)\)
+    
+</span>
+ mindestens ein von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ verschiedenes Element liegt. (Es liegen dann sogar unendlich viele Elemente der Menge in jeder 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+-Umgebung.)
+Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und umgekehrt.</p>
+<p>Auf normierte Räume übertragen sich diese Definitionen, indem man die durch die Norm induzierte Metrik betrachtet.</p>
+<ul>
+<li>
+<p>Eine Menge 
 <span>
                   
         \(M\)
     
 </span>
- ist also <strong>offen</strong> bzgl. einer Norm, wenn 
+ ist <strong>offen</strong> bzgl. einer Norm, wenn 
 <span>
                   
         \(M\)
@@ -772,13 +971,18 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
         \(M\)
     
 </span>
- liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann <strong>geschlossen</strong> bzgl. der Norm, also wenn es für jeden Punkt außerhalb der Menge eine 
+ liegt. Eine Menge ist also genau dann offen, wenn sie nur aus inneren Punkten besteht, d.h. keinen ihrer Randpunkte enthält.</p>
+</li>
+<li>
+<p>Eine Menge ist <strong>geschlossen</strong> bzgl. einer Norm, wenn es für jeden Punkt außerhalb der Menge eine 
 <span>
                   
         \(\varepsilon\)
     
 </span>
--Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.</p>
+-Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist genau dann geschlossen, wenn sie alle ihre Häufungspunkte enthält.</p>
+</li>
+</ul>
 <p>Eine Teilmenge von 
 <span>
                   
