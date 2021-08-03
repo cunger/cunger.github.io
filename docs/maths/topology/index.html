@@ -990,23 +990,65 @@ Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und 
     
 </span>
  ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.</p>
-<p><em>Faustregeln:</em></p>
+<p><strong>Faustregeln:</strong></p>
 <ul>
-<li>Offene Intervalle in 
+<li>
+<p>Offene Intervalle in 
 <span>
                   
         \(\mathbb{R}\)
     
 </span>
- sind offen, abgeschlossene Intervalle sind abgeschlossen.</li>
-<li>Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen (z.B. 
+ sind offen, abgeschlossene Intervalle sind abgeschlossen.</p>
+<p>Die Grundmenge ist hierbei wichtig. Zum Beispiel ist 
+<span>
+                  
+        \([0,1)\)
+    
+</span>
+ nicht offen in 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+, aber offen in 
+<span>
+                  
+        \([0,\infty)\)
+    
+</span>
+. Analog ist 
+<span>
+                  
+        \([0,1)\)
+    
+</span>
+ nicht abgeschlossen in 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+, aber abgeschlossen in 
+<span>
+                  
+        \((-1,1)\)
+    
+</span>
+.</p>
+</li>
+<li>
+<p>Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen (z.B. 
 <span>
                   
         \(\{(x,y)\in\mathbb{R}^2 \,|\, x&lt;y^2\}\)
     
 </span>
-).</li>
-<li>Mengen, die mit 
+).</p>
+</li>
+<li>
+<p>Mengen, die mit 
 <span>
                   
         \(=,\leq,\geq\)
@@ -1018,7 +1060,8 @@ Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und 
         \(\{(x,y)\in\mathbb{R}^2 \,|\, x\leq y^2\}\)
     
 </span>
-).</li>
+).</p>
+</li>
 </ul>
 <p>Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
 Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.</p>
@@ -1141,6 +1184,7 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
     
 </span>
 </p>
+<p>Lineare Abbildungen zwischen Vektorräumen sind strukturerhaltend - in dem Sinne, dass sie sich mit der Addition und Skalarmultiplikation des Vektorraums vertragen, d.h. Linearkombinationen wieder auf Linearkombinationen abbilden. (Generell sind für algebraische Strukturen besonders die strukturerhaltenden Abbildungen zwischen ihnen interessant.)</p>
 <p>Eine Abbildung oder Funktion ist</p>
 <ul>
 <li><strong>surjektiv</strong>, wenn jedes Element des Wertebereichs im Bild von 
@@ -1162,6 +1206,66 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
 <h2 id="stetigkeit">Stetigkeit</h2>
 <ul>
 <li>
+<p><strong>Umgebungskriterium:</strong></p>
+<p>Topologisch bedeutet Stetigkeit einer Abbildung, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist. Das kann mithilfe von Umgebungen definiert werden.</p>
+<p>
+<span>
+                  
+        \(f:M\to\mathbb{R}\)
+    
+</span>
+ ist <strong>stetig im Punkt</strong> 
+<span>
+                  
+        \(p\in M\)
+    
+</span>
+ genau dann, wenn gilt: Für jede Umgebung 
+<span>
+                  
+        \(N\)
+    
+</span>
+ von 
+<span>
+                  
+        \((f(p))\)
+    
+</span>
+ ist 
+<span>
+                  
+        \(f^{-1}(N)\)
+    
+</span>
+ eine Umgebung von 
+<span>
+                  
+        \(p\)
+    
+</span>
+ in M.</p>
+<p>
+<span>
+                  
+        \(f:M\to\mathbb{R}\)
+    
+</span>
+ ist <strong>stetig</strong> genau dann, wenn gilt: Für alle offenen Mengen 
+<span>
+                  
+        \(U\)
+    
+</span>
+ ist 
+<span>
+                  
+        \(f^{-1}(U)\)
+    
+</span>
+ offen in M. (Die Urbilder offener Mengen sind offen, die Urbilder abgeschlossener Mengen sind abgeschlossen.)</p>
+</li>
+<li>
 <p><strong>
 <span>
                   
@@ -1169,6 +1273,7 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
     
 </span>
 -Kriterium:</strong></p>
+<p>Hinreichend kleine Änderungen des Arguments ziehen nur beliebig kleine Änderungen des Funktionswertes nach sich.</p>
 <p>
 <span>
                   
@@ -1207,9 +1312,6 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
     
 </span>
 </p>
-</li>
-<li>
-<p><strong>Umgebungskriterium:</strong></p>
 </li>
 <li>
 <p><strong>Folgenkriterium:</strong></p>
