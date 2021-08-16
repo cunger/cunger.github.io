@@ -485,7 +485,7 @@ Eine Menge
     
 </span>
  gibt;</li>
-<li><strong>folgenkompakt</strong>, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört.</li>
+<li><strong>folgenkompakt</strong>, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört (anders ausgedrückt: wenn jede Folge Häufungspunkte hat, die zur Menge gehören).</li>
 </ul>
 <p>In beliebigen topologischen Räumen sind beide Arten von Kompaktheit nicht unbedingt gleich.</p>
 <p>Eine Teilmenge von 
@@ -736,10 +736,16 @@ Beispiele:</p>
 </ul>
 </li>
 <li>
-<p>Vektorraum aller beschränkten, stetigen, differenzierbaren oder integrierbaren Funktionen mit der Supremumsnorm 
+<p>Vektorraum aller beschränkten Funktionen 
 <span>
                   
-        \(\|\cdot\|_\infty\)
+        \(f:M\to Y\)
+    
+</span>
+ mit der Supremumsnorm 
+<span>
+                  
+        \(\|f\|_\infty := \sup_{x\in M}\|f(x)\|_Y\)
     
 </span>
 </p>
@@ -1322,6 +1328,47 @@ Zu jeder Umgebung
  offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)</p>
 </li>
 <li>
+<p><strong>Folgenkriterium:</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist stetig in 
+<span>
+                  
+        \(p\)
+    
+</span>
+, wenn für jede Folge 
+<span>
+                  
+        \((x_n)\)
+    
+</span>
+ in 
+<span>
+                  
+        \(X\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(\lim_{n\to\infty} x_n = p\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$\lim_{n\to\infty} f(x_n) = f(\lim_{n\to\infty} x_n) = f(p)$$
+    
+</span>
+</p>
+</li>
+<li>
 <p><strong>
 <span>
                   
@@ -1368,53 +1415,105 @@ Zu jeder Umgebung
     
 </span>
 </p>
-</li>
-<li>
-<p><strong>Folgenkriterium:</strong></p>
-<p>
+<p>Das garantiert Approximierbarkeit der Funktion: Für jeden maximalen Fehler 
 <span>
                   
-        \(f\)
+        \(\varepsilon\)
     
 </span>
- ist stetig in 
+ und eine Stelle 
 <span>
                   
         \(p\)
     
 </span>
-, wenn für jede Folge 
+ findet man ein 
 <span>
                   
-        \((x_n)\)
+        \(\delta\)
     
 </span>
- in 
+, so dass sich jeder Funktionswert 
 <span>
                   
-        \(X\)
+        \(f(x)\)
     
 </span>
- mit 
+ für Argumente 
 <span>
                   
-        \(\lim_{n\to\infty} x_n = p\)
+        \(x\)
     
 </span>
- gilt:
-
+ in der Umgebung 
 <span>
-     
-        $$\lim_{n\to\infty} f(x_n) = f(\lim_{n\to\infty} x_n) = f(p)$$
+                  
+        \(U_\delta(p)\)
     
 </span>
-</p>
+ um maximal 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+ von 
+<span>
+                  
+        \(f(p)\)
+    
+</span>
+ unterscheiden.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Nonuniform_approximation_of_a_function.svg/350px-Nonuniform_approximation_of_a_function.svg.png" alt="Non-uniform approximation"></p>
+<p>(Quelle: <a href="https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Gleichm%C3%A4%C3%9Fige_Stetigkeit">Serlo</a>)</p>
 </li>
 </ul>
 <p>Weitere, stärkere Arten von Stetigkeit:</p>
 <ul>
 <li>
 <p><strong>Gleichmäßige Stetigkeit</strong></p>
+<p>
+<span>
+                  
+        \(\delta\)
+    
+</span>
+ ist global, hängt also nicht mehr von der Stelle der Funktion ab.</p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist gleichmäßig stetig, wenn es für alle 
+<span>
+                  
+        \(\varepsilon &gt; 0\)
+    
+</span>
+ ein 
+<span>
+                  
+        \(\delta &gt; 0\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(x,y\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_X(x,y) &lt; \delta \Rightarrow d_Y(f(x),f(y)) &lt; \varepsilon$$
+    
+</span>
+</p>
+<p>Das entspricht einer gleichmäßigen Approximierbarkeit.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Uniform_approximation_of_a_function.svg/350px-Uniform_approximation_of_a_function.svg.png" alt="Uniform approximation"></p>
+<p>(Quelle: <a href="https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Gleichm%C3%A4%C3%9Fige_Stetigkeit">Serlo</a>)</p>
 </li>
 <li>
 <p><strong>Lipschitz-Stetigkeit</strong></p>
@@ -1520,7 +1619,27 @@ Zu jeder Umgebung
 </p>
 </li>
 </ul>
-<p>Zum Beispiel ist 
+<p>Diese Begriffe lassen sich ihrer Stärke nach ordnen:</p>
+<p>Hölder-stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ Lipschitz-stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ gleichmäßig stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ stetig</p>
+<p>Die Umkehrungen gelten im allgemeinen nicht, zum Beispiel ist 
 <span>
                   
         \(f(x)=x^2\)
