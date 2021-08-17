@@ -6,32 +6,23 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 25 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/docs/maths/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/docs/maths/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Algebraic structures</title>
-      <link>http://cunger.github.io/docs/maths/algebra/</link>
-      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/maths/algebra/</guid>
-      <description>The gist of it. Draft.</description>
-    </item>
-    
-    <item>
-      <title>Topologische, normierte und metrische Räume</title>
+      <title>Topologie</title>
       <link>http://cunger.github.io/docs/maths/topology/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/docs/maths/topology/</guid>
-      <description>Sowie Funktionen, Folgen und Reihen in metrischen Räumen.</description>
+      <description>Topologische, normierte und metrische Räume.</description>
     </item>
     
     <item>
-      <title>Differential- und Integralrechnung</title>
-      <link>http://cunger.github.io/docs/maths/analysis/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      <title>Eigenschaften von Funktionen</title>
+      <link>http://cunger.github.io/docs/maths/functions/</link>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/analysis/</guid>
-      <description>German notes on analysis. In progress.</description>
+      <guid>http://cunger.github.io/docs/maths/functions/</guid>
+      <description>Stetigkeit. Differenzierbarkeit. Integrierbarkeit.</description>
     </item>
     
     <item>
