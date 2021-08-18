@@ -253,7 +253,7 @@ headingSelector: 'h1'
 <p>
 <span>
                   
-        \(f:M\to\mathbb{R}\)
+        \(f:M\to Y\)
     
 </span>
  ist <strong>stetig im Punkt</strong> 
@@ -346,7 +346,7 @@ Zu jeder Umgebung
 <p>
 <span>
                   
-        \(f:M\to\mathbb{R}\)
+        \(f:M\to Y\)
     
 </span>
  ist <strong>stetig</strong> genau dann, wenn gilt: Für alle offenen Mengen 
@@ -703,57 +703,39 @@ Wenn
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h1 id="differenzierbarkeit">Differenzierbarkeit</h1>
-<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts?
-Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen.</p>
+<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts? Es geht also um die <strong>Änderungsrate der Funktion</strong>. Dabei ist eine Funktion differenzierbar, wenn sie linear approximiert werden kann.</p>
+<p>Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen.</p>
 <h2 id="differential">Differential</h2>
-<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes. Es geht also um die Änderungsrate der Funktion.</p>
-<p>Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
+<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes.</p>
+<h3 id="eindimensional">Eindimensional</h3>
+<p>Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere <strong>Änderungsrate</strong> der Funktion auf dem Intervall 
 <span>
                   
-        \([x,x_0]\)
+        \([x,a]\)
     
 </span>
 , das entspricht geometrisch der Sekantensteigung:
 
 <span>
      
-        $$\frac{f(x)-f(x_0)}{x-x_0}$$
+        $$\frac{f(x)-f(a)}{x-a}$$
     
 </span>
 
 Der Grenzwert davon, das Differential, ist dann die lokale Änderungsrate der Funktion an der Stelle 
 <span>
                   
-        \(x_0\)
+        \(a\)
     
 </span>
 , das entspricht geometrisch der Tangentensteigung:
 
 <span>
      
-        $$f&#39;(x_0) = \text{lim}_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$$
+        $$f&#39;(a) = \text{lim}_{x\to a}\frac{f(x)-f(a)}{x-a}$$
     
 </span>
-
-Das Problem bei Funktionen 
-<span>
-                  
-        \(f:\mathbb{R}^n\to\mathbb{R}^m\)
-    
-</span>
- ist, dass 
-<span>
-                  
-        \(x-x_0\in \mathbb{R}^n\)
-    
-</span>
- und 
-<span>
-                  
-        \(f(x)-f(x_0)\in \mathbb{R}^m\)
-    
-</span>
-, der Quotient beider also gar nicht vernünftig definiert ist.</p>
+</p>
 <p>Eine äquivalente Formulierung ergibt sich, wenn man 
 <span>
                   
@@ -763,45 +745,157 @@ Das Problem bei Funktionen
  durch 
 <span>
                   
-        \(x_0&#43;h\)
+        \(a&#43;h\)
     
 </span>
  ersetzt. Der Grenzwert der Steigung der Sekanten durch die Punkte 
 <span>
                   
-        \((x_0,f(x_0))\)
+        \((a,f(a))\)
     
 </span>
  und 
 <span>
                   
-        \((x_0&#43;h,f(x_0&#43;h))\)
+        \((a&#43;h,f(a&#43;h))\)
     
 </span>
- ist dann:</p>
+ ist dann:
 
 <span>
      
-        $$f&#39;(x_0)=\text{lim}_{h\to 0}\frac{f(x_0&#43;h)-f(x_0)}{h}$$
+        $$f&#39;(a)=\text{lim}_{h\to 0}\frac{f(a&#43;h)-f(a)}{h}$$
     
 </span>
 
-<p>Das ist äquivalent zu:
+Das ist äquivalent zu
 
 <span>
      
-        $$\text{lim}_{h\to 0}\frac{f(x_0&#43;h)-f(x_0)-L(h)}{h} = 0$$
+        $$\text{lim}_{h\to 0}\frac{f(a&#43;h)-f(a)-L(h)}{h}=0$$
     
 </span>
 
 Wobei 
 <span>
                   
-        \(L(h)=f&#39;(x_0)(h)\)
+        \(L(h)=f&#39;(a)\,h\)
     
 </span>
- das Differential ist.
-Dieser Begriff des Differentials lässt sich auch auf mehrdimensionale Funktionen übertragen. Das Differential ist die Abbildung 
+ eine lineare Abbildung ist.</p>
+<p>Man kann Differenzierbarkeit äquivalent als <strong>lineare Approximierbarkeit</strong> definieren.</p>
+<p>
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ ist genau dann differenzierbar in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ mit der Ableitung 
+<span>
+                  
+        \(c=f&#39;(a)\in Y\)
+    
+</span>
+, wenn es eine Funktion 
+<span>
+                  
+        \(r:M\to Y\)
+    
+</span>
+ gibt, so dass</p>
+<ul>
+<li>
+<span>
+                  
+        \(f(x) = f(a) &#43; c(x-a) &#43; r(x)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\lim_{x\to a}\dfrac{r(x)}{x-a} = 0\)
+    
+</span>
+</li>
+</ul>
+<p>Hier versteht man 
+<span>
+                  
+        \(f(a) &#43; c(x-a)\)
+    
+</span>
+ als Näherung von 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+ und 
+<span>
+                  
+        \(r(x)\)
+    
+</span>
+ als Fehler, also als Differenz zwischen der eigentlichen Funktion und ihrer Näherung. Wenn 
+<span>
+                  
+        \(x=a\)
+    
+</span>
+, dann ist 
+<span>
+                  
+        \(r(x)=0\)
+    
+</span>
+.</p>
+<p>Da 
+<span>
+                  
+        \(r(x) = f(x) - f(a) - c(x-a)\)
+    
+</span>
+ ist, gelten diese Bedingungen genau dann, wenn 
+<span>
+     
+        $$\lim_{x\to a}\frac{f(x) - f(a) - c(x-a)}{x-a}=\lim_{x\to a}\frac{f(x) - (a)}{x-a} - c = 0,$$
+    
+</span>
+ also wenn 
+<span>
+     
+        $$\lim_{x\to a}\frac{f(x) - f(a)}{x-a} = c = f&#39;(a).$$
+    
+</span>
+</p>
+<h3 id="mehrdimensional">Mehrdimensional</h3>
+<p>Das Problem bei mehrdimensionalen Funktionen 
+<span>
+                  
+        \(f:\mathbb{R}^n\to\mathbb{R}^m\)
+    
+</span>
+ ist, dass 
+<span>
+                  
+        \((x-a)\in \mathbb{R}^n\)
+    
+</span>
+ und 
+<span>
+                  
+        \((f(x)-f(a))\in \mathbb{R}^m\)
+    
+</span>
+, der Quotient beider also gar nicht vernünftig definiert ist. Die anderen Formulierungen des Differentials lassen sich aber einfach auf mehrdimensionale Funktionen übertragen.</p>
+<p>Das Differential ist die Abbildung 
 <span>
                   
         \(L:\mathbb{R}^n\to\mathbb{R}\)
@@ -811,7 +905,7 @@ Dieser Begriff des Differentials lässt sich auch auf mehrdimensionale Funktione
 
 <span>
      
-        $$\text{lim}_{h\to 0}\frac{f(x_0&#43;h)-f(x_0)-L(h)}{\|h\|} = 0$$
+        $$\text{lim}_{h\to 0}\frac{f(a&#43;h)-f(a)-L(h)}{\|h\|} = 0$$
     
 </span>
 
@@ -855,11 +949,54 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
  ist, die 
 <span>
                   
-        \(f(x_0&#43;h)−f(x_0)\)
+        \(f(a&#43;h)−f(a)\)
     
 </span>
  mit einem sehr kleinen Fehler approximiert.</p>
-<p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
+<p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.
+In der äquivalenten Formulierung als lineare Approximierbarkeit heißt das:</p>
+<p>
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ ist genau dann differenzierbar in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ mit der Ableitung 
+<span>
+                  
+        \(A=f&#39;(a)\in Y\)
+    
+</span>
+ (die <strong>Jacobi-Matrix</strong>, siehe lineare Abbildung als Matrix), wenn es eine Funktion 
+<span>
+                  
+        \(r:M\to Y\)
+    
+</span>
+ gibt, so dass</p>
+<ul>
+<li>
+<span>
+                  
+        \(f(x) = f(a) &#43; A(x-a) &#43; r(x)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\lim_{x\to a}\dfrac{r(x)}{\|x-a\|} = 0\)
+    
+</span>
+</li>
+</ul>
+<h3 id="operatoren">Operatoren</h3>
 <p><strong>Differentialoperator:</strong> 
 <span>
                   
