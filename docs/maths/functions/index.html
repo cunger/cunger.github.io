@@ -789,14 +789,14 @@ Wenn
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h1 id="differenzierbarkeit">Differenzierbarkeit</h1>
-<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie lokal approximiert werden kann.</p>
+<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie linear approximiert werden kann.</p>
 <p>Das Differential wird in der Regel über euklidischen Räumen 
 <span>
                   
         \((\mathbb{R}^n,\|\cdot\|_2)\)
     
 </span>
- betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, wodurch lineare Näherungen möglich sind. In allgemeinen metrischen Räumen ist das nicht gegeben. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
+ betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, um über lineare Approximationen reden zu können. In allgemeinen metrischen Räumen ist das nicht möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
 Für Anwendungen sind sowieso Funktionen über reellen Vektorräumen besonders wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von 
 <span>
                   
@@ -961,6 +961,41 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
  mit einem sehr kleinen Fehler approximiert.</p>
 <p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
 <h2 id="lineare-approximierbarkeit">Lineare Approximierbarkeit</h2>
+<p>Aus der Approximation
+
+<span>
+                  
+        \(f&#39;(a)\approx\dfrac{f(x)-f(a)}{x-a}\)
+    
+</span>
+
+ergibt sich direkt:
+
+<span>
+     
+        $$f(x)\approx f(a) &#43; f&#39;(a)\cdot (x-a)$$
+    
+</span>
+
+D.h. 
+<span>
+                  
+        \(f\)
+    
+</span>
+ wird in der Nähe von 
+<span>
+                  
+        \(a\)
+    
+</span>
+ approximiert durch eine Gerade mit der Steigung 
+<span>
+                  
+        \(f&#39;(a)\)
+    
+</span>
+. Man kann Differenzierbarkeit also wie folgt definieren:</p>
 <p>
 <span>
                   
@@ -990,7 +1025,7 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
 <li>
 <span>
                   
-        \(f(x) = f(a) &#43; c(x-a) &#43; r(x)\)
+        \(f(x) = f(a) &#43; c\cdot(x-a) &#43; r(x)\)
     
 </span>
 </li>
@@ -1082,7 +1117,7 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
 <li>
 <span>
                   
-        \(f(x) = f(a) &#43; A(x-a) &#43; r(x)\)
+        \(f(x) = f(a) &#43; A\cdot(x-a) &#43; r(x)\)
     
 </span>
 </li>
