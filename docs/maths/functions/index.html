@@ -123,113 +123,13 @@ headingSelector: 'h1'
 
 
 
-    <p>Wir betrachten Abbildungen zwischen metrischen Räumen, insbesondere stetige Funktionen 
+    <p>Eine Funktion 
 <span>
                   
-        \(f:X\to Y\)
+        \(f\)
     
 </span>
- zwischen <a href="../topology">metrischen Räumen</a> 
-<span>
-                  
-        \((X,d_X)\)
-    
-</span>
- und 
-<span>
-                  
-        \((Y,d_Y)\)
-    
-</span>
-
-(oder zwischen spezielleren metrischen Räumen 
-<span>
-                  
-        \((X,\|\cdot\|_X)\)
-    
-</span>
- und 
-<span>
-                  
-        \((Y,\|\cdot\|_Y)\)
-    
-</span>
-, wenn 
-<span>
-                  
-        \(d(a,b)=\|a-b\|\)
-    
-</span>
-).</p>
-<p>Besonders wichtig für Anwendungen sind Abbildungen von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- nach 
-<span>
-                  
-        \(\mathbb{R}\)
-    
-</span>
-, also reellwertige Funktionen mehrerer Veränderlicher, und vektorwertige Funktionen von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- nach 
-<span>
-                  
-        \(\mathbb{R}^m\)
-    
-</span>
-. Inbesondere lineare Transformationen von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- nach 
-<span>
-                  
-        \(\mathbb{R}^m\)
-    
-</span>
-, d.h. Funktionen, für die gilt:</p>
-<ul>
-<li>
-<span>
-                  
-        \(f(x&#43;x&#39;)=f(x)&#43;f(x&#39;)\)
-    
-</span>
-</li>
-<li>
-<span>
-                  
-        \(f(cx)=cf(x)\)
-    
-</span>
-)</li>
-</ul>
-<p>Und die durch eine eindeutige Matrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- beschrieben werden können, so dass
-
-<span>
-     
-        $${}^t(f(x))=A{\,}^tx$$
-    
-</span>
-</p>
-<p>Lineare Abbildungen zwischen Vektorräumen sind strukturerhaltend - in dem Sinne, dass sie sich mit der Addition und Skalarmultiplikation des Vektorraums vertragen, d.h. Linearkombinationen wieder auf Linearkombinationen abbilden. (Generell sind für algebraische Strukturen besonders die strukturerhaltenden Abbildungen zwischen ihnen interessant.)</p>
-<p>Eine Abbildung oder Funktion ist</p>
+ ist</p>
 <ul>
 <li><strong>surjektiv</strong>, wenn jedes Element des Wertebereichs im Bild von 
 <span>
@@ -246,10 +146,93 @@ headingSelector: 'h1'
 </span>
  genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.</li>
 </ul>
-<p>Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eigenschaften, d.h. sie hängen nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
+<h1 id="strukturerhaltung">Strukturerhaltung</h1>
+<p>Für algebraische Strukturen sind besonders die strukturerhaltenden Abbildungen zwischen ihnen interessant.</p>
+<p>Lineare Abbildungen zwischen Vektorräumen sind strukturerhaltend in dem Sinne, dass sie sich mit der Addition und Skalarmultiplikation des Vektorraums vertragen, d.h. Linearkombinationen wieder auf Linearkombinationen abbilden.</p>
+<p>Eine Funktion 
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist <strong>linear</strong>, wenn gilt:</p>
+<ul>
+<li>
+<span>
+                  
+        \(f(x&#43;x&#39;)=f(x)&#43;f(x&#39;)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(f(cx)=cf(x)\)
+    
+</span>
+</li>
+</ul>
+<p>Sie kann dann durch eine eindeutige Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ beschrieben werden, so dass
+
+<span>
+     
+        $${}^t(f(x))=A{\,}^tx$$
+    
+</span>
+</p>
+<p>Eine Abbildung zwischen <a href="../topology">metrischen Räumen</a> 
+<span>
+                  
+        \((X,d_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,d_Y)\)
+    
+</span>
+ ist <strong>isometrisch</strong>, wenn sie die Metrik erhält (d.h. der Abstand zweier Bildpunkte ist gleich dem Abstand ihrer Urbildpunkte):
+
+<span>
+     
+        $$d_Y(f(x),f(y)) = d_X(x,y) \quad\text{für alle }x,y\in X$$
+    
+</span>
+
+Jede isometrische Abbildung ist stetig (sogar gleichmäßig stetig).</p>
+<p>Stetigkeit ist auch eine Art der Strukturerhaltung: Sie erhält die Nähe zwischen Elementen in topologischen Räumen.</p>
 <h1 id="stetigkeit">Stetigkeit</h1>
-<h2 id="umgebungskriterium">Umgebungskriterium</h2>
-<p>Topologisch bedeutet Stetigkeit einer Abbildung, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist. Das kann mithilfe von Umgebungen definiert werden.</p>
+<p>Die Stetigkeit einer Funktion in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
+<h2 id="abbildungen-zwischen-topologischen-räumen">Abbildungen zwischen topologischen Räumen</h2>
+<p>Wir betrachten Abbildungen 
+<span>
+                  
+        \(f:X\to Y\)
+    
+</span>
+ zwischen <a href="../topology">topologischen Räumen</a> 
+<span>
+                  
+        \(X\)
+    
+</span>
+ und 
+<span>
+                  
+        \(Y\)
+    
+</span>
+.</p>
+<p>Topologisch bedeutet Stetigkeit einer Funktion, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist.
+Das kann mithilfe von Umgebungen definiert werden.</p>
+<h3 id="umgebungskriterium">Umgebungskriterium</h3>
 <p>
 <span>
                   
@@ -362,7 +345,46 @@ Zu jeder Umgebung
     
 </span>
  offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)</p>
-<h2 id="folgenkriterium">Folgenkriterium</h2>
+<h2 id="abbildungen-zwischen-metrischen-räumen">Abbildungen zwischen metrischen Räumen</h2>
+<p>Wir betrachten Abbildungen 
+<span>
+                  
+        \(f:X\to Y\)
+    
+</span>
+ zwischen <a href="../topology">metrischen Räumen</a> 
+<span>
+                  
+        \((X,d_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,d_Y)\)
+    
+</span>
+
+(oder auch zwischen normierten Räumen 
+<span>
+                  
+        \((X,\|\cdot\|_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,\|\cdot\|_Y)\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(d(a,b)=\|a-b\|\)
+    
+</span>
+).</p>
+<h3 id="folgenkriterium">Folgenkriterium</h3>
 <p>
 <span>
                   
@@ -401,13 +423,13 @@ Zu jeder Umgebung
     
 </span>
 </p>
-<h2 id="hahahugoshortcode-s42-hbhb-kriterium">
+<h3 id="hahahugoshortcode-s44-hbhb-kriterium">
 <span>
                   
         \(\varepsilon-\delta\)
     
 </span>
--Kriterium</h2>
+-Kriterium</h3>
 <p>Hinreichend kleine Änderungen des Arguments ziehen nur beliebig kleine Änderungen des Funktionswertes nach sich.</p>
 <p>
 <span>
@@ -496,35 +518,8 @@ Zu jeder Umgebung
     
 </span>
  unterscheiden.</p>
-<h2 id="stärkere-arten-von-stetigkeit">Stärkere Arten von Stetigkeit</h2>
-<p>Die Stetigskeitsbegriffe lassen sich ihrer Stärke nach ordnen:</p>
-<p>Hölder-stetig 
-<span>
-                  
-        \(\Rightarrow\)
-    
-</span>
- Lipschitz-stetig 
-<span>
-                  
-        \(\Rightarrow\)
-    
-</span>
- gleichmäßig stetig 
-<span>
-                  
-        \(\Rightarrow\)
-    
-</span>
- stetig</p>
-<p>Die Umkehrungen gelten im allgemeinen nicht, zum Beispiel ist 
-<span>
-                  
-        \(f(x)=x^2\)
-    
-</span>
- stetig, aber nicht gleichmäßig stetig.</p>
-<h3 id="gleichmäßige-stetigkeit">Gleichmäßige Stetigkeit</h3>
+<h3 id="stärkere-arten-von-stetigkeit">Stärkere Arten von Stetigkeit</h3>
+<p><strong>Gleichmäßige Stetigkeit</strong></p>
 <p>
 <span>
                   
@@ -568,7 +563,7 @@ Das entspricht einer gleichmäßigen Approximierbarkeit.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Nonuniform_approximation_of_a_function.svg/350px-Nonuniform_approximation_of_a_function.svg.png" alt="Non-uniform approximation">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Uniform_approximation_of_a_function.svg/350px-Uniform_approximation_of_a_function.svg.png" alt="Uniform approximation"></p>
 <p><em>(Links: Stetigkeit, rechts: gleichmäßige Stetigkeit. Quelle: <a href="https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Gleichm%C3%A4%C3%9Fige_Stetigkeit">Serlo</a>)</em></p>
-<h3 id="lipschitz-stetigkeit">Lipschitz-Stetigkeit</h3>
+<p><strong>Lipschitz-Stetigkeit</strong></p>
 <p>
 <span>
                   
@@ -627,7 +622,7 @@ Das entspricht einer gleichmäßigen Approximierbarkeit.</p>
     
 </span>
 ).</p>
-<h3 id="hölder-stetigkeit">Hölder-Stetigkeit</h3>
+<p><strong>Hölder-Stetigkeit</strong></p>
 <p>
 <span>
                   
@@ -667,6 +662,97 @@ Das entspricht einer gleichmäßigen Approximierbarkeit.</p>
     
 </span>
 </p>
+<p>Die Stetigskeitsbegriffe lassen sich ihrer Stärke nach ordnen:</p>
+<p>Hölder-stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ Lipschitz-stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ gleichmäßig stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ stetig</p>
+<p>Die Umkehrungen gelten im allgemeinen nicht, zum Beispiel ist 
+<span>
+                  
+        \(f(x)=x^2\)
+    
+</span>
+ stetig, aber nicht gleichmäßig stetig.</p>
+<h3 id="wichtige-sätze">Wichtige Sätze</h3>
+<p>Ist 
+<span>
+                  
+        \(M\)
+    
+</span>
+ kompakt und 
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ stetig, dann ist 
+<span>
+                  
+        \(f(M)\)
+    
+</span>
+ kompakt und 
+<span>
+                  
+        \(f\)
+    
+</span>
+ gleichmäßig stetig.</p>
+<p>Ist 
+<span>
+                  
+        \(M\)
+    
+</span>
+ zusammenhängend und 
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ stetig, dann ist 
+<span>
+                  
+        \(f(M)\)
+    
+</span>
+ zusammenhängend.</p>
+<p>Ist 
+<span>
+                  
+        \(M\neq\emptyset\)
+    
+</span>
+ kompakt und 
+<span>
+                  
+        \(f:M\to \mathbb{R}\)
+    
+</span>
+ stetig, dann nimmt 
+<span>
+                  
+        \(f\)
+    
+</span>
+ sein Maximum und Minimum an.</p>
 <h2 id="fortsetzbarkeit">Fortsetzbarkeit</h2>
 <p>In einem Punkt 
 <span>
@@ -703,12 +789,43 @@ Wenn
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h1 id="differenzierbarkeit">Differenzierbarkeit</h1>
-<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts? Es geht also um die <strong>Änderungsrate der Funktion</strong>. Dabei ist eine Funktion differenzierbar, wenn sie linear approximiert werden kann.</p>
-<p>Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen.</p>
-<h2 id="differential">Differential</h2>
-<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes.</p>
-<h3 id="eindimensional">Eindimensional</h3>
-<p>Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere <strong>Änderungsrate</strong> der Funktion auf dem Intervall 
+<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie lokal approximiert werden kann.</p>
+<p>Das Differential wird in der Regel über euklidischen Räumen 
+<span>
+                  
+        \((\mathbb{R}^n,\|\cdot\|_2)\)
+    
+</span>
+ betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, wodurch lineare Näherungen möglich sind. In allgemeinen metrischen Räumen ist das nicht gegeben. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
+Für Anwendungen sind sowieso Funktionen über reellen Vektorräumen besonders wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ und vektorwertige Funktionen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}^m\)
+    
+</span>
+.</p>
+<p>Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
+<h2 id="änderungsrate">Änderungsrate</h2>
+<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes, beschreibt also die lokale Änderungsrate der Funktion.</p>
+<p>Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
 <span>
                   
         \([x,a]\)
@@ -722,13 +839,6 @@ Wenn
     
 </span>
 
-Der Grenzwert davon, das Differential, ist dann die lokale Änderungsrate der Funktion an der Stelle 
-<span>
-                  
-        \(a\)
-    
-</span>
-, das entspricht geometrisch der Tangentensteigung:
 
 <span>
      
@@ -783,11 +893,78 @@ Wobei
     
 </span>
  eine lineare Abbildung ist.</p>
-<p>Man kann Differenzierbarkeit äquivalent als <strong>lineare Approximierbarkeit</strong> definieren.</p>
+<p>Diese Formulierung ist praktisch, da sie sich einfach auf mehrdimensionale Funktionen übertragen lässt.
+(Im Gegensatz zur ersten: Da bei mehrdimensionalen Funktionen 
+<span>
+                  
+        \(x-a\)
+    
+</span>
+ und 
+<span>
+                  
+        \(f(x)-f(a)\)
+    
+</span>
+ Vektoren unterschiedlicher Räume sein können, ist der Quotient beider in vielen Fällen gar nicht vernünftig definiert.)
+Das Differential ist dann die Abbildung 
+<span>
+                  
+        \(L:\mathbb{R}^n\to\mathbb{R}\)
+    
+</span>
+, so dass</p>
+
+<span>
+     
+        $$\text{lim}_{h\to 0}\frac{f(a&#43;h)-f(a)-L(h)}{\|h\|} = 0$$
+    
+</span>
+
+<p>Daraus ergibt sich eine leicht andere Sichtweise:
+Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+ hängt annähernd linear von der Änderung des Wertes 
+<span>
+                  
+        \(x\)
+    
+</span>
+ (von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ zu 
+<span>
+                  
+        \(x&#43;h\)
+    
+</span>
+) ab. Das entspricht der Vorstellung, dass die Tangente der Graph derjenigen linearen Funktion 
+<span>
+                  
+        \(h\to L(h)\)
+    
+</span>
+ ist, die 
+<span>
+                  
+        \(f(a&#43;h)−f(a)\)
+    
+</span>
+ mit einem sehr kleinen Fehler approximiert.</p>
+<p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
+<h2 id="lineare-approximierbarkeit">Lineare Approximierbarkeit</h2>
 <p>
 <span>
                   
-        \(f:M\to Y\)
+        \(f:M\to \mathbb{R}^m\)
     
 </span>
  ist genau dann differenzierbar in 
@@ -799,13 +976,13 @@ Wobei
  mit der Ableitung 
 <span>
                   
-        \(c=f&#39;(a)\in Y\)
+        \(c=f&#39;(a)\in \mathbb{R}^m\)
     
 </span>
 , wenn es eine Funktion 
 <span>
                   
-        \(r:M\to Y\)
+        \(r:M\to \mathbb{R}^m\)
     
 </span>
  gibt, so dass</p>
@@ -875,87 +1052,8 @@ Wobei
     
 </span>
 </p>
-<h3 id="mehrdimensional">Mehrdimensional</h3>
-<p>Das Problem bei mehrdimensionalen Funktionen 
-<span>
-                  
-        \(f:\mathbb{R}^n\to\mathbb{R}^m\)
-    
-</span>
- ist, dass 
-<span>
-                  
-        \((x-a)\in \mathbb{R}^n\)
-    
-</span>
- und 
-<span>
-                  
-        \((f(x)-f(a))\in \mathbb{R}^m\)
-    
-</span>
-, der Quotient beider also gar nicht vernünftig definiert ist. Die anderen Formulierungen des Differentials lassen sich aber einfach auf mehrdimensionale Funktionen übertragen.</p>
-<p>Das Differential ist die Abbildung 
-<span>
-                  
-        \(L:\mathbb{R}^n\to\mathbb{R}\)
-    
-</span>
-, so dass</p>
+<p>Im mehrdimensionalen Fall heißt das:
 
-<span>
-     
-        $$\text{lim}_{h\to 0}\frac{f(a&#43;h)-f(a)-L(h)}{\|h\|} = 0$$
-    
-</span>
-
-<p>Vor allem ist 
-<span>
-                  
-        \(L\)
-    
-</span>
- eine lineare Abbildung. Daraus ergibt sich eine leicht andere Sichtweise:
-Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts 
-<span>
-                  
-        \(f(x)\)
-    
-</span>
- hängt annähernd linear von der Änderung des Wertes 
-<span>
-                  
-        \(x\)
-    
-</span>
- (von 
-<span>
-                  
-        \(x\)
-    
-</span>
- zu 
-<span>
-                  
-        \(x&#43;h\)
-    
-</span>
-) ab. Das entspricht der Vorstellung, dass die Tangente der Graph derjenigen linearen Funktion 
-<span>
-                  
-        \(h\to L(h)\)
-    
-</span>
- ist, die 
-<span>
-                  
-        \(f(a&#43;h)−f(a)\)
-    
-</span>
- mit einem sehr kleinen Fehler approximiert.</p>
-<p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.
-In der äquivalenten Formulierung als lineare Approximierbarkeit heißt das:</p>
-<p>
 <span>
                   
         \(f:M\to Y\)
@@ -996,7 +1094,7 @@ In der äquivalenten Formulierung als lineare Approximierbarkeit heißt das:</p>
 </span>
 </li>
 </ul>
-<h3 id="operatoren">Operatoren</h3>
+<h2 id="operatoren">Operatoren</h2>
 <p><strong>Differentialoperator:</strong> 
 <span>
                   
