@@ -186,6 +186,8 @@ headingSelector: 'h1'
     
 </span>
 </p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Eine Abbildung zwischen <a href="../topology">metrischen Räumen</a> 
 <span>
                   
@@ -232,6 +234,7 @@ Jede isometrische Abbildung ist stetig (sogar gleichmäßig stetig).</p>
 .</p>
 <p>Topologisch bedeutet Stetigkeit einer Funktion, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist.
 Das kann mithilfe von Umgebungen definiert werden.</p>
+<p>Stetigkeit vererbt auch andere Eigenschaften; wenn z.B. die Urbildmenge einer stetigen Abbildung <em>kompakt</em> oder <em>zusammenhängend</em> ist, so ist es die Bildmenge auch.</p>
 <h3 id="umgebungskriterium">Umgebungskriterium</h3>
 <p>
 <span>
@@ -734,25 +737,6 @@ Das entspricht einer gleichmäßigen Approximierbarkeit.</p>
     
 </span>
  zusammenhängend.</p>
-<p>Ist 
-<span>
-                  
-        \(M\neq\emptyset\)
-    
-</span>
- kompakt und 
-<span>
-                  
-        \(f:M\to \mathbb{R}\)
-    
-</span>
- stetig, dann nimmt 
-<span>
-                  
-        \(f\)
-    
-</span>
- sein Maximum und Minimum an.</p>
 <h2 id="fortsetzbarkeit">Fortsetzbarkeit</h2>
 <p>In einem Punkt 
 <span>
@@ -790,8 +774,7 @@ Wenn
 <!-- raw HTML omitted -->
 <h1 id="differenzierbarkeit">Differenzierbarkeit</h1>
 <p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie linear approximiert werden kann.</p>
-<p>Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, um über lineare Approximationen reden zu können. In allgemeinen metrischen Räumen ist das nicht möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
-Für Anwendungen sind sowieso Funktionen über reellen Vektorräumen besonders wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von 
+<p>Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, um über lineare Approximationen reden zu können. In allgemeinen metrischen Räumen ist das nicht möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren. Aber für Anwendungen sind sowieso Funktionen über euklidischen Räumen wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von 
 <span>
                   
         \(\mathbb{R}^n\)
@@ -815,7 +798,7 @@ Für Anwendungen sind sowieso Funktionen über reellen Vektorräumen besonders w
         \(\mathbb{R}^m\)
     
 </span>
-.</p>
+.)</p>
 <p>Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
 <h2 id="änderungsrate">Änderungsrate</h2>
 <p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes, beschreibt also die lokale Änderungsrate der Funktion.</p>
@@ -971,25 +954,7 @@ ergibt sich direkt:
     
 </span>
 
-D.h. 
-<span>
-                  
-        \(f\)
-    
-</span>
- wird in der Nähe von 
-<span>
-                  
-        \(a\)
-    
-</span>
- approximiert durch eine Gerade mit der Steigung 
-<span>
-                  
-        \(f&#39;(a)\)
-    
-</span>
-. Man kann Differenzierbarkeit also wie folgt definieren:</p>
+Daher kann man Differenzierbarkeit wie folgt definieren:</p>
 <p>
 <span>
                   
@@ -1159,6 +1124,31 @@ D.h.
     
 </span>
 </p>
+<p>Wenn 
+<span>
+                  
+        \(f\)
+    
+</span>
+ in einer Umgebung eines Punktes 
+<span>
+                  
+        \(a\)
+    
+</span>
+ partiell differenzierbar ist und alle partiellen Ableitungen stetig sind, dann ist 
+<span>
+                  
+        \(f\)
+    
+</span>
+ in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ auch differenzierbar.</p>
 <h2 id="gradient">Gradient</h2>
 <p><strong>Differentialoperator:</strong> 
 <span>
@@ -1172,11 +1162,15 @@ D.h.
 (<a href="https://www.wikiwand.com/de/Gradient_(Mathematik)">https://www.wikiwand.com/de/Gradient_(Mathematik)</a>)</p>
 </blockquote>
 <p>(<a href="https://www.wikiwand.com/en/Differential_operator">https://www.wikiwand.com/en/Differential_operator</a>)</p>
+<h2 id="wichtige-sätze-1">Wichtige Sätze</h2>
+<p><strong>Mittelwertsatz:</strong> &hellip;</p>
 <h1 id="integrierbarkeit">Integrierbarkeit</h1>
 <h1 id="literatur">Literatur</h1>
 <ul>
 <li>Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.</li>
 <li>Daniel Grieser: Skript zu Analysis II, Universität Oldenburg.</li>
+<li>Klaus Jänich: Mathematik 1+2.</li>
+<li>Klaus Jänich: Topologie.</li>
 <li>Terrence Tao: Analysis II.</li>
 </ul>
 
