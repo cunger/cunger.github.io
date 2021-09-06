@@ -125,7 +125,7 @@ headingSelector: 'h1'
 
     <p>Ein Raum ist eine Menge von mathematischen Objekten zusammen mit einer Struktur.
 Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt und wo man von stetigen Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
-Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist zum Beispiel die Dimension des Raumes, was für die <a href="../analysis">Analysis</a> wichtig ist.</p>
+Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist zum Beispiel die Dimension des Raumes, was für die Analysis wichtig ist.</p>
 <p>Andere interessante Räume ergeben sich dann, wenn eine Topologie mit einer anderen Struktur verträglich ist:
 zum Beispiel topologische Gruppen, topologische Vektorräume
 und darauf aufbauend normierte und metrische Räume (Vektorräume, in denen eine Norm oder Metrik eine zusätzliche Struktur vorgeben).</p>
@@ -1084,26 +1084,127 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
     
 </span>
  eine Metrik und die erzeugte Topologie ist die gleiche.</p>
-<h1 id="folgen-und-reihen-in-metrischen-räumen">Folgen und Reihen in metrischen Räumen</h1>
-<p>Eine <strong>reelle Folge</strong> ist eine Abbildung 
+<h1 id="folgen-und-reihen">Folgen und Reihen</h1>
+<p>Eine <strong>Folge</strong> ist eine Abbildung mit 
+<span>
+                  
+        \(\mathbb{N}\)
+    
+</span>
+ als Wertebereich.
+Eine reelle Folge z.B. ist eine Abbildung 
 <span>
                   
         \(f:\mathbb{N}\to\mathbb{R}\)
     
 </span>
-. (Eine Folge hat also immer unendlich viele Elemente.)</p>
-<h2 id="folgen-von-punkten-in-einem-metrischen-raum">Folgen von Punkten in einem metrischen Raum</h2>
-<p><strong>Konvergenz im metrischen Raum</strong>:
-(x^k)\to a gdw d(x^k,a)\to 0
-rechts ist Konvergenz im R
-In vollständigen Räumen: wenn (x^k) eine Cauchyfolge ist, also der Abstand zwischen zwei Folgengliedern beleibig klein wird</p>
+.
+(Eine Folge hat also immer unendlich viele Elemente.)</p>
+<h2 id="konvergenz-von-folgen-von-punkten-in-einem-raum">Konvergenz von Folgen von Punkten in einem Raum</h2>
+<p>Konvergenz lässt sich über Umgebungen und Abstände definieren, die Idee ist jeweils die gleiche.</p>
 <p><strong>Konvergenz im topologischen Raum</strong>:
-(x^k)\to a gdw für alle Umgebungen von a gilt, dass ab einem k_0 alle x^k (m&gt;=k_0) in dieser Umgebung liegen.</p>
+Eine Folge 
+<span>
+                  
+        \((x^n)\)
+    
+</span>
+ konvergiert gegen 
+<span>
+                  
+        \(x\)
+    
+</span>
+ genau dann, wenn für jede Umgebung von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ gilt, dass es ein 
+<span>
+                  
+        \(n_0\in\mathbb{N}\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(n\geq n_0\)
+    
+</span>
+ gilt, dass 
+<span>
+                  
+        \(x_n\)
+    
+</span>
+ in dieser Umgebung liegt (dass also ab einem bestimmten Element alle Folgenglieder in der Umgebung liegen).</p>
+<p><strong>Konvergenz im metrischen Raum</strong>:
+Eine Folge 
+<span>
+                  
+        \((x^n)\)
+    
+</span>
+ konvergiert gegen 
+<span>
+                  
+        \(x\)
+    
+</span>
+ genau dann, wenn es für jedes 
+<span>
+                  
+        \(\varepsilon &gt; 0\)
+    
+</span>
+ ein 
+<span>
+                  
+        \(n_0\in\mathbb{N}\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(n\geq n_0\)
+    
+</span>
+ gilt, dass 
+<span>
+                  
+        \(d(x_n,x)&lt;\varepsilon\)
+    
+</span>
+.</p>
+<p>In vollständigen Räumen konvergiert eine Folge, wenn sie eine <strong>Cauchy-Folge</strong> ist, wenn also der Abstand zwischen zwei Folgengliedern beliebig klein wird, d.h. wenn es für jedes 
+<span>
+                  
+        \(\varepsilon &gt; 0\)
+    
+</span>
+ ein 
+<span>
+                  
+        \(n_0\in\mathbb{N}\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(m,n\geq n_0\)
+    
+</span>
+ gilt, dass 
+<span>
+                  
+        \(d(x_n,x_m)&lt;\varepsilon\)
+    
+</span>
+.</p>
 <p>Der Grenzwert einer Folge ist immer auch Häufungspunkt. In einem metrischen Raum kann eine Folge mehrere Häufungspunkte haben, aber nur einen Grenzwert (Hausdorff).</p>
-<p>Folgen von Funktionen zwischen metrischen Räumen</p>
-<ul>
-<li>
-<p>Konvergenz:</p>
+<h2 id="konvergenz-von-folgen-von-funktionen-zwischen-räumen">Konvergenz von Folgen von Funktionen zwischen Räumen</h2>
 <ul>
 <li>punktweise Konvergenz</li>
 <li>gleichmäßige Konvergenz</li>
@@ -1121,9 +1222,6 @@ In vollständigen Räumen: wenn (x^k) eine Cauchyfolge ist, also der Abstand zwi
 </span>
 -Konvergenz)</li>
 </ul>
-</li>
-</ul>
-<p>Reihen von Funktionen</p>
 <h1 id="literatur">Literatur</h1>
 <ul>
 <li>Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.</li>
