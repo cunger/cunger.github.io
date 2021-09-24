@@ -215,7 +215,11 @@ Für alle
 </span>
 ).</p>
 <h1 id="arithmetische-operationen">Arithmetische Operationen</h1>
-<p>Polynome drücken Zahlen aus und können wie diese addiert, subtrahiert und multipliziert werden. Das Ergebnis ist erneut ein Polynom.</p>
+<blockquote>
+<p>many of our algorithms apply (with small modifications) to both the integer and polynomial cases: multiplication, division with remainder, gcd and Chinese remainder computation.
+(Aber nicht: Faktorisierung)</p>
+</blockquote>
+<p>Polynome können wie ganze Zahlen addiert, subtrahiert und multipliziert werden. Das Ergebnis ist erneut ein Polynom.</p>
 <h2 id="multiplikation">Multiplikation</h2>
 <p>Das Produkt zweier Polynome 
 <span>
@@ -239,42 +243,38 @@ Für alle
 
 <span>
      
-        $$pq=\sum_k(\sum_{i&#43;j=k}a_ib_j)x^k$$
+        $$pq=\sum_{k=0}^{m&#43;n}c_kx^k$$
     
 </span>
 
-D.h. der Term mit Exponent 
+Mit den Koeffizienten:
+
 <span>
-                  
-        \(k\)
+     
+        $$c_k=\sum_{\mathclap{0\leq i\leq n,\, 0\leq j\leq m,\, i&#43;j=k}}a_ib_j$$
     
 </span>
- ergibt sich aus den Summen aller Terme, deren Koeffizienten summiert 
-<span>
-                  
-        \(k\)
-    
-</span>
- ergeben.</p>
+
+Zum Beispiel:</p>
 <ul>
 <li>
 <span>
                   
-        \(k=0: a_0b_0\)
+        \(c_0 = a_0b_0\)
     
 </span>
 </li>
 <li>
 <span>
                   
-        \(k=1: a_0b_1x &#43; a_1xb_0\)
+        \(c_1 = a_0b_1 &#43; a_1b_0\)
     
 </span>
 </li>
 <li>
 <span>
                   
-        \(k=2: a_0b_2x^2 &#43; a_1xb_1x &#43; a_2x^2b_0\)
+        \(c_2 = a_0b_2 &#43; a_1b_1 &#43; a_2b_0\)
     
 </span>
 </li>
@@ -405,7 +405,8 @@ eine Faktorisierung des Polynoms (wobei
 </span>
  wieder ein Polynom ist).</p>
 <h1 id="gleichungen">Gleichungen</h1>
-<h1 id="taylorpolynome">Taylorpolynome</h1>
+<h1 id="approximation-mit-polynomen">Approximation mit Polynomen</h1>
+<h2 id="taylorpolynome">Taylorpolynome</h2>
 
 
     
