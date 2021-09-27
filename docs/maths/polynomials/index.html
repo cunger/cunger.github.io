@@ -220,6 +220,8 @@ Für alle
 (Aber nicht: Faktorisierung)</p>
 </blockquote>
 <p>Polynome können wie ganze Zahlen addiert, subtrahiert und multipliziert werden. Das Ergebnis ist erneut ein Polynom.</p>
+<h2 id="addition">Addition</h2>
+<p>Addition und Subtraktion erfolgt komponentenweise.</p>
 <h2 id="multiplikation">Multiplikation</h2>
 <p>Das Produkt zweier Polynome 
 <span>
@@ -312,6 +314,24 @@ Zum Beispiel:</p>
     
 </span>
 .</p>
+<h2 id="faktorisierung">Faktorisierung</h2>
+<p>Polynome können äquivalent umgeformt werden als Produkt von Polynomen. Zum Beispiel:</p>
+<ul>
+<li>
+<span>
+                  
+        \(x^2-a^2=(x&#43;a)(x-a)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(x^3-2x^2-x&#43;1=(x-2)(x&#43;1)(x-1)\)
+    
+</span>
+</li>
+</ul>
 <h2 id="division-mit-rest">Division mit Rest</h2>
 <p>Im Gegensatz zu Addition, Subtraktion und Multiplikation von Polynomen, ergibt die Division von Polynomen nicht notwendig wieder ein Polynom. Z.B. ist 
 <span>
@@ -334,14 +354,14 @@ Zum Beispiel:</p>
  kein Polynom. Es gibt aber eindeutig bestimmte Polynome 
 <span>
                   
-        \(f,r\)
+        \(s,r\)
     
 </span>
 , so dass
 
 <span>
      
-        $$p=fq&#43;r$$
+        $$p=sq&#43;r$$
     
 </span>
 
@@ -351,26 +371,42 @@ mit
         \(\text{Grad}(r)&lt;\text{Grad}(q)\)
     
 </span>
-.</p>
-<h2 id="faktorisierung">Faktorisierung</h2>
-<p>Polynome können äquivalent umgeformt werden als Produkt von Polynomen. Zum Beispiel:</p>
-<ul>
-<li>
+.
+Hier ist ein Algorithmus, um 
 <span>
                   
-        \(x^2-a^2=(x&#43;a)(x-a)\)
+        \(s,r\)
     
 </span>
-</li>
-<li>
-<span>
-                  
-        \(x^3-2x^2-x&#43;1=(x-2)(x&#43;1)(x-1)\)
-    
-</span>
-</li>
-</ul>
-<h2 id="komposition">Komposition</h2>
+ zu bestimmen:</p>
+<pre><code>function euclidian_division(p, q)
+  s = 0;
+  r = p;
+  d = degree(q);
+  c = leading_coefficient(q);
+
+  while degree(r) &gt;= d
+    t = leading_coefficient(r)/c * x^(degree(r) - d);
+    s = s + t;
+    r = r - t * q;
+  end
+
+  return (s, r);
+end
+</code></pre><p>Den größten gemeinsamen Teiler zweier Polynome erhält man dann durch wiederholte Division, bis der Rest 0 ist:</p>
+<pre><code>function gcd(p1, p2)
+  (q, r) = euclidian_division(p1, p2);
+
+  # Which means:
+  # p1 = q * p2 + r
+
+  if (r == 0)
+    return q;
+  else
+    return gcd(r, q);
+  end
+end
+</code></pre><h2 id="komposition">Komposition</h2>
 <h1 id="nullstellen">Nullstellen</h1>
 <p>Ein Polynom 
 <span>
