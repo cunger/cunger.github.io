@@ -149,25 +149,19 @@ headingSelector: 'h1'
     
 </span>
 
-<p>wobei 
+<p>wobei die Koeffizienten 
 <span>
                   
         \(a_0,\ldots,a_n\in\mathbb{K}\)
     
 </span>
- Konstanten sind und die Koeffizienten 
-<span>
-                  
-        \(i\in\mathbb{N}\)
-    
-</span>
- ganzzahlig und nicht-negativ sind. Der <strong>Grad</strong> eines solchen Polynoms ist der größte Koeffizient 
+ sind. Der <strong>Grad</strong> eines solchen Polynoms ist das 
 <span>
                   
         \(i\neq 0\)
     
 </span>
-.</p>
+ des größten Koeffizienten ungleich 0. (Der Grad des Nullpolynoms wird als -1 definiert.)</p>
 <p><strong>Polynomfunktionen</strong> sind Funktionen der Form
 
 <span>
@@ -221,7 +215,7 @@ Für alle
 </blockquote>
 <p>Polynome können wie ganze Zahlen addiert, subtrahiert und multipliziert werden. Das Ergebnis ist erneut ein Polynom.</p>
 <h2 id="addition">Addition</h2>
-<p>Addition und Subtraktion erfolgt komponentenweise.</p>
+<p>Die Addition erfolgt komponentenweise.</p>
 <h2 id="multiplikation">Multiplikation</h2>
 <p>Das Produkt zweier Polynome 
 <span>
@@ -393,7 +387,7 @@ Hier ist ein Algorithmus, um
 
   return (s, r);
 end
-</code></pre><p>Den größten gemeinsamen Teiler zweier Polynome erhält man dann durch wiederholte Division, bis der Rest 0 ist:</p>
+</code></pre><p>Den <strong>größten gemeinsamen Teiler</strong> zweier Polynome erhält man dann durch wiederholte Division, bis der Rest 0 ist:</p>
 <pre><code>function gcd(p1, p2)
   (q, r) = euclidian_division(p1, p2);
 
@@ -406,7 +400,57 @@ end
     return gcd(r, q);
   end
 end
-</code></pre><h2 id="komposition">Komposition</h2>
+</code></pre><h2 id="algebraischer-abschluss">Algebraischer Abschluss</h2>
+<p>Ein Körper 
+<span>
+                  
+        \(K\)
+    
+</span>
+ heißt <strong>algebraisch abgeschlossen</strong>, wenn jedes nicht-konstante Polynom 
+<span>
+                  
+        \(p\in \mathbb{K}[T]\)
+    
+</span>
+ (d.h. jedes Polynom in 
+<span>
+                  
+        \(\mathbb{K}[T]\backslash\mathbb{K}\)
+    
+</span>
+) eine Nullstelle in 
+<span>
+                  
+        \(K\)
+    
+</span>
+ besitzt. Das ist äquivalent dazu, dass es in Linearfaktoren zerfällt (d.h. es gibt 
+<span>
+                  
+        \(a,z_1,\ldots,z_n\in\mathbb{K}\)
+    
+</span>
+, so dass 
+<span>
+                  
+        \(p = a(T-z_1)\cdots(T-z_n)\)
+    
+</span>
+), denn hat ein Polynom eine Nullstelle 
+<span>
+                  
+        \(a\)
+    
+</span>
+, so ist es ohne Rest durch 
+<span>
+                  
+        \(T-a\)
+    
+</span>
+ teilbar.</p>
+<h2 id="komposition">Komposition</h2>
 <h1 id="nullstellen">Nullstellen</h1>
 <p>Ein Polynom 
 <span>
