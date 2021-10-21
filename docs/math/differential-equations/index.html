@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Forces | Escape Velocity</title>
+  <title>Differentialgleichungen | Escape Velocity</title>
 
   
   
@@ -20,12 +20,12 @@
   <meta name="author" content="Christina Unger">
 
 
-  <meta property="og:title" content="Forces" />
-<meta property="og:description" content="The fundamental forces of physics." />
+  <meta property="og:title" content="Differentialgleichungen" />
+<meta property="og:description" content="German notes on differential equations. In progress." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cunger.github.io/docs/physics/forces/" />
-<meta property="article:published_time" content="2019-11-16T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-16T00:00:00+00:00" />
+<meta property="og:url" content="http://cunger.github.io/docs/math/differential-equations/" />
+<meta property="article:published_time" content="2021-06-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-25T00:00:00+00:00" />
 
   
 
@@ -38,7 +38,7 @@
   
   
 
-  <link rel="canonical" href="http://cunger.github.io/docs/physics/forces/">  
+  <link rel="canonical" href="http://cunger.github.io/docs/math/differential-equations/">  
 
   <link href="/css/font.css" rel="stylesheet" type="text/css">
   <link href="/css/kube.css" rel="stylesheet" type="text/css">
@@ -94,9 +94,9 @@
   <main>
   <div id="main">
     <div id="hero">
-      <h1> Forces </h1>
+      <h1> Differentialgleichungen </h1>
       <p class="hero-lead">
-         The fundamental forces of physics.
+         German notes on differential equations. In progress.
       </p>
 
     </div>
@@ -124,132 +124,136 @@ headingSelector: 'h1'
 
 
 
-    <h1 id="electromagnetic-and-weak-force">Electromagnetic and weak force</h1>
-<p>Electromagnetism is the interaction between objects due to their charge. This comprises attraction and repulsion between charged particles.</p>
-<p>The weak nuclear force is the interaction between subatomic particles with &ldquo;color&rdquo;.</p>
-<h1 id="strong-nuclear-force">Strong nuclear force</h1>
-<p>The strong nuclear force is the interaction between subatomic particles with &ldquo;flavor&rdquo;.</p>
-<p><img src="/images/docs/strong-vs-coulomb.png" alt="Strong vs electromagnetic force"></p>
-<h1 id="gravitational-force">Gravitational force</h1>
-<p>Gravity is the interaction between objects due to their mass. It is a relatively weak force (compared to others), but operates over long distances.</p>
-<p>
+    <h1 id="definition">Definition</h1>
+<p>Eine <strong>gewöhnliche Differentialgleichung</strong> ist eine Gleichung, die eine Beziehung zwischen einer Funktion 
+<span>
+                  
+        \(y:x\to y(x)\)
+    
+</span>
+, ihrem Argument 
+<span>
+                  
+        \(x\)
+    
+</span>
+ und einer oder mehrerer ihrer Ableitungen 
+<span>
+                  
+        \(y&#39;,y&#39;&#39;,\ldots\)
+    
+</span>
+ ausdrückt.
+Also eine Gleichung der Form:
+
 <span>
      
-        $$F = \frac{GMm}{r^2}$$
+        $$F(x,y,y&#39;,\ldots,y^{(k)}) = 0$$
     
 </span>
 
-Where:</p>
+Wobei:</p>
 <ul>
 <li>
 <span>
                   
-        \(G\)
+        \(k\in\mathbb{N}\)
     
 </span>
- is the gravitational constant</li>
+ (die Ordnung der Differentialgleichung)</li>
 <li>
 <span>
                   
-        \(M\)
+        \(F:I\times M\to\mathbb{C}\)
     
 </span>
- and 
+ mit 
 <span>
                   
-        \(m\)
+        \(I\subseteq\mathbb{R}\)
     
 </span>
- are the masses of the two bodies</li>
+ und 
+<span>
+                  
+        \(M\subseteq\mathbb{C}^{k&#43;1}\)
+    
+</span>
+</li>
 </ul>
-<p>
+<p>Eine Lösung der Differentialgleichung ist ein Intervall 
 <span>
                   
-        \(GM\)
+        \(J\subseteq I\)
     
 </span>
- is the standard gravitational parameter 
+ und eine 
 <span>
                   
-        \(\mu\)
+        \(k\)
     
 </span>
- of a celestial body.</p>
-<p><img src="/images/docs/gravity1.png" alt="Gravitation between two planets"></p>
-<p>Consider a spacecraft of mass 
+-mal differenzierbare Funktion 
 <span>
                   
-        \(m\)
+        \(y:J\to\mathbb{C}\)
     
 </span>
- in the gravitational field of a much larger mass 
+, so dass für alle 
 <span>
                   
-        \(M\)
+        \(x\in J\)
     
 </span>
-. That is, 
-<span>
-                  
-        \(m &lt;&lt; M\)
-    
-</span>
- and the center of mass of the two bodies is practically at the center of the large mass.</p>
-<p><img src="/images/docs/gravity2.png" alt="Gravitation between planet and spacecraft"></p>
-<p>The velocity of an object in circular orbit is 
-<span>
-                  
-        \(v^2=\cfrac{GM}{r}\)
-    
-</span>
-, so the farther away the object is, the slower it is. Note that 
-<span>
-                  
-        \(m\)
-    
-</span>
- does not matter, as any object at the same distance 
-<span>
-                  
-        \(r\)
-    
-</span>
- moves at the same velocity.</p>
-<h2 id="sphere-of-influence-and-escape-velocity">Sphere of influence and escape velocity</h2>
-<p>When leaving a body&rsquo;s sphere of influence, you need to reach the required <em>escape velocity</em>, which depends on your distance 
-<span>
-                  
-        \(r\)
-    
-</span>
- from the body&rsquo;s center:
+ gilt:
 
 <span>
      
-        $$v_\text{escape} = \sqrt{\frac{2GM}{r}}$$
+        $$(x,y(x),y&#39;(x),\ldots,y^{(k)}(x))\in I\times M$$
     
 </span>
-</p>
-<p>For the Earth, this amounts to ~ 11.2 km/s from the surface and less from higher altitudes.</p>
-<p>The <em>hyperbolic excess velocity</em> is the residual velocity you have left when you reach the boundary of the body&rsquo;s sphere of influence. It will be constant until infinity (or at least would be if there were no other bodies exerting any force on you). So if you start with just the escape velocity, your hyperbolic excess velocity will be 0; anything you add to the escape velocity will be your hyperbolic excess velocity.</p>
-<h2 id="energy">Energy</h2>
-<p>The total energy in a gravitational field is the sum of the kinetic energy and the potential energy. In a conservative force field (e.g. a gravitational force field without dissipative forces), mechanical energy is preserved.</p>
-<p><em>Potential energy:</em>
+
 
 <span>
      
-        $$E_{\text{pot}} = - G M \frac{m}{r}$$
+        $$F(x,y(x),y&#39;(x),\ldots,y^{(k)}(x)) = 0$$
     
 </span>
-</p>
-<p><em>Kinetic energy:</em>
 
+Oft ist zusätzlich eine Anfangsbedingung 
 <span>
-     
-        $$E_{\text{kin}} = \frac{1}{2}\,m\,v^2$$
+                  
+        \(y(a)=b\)
     
 </span>
-</p>
+ gegeben.</p>
+<p><em>Bemerkungen:</em></p>
+<ul>
+<li>Implizite Form: 
+<span>
+                  
+        \(F(x,y,y&#39;,\ldots,y^{(k)}) = 0\)
+    
+</span>
+</li>
+<li>Explizite Form: 
+<span>
+                  
+        \(y^{(k)} = f(x,y,y&#39;,\ldots,y^{(k-1)})\)
+    
+</span>
+</li>
+<li>In <strong>partiellen Differentialgleichungen</strong> hängt 
+<span>
+                  
+        \(y\)
+    
+</span>
+ von mehreren Veränderlichen ab.</li>
+</ul>
+<h1 id="beispiele">Beispiele</h1>
+<h1 id="analytische-lösungsverfahren">Analytische Lösungsverfahren</h1>
+<h1 id="numerische-lösungsverfahren">Numerische Lösungsverfahren</h1>
 
 
     

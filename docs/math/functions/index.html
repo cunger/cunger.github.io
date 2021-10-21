@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eigenschaften von Funktionen | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Eigenschaften von Funktionen" />
+<meta property="og:description" content="Stetigkeit. Differenzierbarkeit. Integrierbarkeit." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/docs/math/functions/" />
+<meta property="article:published_time" content="2021-08-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-17T00:00:00+00:00" />
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/docs/math/functions/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/docs/math/">Math</a></li>
+       <li><a href="/docs/physics/">Physics</a></li>
+       <li><a href="/docs/nuke/">Nuclear engineering</a></li>
+       <li><a href="/docs/dev">Software development</a></li>
+       <li><a href="/blog/">Blog</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Eigenschaften von Funktionen </h1>
+      <p class="hero-lead">
+         Stetigkeit. Differenzierbarkeit. Integrierbarkeit.
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <p>Eine Funktion 
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist</p>
+<ul>
+<li><strong>surjektiv</strong>, wenn jedes Element des Wertebereichs im Bild von 
+<span>
+                  
+        \(f\)
+    
+</span>
+ liegt.</li>
+<li><strong>injektiv</strong>, wenn jedes Element im Bild von 
+<span>
+                  
+        \(f\)
+    
+</span>
+ genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.</li>
+</ul>
+<h1 id="strukturerhaltung">Strukturerhaltung</h1>
+<p>Für algebraische Strukturen sind besonders die strukturerhaltenden Abbildungen zwischen ihnen interessant.</p>
+<p>Lineare Abbildungen zwischen Vektorräumen sind strukturerhaltend in dem Sinne, dass sie sich mit der Addition und Skalarmultiplikation des Vektorraums vertragen, d.h. Linearkombinationen wieder auf Linearkombinationen abbilden.
+Genauer gesagt ist eine Funktion 
+<span>
+                  
+        \(f\)
+    
+</span>
+ <strong>linear</strong>, wenn gilt:</p>
+<ul>
+<li>
+<span>
+                  
+        \(f(x&#43;x&#39;)=f(x)&#43;f(x&#39;)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(f(cx)=cf(x)\)
+    
+</span>
+</li>
+</ul>
+<p>Sie kann dann durch eine eindeutige Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ beschrieben werden, so dass
+
+<span>
+     
+        $${}^t(f(x))=A{\,}^tx$$
+    
+</span>
+</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Eine Abbildung zwischen <a href="../topology">metrischen Räumen</a> 
+<span>
+                  
+        \((X,d_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,d_Y)\)
+    
+</span>
+ ist <strong>isometrisch</strong>, wenn sie die Metrik erhält (d.h. der Abstand zweier Bildpunkte ist gleich dem Abstand ihrer Urbildpunkte):
+
+<span>
+     
+        $$d_Y(f(x),f(y)) = d_X(x,y) \quad\text{für alle }x,y\in X$$
+    
+</span>
+
+Jede isometrische Abbildung ist stetig (sogar gleichmäßig stetig).</p>
+<p>Stetigkeit ist eine Art der Strukturerhaltung: Sie erhält die Nähe zwischen Elementen in topologischen Räumen.</p>
+<h1 id="stetigkeit">Stetigkeit</h1>
+<p>Die Stetigkeit einer Funktion in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
+<h2 id="abbildungen-zwischen-topologischen-räumen">Abbildungen zwischen topologischen Räumen</h2>
+<p>Wir betrachten Abbildungen 
+<span>
+                  
+        \(f:X\to Y\)
+    
+</span>
+ zwischen <a href="../topology">topologischen Räumen</a> 
+<span>
+                  
+        \(X\)
+    
+</span>
+ und 
+<span>
+                  
+        \(Y\)
+    
+</span>
+.</p>
+<p>Topologisch bedeutet Stetigkeit einer Funktion, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist.
+Das kann mithilfe von Umgebungen definiert werden.</p>
+<p>Stetigkeit vererbt auch andere Eigenschaften; wenn z.B. die Urbildmenge einer stetigen Abbildung <em>kompakt</em> oder <em>zusammenhängend</em> ist, so ist es die Bildmenge auch.</p>
+<h3 id="umgebungskriterium">Umgebungskriterium</h3>
+<p>
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ ist <strong>stetig im Punkt</strong> 
+<span>
+                  
+        \(p\in M\)
+    
+</span>
+ genau dann, wenn gilt:
+Zu jeder Umgebung 
+<span>
+                  
+        \(V\)
+    
+</span>
+ von 
+<span>
+                  
+        \(f(p)\)
+    
+</span>
+ gibt es eine Umgebung 
+<span>
+                  
+        \(U\)
+    
+</span>
+ von 
+<span>
+                  
+        \(p\)
+    
+</span>
+, so dass 
+<span>
+                  
+        \(f(U\cap M)\subseteq V\)
+    
+</span>
+ (d.h. für alle 
+<span>
+                  
+        \(x\in U\cap M\)
+    
+</span>
+ gilt, dass 
+<span>
+                  
+        \(f(x)\in V\)
+    
+</span>
+).</p>
+<p>Anders ausgedrückt ist 
+<span>
+                  
+        \(f\)
+    
+</span>
+ genau dann stetig in 
+<span>
+                  
+        \(p\in M\)
+    
+</span>
+, wenn für jede Umgebung 
+<span>
+                  
+        \(V\)
+    
+</span>
+ von 
+<span>
+                  
+        \(f(p)\)
+    
+</span>
+ die Menge 
+<span>
+                  
+        \(f^{-1}(V)\)
+    
+</span>
+ eine Umgebung von 
+<span>
+                  
+        \(p\)
+    
+</span>
+ ist.</p>
+<p>
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ ist <strong>stetig</strong> genau dann, wenn gilt: Für alle offenen Mengen 
+<span>
+                  
+        \(U\)
+    
+</span>
+ ist 
+<span>
+                  
+        \(f^{-1}(U)\)
+    
+</span>
+ offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)</p>
+<h2 id="abbildungen-zwischen-metrischen-räumen">Abbildungen zwischen metrischen Räumen</h2>
+<p>Wir betrachten Abbildungen 
+<span>
+                  
+        \(f:X\to Y\)
+    
+</span>
+ zwischen <a href="../topology">metrischen Räumen</a> 
+<span>
+                  
+        \((X,d_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,d_Y)\)
+    
+</span>
+
+(oder auch zwischen normierten Räumen 
+<span>
+                  
+        \((X,\|\cdot\|_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,\|\cdot\|_Y)\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(d(a,b)=\|a-b\|\)
+    
+</span>
+).</p>
+<h3 id="folgenkriterium">Folgenkriterium</h3>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist stetig in 
+<span>
+                  
+        \(p\)
+    
+</span>
+, wenn für jede Folge 
+<span>
+                  
+        \((x_n)\)
+    
+</span>
+ in 
+<span>
+                  
+        \(X\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(\lim_{n\to\infty} x_n = p\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$\lim_{n\to\infty} f(x_n) = f(\lim_{n\to\infty} x_n) = f(p)$$
+    
+</span>
+</p>
+<h3 id="hahahugoshortcode-s44-hbhb-kriterium">
+<span>
+                  
+        \(\varepsilon-\delta\)
+    
+</span>
+-Kriterium</h3>
+<p>Hinreichend kleine Änderungen des Arguments ziehen nur beliebig kleine Änderungen des Funktionswertes nach sich.</p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist stetig in 
+<span>
+                  
+        \(p\)
+    
+</span>
+, wenn es für alle 
+<span>
+                  
+        \(\varepsilon &gt; 0\)
+    
+</span>
+ ein 
+<span>
+                  
+        \(\delta &gt; 0\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(x\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_X(x,p) &lt; \delta \Rightarrow d_Y(f(x),f(p)) &lt; \varepsilon$$
+    
+</span>
+</p>
+<p>Das garantiert Approximierbarkeit der Funktion: Für jeden maximalen Fehler 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+ und eine Stelle 
+<span>
+                  
+        \(p\)
+    
+</span>
+ findet man ein 
+<span>
+                  
+        \(\delta\)
+    
+</span>
+, so dass sich jeder Funktionswert 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+ für Argumente 
+<span>
+                  
+        \(x\)
+    
+</span>
+ in der Umgebung 
+<span>
+                  
+        \(U_\delta(p)\)
+    
+</span>
+ um maximal 
+<span>
+                  
+        \(\varepsilon\)
+    
+</span>
+ von 
+<span>
+                  
+        \(f(p)\)
+    
+</span>
+ unterscheiden.</p>
+<h3 id="stärkere-arten-von-stetigkeit">Stärkere Arten von Stetigkeit</h3>
+<p><strong>Gleichmäßige Stetigkeit</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist gleichmäßig stetig, wenn es für alle 
+<span>
+                  
+        \(\varepsilon &gt; 0\)
+    
+</span>
+ ein 
+<span>
+                  
+        \(\delta &gt; 0\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(x,y\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_X(x,y) &lt; \delta \Rightarrow d_Y(f(x),f(y)) &lt; \varepsilon$$
+    
+</span>
+</p>
+<p>
+<span>
+                  
+        \(\delta\)
+    
+</span>
+ ist also global und hängt nicht mehr von der Stelle der Funktion ab.
+Das entspricht einer gleichmäßigen Approximierbarkeit.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Nonuniform_approximation_of_a_function.svg/350px-Nonuniform_approximation_of_a_function.svg.png" alt="Non-uniform approximation">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Uniform_approximation_of_a_function.svg/350px-Uniform_approximation_of_a_function.svg.png" alt="Uniform approximation"></p>
+<p><em>(Links: Stetigkeit, rechts: gleichmäßige Stetigkeit. Quelle: <a href="https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Gleichm%C3%A4%C3%9Fige_Stetigkeit">Serlo</a>)</em></p>
+<p><strong>Lipschitz-Stetigkeit</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist Lipschitz-stetig mit Lipschitz-Konstante 
+<span>
+                  
+        \(L\)
+    
+</span>
+ (oder <em>dehnungsbeschränkt</em>), wenn für alle 
+<span>
+                  
+        \(p,q\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_Y(f(p),f(q)) \leq L\cdot d_X(p,q)$$
+    
+</span>
+
+
+<span>
+     
+        $$\|(f(p)-f(q))\|_Y \leq L\cdot \|p-q\|_X$$
+    
+</span>
+</p>
+<p>Das heißt, der Abstand zweier Punkte 
+<span>
+                  
+        \(x,x&#39;\)
+    
+</span>
+ wird durch Anwendung der Funktion höchstens um den Faktor 
+<span>
+                  
+        \(L\)
+    
+</span>
+ gestreckt (wenn 
+<span>
+                  
+        \(L &gt; 1\)
+    
+</span>
+) oder gestaucht (wenn 
+<span>
+                  
+        \(L&lt;1\)
+    
+</span>
+).</p>
+<p><strong>Hölder-Stetigkeit</strong></p>
+<p>
+<span>
+                  
+        \(f\)
+    
+</span>
+ ist Hölder-stetig zum Exponenten 
+<span>
+                  
+        \(\alpha\in(0,\infty)\)
+    
+</span>
+, wenn es eine Konstante 
+<span>
+                  
+        \(C&gt;0\)
+    
+</span>
+ gibt, so dass für alle 
+<span>
+                  
+        \(p,q\in X\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$d_Y(f(p),f(q)) \leq C\cdot d_X(p,q)^\alpha$$
+    
+</span>
+
+
+<span>
+     
+        $$\|(f(p)-f(q))\|_Y \leq C\cdot \|p-q\|_X^\alpha$$
+    
+</span>
+</p>
+<p>Die Stetigskeitsbegriffe lassen sich ihrer Stärke nach ordnen:</p>
+<p>Hölder-stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ Lipschitz-stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ gleichmäßig stetig 
+<span>
+                  
+        \(\Rightarrow\)
+    
+</span>
+ stetig</p>
+<p>Die Umkehrungen gelten im allgemeinen nicht, zum Beispiel ist 
+<span>
+                  
+        \(f(x)=x^2\)
+    
+</span>
+ stetig, aber nicht gleichmäßig stetig.</p>
+<h3 id="wichtige-sätze">Wichtige Sätze</h3>
+<p>Ist 
+<span>
+                  
+        \(M\)
+    
+</span>
+ kompakt und 
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ stetig, dann ist 
+<span>
+                  
+        \(f(M)\)
+    
+</span>
+ kompakt und 
+<span>
+                  
+        \(f\)
+    
+</span>
+ gleichmäßig stetig.</p>
+<p>Ist 
+<span>
+                  
+        \(M\)
+    
+</span>
+ zusammenhängend und 
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ stetig, dann ist 
+<span>
+                  
+        \(f(M)\)
+    
+</span>
+ zusammenhängend.</p>
+<h2 id="fortsetzbarkeit">Fortsetzbarkeit</h2>
+<p>In einem Punkt 
+<span>
+                  
+        \(a\)
+    
+</span>
+ stetig fortsetzbar?
+Wenn 
+<span>
+                  
+        \(a\)
+    
+</span>
+ kein Häufungspunkt, dann immer. Wenn 
+<span>
+                  
+        \(a\)
+    
+</span>
+ Häufungspunkt, dann nur wenn 
+<span>
+                  
+        \(f\)
+    
+</span>
+ in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ konvergiert.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="differenzierbarkeit">Differenzierbarkeit</h1>
+<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie linear approximiert werden kann. (Wobei <em>linear</em> hier bedeutet, dass die Funktion ein Polynom vom Grad 
+<span>
+                  
+        \(\leq 1\)
+    
+</span>
+ ist.)</p>
+<p>Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben. In allgemeinen metrischen Räumen ist eine lineare Approximation nicht immer möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren. Aber für Anwendungen sind sowieso Funktionen über euklidischen Räumen wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ und vektorwertige Funktionen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}^m\)
+    
+</span>
+.)</p>
+<p>Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
+<h2 id="änderungsrate">Änderungsrate</h2>
+<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes, beschreibt also die lokale Änderungsrate der Funktion.</p>
+<p>Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
+<span>
+                  
+        \([x,a]\)
+    
+</span>
+, das entspricht geometrisch der Sekantensteigung:
+
+<span>
+     
+        $$\frac{f(x)-f(a)}{x-a}$$
+    
+</span>
+
+
+<span>
+     
+        $$f&#39;(a) = \text{lim}_{x\to a}\frac{f(x)-f(a)}{x-a}$$
+    
+</span>
+</p>
+<p>Eine äquivalente Formulierung ergibt sich, wenn man 
+<span>
+                  
+        \(x\)
+    
+</span>
+ durch 
+<span>
+                  
+        \(a&#43;h\)
+    
+</span>
+ ersetzt. Der Grenzwert der Steigung der Sekanten durch die Punkte 
+<span>
+                  
+        \((a,f(a))\)
+    
+</span>
+ und 
+<span>
+                  
+        \((a&#43;h,f(a&#43;h))\)
+    
+</span>
+ ist dann:
+
+<span>
+     
+        $$f&#39;(a)=\text{lim}_{h\to 0}\frac{f(a&#43;h)-f(a)}{h}$$
+    
+</span>
+
+Das ist äquivalent zu
+
+<span>
+     
+        $$\text{lim}_{h\to 0}\frac{f(a&#43;h)-f(a)-L(h)}{h}=0$$
+    
+</span>
+
+Wobei 
+<span>
+                  
+        \(L(h)=f&#39;(a)\,h\)
+    
+</span>
+ eine lineare Abbildung ist.</p>
+<p>Diese Formulierung ist praktisch, da sie sich einfach auf mehrdimensionale Funktionen übertragen lässt.
+(Im Gegensatz zur ersten: Da bei mehrdimensionalen Funktionen 
+<span>
+                  
+        \(x-a\)
+    
+</span>
+ und 
+<span>
+                  
+        \(f(x)-f(a)\)
+    
+</span>
+ Vektoren unterschiedlicher Räume sein können, ist der Quotient beider in vielen Fällen gar nicht vernünftig definiert.)
+Das Differential ist dann die Abbildung 
+<span>
+                  
+        \(L:\mathbb{R}^n\to\mathbb{R}\)
+    
+</span>
+, so dass</p>
+
+<span>
+     
+        $$\text{lim}_{h\to 0}\frac{f(a&#43;h)-f(a)-L(h)}{\|h\|} = 0$$
+    
+</span>
+
+<p>Daraus ergibt sich eine leicht andere Sichtweise:
+Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+ hängt annähernd linear von der Änderung des Wertes 
+<span>
+                  
+        \(x\)
+    
+</span>
+ (von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ zu 
+<span>
+                  
+        \(x&#43;h\)
+    
+</span>
+) ab. Das entspricht der Vorstellung, dass die Tangente der Graph derjenigen linearen Funktion 
+<span>
+                  
+        \(h\to L(h)\)
+    
+</span>
+ ist, die 
+<span>
+                  
+        \(f(a&#43;h)−f(a)\)
+    
+</span>
+ mit einem sehr kleinen Fehler approximiert.</p>
+<p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
+<h2 id="lineare-approximierbarkeit">Lineare Approximierbarkeit</h2>
+<p>Aus der Approximation
+
+<span>
+                  
+        \(f&#39;(a)\approx\dfrac{f(x)-f(a)}{x-a}\)
+    
+</span>
+
+ergibt sich direkt:
+
+<span>
+     
+        $$f(x)\approx f(a) &#43; f&#39;(a)\cdot (x-a)$$
+    
+</span>
+
+Daher kann man Differenzierbarkeit wie folgt definieren:</p>
+<p>
+<span>
+                  
+        \(f:M\to \mathbb{R}^m\)
+    
+</span>
+ ist genau dann differenzierbar in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ mit der Ableitung 
+<span>
+                  
+        \(c=f&#39;(a)\in \mathbb{R}^m\)
+    
+</span>
+, wenn es eine Funktion 
+<span>
+                  
+        \(r:M\to \mathbb{R}^m\)
+    
+</span>
+ gibt, so dass</p>
+<ul>
+<li>
+<span>
+                  
+        \(f(x) = f(a) &#43; c\cdot(x-a) &#43; r(x)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\lim_{x\to a}\dfrac{r(x)}{x-a} = 0\)
+    
+</span>
+</li>
+</ul>
+<p>Hier versteht man 
+<span>
+                  
+        \(f(a) &#43; c(x-a)\)
+    
+</span>
+ als Näherung von 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+ und 
+<span>
+                  
+        \(r(x)\)
+    
+</span>
+ als Fehler, also als Differenz zwischen der eigentlichen Funktion und ihrer Näherung. Wenn 
+<span>
+                  
+        \(x=a\)
+    
+</span>
+, dann ist 
+<span>
+                  
+        \(r(x)=0\)
+    
+</span>
+.</p>
+<p>Da 
+<span>
+                  
+        \(r(x) = f(x) - f(a) - c(x-a)\)
+    
+</span>
+ ist, gelten diese Bedingungen genau dann, wenn 
+<span>
+     
+        $$\lim_{x\to a}\frac{f(x) - f(a) - c(x-a)}{x-a}=\lim_{x\to a}\frac{f(x) - (a)}{x-a} - c = 0,$$
+    
+</span>
+ also wenn 
+<span>
+     
+        $$\lim_{x\to a}\frac{f(x) - f(a)}{x-a} = c = f&#39;(a).$$
+    
+</span>
+</p>
+<p>Im mehrdimensionalen Fall heißt das:
+
+<span>
+                  
+        \(f:M\to Y\)
+    
+</span>
+ ist genau dann differenzierbar in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ mit der Ableitung 
+<span>
+                  
+        \(A=f&#39;(a)\in Y\)
+    
+</span>
+ (die <strong>Jacobi-Matrix</strong>, siehe lineare Abbildung als Matrix), wenn es eine Funktion 
+<span>
+                  
+        \(r:M\to Y\)
+    
+</span>
+ gibt, so dass</p>
+<ul>
+<li>
+<span>
+                  
+        \(f(x) = f(a) &#43; A\cdot(x-a) &#43; r(x)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\lim_{x\to a}\dfrac{r(x)}{\|x-a\|} = 0\)
+    
+</span>
+</li>
+</ul>
+<p>Die Wahl der Norm spielt keine Rolle.</p>
+<h2 id="operatoren">Operatoren</h2>
+<p><strong>Differentialoperator:</strong> 
+<span>
+                  
+        \(\frac{d}{dx}:f\to f&#39;\)
+    
+</span>
+</p>
+<p>Bei mehrdimensionalen Funktionen ist die <strong>Richtungsableitung</strong> die momentane relative Änderung des Funktionswertes 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+, wenn sich der Wert 
+<span>
+                  
+        \(x\)
+    
+</span>
+ mit dem Vektor 
+<span>
+                  
+        \(h\)
+    
+</span>
+ fortbewegt. Sie beschreibt also ist das lokale Verhalten der Komponentenfunktion bei Änderung dieser Komponente. Das Differential weist im Prinzip jedem Vektor die Richtungsableitung in Richtung des Vektors zu.</p>
+<p>Ein Spezialfall der Richtungsableitung ist die <strong>partielle Ableitung</strong>. Die partielle Ableitung einer Funktion mehrerer Veränderlicher ist nichts anderes als die Ableitung der Funktion, die man erhält, wenn man alle Veränderlichen bis auf eine festhält.</p>
+<p><strong>Differentialoperator:</strong> 
+<span>
+                  
+        \(\frac{\partial}{\partial x_i}:f\to \frac{\partial f}{\partial x_i}\)
+    
+</span>
+</p>
+<p>Wenn 
+<span>
+                  
+        \(f\)
+    
+</span>
+ in einer Umgebung eines Punktes 
+<span>
+                  
+        \(a\)
+    
+</span>
+ partiell differenzierbar ist und alle partiellen Ableitungen stetig sind, dann ist 
+<span>
+                  
+        \(f\)
+    
+</span>
+ in 
+<span>
+                  
+        \(a\)
+    
+</span>
+ auch differenzierbar.</p>
+<h2 id="gradient">Gradient</h2>
+<p><strong>Differentialoperator:</strong> 
+<span>
+                  
+        \(\nabla\)
+    
+</span>
+ (grad, Vektoranalysis)</p>
+<blockquote>
+<p>In kartesischen Koordinaten sind die Komponenten des Gradientvektors die partiellen Ableitungen im Punkt P, der Gradient zeigt deshalb in die Richtung der größten Änderung. Der Betrag des Gradienten gibt den Wert der größten Änderungsrate an diesem Punkt an.
+(<a href="https://www.wikiwand.com/de/Gradient_(Mathematik)">https://www.wikiwand.com/de/Gradient_(Mathematik)</a>)</p>
+</blockquote>
+<p>(<a href="https://www.wikiwand.com/en/Differential_operator">https://www.wikiwand.com/en/Differential_operator</a>)</p>
+<h2 id="wichtige-sätze-1">Wichtige Sätze</h2>
+<p><strong>Mittelwertsatz:</strong> &hellip;</p>
+<h1 id="integrierbarkeit">Integrierbarkeit</h1>
+<h1 id="literatur">Literatur</h1>
+<ul>
+<li>Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.</li>
+<li>Daniel Grieser: Skript zu Analysis II, Universität Oldenburg.</li>
+<li>Klaus Jänich: Mathematik 1+2.</li>
+<li>Terrence Tao: Analysis II.</li>
+</ul>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2021 (c) Christina Unger</span></li>
+      <li>
+        Rendered with <a href="https://gohugo.io/">Hugo</a>. Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

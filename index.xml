@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebraische Strukturen</title>
-      <link>http://cunger.github.io/docs/maths/algebra/</link>
+      <link>http://cunger.github.io/docs/math/algebra/</link>
       <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/algebra/</guid>
+      <guid>http://cunger.github.io/docs/math/algebra/</guid>
       <description>Ringe, Gruppen, Körper, Vektorräume.</description>
     </item>
     
@@ -36,19 +36,19 @@
     
     <item>
       <title>Atoms</title>
-      <link>http://cunger.github.io/docs/nuctec/atoms/</link>
+      <link>http://cunger.github.io/docs/nuke/atoms/</link>
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/atoms/</guid>
+      <guid>http://cunger.github.io/docs/nuke/atoms/</guid>
       <description>What atoms are composed of, their energy, charge, mass, and stability.</description>
     </item>
     
     <item>
       <title>Topologie</title>
-      <link>http://cunger.github.io/docs/maths/topology/</link>
+      <link>http://cunger.github.io/docs/math/topology/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/topology/</guid>
+      <guid>http://cunger.github.io/docs/math/topology/</guid>
       <description>Topologische, normierte und metrische Räume.</description>
     </item>
     
@@ -72,19 +72,19 @@
     
     <item>
       <title>Nuclear reactions</title>
-      <link>http://cunger.github.io/docs/nuctec/nuclear-reactions/</link>
+      <link>http://cunger.github.io/docs/nuke/nuclear-reactions/</link>
       <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/nuclear-reactions/</guid>
+      <guid>http://cunger.github.io/docs/nuke/nuclear-reactions/</guid>
       <description>Q-value, alpha, beta, and gamma decay, activity and decay rate.</description>
     </item>
     
     <item>
       <title>Eigenschaften von Funktionen</title>
-      <link>http://cunger.github.io/docs/maths/functions/</link>
+      <link>http://cunger.github.io/docs/math/functions/</link>
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/functions/</guid>
+      <guid>http://cunger.github.io/docs/math/functions/</guid>
       <description>Stetigkeit. Differenzierbarkeit. Integrierbarkeit.</description>
     </item>
     
@@ -108,10 +108,10 @@
     
     <item>
       <title>Polynome</title>
-      <link>http://cunger.github.io/docs/maths/polynomials/</link>
+      <link>http://cunger.github.io/docs/math/polynomials/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/polynomials/</guid>
+      <guid>http://cunger.github.io/docs/math/polynomials/</guid>
       <description>German notes on polynomials. Draft.</description>
     </item>
     
@@ -126,10 +126,10 @@
     
     <item>
       <title>Neutronics</title>
-      <link>http://cunger.github.io/docs/nuctec/neutronics/</link>
+      <link>http://cunger.github.io/docs/nuke/neutronics/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/neutronics/</guid>
+      <guid>http://cunger.github.io/docs/nuke/neutronics/</guid>
       <description>Neutrons, energy distribution, neutron interactions.</description>
     </item>
     
@@ -162,10 +162,10 @@
     
     <item>
       <title>Fission reactors</title>
-      <link>http://cunger.github.io/docs/nuctec/reactors/</link>
+      <link>http://cunger.github.io/docs/nuke/reactors/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/nuctec/reactors/</guid>
+      <guid>http://cunger.github.io/docs/nuke/reactors/</guid>
       <description>Fission reaction, neutron transport, criticality, and reactor types. (Draft)</description>
     </item>
     
@@ -198,19 +198,19 @@
     
     <item>
       <title>Complex numbers</title>
-      <link>http://cunger.github.io/docs/maths/complex-numbers/</link>
+      <link>http://cunger.github.io/docs/math/complex-numbers/</link>
       <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/complex-numbers/</guid>
+      <guid>http://cunger.github.io/docs/math/complex-numbers/</guid>
       <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
     </item>
     
     <item>
       <title>Differentialgleichungen</title>
-      <link>http://cunger.github.io/docs/maths/differential-equations/</link>
+      <link>http://cunger.github.io/docs/math/differential-equations/</link>
       <pubDate>Fri, 25 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/docs/maths/differential-equations/</guid>
+      <guid>http://cunger.github.io/docs/math/differential-equations/</guid>
       <description>German notes on differential equations. In progress.</description>
     </item>
     
