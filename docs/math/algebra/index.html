@@ -420,20 +420,6 @@ Jede Permutation kann als Komposition von Transpositionen dargestellt werden.</p
 </span>
  (d.h. ein Einselement) haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.</li>
 </ul>
-<p>In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente 
-<span>
-                  
-        \(a,b\in M\)
-    
-</span>
- mit 
-<span>
-                  
-        \(ab=0\)
-    
-</span>
-.
-Ein Ring ohne Nullteiler heißt <strong>Integritätsbereich</strong>.</p>
 <p>Beispiele:</p>
 <ul>
 <li>
@@ -470,6 +456,26 @@ Ein Ring ohne Nullteiler heißt <strong>Integritätsbereich</strong>.</p>
     
 </span>
  bildet diese Menge eine Gruppe.)</p>
+<p>In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente 
+<span>
+                  
+        \(a,b\in M\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(ab=0\)
+    
+</span>
+.</p>
+<p>Ein kommutativer Ring mit Einselement, aber ohne Nullteiler, heißt <strong>Integritätsbereich</strong> oder <strong>Integritätsring</strong>. Zum Beispiel: 
+<span>
+                  
+        \(\mathbb{Z}\)
+    
+</span>
+ und jeder Körper.</p>
 <h2 id="restklassenringe">Restklassenringe</h2>
 <p>Der Restklassenring 
 <span>
@@ -489,7 +495,19 @@ Ein Ring ohne Nullteiler heißt <strong>Integritätsbereich</strong>.</p>
         \(\{0,1,\ldots,n-1\}\)
     
 </span>
-, wobei die Elemente nicht die natürlichen Zahlen sind, sondern Stellvertreter für die jeweilige Restklasse (z.B. steht 
+, wobei die Elemente 
+<span>
+                  
+        \(k\)
+    
+</span>
+ nicht die natürlichen Zahlen sind, sondern Stellvertreter für die jeweilige Restklasse 
+<span>
+                  
+        \(k&#43;n\mathbb{Z}\)
+    
+</span>
+ (z.B. steht 
 <span>
                   
         \(1\)
@@ -527,6 +545,61 @@ Ein Ring ohne Nullteiler heißt <strong>Integritätsbereich</strong>.</p>
     
 </span>
 .</p>
+<p>Für jede natürliche Zahl 
+<span>
+                  
+        \(n\)
+    
+</span>
+ ist 
+<span>
+                  
+        \((\mathbb{Z}/n\mathbb{Z},&#43;,\cdot)\)
+    
+</span>
+ ein kommutativer Ring mit Einselement.</p>
+<ul>
+<li>Das Nullelement ist 
+<span>
+                  
+        \(0=n\mathbb{Z}\)
+    
+</span>
+.</li>
+<li>Das Einselement ist 
+<span>
+                  
+        \(1=1&#43;n\mathbb{Z}\)
+    
+</span>
+.</li>
+</ul>
+<p>Ist 
+<span>
+                  
+        \(n\)
+    
+</span>
+ eine Primzahl, ist der Restklassenring ein endlicher Körper.
+Ist 
+<span>
+                  
+        \(n\)
+    
+</span>
+ keine Primzahl, ist er kein Körper (denn er hat von Null verschiedene Nullteiler, z.B. 2 in 
+<span>
+                  
+        \((\mathbb{Z}/4\mathbb{Z},&#43;,\cdot)\)
+    
+</span>
+, denn 
+<span>
+                  
+        \(2\cdot 2 = 0\)
+    
+</span>
+).</p>
 <h2 id="polynomringe">Polynomringe</h2>
 <p>Ein Element ist invertierbar gdw &hellip;</p>
 <p>Siehe auch <a href="../polynomials">Polynome</a>.</p>
