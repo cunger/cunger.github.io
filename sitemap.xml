@@ -23,8 +23,8 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/math/topology/</loc>
-    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/docs/math/polynomials/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,8 +43,8 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/math/functions/</loc>
-    <lastmod>2021-08-17T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/docs/math/matrix/</loc>
+    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -58,8 +58,8 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/docs/math/polynomials/</loc>
-    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/docs/math/topology/</loc>
+    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -75,6 +75,11 @@
   <url>
     <loc>http://cunger.github.io/docs/physics/transport/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/docs/math/functions/</loc>
+    <lastmod>2021-08-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>

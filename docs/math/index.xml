@@ -17,6 +17,24 @@
     </item>
     
     <item>
+      <title>Polynome</title>
+      <link>http://cunger.github.io/docs/math/polynomials/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/math/polynomials/</guid>
+      <description>Arithmetik, Nullstellen, Approximation.</description>
+    </item>
+    
+    <item>
+      <title>Matrizen</title>
+      <link>http://cunger.github.io/docs/math/matrix/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/docs/math/matrix/</guid>
+      <description>Matrizen, deren Eigenschaften und Interpretationen</description>
+    </item>
+    
+    <item>
       <title>Topologie</title>
       <link>http://cunger.github.io/docs/math/topology/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
@@ -32,15 +50,6 @@
       
       <guid>http://cunger.github.io/docs/math/functions/</guid>
       <description>Stetigkeit. Differenzierbarkeit. Integrierbarkeit.</description>
-    </item>
-    
-    <item>
-      <title>Polynome</title>
-      <link>http://cunger.github.io/docs/math/polynomials/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/docs/math/polynomials/</guid>
-      <description>German notes on polynomials. Draft.</description>
     </item>
     
     <item>
