@@ -169,11 +169,85 @@ headingSelector: 'h1'
     
 </span>
  bezeichnet.</p>
-<p>Matrizen können auch über einem Ring statt einem Körper definiert werden. Dann &hellip;</p>
-<h1 id="matrizenmultiplikation">Matrizenmultiplikation</h1>
+<p>Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Dann ergeben sich folgende Unterschiede:</p>
+<ul>
+<li>Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.</li>
+</ul>
+<h1 id="matrizenrechnung">Matrizenrechnung</h1>
+<p>Addition und Skalarmultiplikation passieren elementweise.</p>
+<p>Multiplikation</p>
+<p>Transponierte Matrix</p>
 <h2 id="elementarmatrizen">Elementarmatrizen</h2>
+<p>Elementare Zeilenumformungen:</p>
+<ul>
+<li>
+<span>
+                  
+        \(P_{ij}\)
+    
+</span>
+ Vertauschen der Zeilen 
+<span>
+                  
+        \(i\)
+    
+</span>
+ und 
+<span>
+                  
+        \(j\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(D_{i}(c)\)
+    
+</span>
+ Multiplikation der Zeile 
+<span>
+                  
+        \(i\)
+    
+</span>
+ mit einem Skalar 
+<span>
+                  
+        \(c\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(T_{ij}(c)\)
+    
+</span>
+ Addition des 
+<span>
+                  
+        \(c\)
+    
+</span>
+-fachen der Zeile 
+<span>
+                  
+        \(j\)
+    
+</span>
+ zu einer anderen (nicht derselben!) Zeile 
+<span>
+                  
+        \(i\)
+    
+</span>
+</li>
+</ul>
+<p>Analog für Spalten. Diese Umformungen ändern den Rang einer Matrix nicht.</p>
 <h1 id="rang-inverse-determinante-adjungierte">Rang, Inverse, Determinante, Adjungierte</h1>
 <h2 id="rang">Rang</h2>
+<p>Der <strong>Rang</strong> einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf&rsquo;s gleiche raus).</p>
 <h2 id="determinante">Determinante</h2>
 <p>Die <strong>Determinante</strong> ist eine eindeutige Abbildung 
 <span>
@@ -181,7 +255,178 @@ headingSelector: 'h1'
         \(M_{nn}(\mathbb{K})\to\mathbb{K}\)
     
 </span>
- mit folgenden Eigenschaften: &hellip;</p>
+, die so definiert ist, dass sie genau dann 0 wird, wenn die Spalten der Matrix nicht linear unabhängig sind (die Matrix also nicht invertierbar ist):
+
+<span>
+     
+        $$\text{det}(A) = ...$$
+    
+</span>
+</p>
+<p>Für 
+<span>
+                  
+        \(A\in M_{22}(\mathbb{K})\)
+    
+</span>
+ ist das einfach:
+
+<span>
+     
+        $$\text{det}(A) = a_{11} a_{22} - a_{12} a_{21}$$
+    
+</span>
+
+Das lässt sich gut nachvollziehen, denn wenn die Spaltenvektoren linear abhängig sind (und von 0 verschieden), heißt das es gibt ein 
+<span>
+                  
+        \(c\in\mathbb{K}\)
+    
+</span>
+, so dass:
+
+<span>
+     
+        $$\begin{pmatrix} a_{11} \\ a_{12} \end{pmatrix} = c\cdot \begin{pmatrix} a_{21} \\ a_{22} \end{pmatrix}$$
+    
+</span>
+
+Also 
+<span>
+                  
+        \(a_{11} = c\cdot a_{21}\)
+    
+</span>
+ und 
+<span>
+                  
+        \(a_{12} = c\cdot a_{22}\)
+    
+</span>
+,
+d.h. 
+<span>
+                  
+        \(c=\dfrac{a_{11}}{a_{21}}\)
+    
+</span>
+ und damit 
+<span>
+                  
+        \(a_{12} = \dfrac{a_{11}}{a_{21}} a_{22}\)
+    
+</span>
+. Daraus ergibt sich 
+<span>
+                  
+        \(a_{12} a_{21} = a_{11} a_{22}\)
+    
+</span>
+ bzw. 
+<span>
+                  
+        \(0 = a_{11} a_{22} - a_{12} a_{21}\)
+    
+</span>
+.</p>
+<p>Die Determinante hat die folgenden Eigenschaften:</p>
+<ul>
+<li>
+<p>
+<span>
+                  
+        \(\text{det}(I)=1\)
+    
+</span>
+ (Identitätsmatrix)</p>
+</li>
+<li>
+<p>
+<span>
+                  
+        \(\text{det}(AB)=\text{det}(A)\,\text{det}(B)\)
+    
+</span>
+ für Matrizen über Integritätsbereichen</p>
+</li>
+<li>
+<p>
+<span>
+                  
+        \(\text{det}(A)=0\)
+    
+</span>
+ genau dann, wenn 
+<span>
+                  
+        \(\text{rang}(A) &lt; n\)
+    
+</span>
+</p>
+<p>Ob 
+<span>
+                  
+        \(\text{det}(A)=0\)
+    
+</span>
+ oder nicht ändert sich also nicht durch Zeilenumformungen. Die Determinanten ist damit eine Invariante der Matrix.</p>
+<p>Für Elementarmatrizen gilt:</p>
+<ul>
+<li>
+<span>
+                  
+        \(\text{det}(P_{ij}) = -1\)
+    
+</span>
+, also
+
+<span>
+                  
+        \(\text{det}(P_{ij}A)=-\text{det}(A)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\text{det}(D_{i}(c)) = c\)
+    
+</span>
+, also
+
+<span>
+                  
+        \(\text{det}(D_{i}(c)A)=c\cdot\text{det}(A)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\text{det}(T_{ij}(c)) = 1\)
+    
+</span>
+, also
+
+<span>
+                  
+        \(\text{det}(T_{ij}(c)A)=\text{det}(A)\)
+    
+</span>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<span>
+                  
+        \(\text{det}(\text{normalform}(A))\)
+    
+</span>
+ = Produkt der Diagonalelemente</p>
+<p>Die Determinante wird also genau dann 0, wenn das Produkt der Diagonalelemente der Normalform 0 ist, d.h. wenn mindestens eins der Diagonalelemente 0 ist. Die Determinanten erfasst damit, ob eine quadratische Matrix invertierbar (regulär) ist.</p>
+</li>
+</ul>
 <h2 id="adjungierte">Adjungierte</h2>
 <h2 id="invertierbarkeit">Invertierbarkeit</h2>
 <p>Für eine 
@@ -208,7 +453,7 @@ headingSelector: 'h1'
 <li>
 <span>
                   
-        \(\text{Rang}(A)=n\)
+        \(\text{rang}(A)=n\)
     
 </span>
 </li>
@@ -240,6 +485,73 @@ headingSelector: 'h1'
 </span>
  im Körper oder Ring, über dem die Matriz definiert ist, invertierbar ist)</li>
 </ul>
+<p>Gilt 
+<span>
+                  
+        \(AB=C\)
+    
+</span>
+ und wendet man die gleichen Zeilenumformungen auf 
+<span>
+                  
+        \(A\)
+    
+</span>
+ und 
+<span>
+                  
+        \(C\)
+    
+</span>
+ an (mit dem Ergebnis 
+<span>
+                  
+        \(A&#39;\)
+    
+</span>
+ und 
+<span>
+                  
+        \(C&#39;\)
+    
+</span>
+), so ist 
+<span>
+                  
+        \(A&#39;B=C&#39;\)
+    
+</span>
+. Da 
+<span>
+                  
+        \(AA^{-1}=I\)
+    
+</span>
+, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die 
+<span>
+                  
+        \(A\)
+    
+</span>
+ in 
+<span>
+                  
+        \(I\)
+    
+</span>
+ überführen, ausführen kann, um 
+<span>
+                  
+        \(I\)
+    
+</span>
+ in 
+<span>
+                  
+        \(A^{-1}\)
+    
+</span>
+ zu überführen.</p>
 <h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
 <p>Eine Matrix 
 <span>
@@ -445,6 +757,7 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 </li>
 </ul>
 <h1 id="matrizen-als-gleichungssysteme">Matrizen als Gleichungssysteme</h1>
+<h1 id="charakteristische-polynome-von-matrizen">Charakteristische Polynome von Matrizen</h1>
 
 
     
