@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Basics | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Web Basics" />
+<meta property="og:description" content="TCP/IP. HTTP. REST." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/web/" />
+<meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/notes/dev/web/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/notes">Notes</a></li>
+       <li><a href="/blog">Blog</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Web Basics </h1>
+      <p class="hero-lead">
+         TCP/IP. HTTP. REST.
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <h1 id="tcpip">TCP/IP</h1>
+<p>Protocols define a language and a set of rules and procedures that enable devices and systems to communicate with each other.</p>
+<p>The OSI Reference Model and TCP/IP are two conceptual models for network communication. Both are layered sets of protocols, and the network protocols found in TCP/IP are also contained in OSI.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application layer</td>
+<td>HTTP</td>
+</tr>
+<tr>
+<td>Security layer</td>
+<td>TSL</td>
+</tr>
+<tr>
+<td>Transport layer</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>Network layer</td>
+<td>IP</td>
+</tr>
+<tr>
+<td>Data link layer</td>
+<td>Network interfaces</td>
+</tr>
+</tbody>
+</table>
+<p>TCP sends data in small chunks (IP packets) which contain:</p>
+<ul>
+<li>bytes of the actual data</li>
+<li>source and destination IP addresses</li>
+<li>information about size + numeric values used for data ordering and integrity checking
+This makes it fault-tolerant.</li>
+</ul>
+<p>TCP connections are uniquely distinguished by four values:</p>
+<ul>
+<li>source IP + port</li>
+<li>destination IP + port
+Such connections involve network protocol handshaking to establish them, as well as segmentation and reassembly of data stream into and from IP packets.</li>
+</ul>
+<p>Almost all HTTP communication on the web is carried over TCP/IP.</p>
+<h1 id="http">HTTP</h1>
+<p>The <em>Hypertext Transfer Protocol</em> (HTTP) is a text-based application-level protocol. It regulates the communication between a <em>server</em> (an application) and a <em>client</em> (e.g. a browser). HTTP communication is based on a request/response cycle: The client sends a request, and the server responds to that request.</p>
+<h2 id="requests">Requests</h2>
+<p>Requests consist of:</p>
+<ul>
+<li>a request method (e.g. GET, POST)</li>
+<li>a path</li>
+<li>a protocol (e.g. HTTP/1.1)</li>
+<li>headers (key-value pairs of form <code>key: value</code>, meta data containing supplemental information about the client that sends the request or the resource it requests)</li>
+<li>a body</li>
+</ul>
+<p>In HTTP/1.1, required are the request method, the path, as well as the <code>Host</code> header.</p>
+<h3 id="request-methods">Request methods</h3>
+<p>The method specifies the kind of request that is sent.</p>
+<ul>
+<li><strong>GET</strong> requests are used for retrieving data, e.g. asking for the representation of a specified resource. They are restricted with respect to length and data type (ASCII character set).</li>
+<li><strong>POST</strong> requests are used for submitting data to the server (as part of the request body), and for initializing an action on the server, such as updating an existing resource or creating a new one. They are not restricted with respect to length and data type.</li>
+<li><strong>HEAD</strong> only asks for the header of a response, e.g. for checking the response status code without actually transferring the resource, in order to check whether the resource exists or has been modified or moved. This can be relevant for caching purposes.</li>
+</ul>
+<p>A request is <em>safe</em> if it does not request any action besides the retrieval of data. E.g. GET, HEAD. Not POST, PUT, DELETE.</p>
+<p>A request is <em>idempotent</em> if the result is the same no matter how often it is executed (aside from errors or expiration effects). E.g. GET, HEAD, DELETE. Not POST.</p>
+<h3 id="examples">Examples</h3>
+<pre><code>GET /about HTTP/1.1
+-------------------
+Host: example.com
+User-Agent: ...
+-------------------
+</code></pre><p>In case of a POST request sending data to the server, this data is sent as the request body:</p>
+<pre><code>POST /user HTTP/1.1
+-------------------
+Host: example.com
+User-Agent: ...
+-------------------
+first_name=alice&amp;action=update
+</code></pre><h2 id="responses">Responses</h2>
+<p>The server responds to the request, either by transferring the requested resource or information, or by indicating the result of an initialized action or the kind of problem that occurred.</p>
+<ul>
+<li>a protocol (e.g. HTTP/1.1)</li>
+<li>a status code</li>
+<li>headers (key-value pairs of form <code>key: value</code>, meta data containing information useful for the client, e.g. about the data being sent or the server)</li>
+<li>a body containing the raw response data (e.g. an HTML document or binary data of an image)</li>
+</ul>
+<p>Required is the status, all other parts are optional.</p>
+<p>Usually a browser issues several requests when pointed to a URL, e.g. requesting resources required to display an HTML page (images, stylesheets, scripts, etc) and following redirects.</p>
+<h3 id="example">Example</h3>
+<pre><code>HTTP/1.x 200 OK
+---------------
+Last-Modified: ...
+---------------
+&lt;html&gt;
+...
+&lt;/html&gt;
+</code></pre><pre><code>HTTP/1.x 303 See other
+---------------
+Location: ...
+---------------
+</code></pre><h3 id="status-codes">Status codes</h3>
+<h4 id="100s-informational">100s: Informational</h4>
+<h4 id="200s-successful">200s: Successful</h4>
+<ul>
+<li><code>200</code> Ok</li>
+<li><code>204</code> Success, no content</li>
+</ul>
+<h4 id="300s-redirections">300s: Redirections</h4>
+<ul>
+<li><code>301</code> Moved permanently (future requests should use new URL)</li>
+<li><code>302</code> Moved temporarily (future requests should use old URL)</li>
+<li><code>303</code> See other</li>
+</ul>
+<p>Redirects provide the new URL as HTTP header <code>Location</code>.</p>
+<p><code>Moved</code> is used when the location of a requested resource was changed.</p>
+<p><code>See other</code> is mainly used for responses to POST requests, with the aim of directing the user to the resource that was created or updated by the request. In HTTP/1.1, the expected behavior is that the client sends a GET request to the new URL. (This was also the expected behavior for <code>302</code> in HTTP/1.0.)</p>
+<h4 id="400s-client-error-problem-with-request">400s: Client error (problem with request)</h4>
+<ul>
+<li><code>400</code> Bad request (i.e. malformed)</li>
+<li><code>401</code> Unauthorized (i.e. client needs to authenticate before having access to the resource)</li>
+<li><code>403</code> Forbidden</li>
+<li><code>404</code> Requested resource was not found</li>
+<li><code>408</code> Request timeout</li>
+<li><code>410</code> Gone (similar to <code>404</code>, but saying that the resource used to be there but was removed)</li>
+</ul>
+<h4 id="500s-server-error">500s: Server error</h4>
+<ul>
+<li><code>500</code> Internal server error</li>
+<li><code>501</code> Not implemented (e.g. if a particular HTTP method is not supported)</li>
+<li><code>505</code> HTTP version not supported</li>
+</ul>
+<h2 id="urls">URLs</h2>
+<blockquote>
+<p>A Uniform Resource Identifier (URI) is a compact string of characters for identifying an abstract or physical resource.
+&ndash; <a href="https://www.ietf.org/rfc/rfc2396.txt">https://www.ietf.org/rfc/rfc2396.txt</a></p>
+</blockquote>
+<pre><code>url = scheme &quot;://&quot; host [ &quot;:&quot; port ] [ path [ &quot;#&quot; anchor ] [ &quot;?&quot; query ]]
+</code></pre><p>The <code>scheme</code> specifies a protocol, telling how the resource can be accessed, e.g. <code>http</code>, <code>https</code>, <code>ftp</code>, <code>mailto</code>, <code>git</code>.</p>
+<p>The <code>host</code> is either a hostname (e.g. <code>example.com</code>) or an IP address.</p>
+<p><strong>Example:</strong></p>
+<pre><code>https://example.com:3000/character?first_name=elaine&amp;last_name=marley
+</code></pre><p>Default <code>port</code>s:</p>
+<ul>
+<li><code>80</code> for HTTP</li>
+<li><code>443</code> for HTTPS</li>
+</ul>
+<p>The allowed characters in a URL are a subset of the ASCII character set. ASCII characters not in this set (<em>unsafe</em>, e.g. <code>%</code>) as well as reserved characters (<code>;</code>, <code>/</code>, <code>?</code>, <code>:</code>, <code>@</code>, <code>&amp;</code>, <code>=</code>, <code>+</code>, <code>$</code>, <code>,</code>) need to be encoded as <code>%xx</code> where <code>xx</code> are two hexadecimal digits representing the ASCII code of the character (e.g. <code>%20</code> for space).</p>
+<h2 id="http-communication">HTTP communication</h2>
+<ol>
+<li>The <strong>client</strong></li>
+</ol>
+<ul>
+<li>extracts the host name from the URL</li>
+<li>gets the IP address for that host name (using DNS)</li>
+<li>gets the port number (either specified in URL or default one)</li>
+</ul>
+<ol start="2">
+<li>The <strong>client</strong> opens a TCP/IP connection to the IP address with the port</li>
+<li>The <strong>client</strong> sends an HTTP request to the <strong>server</strong></li>
+<li>The <strong>server</strong></li>
+</ol>
+<ul>
+<li>processes the request</li>
+<li>accesses the required resources</li>
+<li>composes and sends an HTTP response</li>
+<li>usually also logs the transaction</li>
+</ul>
+<ol start="5">
+<li>The <strong>client</strong> receives the response and processes and displays the data accordingly</li>
+<li>The client or server closes the connection</li>
+</ol>
+<p>HTTP also allows for a chain of HTTP intermediaries between client and server (proxies, caches, etc).</p>
+<h2 id="curl">cURL</h2>
+<pre><code>curl http://localhost:3000
+</code></pre><pre><code>curl -X GET &quot;http://localhost:3000/books&quot; -v -A &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0&quot;
+</code></pre><p><code>-A</code> for User-Agent
+<code>-H</code> for headers</p>
+<pre><code>curl -X POST &quot;http://localhost:3000/login&quot; -d &quot;username=guybrush&quot; -d &quot;password=APirateIWasMeantToBe&quot; -v
+</code></pre><p><code>-d</code> results in the data being POST-ed as an <code>application/x-www-form-urlencoded</code> string.</p>
+<h2 id="ajax">AJAX</h2>
+<p><em>Asynchronous JavaScript and XML</em> (AJAX) is used for displaying dynamic content, in particular issuing requests and processing responses without full page refreshes. When triggering a request, the response is handled by a callback (usually a client-side JS function), which then, e.g., updates the HTML page (by directly changing the DOM tree).</p>
+<h1 id="statelessness">Statelessness</h1>
+<p>HTTP is a state-less protocol in the sense that HTTP sessions last for one request: the clients sends a request, and the server sends a response. Each request/response is independent (and unaware) of previous or future ones. The server does not keep information between request/response cycles. This is one of the foundations of a distributed and resilient web.</p>
+<p>In order to create a stateful experience, applications usually persist state across distinct HTTP requests by means of sessions - basically places to store data during one request that can be read during later requests. There are different ways to store session data: in cookies (in this case all session information is passed between client and server with each request and response), or on the server in memory/cache or a database (in this case only a session identifier is passed between server and client by means of a cookie).</p>
+<h1 id="http-state-management-mechanism-aka-cookies">HTTP state management mechanism (aka cookies)</h1>
+<p>Cookies are key-value pairs (<code>name=value</code>, separated by <code>;</code>) that are stored on the on the client side. Plain text, max 4KB. They are sent with the response to the client, which stores it, and sends it back to the server with each request it makes:</p>
+<ul>
+<li>HTTP response header sent by the server: <code>Set-Cookie: ...</code></li>
+<li>HTTP request header sent by the client: <code>Cookie: ...</code></li>
+</ul>
+<p>Cookies can contain session information or a session identifier, which allows the server to relate different requests to each other.</p>
+<p>Pre-defined properties include an expiration date ( in <code>Wdy, DD-Mon-YYYY HH:MM:SS GMT</code> format) and a scope:</p>
+<ul>
+<li><em>Session cookies</em> is temporary data that is deleted when the client application (e.g. browser) is closed. They have a set <code>discard</code> parameter or don&rsquo;t have an <code>expires</code>/<code>max-age</code> parameter that indicates an extended life time. <em>Persistent cookies</em>, on the other hand side, are stored on the disk and can thus persist across browser sessions.</li>
+<li><em>Scoped cookies:</em> A <code>path</code> and <code>domain</code> attribute can be specified to limit the scope of the cookie to a specific domain, sub-domain, or path.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>Cookie: key=value; expires=Sun, 24-Sep-2017 23:59:59 GMT; path=/; domain=.yoursite.com
+</code></pre><h1 id="web-application-security">Web application security</h1>
+<h2 id="https">HTTPS</h2>
+<p>Any request and response is plain text, thus vulnerable to being intercepted when sent across a network.</p>
+<p><strong>Secure HTTP (HTTPS) = HTTP + TLS</strong></p>
+<p>HTTPS encrypts each request and response using TLS (Transport Layer Security) (formerly using SSL) before sending them over the network. TLS uses symmetric cryptography, the keys being generated for each connection. Server and client negotiate the encryption algorithm and keys before transmitting any data, using public-key cryptography. Usually also at least the server is authenticated using public-key cryptography.</p>
+<h2 id="same-origin-policy-and-cors">Same-origin policy and CORS</h2>
+<p>Resources from the same origin can access each other without restrictions, where <em>same origin</em> means same protocol, hostname and port. Therefore HTML pages can embed, e.g., scripts from the same origin.</p>
+<p>Cross-origin resource sharing (CORS) has been developed to allow resources to also access resources from another origin. Servers can specify in an HTTP header the set of origins that are permitted to send cross-origin requests. In the simplest case, the request states its origin:</p>
+<pre><code>Origin: http://www.example.com
+</code></pre><p>And the response specifies which origins are allowed:</p>
+<pre><code>Access-Control-Allow-Origin: http://www.example.com
+</code></pre><p>For completely public content (e.g. fonts on Google Fonts):</p>
+<pre><code>Access-Control-Allow-Origin: *
+</code></pre><h2 id="session-hijacking">Session hijacking</h2>
+<p>Obvious security problems with HTTP:</p>
+<p><em>Packet sniffing</em>: intercepting packets sent back and forth between client and server, when attached to the same network
+<em>Session hijacking</em>: sniffing the session identifier, allowing someone to be logged in without knowing user name and password</p>
+<p><strong>Countermeasures:</strong></p>
+<ul>
+<li>Use HTTPS for all network communication.</li>
+<li>Reset session IDs: All old session IDs expire (i.e. are no longer valid), both when a new session ID is created as result of a new log in, and after some specified timeout.</li>
+<li>Requiring authentication when entering sensitive areas (e.g. before changing user account details or charging payments).</li>
+</ul>
+<h2 id="cross-site-scripting-xss">Cross-site scripting (XSS)</h2>
+<p>Cross-site scripting refers to a client-side code injection attack. This is possible, for instance, when allowing free user input which is then parsed and delivered to other users.</p>
+<p><strong>Example:</strong> An HTML <code>&lt;textarea&gt;</code> for submitting a comment, and directly including that content into an HTML page. When submitting a comment with an injected script, e.g. <code>&lt;script&gt;...&lt;/script&gt;</code>, it will be executed when the HTML page is parsed upon delivery to other users. This way, the web page unintentionally acts as an accomplice in an attack on its users.</p>
+<p>In this way it is possible to access user-sensitive information such as cookies, register keystrokes and thus record sensitive information such as passwords, and modify the HTML of the current page, e.g. including a fake login form.</p>
+<p><strong>Countermeasures:</strong></p>
+<ul>
+<li>Never insert untrusted data (in HTML, JS, CSS, or other). Always either validate and filter the user input, so that no malicious code is executed, or encode it, e.g. by HTML escaping it, so that the browser interprets it as data, not as code.</li>
+<li>Secure cookies: <code>Set-Cookie: blah=blubb; HttpOnly; secure</code>
+** <code>HttpOnly</code> tells the browser that this cookie should only be accessed by the server (avoiding that it can be accessed by scripts).
+** <code>secure</code> makes sure that cookies are sent only through HTTPS connections.</li>
+<li>Use the HTTP header <code>Content-Security-Policy</code>, which tells the browser to not load resources from untrusted sources, execute inline JavaScript, etc. (but still browser-specific).</li>
+</ul>
+<h1 id="rest">REST</h1>
+<p>REST (<em>Representational State Transfer</em>) is a set of conventions to expose URL endpoints that allow you to perform operations on resources that correlate with CRUD actions.</p>
+<p>When a client requests a resource via a GET request, the server sends back any machine-readable document containing any information about that resource - basically a representation of that resource and its state. So HTTP, in a way, provides read access to the representation of resources, and write access to the resource&rsquo;s state.</p>
+<p>Client and server keep different states:</p>
+<ul>
+<li>Client: application state</li>
+<li>Server: resource state</li>
+</ul>
+<p>And they neither know about nor have direct control over the other&rsquo;s state.</p>
+<p>A <em>web server</em> processes HTTP requests and serves responses back to the client. It implements HTTP and related TCP connection handling (in collaboration with the operating system, which provides hardware-close network support), and also manages its resources.</p>
+<p>Usually, a <em>web server</em> is a server responding to static assets (files, images, scripts, etc.) that don&rsquo;t require any data processing, while an <em>application server</em> hosts the application logic, handling complex requests for running server-side code, often consulting a persistent <em>data store</em>.</p>
+<p>Server-side code is run on the server before a page is served (e.g. running a template engine to render an HTML page).
+Client-side code is run on the client after a page is loaded (e.g. JavaScript updating the HTML page after it was loaded).
+The boundary is usually drawn upon considerations such as processing load and security (hiding all application logic vs exposing it to the client).</p>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2021 (c) Christina Unger</span></li>
+      <li>
+        Rendered with <a href="https://gohugo.io/">Hugo</a>. Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

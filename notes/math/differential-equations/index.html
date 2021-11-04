@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Differentialgleichungen | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Differentialgleichungen" />
+<meta property="og:description" content="German notes on differential equations. In progress." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/notes/math/differential-equations/" />
+<meta property="article:published_time" content="2021-06-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-25T00:00:00+00:00" />
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/notes/math/differential-equations/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/notes">Notes</a></li>
+       <li><a href="/blog">Blog</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Differentialgleichungen </h1>
+      <p class="hero-lead">
+         German notes on differential equations. In progress.
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <h1 id="definition">Definition</h1>
+<p>Eine <strong>gewöhnliche Differentialgleichung</strong> ist eine Gleichung, die eine Beziehung zwischen einer Funktion 
+<span>
+                  
+        \(y:x\to y(x)\)
+    
+</span>
+, ihrem Argument 
+<span>
+                  
+        \(x\)
+    
+</span>
+ und einer oder mehrerer ihrer Ableitungen 
+<span>
+                  
+        \(y&#39;,y&#39;&#39;,\ldots\)
+    
+</span>
+ ausdrückt.
+Also eine Gleichung der Form:
+
+<span>
+     
+        $$F(x,y,y&#39;,\ldots,y^{(k)}) = 0$$
+    
+</span>
+
+Wobei:</p>
+<ul>
+<li>
+<span>
+                  
+        \(k\in\mathbb{N}\)
+    
+</span>
+ (die Ordnung der Differentialgleichung)</li>
+<li>
+<span>
+                  
+        \(F:I\times M\to\mathbb{C}\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(I\subseteq\mathbb{R}\)
+    
+</span>
+ und 
+<span>
+                  
+        \(M\subseteq\mathbb{C}^{k&#43;1}\)
+    
+</span>
+</li>
+</ul>
+<p>Eine Lösung der Differentialgleichung ist ein Intervall 
+<span>
+                  
+        \(J\subseteq I\)
+    
+</span>
+ und eine 
+<span>
+                  
+        \(k\)
+    
+</span>
+-mal differenzierbare Funktion 
+<span>
+                  
+        \(y:J\to\mathbb{C}\)
+    
+</span>
+, so dass für alle 
+<span>
+                  
+        \(x\in J\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$(x,y(x),y&#39;(x),\ldots,y^{(k)}(x))\in I\times M$$
+    
+</span>
+
+
+<span>
+     
+        $$F(x,y(x),y&#39;(x),\ldots,y^{(k)}(x)) = 0$$
+    
+</span>
+
+Oft ist zusätzlich eine Anfangsbedingung 
+<span>
+                  
+        \(y(a)=b\)
+    
+</span>
+ gegeben.</p>
+<p><em>Bemerkungen:</em></p>
+<ul>
+<li>Implizite Form: 
+<span>
+                  
+        \(F(x,y,y&#39;,\ldots,y^{(k)}) = 0\)
+    
+</span>
+</li>
+<li>Explizite Form: 
+<span>
+                  
+        \(y^{(k)} = f(x,y,y&#39;,\ldots,y^{(k-1)})\)
+    
+</span>
+</li>
+<li>In <strong>partiellen Differentialgleichungen</strong> hängt 
+<span>
+                  
+        \(y\)
+    
+</span>
+ von mehreren Veränderlichen ab.</li>
+</ul>
+<h1 id="beispiele">Beispiele</h1>
+<h1 id="analytische-lösungsverfahren">Analytische Lösungsverfahren</h1>
+<h1 id="numerische-lösungsverfahren">Numerische Lösungsverfahren</h1>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2021 (c) Christina Unger</span></li>
+      <li>
+        Rendered with <a href="https://gohugo.io/">Hugo</a>. Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

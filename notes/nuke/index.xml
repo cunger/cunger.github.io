@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nuclear engineering on Escape Velocity</title>
+    <link>http://cunger.github.io/notes/nuke/</link>
+    <description>Recent content in Nuclear engineering on Escape Velocity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 16 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/notes/nuke/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Atoms</title>
+      <link>http://cunger.github.io/notes/nuke/atoms/</link>
+      <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/nuke/atoms/</guid>
+      <description>What atoms are composed of, their energy, charge, mass, and stability.</description>
+    </item>
+    
+    <item>
+      <title>Nuclear reactions</title>
+      <link>http://cunger.github.io/notes/nuke/nuclear-reactions/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/nuke/nuclear-reactions/</guid>
+      <description>Q-value, alpha, beta, and gamma decay, activity and decay rate.</description>
+    </item>
+    
+    <item>
+      <title>Neutronics</title>
+      <link>http://cunger.github.io/notes/nuke/neutronics/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/nuke/neutronics/</guid>
+      <description>Neutrons, energy distribution, neutron interactions.</description>
+    </item>
+    
+    <item>
+      <title>Fission reactors</title>
+      <link>http://cunger.github.io/notes/nuke/reactors/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/nuke/reactors/</guid>
+      <description>Fission reaction, neutron transport, criticality, and reactor types. (Draft)</description>
+    </item>
+    
+  </channel>
+</rss>

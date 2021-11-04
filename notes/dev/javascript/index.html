@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="JavaScript" />
+<meta property="og:description" content="Functions. Prototypes. Promises. Etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/javascript/" />
+<meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/notes/dev/javascript/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/notes">Notes</a></li>
+       <li><a href="/blog">Blog</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> JavaScript </h1>
+      <p class="hero-lead">
+         Functions. Prototypes. Promises. Etc.
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <h1 id="expressions-and-statements">Expressions and statements</h1>
+<p>The two major syntactic categories in JavaScript are <em>expressions</em> and <em>statements</em>. A program is a sequence of statements. Statements <em>do stuff</em>: they declare variables or functions, assign a value to a variable, define a conditional loop, evaluate an expression, and so on. Expressions produce a value.</p>
+<p>Functions can be defined by means of a function declaration statement:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">f</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+</code></pre></div><p>Or by means of an expression of the form <code>(function f() { ... })</code>. The latter can again occur everywhere an expression can occur, and allows for defining anonymous, i.e. unnamed, functions (<code>function () { ... }</code>).</p>
+<h2 id="conditional-loops">Conditional loops</h2>
+<h3 id="_if-then-else_-statement"><em>If-then-else</em> statement</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">if</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+</code></pre></div><p>Can also be written as an expression of the form <code>condition ? expression : expression</code> (which thus can occur everywhere expressions can occur, e.g. as a function argument).</p>
+<h3 id="_for_-loop"><em>For</em> loop</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#75af00">initialExpression</span><span style="color:#111">;</span> <span style="color:#75af00">condition</span><span style="color:#111">;</span> <span style="color:#75af00">incrementExpression</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+</code></pre></div><p>Note that all three parts are optional and can be taken care of in the block instead, e.g. <code>for (; ;) { ... }</code> is possible. If no condition is given, JavaScript will assume <code>true</code>.</p>
+<h3 id="_while_-loop"><em>While</em> loop</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75715e">// Evaluating the condition before executing the block:
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#75af00">condition</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+
+<span style="color:#75715e">// Evaluating the condition after executing the block:
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">do</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span> <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#75af00">condition</span><span style="color:#111">);</span>
+<span style="color:#75715e">// Thus, the block is executed at least once.
+</span></code></pre></div><h1 id="types-and-values">Types and values</h1>
+<h2 id="type-system">Type system</h2>
+<p>JavaScript is dynamically typed, with the following types:</p>
+<ul>
+<li>Boolean (<code>true</code>, <code>false</code>)</li>
+<li>Number (floating-point numbers with their inherent imprecision, including <code>Infinity</code> and <code>NaN</code>)</li>
+<li>String (arbitrary size with any character from the UTF-16 character set, single or double quoted)</li>
+<li>Null (<code>null</code>)</li>
+<li>Undefined (<code>undefined</code>)</li>
+<li>Object (including <code>Function</code>, <code>Array</code>, etc.)</li>
+</ul>
+<p><code>typeof</code> returns one of the following:</p>
+<ul>
+<li><code>&quot;boolean&quot;</code></li>
+<li><code>&quot;number&quot;</code></li>
+<li><code>&quot;string&quot;</code></li>
+<li><code>&quot;undefined&quot;</code></li>
+<li><code>&quot;function&quot;</code></li>
+<li><code>&quot;object&quot;</code></li>
+</ul>
+<p>In order to test whether an object is an array, use <code>Array.isArray(object)</code>.</p>
+<h2 id="null-and-undefined">Null and Undefined</h2>
+<ul>
+<li>The value <code>null</code> indicates a non-object, i.e. occurs where an object is expected. <code>typeof</code> tags it as <code>&quot;object&quot;</code> (see <em>The history of typeof null</em> in <a href="http://speakingjs.com/es5/ch09.html">Chapter 9 of Speaking JavaScript</a>).</li>
+<li>The value <code>undefined</code> indicates a non-value, i.e. is the value of uninitialized variables, missing parameters and missing properties, as well as the implicit return value of functions without an explicit <code>return</code> statement.</li>
+</ul>
+<p>Trying to access a property on <code>null</code> or <code>undefined</code> throws an error.</p>
+<h2 id="objects-vs-primitives">Objects vs primitives</h2>
+<p>Objects are mutable, all other values are primitives and immutable.</p>
+<p>Primitives are compared by value (just beware that <code>NaN</code> does not equal anything, not even itself) and passed by value, while objects are compared by reference (thus are strictly equal only to themselves) and passed by reference.</p>
+<p>The primitive types Boolean, Number, String have object constructors that create wrapper objects holding the corresponding primitive value.
+When a function is called on a primitive value, as in <code>&quot;fnord&quot;.toUpperCase()</code>, the corresponding constructor is called in order to create a temporary object of the appropriate type. In this case, a function is called on a string, which leads to the creation of a temporary object by means of the <code>String</code> constructor function. That object has <code>String.prototype</code> as its prototype, which implements methods like <code>toUpperCase</code>. This method&rsquo;s return value will be returned an the temporary object again destroyed. In this way, primitive values can &ldquo;borrow&rdquo; methods from the relevant constructor&rsquo;s prototype object.</p>
+<h2 id="type-coercion">Type coercion</h2>
+<p>Type coercion is the conversion of a value of one type to a value of another type. JavaScript can convert to String, Number, and Boolean.</p>
+<h3 id="explicit-type-coercion">Explicit type coercion</h3>
+<p>As functions, wrapper object constructors convert to the corresponding primitive type.</p>
+<ul>
+<li>
+<p><code>Number(undefined) ==&gt; NaN</code></p>
+</li>
+<li>
+<p><code>Number(null) ==&gt; 0</code></p>
+</li>
+<li>
+<p><code>Number(false) ==&gt; 0</code>, <code>Number(true) ==&gt; 1</code></p>
+</li>
+<li>
+<p>Given a string, it parses it as a number, e.g. <code>Number('3.14') ==&gt; 3.14</code>. If that fails, it return <code>NaN</code>.
+Alternatively use <code>+x</code>, or <code>parseInt(x, 10)</code> and <code>parseFloat(x)</code>, which is especially useful if the input string also contains a unit:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">parseInt</span><span style="color:#111">(</span><span style="color:#d88200">&#39;20pt&#39;</span><span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span> <span style="color:#75715e">// 20
+</span><span style="color:#75715e"></span><span style="color:#111">Number</span><span style="color:#111">(</span><span style="color:#d88200">&#39;20pt&#39;</span><span style="color:#111">)</span>      <span style="color:#75715e">// NaN
+</span></code></pre></div></li>
+<li>
+<p><code>String()</code> does the obvious (except for conversion to primitives, see end of <a href="http://speakingjs.com/es5/ch08.html">Chapter 8: Values</a>).
+Preferred over <code>x.toString()</code>, as the latter throws an error when called on <code>null</code> or <code>undefined</code> and can be overridden by individual objects (and thus lead to unexpected results). If you want a JSON string, use <code>JSON.stringify(x)</code>, which prints everything as <code>null</code> that doesn&rsquo;t convert into a JSON value (e.g. functions and <code>undefined</code>). When called on an object that implements <code>toJSON()</code>, it calls that method.</p>
+</li>
+<li>
+<p><code>Boolean(x)</code> converts <code>x</code> to <code>false</code> if it is falsy, and to <code>true</code> otherwise. Falsy values are:</p>
+<ul>
+<li><code>false</code></li>
+<li><code>null</code>, <code>undefined</code></li>
+<li><code>0</code>, <code>NaN</code></li>
+<li><code>''</code></li>
+</ul>
+<p>Alternatively, <code>!!x</code> can be used to convert any value into a Boolean, due to the way <code>!</code> works (see <a href="booleans.md">Booleans</a>).</p>
+</li>
+</ul>
+<h3 id="implicit-type-coercion">Implicit type coercion</h3>
+<p>Many operators and methods try very hard to coerce operands and arguments to the type they need, as the first version of JavaScript did not have exception handling.</p>
+<p>Binary operators in general trigger numeric conversion:</p>
+<ul>
+<li>comparison operators (<code>&gt;</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>)</li>
+<li>arithmetic operators (<code>-</code>, <code>+</code>, <code>*</code>, <code>/</code>, <code>%</code>)</li>
+<li>loose/lenient equality (<code>==</code>, <code>!=</code>)</li>
+</ul>
+<p>With the exception that comparison and equality operators don&rsquo;t trigger numeric conversion if both operands are strings, or any operand is <code>null</code> or <code>undefined</code>, and <code>+</code> triggers string conversion if any operand is a string.</p>
+<p>If an operand is an object, it is first converted to a primitive (meaning to a Number or String), roughly following <a href="https://gist.github.com/samoshkin/baf070ab19b73f4f39ec54149fb37c30#file-js-to-primitive-internal-js">this algorithm</a>. Note that, as a result, arrays are converted to strings.</p>
+<p>Also note that <code>{</code> at the beginning of a line is always interpreted as a block statement, not as an object, thus for the operation it is ignored:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">{}</span><span style="color:#f92672">+</span><span style="color:#111">[]</span><span style="color:#f92672">+</span><span style="color:#111">{}</span>
+<span style="color:#f92672">==&gt;</span> <span style="color:#f92672">+</span><span style="color:#111">[]</span><span style="color:#f92672">+</span><span style="color:#111">{}</span>
+<span style="color:#f92672">==&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">+</span> <span style="color:#111">{}</span>
+<span style="color:#f92672">==&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;[object Object]&#39;</span>
+<span style="color:#f92672">==&gt;</span> <span style="color:#d88200">&#39;0[object Object]&#39;</span>
+</code></pre></div><p>Strict equality (<code>===</code>, <code>!==</code>) does not perform type coercion.</p>
+<h1 id="booleans">Booleans</h1>
+<p><strong>Logical Not (<code>!</code>)</strong> converts its operand to a Boolean and then negates it, thus returns a Boolean.</p>
+<p>Binary logical operators are:</p>
+<ul>
+<li><em>Value-preserving:</em> They always return either one of the operands, unchanged.</li>
+<li><em>Short-circuiting:</em> The second operand is not evaluated if the first operand already determines the result.</li>
+</ul>
+<p><strong>Logical And (<code>&amp;&amp;</code>)</strong>:
+If the first operand can be converted to <code>false</code>, return it. Otherwise, return the second operand.</p>
+<p><strong>Logical Or (<code>||</code>)</strong>:
+If the first operand can be converted to <code>true</code>, return it. Otherwise, return the second operand.</p>
+<h1 id="arrays">Arrays</h1>
+<p><em>Arrays</em> are objects where</p>
+<ul>
+<li><em>elements</em> are all values that have been assigned to non-negative integer keys, and</li>
+<li>the property <code>length</code> is 1 larger than the highest such key (it is therefore not necessarily equal to the number of elements).</li>
+</ul>
+<p>Elements should be accessed via <code>array[index]</code> instead of dot notation.</p>
+<p>Note that negative integers don&rsquo;t count as array indices, thus <code>array[-1]</code> will try to look up the key <code>&quot;-1&quot;</code>. For accessing the last element in an array, use <code>array[array.length - 1]</code> or <code>array.slice(-1)[0]</code>.</p>
+<p>The <code>length</code> property can be explicitly set. Setting it to less than the current length truncates the array. Setting it to more does not create keys for the additional, non-present elements; however, empty slots will be shown when printing the array.</p>
+<h2 id="arrays-as-stacks-and-queues">Arrays as stacks and queues</h2>
+<p>The following methods are all mutating:</p>
+<ul>
+<li><code>array.pop()</code> and <code>array.push(...values)</code></li>
+<li><code>array.shift()</code> and <code>array.unshift(...values)</code></li>
+</ul>
+<h2 id="slice-and-splice">Slice and splice</h2>
+<ul>
+<li>
+<p><code>array.slice(startIndex = 0, exclusiveEndIndex = array.length)</code> returns the subarray as a new array. Also allows negative indices as <code>startIndex</code> for access counting from the end of the array. With defaults useful for (shallow) copying an array: <code>copy = array.slice()</code>.</p>
+</li>
+<li>
+<p><code>array.splice(startIndex, deleteCount, values)</code> removes <code>deleteCount</code> elements, starting from <code>startIndex</code> and replacing them by <code>values</code>. In contrast to <code>slice</code>, <code>splice</code> is mutating the array.</p>
+</li>
+</ul>
+<h2 id="list-processing">List processing</h2>
+<p><em>Iteration:</em></p>
+<ul>
+<li><code>forEach(function)</code> always returns <code>undefined</code>, independent of the return value of the passed callback function.</li>
+</ul>
+<pre><code>array.forEach(function (element) {
+  return false; // This is the return value of the anonymous function and will be ignored.
+}); // ==&gt; undefined
+</code></pre><p>Also, <code>forEach</code> always iterates over the whole list; the only way to break out is by throwing an error.</p>
+<p><em>Filter and transform:</em></p>
+<ul>
+<li><code>filter(function)</code> returns a new array.</li>
+<li><code>map(function)</code> also returns a new array.</li>
+<li><code>array.sort(function)</code> sorts the array in place, i.e. is mutating. Note that without providing a comparison function (returning a number &lt;0, 0, &gt;0), the default sort comparison is by string Unicode points, with all array elements being converted into strings (yes, also numbers!).</li>
+</ul>
+<p><em>Checks:</em></p>
+<ul>
+<li><code>some(function)</code></li>
+<li><code>every(function)</code></li>
+</ul>
+<p>The callback function passed to <code>forEach</code>, <code>filter</code>, <code>map</code>, <code>some</code> and <code>every</code> is called with three arguments: the current element, its index, and the array over which is iterated.</p>
+<p><em>Folding:</em></p>
+<ul>
+<li><code>array.reduce(function, initialValue?)</code>, where <code>function</code> is being passed four arguments: the so far accumulated value, the current element, the index of the current element, and the array that is processed. If the <code>initialValue</code> is not given, <code>reduce</code> uses the first element of the array as initial value.</li>
+<li>Analogously for <code>reduceRight</code>.</li>
+</ul>
+<h1 id="functions">Functions</h1>
+<p>In JavaScript, functions are first-class citizens.</p>
+<p>A function declaration creates a function as well as a variable with the function name, to which the function is assigned as value. That is, the following two are in principle equivalent (however, differing when it comes to <a href="scope.md">hoisting</a>):</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">fnord</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">fnord</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">};</span>
+</code></pre></div><p>When a function created by a function declaration is called, we speak of <em>function invocation</em>; when a function created as a property of an object (i.e. a <em>method</em>) is called, we speak of <em>method invocation</em>.</p>
+<p>All functions can be invoked in two ways:</p>
+<ul>
+<li>as a function: <code>f(args)</code></li>
+<li>as a constructor: <code>new f(args)</code></li>
+</ul>
+<p>For <em>constructor functions</em>, see <a href="object-creation.md">object creation</a>.</p>
+<h2 id="pure-functions">Pure functions</h2>
+<p>A <em>pure</em> function</p>
+<ul>
+<li>is referentially transparent, i.e. given the same inputs, the output is always the same, and</li>
+<li>does not produce any side effects.</li>
+</ul>
+<p>In particular, this means it doesn&rsquo;t depend on or modify variables outside of its scope.</p>
+<h2 id="input">Input</h2>
+<p>When invoked, the arguments passed to the function are bound to the function parameters. Missing parameters have <code>undefined</code> as value, excess parameters are ignored but are accessible within the function body via <code>arguments</code>. <code>arguments</code> is array-like, but not an array; in order to turn it into an array:</p>
+<ul>
+<li><code>Array.prototype.slice.call(arguments)</code></li>
+<li><code>Array.from(arguments)</code> (ES6)</li>
+</ul>
+<p>ES6 introduces <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">rest parameter syntax</a>:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">a</span><span style="color:#111">,</span> <span style="color:#75af00">b</span><span style="color:#111">,</span> <span style="color:#111">...</span><span style="color:#75af00">rest</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+</code></pre></div><p>Which allows for collecting arguments into an array (a real one, unlike <code>arguments</code>).
+It looks exactly the same as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a>, also introduced by ES6, which allows for expanding an array into its elements, as in <code>someFunction(...array)</code>.</p>
+<p>ES6 also introduces default values:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">start</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#75af00">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#111">,</span> <span style="color:#75af00">end</span> <span style="color:#f92672">=</span> <span style="color:#75af00">start</span> <span style="color:#f92672">+</span> <span style="color:#75af00">count</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+
+<span style="color:#75715e">// ES5 pattern for defaults:
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">function</span> <span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">start</span><span style="color:#111">,</span> <span style="color:#75af00">count</span><span style="color:#111">,</span> <span style="color:#75af00">end</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">start</span> <span style="color:#f92672">=</span> <span style="color:#75af00">start</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+  <span style="color:#75af00">count</span> <span style="color:#f92672">=</span> <span style="color:#75af00">count</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span>
+  <span style="color:#75af00">end</span>   <span style="color:#f92672">=</span> <span style="color:#75af00">end</span>   <span style="color:#f92672">||</span> <span style="color:#75af00">start</span> <span style="color:#f92672">+</span> <span style="color:#75af00">count</span><span style="color:#111">;</span>
+
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+</code></pre></div><p>Default values are used whenever the argument is <code>undefined</code> - both when it is left out and when it is explicitly set to <code>undefined</code>.</p>
+<p>Arguments are bound to parameters from left to right, independent of default values:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#75af00">b</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#111">[</span><span style="color:#75af00">a</span><span style="color:#111">,</span> <span style="color:#75af00">b</span><span style="color:#111">];</span>
+<span style="color:#111">}</span>
+
+<span style="color:#75af00">f</span><span style="color:#111">();</span>  <span style="color:#75715e">// [1, undefined]
+</span><span style="color:#75715e"></span><span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">);</span> <span style="color:#75715e">// [2, undefined]
+</span></code></pre></div><h2 id="output">Output</h2>
+<p>Functions without an explicit <code>return</code> statement have <code>undefined</code> as return value.</p>
+<h2 id="closures">Closures</h2>
+<p>When a function is defined, a <em>closure</em> is created.</p>
+<blockquote>
+<p>A closure is the combination of a function and the lexical environment within which that function was declared.
+&ndash; MDN</p>
+</blockquote>
+<blockquote>
+<p>A closure is a function plus the connection to the scope in which the function was created. The name stems from the fact that a closure “closes over” the free variables of a function[, i.e. the variables not declared within the function].</p>
+</blockquote>
+<p>Closures thus preserve the function&rsquo;s access to all variables in its own as well as in its surrounding scopes. This access is retained throughout the life-time of the function, independent in which scope it is invoked. Note that this means access to the identifiers; functions will look up the corresponding values only when invoked.</p>
+<p>Closures play a key role, for instance, in <a href="private-data.md">private data</a> and partial function application.</p>
+<h3 id="partial-function-application">Partial function application</h3>
+<p>Partial function application is the process of applying a function to some of its parameters and return a function that expects the rest of the parameters.</p>
+<p><em>Example:</em></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">fMap</span><span style="color:#111">(</span><span style="color:#75af00">fn</span><span style="color:#111">,</span> <span style="color:#75af00">list</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#75af00">list</span><span style="color:#111">.</span><span style="color:#75af00">map</span><span style="color:#111">(</span><span style="color:#75af00">fn</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">function</span> <span style="color:#75af00">fMapWith</span><span style="color:#111">(</span><span style="color:#75af00">fn</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">list</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#75af00">fMap</span><span style="color:#111">(</span><span style="color:#75af00">fn</span><span style="color:#111">,</span> <span style="color:#75af00">list</span><span style="color:#111">);</span>
+  <span style="color:#111">}</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">const</span> <span style="color:#75af00">incrementElements</span> <span style="color:#f92672">=</span> <span style="color:#75af00">fMapWith</span><span style="color:#111">(</span><span style="color:#75af00">x</span> <span style="color:#111">=&gt;</span> <span style="color:#75af00">x</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+
+<span style="color:#75af00">incrementElements</span><span style="color:#111">([</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">]);</span>
+<span style="color:#75af00">incrementElements</span><span style="color:#111">([</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span><span style="color:#111">,</span> <span style="color:#ae81ff">7</span><span style="color:#111">]);</span>
+</code></pre></div><p>Partial application like this relies on the facts that JavaScript supports closures (so the returned function can access <code>fn</code>, even when invoked in a different context) and that functions are first-class citizens, i.e. can be arguments and return values.</p>
+<p>A generic version for arbitrarily many arguments looks like this (very similar to what <code>bind</code> does):</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">partial</span><span style="color:#111">(</span><span style="color:#75af00">fn</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">args</span> <span style="color:#f92672">=</span> <span style="color:#111">Array</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">slice</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#75af00">arguments</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">self</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">this</span><span style="color:#111">;</span>
+
+  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#75af00">fn</span><span style="color:#111">.</span><span style="color:#75af00">apply</span><span style="color:#111">(</span><span style="color:#75af00">self</span><span style="color:#111">,</span> <span style="color:#75af00">args</span><span style="color:#111">.</span><span style="color:#75af00">concat</span><span style="color:#111">(</span><span style="color:#111">Array</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">slice</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#75af00">arguments</span><span style="color:#111">)));</span>
+  <span style="color:#111">};</span>
+<span style="color:#111">}</span>
+</code></pre></div><p>Finally, <em>currying</em> is the process as transforming a function of <em>n</em> arguments such that it can be called as a chain of <em>n</em> functions each with a single argument. This has no real use case in JavaScript, though. Cf. <a href="http://benalman.com/news/2012/09/partial-application-in-javascript/">Ben Alman</a>:</p>
+<ul>
+<li>In functional languages like Haskell, every function is inherently curried, i.e. takes exactly one argument. Applying a function to several arguments is basically syntactic sugar for chained applications of a curried function.</li>
+<li>In JavaScript, function application is defined to take all arguments, i.e. functions are inherently uncurried.</li>
+</ul>
+<h1 id="execution-context">Execution context</h1>
+<p>Functions initially have no context, but receive one when they are executed.
+Thus with every function invocation, the function has access to its <em>execution context</em>, through the keyword <a href="this.md"><code>this</code></a>.</p>
+<p>Binding a function to its execution context happens when the function is executed, not when it is defined.
+Since functions are first-class citizens, they can be removed from their objects, passed around, and executed in a variety of different contexts.</p>
+<h2 id="implicit-execution-context">Implicit execution context</h2>
+<p>Upon <strong>function invocation</strong> (e.g. <code>smile()</code>), the execution context, and thus <code>this</code>, is the global object, because the function is implicitly called on the global object. That is, <code>window</code> in the browser environment, and <code>global</code> in Node (and <code>module.exports</code> within a module).</p>
+<p><code>this</code> also refers to the global object outside of any function scope. Unless in strict mode, then it is <code>undefined</code>.</p>
+<p>Upon <strong>method invocation</strong> (e.g. <code>person.smile()</code>), there is an explicit receiver; the execution context, and thus <code>this</code>, is the calling object.
+Just don&rsquo;t get confused with <em>explicit</em> and <em>implicit</em>: When executing <code>person.smile()</code>, the execution context of <code>smile</code> is implicitly bound to <code>person</code>, as this is the explicit receiver of the function call.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">function</span> <span style="color:#75af00">whereAmI</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+
+    <span style="color:#75af00">whereAmI</span><span style="color:#111">();</span>    <span style="color:#75715e">// this === global object, because function invocation
+</span><span style="color:#75715e"></span>  <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+
+<span style="color:#75af00">obj</span><span style="color:#111">.</span><span style="color:#75af00">method</span><span style="color:#111">();</span>      <span style="color:#75715e">// this === obj, because method invocation
+</span><span style="color:#75715e"></span>
+<span style="color:#75af00">func</span> <span style="color:#f92672">=</span> <span style="color:#75af00">obj</span><span style="color:#111">.</span><span style="color:#75af00">method</span><span style="color:#111">;</span>
+<span style="color:#75af00">func</span><span style="color:#111">();</span>            <span style="color:#75715e">// this === global object, because function invocation
+</span></code></pre></div><p>See also <em>context loss</em> below.</p>
+<h2 id="explicit-execution-context">Explicit execution context</h2>
+<p>The execution context can also be changed explicitly by means of <code>call</code>, <code>apply</code>, and <code>bind</code>.
+<code>call</code> and <code>apply</code> explicitly bind a function&rsquo;s execution context to an object when invoking the function:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">func</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#75af00">obj</span><span style="color:#111">,</span> <span style="color:#75af00">arg1</span><span style="color:#111">,</span> <span style="color:#75af00">arg2</span><span style="color:#111">);</span> <span style="color:#75715e">// this === obj
+</span><span style="color:#75715e"></span><span style="color:#75af00">func</span><span style="color:#111">.</span><span style="color:#75af00">apply</span><span style="color:#111">(</span><span style="color:#75af00">obj</span><span style="color:#111">,</span> <span style="color:#75af00">args</span><span style="color:#111">);</span>      <span style="color:#75715e">// this === obj
+</span><span style="color:#75715e"></span>
+<span style="color:#75af00">func</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">();</span>                <span style="color:#75715e">// this === global
+</span><span style="color:#75715e"></span><span style="color:#75af00">obj</span><span style="color:#111">.</span><span style="color:#75af00">func</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">();</span>            <span style="color:#75715e">// this === global
+</span></code></pre></div><p><code>bind</code> permanently binds a function to a provided object. It creates and returns a new function that always uses the provided object as execution context. (Except for when the function is called as a constructor with <code>new</code>, then <code>this</code> will be the newly created object.)</p>
+<p>Here&rsquo;s roughly how <code>bind</code> works:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">Function</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">bind</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">context</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">args</span> <span style="color:#f92672">=</span> <span style="color:#111">Array</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">slice</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#75af00">arguments</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">self</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">this</span><span style="color:#111">;</span>
+
+  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#75af00">self</span><span style="color:#111">.</span><span style="color:#75af00">apply</span><span style="color:#111">(</span><span style="color:#75af00">context</span><span style="color:#111">,</span> <span style="color:#75af00">args</span><span style="color:#111">.</span><span style="color:#75af00">concat</span><span style="color:#111">(</span><span style="color:#111">Array</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">slice</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#75af00">arguments</span><span style="color:#111">));</span>
+  <span style="color:#111">};</span>
+<span style="color:#111">}</span>
+</code></pre></div><p>That is, <code>bind</code> uses <em>partial application</em>.</p>
+<h2 id="the-value-of-this">The value of <code>this</code></h2>
+<blockquote>
+<p><code>this</code> is the current execution context of a function</p>
+</blockquote>
+<p>Functions are initially unbound, but dynamically bound to a context object at execution time.
+In order to know what <code>this</code> points to, you have to answer: What is the calling object?</p>
+<ul>
+<li>When a function is defined on the global object and called without an explicit receiver (<code>greet(name)</code>),
+<code>this</code> is the global object.</li>
+<li>When a function is called with an explicit receiver (<code>object.greet()</code>), <code>this</code> is the calling object.</li>
+<li>When a function is called by means of <code>call</code> or <code>apply</code>, <code>this</code> is explicitly provided.</li>
+<li>When a constructor function is called with the <code>new</code> operator (<code>new Greeting()</code>), <code>this</code> refers to the newly created object.</li>
+</ul>
+<p>Binding a function to an object (<code>greet.bind(object)</code>) returns a new function, for which <code>this</code> always refers to that object.</p>
+<h2 id="context-loss">Context loss</h2>
+<p>The execution context does not propagate to nested functions. That is:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">function</span> <span style="color:#75af00">fun</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+
+    <span style="color:#75af00">fun</span><span style="color:#111">();</span> <span style="color:#75715e">// will log global
+</span><span style="color:#75715e"></span>  <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+</code></pre></div><p>One option is to explicitly bind <code>this</code> to a variable and use that variable:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">var</span> <span style="color:#75af00">self</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">this</span><span style="color:#111">;</span>
+
+    <span style="color:#00a8c8">function</span> <span style="color:#75af00">fun</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#75af00">self</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+
+    <span style="color:#75af00">fun</span><span style="color:#111">();</span> <span style="color:#75715e">// will log obj
+</span><span style="color:#75715e"></span>  <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+</code></pre></div><p>Another option is to either explicitly provide the context upon execution:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">function</span> <span style="color:#75af00">fun</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+
+    <span style="color:#75af00">fun</span><span style="color:#111">.</span><span style="color:#75af00">call</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">);</span> <span style="color:#75715e">// will log obj
+</span><span style="color:#75715e"></span>  <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+</code></pre></div><p>Or bind the method to the object:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">function</span> <span style="color:#75af00">fun</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">);</span>
+    <span style="color:#111">}.</span><span style="color:#75af00">bind</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">);</span>
+
+    <span style="color:#75af00">fun</span><span style="color:#111">();</span> <span style="color:#75715e">// will log obj
+</span><span style="color:#75715e"></span>  <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+</code></pre></div><p>Note that context loss is a problem in all nested functions, e.g. also with <code>forEach</code>, <code>map</code>, <code>every</code>, <code>some</code>:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">stuff</span><span style="color:#f92672">:</span> <span style="color:#111">[],</span>
+  <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">stuff</span><span style="color:#111">.</span><span style="color:#75af00">forEach</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">element</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+      <span style="color:#75715e">// this === whatever context with which `forEach` calls the callback
+</span><span style="color:#75715e"></span>    <span style="color:#111">})</span>
+  <span style="color:#111">}</span>
+<span style="color:#111">}</span>
+</code></pre></div><p>These methods therefore take an optional context argument (e.g. <code>forEach(callback, [thisArg])</code>):</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"> <span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+   <span style="color:#75af00">stuff</span><span style="color:#f92672">:</span> <span style="color:#111">[],</span>
+   <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+     <span style="color:#75af00">stuff</span><span style="color:#111">.</span><span style="color:#75af00">forEach</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">element</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+       <span style="color:#75715e">// this === obj
+</span><span style="color:#75715e"></span>     <span style="color:#111">},</span> <span style="color:#00a8c8">this</span><span style="color:#111">)</span>
+   <span style="color:#111">}</span>
+ <span style="color:#111">}</span>
+</code></pre></div><h1 id="variable-scope">Variable scope</h1>
+<p>JavaScript variables are lexically scoped, i.e. the structure of the source code determines which variables are accessible where.</p>
+<p>Each scope has access to the variables it contains and to the variables in the scopes that surround it.</p>
+<p>Variables declared via <code>var</code> are function-scoped. That is, functions create a new scope, while code blocks (<code>{ ... }</code>) do not. <code>var</code> variables are hoisted, and when declared in the global scope, they are added to the global object.</p>
+<p>In ES6, variables declared via <code>let</code> and <code>const</code> are block-scoped, i.e. their scope is the innermost enclosing block. They are not subject to hoisting and are not added to the global object.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">let</span> <span style="color:#75af00">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span><span style="color:#111">;</span> <span style="color:#75715e">// =&gt; 0
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span> <span style="color:#75715e">// =&gt; undefined
+</span></code></pre></div><p>In ES5, a common pattern to mimic block scope (and thus limit the lifetime of a variable, either to make it private or to avoid global variables) is an <em>immediately invoked function expression</em> (IIFE):</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}());</span>
+</code></pre></div><p>IIFEs can, of course, be passed parameters and given a meaningful name, just like any other function expression:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span><span style="color:#111">;</span>
+
+<span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#75af00">meaningfulName</span><span style="color:#111">(</span><span style="color:#75af00">number</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">}(</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#75af00">x</span><span style="color:#111">));</span>
+</code></pre></div><h2 id="identifier-look-up-and-hoisting">Identifier look-up and hoisting</h2>
+<p>Prior to code execution, identifiers are resolved and associated with their scope, in the following order:</p>
+<ul>
+<li><code>this</code>, <code>arguments</code></li>
+<li>function parameters (thus calling a function parameter <code>arguments</code> overrides the pre-defined one, also using <code>a, b, a</code>, the second <code>a</code> will override the first one)</li>
+<li>function declarations</li>
+<li>variable declarations</li>
+</ul>
+<blockquote>
+<p>[T]here is always a chain of environments, starting with the currently active environment, continuing with its outer environment, and so on[, ending with] with the global environment. [&hellip;]
+To resolve an identifier, the complete environment chain is traversed, starting with the active environment.</p>
+</blockquote>
+<p>When looking up an identifier, the JavaScript engine searches the scope hierarchy from bottom (local scope) to top (global scope), taking the first match it finds. Thus variables in a nested scope shadow variables with the same name in a higher scope.
+When not finding an identifier doing right-hand side look-up, it throws a <code>ReferenceError</code>. When not finding a name doing left-hand side look-up, it declares it as a property of the global object.</p>
+<p>In this process, function declarations (including the function body) as well as variable declarations (without the assignments) are <em>hoisted</em>, that is they are processed first within their immediate scope, where function declarations are hoisted before variable declarations.</p>
+<p><strong>Example</strong> (from <a href="http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html">Ben Cherry</a>):</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">foo</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">function</span> <span style="color:#75af00">bar</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#75af00">foo</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">var</span> <span style="color:#75af00">foo</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span>
+  <span style="color:#111">}</span>
+
+  <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#75af00">foo</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
+
+<span style="color:#75af00">bar</span><span style="color:#111">();</span>
+</code></pre></div><p>Is equivalent to:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">bar</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">foo</span><span style="color:#111">;</span>
+
+  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#75af00">foo</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">foo</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span>
+  <span style="color:#111">}</span>
+
+  <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#75af00">foo</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">foo</span><span style="color:#111">;</span>
+
+<span style="color:#75af00">foo</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+
+<span style="color:#75af00">bar</span><span style="color:#111">();</span>
+</code></pre></div><p>Keep in mind that function expressions are not hoisted, i.e. <code>var f = function () {...}</code> behaves just like any other variable assignment, with the declaration being hoisted, the function definition not.</p>
+<h1 id="private-data">Private data</h1>
+<p>IIFEs are a way to create temporary, private scope, and closures turn that <em>temporary</em> into <em>as long as a reference to the function lives</em>.</p>
+<p>Here&rsquo;s an example from Douglas Crockford:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">digitName</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">names</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;zero&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;one&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;two&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;three&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;four&#39;</span><span style="color:#111">,</span>
+               <span style="color:#d88200">&#39;five&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;six&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;seven&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;eight&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;nine&#39;</span><span style="color:#111">];</span>
+
+  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">n</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#75af00">names</span><span style="color:#111">[</span><span style="color:#75af00">n</span><span style="color:#111">];</span>
+  <span style="color:#111">};</span>
+<span style="color:#111">}();</span>
+</code></pre></div><h2 id="private-data-in-objects">Private data in objects</h2>
+<p>Private data in a function:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">func</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span> <span style="color:#75715e">// open IIFE
+</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">var</span> <span style="color:#75af00">private1</span> <span style="color:#f92672">=</span> <span style="color:#111">...;</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">private2</span> <span style="color:#f92672">=</span> <span style="color:#111">...;</span>
+
+  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75715e">// use private stuff
+</span><span style="color:#75715e"></span>  <span style="color:#111">}</span>
+<span style="color:#111">}();</span>
+</code></pre></div><p>Private data in a singleton object:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span> <span style="color:#75715e">// open IIFE
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// private data
+</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">var</span> <span style="color:#75af00">counter</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+
+  <span style="color:#75715e">// public data
+</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">return</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">publicField</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">true</span><span style="color:#111">;</span>
+    <span style="color:#75af00">publicMethod</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    <span style="color:#111">}</span>
+  <span style="color:#111">};</span>
+<span style="color:#111">}();</span>
+</code></pre></div><p>Private data in an object via its constructor:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">Constr</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">that</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">this</span><span style="color:#111">;</span> <span style="color:#75715e">// in order to available to private functions
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// private data
+</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">var</span> <span style="color:#75af00">counter</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+
+  <span style="color:#00a8c8">function</span> <span style="color:#75af00">privateFunction</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">counter</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+
+    <span style="color:#75715e">// public data
+</span><span style="color:#75715e"></span>    <span style="color:#75af00">that</span><span style="color:#111">.</span><span style="color:#75af00">publicField</span>  <span style="color:#f92672">=</span> <span style="color:#111">...;</span>
+    <span style="color:#75af00">that</span><span style="color:#111">.</span><span style="color:#75af00">publicMethod</span> <span style="color:#f92672">=</span> <span style="color:#111">...;</span>
+  <span style="color:#111">}</span>
+
+  <span style="color:#75715e">// other public data
+</span><span style="color:#75715e"></span>  <span style="color:#75af00">that</span><span style="color:#111">.</span><span style="color:#75af00">anotherPublicField</span> <span style="color:#f92672">=</span> <span style="color:#111">...;</span>
+<span style="color:#111">}</span>
+</code></pre></div><h2 id="the-module-pattern">The module pattern</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">Module</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">private1</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;foo&#39;</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">private2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+
+  <span style="color:#00a8c8">function</span> <span style="color:#75af00">privateMethod</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>  <span style="color:#111">}</span>
+
+  <span style="color:#00a8c8">return</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">publicProperty</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;&#39;</span><span style="color:#111">,</span>
+    <span style="color:#75af00">publicMethod</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">args</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#75715e">// do something
+</span><span style="color:#75715e"></span>    <span style="color:#111">},</span>
+    <span style="color:#75af00">privilegedMethod</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">args</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#75715e">// do something with private data
+</span><span style="color:#75715e"></span>    <span style="color:#111">}</span>
+  <span style="color:#111">};</span>
+<span style="color:#111">})();</span>
+</code></pre></div><h2 id="alternatives">Alternatives</h2>
+<p>For data that is not secret but simply should not be relied on when using an API,
+it can be enough to follow the convention to start names of private properties
+with an underscore, e.g. <code>_counter</code>. This way, they&rsquo;re accessible for testing
+and inspection, while others know that they&rsquo;re not meant as public interface.</p>
+<h1 id="objects">Objects</h1>
+<p>Objects are roughly maps from strings to values. A key-value pair is called a <em>property</em>, and <em>methods</em> are properties whose values are functions.</p>
+<p>Objects are created by constructors (e.g. the pre-defined constructors <code>Object</code>, <code>Array,</code> etc.) or by means of special literals:</p>
+<ul>
+<li>Object literals: <code>{}</code></li>
+<li>Array literals: <code>[]</code></li>
+<li>Regular expression literals: <code>//</code></li>
+</ul>
+<p>Property names can be any valid string, property values can be any valid expression.</p>
+<p>Properties can be accessed in two way:</p>
+<ul>
+<li><em>dot notation</em>: <code>object.property</code>, upon which the string <code>&quot;property&quot;</code> will be looked up among the property names of the object.</li>
+<li><code>object[key]</code>, where <code>key</code> can be any expression, which will be evaluated, with the return value being coerced into a String. If that string does not exist among the keys, it returns <code>undefined</code>.</li>
+</ul>
+<p>To delete a property, use <code>delete object.property;</code>.</p>
+<p>Object properties can capture <em>state</em> as well as <em>behaviour</em> (in object <em>methods</em>, i.e. properties that happen to have a function as value).
+Objects thus organize code by putting related data and functions together.</p>
+<p>Keep in mind that <code>{</code> at the beginning of a line is always interpreted as a block statement, not as an object. For example:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">{</span> <span style="color:#75af00">foo</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;bar&#39;</span> <span style="color:#111">}[</span><span style="color:#d88200">&#39;foo&#39;</span><span style="color:#111">];</span> <span style="color:#75715e">// ==&gt; [&#39;foo&#39;]
+</span><span style="color:#75715e"></span><span style="color:#111">{}</span> <span style="color:#f92672">+</span> <span style="color:#111">{};</span>               <span style="color:#75715e">// ==&gt; +{}
+</span><span style="color:#75715e"></span>                       <span style="color:#75715e">// ==&gt; NaN
+</span></code></pre></div><p><code>Object.freeze(obj)</code> prevents all properties of <code>obj</code> to be re-assigned. Note that the references of those properties are frozen; their values can, however, still be mutated. Frozen objects cannot be unfrozen.</p>
+<h2 id="global-object">Global object</h2>
+<p>When running, JavaScript creates a global object, which serves as implicit execution context.</p>
+<ul>
+<li>In the browser this is <code>window</code> (standardized in the browser&rsquo;s DOM, not in ECMAScript).</li>
+<li>In Node it is <code>global</code>.</li>
+</ul>
+<p>In the browser, declared variables and functions are added as properties to the global object.
+They carry a <em>Don&rsquo;t Delete</em> flag, so they cannot be deleted.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Bobbo&#39;</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">function</span> <span style="color:#75af00">say</span><span style="color:#111">()</span> <span style="color:#111">{}</span>
+
+<span style="color:#00a8c8">this</span> <span style="color:#f92672">===</span> <span style="color:#111">window</span><span style="color:#111">;</span>    <span style="color:#75715e">// =&gt; true
+</span><span style="color:#75715e"></span>
+<span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">name</span><span style="color:#111">;</span>        <span style="color:#75715e">// =&gt; &#39;Bobbo&#39;
+</span><span style="color:#75715e"></span><span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">say</span><span style="color:#111">;</span>         <span style="color:#75715e">// =&gt; function say() {}
+</span><span style="color:#75715e"></span>
+<span style="color:#00a8c8">delete</span> <span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">name</span><span style="color:#111">;</span> <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">delete</span> <span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">say</span><span style="color:#111">;</span>  <span style="color:#75715e">// false
+</span></code></pre></div><p>Undeclared variables are also added to the global object but can be deleted:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+
+<span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>           <span style="color:#75715e">// =&gt; 1
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">delete</span> <span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>    <span style="color:#75715e">// true
+</span></code></pre></div><p>Node is a modular environment, therefore the execution context in the Node console is different.
+Declared variables are local variables within the module&rsquo;s scope.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Bobbo&#39;</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">function</span> <span style="color:#75af00">say</span><span style="color:#111">()</span> <span style="color:#111">{}</span>
+
+<span style="color:#00a8c8">this</span> <span style="color:#f92672">===</span> <span style="color:#75af00">module</span><span style="color:#111">.</span><span style="color:#75af00">exports</span><span style="color:#111">;</span> <span style="color:#75715e">// =&gt; true
+</span><span style="color:#75715e"></span>
+<span style="color:#75af00">module</span><span style="color:#111">.</span><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">name</span><span style="color:#111">;</span>     <span style="color:#75715e">// =&gt; undefined
+</span><span style="color:#75715e"></span><span style="color:#75af00">module</span><span style="color:#111">.</span><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">say</span><span style="color:#111">;</span>      <span style="color:#75715e">// =&gt; undefined
+</span><span style="color:#75715e"></span>
+<span style="color:#75af00">global</span><span style="color:#111">.</span><span style="color:#75af00">name</span><span style="color:#111">;</span>             <span style="color:#75715e">// =&gt; undefined
+</span><span style="color:#75715e"></span><span style="color:#75af00">global</span><span style="color:#111">.</span><span style="color:#75af00">say</span><span style="color:#111">;</span>              <span style="color:#75715e">// =&gt; undefined
+</span></code></pre></div><p>Undeclared variables are added to the global object:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>                   <span style="color:#75715e">// added to global
+</span><span style="color:#75715e"></span>
+<span style="color:#75af00">global</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>                <span style="color:#75715e">// =&gt; 1
+</span><span style="color:#75715e"></span><span style="color:#75af00">module</span><span style="color:#111">.</span><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">;</span>        <span style="color:#75715e">// =&gt; undefined
+</span></code></pre></div><h1 id="prototypes">Prototypes</h1>
+<p>There are no classes; objects inherit directly from other objects. More specifically: Every object has an internal <a href="http://2ality.com/2012/10/javascript-properties.html">property</a> <code>[[Prototype]]</code> that points to another object, its <em>prototype</em>. It can be accessed by <code>__proto__</code> or (for browser compatibility reasons much preferred) <code>Object.getPrototypeOf(obj)</code> and checked by <code>pobj.isPrototypOf(obj)</code>. For functions this is by default <code>Function.prototype</code>, for arrays it&rsquo;s <code>Array.prototype</code>, etc.</p>
+<p>Note that <code>foo.isPrototypeOf(bar)</code> is transitive, i.e. checks whether <code>foo</code> is anywhere in the prototype chain of <code>bar</code>, while <code>Object.getPrototypeOf(bar)</code> returns the object that is the value of <code>bar</code>&rsquo;s internal <code>[[Prototype]]</code>' property, i.e. it&rsquo;s immediate prototype.</p>
+<p>The <strong>prototype chain</strong> of an object is a sequence of objects starting with the object referenced by the object&rsquo;s internal <code>[[Prototype]]</code> property, followed by the reference of that object&rsquo;s <code>[[Prototype]]</code> property, and so on, until the referenced object is <code>Object.prototype</code>, which is each object&rsquo;s prototype and does not have a prototype itself. <code>Object.prototype</code> implements methods like <code>toString</code>, <code>valueOf</code>, <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, etc.</p>
+<p>Behaviour is shared between objects by <strong>delegation</strong>: When trying to access a property of an object, JavaScript first checks the object itself, and if it does not find a property of that name, walks through the prototype chain until it finds it or runs out of prototypes. An object thus delegates each property that is does not specify itself to the first object on its prototype chain that does specify it. At the same time it can override prototype behaviour by specifying the property as its own.</p>
+<p>In order to check whether a property exists on the object as opposed to one of its prototypes, use <code>obj.hasOwnProperty('key')</code> or <code>Object.getOwnPropertyNames(obj)</code>.</p>
+<h2 id="constructor-functions">Constructor functions</h2>
+<p>Every function in addition has a <code>prototype</code> property that points to an object that serves as prototype for all objects created by that function when invoked as a constructor (and is the object where all shared behaviour of those created objects is stored). That prototype has a <code>constructor</code> property that points back to the function. This <code>constructor</code> property is also used by the <code>instanceof</code> operator to test whether a value has been created by a particular constructor function (checking whether this constructors <code>prototype</code> is in the prototype chain of the object).</p>
+<h2 id="example">Example</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">Dolphin</span><span style="color:#111">(</span><span style="color:#75af00">name</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">name</span> <span style="color:#f92672">=</span> <span style="color:#75af00">name</span><span style="color:#111">;</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">const</span> <span style="color:#75af00">flipper</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">Dolphin</span><span style="color:#111">(</span><span style="color:#d88200">&#39;flipper&#39;</span><span style="color:#111">);</span>
+</code></pre></div><p><img src="/images/docs/proto1.png" alt="Prototype hierarchy with Dolphin"></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">Animal</span><span style="color:#111">()</span> <span style="color:#111">{}</span>
+
+<span style="color:#75af00">Dolphin</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span> <span style="color:#f92672">=</span> <span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">create</span><span style="color:#111">(</span><span style="color:#75af00">Animal</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">);</span>
+<span style="color:#75af00">Dolphin</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">constructor</span> <span style="color:#f92672">=</span> <span style="color:#75af00">Dolphin</span><span style="color:#111">;</span> <span style="color:#75715e">// otherwise `flipper instanceof Animal` won&#39;t work
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Never do: Dolphin.prototype = Animal.prototype;
+</span><span style="color:#75715e">// Because then they&#39;re the same object instead of being in a hierarchy,
+</span><span style="color:#75715e">// so all methods added to Dolphin will end up on Animal as well (and thus
+</span><span style="color:#75715e">// also on all objects that inherit from Animal).
+</span></code></pre></div><p><img src="/images/docs/proto2.png" alt="Prototype hierarchy with Dolphin and Animal"></p>
+<h1 id="object-creation">Object creation</h1>
+<p>Since there are no classes, objects can be created directly. If you need only one object, the most straightforward way is by means of an object literal, for example:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">obj</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">property</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;value&#39;</span><span style="color:#111">,</span>
+  <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">true</span><span style="color:#111">;</span>
+  <span style="color:#111">}</span>
+<span style="color:#111">};</span>
+</code></pre></div><p>If you want it to hold private data, you can use an IIFE. For example:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">counter</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+
+  <span style="color:#00a8c8">return</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">get</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#00a8c8">return</span> <span style="color:#75af00">i</span><span style="color:#111">;</span>
+    <span style="color:#111">},</span>
+    <span style="color:#75af00">set</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">value</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+      <span style="color:#75af00">i</span> <span style="color:#f92672">=</span> <span style="color:#75af00">value</span><span style="color:#111">;</span>
+    <span style="color:#111">},</span>
+    <span style="color:#75af00">increment</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#75af00">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+      <span style="color:#00a8c8">return</span> <span style="color:#75af00">i</span><span style="color:#111">;</span>
+    <span style="color:#111">},</span>
+  <span style="color:#111">}</span>
+<span style="color:#111">}());</span>
+</code></pre></div><p>If you need more than one object of the same kind, specify a way to create those objects, such that they can share behaviour.</p>
+<h2 id="factory-pattern">Factory pattern</h2>
+<p>A <em>factory function</em> instantiates and returns a new object, thus allowing for the creation of objects based on a pre-defined template.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">makePoint</span><span style="color:#111">(</span><span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">y</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// var private = &#39;private data here&#39;;
+</span><span style="color:#75715e"></span>
+  <span style="color:#00a8c8">return</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">x</span><span style="color:#f92672">:</span> <span style="color:#75af00">x</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span>
+    <span style="color:#75af00">y</span><span style="color:#f92672">:</span> <span style="color:#75af00">y</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span>
+    <span style="color:#75af00">distanceFromOrigin</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+      <span style="color:#00a8c8">return</span> <span style="color:#111">Math</span><span style="color:#111">.</span><span style="color:#75af00">sqrt</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span> <span style="color:#f92672">+</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+  <span style="color:#111">};</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">point1</span> <span style="color:#f92672">=</span> <span style="color:#75af00">makePoint</span><span style="color:#111">();</span>
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">point2</span> <span style="color:#f92672">=</span> <span style="color:#75af00">makePoint</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+</code></pre></div><p>Disadvantages:</p>
+<ul>
+<li>Methods are duplicated on each created object.</li>
+<li>New objects are created as <code>Object</code>s, and their origin or specific type is unknown unless that information is explicitly added to the object upon creation.</li>
+</ul>
+<h2 id="pseudo-classical-constructor-pattern">Pseudo-classical constructor pattern</h2>
+<p>A <em>constructor function</em> is supposed to be invoked with the <code>new</code> operator, which instantiates a new object behind the scenes and provides it to the constructor function as <code>this</code>.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">Point</span><span style="color:#111">(</span><span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">y</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// Scope safety
+</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span> <span style="color:#00a8c8">instanceof</span> <span style="color:#75af00">Point</span><span style="color:#111">))</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">Point</span><span style="color:#111">(</span><span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">y</span><span style="color:#111">);</span>
+  <span style="color:#111">}</span>
+
+  <span style="color:#75715e">// State -&gt; each object created from this constructor
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// will have those properties as its own properties
+</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span> <span style="color:#f92672">=</span> <span style="color:#75af00">x</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span> <span style="color:#f92672">=</span> <span style="color:#75af00">y</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+<span style="color:#111">}</span>
+
+<span style="color:#75715e">// Shared behaviour -&gt; only the prototype has the property,
+</span><span style="color:#75715e">// all objects created from it delegate method calls to it
+</span><span style="color:#75715e"></span><span style="color:#75af00">Point</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">distanceFromOrigin</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#111">Math</span><span style="color:#111">.</span><span style="color:#75af00">sqrt</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span> <span style="color:#f92672">+</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">);</span>
+<span style="color:#111">};</span>
+
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">point1</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">Point</span><span style="color:#111">();</span>     <span style="color:#75715e">// or: Point()
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">var</span> <span style="color:#75af00">point2</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">Point</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span> <span style="color:#75715e">// or: Point(1, 1)
+</span></code></pre></div><p>All properties set in the constructor function will be own properties of the created object, all properties set on the prototype will be delegated.</p>
+<blockquote>
+<p>The constructor is responsible for setting up instance-specific data, the prototype contains shared data (i.e., the methods).
+&ndash; <a href="http://2ality.com/2012/01/js-inheritance-by-example.html">2ality</a></p>
+</blockquote>
+<p>If the created objects don&rsquo;t need a unique state at the beginning, the created object can be empty initially and delegate everything, for example:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">MyObject</span><span style="color:#111">()</span> <span style="color:#111">{}</span>
+
+<span style="color:#75af00">myObject</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">p1</span> <span style="color:#f92672">=</span> <span style="color:#111">...</span>
+<span style="color:#75af00">myObject</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">p2</span> <span style="color:#f92672">=</span> <span style="color:#111">...</span>
+</code></pre></div><p>When reassigning the <code>prototype</code> to a new object, make sure to set the otherwise lost <code>constructor</code> property.
+For example:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">Point</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span>
+  <span style="color:#75af00">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span>
+<span style="color:#111">};</span>
+
+<span style="color:#75af00">Point</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">.</span><span style="color:#75af00">constructor</span> <span style="color:#f92672">=</span> <span style="color:#75af00">Point</span><span style="color:#111">;</span>
+</code></pre></div><h2 id="object-linking-to-other-objects-oloo-pattern">Object linking to other objects (OLOO) pattern</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75715e">// Create prototype object
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">var</span> <span style="color:#75af00">Point</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span>
+  <span style="color:#75af00">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span>
+
+  <span style="color:#75af00">init</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">y</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span> <span style="color:#f92672">=</span> <span style="color:#75af00">x</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span> <span style="color:#f92672">=</span> <span style="color:#75af00">y</span><span style="color:#111">;</span>
+
+    <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">this</span><span style="color:#111">;</span>
+  <span style="color:#111">},</span>
+
+  <span style="color:#75af00">distanceFromOrigin</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">function</span> <span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">Math</span><span style="color:#111">.</span><span style="color:#75af00">sqrt</span><span style="color:#111">(</span><span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">x</span> <span style="color:#f92672">+</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#75af00">y</span><span style="color:#111">);</span>
+  <span style="color:#111">},</span>
+<span style="color:#111">};</span>
+
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">point1</span> <span style="color:#f92672">=</span> <span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">create</span><span style="color:#111">(</span><span style="color:#75af00">Point</span><span style="color:#111">);</span>
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">point2</span> <span style="color:#f92672">=</span> <span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">create</span><span style="color:#111">(</span><span style="color:#75af00">Point</span><span style="color:#111">).</span><span style="color:#75af00">init</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+</code></pre></div><p>Note that <code>instanceof</code> does not work here, because it expects a <em>constructor</em> as argument. Instead, use <code>Point.isPrototypeOf(point1)</code>.</p>
+<h1 id="behind-the-curtains">Behind the curtains</h1>
+<h3 id="new"><code>new</code></h3>
+<ul>
+<li>A new object is created using the constructor function.</li>
+<li>The constructor function is executed with <code>this</code> set to the new object.</li>
+<li>If the constructor function has no explicit return, the new object is returned.</li>
+</ul>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">newOperator</span><span style="color:#111">(</span><span style="color:#75af00">Constructor</span><span style="color:#111">,</span> <span style="color:#75af00">args</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">object</span> <span style="color:#f92672">=</span> <span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">create</span><span style="color:#111">(</span><span style="color:#75af00">Constructor</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span><span style="color:#111">);</span>
+  <span style="color:#00a8c8">var</span> <span style="color:#75af00">result</span> <span style="color:#f92672">=</span> <span style="color:#75af00">Constructor</span><span style="color:#111">.</span><span style="color:#75af00">apply</span><span style="color:#111">(</span><span style="color:#75af00">object</span><span style="color:#111">,</span> <span style="color:#75af00">args</span><span style="color:#111">);</span>
+
+  <span style="color:#00a8c8">return</span> <span style="color:#75af00">result</span> <span style="color:#f92672">===</span> <span style="color:#00a8c8">undefined</span> <span style="color:#f92672">?</span> <span style="color:#75af00">object</span> <span style="color:#f92672">:</span> <span style="color:#75af00">result</span><span style="color:#111">;</span>
+<span style="color:#111">}</span>
+</code></pre></div><h3 id="objectcreate"><code>Object.create</code></h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">create</span><span style="color:#111">(</span><span style="color:#75af00">object</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">function</span> <span style="color:#75af00">F</span><span style="color:#111">()</span> <span style="color:#111">{};</span>
+  <span style="color:#75af00">F</span><span style="color:#111">.</span><span style="color:#75af00">prototype</span> <span style="color:#f92672">=</span> <span style="color:#75af00">object</span><span style="color:#111">;</span>
+
+  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">F</span><span style="color:#111">();</span>
+<span style="color:#111">}</span>
+</code></pre></div><h1 id="common-patterns">Common patterns</h1>
+<h3 id="boolean-checks">Boolean checks</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75715e">// Does an array contain an element?
+</span><span style="color:#75715e"></span><span style="color:#75af00">array</span><span style="color:#111">.</span><span style="color:#75af00">indexOf</span><span style="color:#111">(</span><span style="color:#75af00">element</span><span style="color:#111">)</span> <span style="color:#f92672">!==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#75715e">// ES5
+</span><span style="color:#75715e"></span><span style="color:#75af00">array</span><span style="color:#111">.</span><span style="color:#75af00">includes</span><span style="color:#111">(</span><span style="color:#75af00">element</span><span style="color:#111">);</span>       <span style="color:#75715e">// ES6
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Does an object contain a key?
+</span><span style="color:#75715e"></span><span style="color:#75af00">object</span><span style="color:#111">.</span><span style="color:#75af00">hasOwnProperty</span><span style="color:#111">(</span><span style="color:#d88200">&#39;key&#39;</span><span style="color:#111">);</span>
+
+<span style="color:#75715e">// Is a value numeric?
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">function</span> <span style="color:#75af00">isNumeric</span><span style="color:#111">(</span><span style="color:#75af00">value</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">typeof</span><span style="color:#111">(</span><span style="color:#75af00">value</span><span style="color:#111">)</span> <span style="color:#f92672">===</span> <span style="color:#d88200">&#39;number&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#111">isNaN</span><span style="color:#111">(</span><span style="color:#75af00">value</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
+</code></pre></div><h3 id="iterating-over-an-object">Iterating over an object</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">keys</span><span style="color:#111">(</span><span style="color:#75af00">object</span><span style="color:#111">).</span><span style="color:#75af00">forEach</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">key</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#111">});</span>
+
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">values</span> <span style="color:#f92672">=</span> <span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">keys</span><span style="color:#111">(</span><span style="color:#75af00">object</span><span style="color:#111">).</span><span style="color:#75af00">map</span><span style="color:#111">(</span><span style="color:#75af00">key</span> <span style="color:#111">=&gt;</span> <span style="color:#75af00">object</span><span style="color:#111">[</span><span style="color:#75af00">key</span><span style="color:#111">]);</span>
+<span style="color:#75715e">// ES2017: Object.values(object)
+</span></code></pre></div><h3 id="shallow-copying-and-merging-of-objects">Shallow copying and merging of objects</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">object1</span> <span style="color:#f92672">=</span> <span style="color:#111">...</span>
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">object2</span> <span style="color:#f92672">=</span> <span style="color:#111">...</span>
+
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">copy1</span>  <span style="color:#f92672">=</span> <span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">assign</span><span style="color:#111">({},</span> <span style="color:#75af00">object1</span><span style="color:#111">);</span>
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">merged</span> <span style="color:#f92672">=</span> <span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">assign</span><span style="color:#111">(</span><span style="color:#75af00">copy1</span><span style="color:#111">,</span> <span style="color:#75af00">object2</span><span style="color:#111">);</span>
+</code></pre></div><p><code>Object.assign(target, ...sources)</code> copies the values of all enumerable own properties of the source objects
+to the target object and returns <code>target</code>.</p>
+<h3 id="sorting-numbers">Sorting numbers</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">sortAscending</span><span style="color:#111">(</span><span style="color:#75af00">array</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#75af00">array</span><span style="color:#111">.</span><span style="color:#75af00">slice</span><span style="color:#111">().</span><span style="color:#75af00">sort</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">y</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#00a8c8">return</span> <span style="color:#75af00">x</span> <span style="color:#f92672">-</span> <span style="color:#75af00">y</span> <span style="color:#111">});</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">function</span> <span style="color:#75af00">sortDescending</span><span style="color:#111">(</span><span style="color:#75af00">array</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#75af00">array</span><span style="color:#111">.</span><span style="color:#75af00">slice</span><span style="color:#111">().</span><span style="color:#75af00">sort</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">y</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#00a8c8">return</span> <span style="color:#75af00">y</span> <span style="color:#f92672">-</span> <span style="color:#75af00">x</span> <span style="color:#111">});</span>
+<span style="color:#111">}</span>
+</code></pre></div><h3 id="collection-pipes">Collection pipes</h3>
+<p>Counting occurrences:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">array</span><span style="color:#111">.</span><span style="color:#75af00">reduce</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">counts</span><span style="color:#111">,</span> <span style="color:#75af00">element</span><span style="color:#111">))</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">counts</span><span style="color:#111">[</span><span style="color:#75af00">element</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#75af00">counts</span><span style="color:#111">[</span><span style="color:#75af00">element</span><span style="color:#111">]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#75af00">counts</span><span style="color:#111">;</span>
+<span style="color:#111">},</span> <span style="color:#111">{});</span>
+</code></pre></div><p>Finding the minimum:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">array</span><span style="color:#111">.</span><span style="color:#75af00">reduce</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">currentMin</span><span style="color:#111">,</span> <span style="color:#75af00">currentElement</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">currentElement</span> <span style="color:#f92672">&lt;</span> <span style="color:#75af00">currentMin</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#75af00">currentElement</span><span style="color:#111">;</span>
+  <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#75af00">currentMin</span><span style="color:#111">;</span>
+  <span style="color:#111">}</span>
+<span style="color:#111">});</span>
+</code></pre></div><h3 id="current-date-and-time">Current date and time</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">today</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">Date</span><span style="color:#111">();</span> <span style="color:#75715e">// 2018-02-26T08:29:07.229Z, type: object
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">var</span> <span style="color:#75af00">today</span> <span style="color:#f92672">=</span> <span style="color:#111">Date</span><span style="color:#111">();</span>     <span style="color:#75715e">// &#34;Mon Feb 26 2018 09:29:35 GMT+0100 (CET)&#34;, type: string
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">var</span> <span style="color:#75af00">now</span>   <span style="color:#f92672">=</span> <span style="color:#111">Date</span><span style="color:#111">.</span><span style="color:#75af00">now</span><span style="color:#111">();</span> <span style="color:#75715e">// 1519633775731, type: number
+</span><span style="color:#75715e"></span>
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">year</span>  <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">Date</span><span style="color:#111">().</span><span style="color:#75af00">getFullYear</span><span style="color:#111">();</span>
+</code></pre></div><h3 id="random-integer-within-range">Random integer within range</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75715e">// Returns a random integer between min and max (inclusive)
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">function</span> <span style="color:#75af00">random</span><span style="color:#111">(</span><span style="color:#75af00">min</span><span style="color:#111">,</span> <span style="color:#75af00">max</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#75af00">min</span> <span style="color:#f92672">+</span> <span style="color:#111">Math</span><span style="color:#111">.</span><span style="color:#75af00">floor</span><span style="color:#111">(</span><span style="color:#111">Math</span><span style="color:#111">.</span><span style="color:#75af00">abs</span><span style="color:#111">(</span><span style="color:#75af00">max</span> <span style="color:#f92672">-</span> <span style="color:#75af00">min</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#f92672">*</span> <span style="color:#111">Math</span><span style="color:#111">.</span><span style="color:#75af00">random</span><span style="color:#111">());</span>
+<span style="color:#111">}</span>
+</code></pre></div><h3 id="enum-like-objects">Enum-like objects</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">const</span> <span style="color:#75af00">Weekday</span> <span style="color:#f92672">=</span> <span style="color:#111">Object</span><span style="color:#111">.</span><span style="color:#75af00">freeze</span><span style="color:#111">({</span> <span style="color:#75af00">Monday</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#75af00">Tuesday</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#111">...</span> <span style="color:#111">});</span>
+</code></pre></div><h1 id="promises">Promises</h1>
+<p><em>Promises</em> are objects that have a <code>then</code> method which takes two (optional) function arguments:</p>
+<ul>
+<li>a handler that is called when the promise is fulfilled, and</li>
+<li>a handler that is called when it is rejected.</li>
+</ul>
+<p>The return value of <code>then</code> is another promise that is fulfilled when the called handler finishes, and fails when the called handler throws an error.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">promise</span><span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">onFulfilled</span><span style="color:#111">,</span> <span style="color:#75af00">onRejected</span><span style="color:#111">);</span>
+</code></pre></div><p>Syntactic sugar for <code>then(null, onRejected)</code>:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">promise</span><span style="color:#111">.</span><span style="color:#75af00">cath</span><span style="color:#111">(</span><span style="color:#75af00">onRejected</span><span style="color:#111">);</span>
+</code></pre></div><p>A promise first goes into a <em>pending</em> state, and then into a <em>settled</em> state, once it resolved to being either <em>fulfilled</em> (with a return value) or <em>rejected</em> (with a reason).</p>
+<p>The handler functions need to either return another promise, or return a value if it succeeds or otherwise throw an error.</p>
+<h2 id="example-get-the-current-position-of-the-client">Example: get the current position of the client</h2>
+<p>Without promises:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#75af00">navigator</span><span style="color:#111">.</span><span style="color:#75af00">geolocation</span><span style="color:#111">.</span><span style="color:#75af00">getCurrentPosition</span><span style="color:#111">(</span>
+  <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">position</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Latitude:  &#39;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">position</span><span style="color:#111">.</span><span style="color:#75af00">coords</span><span style="color:#111">.</span><span style="color:#75af00">latitude</span><span style="color:#111">);</span>
+    <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Longitude: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">position</span><span style="color:#111">.</span><span style="color:#75af00">coords</span><span style="color:#111">.</span><span style="color:#75af00">longitude</span><span style="color:#111">);</span>
+  <span style="color:#111">},</span>
+  <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">.</span><span style="color:#75af00">message</span><span style="color:#111">);</span>
+  <span style="color:#111">}</span>
+<span style="color:#111">);</span>
+</code></pre></div><p>With promises:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">function</span> <span style="color:#75af00">promiseToGetCoordinates</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">new</span> <span style="color:#111">Promise</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">fulfill</span><span style="color:#111">,</span> <span style="color:#75af00">reject</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">navigator</span><span style="color:#111">.</span><span style="color:#75af00">geolocation</span><span style="color:#111">.</span><span style="color:#75af00">getCurrentPosition</span><span style="color:#111">(</span>
+      <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">position</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+	      <span style="color:#75af00">fulfill</span><span style="color:#111">(</span><span style="color:#75af00">position</span><span style="color:#111">.</span><span style="color:#75af00">coords</span><span style="color:#111">);</span>
+      <span style="color:#111">},</span>
+      <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+	      <span style="color:#75af00">reject</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">);</span>
+      <span style="color:#111">}</span>
+    <span style="color:#111">);</span>
+  <span style="color:#111">});</span>
+<span style="color:#111">}</span>
+
+<span style="color:#75af00">promiseToGetCoordinates</span><span style="color:#111">()</span>
+<span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span>
+  <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">coordinates</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#d88200">&#39;(&#39;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">coordinates</span><span style="color:#111">.</span><span style="color:#75af00">latitude</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;,&#39;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">coordinates</span><span style="color:#111">.</span><span style="color:#75af00">longitude</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;)&#39;</span><span style="color:#111">);</span>
+  <span style="color:#111">},</span>
+  <span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">.</span><span style="color:#75af00">message</span><span style="color:#111">);</span>
+  <span style="color:#111">}</span>
+<span style="color:#111">);</span>
+</code></pre></div><h2 id="creating-promises">Creating promises</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">new</span> <span style="color:#111">Promise</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#75af00">someCalculation</span><span style="color:#111">(</span><span style="color:#75af00">fulfill</span><span style="color:#111">,</span> <span style="color:#75af00">reject</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">result</span> <span style="color:#f92672">=</span> <span style="color:#75715e">// some calculatation
+</span><span style="color:#75715e"></span>
+  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">successful</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">fulfill</span><span style="color:#111">(</span><span style="color:#75af00">result</span><span style="color:#111">);</span>
+  <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">reject</span><span style="color:#111">(</span><span style="color:#00a8c8">new</span> <span style="color:#111">Error</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Oops.&#39;</span><span style="color:#111">));</span>
+  <span style="color:#111">}</span>
+<span style="color:#111">});</span>
+</code></pre></div><h2 id="chaining-promises">Chaining promises</h2>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#00a8c8">var</span> <span style="color:#75af00">data</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">FormData</span><span style="color:#111">();</span>
+<span style="color:#75af00">data</span><span style="color:#111">.</span><span style="color:#75af00">append</span><span style="color:#111">(</span><span style="color:#d88200">&#39;key&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;value&#39;</span><span style="color:#111">);</span>
+
+<span style="color:#75af00">fetch</span><span style="color:#111">(</span><span style="color:#d88200">&#39;https://url/update&#39;</span><span style="color:#111">,</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">method</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;POST&#39;</span><span style="color:#111">,</span>
+  <span style="color:#75af00">body</span><span style="color:#f92672">:</span> <span style="color:#75af00">data</span>
+<span style="color:#111">})</span>
+<span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span> <span style="color:#111">(</span><span style="color:#75af00">response</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">response</span><span style="color:#111">.</span><span style="color:#75af00">ok</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#75af00">response</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">throw</span> <span style="color:#00a8c8">new</span> <span style="color:#111">Error</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Fetch failed.&#39;</span><span style="color:#111">);</span>
+<span style="color:#111">})</span>
+<span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">response</span> <span style="color:#111">=&gt;</span> <span style="color:#75af00">response</span><span style="color:#111">.</span><span style="color:#75af00">json</span><span style="color:#111">)</span>
+<span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">jsonNode</span> <span style="color:#111">=&gt;</span> <span style="color:#75af00">parse</span><span style="color:#111">(</span><span style="color:#75af00">jsonNode</span><span style="color:#111">))</span>
+<span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">json</span>     <span style="color:#111">=&gt;</span> <span style="color:#75af00">process</span><span style="color:#111">(</span><span style="color:#75af00">json</span><span style="color:#111">))</span>
+<span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">result</span>   <span style="color:#111">=&gt;</span> <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#75af00">result</span><span style="color:#111">)</span> <span style="color:#f92672">||</span> <span style="color:#75af00">result</span><span style="color:#111">)</span> <span style="color:#75715e">// logs and returns result
+</span><span style="color:#75715e"></span><span style="color:#111">.</span><span style="color:#00a8c8">catch</span><span style="color:#111">(</span><span style="color:#75af00">error</span>   <span style="color:#111">=&gt;</span> <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">error</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">));</span>
+</code></pre></div><h2 id="lists-of-promises">Lists of promises</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">Promise</span><span style="color:#111">.</span><span style="color:#75af00">all</span><span style="color:#111">([</span>
+  <span style="color:#75af00">promising1</span><span style="color:#111">,</span>
+  <span style="color:#75af00">promising2</span><span style="color:#111">,</span>
+  <span style="color:#75af00">promising3</span>
+<span style="color:#111">])</span>
+<span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">allFulfilled</span><span style="color:#111">,</span> <span style="color:#75af00">firstRejected</span><span style="color:#111">);</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#111">Promise</span><span style="color:#111">.</span><span style="color:#75af00">race</span><span style="color:#111">([</span>
+  <span style="color:#75af00">promising1</span><span style="color:#111">,</span>
+  <span style="color:#75af00">promising2</span><span style="color:#111">,</span>
+  <span style="color:#75af00">promising3</span>
+<span style="color:#111">])</span>
+<span style="color:#111">.</span><span style="color:#75af00">then</span><span style="color:#111">(</span><span style="color:#75af00">firstFulfilled</span><span style="color:#111">,</span> <span style="color:#75af00">firstRejected</span><span style="color:#111">);</span>
+</code></pre></div><h1 id="references">References</h1>
+<ul>
+<li><a href="http://speakingjs.com/es5/index.html">Axel Rauschmayer: Speaking JavaScript.</a></li>
+<li><a href="https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839">Alexey Samoshkin: JavaScript type coercion explained.</a></li>
+<li><a href="https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">Nolan Lawson: We have a problem with promises.</a></li>
+</ul>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2021 (c) Christina Unger</span></li>
+      <li>
+        Rendered with <a href="https://gohugo.io/">Hugo</a>. Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Physics on Escape Velocity</title>
+    <link>http://cunger.github.io/notes/physics/</link>
+    <description>Recent content in Physics on Escape Velocity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 16 Nov 2019 12:19:28 +0100</lastBuildDate><atom:link href="http://cunger.github.io/notes/physics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Units and constants</title>
+      <link>http://cunger.github.io/notes/physics/basics/</link>
+      <pubDate>Sat, 16 Nov 2019 12:00:51 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/basics/</guid>
+      <description>Nothing more. Nothing less.</description>
+    </item>
+    
+    <item>
+      <title>Energy</title>
+      <link>http://cunger.github.io/notes/physics/energy/</link>
+      <pubDate>Sat, 16 Nov 2019 11:38:21 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/energy/</guid>
+      <description>Kinetic and potential energy, enthalpy, mass-energy equivalence.</description>
+    </item>
+    
+    <item>
+      <title>Forces</title>
+      <link>http://cunger.github.io/notes/physics/forces/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/forces/</guid>
+      <description>The fundamental forces of physics.</description>
+    </item>
+    
+    <item>
+      <title>Transport</title>
+      <link>http://cunger.github.io/notes/physics/transport/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/transport/</guid>
+      <description>Mass and heat transport.</description>
+    </item>
+    
+    <item>
+      <title>Balances</title>
+      <link>http://cunger.github.io/notes/physics/balances/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/balances/</guid>
+      <description>Equations for mass and energy balances. Macro and micro balances.</description>
+    </item>
+    
+    <item>
+      <title>Electromagnetic radiation</title>
+      <link>http://cunger.github.io/notes/physics/electromagnetic-radiation/</link>
+      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/electromagnetic-radiation/</guid>
+      <description>Making waves.</description>
+    </item>
+    
+    <item>
+      <title>Fluid flow</title>
+      <link>http://cunger.github.io/notes/physics/fluid-flow/</link>
+      <pubDate>Sat, 16 Nov 2019 12:19:28 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/fluid-flow/</guid>
+      <description>Flow rate. Drag force.</description>
+    </item>
+    
+  </channel>
+</rss>

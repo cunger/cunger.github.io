@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software development on Escape Velocity</title>
+    <link>http://cunger.github.io/notes/dev/</link>
+    <description>Recent content in Software development on Escape Velocity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/notes/dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Numbers</title>
+      <link>http://cunger.github.io/notes/dev/numbers/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/numbers/</guid>
+      <description>And arithmetics.</description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>http://cunger.github.io/notes/dev/bash/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/bash/</guid>
+      <description>Boom. Bang.</description>
+    </item>
+    
+    <item>
+      <title>Web Basics</title>
+      <link>http://cunger.github.io/notes/dev/web/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/web/</guid>
+      <description>TCP/IP. HTTP. REST.</description>
+    </item>
+    
+    <item>
+      <title>Databases</title>
+      <link>http://cunger.github.io/notes/dev/databases/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/databases/</guid>
+      <description>SQL. PostgreSQL.</description>
+    </item>
+    
+    <item>
+      <title>Ruby</title>
+      <link>http://cunger.github.io/notes/dev/ruby/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/ruby/</guid>
+      <description>Objects. Closures. Etc.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>http://cunger.github.io/notes/dev/javascript/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/javascript/</guid>
+      <description>Functions. Prototypes. Promises. Etc.</description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>http://cunger.github.io/notes/dev/css/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/css/</guid>
+      <description>Box model, selectors, positioning.</description>
+    </item>
+    
+  </channel>
+</rss>
