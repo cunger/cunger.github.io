@@ -170,6 +170,8 @@ headingSelector: 'h1'
 <ul>
 <li>Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.</li>
 </ul>
+<h2 id="rang">Rang</h2>
+<p>Der <strong>Rang</strong> einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf&rsquo;s gleiche raus).</p>
 <h1 id="matrizenrechnung">Matrizenrechnung</h1>
 <p>Addition und Skalarmultiplikation passieren elementweise.</p>
 <p>Multiplikation</p>
@@ -242,10 +244,7 @@ headingSelector: 'h1'
 </li>
 </ul>
 <p>Analog für Spalten. Diese Umformungen ändern den Rang einer Matrix nicht.</p>
-<h1 id="rang-inverse-determinante-adjungierte">Rang, Inverse, Determinante, Adjungierte</h1>
-<h2 id="rang">Rang</h2>
-<p>Der <strong>Rang</strong> einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf&rsquo;s gleiche raus).</p>
-<h2 id="determinante">Determinante</h2>
+<h1 id="determinante">Determinante</h1>
 <p>Die <strong>Determinante</strong> ist eine eindeutige Abbildung 
 <span>
                   
@@ -256,21 +255,42 @@ headingSelector: 'h1'
 
 <span>
      
-        $$\text{det}(A) = ...$$
+        $$\text{det}(A) = \sum_{\sigma\in S_n}\text{sgn}(\sigma)a_{1\sigma(1)}\cdots a_{n\sigma(n)}$$
     
 </span>
 </p>
-<p>Für 
+<p>Für die Berechnung der Determinante ist die Leibniz-Formel aber nur bis 
 <span>
                   
-        \(A\in M_{22}(\mathbb{K})\)
+        \(n=2\)
     
 </span>
- ist das einfach:
+ praktisch handhabbar.</p>
+<h2 id="für-hahahugoshortcode-s20-hbhb-trivial">Für 
+<span>
+                  
+        \(n=1\)
+    
+</span>
+: trivial</h2>
 
 <span>
      
-        $$\text{det}(A) = a_{11} a_{22} - a_{12} a_{21}$$
+        $$\text{det}\begin{pmatrix} a \end{pmatrix} = a$$
+    
+</span>
+
+<h2 id="für-hahahugoshortcode-s22-hbhb-einfach">Für 
+<span>
+                  
+        \(n=2\)
+    
+</span>
+: einfach</h2>
+<p>
+<span>
+     
+        $$\text{det}\begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{pmatrix} = a_{11} a_{22} - a_{12} a_{21}$$
     
 </span>
 
@@ -326,6 +346,94 @@ d.h.
     
 </span>
 .</p>
+<h2 id="für-hahahugoshortcode-s32-hbhb-sarrus-regel">Für 
+<span>
+                  
+        \(n=3\)
+    
+</span>
+: Sarrus-Regel</h2>
+<p><img src="../img/sarrus.png" alt="Saruss-Regel"></p>
+<p>Man summiert:</p>
+<ul>
+<li>durchgezogene Linie: positives Produkt der Elemente</li>
+<li>gestrichelte Linie: negatives Produkt der Elemente</li>
+</ul>
+<p>Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.</p>
+<h2 id="für-hahahugoshortcode-s33-hbhb-laplace-entwicklung">Für 
+<span>
+                  
+        \(n&gt;3\)
+    
+</span>
+: Laplace-Entwicklung</h2>
+<p>Die Laplace-Entwicklung nach der i-ten Zeile ist die Summe aus folgendem Summanden für jedes Element 
+<span>
+                  
+        \(a_{ij}\)
+    
+</span>
+:
+
+<span>
+     
+        $$a_{ij}\cdot(-1)^{i&#43;j}\cdot\text{det}(A_{ij})$$
+    
+</span>
+
+Wobei 
+<span>
+                  
+        \(A_{ij}\)
+    
+</span>
+ die Matrix ist, die übrig bleibt, wenn man in 
+<span>
+                  
+        \(A\)
+    
+</span>
+ die i-te Zeile und j-te Spalte (also jeweils die Zeile und Spalte mit dem Eintrag 
+<span>
+                  
+        \(a_{ij}\)
+    
+</span>
+) entfernt.</p>
+<p>Je mehr 0en in einer Zeile stehen, desto einfacher wird die Laplace-Entwicklung, deswegen macht es manchmal Sinn, erst elementare Zeilenumformungen auf die Matrix anzuwenden (wodurch sich die Determinante höchstens im Vorzeichen ändert, siehe <em>Eigenschaften</em> unten). Die Matrix wird also um 
+<span>
+                  
+        \(n=1\)
+    
+</span>
+ kleiner. Das wiederholt man so lange, bis 
+<span>
+                  
+        \(n&lt;3\)
+    
+</span>
+.</p>
+<p>Analog funktioniert die Laplace-Entwicklung nach der j-ten Spalte.</p>
+<h2 id="spezialfälle">Spezialfälle</h2>
+<ul>
+<li>
+<p>Wenn eine Zeile oder Spalte 0 ist, ist die Determinante 0.</p>
+</li>
+<li>
+<p>Wenn eine Zeile oder Spalte doppelt vorkommt, ist die Determinante 0.</p>
+</li>
+<li>
+<p>
+<span>
+                  
+        \(\text{det}(\text{normalform}(A))\)
+    
+</span>
+ = Produkt der Diagonalelemente</p>
+<p>Die Determinante wird also genau dann 0, wenn das Produkt der Diagonalelemente der Normalform 0 ist, d.h. wenn mindestens eins der Diagonalelemente 0 ist. Die Determinanten erfasst damit, ob eine quadratische Matrix invertierbar (regulär) ist. Normalform bedeutet obere Dreiecksmatrix.</p>
+</li>
+</ul>
+<h2 id="eigenschaften">Eigenschaften</h2>
 <p>Die Determinante hat die folgenden Eigenschaften:</p>
 <ul>
 <li>
@@ -336,6 +444,33 @@ d.h.
     
 </span>
  (Identitätsmatrix)</p>
+</li>
+<li>
+
+<span>
+                  
+        \(\text{det}(A)=\text{det}(A^T)\)
+    
+</span>
+
+</li>
+<li>
+
+<span>
+                  
+        \(\text{det}(A^{-1})=(\text{det}(A))^{-1}\)
+    
+</span>
+
+</li>
+<li>
+<p>
+<span>
+                  
+        \(\text{det}(cA)=c^n\text{det}(A)\)
+    
+</span>
+ (Skalarfaktor)</p>
 </li>
 <li>
 <p>
@@ -413,19 +548,8 @@ d.h.
 </li>
 </ul>
 </li>
-<li>
-<p>
-<span>
-                  
-        \(\text{det}(\text{normalform}(A))\)
-    
-</span>
- = Produkt der Diagonalelemente</p>
-<p>Die Determinante wird also genau dann 0, wenn das Produkt der Diagonalelemente der Normalform 0 ist, d.h. wenn mindestens eins der Diagonalelemente 0 ist. Die Determinanten erfasst damit, ob eine quadratische Matrix invertierbar (regulär) ist.</p>
-</li>
 </ul>
-<h2 id="adjungierte">Adjungierte</h2>
-<h2 id="invertierbarkeit">Invertierbarkeit</h2>
+<h1 id="invertierbarkeit">Invertierbarkeit</h1>
 <p>Für eine 
 <span>
                   
@@ -549,6 +673,142 @@ d.h.
     
 </span>
  zu überführen.</p>
+<h1 id="charakteristische-polynome-von-matrizen">Charakteristische Polynome von Matrizen</h1>
+
+<span>
+     
+        $$\Chi_A=\text{det}(xI_n-A)$$
+    
+</span>
+
+<h1 id="eigenvektoren-und-eigenwerte">Eigenvektoren und Eigenwerte</h1>
+<p>Die <strong>Eigenvektoren</strong> 
+<span>
+                  
+        \(u\)
+    
+</span>
+ einer Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ bzw. eines Endomorphismus 
+<span>
+                  
+        \(f\)
+    
+</span>
+ sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige <strong>Eigenwert</strong> 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+ ist der Faktor der Stauchung oder Streckung (z.B. eine Rotationsachse im 3D).</p>
+<p>
+<span>
+     
+        $$Au = \lambda u$$
+    
+</span>
+
+bzw. 
+<span>
+     
+        $$f(u) = \lambda u$$
+    
+</span>
+</p>
+<p>D.h. 
+<span>
+                  
+        \(Au\)
+    
+</span>
+ bzw. 
+<span>
+                  
+        \(f(u)\)
+    
+</span>
+ hat die gleiche Richtung wie 
+<span>
+                  
+        \(u\)
+    
+</span>
+, nur um den Faktor 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+ gestaucht oder gestreckt.</p>
+<ul>
+<li>Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.</li>
+<li>Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.</li>
+<li>Eigenwerte sind die Nullstellen des charakteristischen Polynoms. Das sieht man wie folgt: Es gilt 
+<span>
+                  
+        \(A=\lambda I\)
+    
+</span>
+, woraus folgt, dass 
+<span>
+                  
+        \(Au=(lambda I)u\)
+    
+</span>
+, also 
+<span>
+                  
+        \(Au - (lambda I)u = 0\)
+    
+</span>
+, also 
+<span>
+                  
+        \((A-lambda I)u=0\)
+    
+</span>
+, d.h. 
+<span>
+                  
+        \(det(A-lambda I) =0\)
+    
+</span>
+.
+Eine Matrix 
+<span>
+                  
+        \(A\in M_{nn}\)
+    
+</span>
+ kann also höchtsens 
+<span>
+                  
+        \(n\)
+    
+</span>
+ Eigenwerte haben.</li>
+</ul>
+<h1 id="normalformen">Normalformen</h1>
+<p>Matrizen lassen sich nach <strong>Ähnlichkeit</strong> in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen. Technisch heißt das:</p>
+<p>Zwei Matrizen A,B sind <strong>ähnlich</strong>, wenn es eine invertierbare Matrix S gibt, so dass A=S^{-1}BS. Das bedeutet, dass A die Matrix ist, die die gleiche Transformation wie B ausdrückt, nur in einer anderen Basis (wobei S die Basiswechselmatrix ist; S ist nicht eindeutig, denn jedes Vielfache cS erfüllt die Gleichung auch).</p>
+<p>Ähnliche Matrizen haben also:</p>
+<ul>
+<li>den gleichen Rang,</li>
+<li>die gleiche Determinante,</li>
+<li>das gleiche charakteristische Polynom und Minimalpolynom,</li>
+<li>die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),</li>
+<li>die gleiche Jordansche Normalform.</li>
+</ul>
+<h2 id="diagonalisierbarkeit">Diagonalisierbarkeit</h2>
+<p>Diagonalmatrix :
+Transformation skaliert nur die Basisvektoren.</p>
+<p>Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)</p>
 <h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
 <p>Eine Matrix 
 <span>
@@ -754,7 +1014,6 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 </li>
 </ul>
 <h1 id="matrizen-als-gleichungssysteme">Matrizen als Gleichungssysteme</h1>
-<h1 id="charakteristische-polynome-von-matrizen">Charakteristische Polynome von Matrizen</h1>
 
 
     
