@@ -673,7 +673,7 @@ Wobei
     
 </span>
  zu überführen.</p>
-<h1 id="charakteristische-polynome-von-matrizen">Charakteristische Polynome von Matrizen</h1>
+<h1 id="das-charakteristische-polynom-einer-matrix">Das charakteristische Polynom einer Matrix</h1>
 
 <span>
      
@@ -706,18 +706,12 @@ Wobei
         \(\lambda\)
     
 </span>
- ist der Faktor der Stauchung oder Streckung (z.B. eine Rotationsachse im 3D).</p>
-<p>
-<span>
-     
-        $$Au = \lambda u$$
-    
-</span>
+ ist der Faktor der Stauchung oder Streckung (und entspricht dann z.B. eine Rotationsachse im 3D).
+Formal:
 
-bzw. 
 <span>
      
-        $$f(u) = \lambda u$$
+        $$Au = \lambda u \quad\text{bzw.}\quad f(u) = \lambda u$$
     
 </span>
 </p>
@@ -749,37 +743,7 @@ bzw.
 <ul>
 <li>Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.</li>
 <li>Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.</li>
-<li>Eigenwerte sind die Nullstellen des charakteristischen Polynoms. Das sieht man wie folgt: Es gilt 
-<span>
-                  
-        \(A=\lambda I\)
-    
-</span>
-, woraus folgt, dass 
-<span>
-                  
-        \(Au=(lambda I)u\)
-    
-</span>
-, also 
-<span>
-                  
-        \(Au - (lambda I)u = 0\)
-    
-</span>
-, also 
-<span>
-                  
-        \((A-lambda I)u=0\)
-    
-</span>
-, d.h. 
-<span>
-                  
-        \(det(A-lambda I) =0\)
-    
-</span>
-.
+<li>Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
 Eine Matrix 
 <span>
                   
@@ -806,8 +770,6 @@ Eine Matrix
 <li>die gleiche Jordansche Normalform.</li>
 </ul>
 <h2 id="diagonalisierbarkeit">Diagonalisierbarkeit</h2>
-<p>Diagonalmatrix :
-Transformation skaliert nur die Basisvektoren.</p>
 <p>Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)</p>
 <h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
 <p>Eine Matrix 
@@ -919,6 +881,9 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 <ul>
 <li>
 <p>Die Elementarmatrizen entsprechen Basistransformationen (Rotation, Verschieben, Stauchen oder Strecken) und dass jede Matrix als Produkt von Elementarmatrizen darstellbar ist, bedeutet dass eine Transformation als Komposition von Basistransformationen beschrieben werden kann.</p>
+</li>
+<li>
+<p>Eine Diagonalmatrix stellt einer Transformation dar, die die Basisvektoren nur skaliert.</p>
 </li>
 <li>
 <p>Die <strong>Matrizenmultiplikation</strong> 
