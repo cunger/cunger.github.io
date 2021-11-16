@@ -774,8 +774,8 @@ Eine Matrix
 </span>
  gibt, so dass 
 <span>
-                  
-        \(A=S^{-1}BS\)
+     
+        $$A=S^{-1}BS$$
     
 </span>
 . Das bedeutet, dass 
@@ -817,6 +817,33 @@ Eine Matrix
 <li>die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),</li>
 <li>die gleiche Jordansche Normalform.</li>
 </ul>
+<p>Matrizen lassen sich auch nach <strong>Kongruenz</strong> in Äquivalenzklassen (sogenannte <strong>Kongruenzklassen</strong>) einteilen:</p>
+<p>Zwei Matrizen 
+<span>
+                  
+        \(A,B\)
+    
+</span>
+ sind <strong>kongruent</strong>, wenn es eine invertierbare Matrix 
+<span>
+                  
+        \(S\)
+    
+</span>
+ gibt, so dass 
+<span>
+     
+        $$A=S^TBS$$
+    
+</span>
+.</p>
+<p>Da in der Regel 
+<span>
+                  
+        \(S^T\neq S^{-1}\)
+    
+</span>
+, sind kongruente Matrizen in der Regel nicht ähnlich.</p>
 <h2 id="diagonalisierbarkeit">Diagonalisierbarkeit</h2>
 <p>Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)</p>
 <h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
@@ -1026,6 +1053,7 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 </ul>
 </li>
 </ul>
+<p>Jede Matrix ist Darstellung eines Endomorhismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Binlinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)).</p>
 <h1 id="matrizen-als-gleichungssysteme">Matrizen als Gleichungssysteme</h1>
 
 
