@@ -21,7 +21,7 @@
 
 
   <meta property="og:title" content="Algebraische Strukturen" />
-<meta property="og:description" content="Ringe, Gruppen, Körper, Vektorräume." />
+<meta property="og:description" content="Ringe, Gruppen, Körper, Vektorräume. Und Abbildungen zwischen diesen." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/notes/math/algebra/" />
 <meta property="article:published_time" content="2021-09-20T00:00:00+00:00" />
@@ -93,7 +93,7 @@
     <div id="hero">
       <h1> Algebraische Strukturen </h1>
       <p class="hero-lead">
-         Ringe, Gruppen, Körper, Vektorräume.
+         Ringe, Gruppen, Körper, Vektorräume. Und Abbildungen zwischen diesen.
       </p>
 
     </div>
@@ -866,92 +866,133 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
 <h2 id="skalarprodukt">Skalarprodukt</h2>
 <p>Das Skalarprodukt (<em>dot product</em> oder <em>inner product</em>) bildet zwei Vektoren auf ein Skalar ab, das so etwas wie &hellip; ausdrückt.</p>
 <p>Ein Vektorraum mit einem Skalarprodukt heißt <strong>Prähilbertraum</strong>.</p>
+<h2 id="euklidische-vektorräume">Euklidische Vektorräume</h2>
+<p>Ein <strong>Euklidischer Vektorraum</strong> ist ein reeller Vektorraum mit einem Skalarprodukt.</p>
 <h1 id="strukturerhaltende-abbildungen">Strukturerhaltende Abbildungen</h1>
-<p>Homomorphismus</p>
-<p>Isomporphismus + Endomorphismus</p>
-<p><strong>Zwischen Grupppen:</strong> 
+<h2 id="lineare-abbildungen">Lineare Abbildungen</h2>
+<p>Ein <strong>Homomorphismus</strong> zwischen zwei algebraischen Strukturen 
 <span>
                   
-        \(F(x\ast y) = F(x)\ast F(y)\)
+        \(\mathbf{A}=(A,(\circ_A)_i)\)
+    
+</span>
+ und 
+<span>
+                  
+        \(\mathbf{B}=(B,(\circ_B)_i)\)
+    
+</span>
+ ist eine Abbildung 
+<span>
+                  
+        \(f:A\to B\)
+    
+</span>
+, die die algebraische Struktur erhält, d.h. dass für alle Operationen 
+<span>
+                  
+        \(\circ_A\)
+    
+</span>
+ und 
+<span>
+                  
+        \(\circ_B\)
+    
+</span>
+ gilt:
+
+<span>
+     
+        $$f(x\circ_A y)=f(x)\circ_B f(y)$$
     
 </span>
 
-und das neutrale Element der einen muss auf das neutrale Element der anderen abgebildet werden</p>
-<p><strong>Zwischen Vektorräumen:</strong></p>
-<p>A map (<em>Abbildung</em>) 
+Sowie dass die neutralen Elemente von 
 <span>
                   
-        \(F\)
+        \(\mathbf{A}\)
     
 </span>
- between vector spaces is <em>linear</em> if it respects the vector spaces' linear structure,
-i.e. if it distributes over addition and scalar multiplication:</p>
-<ul>
-<li>
+ auf die neutralen Elemente von 
 <span>
                   
-        \(F(ax) = aF(x)\)
+        \(\mathbf{B}\)
     
 </span>
-, i.e. scaling the input is the same as scaling the output</li>
-<li>
+ abgebildet werden.</p>
+<p>Ein bijektiver Homomorphismus heißt <strong>Isomorphismus</strong>.</p>
+<p>Ein Homomorphismus 
 <span>
                   
-        \(F(x&#43;y) = F(x)&#43;F(y)\)
+        \(f:A\to A\)
     
 </span>
-, i.e. adding inputs is the same as adding the outputs</li>
-</ul>
-<p>This way, linear operations allow one to divide work on complex inputs into work on simpler inputs.</p>
-<p>Examples of linear operations:</p>
-<ul>
-<li>The mapping of each derivable function 
-<span>
-                  
-        \(f(x)\)
-    
-</span>
- to its derivative 
-<span>
-                  
-        \(\frac{df}{dx}\)
-    
-</span>
- over the vector space of functions from 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- to 
-<span>
-                  
-        \(\mathbb{R}^m\)
-    
-</span>
- with addition and scalar multiplication defined the usual way.</li>
-</ul>
-<p><strong>Note:</strong> There are <a href="https://en.wikipedia.org/wiki/Linear_function">two distinct senses of <em>linear</em></a>. Polynomials of degree 
-<span>
-                  
-        \(\leq 1\)
-    
-</span>
-, i.e. functions of the form 
-<span>
-                  
-        \(f(x) = ax &#43; b\)
-    
-</span>
-, are also called linear functions, as their graph is a line. But they&rsquo;re not linear in the above sense, for example 
-<span>
-                  
-        \(f(2x)=2ax&#43;b\neq 2(ax&#43;b)=2f(x)\)
-    
-</span>
-.</p>
+, der eine algebraische Struktur auf sich selbst abbildet, heißt <strong>Endomorphismus</strong> (oder <strong>Automorphismus</strong>, wenn er bijektiv ist).</p>
 <h2 id="bilinearformen">Bilinearformen</h2>
-<p>Linearität in beiden Komponenten</p>
+<p>Eine <strong>Bilinearform</strong> verallgemeinert die Eigenschaften eines Vektorraumhomomorphismus auf zweistellige Abbildungen und bedeutet dann Linearität in beiden Komponenten:</p>
+<p>Seien 
+<span>
+                  
+        \(V,W\)
+    
+</span>
+ Vektorräume über einem Körper 
+<span>
+                  
+        \(\mathbb{K}\)
+    
+</span>
+. Dann ist eine Abbildung 
+<span>
+                  
+        \(\langle\cdot,\cdot\rangle:V\times W\to\mathbb{K}\)
+    
+</span>
+ eine Bilinearform, wenn die Abbildungen 
+<span>
+                  
+        \(\langle \cdot, w\rangle:V\to\mathbb{K}\)
+    
+</span>
+ und 
+<span>
+                  
+        \(\langle v,\cdot\rangle:W\to\mathbb{K}\)
+    
+</span>
+ beide linear sind, d.h. wenn gilt:</p>
+<ul>
+<li>
+<span>
+                  
+        \(\langle v_1 &#43; v_2, w\rangle = \langle v_1,w\rangle &#43; \langle v_2,w\rangle\)
+    
+</span>
+
+und 
+<span>
+                  
+        \(\langle \lambda v, w\rangle = \lambda\langle v,w\rangle\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\langle v,w_1 &#43; w_2\rangle = \langle v,w_1\rangle &#43; \langle v,w_2\rangle\)
+    
+</span>
+
+und 
+<span>
+                  
+        \(\langle v, \lambda w\rangle = \lambda\langle v,w\rangle\)
+    
+</span>
+</li>
+</ul>
+<p>Zum Beispiel ist das Skalarprodukt eines Vektorraums eine Bilinearform (die zusätzlich symmetrisch und positiv definit ist).</p>
 
 
     
