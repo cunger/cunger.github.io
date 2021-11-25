@@ -873,13 +873,13 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
 <p>Ein <strong>Homomorphismus</strong> zwischen zwei algebraischen Strukturen 
 <span>
                   
-        \(\mathbf{A}=(A,(\circ_A)_i)\)
+        \(\mathbf{A}=(A,(\circ_\mathbf{A})_i)\)
     
 </span>
  und 
 <span>
                   
-        \(\mathbf{B}=(B,(\circ_B)_i)\)
+        \(\mathbf{B}=(B,(\circ_\mathbf{B})_i)\)
     
 </span>
  ist eine Abbildung 
@@ -891,20 +891,20 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
 , die die algebraische Struktur erhält, d.h. dass für alle Operationen 
 <span>
                   
-        \(\circ_A\)
+        \(\circ_\mathbf{A}\)
     
 </span>
  und 
 <span>
                   
-        \(\circ_B\)
+        \(\circ_\mathbf{B}\)
     
 </span>
  gilt:
 
 <span>
      
-        $$f(x\circ_A y)=f(x)\circ_B f(y)$$
+        $$f(x\circ_\mathbf{A} y)=f(x)\circ_\mathbf{B} f(y)$$
     
 </span>
 
@@ -929,6 +929,94 @@ Sowie dass die neutralen Elemente von
     
 </span>
 , der eine algebraische Struktur auf sich selbst abbildet, heißt <strong>Endomorphismus</strong> (oder <strong>Automorphismus</strong>, wenn er bijektiv ist).</p>
+<p>Wie viele Informationen bei einer Abbildung 
+<span>
+                  
+        \(f:A\to B\)
+    
+</span>
+ verloren gehen, kann am Kern der Abbildung abgelesen werden.
+Der <strong>Kern</strong> sind all die Elemente aus 
+<span>
+                  
+        \(A\)
+    
+</span>
+, die auf Null abgebildet werden, also 
+<span>
+                  
+        \(\text{ker}(f)=\{x\in A\,|\,f(x)=0_\mathbf{B}\}\)
+    
+</span>
+. Der Kern enthält immer wenigstens 
+<span>
+                  
+        \(0_\mathbf{A}\)
+    
+</span>
+. Wenn er keine weiteren Elemente enthält, ist die Abbildung injektiv, d.h. es gehen keine Informationen verloren.</p>
+<p>Zum Beispiel ist eine Abbildung nicht injektiv, wenn es unterschiedliche Elemente 
+<span>
+                  
+        \(x,x&#39;\in A\)
+    
+</span>
+ gibt, so dass 
+<span>
+                  
+        \(f(x)=f(x&#39;)\)
+    
+</span>
+, also 
+<span>
+                  
+        \(f(x)-f(x&#39;)=0\)
+    
+</span>
+. Bei einer linearen Abbildung heißt das 
+<span>
+                  
+        \(f(x-x&#39;)=0\)
+    
+</span>
+, d.h. 
+<span>
+                  
+        \(x-x&#39;\)
+    
+</span>
+ liegt im Kern; der Unterschied zwischen 
+<span>
+                  
+        \(x\)
+    
+</span>
+ und 
+<span>
+                  
+        \(x&#39;\)
+    
+</span>
+ geht also bei der Abbildung verloren.</p>
+<p>Ist 
+<span>
+                  
+        \(\mathbf{A}\)
+    
+</span>
+ ein Vektorraum, dann bildet der Kern einer Abbildung zusammen mit den Operationen in 
+<span>
+                  
+        \(\mathbf{A}\)
+    
+</span>
+ einen Untervektorraum von 
+<span>
+                  
+        \(\mathbf{A}\)
+    
+</span>
+.</p>
 <h2 id="bilinearformen">Bilinearformen</h2>
 <p>Eine <strong>Bilinearform</strong> verallgemeinert die Eigenschaften eines Vektorraumhomomorphismus auf zweistellige Abbildungen und bedeutet dann Linearität in beiden Komponenten:</p>
 <p>Seien 
