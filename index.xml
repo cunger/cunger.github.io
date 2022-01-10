@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebraische Strukturen</title>
       <link>http://cunger.github.io/notes/math/algebra/</link>
@@ -233,6 +233,20 @@
     </item>
     
     <item>
+      <title>Favorite books 2021</title>
+      <link>http://cunger.github.io/blog/books-2021/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/blog/books-2021/</guid>
+      <description>Ryusho Kadota, Akira Tokuhiro, Simon Varnam: On the brink: The inside story of Fukushima Daiichi.
+Merlin Sheldrake: Entangled life: How fungi make our worlds, change our minds &amp;amp; shape our futures.
+Becky Chambers: Long way to a small angry planet.
+Kim Stanley Robinson: The ministry for the future.
+Brian Cox: The planets.
+Scott Kelly: Endurance: A year in space, a lifetime of discovery.</description>
+    </item>
+    
+    <item>
       <title>We are all terraformers</title>
       <link>http://cunger.github.io/blog/we-are-all-terraformers/</link>
       <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
@@ -290,12 +304,12 @@ Currently reading  J.M. Steele: The Cauchy-Schwarz Master Class. M. Sheldrake: E
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>I&amp;rsquo;m a freelance software engineer and aspiring mathematician, with a deep love for the ocean and a strong interest in climate change, nuclear technology and space.
+      <description>I’m a software engineer and aspiring mathematician, with a strong interest in nuclear technology and radiation protection.
   💾 GitHub
  📎 LinkedIn
  🌍 Bielefeld, Germany
  These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly.
-Education  Mathematics (B.Sc., currently enrolled) Terra.do climate fellowship edX patchwork studies Full-stack web development Computational linguistics (PhD) Logic and Linguistics (M.</description>
+Education  Mathematics (B.Sc., currently enrolled) Terra.do climate fellowship edX patchwork studies Full-stack web development Computational linguistics (PhD) Logic and Linguistics (M.A., passed with distinction)  Volunteering I deeply care about marine conservation, and volunteering in this field has been among the most inspiring, energizing, and humbling experiences I had.</description>
     </item>
     
   </channel>

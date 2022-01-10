@@ -864,10 +864,145 @@ Ist
 Entscheidend ist nicht so sehr die Form von Vektoren, sondern ihre Eigenschaften.
 Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sind, wovon man Linearkombinationen bilden kann.</p>
 <h2 id="skalarprodukt">Skalarprodukt</h2>
-<p>Das Skalarprodukt (<em>dot product</em> oder <em>inner product</em>) bildet zwei Vektoren auf ein Skalar ab, das so etwas wie &hellip; ausdrückt.</p>
-<p>Ein Vektorraum mit einem Skalarprodukt heißt <strong>Prähilbertraum</strong>.</p>
+<p>Das Skalarprodukt (<em>dot product</em> oder <em>inner product</em>) bildet zwei Vektoren auf ein Skalar ab und liefert damit eine zusätzliche Struktur, die es erlaubt geometrische Maße wie Längen und Winkel zu definieren, indem es eine <a href="../topology/#normierte-und-metrische-r%C3%A4ume">Norm</a> induziert.</p>
+<p>Technisch ist das <strong>Skalarprodukt</strong> eines Vektorraums 
+<span>
+                  
+        \((V,&#43;,\cdot)\)
+    
+</span>
+ über dem Körper 
+<span>
+                  
+        \(\mathbb{K}\)
+    
+</span>
+ eine Abbildung 
+<span>
+                  
+        \(\langle\,\rangle:V\times V\to \mathbb{K}\)
+    
+</span>
+, die für alle für 
+<span>
+                  
+        \(v,w\in V\)
+    
+</span>
+ folgende Eigenschaften erfüllt:</p>
+<ul>
+<li>Positive Definitheit: 
+<span>
+                  
+        \(\langle v,v\rangle &gt; 0\)
+    
+</span>
+</li>
+<li>Symmetrie: 
+<span>
+                  
+        \(\langle v,w\rangle = \langle w,v\rangle\)
+    
+</span>
+</li>
+<li>Bilinearität: 
+<span>
+                  
+        \(\langle v,\cdot\rangle\)
+    
+</span>
+ und 
+<span>
+                  
+        \(\langle \cdot, v\rangle\)
+    
+</span>
+ sind linear (d.h. das Skalarprodukt ist eine <a href="#bilinearformen">Bilinearform</a>)</li>
+</ul>
+<p><strong>Beispiele</strong> kanonischer Skalarprodukte:</p>
+<ul>
+<li>
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+: 
+<span>
+                  
+        \(\langle x,y\rangle := \sum_{i=1}^n x_i y_i = x^Ty\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\mathbb{C}^n\)
+    
+</span>
+: 
+<span>
+                  
+        \(\langle x,y\rangle := \sum_{i=1}^n x_i \overline{y_i}\)
+    
+</span>
+</li>
+<li>Reellwertige Funktionen 
+<span>
+                  
+        \(C[a,b]\)
+    
+</span>
+: 
+<span>
+                  
+        \(\langle f,g\rangle := \int_a^b f(x)g(x) dx\)
+    
+</span>
+
+(stetig und damit auch integrierbar, umfasst auch die Polynome über 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+)</li>
+<li>Komplexwertige Funktionen 
+<span>
+                  
+        \(C[a,b]\)
+    
+</span>
+: 
+<span>
+                  
+        \(\langle f,g\rangle := \int_a^b f(x)\overline{g(x)} dx\)
+    
+</span>
+</li>
+</ul>
 <h2 id="euklidische-vektorräume">Euklidische Vektorräume</h2>
 <p>Ein <strong>Euklidischer Vektorraum</strong> ist ein reeller Vektorraum mit einem Skalarprodukt.</p>
+<p>Die Norm (d.h. die Länge eines Vektors), die von einem Skalarprodukt über 
+<span>
+                  
+        \(\mathbb{K}=\mathbb{R}\)
+    
+</span>
+ oder 
+<span>
+                  
+        \(\mathbb{K}=\mathbb{C}\)
+    
+</span>
+ induziert wird, ist folgende:
+
+<span>
+     
+        $$\|v\|=\sqrt{\langle v,v\rangle}$$
+    
+</span>
+</p>
 <h1 id="strukturerhaltende-abbildungen">Strukturerhaltende Abbildungen</h1>
 <h2 id="lineare-abbildungen">Lineare Abbildungen</h2>
 <p>Ein <strong>Homomorphismus</strong> zwischen zwei algebraischen Strukturen 
