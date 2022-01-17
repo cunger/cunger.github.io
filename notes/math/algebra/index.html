@@ -863,6 +863,65 @@ Ist
 , hier ist der Vektorraum im Prinzip ein n-dimensionaler Körper, wobei die Multiplikation keine Verknüpfung von Körperelementen ist, sondern deren Stauchung oder Streckung), Matrizen, Funktionen.
 Entscheidend ist nicht so sehr die Form von Vektoren, sondern ihre Eigenschaften.
 Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sind, wovon man Linearkombinationen bilden kann.</p>
+<p>Eine Menge von Vektoren ist <strong>linear unabhängig</strong>, wenn keiner der Vektoren eine Linearkombination der anderen ist. Das ist <a href="https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Lineare_Unabh%C3%A4ngigkeit_von_Vektoren#Vom_ersten_Kriterium_zur_formalen_Definition">äquivalent</a> zu der Bedingung, dass der Nullvektor nur durch eine triviale Linearkombination darstellbar ist. Oder technisch:</p>
+<ul>
+<li>Ein endliches System von Vektoren 
+<span>
+                  
+        \((v_1,\ldots,v_n)\)
+    
+</span>
+ ist linear unabhängig, wenn aus 
+<span>
+                  
+        \(\sum_{i=1}^n a_i v_i = 0\)
+    
+</span>
+ folgt, dass 
+<span>
+                  
+        \(a_1=\ldots=a_n=0\)
+    
+</span>
+.</li>
+<li>Ein unendliches System von Vektoren 
+<span>
+                  
+        \((v_i)_{i\in I}\)
+    
+</span>
+ ist linear unabhängig, wenn für jede endliche Teilmenge 
+<span>
+                  
+        \(J\)
+    
+</span>
+ von 
+<span>
+                  
+        \(I\)
+    
+</span>
+ aus 
+<span>
+                  
+        \(\sum_{j\in J} a_j v_j=0\)
+    
+</span>
+ folgt, dass 
+<span>
+                  
+        \(a_j=0\)
+    
+</span>
+ für alle 
+<span>
+                  
+        \(j\in J\)
+    
+</span>
+.</li>
+</ul>
 <h2 id="skalarprodukt">Skalarprodukt</h2>
 <p>Das Skalarprodukt (<em>dot product</em> oder <em>inner product</em>) bildet zwei Vektoren auf ein Skalar ab und liefert damit eine zusätzliche Struktur, die es erlaubt geometrische Maße wie Längen und Winkel zu definieren, indem es eine <a href="../topology/#normierte-und-metrische-r%C3%A4ume">Norm</a> induziert.</p>
 <p>Technisch ist das <strong>Skalarprodukt</strong> eines Vektorraums 
