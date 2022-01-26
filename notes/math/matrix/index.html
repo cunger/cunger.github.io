@@ -875,19 +875,20 @@ Zwei Matrizen
 <p>Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)</p>
 <h2 id="treppennormalform">Treppennormalform</h2>
 <ul>
-<li>In jeder Zeile ist der von links erste Eintrag ungleich 0 eine 1. Das sind die Pivot-Positionen.</li>
-<li>Alle Einträge unter den Pivot-Positionen sind 0. In der <strong>Gaußschen Normalform</strong> sind auch alle Einträge über den Pivot-Positionen 0.</li>
-<li>Stufung: Für jede Pivot-Position gilt, dass die Pivot-Position der Zeile darüber links davon ist.</li>
 <li>Alle Nullreihen stehen ganz unten.</li>
+<li>In jeder Zeile ist der von links erste Eintrag ungleich 0 eine 1. Das sind die Pivot-Positionen.</li>
+<li>Stufung: Jede Pivot-Position ist rechts von der Pivot-Position der Zeile darüber.</li>
+<li>Daraus folgt, dass alle Einträge unter den Pivot-Positionen 0 sind. In der reduzierten Treppennormalform sind auch alle Einträge über den Pivot-Positionen 0.</li>
 </ul>
-<p>Zum Beispiel:
+<p>Beispiele:
 
 <span>
      
-        $$\left(\begin{matrix} 1 &amp; \ast &amp; \ast &amp; \ast \\ 0 &amp; 0 &amp; 1 &amp; \ast \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{matrix}\right)$$
+        $$\left(\begin{matrix} 1 &amp; \ast &amp; \ast &amp; \ast \\ 0 &amp; 0 &amp; 1 &amp; \ast \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{matrix}\right) \qquad \left(\begin{matrix} 1 &amp; \ast &amp; \ast \\ 0 &amp; 1 &amp; \ast \\ 0 &amp; 0 &amp; 0 \end{matrix}\right) \qquad \left(\begin{matrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{matrix}\right)$$
     
 </span>
 </p>
+<p>Die Treppennormalform erleichtert das Lösen eines linearen Gleichungssystems.</p>
 <h2 id="jordan-normalform">Jordan-Normalform</h2>
 <h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
 <p>Eine Matrix 
