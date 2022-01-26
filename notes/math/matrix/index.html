@@ -171,7 +171,25 @@ headingSelector: 'h1'
 <li>Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.</li>
 </ul>
 <h2 id="eigenschaften">Eigenschaften</h2>
-<p>Der <strong>Rang</strong> einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf&rsquo;s gleiche raus).</p>
+<p>Der <strong>Rang</strong> einer Matrix ist die Anzahl linear unabhängiger Spalten. Oder Zeilen, denn Spalten- und Zeilenrang sind immer gleich. (Die möglichen Ränge einer 
+<span>
+                  
+        \(m\times n\)
+    
+</span>
+-Matrix sind also 
+<span>
+                  
+        \(0\)
+    
+</span>
+ bis 
+<span>
+                  
+        \(\text{min}(m,n)\)
+    
+</span>
+.)</p>
 <p>Die <strong>Spur</strong> einer Matrix ist die Summe der Diagonalelemente.</p>
 <p>Eine Matrix heißt <strong>symmetrisch</strong>, wenn 
 <span>
@@ -274,7 +292,7 @@ headingSelector: 'h1'
     
 </span>
  praktisch handhabbar.</p>
-<h2 id="für-hahahugoshortcode-s21-hbhb-trivial">Für 
+<h2 id="für-hahahugoshortcode-s24-hbhb-trivial">Für 
 <span>
                   
         \(n=1\)
@@ -288,7 +306,7 @@ headingSelector: 'h1'
     
 </span>
 
-<h2 id="für-hahahugoshortcode-s23-hbhb-einfach">Für 
+<h2 id="für-hahahugoshortcode-s26-hbhb-einfach">Für 
 <span>
                   
         \(n=2\)
@@ -354,7 +372,7 @@ d.h.
     
 </span>
 .</p>
-<h2 id="für-hahahugoshortcode-s33-hbhb-sarrus-regel">Für 
+<h2 id="für-hahahugoshortcode-s36-hbhb-sarrus-regel">Für 
 <span>
                   
         \(n=3\)
@@ -368,7 +386,7 @@ d.h.
 <li>gestrichelte Linie: negatives Produkt der Elemente</li>
 </ul>
 <p>Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.</p>
-<h2 id="für-hahahugoshortcode-s34-hbhb-laplace-entwicklung">Für 
+<h2 id="für-hahahugoshortcode-s37-hbhb-laplace-entwicklung">Für 
 <span>
                   
         \(n&gt;3\)
@@ -780,13 +798,13 @@ Eine Matrix
         \(S\)
     
 </span>
- gibt, so dass 
+ gibt, so dass: 
 <span>
      
         $$A=S^{-1}BS$$
     
 </span>
-. Das bedeutet, dass 
+ Das bedeutet, dass 
 <span>
                   
         \(A\)
@@ -855,6 +873,22 @@ Zwei Matrizen
 , sind kongruente Matrizen in der Regel nicht ähnlich.</p>
 <h2 id="diagonalisierbarkeit">Diagonalisierbarkeit</h2>
 <p>Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)</p>
+<h2 id="treppennormalform">Treppennormalform</h2>
+<ul>
+<li>In jeder Zeile ist der von links erste Eintrag ungleich 0 eine 1. Das sind die Pivot-Positionen.</li>
+<li>Alle Einträge unter den Pivot-Positionen sind 0. In der <strong>Gaußschen Normalform</strong> sind auch alle Einträge über den Pivot-Positionen 0.</li>
+<li>Stufung: Für jede Pivot-Position gilt, dass die Pivot-Position der Zeile darüber links davon ist.</li>
+<li>Alle Nullreihen stehen ganz unten.</li>
+</ul>
+<p>Zum Beispiel:
+
+<span>
+     
+        $$\left(\begin{matrix} 1 &amp; \ast &amp; \ast &amp; \ast \\ 0 &amp; 0 &amp; 1 &amp; \ast \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{matrix}\right)$$
+    
+</span>
+</p>
+<h2 id="jordan-normalform">Jordan-Normalform</h2>
 <h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
 <p>Eine Matrix 
 <span>
@@ -1070,6 +1104,11 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 </ul>
 <p>Jede Matrix ist Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)).</p>
 <h1 id="matrizen-als-gleichungssysteme">Matrizen als Gleichungssysteme</h1>
+<h1 id="literatur">Literatur</h1>
+<ul>
+<li>Luise Unger: Skript Lineare Algebra (1143), FernUniversität Hagen.</li>
+<li>Klaus Jänich: Lineare Algebra.</li>
+</ul>
 
 
     
