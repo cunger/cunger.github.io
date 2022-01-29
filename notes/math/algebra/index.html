@@ -1062,6 +1062,99 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
     
 </span>
 </p>
+<p>Ein Vektor ist <strong>normalisiert</strong>, wenn er Länge 1 hat. Jeder Vektor 
+<span>
+                  
+        \(v\)
+    
+</span>
+ lässt sich normalisieren zu 
+<span>
+                  
+        \(\dfrac{v}{\|v\|}\)
+    
+</span>
+.
+(Das funktioniert mit dem Skalarprodukt, ist aber allgemein mit Bilinearformen nicht immer möglich.)</p>
+<p>Zwei Vektoren 
+<span>
+                  
+        \(v,w\)
+    
+</span>
+ sind <strong>orthogonal</strong>, wenn 
+<span>
+                  
+        \(\langle v,w\rangle = 0\)
+    
+</span>
+.</p>
+<h3 id="orthonormalbasen">Orthonormalbasen</h3>
+<p>Zu einer beliebigen Basis 
+<span>
+                  
+        \(\{v_1,v_2,v_3,\ldots,v_n\}\)
+    
+</span>
+ lässt sich eine orthonormale Basis 
+<span>
+                  
+        \(\{w_1,w_2,w_3,\ldots,w_n\}\)
+    
+</span>
+ konstruieren (Gram-Schmidt-Verfahren), indem man jeden Vektor zu den vorherigen orthogonalisiert und dann normalisiert:</p>
+<ul>
+<li>
+<span>
+                  
+        \(w_1=\dfrac{v_1}{\|v_1\|}\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(w_2&#39;=v_2 - \langle w_1,v_2\rangle w_1\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(w_2=\dfrac{w_2&#39;}{\|w_2&#39;\|}\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(w_3&#39;=v_3 - \langle w_1,v_3\rangle w_1 - \langle w_2,v_3\rangle w_2\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(w_3=\dfrac{w_3&#39;}{\|w_3&#39;\|}\)
+    
+</span>
+</li>
+<li>&hellip;</li>
+<li>
+<span>
+                  
+        \(w_n&#39;=v_n - \sum_{i=1}^{n-1}\langle w_i,v_n\rangle w_i\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(w_n=\dfrac{w_n&#39;}{\|w_n&#39;\|}\)
+    
+</span>
+</li>
+</ul>
 <h1 id="strukturerhaltende-abbildungen">Strukturerhaltende Abbildungen</h1>
 <h2 id="lineare-abbildungen">Lineare Abbildungen</h2>
 <p>Ein <strong>Homomorphismus</strong> zwischen zwei algebraischen Strukturen 
@@ -1275,6 +1368,7 @@ und
 </li>
 </ul>
 <p>Zum Beispiel ist das Skalarprodukt eines Vektorraums eine Bilinearform (die zusätzlich symmetrisch und positiv definit ist).</p>
+<p>Die Matrixdarstellungen einer Bilinearform bezüglich verschiedener Basen sind immer kongruent.</p>
 
 
     
