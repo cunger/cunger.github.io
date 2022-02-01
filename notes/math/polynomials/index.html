@@ -160,6 +160,13 @@ headingSelector: 'h1'
     
 </span>
  des größten Koeffizienten ungleich 0. (Der Grad des Nullpolynoms wird als -1 definiert.)</p>
+<p>Das Polynom heißt <strong>normiert</strong>, wenn 
+<span>
+                  
+        \(a_n=1\)
+    
+</span>
+ ist.</p>
 <p><strong>Polynomfunktionen</strong> sind Funktionen der Form
 
 <span>
@@ -207,10 +214,6 @@ Für alle
 </span>
 ).</p>
 <h1 id="arithmetische-operationen">Arithmetische Operationen</h1>
-<blockquote>
-<p>many of our algorithms apply (with small modifications) to both the integer and polynomial cases: multiplication, division with remainder, gcd and Chinese remainder computation.
-(Aber nicht: Faktorisierung)</p>
-</blockquote>
 <p>Polynome können wie ganze Zahlen addiert, subtrahiert und multipliziert werden. Das Ergebnis ist erneut ein Polynom.</p>
 <h2 id="addition">Addition</h2>
 <p>Die Addition erfolgt komponentenweise.</p>
@@ -306,24 +309,6 @@ Zum Beispiel:</p>
     
 </span>
 .</p>
-<h2 id="faktorisierung">Faktorisierung</h2>
-<p>Polynome können äquivalent umgeformt werden als Produkt von Polynomen. Zum Beispiel:</p>
-<ul>
-<li>
-<span>
-                  
-        \(x^2-a^2=(x&#43;a)(x-a)\)
-    
-</span>
-</li>
-<li>
-<span>
-                  
-        \(x^3-2x^2-x&#43;1=(x-2)(x&#43;1)(x-1)\)
-    
-</span>
-</li>
-</ul>
 <h2 id="division-mit-rest">Division mit Rest</h2>
 <p>Im Gegensatz zu Addition, Subtraktion und Multiplikation von Polynomen, ergibt die Division von Polynomen nicht notwendig wieder ein Polynom. Z.B. ist 
 <span>
@@ -398,110 +383,171 @@ end
     return gcd(r, q);
   end
 end
-</code></pre><h2 id="algebraischer-abschluss">Algebraischer Abschluss</h2>
-<p>Ein Körper 
+</code></pre><h2 id="komposition">Komposition</h2>
+<h1 id="nullstellen-und-faktorisierung">Nullstellen und Faktorisierung</h1>
+<p>Zu jedem normierten Polynom</p>
+
 <span>
-                  
-        \(K\)
+     
+        $$p(x) = x^n&#43;a_{n-1}x^{n-1}&#43;\ldots&#43;a_1x&#43;a_0$$
     
 </span>
- heißt <strong>algebraisch abgeschlossen</strong>, wenn jedes nicht-konstante Polynom 
+
+<p>gibt es eindeutig bestimmte Zahlen 
 <span>
                   
-        \(p\in \mathbb{K}[T]\)
+        \(\lambda_1,\ldots,\lambda_n\in\mathbb{C}\)
     
 </span>
- (d.h. jedes Polynom in 
+, so dass das Polynom
+äquivalent in seine Linearfaktorzerlegung umgeformt werden kann:</p>
+
 <span>
-                  
-        \(\mathbb{K}[T]\backslash\mathbb{K}\)
+     
+        $$p(x) = (x-\lambda_1)\cdots(x-\lambda_n)$$
     
 </span>
-) eine Nullstelle in 
+
+<p>Das sind genau die Nullstellen des Polynoms, d.h. für jedes 
 <span>
                   
-        \(K\)
+        \(\lambda\)
     
 </span>
- besitzt. Das ist äquivalent dazu, dass es in Linearfaktoren zerfällt (d.h. es gibt 
+ gilt:</p>
+
 <span>
-                  
-        \(a,z_1,\ldots,z_n\in\mathbb{K}\)
+     
+        $$p(\lambda) = \lambda^n&#43;a_{n-1}\lambda^{n-1}&#43;\ldots&#43;a_1\lambda&#43;a_0 = 0$$
     
 </span>
-, so dass 
+
+<p>D.h. 
 <span>
                   
-        \(p = a(T-z_1)\cdots(T-z_n)\)
-    
-</span>
-), denn hat ein Polynom eine Nullstelle 
-<span>
-                  
-        \(a\)
-    
-</span>
-, so ist es ohne Rest durch 
-<span>
-                  
-        \(T-a\)
-    
-</span>
- teilbar.</p>
-<h2 id="komposition">Komposition</h2>
-<h1 id="nullstellen">Nullstellen</h1>
-<p>Ein Polynom 
-<span>
-                  
-        \(n\)
-    
-</span>
--ten Grades hat höchstens 
-<span>
-                  
-        \(n\)
-    
-</span>
- Nullstellen. 
-<span>
-                  
-        \(r\)
+        \(\lambda\)
     
 </span>
  ist eine Nullstelle genau dann, wenn 
 <span>
                   
-        \((x-r)\)
+        \((x-\lambda)\)
     
 </span>
- ein Faktor des Polynoms ist. D.h. wenn 
+ ein Faktor des Polynoms ist.</p>
+<p>Die Nullstellen müssen nicht verschieden sein, ein Polynom 
 <span>
                   
-        \(r_1,\ldots,r_n\)
+        \(n\)
     
 </span>
- die Nullstellen des  Polynoms 
+-ten Grades hat also höchstens 
+<span>
+                  
+        \(n\)
+    
+</span>
+ Nullstellen. Wie oft eine Nullstelle in einem Faktor vorkommt, nennt man ihre Vielfachheit.</p>
+<p>Vor allem müssen die Nullstellen nicht reell sein, d.h. in 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ kann es sein, dass eine Faktorisierung nur unvollständig möglich ist: Ist 
+<span>
+                  
+        \(r\)
+    
+</span>
+ eine reelle Nullstelle des Polynoms 
 <span>
                   
         \(p(x)\)
     
 </span>
- sind, ist<br>
-
+, dann ist 
 <span>
-     
-        $$p(x)=a_n(x-r_n)(x-r_{n-1})\cdots(x-r_2)(x-r_1)q(x)$$
+                  
+        \(p(x)=(x-r)q(x)\)
     
 </span>
-
-eine Faktorisierung des Polynoms (wobei 
+ eine Faktorisierung des Polynoms (wobei 
 <span>
                   
         \(q(x)\)
     
 </span>
  wieder ein Polynom ist).</p>
-<h1 id="gleichungen">Gleichungen</h1>
+<p>Ein Körper 
+<span>
+                  
+        \(\mathbb{K}\)
+    
+</span>
+ heißt <strong>algebraisch abgeschlossen</strong>, wenn jedes nicht-konstante Polynom 
+<span>
+                  
+        \(p\in \mathbb{K}[x]\)
+    
+</span>
+ (d.h. jedes Polynom in 
+<span>
+                  
+        \(\mathbb{K}[x]\backslash\mathbb{K}\)
+    
+</span>
+) eine Nullstelle in 
+<span>
+                  
+        \(\mathbb{K}\)
+    
+</span>
+ besitzt. Das ist äquivalent dazu, dass das Polynom in Linearfaktoren zerfällt, denn hat ein Polynom eine Nullstelle 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+, so ist es ohne Rest durch 
+<span>
+                  
+        \((x-\lambda)\)
+    
+</span>
+ teilbar.</p>
+<p><strong>Fundamentalsatz der Algebra:</strong> 
+<span>
+                  
+        \(\mathbb{C}\)
+    
+</span>
+ ist algebraisch abgeschlossen.</p>
+<p>(
+<span>
+                  
+        \(\mathbb{N},\mathbb{Z}, \mathbb{Q},\mathbb{R}\)
+    
+</span>
+ sind alle nicht algebraisch abgeschlossen. Z.B. hat das Polynom 
+<span>
+                  
+        \(x^2 &#43; 1\)
+    
+</span>
+ in keinem dieser Körper eine Nullstelle, weil 
+<span>
+                  
+        \(x^2 &#43; 1 = 0\)
+    
+</span>
+ bedeutet, dass 
+<span>
+                  
+        \(x = \sqrt{-1}\)
+    
+</span>
+.)</p>
 <h1 id="approximation-mit-polynomen">Approximation mit Polynomen</h1>
 <h2 id="taylorpolynome">Taylorpolynome</h2>
 
