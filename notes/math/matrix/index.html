@@ -213,7 +213,28 @@ headingSelector: 'h1'
 </span>
 .</p>
 <h2 id="elementarmatrizen">Elementarmatrizen</h2>
-<p>Elementare Zeilenumformungen:</p>
+<p>Die Identitätsmatrix 
+<span>
+                  
+        \(I_n\)
+    
+</span>
+ ist die 
+<span>
+                  
+        \(n\times n\)
+    
+</span>
+-Matrix, die in der Hauptdiagonale den Wert 1 hat und sonst 0. Zum Beispiel:
+
+<span>
+     
+        $$I_1 = (1) \quad I_2 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \quad I_3 = \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix}$$
+    
+</span>
+</p>
+<p>Elementarmatrizen unterscheiden sich von der Identitätsmatrix nur durch die Anwendung einer
+elementaren Zeilenumformung:</p>
 <ul>
 <li>
 <span>
@@ -608,7 +629,7 @@ headingSelector: 'h1'
     
 </span>
  praktisch handhabbar.</p>
-<h2 id="für-hahahugoshortcode-s65-hbhb-trivial">Für 
+<h2 id="für-hahahugoshortcode-s68-hbhb-trivial">Für 
 <span>
                   
         \(n=1\)
@@ -622,7 +643,7 @@ headingSelector: 'h1'
     
 </span>
 
-<h2 id="für-hahahugoshortcode-s67-hbhb-einfach">Für 
+<h2 id="für-hahahugoshortcode-s70-hbhb-einfach">Für 
 <span>
                   
         \(n=2\)
@@ -688,7 +709,7 @@ d.h.
     
 </span>
 .</p>
-<h2 id="für-hahahugoshortcode-s77-hbhb-sarrus-regel">Für 
+<h2 id="für-hahahugoshortcode-s80-hbhb-sarrus-regel">Für 
 <span>
                   
         \(n=3\)
@@ -702,7 +723,7 @@ d.h.
 <li>gestrichelte Linie: negatives Produkt der Elemente</li>
 </ul>
 <p>Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.</p>
-<h2 id="für-hahahugoshortcode-s78-hbhb-laplace-entwicklung">Für 
+<h2 id="für-hahahugoshortcode-s81-hbhb-laplace-entwicklung">Für 
 <span>
                   
         \(n&gt;3\)
@@ -998,6 +1019,13 @@ Wobei
 </span>
  zu überführen.</p>
 <h1 id="das-charakteristische-polynom-einer-matrix">Das charakteristische Polynom einer Matrix</h1>
+<p>Für Matrixen 
+<span>
+                  
+        \(A\in M_{nn}(\mathbb{K})\)
+    
+</span>
+ berecht man das charakteristische Polynom wie folgt:</p>
 
 <span>
      
@@ -1005,11 +1033,12 @@ Wobei
     
 </span>
 
+<p>Die Nullstellen des charakteristischen Polynoms sind die Eigenwerte der Matrix.</p>
 <h1 id="eigenvektoren-und-eigenwerte">Eigenvektoren und Eigenwerte</h1>
 <p>Die <strong>Eigenvektoren</strong> 
 <span>
                   
-        \(u\)
+        \(v\)
     
 </span>
  einer Matrix 
@@ -1035,26 +1064,26 @@ Formal:
 
 <span>
      
-        $$Au = \lambda u \quad\text{bzw.}\quad f(u) = \lambda u$$
+        $$Av = \lambda v \quad\text{bzw.}\quad f(v) = \lambda v$$
     
 </span>
 </p>
 <p>D.h. 
 <span>
                   
-        \(Au\)
+        \(Av\)
     
 </span>
  bzw. 
 <span>
                   
-        \(f(u)\)
+        \(f(v)\)
     
 </span>
  hat die gleiche Richtung wie 
 <span>
                   
-        \(u\)
+        \(v\)
     
 </span>
 , nur um den Faktor 
@@ -1067,6 +1096,19 @@ Formal:
 <ul>
 <li>Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.</li>
 <li>Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.</li>
+<li>
+<span>
+                  
+        \(A\)
+    
+</span>
+ und 
+<span>
+                  
+        \(A^T\)
+    
+</span>
+ haben möglicherweise unterschiedliche Eigenwerte.</li>
 <li>Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
 Eine Matrix 
 <span>
@@ -1082,35 +1124,50 @@ Eine Matrix
 </span>
  Eigenwerte haben.</li>
 </ul>
-<p>Und:</p>
-<ul>
-<li>
+<p><strong>Berechnung:</strong></p>
+<ol>
+<li>Um die Eigenwerte 
 <span>
                   
-        \(A\)
+        \(\lambda\)
     
 </span>
- und 
+ zu bestimmen, berechnet man die Nullstellen des charakteristischen Polynoms.</li>
+<li>Die Gleichung 
 <span>
                   
-        \(A^T\)
+        \(Av = \lambda v\)
     
 </span>
- haben möglicherweise unterschiedliche Eigenwerte.</li>
-<li>
+ lässt sich äquivalent umformen zu:
+
+<span>
+     
+        $$(A-\lambda E_n)v=0$$
+    
+</span>
+
+Setzt man die Eigenwerte 
 <span>
                   
-        \(A\)
+        \(\lambda\)
     
 </span>
- und 
+ in diese Gleichung ein, erhält man ein Gleichungssystem, über das sich jeweils die zugehörigen Eigenvektoren 
 <span>
                   
-        \(A^{-1}\)
+        \(v\)
     
 </span>
-: Eigenwerte sind invertiert.</li>
-</ul>
+ bestimmen lassen. (Die müssen nicht eindeutig sein.)</li>
+<li>Überprüfen kann man die gefundenen Eigenvektoren dann durch Einsetzen in 
+<span>
+                  
+        \(Av = \lambda v\)
+    
+</span>
+.</li>
+</ol>
 <h1 id="normalformen">Normalformen</h1>
 <p>Matrizen lassen sich nach <strong>Ähnlichkeit</strong> in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen. Technisch heißt das:</p>
 <p>Zwei Matrizen 
