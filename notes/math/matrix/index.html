@@ -1019,7 +1019,7 @@ Wobei
 </span>
  zu überführen.</p>
 <h1 id="das-charakteristische-polynom-einer-matrix">Das charakteristische Polynom einer Matrix</h1>
-<p>Für Matrixen 
+<p>Für Matrizen 
 <span>
                   
         \(A\in M_{nn}(\mathbb{K})\)
@@ -1034,7 +1034,7 @@ Wobei
 </span>
 
 <p>Die Nullstellen des charakteristischen Polynoms sind die Eigenwerte der Matrix.</p>
-<h1 id="eigenvektoren-und-eigenwerte">Eigenvektoren und Eigenwerte</h1>
+<h1 id="eigenwerte-eigenvektoren-eigenraum">Eigenwerte, Eigenvektoren, Eigenraum</h1>
 <p>Die <strong>Eigenvektoren</strong> 
 <span>
                   
@@ -1122,7 +1122,15 @@ Eine Matrix
         \(n\)
     
 </span>
- Eigenwerte haben.</li>
+ Eigenwerte haben.
+Wie oft eine Nullstelle vorkommt, nennt man die algebraische Vielfachheit des Eigenwerts.</li>
+<li>Die Eigenvektoren zu einem Eigenwert spannen einen Unterraum auf, den Eigenraum 
+<span>
+                  
+        \(\text{kern}(A-\lambda I_n)\)
+    
+</span>
+. Die Dimension des Eigenraums ist die geometrische Vielfachheit des Eigenwerts.</li>
 </ul>
 <p><strong>Berechnung:</strong></p>
 <ol>
@@ -1225,7 +1233,7 @@ Setzt man die Eigenwerte
 <li>die gleiche Determinante,</li>
 <li>das gleiche charakteristische Polynom und Minimalpolynom,</li>
 <li>die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),</li>
-<li>die gleiche Jordansche Normalform.</li>
+<li>die gleiche Jordan-Normalform.</li>
 </ul>
 <p>Matrizen lassen sich auch nach <strong>Kongruenz</strong> in Äquivalenzklassen (sogenannte <strong>Kongruenzklassen</strong>) einteilen:
 Zwei Matrizen 
@@ -1255,8 +1263,6 @@ Zwei Matrizen
     
 </span>
 , sind kongruente Matrizen in der Regel nicht ähnlich.</p>
-<h2 id="diagonalisierbarkeit">Diagonalisierbarkeit</h2>
-<p>Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)</p>
 <h2 id="treppennormalform">Treppennormalform</h2>
 <ul>
 <li>Alle Nullreihen stehen ganz unten.</li>
@@ -1264,7 +1270,8 @@ Zwei Matrizen
 <li>Stufung: Jede Pivot-Position ist rechts von der Pivot-Position der Zeile darüber.</li>
 <li>Daraus folgt, dass alle Einträge unter den Pivot-Positionen 0 sind. In der reduzierten Treppennormalform sind auch alle Einträge über den Pivot-Positionen 0.</li>
 </ul>
-<p>Beispiele:
+<p>Die Treppennormalform erleichtert das Lösen eines linearen Gleichungssystems.</p>
+<p><strong>Beispiele:</strong>
 
 <span>
      
@@ -1272,8 +1279,141 @@ Zwei Matrizen
     
 </span>
 </p>
-<p>Die Treppennormalform erleichtert das Lösen eines linearen Gleichungssystems.</p>
+<p><strong>Berechnung:</strong> Gaußsches Eliminationsverfahren</p>
+<h2 id="diagonalisierbarkeit">Diagonalisierbarkeit</h2>
+<p>Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)</p>
 <h2 id="jordan-normalform">Jordan-Normalform</h2>
+<p>Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen.</p>
+<p>Eine Jordan-Matrix enthälten auf der Diagonalen Jordan-Blöcke und sonst 0. Ein Jordan-Block ist eine quadratische Matrix mit einem Eigenwert auf der Diagonalen, 1 auf einer der Nebendiagonalen und sonst 0. Zum Beispiel:</p>
+<ul>
+<li>
+<span>
+                  
+        \(\,\,(\lambda_1)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\,\begin{pmatrix} \lambda_2 &amp; 1 \\ 0 &amp; \lambda_2 \end{pmatrix}\text{ oder }\begin{pmatrix} \lambda_2 &amp; 0 \\ 1 &amp; \lambda_2 \end{pmatrix}\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(\begin{pmatrix} \lambda_3 &amp; 1 &amp; 0 \\ 0 &amp; \lambda_3 &amp; 1 \\ 0 &amp; 0 &amp; \lambda_3 \end{pmatrix}\text{ oder }\begin{pmatrix} \lambda_3 &amp; 0 &amp; 0 \\ 1 &amp; \lambda_3 &amp; 0 \\ 0 &amp; 1 &amp; \lambda_3 \end{pmatrix}\)
+    
+</span>
+</li>
+</ul>
+<p>Die Reihenfolge der Blöcke in einer Jordan-Matrix ist egal.</p>
+<p><strong>Berechnung:</strong> Für eine Matrix 
+<span>
+                  
+        \(A\in M_{nn}(\mathbb{K})\)
+    
+</span>
+.</p>
+<ol>
+<li>Eigenwerte der Matrix berechnen, d.h. die Nullstellen des charakteristischen Polynoms 
+<span>
+                  
+        \(\Chi_A=\text{det}(xI_n-A)\)
+    
+</span>
+ bestimmen, zusammen mit ihrer algebraischen Vielfachheit. (Wenn 
+<span>
+                  
+        \(\Chi_A\)
+    
+</span>
+ nicht in Linearfaktoren über 
+<span>
+                  
+        \(\mathbb{K}\)
+    
+</span>
+ zerfällt, dann hat die Matrix keine Jordan-Normalform in 
+<span>
+                  
+        \(\mathbb{K}\)
+    
+</span>
+.)</li>
+<li>Für jeden Eigenwert 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+:
+<ul>
+<li>Wenn die algebraische Vielfachheit 1 ist, dann gibt es einen Jordan-Block der Größe 1, also 
+<span>
+                  
+        \((\lambda)\)
+    
+</span>
+.</li>
+<li>Ansonsten berechne die Haupträume 
+<span>
+                  
+        \(H_k = \text{kern}((A-\lambda I_n)^k)\)
+    
+</span>
+ zu 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+, wobei
+
+<span>
+     
+        $$\{0\} \subset H_1 \subset H_2 \subset \ldots$$
+    
+</span>
+
+bis 
+<span>
+                  
+        \(\text{dim}(H_k)\)
+    
+</span>
+ die algebraische Vielfachheit von 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+ ist. Dann wissen wir:
+Es gibt 
+<span>
+                  
+        \(\text{dim}(H_1)\)
+    
+</span>
+ viele Jordan-Blöcke und
+es gibt 
+<span>
+                  
+        \(\text{dim}(H_{i&#43;1}) - \text{dim}(H_i)\)
+    
+</span>
+ viele Jordan-Blöcke von mindestens der Größe 
+<span>
+                  
+        \(i\)
+    
+</span>
+.</li>
+</ul>
+</li>
+<li>Aus diesen Informationen können wir die Jordan-Normalform bauen.</li>
+</ol>
 <h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
 <p>Eine Matrix 
 <span>
