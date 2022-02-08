@@ -1041,43 +1041,49 @@ Wobei
         \(v\)
     
 </span>
- einer Matrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- bzw. eines Endomorphismus 
+ eines Endomorphismus 
 <span>
                   
         \(f\)
     
 </span>
- sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige <strong>Eigenwert</strong> 
+ eines Vektorraums 
+<span>
+                  
+        \(V\)
+    
+</span>
+ bzw. seiner Matrixdarstellung 
+<span>
+                  
+        \(A\)
+    
+</span>
+ sind alle (vom Nullvektor verschiedene) Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden, deren Richtung aber gleich bleibt. Der dazugehörige <strong>Eigenwert</strong> 
 <span>
                   
         \(\lambda\)
     
 </span>
- ist der Faktor der Stauchung oder Streckung (und entspricht dann z.B. eine Rotationsachse im 3D).
+ ist der Faktor der Stauchung oder Streckung.
 Formal:
 
 <span>
      
-        $$Av = \lambda v \quad\text{bzw.}\quad f(v) = \lambda v$$
+        $$\quad f(v) = \lambda v \quad\text{bzw.}\quad Av = \lambda v$$
     
 </span>
 </p>
 <p>D.h. 
 <span>
                   
-        \(Av\)
+        \(f(v)\)
     
 </span>
  bzw. 
 <span>
                   
-        \(f(v)\)
+        \(Av\)
     
 </span>
  hat die gleiche Richtung wie 
@@ -1094,8 +1100,13 @@ Formal:
 </span>
  gestaucht oder gestreckt.</p>
 <ul>
-<li>Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.</li>
-<li>Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.</li>
+<li>Eine Matrix muss keine Eigenvektoren besitzen - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum (und 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+ entspricht dann der Rotationsachse).</li>
 <li>
 <span>
                   
@@ -1109,7 +1120,9 @@ Formal:
     
 </span>
  haben möglicherweise unterschiedliche Eigenwerte.</li>
-<li>Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
+<li>Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.</li>
+</ul>
+<p>Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
 Eine Matrix 
 <span>
                   
@@ -1123,15 +1136,17 @@ Eine Matrix
     
 </span>
  Eigenwerte haben.
-Wie oft eine Nullstelle vorkommt, nennt man die algebraische Vielfachheit des Eigenwerts.</li>
-<li>Die Eigenvektoren zu einem Eigenwert spannen einen Unterraum auf, den Eigenraum 
+Wie oft eine Nullstelle vorkommt, nennt man die <strong>algebraische Vielfachheit</strong> des Eigenwerts.</p>
+<p>Die Eigenvektoren zu einem Eigenwert spannen zusammen mit dem Nullvektor einen Unterraum auf, den <strong>Eigenraum</strong>:
+
 <span>
-                  
-        \(\text{kern}(A-\lambda I_n)\)
+     
+        $$\text{Eigenraum}(f,\lambda) = \{ v\in V \,|\, f(v) = \lambda v \} = \text{kern}(A-\lambda I_n)$$
     
 </span>
-. Die Dimension des Eigenraums ist die geometrische Vielfachheit des Eigenwerts.</li>
-</ul>
+
+Die Dimension des Eigenraums ist die <strong>geometrische Vielfachheit</strong> des Eigenwerts.</p>
+<p>Stimmen algebraische und geometrische Vielfachheit der Eigenwerte einer Matrix überein, ist die Matrix diagonalisierbar.</p>
 <p><strong>Berechnung:</strong></p>
 <ol>
 <li>Um die Eigenwerte 
@@ -1151,7 +1166,7 @@ Wie oft eine Nullstelle vorkommt, nennt man die algebraische Vielfachheit des Ei
 
 <span>
      
-        $$(A-\lambda E_n)v=0$$
+        $$(A-\lambda I_n)v=0$$
     
 </span>
 
@@ -1177,7 +1192,8 @@ Setzt man die Eigenwerte
 .</li>
 </ol>
 <h1 id="normalformen">Normalformen</h1>
-<p>Matrizen lassen sich nach <strong>Ähnlichkeit</strong> in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen. Technisch heißt das:</p>
+<p>Matrizen lassen sich nach <strong>Ähnlichkeit</strong> in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen.
+Technisch heißt das:</p>
 <p>Zwei Matrizen 
 <span>
                   
@@ -1190,13 +1206,15 @@ Setzt man die Eigenwerte
         \(S\)
     
 </span>
- gibt, so dass: 
+ gibt, so dass:
+
 <span>
      
         $$A=S^{-1}BS$$
     
 </span>
- Das bedeutet, dass 
+
+Das bedeutet, dass 
 <span>
                   
         \(A\)
@@ -1226,7 +1244,8 @@ Setzt man die Eigenwerte
         \(cS\)
     
 </span>
- erfüllt die Gleichung auch).</p>
+ erfüllt die Gleichung auch).
+Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.</p>
 <p>Ähnliche Matrizen haben also:</p>
 <ul>
 <li>den gleichen Rang,</li>
@@ -1396,8 +1415,14 @@ Es gibt
         \(\text{dim}(H_1)\)
     
 </span>
- viele Jordan-Blöcke und
-es gibt 
+ viele Jordan-Blöcke für 
+<span>
+                  
+        \((\lambda)\)
+    
+</span>
+ und
+davon sind 
 <span>
                   
         \(\text{dim}(H_{i&#43;1}) - \text{dim}(H_i)\)
