@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebraische Strukturen</title>
       <link>http://cunger.github.io/notes/math/algebra/</link>
@@ -32,15 +32,6 @@
       
       <guid>http://cunger.github.io/notes/physics/basics/</guid>
       <description>Nothing more. Nothing less.</description>
-    </item>
-    
-    <item>
-      <title>Atoms</title>
-      <link>http://cunger.github.io/notes/nuke/atoms/</link>
-      <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/notes/nuke/atoms/</guid>
-      <description>What atoms are composed of, their energy, charge, mass, and stability.</description>
     </item>
     
     <item>
@@ -94,16 +85,16 @@
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/notes/dev/web/</guid>
-      <description>TCP/IP. HTTP. REST.</description>
+      <description>TCP/IP, HTTP, REST, and security.</description>
     </item>
     
     <item>
-      <title>Forces</title>
-      <link>http://cunger.github.io/notes/physics/forces/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      <title>Electromagnetic radiation</title>
+      <link>http://cunger.github.io/notes/physics/electromagnetic-radiation/</link>
+      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/physics/forces/</guid>
-      <description>The fundamental forces of physics.</description>
+      <guid>http://cunger.github.io/notes/physics/electromagnetic-radiation/</guid>
+      <description>Making waves.</description>
     </item>
     
     <item>
@@ -121,7 +112,16 @@
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/notes/dev/databases/</guid>
-      <description>SQL. PostgreSQL.</description>
+      <description>Relational model and SQL.</description>
+    </item>
+    
+    <item>
+      <title>Forces</title>
+      <link>http://cunger.github.io/notes/physics/forces/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/forces/</guid>
+      <description>The fundamental forces of physics.</description>
     </item>
     
     <item>
@@ -131,15 +131,6 @@
       
       <guid>http://cunger.github.io/notes/nuke/neutronics/</guid>
       <description>Neutrons, energy distribution, neutron interactions.</description>
-    </item>
-    
-    <item>
-      <title>Transport</title>
-      <link>http://cunger.github.io/notes/physics/transport/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/notes/physics/transport/</guid>
-      <description>Mass and heat transport.</description>
     </item>
     
     <item>
@@ -157,16 +148,7 @@
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/notes/dev/ruby/</guid>
-      <description>Objects. Closures. Etc.</description>
-    </item>
-    
-    <item>
-      <title>Balances</title>
-      <link>http://cunger.github.io/notes/physics/balances/</link>
-      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/notes/physics/balances/</guid>
-      <description>Equations for mass and energy balances. Macro and micro balances.</description>
+      <description>&amp;ldquo;Finding out what you&amp;rsquo;re called and repeating your name.&amp;rdquo;</description>
     </item>
     
     <item>
@@ -179,30 +161,57 @@
     </item>
     
     <item>
+      <title>Atoms</title>
+      <link>http://cunger.github.io/notes/physics/atoms/</link>
+      <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/atoms/</guid>
+      <description>What atoms are composed of, their energy, charge, mass, and stability.</description>
+    </item>
+    
+    <item>
       <title>JavaScript</title>
       <link>http://cunger.github.io/notes/dev/javascript/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/notes/dev/javascript/</guid>
-      <description>Functions. Prototypes. Promises. Etc.</description>
+      <description>Functions, prototypes, promises, etc.</description>
     </item>
     
     <item>
-      <title>Electromagnetic radiation</title>
-      <link>http://cunger.github.io/notes/physics/electromagnetic-radiation/</link>
-      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
+      <title>Balances</title>
+      <link>http://cunger.github.io/notes/physics/balances/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/physics/electromagnetic-radiation/</guid>
-      <description>Making waves.</description>
+      <guid>http://cunger.github.io/notes/physics/balances/</guid>
+      <description>Equations for mass and energy balances. Macro and micro balances.</description>
     </item>
     
     <item>
-      <title>Fluid flow</title>
-      <link>http://cunger.github.io/notes/physics/fluid-flow/</link>
-      <pubDate>Sat, 16 Nov 2019 12:19:28 +0100</pubDate>
+      <title>CSS</title>
+      <link>http://cunger.github.io/notes/dev/css/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/physics/fluid-flow/</guid>
-      <description>Flow rate. Drag force.</description>
+      <guid>http://cunger.github.io/notes/dev/css/</guid>
+      <description>Box model, selectors, positioning.</description>
+    </item>
+    
+    <item>
+      <title>Transport</title>
+      <link>http://cunger.github.io/notes/physics/transport/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/transport/</guid>
+      <description>Mass and heat transport.</description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>http://cunger.github.io/notes/dev/rust/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/rust/</guid>
+      <description>Early draft. Work in progress.</description>
     </item>
     
     <item>
@@ -215,21 +224,21 @@
     </item>
     
     <item>
+      <title>Fluid flow</title>
+      <link>http://cunger.github.io/notes/physics/fluid-flow/</link>
+      <pubDate>Sat, 16 Nov 2019 12:19:28 +0100</pubDate>
+      
+      <guid>http://cunger.github.io/notes/physics/fluid-flow/</guid>
+      <description>Flow rate. Drag force.</description>
+    </item>
+    
+    <item>
       <title>Complex numbers</title>
       <link>http://cunger.github.io/notes/math/complex-numbers/</link>
       <pubDate>Sat, 16 Nov 2019 12:02:48 +0100</pubDate>
       
       <guid>http://cunger.github.io/notes/math/complex-numbers/</guid>
       <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
-    </item>
-    
-    <item>
-      <title>CSS</title>
-      <link>http://cunger.github.io/notes/dev/css/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/notes/dev/css/</guid>
-      <description>Box model, selectors, positioning.</description>
     </item>
     
     <item>
@@ -304,7 +313,7 @@ Currently reading  J.M. Steele: The Cauchy-Schwarz Master Class. M. Sheldrake: E
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>I’m a software engineer and aspiring mathematician, with a strong interest in nuclear and negative emission technologies.
+      <description>I’m a software engineer and aspiring mathematician, with a strong interest in nuclear technology and carbon removal.
   💾 GitHub
  📎 LinkedIn
  🌍 Bielefeld, Germany

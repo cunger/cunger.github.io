@@ -23,11 +23,6 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/nuke/atoms/</loc>
-    <lastmod>2019-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cunger.github.io/notes/math/polynomials/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
   </url>
@@ -63,13 +58,13 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/physics/forces/</loc>
+    <loc>http://cunger.github.io/notes/nuke/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/nuke/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/electromagnetic-radiation/</loc>
+    <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -83,8 +78,8 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/dev/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/forces/</loc>
+    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -93,8 +88,12 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/physics/transport/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/notes/cdr/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/notes/dev/</loc>
+    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -108,13 +107,13 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/physics/balances/</loc>
+    <loc>http://cunger.github.io/notes/nuke/reactors/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/nuke/reactors/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/atoms/</loc>
+    <lastmod>2019-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -123,13 +122,23 @@
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/physics/electromagnetic-radiation/</loc>
-    <lastmod>2019-11-05T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/balances/</loc>
+    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/physics/fluid-flow/</loc>
-    <lastmod>2019-11-16T12:19:28+01:00</lastmod>
+    <loc>http://cunger.github.io/notes/dev/css/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/notes/physics/transport/</loc>
+    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/notes/dev/rust/</loc>
+    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -138,13 +147,23 @@
   </url>
   
   <url>
+    <loc>http://cunger.github.io/notes/physics/fluid-flow/</loc>
+    <lastmod>2019-11-16T12:19:28+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cunger.github.io/notes/math/complex-numbers/</loc>
     <lastmod>2019-11-16T12:02:48+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cunger.github.io/notes/dev/css/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/</loc>
+    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cunger.github.io/notes/</loc>
+    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -154,11 +173,6 @@
   
   <url>
     <loc>http://cunger.github.io/tags/books/</loc>
-    <lastmod>2021-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cunger.github.io/</loc>
     <lastmod>2021-12-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -195,11 +209,6 @@
   <url>
     <loc>http://cunger.github.io/blog/climate-change-reloaded/</loc>
     <lastmod>2021-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cunger.github.io/notes/</loc>
-    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
