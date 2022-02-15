@@ -550,7 +550,13 @@ elementaren Zeilenumformung:</p>
         \(A^T=A\)
     
 </span>
-, und schiefsymmetrisch, wenn 
+ (bzw. wenn 
+<span>
+                  
+        \(a_{ij}=a_{ji}\)
+    
+</span>
+ für alle Einträge), und schiefsymmetrisch, wenn 
 <span>
                   
         \(A^T=-A\)
@@ -629,7 +635,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
  praktisch handhabbar.</p>
-<h2 id="für-hahahugoshortcode-s68-hbhb-trivial">Für 
+<h2 id="für-hahahugoshortcode-s69-hbhb-trivial">Für 
 <span>
                   
         \(n=1\)
@@ -643,7 +649,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
 
-<h2 id="für-hahahugoshortcode-s70-hbhb-einfach">Für 
+<h2 id="für-hahahugoshortcode-s71-hbhb-einfach">Für 
 <span>
                   
         \(n=2\)
@@ -709,7 +715,7 @@ d.h.
     
 </span>
 .</p>
-<h2 id="für-hahahugoshortcode-s80-hbhb-sarrus-regel">Für 
+<h2 id="für-hahahugoshortcode-s81-hbhb-sarrus-regel">Für 
 <span>
                   
         \(n=3\)
@@ -723,7 +729,7 @@ d.h.
 <li>gestrichelte Linie: negatives Produkt der Elemente</li>
 </ul>
 <p>Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.</p>
-<h2 id="für-hahahugoshortcode-s81-hbhb-laplace-entwicklung">Für 
+<h2 id="für-hahahugoshortcode-s82-hbhb-laplace-entwicklung">Für 
 <span>
                   
         \(n&gt;3\)
@@ -949,8 +955,22 @@ Wobei
         \(\text{det}(A)\)
     
 </span>
- im Körper oder Ring, über dem die Matriz definiert ist, invertierbar ist)</li>
+ im Körper oder Ring, über dem die Matrix definiert ist, invertierbar ist)</li>
+<li>0 ist kein Eigenvektor von 
+<span>
+                  
+        \(A\)
+    
+</span>
+ bzw. 
+<span>
+                  
+        \(\text{ker}(A)\neq\{0\}\)
+    
+</span>
+.</li>
 </ul>
+<p><strong>Berechnung der Inversen:</strong></p>
 <p>Gilt 
 <span>
                   
@@ -1141,12 +1161,11 @@ Wie oft eine Nullstelle vorkommt, nennt man die <strong>algebraische Vielfachhei
 
 <span>
      
-        $$\text{Eigenraum}(f,\lambda) = \{ v\in V \,|\, f(v) = \lambda v \} = \text{kern}(A-\lambda I_n)$$
+        $$\begin{aligned}\text{Eigenraum}(f,\lambda) &amp;= \{0\}\cup\{ v\in V \,|\, v\text{ ist ein Eigenvektor von }f \} \\ &amp;= \{ v\in V \,|\, f(v) = \lambda v \}\\ &amp;= \text{ker}(A-\lambda I_n) \end{aligned}$$
     
 </span>
 
 Die Dimension des Eigenraums ist die <strong>geometrische Vielfachheit</strong> des Eigenwerts.</p>
-<p>Stimmen algebraische und geometrische Vielfachheit der Eigenwerte einer Matrix überein, ist die Matrix diagonalisierbar.</p>
 <p><strong>Berechnung:</strong></p>
 <ol>
 <li>Um die Eigenwerte 
@@ -1244,9 +1263,21 @@ Das bedeutet, dass
         \(cS\)
     
 </span>
- erfüllt die Gleichung auch).
+ erfüllt die Gleichung auch). D.h. 
+<span>
+                  
+        \(A\)
+    
+</span>
+ und 
+<span>
+                  
+        \(B\)
+    
+</span>
+ stellen die gleiche Transformation dar, nur in unterschiedlichen Koordinatensystemen.
 Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.</p>
-<p>Ähnliche Matrizen haben also:</p>
+<p>Ähnliche Matrizen haben:</p>
 <ul>
 <li>den gleichen Rang,</li>
 <li>die gleiche Determinante,</li>
@@ -1300,9 +1331,45 @@ Zwei Matrizen
 </p>
 <p><strong>Berechnung:</strong> Gaußsches Eliminationsverfahren</p>
 <h2 id="diagonalisierbarkeit">Diagonalisierbarkeit</h2>
-<p>Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)</p>
+<p>Eine Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist (d.h. zu einer Matrix, in der alle Einträge, die nicht Diagonalelemente sind, 0 sind), d.h. wenn es eine invertierbare Matrix 
+<span>
+                  
+        \(S\)
+    
+</span>
+ gibt, so dass 
+<span>
+                  
+        \(S^{-1}AS\)
+    
+</span>
+ eine Diagonalmatrix ist. Die Eigenwerte der Matrix sind dann die Diagonalelemente von 
+<span>
+                  
+        \(S^{-1}AS\)
+    
+</span>
+ und 
+<span>
+                  
+        \(S\)
+    
+</span>
+ hat als Spalten die zugehörigen Eigenvektoren.</p>
+<p>Eine Matrix auf jeden Fall diagonalisierbar, wenn</p>
+<ul>
+<li>sie symmetrisch ist;</li>
+<li>sie die maximale Anzahl Eigenwerte hat (= Anzahl der Dimensionen des Vektorraums), denn dann sind die zugehörigen Eigenvektoren linear unabhängig und es gibt eine Basis aus Eigenvektoren, d.h. der Vektorraum ist die Summe der Eigenräume;</li>
+<li>das charakteristische Polynom in Linearfaktoren zerfällt und die algebraische und geometrische Vielfachheit der Eigenwerte übereinstimmen.</li>
+</ul>
 <h2 id="jordan-normalform">Jordan-Normalform</h2>
-<p>Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen.</p>
+<p>Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen. Das kann man mit der Jordan-Normalform, in die jede Matrix überführt werden kann.</p>
 <p>Eine Jordan-Matrix enthälten auf der Diagonalen Jordan-Blöcke und sonst 0. Ein Jordan-Block ist eine quadratische Matrix mit einem Eigenwert auf der Diagonalen, 1 auf einer der Nebendiagonalen und sonst 0. Zum Beispiel:</p>
 <ul>
 <li>
@@ -1379,7 +1446,7 @@ Zwei Matrizen
 <li>Ansonsten berechne die Haupträume 
 <span>
                   
-        \(H_k = \text{kern}((A-\lambda I_n)^k)\)
+        \(H_k = \text{ker}((A-\lambda I_n)^k)\)
     
 </span>
  zu 
@@ -1446,13 +1513,13 @@ davon sind
         \(A\in M_{mn}(\mathbb{K})\)
     
 </span>
- kann eine lineare Abbildung zwischen endlichen Vektorräumen (
+ kann eine lineare Abbildung 
 <span>
                   
-        \(\mathbb{K}^n\to\mathbb{K}^m\)
+        \(f:\mathbb{K}^n\to\mathbb{K}^m\)
     
 </span>
-) darstellen. Sie bildet dann die Vektoren 
+ zwischen endlichen Vektorräumen darstellen. Sie bildet dann die Vektoren 
 <span>
                   
         \(x\in\mathbb{K}^n\)
@@ -1464,7 +1531,13 @@ davon sind
         \(Ax\in\mathbb{K}^m\)
     
 </span>
- ab. (Dabei können diese Vektoren zum Beispiel auch die Koordinatenvektoren beliebiger Vektoren aus 
+ ab, d.h. 
+<span>
+                  
+        \(f(x)=Ax\)
+    
+</span>
+. (Dabei können diese Vektoren zum Beispiel auch die Koordinatenvektoren beliebiger Vektoren aus 
 <span>
                   
         \(\mathbb{K}\)
@@ -1652,7 +1725,7 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 </ul>
 </li>
 </ul>
-<p>Jede Matrix ist Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)).</p>
+<p>Jede Matrix ist die Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen).</p>
 <h1 id="matrizen-als-gleichungssysteme">Matrizen als Gleichungssysteme</h1>
 <h1 id="literatur">Literatur</h1>
 <ul>
