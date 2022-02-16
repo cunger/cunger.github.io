@@ -21,7 +21,7 @@
 
 
   <meta property="og:title" content="Algebraische Strukturen" />
-<meta property="og:description" content="Ringe, Gruppen, Körper, Vektorräume. Und Abbildungen zwischen diesen." />
+<meta property="og:description" content="Gruppen, Ringe, Körper, Vektorräume und strukturerhaltende Abbildungen." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/notes/math/algebra/" />
 <meta property="article:published_time" content="2021-09-20T00:00:00+00:00" />
@@ -93,7 +93,7 @@
     <div id="hero">
       <h1> Algebraische Strukturen </h1>
       <p class="hero-lead">
-         Ringe, Gruppen, Körper, Vektorräume. Und Abbildungen zwischen diesen.
+         Gruppen, Ringe, Körper, Vektorräume und strukturerhaltende Abbildungen.
       </p>
 
     </div>
@@ -121,8 +121,8 @@ headingSelector: 'h1'
 
 
 
-    <p>Algebra untersucht die Eigenschaften mathematischer Objekte unter bestimmten Operationen.</p>
-<p>Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen.</p>
+    <p>Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen. Die Algebra untersucht die Eigenschaften dieser mathematischen Objekte unter den gegebenen Operationen.</p>
+<p><img src="/images/docs/algebraischestrukturen.png" alt="Algebraische Strukturen"></p>
 <h1 id="gruppen">Gruppen</h1>
 <p>Eine <strong>Gruppe</strong> 
 <span>
@@ -321,7 +321,7 @@ Die Verknüpfung wird oft additiv interpretiert für kommutitative Gruppen und m
 </li>
 </ul>
 <h2 id="symmetrische-gruppen">Symmetrische Gruppen</h2>
-<p>Ein wichtiges Beispiel für nicht-kommutative Gruppen sind die <strong>symmetrischen Gruppe</strong> 
+<p>Ein wichtiges Beispiel für nicht-kommutative Gruppen sind die <strong>symmetrischen Gruppen</strong> 
 <span>
                   
         \((S_n, \circ)\)
@@ -334,7 +334,7 @@ die Gruppe aller Permutationen von
         \(n\)
     
 </span>
- Elementen. Wobei 
+ Objekten. Wobei 
 <span>
                   
         \(S_n\)
@@ -346,7 +346,19 @@ die Gruppe aller Permutationen von
         \(\{1,\ldots,n\}\)
     
 </span>
- ist.</p>
+ ist und die Verknüpfung 
+<span>
+                  
+        \(\circ\)
+    
+</span>
+ die Hintereinanderausführung zweier solcher Abbildungen. Das neutrale Element ist die Abbildung 
+<span>
+                  
+        \(\text{id}:x\mapsto x\)
+    
+</span>
+.</p>
 <p>
 <span>
                   
@@ -356,7 +368,7 @@ die Gruppe aller Permutationen von
  ist für 
 <span>
                   
-        \(n\geq 3\)
+        \(n &gt; 2\)
     
 </span>
  nicht abelsch, d.h. 
@@ -408,7 +420,7 @@ Jede Permutation kann als Komposition von Transpositionen dargestellt werden.</p
         \(a\cdot(b&#43;c) = (a\cdot b)&#43;(a\cdot c)\)
     
 </span>
-), dass beide Verknüpfungen miteinander verträglich sind,</li>
+, also dass beide Verknüpfungen miteinander verträglich sind),</li>
 <li>aber nicht kommutativ sein muss, nicht zwangsläufig ein neutrales Element bezüglich 
 <span>
                   
@@ -416,17 +428,6 @@ Jede Permutation kann als Komposition von Transpositionen dargestellt werden.</p
     
 </span>
  (d.h. ein Einselement) haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.</li>
-</ul>
-<p>Beispiele:</p>
-<ul>
-<li>
-<span>
-                  
-        \((\mathbb{Z},&#43;,\cdot)\)
-    
-</span>
-</li>
-<li>Die Menge der Abbildungen mit punktweiser Definition von Addition und Multiplikation.</li>
 </ul>
 <p>Die <strong>Einheitengruppe</strong> 
 <span>
@@ -446,13 +447,61 @@ Jede Permutation kann als Komposition von Transpositionen dargestellt werden.</p
         \(\cdot\)
     
 </span>
- invertierbar sind. (Zusammen mit 
+ invertierbar sind, also 
+<span>
+                  
+        \(\{a\in R\,|\, \text{es existiert ein } b\in R \text{ mit } ab = ba = 1\}\)
+    
+</span>
+. (Zusammen mit 
 <span>
                   
         \(\cdot\)
     
 </span>
  bildet diese Menge eine Gruppe.)</p>
+<p>Beispiele:</p>
+<ul>
+<li>
+<span>
+                  
+        \((\mathbb{Z},&#43;,\cdot)\)
+    
+</span>
+, es ist 
+<span>
+                  
+        \(\mathbb{Z}^\times = \{1,-1\}\)
+    
+</span>
+</li>
+<li>Die Menge 
+<span>
+                  
+        \(M_{nn}(\mathbb{K})\)
+    
+</span>
+ der 
+<span>
+                  
+        \(n\times n\)
+    
+</span>
+-Matrizen über 
+<span>
+                  
+        \(\mathbb{K}\)
+    
+</span>
+ mit Matrizenaddition und Matrizenmultiplikation (nicht kommutativ). Es ist 
+<span>
+                  
+        \(M_{nn}(\mathbb{K})^\times = \{A\,|\,\text{det}(A)\neq 0\}\)
+    
+</span>
+.</li>
+<li>Eine Menge von Abbildungen mit punktweiser Definition von Addition und Multiplikation (siehe z.B. Polynomringe).</li>
+</ul>
 <p>In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente 
 <span>
                   
@@ -465,14 +514,13 @@ Jede Permutation kann als Komposition von Transpositionen dargestellt werden.</p
         \(ab=0\)
     
 </span>
-.</p>
-<p>Ein kommutativer Ring mit Einselement, aber ohne Nullteiler, heißt <strong>Integritätsbereich</strong> oder <strong>Integritätsring</strong>. Zum Beispiel: 
+ (z.B. im Ring 
 <span>
                   
-        \(\mathbb{Z}\)
+        \(M_{nn}(\mathbb{K})\)
     
 </span>
- und jeder Körper.</p>
+). Ein kommutativer Ring mit Einselement, aber ohne Nullteiler, heißt <strong>Integritätsbereich</strong> oder <strong>Integritätsring</strong>. Beispiele sind alle Körper, denn in Körpern gibt es außer der 0 keine Nullteiler.</p>
 <h2 id="restklassenringe">Restklassenringe</h2>
 <p>Der Restklassenring 
 <span>
@@ -525,7 +573,7 @@ Jede Permutation kann als Komposition von Transpositionen dargestellt werden.</p
  in 
 <span>
                   
-        \(\mathbb{Z}/2\mathbb{Z}\)
+        \(\mathbb{Z}/4\mathbb{Z}\)
     
 </span>
 .</p>
@@ -598,8 +646,67 @@ Ist
 </span>
 ).</p>
 <h2 id="polynomringe">Polynomringe</h2>
-<p>Ein Element ist invertierbar gdw &hellip;</p>
-<p>Siehe auch <a href="../polynomials">Polynome</a>.</p>
+<p>Ein Polynomring 
+<span>
+                  
+        \((R[x],&#43;,\cdot)\)
+    
+</span>
+ ist eine Menge von <a href="../polynomials">Polynomfunktionen</a> 
+<span>
+                  
+        \(x\mapsto\sum_{k=0}^n a_kx^k\)
+    
+</span>
+ über 
+<span>
+                  
+        \(R\)
+    
+</span>
+ zusammen mit Polynom-Addition und -Multiplikation:</p>
+<ul>
+<li>
+<span>
+                  
+        \((p&#43;q)(x):=p(x)&#43;q(x)\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \((p\cdot q)(x):=p(x)\cdot q(x)\)
+    
+</span>
+</li>
+</ul>
+<p>Das Einselement ist 
+<span>
+                  
+        \(x\mapsto x^0 = 1\)
+    
+</span>
+.</p>
+<p>Ist 
+<span>
+                  
+        \((R,&#43;,\cdot)\)
+    
+</span>
+ ein Integritätsring, so ist auch 
+<span>
+                  
+        \((R[x],&#43;,\cdot)\)
+    
+</span>
+ einer, mit der Einheitengruppe 
+<span>
+                  
+        \(R[x]^\times = \{ x\mapsto a \,|\, a\in R^\times \}\)
+    
+</span>
+.</p>
 <h1 id="körper">Körper</h1>
 <p>Ein <strong>Körper</strong> 
 <span>
