@@ -121,7 +121,7 @@ headingSelector: 'h1'
 
 
 
-    <p>Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen. Die Algebra untersucht die Eigenschaften dieser mathematischen Objekte unter den gegebenen Operationen.</p>
+    <p>Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen.</p>
 <p><img src="/images/docs/algebraischestrukturen.png" alt="Algebraische Strukturen"></p>
 <h1 id="gruppen">Gruppen</h1>
 <p>Eine <strong>Gruppe</strong> 
@@ -1094,6 +1094,162 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
     
 </span>
 </li>
+</ul>
+<h2 id="quotientenvektorraum">Quotientenvektorraum</h2>
+<p>Wenn 
+<span>
+                  
+        \(V,U\)
+    
+</span>
+ Vektorräume sind mit 
+<span>
+                  
+        \(U\subseteq V\)
+    
+</span>
+, ist der Quotientenvektorraum 
+<span>
+                  
+        \((V/U,&#43;,\cdot)\)
+    
+</span>
+</p>
+<ul>
+<li>die Menge 
+<span>
+                  
+        \(V/U = \{ v &#43; U\,|\, v\in V \}\)
+    
+</span>
+, d.h. die Menge aller um den Vektor 
+<span>
+                  
+        \(v\)
+    
+</span>
+ verschobenen Unterräume 
+<span>
+                  
+        \(v&#43;U=\{v&#43;u\,|\,u\in U\}\)
+    
+</span>
+, zusammen mit</li>
+<li>der Addition 
+<span>
+                  
+        \((v&#43;U)&#43;(w&#43;U)=(v&#43;w)&#43;U\)
+    
+</span>
+ und</li>
+<li>der Skalarmultiplikation 
+<span>
+                  
+        \(c(v&#43;U)=cv&#43;U\)
+    
+</span>
+.</li>
+</ul>
+<p><strong>Beispiel:</strong> Für eine Gerade 
+<span>
+                  
+        \(U\)
+    
+</span>
+ im 
+<span>
+                  
+        \(\mathbb{R}^2\)
+    
+</span>
+ besteht 
+<span>
+                  
+        \(\mathbb{R}^2/U\)
+    
+</span>
+ aus allen zu 
+<span>
+                  
+        \(U\)
+    
+</span>
+ parallelen Geraden (und analog für Ebenen im 
+<span>
+                  
+        \(\mathbb{R}^3\)
+    
+</span>
+).</p>
+<p><img src="/images/docs/quotientenvektorraum.png" alt="Beispiel Quotientenvektorraum"></p>
+<p>(Quelle: <a href="https://www.aleph1.info/?call=Puc&amp;permalink=ela1_3.11">Erste Hilfe Lineare Algebra</a>)</p>
+<p>Anders betrachtet ist 
+<span>
+                  
+        \(v&#43;U\)
+    
+</span>
+ die Äquivalenzklasse aller Vektoren 
+<span>
+                  
+        \(w_1,w_2\)
+    
+</span>
+, die sich nur durch einen Vektor aus 
+<span>
+                  
+        \(U\)
+    
+</span>
+ unterscheiden (d.h. 
+<span>
+                  
+        \(w_1-w_2\in U\)
+    
+</span>
+).</p>
+<p>Das Nullelement ist 
+<span>
+                  
+        \(0&#43;U\)
+    
+</span>
+ und es gilt
+
+<span>
+                  
+        \(\text{dim}(V/U) = \text{dim}(V) - \text{dim}(U)\)
+    
+</span>
+.</p>
+<p>TODO:</p>
+<ul>
+<li>Der Quotientenvektorraum ist der Lebensraum der Homomorphismen auf 
+<span>
+                  
+        \(V\)
+    
+</span>
+, die auf 
+<span>
+                  
+        \(U\)
+    
+</span>
+ verschwinden.</li>
+<li>
+<span>
+                  
+        \((V/U,&#43;)\)
+    
+</span>
+ ist die Faktorgruppe der Gruppe 
+<span>
+                  
+        \((V,&#43;)\)
+    
+</span>
+.</li>
 </ul>
 <h2 id="skalarprodukt">Skalarprodukt</h2>
 <p>Das Skalarprodukt (<em>dot product</em> oder <em>inner product</em>) bildet zwei Vektoren auf ein Skalar ab und liefert damit eine zusätzliche Struktur, die es erlaubt geometrische Maße wie Längen und Winkel zu definieren, indem es eine <a href="../topology/#normierte-und-metrische-r%C3%A4ume">Norm</a> induziert.</p>

@@ -211,7 +211,20 @@ headingSelector: 'h1'
         \(A^{m-1}\neq 0\)
     
 </span>
-.</p>
+. Für nilpotente Matrizen gilt:</p>
+<ul>
+<li>Das <a href="#das-charakteristische-polynom-einer-matrix">charakteristische Polynom</a> ist von der Form 
+<span>
+                  
+        \(x^n\)
+    
+</span>
+. Die einzige Nullstelle davon ist 0, also haben nilpotente Matrizen nur den Eigenwert 0.</li>
+<li>Da sie den Eigenwert 0 haben, ist ihr Kern nicht trivial und damit sind sie nicht <a href="#invertierbarkeit">invertierbar</a>.</li>
+<li>Außerdem sind ihre Determinante und Spur jeweils 0.</li>
+<li>Sie sind entweder die Nullmatrix oder nicht diagonalisierbar.</li>
+<li>Sie haben keinen vollen Rang, d.h. ihre Spaltenvektoren sind linear abhängig.</li>
+</ul>
 <h2 id="elementarmatrizen">Elementarmatrizen</h2>
 <p>Die Identitätsmatrix 
 <span>
@@ -635,7 +648,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
  praktisch handhabbar.</p>
-<h2 id="für-hahahugoshortcode-s69-hbhb-trivial">Für 
+<h2 id="für-hahahugoshortcode-s70-hbhb-trivial">Für 
 <span>
                   
         \(n=1\)
@@ -649,7 +662,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
 
-<h2 id="für-hahahugoshortcode-s71-hbhb-einfach">Für 
+<h2 id="für-hahahugoshortcode-s72-hbhb-einfach">Für 
 <span>
                   
         \(n=2\)
@@ -715,7 +728,7 @@ d.h.
     
 </span>
 .</p>
-<h2 id="für-hahahugoshortcode-s81-hbhb-sarrus-regel">Für 
+<h2 id="für-hahahugoshortcode-s82-hbhb-sarrus-regel">Für 
 <span>
                   
         \(n=3\)
@@ -729,7 +742,7 @@ d.h.
 <li>gestrichelte Linie: negatives Produkt der Elemente</li>
 </ul>
 <p>Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.</p>
-<h2 id="für-hahahugoshortcode-s82-hbhb-laplace-entwicklung">Für 
+<h2 id="für-hahahugoshortcode-s83-hbhb-laplace-entwicklung">Für 
 <span>
                   
         \(n&gt;3\)
@@ -1049,11 +1062,24 @@ Wobei
 
 <span>
      
-        $$\Chi_A=\text{det}(xI_n-A)$$
+        $$\chi_A=\text{det}(xI_n-A)$$
     
 </span>
 
 <p>Die Nullstellen des charakteristischen Polynoms sind die Eigenwerte der Matrix.</p>
+<p>Wenn 
+<span>
+                  
+        \(A\)
+    
+</span>
+ die Nullmatrix oder nilpotent ist, ist 
+<span>
+                  
+        \(\chi_A=x^n\)
+    
+</span>
+ (und umgekehrt).</p>
 <h1 id="eigenwerte-eigenvektoren-eigenraum">Eigenwerte, Eigenvektoren, Eigenraum</h1>
 <p>Die <strong>Eigenvektoren</strong> 
 <span>
