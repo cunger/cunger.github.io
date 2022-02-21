@@ -192,7 +192,52 @@ headingSelector: 'h1'
 <p>Die <strong>Spur</strong> einer Matrix ist die Summe der Diagonalelemente.</p>
 <h1 id="matrizenrechnung">Matrizenrechnung</h1>
 <p>Addition und Skalarmultiplikation passieren elementweise.</p>
-<p>Multiplikation &hellip;</p>
+<p>Die Matrizenmultiplikation ist eine Verknüpfung 
+<span>
+                  
+        \(M_{mk}\times M_{kn}\to M_{mn}\)
+    
+</span>
+, wobei sich 
+<span>
+                  
+        \(C=AB\)
+    
+</span>
+ so berechnet, dass der Eintrag i,j in 
+<span>
+                  
+        \(C\)
+    
+</span>
+ das Standardskalarprodukt der i-ten Zeile von 
+<span>
+                  
+        \(A\)
+    
+</span>
+ mit der j-ten Spalte von 
+<span>
+                  
+        \(B\)
+    
+</span>
+ ist:
+
+<span>
+                  
+        \(c_{ij}=\sum_{k=1}^m a_{ik}b_{kj}\)
+    
+</span>
+.</p>
+<p>Zum Beispiel 
+<span>
+                  
+        \(c_{11}=a_{11}b_{11}&#43;a_{12}b_{21}&#43;a_{13}b_{31}\)
+    
+</span>
+.</p>
+<p><img src="/images/docs/matrixmultiplication.png" alt="Matrizenmultiplikation"></p>
 <p>Eine Matrix ist <strong>nilpotent</strong>, wenn es ein 
 <span>
                   
@@ -648,7 +693,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
  praktisch handhabbar.</p>
-<h2 id="für-hahahugoshortcode-s70-hbhb-trivial">Für 
+<h2 id="für-hahahugoshortcode-s77-hbhb-trivial">Für 
 <span>
                   
         \(n=1\)
@@ -662,7 +707,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
 
-<h2 id="für-hahahugoshortcode-s72-hbhb-einfach">Für 
+<h2 id="für-hahahugoshortcode-s79-hbhb-einfach">Für 
 <span>
                   
         \(n=2\)
@@ -728,7 +773,7 @@ d.h.
     
 </span>
 .</p>
-<h2 id="für-hahahugoshortcode-s82-hbhb-sarrus-regel">Für 
+<h2 id="für-hahahugoshortcode-s89-hbhb-sarrus-regel">Für 
 <span>
                   
         \(n=3\)
@@ -742,7 +787,7 @@ d.h.
 <li>gestrichelte Linie: negatives Produkt der Elemente</li>
 </ul>
 <p>Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.</p>
-<h2 id="für-hahahugoshortcode-s83-hbhb-laplace-entwicklung">Für 
+<h2 id="für-hahahugoshortcode-s90-hbhb-laplace-entwicklung">Für 
 <span>
                   
         \(n&gt;3\)
@@ -1310,6 +1355,11 @@ Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wa
 <li>das gleiche charakteristische Polynom und Minimalpolynom,</li>
 <li>die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),</li>
 <li>die gleiche Jordan-Normalform.</li>
+</ul>
+<p>Diese Punkte sind alle notwendig, hinreichend ist aber nur der letzte. Das heißt:</p>
+<ul>
+<li>Wenn zwei Matrizen unterschiedliche Ränge, Determinanten, charakteristische Polynome oder Eigenwerte haben, sind sie nicht ähnlich.</li>
+<li>Wenn zwei Matrizen die gleiche Jordan-Normalform haben, sind sie ähnlich.</li>
 </ul>
 <p>Matrizen lassen sich auch nach <strong>Kongruenz</strong> in Äquivalenzklassen (sogenannte <strong>Kongruenzklassen</strong>) einteilen:
 Zwei Matrizen 
