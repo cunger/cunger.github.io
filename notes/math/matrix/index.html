@@ -1318,14 +1318,14 @@ Technisch heißt das:</p>
  sind <strong>ähnlich</strong>, wenn es eine invertierbare Matrix 
 <span>
                   
-        \(S\)
+        \(P\)
     
 </span>
  gibt, so dass:
 
 <span>
      
-        $$A=S^{-1}BS$$
+        $$A=P^{-1}BP$$
     
 </span>
 
@@ -1344,19 +1344,19 @@ Das bedeutet, dass
  ausdrückt, nur in einer anderen Basis, wobei 
 <span>
                   
-        \(S\)
+        \(P\)
     
 </span>
  die Basiswechselmatrix ist (
 <span>
                   
-        \(S\)
+        \(P\)
     
 </span>
  ist nicht eindeutig, denn jedes Vielfache 
 <span>
                   
-        \(cS\)
+        \(cP\)
     
 </span>
  erfüllt die Gleichung auch). D.h. 
@@ -1373,6 +1373,33 @@ Das bedeutet, dass
 </span>
  stellen die gleiche Transformation dar, nur in unterschiedlichen Koordinatensystemen.
 Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.</p>
+<p><img src="/images/docs/aehnlichkeitsdiagramm.jpg" alt="Diagramm für Ähnlichkeit"></p>
+<p><strong>Berechnung:</strong> 
+<span>
+                  
+        \(P\)
+    
+</span>
+ kann man berechnen, indem man die Eigenwerte von 
+<span>
+                  
+        \(A\)
+    
+</span>
+ mit den dazugehörigen Eigenräumen findet und dann die Basisvektoren dieser Eigenräume als Spalten von 
+<span>
+                  
+        \(P\)
+    
+</span>
+ wählt.
+(Wenn 
+<span>
+                  
+        \(P\)
+    
+</span>
+ orthogonal sein soll, muss man entsprechend die Orthonormalbasis der Eigenräume bilden.)</p>
 <p>Ähnliche Matrizen haben:</p>
 <ul>
 <li>den gleichen Rang,</li>
@@ -1396,21 +1423,21 @@ Zwei Matrizen
  sind <strong>kongruent</strong>, wenn es eine invertierbare Matrix 
 <span>
                   
-        \(S\)
+        \(P\)
     
 </span>
  gibt, so dass
 
 <span>
      
-        $$A=S^TBS$$
+        $$A=P^TBP$$
     
 </span>
 </p>
 <p>Da in der Regel 
 <span>
                   
-        \(S^T\neq S^{-1}\)
+        \(P^T\neq P^{-1}\)
     
 </span>
 , sind kongruente Matrizen in der Regel nicht ähnlich.</p>
