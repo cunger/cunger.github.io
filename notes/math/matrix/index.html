@@ -133,7 +133,7 @@ headingSelector: 'h1'
         \(\mathbb{K}\)
     
 </span>
- ist eine Anordnung von Element von 
+ ist eine Anordnung von Elementen von 
 <span>
                   
         \(\mathbb{K}\)
@@ -397,7 +397,7 @@ elementaren Zeilenumformung:</p>
         \(A\)
     
 </span>
- ist diejenige Matrix, in der Zeilen und Spalten vertauscht sind.</p>
+ ist diejenige Matrix, in der Zeilen und Spalten vertauscht sind (d.h. die 1. Zeile wird zur 1. Spalte usw.).</p>
 <p>Die <strong>Inverse</strong> 
 <span>
                   
@@ -1216,13 +1216,7 @@ Formal:
 </span>
  gestaucht oder gestreckt.</p>
 <ul>
-<li>Eine Matrix muss keine Eigenvektoren besitzen - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum (und 
-<span>
-                  
-        \(\lambda\)
-    
-</span>
- entspricht dann der Rotationsachse).</li>
+<li>Eine Matrix muss keine Eigenvektoren besitzen - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.</li>
 <li>
 <span>
                   
@@ -1261,7 +1255,20 @@ Wie oft eine Nullstelle vorkommt, nennt man die <strong>algebraische Vielfachhei
     
 </span>
 
-Die Dimension des Eigenraums ist die <strong>geometrische Vielfachheit</strong> des Eigenwerts.</p>
+(Das heißt, der Eigenraum zum Eigenwert 0 ist 
+<span>
+                  
+        \(\text{ker}(A)\)
+    
+</span>
+ bzw. 
+<span>
+                  
+        \(\text{ker}(f)\)
+    
+</span>
+.)</p>
+<p>Die Dimension des Eigenraums ist die <strong>geometrische Vielfachheit</strong> des Eigenwerts.</p>
 <p><strong>Berechnung:</strong></p>
 <ol>
 <li>Um die Eigenwerte 
@@ -1297,7 +1304,13 @@ Setzt man die Eigenwerte
         \(v\)
     
 </span>
- bestimmen lassen. (Die müssen nicht eindeutig sein.)</li>
+ bestimmen lassen.  Die müssen nicht eindeutig sein. (Bringt man 
+<span>
+     
+        $$A-\lambda I_n$$
+    
+</span>
+ in Treppennormalform und transponiert diese, dann sind die Spaltenvektoren die Basis des Eigenraums.)</li>
 <li>Überprüfen kann man die gefundenen Eigenvektoren dann durch Einsetzen in 
 <span>
                   

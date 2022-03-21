@@ -1077,7 +1077,7 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
  für alle 
 <span>
                   
-        \(v \in V, c\in\mathbb{K}\)
+        \(v \in U, c\in\mathbb{K}\)
     
 </span>
 </li>
@@ -1090,7 +1090,7 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
  für alle 
 <span>
                   
-        \(v,w \in V\)
+        \(v,w \in U\)
     
 </span>
 </li>
@@ -1113,7 +1113,45 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
         \(V\)
     
 </span>
-. Außerdem gilt:</p>
+.</p>
+<p>Ein Untervektorraum 
+<span>
+                  
+        \(U\)
+    
+</span>
+ heißt <strong>
+<span>
+                  
+        \(f\)
+    
+</span>
+-invariant</strong>, wenn für alle 
+<span>
+                  
+        \(u\in U\)
+    
+</span>
+ gilt, dass 
+<span>
+                  
+        \(f(u)\in U\)
+    
+</span>
+ (d.h. 
+<span>
+                  
+        \(f\)
+    
+</span>
+ führt nicht aus 
+<span>
+                  
+        \(U\)
+    
+</span>
+ heraus).</p>
+<p>Außerdem gilt:</p>
 <ul>
 <li>Der Kern einer linearen Abbildung 
 <span>
@@ -1202,7 +1240,49 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
         \(0\notin V\backslash U\)
     
 </span>
-).</li>
+). Es gibt aber einen zu 
+<span>
+                  
+        \(U\)
+    
+</span>
+ komplementären Unterraum 
+<span>
+                  
+        \(U&#39;\)
+    
+</span>
+, so dass 
+<span>
+                  
+        \(U\cap U&#39;=\{0\}\)
+    
+</span>
+ und 
+<span>
+                  
+        \(V=U&#43;U&#39;=\{u&#43;u&#39;\,|\,u\in U,u&#39;\in U&#39;\}\)
+    
+</span>
+. (
+<span>
+                  
+        \(U&#43;U&#39;\)
+    
+</span>
+ entspricht dem Schnitt aller Unterräume, in denen 
+<span>
+                  
+        \(U\)
+    
+</span>
+ und 
+<span>
+                  
+        \(U&#39;\)
+    
+</span>
+ enthalten sind.)</li>
 <li>Die Linearkombinationen von Vektoren 
 <span>
                   
@@ -1490,7 +1570,7 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
  eine Abbildung 
 <span>
                   
-        \(\langle\,\rangle:V\times V\to \mathbb{K}\)
+        \(\langle\cdot,\cdot\rangle:V\times V\to \mathbb{K}\)
     
 </span>
 , die für alle für 
@@ -1507,7 +1587,25 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
         \(\langle v,v\rangle &gt; 0\)
     
 </span>
-</li>
+ (bzw. 
+<span>
+                  
+        \(\langle v,v\rangle \geq 0\)
+    
+</span>
+, aber 
+<span>
+                  
+        \(\langle v,v\rangle = 0\)
+    
+</span>
+ nur für 
+<span>
+                  
+        \(v = 0\)
+    
+</span>
+)</li>
 <li>Symmetrie: 
 <span>
                   
@@ -1887,7 +1985,7 @@ Der <strong>Kern</strong> sind all die Elemente aus
         \(\langle v,\cdot\rangle:W\to\mathbb{K}\)
     
 </span>
- beide linear sind, d.h. wenn gilt:</p>
+ beide linear sind (d.h. wenn man eins der beiden Argumente festhält, ist die resultierende Abbildung linear), also wenn gilt:</p>
 <ul>
 <li>
 <span>
