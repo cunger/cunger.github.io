@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Alata:400,700|Open+Sans:300,400,500,700|Roboto+Mono:300,400|Inconsolata');
+@import url("https://fonts.googleapis.com/css?family=JetBrains+Mono:wght@300|PT+Sans|Oxygen+Mono|Rubik&display+swap");
 
 body, html {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -16,7 +16,7 @@ main {
 }
 
 #kube-component {
-  font-family: "Roboto Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Oxygen Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4;
@@ -30,13 +30,14 @@ footer,
 }
 
 pre,
+code,
 .highlight {
-  font-family: "Inconsolata", monospace;
+  font-family: "JetBrains Mono", monospace;
 }
 
 h1.title,
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Alata", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   color: #0d0d0e;
   text-rendering: optimizeLegibility;
