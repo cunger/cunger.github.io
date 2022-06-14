@@ -247,7 +247,7 @@
       <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>I’m a professional software engineer with 7 years of experience in application development and a now fading background in research.
+      <description>I’m a professional software engineer with 7+ years of experience in application development and a now fading background in research.
   💾 GitHub
  📎 LinkedIn
  🌍 Bielefeld, Germany
@@ -256,17 +256,20 @@
     </item>
     
     <item>
-      <title>Favorite books 2021</title>
-      <link>http://cunger.github.io/blog/books-2021/</link>
+      <title>Books galore</title>
+      <link>http://cunger.github.io/blog/books/</link>
       <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/blog/books-2021/</guid>
-      <description>Ryusho Kadota, Akira Tokuhiro, Simon Varnam: On the brink: The inside story of Fukushima Daiichi.
-Merlin Sheldrake: Entangled life: How fungi make our worlds, change our minds &amp;amp; shape our futures.
-Becky Chambers: Long way to a small angry planet.
-Kim Stanley Robinson: The ministry for the future.
+      <guid>http://cunger.github.io/blog/books/</guid>
+      <description>Merlin Sheldrake: Entangled life: How fungi make our worlds, change our minds &amp;amp; shape our futures.
+Ryusho Kadota, Akira Tokuhiro, Simon Varnam: On the brink: The inside story of Fukushima Daiichi.
+Edward Wilson: Half-Earth.
 Brian Cox: The planets.
-Scott Kelly: Endurance: A year in space, a lifetime of discovery.</description>
+Charles Seife: Decoding the universe.
+Becky Chambers: Long way to a small angry planet. (And most of her other books.)
+Adam Higginbotham: Midnight in Chernobyl.
+Nancy Leveson: Engineering a safer world.
+Michael Feathers: Working effectively with legacy code.</description>
     </item>
     
     <item>
