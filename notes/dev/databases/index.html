@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.92.2" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,10 @@
   <meta property="og:title" content="Databases" />
 <meta property="og:description" content="Relational model and SQL." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cunger.github.io/notes/dev/databases/" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/databases/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
 
   
 
@@ -153,11 +154,11 @@ Foreign key columns obviously need to have the same data type as the primary key
 <h1 id="postgresql">PostgreSQL</h1>
 <h2 id="basic-commands">Basic commands</h2>
 <p>Lists all databases and exit:</p>
-<pre><code>$ psql -l
+<pre tabindex="0"><code>$ psql -l
 </code></pre><p>Connect to database:</p>
-<pre><code>$ psql hero-database username
+<pre tabindex="0"><code>$ psql hero-database username
 </code></pre><p>Or via postgres terminal:</p>
-<pre><code>$ sudo -i -u postgres
+<pre tabindex="0"><code>$ sudo -i -u postgres
 $ psql
 postgres=# \l
 postgres=# \c hero-database
@@ -227,15 +228,15 @@ hero-database=#
 <h2 id="importing-and-exporting-data">Importing and exporting data</h2>
 <p><em>Importing from SQL file:</em></p>
 <p>Command line:</p>
-<pre><code>$ psql -d demo &lt; dump.sql
+<pre tabindex="0"><code>$ psql -d demo &lt; dump.sql
 </code></pre><p><code>psql</code> console:</p>
-<pre><code># \i /path/to/dump.sql
+<pre tabindex="0"><code># \i /path/to/dump.sql
 </code></pre><p><em>Importing from CSV file:</em></p>
 <p><code>psql</code> console:</p>
-<pre><code># \copy table          from 'table.csv' with CSV HEADER DELIMITER ',';
+<pre tabindex="0"><code># \copy table          from 'table.csv' with CSV HEADER DELIMITER ',';
 # \copy table (c1, c2) from 'table.csv' with CSV HEADER DELIMITER ',';
 </code></pre><p><code>\copy</code> invokes the corresponding SQL command <code>COPY</code>:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">COPY</span> <span style="color:#00a8c8">table</span>               <span style="color:#00a8c8">FROM</span> <span style="color:#d88200">&#39;absolute/path/to/table.csv&#39;</span> <span style="color:#00a8c8">WITH</span> <span style="color:#111">CSV</span> <span style="color:#111">HEADER</span> <span style="color:#00a8c8">DELIMITER</span> <span style="color:#d88200">&#39;,&#39;</span><span style="color:#111">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">COPY</span> <span style="color:#00a8c8">table</span>               <span style="color:#00a8c8">FROM</span> <span style="color:#d88200">&#39;absolute/path/to/table.csv&#39;</span> <span style="color:#00a8c8">WITH</span> <span style="color:#111">CSV</span> <span style="color:#111">HEADER</span> <span style="color:#00a8c8">DELIMITER</span> <span style="color:#d88200">&#39;,&#39;</span><span style="color:#111">;</span>
 <span style="color:#00a8c8">COPY</span> <span style="color:#00a8c8">table</span> <span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#111">)</span> <span style="color:#00a8c8">FROM</span> <span style="color:#d88200">&#39;absolute/path/to/table.csv&#39;</span> <span style="color:#00a8c8">WITH</span> <span style="color:#111">CSV</span> <span style="color:#111">HEADER</span> <span style="color:#00a8c8">DELIMITER</span> <span style="color:#d88200">&#39;,&#39;</span><span style="color:#111">;</span>
 </code></pre></div><p>Note that <code>HEADER</code> just means the first line is going to be ignored;
 the headers are not used for matching with the table columns.
@@ -244,7 +245,7 @@ in the table schema, the columns have to be specified in the correct order
 in the <code>COPY</code> statement.</p>
 <p><em>Exporting a database or a specific table into an SQL file:</em></p>
 <p>Command line:</p>
-<pre><code>$ pg_dump -d demo [-t table] [--inserts] -f dump.sql
+<pre tabindex="0"><code>$ pg_dump -d demo [-t table] [--inserts] -f dump.sql
 </code></pre><h2 id="data-types">Data types</h2>
 <p>Data types are used by databases to decide how much memory to allocate to the values, how to perform operations and calculations on them, and how to sort them.</p>
 <ul>
@@ -253,7 +254,7 @@ in the <code>COPY</code> statement.</p>
 </ul>
 <h3 id="serial">Serial</h3>
 <p><code>serial</code> is a notational shortcut for creating a sequence:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#111">items</span> <span style="color:#111">(</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#111">items</span> <span style="color:#111">(</span>
   <span style="color:#111">id</span> <span style="color:#111">serial</span>
 <span style="color:#111">);</span>
 
@@ -263,7 +264,7 @@ in the <code>COPY</code> statement.</p>
   <span style="color:#111">id</span> <span style="color:#111">integer</span> <span style="color:#00a8c8">NOT</span> <span style="color:#00a8c8">NULL</span> <span style="color:#00a8c8">DEFAULT</span> <span style="color:#111">nextval</span><span style="color:#111">(</span><span style="color:#d88200">&#39;items_id_seq&#39;</span><span style="color:#111">)</span>
 <span style="color:#111">);</span>
 </code></pre></div><p>Sequences are a special kind of database object designed for generating auto-incrementing unique numeric identifiers, usually used for artificial primary key columns. Sequences consist of a single-row table with a value of type <code>bigint</code> together with information on the sequence, as well as a generator for incrementing the numeric value. The value can be accessed using <code>nextval('sequence_name')</code> and <code>currval('sequence_name')</code>, and can be set using <code>setval('sequence_name', value)</code>.</p>
-<pre><code># select * from items_id_seq;
+<pre tabindex="0"><code># select * from items_id_seq;
 
  sequence_name | last_value | start_value | increment_by |      max_value      | min_value | cache_value | log_cnt | is_cycled | is_called
 ---------------+------------+-------------+--------------+---------------------+-----------+-------------+---------+-----------+-----------
@@ -283,12 +284,12 @@ in the <code>COPY</code> statement.</p>
        2
 (1 row)
 </code></pre><p>Start and incrementing value (default <code>1</code>) as well as other options (such as min and max values) can be specified explicitly, e.g.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#111">SEQUENCE</span> <span style="color:#111">id_seq</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#111">SEQUENCE</span> <span style="color:#111">id_seq</span>
 <span style="color:#00a8c8">START</span> <span style="color:#00a8c8">WITH</span> <span style="color:#ae81ff">10</span>
 <span style="color:#00a8c8">INCREMENT</span> <span style="color:#00a8c8">BY</span> <span style="color:#ae81ff">2</span><span style="color:#111">;</span>
 </code></pre></div><p>Decrementing sequences can be created by specifying <code>INCREMENT BY -1</code>.</p>
 <p>A sequence can also be dropped like any other table:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DROP</span> <span style="color:#111">SEQUENCE</span> <span style="color:#111">id_seq</span><span style="color:#111">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DROP</span> <span style="color:#111">SEQUENCE</span> <span style="color:#111">id_seq</span><span style="color:#111">;</span>
 </code></pre></div><p>An alternative for unique identifiers are UUIDs:</p>
 <ul>
 <li><code>uuid</code>, e.g. <code>a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11</code></li>
@@ -318,7 +319,7 @@ With <code>numeric</code>s, <code>1.0 - 0.2 - 1.0 + 0.2</code> equals to <code>0
 <li><code>text</code> (or <code>clob</code> for <em>character large object</em>) for textual information of any length</li>
 </ul>
 <p>Strings are always enclosed by single quotes.</p>
-<pre><code>'some string'
+<pre tabindex="0"><code>'some string'
 'A long and winding road'
 'That wasn''t a good idea'
 '&quot;Indeed!&quot;'
@@ -341,7 +342,7 @@ When trying to fill it with a string that is longer, an error is thrown (except 
 </ul>
 <p>Values can be <code>TRUE</code>, <code>FALSE</code>, or <code>NULL</code> (unknown).</p>
 <h3 id="type-casts">Type casts</h3>
-<pre><code>CAST (expression AS type)
+<pre tabindex="0"><code>CAST (expression AS type)
 expression::type
 </code></pre><h1 id="sql">SQL</h1>
 <p>SQL (<em>Structured Query Language</em>) is a special-purpose, declarative programming language to interact with relational databases.</p>
@@ -364,17 +365,17 @@ expression::type
 <p>Adher to the <a href="http://www.sqlstyle.guide">SQL style guide</a>.</p>
 <h1 id="sql-data-definition-language-ddl">SQL: Data Definition Language (DDL)</h1>
 <h2 id="creating-and-dropping-tables">Creating and dropping tables</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table_name</span> <span style="color:#111">(</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table_name</span> <span style="color:#111">(</span>
     <span style="color:#00a8c8">PRIMARY</span> <span style="color:#00a8c8">KEY</span> <span style="color:#111">(</span><span style="color:#111">column1</span><span style="color:#111">),</span>
     <span style="color:#111">column1</span> <span style="color:#f92672">&lt;</span><span style="color:#111">datatype</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#111">column_constraints</span><span style="color:#f92672">&gt;</span><span style="color:#111">,</span>  
     <span style="color:#111">column2</span> <span style="color:#f92672">&lt;</span><span style="color:#111">datatype</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#111">column_constraints</span><span style="color:#f92672">&gt;</span><span style="color:#111">,</span>
     <span style="color:#f92672">&lt;</span><span style="color:#111">table_constraints</span><span style="color:#f92672">&gt;</span>
 <span style="color:#111">);</span>
 </code></pre></div><p><em>Addind and dropping a column:</em></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table</span> <span style="color:#00a8c8">ADD</span>  <span style="color:#00a8c8">COLUMN</span> <span style="color:#00a8c8">column</span> <span style="color:#f92672">&lt;</span><span style="color:#111">datatype</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#00a8c8">constraints</span><span style="color:#f92672">&gt;</span><span style="color:#111">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table</span> <span style="color:#00a8c8">ADD</span>  <span style="color:#00a8c8">COLUMN</span> <span style="color:#00a8c8">column</span> <span style="color:#f92672">&lt;</span><span style="color:#111">datatype</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#00a8c8">constraints</span><span style="color:#f92672">&gt;</span><span style="color:#111">;</span>
 <span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table</span> <span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">COLUMN</span> <span style="color:#00a8c8">column</span><span style="color:#111">;</span>
 </code></pre></div><p><em>Dropping tables and databases:</em></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table_name</span> <span style="color:#111">[</span> <span style="color:#111">,</span> <span style="color:#111">other_table_name</span> <span style="color:#111">];</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table_name</span> <span style="color:#111">[</span> <span style="color:#111">,</span> <span style="color:#111">other_table_name</span> <span style="color:#111">];</span>
 
 <span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">DATABASE</span> <span style="color:#111">database_name</span><span style="color:#111">;</span>
 </code></pre></div><h2 id="constraints">Constraints</h2>
@@ -441,7 +442,7 @@ expression::type
 <p>If a table has a multi-column primary key, the foreign key would be accordingly multi-column, e.g. <code>FOREIGN KEY (person_first_name, person_last_name) REFERENCES person (first_name, last_name)</code></p>
 <h3 id="adding-a-constraint">Adding a constraint</h3>
 <p>During table creation:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Column constraint as modifier
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Column constraint as modifier
 </span><span style="color:#75715e"></span>
 <span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table</span> <span style="color:#111">(</span>
   <span style="color:#111">id</span>    <span style="color:#111">serial</span>       <span style="color:#00a8c8">PRIMARY</span> <span style="color:#00a8c8">KEY</span><span style="color:#111">,</span>
@@ -462,40 +463,40 @@ expression::type
   <span style="color:#00a8c8">FOREIGN</span> <span style="color:#00a8c8">KEY</span> <span style="color:#111">(</span><span style="color:#111">other</span><span style="color:#111">)</span> <span style="color:#00a8c8">REFERENCES</span> <span style="color:#00a8c8">table</span> <span style="color:#111">(</span><span style="color:#00a8c8">column</span><span style="color:#111">)</span>
 <span style="color:#111">);</span>
 </code></pre></div><p>To an existing table:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">ADD</span> <span style="color:#00a8c8">CONSTRAINT</span> <span style="color:#111">name</span> <span style="color:#00a8c8">PRIMARY</span> <span style="color:#00a8c8">KEY</span> <span style="color:#111">(</span><span style="color:#00a8c8">column</span><span style="color:#111">);</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">ADD</span> <span style="color:#00a8c8">CONSTRAINT</span> <span style="color:#111">name</span> <span style="color:#00a8c8">PRIMARY</span> <span style="color:#00a8c8">KEY</span> <span style="color:#111">(</span><span style="color:#00a8c8">column</span><span style="color:#111">);</span>
 <span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">ADD</span> <span style="color:#00a8c8">CONSTRAINT</span> <span style="color:#111">name</span> <span style="color:#00a8c8">FOREIGN</span> <span style="color:#00a8c8">KEY</span> <span style="color:#111">(</span><span style="color:#00a8c8">column</span><span style="color:#111">)</span> <span style="color:#00a8c8">REFERENCES</span> <span style="color:#00a8c8">table</span> <span style="color:#111">(</span><span style="color:#00a8c8">column</span><span style="color:#111">);</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table_name</span> <span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">COLUMN</span> <span style="color:#00a8c8">column</span> <span style="color:#111">[</span><span style="color:#00a8c8">ADD</span> <span style="color:#00a8c8">CONSTRAINT</span> <span style="color:#111">name</span><span style="color:#111">]</span> <span style="color:#00a8c8">SET</span> <span style="color:#00a8c8">DEFAULT</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table_name</span> <span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">COLUMN</span> <span style="color:#00a8c8">column</span> <span style="color:#111">[</span><span style="color:#00a8c8">ADD</span> <span style="color:#00a8c8">CONSTRAINT</span> <span style="color:#111">name</span><span style="color:#111">]</span> <span style="color:#00a8c8">SET</span> <span style="color:#00a8c8">DEFAULT</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
 <span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table_name</span> <span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">COLUMN</span> <span style="color:#00a8c8">column</span> <span style="color:#111">[</span><span style="color:#00a8c8">ADD</span> <span style="color:#00a8c8">CONSTRAINT</span> <span style="color:#111">name</span><span style="color:#111">]</span> <span style="color:#00a8c8">SET</span> <span style="color:#00a8c8">NOT</span> <span style="color:#00a8c8">NULL</span><span style="color:#111">;</span>
 </code></pre></div><h3 id="deleting-constraints">Deleting constraints</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table</span> <span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">CONSTRAINT</span> <span style="color:#00a8c8">constraint_name</span><span style="color:#111">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table</span> <span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">CONSTRAINT</span> <span style="color:#00a8c8">constraint_name</span><span style="color:#111">;</span>
 
 <span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#00a8c8">table</span> <span style="color:#00a8c8">ALTER</span> <span style="color:#00a8c8">COLUMN</span> <span style="color:#00a8c8">column</span> <span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">NOT</span> <span style="color:#00a8c8">NULL</span><span style="color:#111">;</span>
 </code></pre></div><h3 id="enums">Enums</h3>
 <p>Either as constraint:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CHECK</span> <span style="color:#111">(</span><span style="color:#00a8c8">column</span> <span style="color:#00a8c8">IN</span> <span style="color:#111">(</span><span style="color:#d88200">&#39;value1&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;value2&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;value3&#39;</span><span style="color:#111">))</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CHECK</span> <span style="color:#111">(</span><span style="color:#00a8c8">column</span> <span style="color:#00a8c8">IN</span> <span style="color:#111">(</span><span style="color:#d88200">&#39;value1&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;value2&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;value3&#39;</span><span style="color:#111">))</span>
 </code></pre></div><p>Or by creating an own data type:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TYPE</span> <span style="color:#111">weekday</span> <span style="color:#00a8c8">AS</span> <span style="color:#111">ENUM</span><span style="color:#111">(</span><span style="color:#d88200">&#39;monday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;tuesday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;wednesday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;thursday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;friday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;saturday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;sunday&#39;</span><span style="color:#111">);</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TYPE</span> <span style="color:#111">weekday</span> <span style="color:#00a8c8">AS</span> <span style="color:#111">ENUM</span><span style="color:#111">(</span><span style="color:#d88200">&#39;monday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;tuesday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;wednesday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;thursday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;friday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;saturday&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;sunday&#39;</span><span style="color:#111">);</span>
 </code></pre></div><h1 id="dql-data-manipulation-language-dml">DQL: Data Manipulation Language (DML)</h1>
 <h2 id="inserting-records">Inserting records</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">INSERT</span> <span style="color:#00a8c8">INTO</span> <span style="color:#00a8c8">table_name</span> <span style="color:#111">(</span><span style="color:#111">column1</span><span style="color:#111">,</span> <span style="color:#111">column2</span><span style="color:#111">,</span> <span style="color:#111">column3</span><span style="color:#111">,</span> <span style="color:#111">...)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">INSERT</span> <span style="color:#00a8c8">INTO</span> <span style="color:#00a8c8">table_name</span> <span style="color:#111">(</span><span style="color:#111">column1</span><span style="color:#111">,</span> <span style="color:#111">column2</span><span style="color:#111">,</span> <span style="color:#111">column3</span><span style="color:#111">,</span> <span style="color:#111">...)</span>
 <span style="color:#00a8c8">VALUES</span> <span style="color:#111">(</span><span style="color:#111">value1</span><span style="color:#111">,</span> <span style="color:#111">value2</span><span style="color:#111">,</span> <span style="color:#111">value3</span><span style="color:#111">,</span> <span style="color:#111">...),</span>
        <span style="color:#111">(</span><span style="color:#111">value1</span><span style="color:#111">,</span> <span style="color:#111">value2</span><span style="color:#111">,</span> <span style="color:#111">value3</span><span style="color:#111">,</span> <span style="color:#111">...);</span>
 </code></pre></div><p><code>NULL</code> is inserted for all columns that are omitted in the <code>INSERT</code> statement.</p>
 <p>If all columns are included in their expected order, the column names can be omitted:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">INSERT</span> <span style="color:#00a8c8">INTO</span> <span style="color:#00a8c8">table_name</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">INSERT</span> <span style="color:#00a8c8">INTO</span> <span style="color:#00a8c8">table_name</span>
 <span style="color:#00a8c8">VALUES</span> <span style="color:#111">(</span><span style="color:#111">value1</span><span style="color:#111">,</span> <span style="color:#111">value2</span><span style="color:#111">,</span> <span style="color:#111">value3</span><span style="color:#111">,</span> <span style="color:#111">...);</span>
 </code></pre></div><h2 id="updating-records">Updating records</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">UPDATE</span> <span style="color:#00a8c8">table_name</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">UPDATE</span> <span style="color:#00a8c8">table_name</span>
    <span style="color:#00a8c8">SET</span> <span style="color:#111">column1</span> <span style="color:#f92672">=</span> <span style="color:#111">value1</span><span style="color:#111">,</span>
        <span style="color:#111">column2</span> <span style="color:#f92672">=</span> <span style="color:#111">value2</span><span style="color:#111">,</span> <span style="color:#111">...</span>
  <span style="color:#00a8c8">WHERE</span> <span style="color:#111">condition</span><span style="color:#111">;</span>
 </code></pre></div><p>It is also possible to use arithmetic expressions, e.g. <code>SET price = 2 * price</code> or <code>SET years = years + 1</code>.</p>
 <h2 id="deleting-records">Deleting records</h2>
 <p>Deleting specific records:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DELETE</span> <span style="color:#00a8c8">FROM</span> <span style="color:#00a8c8">table_name</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DELETE</span> <span style="color:#00a8c8">FROM</span> <span style="color:#00a8c8">table_name</span>
  <span style="color:#00a8c8">WHERE</span> <span style="color:#111">condition</span><span style="color:#111">;</span>
 </code></pre></div><p>Deleting all records:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DELETE</span> <span style="color:#00a8c8">FROM</span> <span style="color:#00a8c8">table_name</span><span style="color:#111">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DELETE</span> <span style="color:#00a8c8">FROM</span> <span style="color:#00a8c8">table_name</span><span style="color:#111">;</span>
 </code></pre></div><h1 id="sql-querying">SQL: Querying</h1>
 <h2 id="operators">Operators</h2>
 <p><em>String matching:</em></p>
@@ -530,7 +531,7 @@ This includes arrays like <code>('value1', 'value2', ...)</code>: they cannot co
 <h2 id="grouping">Grouping</h2>
 <p><code>GROUP BY c</code> groups together all rows that have the same value in column <code>c</code>.</p>
 <p><em>Example:</em></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- select the number of employees in each department in the year 2013
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- select the number of employees in each department in the year 2013
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">SELECT</span> <span style="color:#111">department</span><span style="color:#111">,</span> <span style="color:#00a8c8">COUNT</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">)</span>
   <span style="color:#00a8c8">FROM</span> <span style="color:#111">employees</span>
  <span style="color:#00a8c8">WHERE</span> <span style="color:#00a8c8">year</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2013</span>
@@ -539,7 +540,7 @@ This includes arrays like <code>('value1', 'value2', ...)</code>: they cannot co
 <p><code>GROUP BY column1, column2</code> groups by <code>(column1, column2)</code>, e.g. <code>GROUP BY last_name, first_name</code>.</p>
 <p>In addition, groups can be filtered by means of <code>HAVING</code>.</p>
 <p><em>Example:</em></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">SELECT</span> <span style="color:#111">last_name</span><span style="color:#111">,</span> <span style="color:#111">first_name</span><span style="color:#111">,</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">SELECT</span> <span style="color:#111">last_name</span><span style="color:#111">,</span> <span style="color:#111">first_name</span><span style="color:#111">,</span>
        <span style="color:#00a8c8">AVG</span><span style="color:#111">(</span><span style="color:#111">salary</span><span style="color:#111">)</span> <span style="color:#00a8c8">AS</span> <span style="color:#111">average_salary</span><span style="color:#111">,</span>
        <span style="color:#00a8c8">COUNT</span><span style="color:#111">(</span><span style="color:#00a8c8">year</span><span style="color:#111">)</span> <span style="color:#00a8c8">AS</span> <span style="color:#111">years_worked</span>
   <span style="color:#00a8c8">FROM</span> <span style="color:#111">employees</span>
@@ -552,13 +553,13 @@ This includes arrays like <code>('value1', 'value2', ...)</code>: they cannot co
 <ul>
 <li><strong>(INNER) JOIN</strong> contains all records in the intersection of both tables.</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">SELECT</span> <span style="color:#f92672">*</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">SELECT</span> <span style="color:#f92672">*</span>
   <span style="color:#00a8c8">FROM</span> <span style="color:#111">table1</span>
        <span style="color:#00a8c8">JOIN</span> <span style="color:#111">table2</span>
          <span style="color:#00a8c8">ON</span> <span style="color:#111">table2</span><span style="color:#111">.</span><span style="color:#111">table1_column</span> <span style="color:#f92672">=</span> <span style="color:#111">table1</span><span style="color:#111">.</span><span style="color:#00a8c8">column</span>
  <span style="color:#00a8c8">WHERE</span> <span style="color:#111">...;</span>
 </code></pre></div><p>This can get as complex as necessary:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">SELECT</span> <span style="color:#f92672">*</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">SELECT</span> <span style="color:#f92672">*</span>
   <span style="color:#00a8c8">FROM</span> <span style="color:#111">table1</span>
        <span style="color:#00a8c8">JOIN</span> <span style="color:#111">table2</span>
          <span style="color:#00a8c8">ON</span> <span style="color:#111">table2</span><span style="color:#111">.</span><span style="color:#111">table1_column</span> <span style="color:#f92672">=</span> <span style="color:#111">table1</span><span style="color:#111">.</span><span style="color:#00a8c8">column</span>
@@ -584,7 +585,7 @@ An inner join then is like <code>SELECT * FROM table1, table2 WHERE table1.table
 <p><em>Self joins:</em></p>
 <p>A table can also be joined with itself.</p>
 <p><em>Example:</em></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- all pairs of students that share the same room
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- all pairs of students that share the same room
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">SELECT</span> <span style="color:#111">s1</span><span style="color:#111">.</span><span style="color:#111">name</span><span style="color:#111">,</span> <span style="color:#111">s2</span><span style="color:#111">.</span><span style="color:#111">name</span>
   <span style="color:#00a8c8">FROM</span> <span style="color:#111">student</span> <span style="color:#00a8c8">AS</span> <span style="color:#111">s1</span>
   <span style="color:#00a8c8">JOIN</span> <span style="color:#111">student</span> <span style="color:#00a8c8">AS</span> <span style="color:#111">s2</span>
@@ -596,7 +597,7 @@ An inner join then is like <code>SELECT * FROM table1, table2 WHERE table1.table
 <p><code>EXPLAIN ANAYLYZE sql-statement</code> in addition executes the query and displays the time needed for planning and execution.</p>
 <p>Useful to compare the efficiency of different queries, e.g. usually using sub-queries is much faster than using <code>JOIN</code>s.</p>
 <p>When it comes to <code>ORDER BY</code>, it makes a big difference whether you look at an <strong>unindexed</strong> column, on which sorting is pretty costly (as it needs several passes on the table), or an <strong>indexed</strong> column, for which sorting comes for free because the index already gives you an order (so retrieval actually doesn&rsquo;t need any additional sorting). For example:</p>
-<pre><code>auction=# EXPLAIN ANALYZE SELECT * FROM bids ORDER BY amount;
+<pre tabindex="0"><code>auction=# EXPLAIN ANALYZE SELECT * FROM bids ORDER BY amount;
 
                                                 QUERY PLAN                                                
 ----------------------------------------------------------------------------------------------------------
@@ -617,18 +618,18 @@ auction=# EXPLAIN ANALYZE SELECT * FROM bids ORDER BY item_id;
 </code></pre><p>Also, counting is more efficient when done in the database than in the application, because for the latter case, all data to be counted needs to be transfered.</p>
 <p>Also, avoid N+1 queries i the application, i.e. queries that are the result of performing an additional query for each element in a collection.</p>
 <h2 id="comments">Comments</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#75715e">/* query to retrieve the radius or a circle */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#75715e">/* query to retrieve the radius or a circle */</span>
 <span style="color:#00a8c8">SELECT</span> <span style="color:#111">radius</span>
   <span style="color:#00a8c8">FROM</span> <span style="color:#111">circles</span>
  <span style="color:#00a8c8">WHERE</span> <span style="color:#111">something</span>      <span style="color:#75715e">-- fill in condition
 </span><span style="color:#75715e"></span>   <span style="color:#00a8c8">AND</span> <span style="color:#111">something_else</span> <span style="color:#75715e">-- here as well
 </span></code></pre></div><h2 id="views">Views</h2>
 <p>A view is a virtual table, created by specifying the query from which is results and a name:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">VIEW</span> <span style="color:#111">view_name</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">VIEW</span> <span style="color:#111">view_name</span>
 <span style="color:#00a8c8">AS</span> <span style="color:#f92672">&lt;</span><span style="color:#111">query</span><span style="color:#f92672">&gt;</span>
 </code></pre></div><p>It can then be queried like any other table (<code>SELECT * FROM view_name;</code>), with the only difference that virtual tables are not stored physically: every time data is retrieved from a view, the database re-runs the underlying query.</p>
 <p>Views can be deleted as expected:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">VIEW</span> <span style="color:#111">view_name</span><span style="color:#111">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#00a8c8">DROP</span> <span style="color:#00a8c8">VIEW</span> <span style="color:#111">view_name</span><span style="color:#111">;</span>
 </code></pre></div><h1 id="sql-function">SQL: Function</h1>
 <h2 id="aggregate-functions">Aggregate functions</h2>
 <ul>

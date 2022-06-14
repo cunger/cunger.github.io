@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.92.2" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,10 @@
   <meta property="og:title" content="Ruby" />
 <meta property="og:description" content="&ldquo;Finding out what you&rsquo;re called and repeating your name.&rdquo;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cunger.github.io/notes/dev/ruby/" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/ruby/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
 
   
 
@@ -122,7 +123,7 @@ headingSelector: 'h1'
 <blockquote>
 <p>A class is like a blueprint that describes the properties and behavior of a type of object. An instance of a class then is an actual object of that class.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Named class</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Named class</span>
 
 <span style="color:#00a8c8">class</span> <span style="color:#75af00">Something</span>
 <span style="color:#00a8c8">end</span>
@@ -155,7 +156,7 @@ headingSelector: 'h1'
 <h2 id="inheritance">Inheritance</h2>
 <p>Grouping things into different classes of objects provides a natural concept of inheritance, that allows for re-using functionality, while being able to override more general functionality for more specific cases.</p>
 <p>Inheritance is a way to inherit behavior from another class or module. All instance methods defined in a class or module from which a class <code>C</code> inherits will become instance methods of all instances of <code>C</code>. Thus the current object has access to all instance methods defined somewhere in the inheritance hierarchy. Inheritance thus allows for re-using methods and thereby avoiding duplicate code.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Animal</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Animal</span>
   <span style="color:#00a8c8">def</span> <span style="color:#75af00">move</span>
     <span style="color:#111">puts</span> <span style="color:#d88200">&#34;I&#39;m moving!&#34;</span>
   <span style="color:#00a8c8">end</span>
@@ -164,7 +165,7 @@ headingSelector: 'h1'
 <span style="color:#00a8c8">class</span> <span style="color:#75af00">Dolphin</span> <span style="color:#f92672">&lt;</span> <span style="color:#00a8c8">Animal</span>
 <span style="color:#00a8c8">end</span>
 </code></pre></div><p>As a subclass, <code>Dolphin</code> inherits all methods defined in <code>Animal</code>, <code>move</code> can therefore be called on an instance of <code>Dolphin</code>, as in the following example.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">Dolphin</span><span style="color:#f92672">.</span><span style="color:#111">new</span><span style="color:#f92672">.</span><span style="color:#111">move</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">Dolphin</span><span style="color:#f92672">.</span><span style="color:#111">new</span><span style="color:#f92672">.</span><span style="color:#111">move</span>
 <span style="color:#d88200">&#34;I&#39;m moving!&#34;</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">nil</span>
 </code></pre></div><p>Inheritance also enables <strong>polymorphism</strong>, i.e. allows objects to be of different kinds (and accordingly adopt different behaviors).</p>
@@ -173,11 +174,11 @@ headingSelector: 'h1'
 <p>For example, we could have two classes <code>SwimmingObject</code> and <code>FlyingObject</code> for objects that swim and fly, respectively. A class <code>Duck</code> should inherit from both classes, as ducks can both swim and fly. However, subclassing allows for only one direct superclass, thus we can have either <code>class Duck &lt; SwimmingObject</code> or <code>class Duck &lt; FlyingObject</code>.</p>
 <p>The only option to inherit from both by means of class inheritance would be to define <code>FlyingObject</code> as subclass of <code>SwimmingObject</code> or vice versa. But this means that a class inheriting from one will always also inherit from the other, which gets us into trouble as soon as we want objects that can fly but not swim (e.g. chicken) as well as objects that can swim but not fly (e.g. penguins).</p>
 <p>Ruby has single inheritance, i.e. a class can have only one superclass. The superclass of <code>Class</code> is <code>Module</code>.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#00a8c8">Class</span><span style="color:#f92672">.</span><span style="color:#111">ancestors</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#00a8c8">Class</span><span style="color:#f92672">.</span><span style="color:#111">ancestors</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#00a8c8">Class</span><span style="color:#111">,</span> <span style="color:#00a8c8">Module</span><span style="color:#111">,</span> <span style="color:#00a8c8">Object</span><span style="color:#111">,</span> <span style="color:#00a8c8">Kernel</span><span style="color:#111">,</span> <span style="color:#00a8c8">BasicObject</span><span style="color:#f92672">]</span>
 </code></pre></div><h2 id="modules">Modules</h2>
 <p>Modules are collections of methods and constants, and a class can gain access to those by including the module. Most importantly, a class can include arbitrarily many modules. Thus, when defining swimming- and flying-related methods in modules instead of classes, as in the following code, the class <code>Duck</code> can inherit those methods by including both modules. Now we can also have a class <code>Chicken</code> that includes <code>Flying</code> but not <code>Swimming</code>, and a class <code>Penguin</code> that includes <code>Swimming</code> but not <code>Flying</code>.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">module</span> <span style="color:#111">Swimming</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">module</span> <span style="color:#111">Swimming</span>
 <span style="color:#00a8c8">end</span>
 
 <span style="color:#00a8c8">module</span> <span style="color:#111">Flying</span>
@@ -235,7 +236,7 @@ headingSelector: 'h1'
 <p><code>self</code> gives you access to the current object.</p>
 <p>At the top level of a program, this is <code>main</code> (the built-in default object of type <code>Object</code>).</p>
 <p>At the top level of a class or module, this is the class or module object.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">C</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">C</span>
   <span style="color:#111">self</span>
 
 <span style="color:#00a8c8">module</span> <span style="color:#111">M</span>
@@ -253,7 +254,7 @@ headingSelector: 'h1'
 </blockquote>
 <p>So they&rsquo;re methods for object conversion, transforming their argument using explicit and implicit object conversion.</p>
 <p><em>Explicit conversion</em> converts an object to the target type. For example, <code>obj.to_s</code> will give you a string representation of <code>obj</code>, and <code>obj.to_i</code> will give you an integer representation. If those methods are defined for <code>obj</code>, that is. The <code>Nil</code> class implements all of them:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_s</span> <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_s</span> <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;&#34;</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_a</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[]</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_h</span> <span style="color:#f92672">=&gt;</span> <span style="color:#111">{}</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_i</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>
@@ -261,46 +262,46 @@ headingSelector: 'h1'
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_r</span> <span style="color:#f92672">=&gt;</span> <span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_c</span> <span style="color:#f92672">=&gt;</span> <span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">+</span><span style="color:#ae81ff">0</span><span style="color:#111">i</span><span style="color:#111">)</span>
 </code></pre></div><p>Ruby doesn&rsquo;t call explicit conversion methods unless you explicitly ask it to do so.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">&#34;THX&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1138</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">TypeError</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">&#34;THX&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1138</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">TypeError</span>
 <span style="color:#d88200">&#34;THX&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1138</span><span style="color:#f92672">.</span><span style="color:#111">to_s</span> <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;THX1138&#34;</span>
 </code></pre></div><p><em>Implicit conversion</em> is defined for objects that can be considered as something target type-ish. So <code>to_int</code> would be implemented for integer-like objects, that is objects that act like integers and thus make sense everywhere an integer makes sense. It wouldn&rsquo;t be implemented for objects that are not integer-like. Analogously for <code>to_str</code>, <code>to_ary</code>, <code>to_hash</code> and a few others. Hence the behavior of <code>nil</code>:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_str</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">NoMethodError</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_str</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">NoMethodError</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_ary</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">NoMethodError</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_hash</span> <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">NoMethodError</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_int</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">NoMethodError</span>
 </code></pre></div><p>Some core Ruby operators and methods call implicit conversion methods. One example is <code>String#+</code>, which calls <code>to_str</code> on its argument, and thus fails, for example, for integers:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">&#34;THX&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1138</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">&#34;THX&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1138</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">TypeError</span><span style="color:#111">:</span> <span style="color:#111">no</span> <span style="color:#111">implicit</span> <span style="color:#111">conversion</span> <span style="color:#111">of</span> <span style="color:#111">Integer</span> <span style="color:#111">into</span> <span style="color:#111">String</span>
 </code></pre></div><p>Similarly, <code>String#*</code> calls <code>to_int</code> on its argument and therefore is fine being provided a <code>Float</code> (fortunately or unfortunately not attempting to print the string <code>3.14</code> times):</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">&#34;Yay!&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">.</span><span style="color:#ae81ff">14</span> <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;Yay!Yay!Yay!&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">&#34;Yay!&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">.</span><span style="color:#ae81ff">14</span> <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;Yay!Yay!Yay!&#34;</span>
 </code></pre></div><p>Now it makes perfect sense why <code>Array(arg)</code> first tries <code>to_ary</code>: <em>Let&rsquo;s see whether this is already something like an array.</em> And only if that is not defined or returns <code>nil</code>, it calls <code>to_a</code>: <em>Ok, if it&rsquo;s not an array, let&rsquo;s make it one!</em></p>
 <p>What about hashes? <code>Hash(arg)</code> calls <code>to_hash</code>, and returns the empty hash for <code>[]</code> and <code>nil</code>. Period. No calling <code>to_h</code>.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">Hash</span><span style="color:#111">(</span><span style="color:#f92672">[[</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">]]</span><span style="color:#111">)</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">TypeError</span><span style="color:#111">:</span> <span style="color:#111">can</span><span style="color:#d88200">&#39;t convert Array into Hash
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">Hash</span><span style="color:#111">(</span><span style="color:#f92672">[[</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">]]</span><span style="color:#111">)</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">TypeError</span><span style="color:#111">:</span> <span style="color:#111">can</span><span style="color:#d88200">&#39;t convert Array into Hash
 </span><span style="color:#d88200">[[1, 2]].to_hash =&gt; TypeError: can&#39;</span><span style="color:#111">t</span> <span style="color:#111">convert</span> <span style="color:#111">Array</span> <span style="color:#111">into</span> <span style="color:#00a8c8">Hash</span>
 <span style="color:#f92672">[[</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">]].</span><span style="color:#111">to_h</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#111">{</span><span style="color:#ae81ff">1</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">2</span><span style="color:#111">}</span>
 </code></pre></div><p>Turns out this conversion method is younger than the rest, because the whole issue is less obvious for hashes than it is for strings or arrays, so it evoked more discussion.</p>
 <p>Finally, <code>Kernel</code> also defines numerical conversions, like <code>Float(arg)</code> and <code>Integer(arg)</code>, which convert numerical values directly into floats and integers, and for everything else fall back on <code>to_f</code> and <code>to_i</code>. Also, <code>Integer</code> is more refined than <code>to_i</code> when it comes to converting string representations of integers into numerical values. In particular, both are more picky than their <code>to_f</code> and <code>to_i</code> counterparts in expecting the given argument to be an object that can actually reasonably interpreted as <code>Float</code> or <code>Integer</code>.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_f</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_f</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>
 <span style="color:#111">Float</span><span style="color:#111">(</span><span style="color:#00a8c8">nil</span><span style="color:#111">)</span> <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">TypeError</span><span style="color:#111">:</span> <span style="color:#111">can</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">t</span> <span style="color:#111">convert</span> <span style="color:#00a8c8">nil</span> <span style="color:#111">into</span> <span style="color:#111">Float</span>
 <span style="color:#111">Float</span><span style="color:#111">(</span><span style="color:#d88200">&#34;1138&#34;</span><span style="color:#111">)</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1138</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>
 <span style="color:#111">Float</span><span style="color:#111">(</span><span style="color:#d88200">&#34;THX&#34;</span><span style="color:#111">)</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">ArgumentError</span><span style="color:#111">:</span> <span style="color:#111">invalid</span> <span style="color:#111">value</span> <span style="color:#00a8c8">for</span> <span style="color:#111">Float</span><span style="color:#111">()</span>
 </code></pre></div><p>This makes them pretty useful for <a href="https://pdxwolfy.wordpress.com/2016/04/12/numeric-validation-in-ruby/">numeric validation</a>.</p>
 <h1 id="getters-and-setters">Getters and setters</h1>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">attr_reader</span> <span style="color:#d88200">:name</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">attr_reader</span> <span style="color:#d88200">:name</span>
 
 <span style="color:#75715e"># Equivalent to:</span>
 
 <span style="color:#00a8c8">def</span> <span style="color:#75af00">name</span>
   <span style="color:#111">@name</span>
 <span style="color:#00a8c8">end</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">attr_writer</span> <span style="color:#d88200">:name</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">attr_writer</span> <span style="color:#d88200">:name</span>
 
 <span style="color:#75715e"># Equivalent to:</span>
 
 <span style="color:#00a8c8">def</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#111">)</span>
   <span style="color:#111">@name</span> <span style="color:#f92672">=</span> <span style="color:#111">name</span>
 <span style="color:#00a8c8">end</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">attr_accessor</span> <span style="color:#d88200">:name</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">attr_accessor</span> <span style="color:#d88200">:name</span>
 
 <span style="color:#75715e"># Equivalent to:</span>
 
@@ -311,12 +312,12 @@ headingSelector: 'h1'
 <li>are methods</li>
 <li>allow for syntax to look like assignment</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">obj</span><span style="color:#f92672">.</span><span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Guybrush&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">obj</span><span style="color:#f92672">.</span><span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Guybrush&#39;</span>
 
 <span style="color:#75715e"># Syntactic sugar for:</span>
 
 <span style="color:#111">obj</span><span style="color:#f92672">.</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Guybrush&#39;</span><span style="color:#111">)</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#111">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#111">)</span>
   <span style="color:#111">@name</span> <span style="color:#f92672">=</span> <span style="color:#111">name</span>
   <span style="color:#d88200">&#39;Fnord!&#39;</span>
 <span style="color:#00a8c8">end</span>
@@ -326,7 +327,7 @@ headingSelector: 'h1'
 </code></pre></div><ul>
 <li>behave like assignment in that they always return the righ-hand side value, irrespective of the actual return value of the method</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#111">)</span>
   <span style="color:#111">@name</span> <span style="color:#f92672">=</span> <span style="color:#111">name</span>
   <span style="color:#d88200">&#39;Fnord!&#39;</span>
 <span style="color:#00a8c8">end</span>
@@ -334,7 +335,7 @@ headingSelector: 'h1'
 <span style="color:#111">obj</span><span style="color:#f92672">.</span><span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Guybrush&#39;</span> <span style="color:#75715e"># =&gt; &#39;Guybrush&#39;</span>
 <span style="color:#111">obj</span><span style="color:#f92672">.</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Guybrush&#39;</span><span style="color:#111">)</span> <span style="color:#75715e"># =&gt; &#39;Guybrush&#39;</span>
 </code></pre></div><p>Private setters are an exception to the rule that private methods can never be called with an explicit receiver, even if that receiver is <code>self</code>. In fact, they require <code>self</code> in order to distinguish them from local variable assignments.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">some_method</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">some_method</span>
   <span style="color:#111">self</span><span style="color:#f92672">.</span><span style="color:#111">var</span> <span style="color:#f92672">=</span> <span style="color:#111">value</span>
   <span style="color:#111">localvar</span> <span style="color:#f92672">=</span> <span style="color:#111">value</span>
 <span style="color:#00a8c8">end</span>
@@ -344,7 +345,7 @@ headingSelector: 'h1'
 <li><code>puts</code> also adds a newline (which <code>print</code> doesn&rsquo;t)</li>
 <li><code>puts</code> treats arrays in a special way (which <code>print</code> doesn&rsquo;t)</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">print</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#f92672">[]]</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">print</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#f92672">[]]</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span>
 
 <span style="color:#ae81ff">1</span><span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#f92672">[]]</span><span style="color:#ae81ff">5</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#00a8c8">nil</span>
@@ -363,19 +364,19 @@ headingSelector: 'h1'
 In eurem Bunde der Dritte!</p>
 </blockquote>
 <p><code>p</code> calls <code>.inspect</code>, adds a newline, hands the result to <code>stdout</code>, and returns the arguments it was called on.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">p</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#f92672">[]]</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">p</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#f92672">[]]</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span>
 
 <span style="color:#ae81ff">1</span>
 <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#f92672">[]]</span>
 <span style="color:#ae81ff">5</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span><span style="color:#111">,</span> <span style="color:#f92672">[]]</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">]</span>
 </code></pre></div><p>So calling <code>p</code> instead of puts makes a difference mostly when it comes to arrays and <code>nil</code>.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_s</span>    <span style="color:#75715e"># =&gt; &#34;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">to_s</span>    <span style="color:#75715e"># =&gt; &#34;&#34;</span>
 <span style="color:#00a8c8">nil</span><span style="color:#f92672">.</span><span style="color:#111">inspect</span> <span style="color:#75715e"># =&gt; &#34;nil&#34;</span>
 </code></pre></div><p>So what about <code>to_s</code> and <code>inspect</code>? The default implementations of <code>to_s</code> and <code>inspect</code> live in the class <code>Object</code>, where the former builds a string from the object class and ID, while the latter additionally includes instance variables and their values. Except for <code>Main</code>, for which both return <code>&quot;main&quot;</code>.</p>
 <p>In string interpolation, <code>to_s</code> is called. So as a rule of thumb: For getting a useful string representation of an object, it&rsquo;s a good idea to override <code>to_s</code>. For debugging purposes it&rsquo;s usually a good idea to not override <code>inspect</code>.</p>
 <p>For more printing power there&rsquo;s <code>format</code> and at least the following examples I hope to remember, so I don&rsquo;t have to look up the documentation every time:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">format</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%{x} wants %{y}&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">x</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Polly&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">y</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;crack&#34;</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">format</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%{x} wants %{y}&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">x</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Polly&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">y</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;crack&#34;</span><span style="color:#111">)</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;Polly wants crack&#34;</span>
 
 <span style="color:#111">format</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%03d&#34;</span><span style="color:#111">,</span> <span style="color:#ae81ff">7</span><span style="color:#111">)</span>   <span style="color:#75715e"># =&gt; &#34;007&#34;</span>
@@ -400,28 +401,28 @@ In eurem Bunde der Dritte!</p>
 <p>They all start as <em>object identity</em>: two objects are equal if they are the same object, i.e. have the same object id. Descendant classes then override those methods to provide class-specific behaviour.</p>
 <h2 id="object-equality">Object equality</h2>
 <p><code>equal?</code> is never overridden, but kept to determine <em>object identity</em>.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#111">equal?</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span> <span style="color:#75715e"># =&gt; false</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#111">equal?</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span> <span style="color:#75715e"># =&gt; false</span>
 </code></pre></div><h2 id="value-equality">Value equality</h2>
 <p><code>==</code> is used to capture <em>value equality</em>, which allows for comparing the actual content of objects independent of their id.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span> <span style="color:#75715e"># =&gt; true</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span> <span style="color:#75715e"># =&gt; true</span>
 </code></pre></div><p><code>eql?</code> is used as a stricter version of <code>==</code>, requiring the class of the two objects to be equal, in addition to their values. <code>eql?</code> is used by Ruby to compare Hash keys.</p>
 <h2 id="case-equality">Case equality</h2>
 <p><code>===</code> is used in <code>case</code> statements and often only vaguely resembles equality. <code>a === b</code> can rather be understood as: <em>If I have a drawer <code>a</code>, does it make sense to put <code>b</code> in?</em></p>
 <ul>
 <li>For <code>Range</code> it works like inclusion (in the sense of <code>include?</code>, not <code>cover?</code>).</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">100</span><span style="color:#111">)</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">23</span> <span style="color:#75715e"># =&gt; true</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">100</span><span style="color:#111">)</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">23</span> <span style="color:#75715e"># =&gt; true</span>
 </code></pre></div><ul>
 <li>For <code>Regexp</code> it works like string matching (in the sense of <code>=~</code>).</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">/Fnord*/</span> <span style="color:#f92672">===</span> <span style="color:#d88200">&#39;Fnord!&#39;</span> <span style="color:#75715e"># =&gt; true</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#d88200">/Fnord*/</span> <span style="color:#f92672">===</span> <span style="color:#d88200">&#39;Fnord!&#39;</span> <span style="color:#75715e"># =&gt; true</span>
 </code></pre></div><ul>
 <li>In addition, classes usually provide <code>===</code> as a class method that does the same as <code>is_a?</code>.</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">String</span>  <span style="color:#f92672">===</span> <span style="color:#d88200">&#39;Fnord!&#39;</span> <span style="color:#75715e"># =&gt; true  </span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">String</span>  <span style="color:#f92672">===</span> <span style="color:#d88200">&#39;Fnord!&#39;</span> <span style="color:#75715e"># =&gt; true  </span>
 <span style="color:#111">Integer</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">23</span>       <span style="color:#75715e"># =&gt; true  </span>
 </code></pre></div><p>Now, important to know about <code>case</code> statements is that the receiver of <code>===</code> is the <code>when</code> clause, not the <code>case</code> clause. Then it&rsquo;s easy to see what happens behind the scenes to create such incredibly convenient case behaviour.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">case</span> <span style="color:#111">input</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">case</span> <span style="color:#111">input</span>
 <span style="color:#00a8c8">when</span> <span style="color:#111">String</span> <span style="color:#00a8c8">then</span> <span style="color:#d88200">&#39;String!&#39;</span>
 <span style="color:#00a8c8">when</span> <span style="color:#d88200">/cool/</span> <span style="color:#00a8c8">then</span> <span style="color:#d88200">&#39;Match!&#39;</span>
 <span style="color:#00a8c8">when</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">100</span> <span style="color:#00a8c8">then</span> <span style="color:#d88200">&#39;Peanuts...&#39;</span>
@@ -459,7 +460,7 @@ In eurem Bunde der Dritte!</p>
 <h2 id="local">Local</h2>
 <p><strong>Methods create their own scope.</strong> In the sense of starting with an empty slate upon entering. As a result, local variables defined outside the method are not accessible within it. Likewise, what happens in a method, stays in the method; so local variables defined within a method are not accessible from outside. (Unless someone tells the outside.)</p>
 <p>Here&rsquo;s where local_variables is really handy, although its primary use case is certainly something much cooler:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">outside</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">outside</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>
 <span style="color:#111">p</span> <span style="color:#111">local_variables</span>     <span style="color:#75715e"># =&gt; [:outside]</span>
 <span style="color:#00a8c8">def</span> <span style="color:#75af00">method</span>
   <span style="color:#111">inside</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">47</span>
@@ -467,7 +468,7 @@ In eurem Bunde der Dritte!</p>
 <span style="color:#00a8c8">end</span>
 <span style="color:#111">p</span> <span style="color:#111">local_variables</span>     <span style="color:#75715e"># =&gt; [:outside]</span>
 </code></pre></div><p>Another result of starting from an empty slate when entering the method is variable shadowing: variables that have the same name but live in different scopes are different variables. So string outside a method and string inside a method are two separate variables.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">string</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Fnord&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">string</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Fnord&#39;</span>
 <span style="color:#111">p</span> <span style="color:#111">binding</span><span style="color:#f92672">.</span><span style="color:#111">local_variable_get</span><span style="color:#111">(</span><span style="color:#d88200">:string</span><span style="color:#111">)</span>   <span style="color:#75715e"># =&gt; &#34;Fnord&#34;</span>
 <span style="color:#00a8c8">def</span> <span style="color:#75af00">method</span>
   <span style="color:#111">string</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;!&#39;</span>
@@ -478,26 +479,26 @@ In eurem Bunde der Dritte!</p>
 <p><strong>Blocks create a new scope, extending the scope of their container.</strong> So local variables outside the block are accessible within it, but not vice versa.
 This comes with two important facts. (Examples are stolen and adapted from <a href="https://www.sitepoint.com/understanding-scope-in-ruby/">Darko Gjorgjievski</a>.)</p>
 <p>First, a block creates a new scope every time it is entered. Therefore, the following:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#ae81ff">2</span><span style="color:#f92672">.</span><span style="color:#111">times</span> <span style="color:#00a8c8">do</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#ae81ff">2</span><span style="color:#f92672">.</span><span style="color:#111">times</span> <span style="color:#00a8c8">do</span>
   <span style="color:#111">str</span> <span style="color:#f92672">||=</span> <span style="color:#d88200">&#39;fresh&#39;</span>
   <span style="color:#111">puts</span> <span style="color:#111">str</span>
   <span style="color:#111">str</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;reassigned&#39;</span>
   <span style="color:#111">puts</span> <span style="color:#111">str</span>
 <span style="color:#00a8c8">end</span>
 </code></pre></div><p>Will output:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">fresh</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">fresh</span>
 <span style="color:#111">reassigned</span>
 <span style="color:#111">fresh</span>
 <span style="color:#111">reassigned</span>
 </code></pre></div><p>And second, a block creates a new scope at the point where it is defined, not at the point of its invocation (similar to the initialization of variables), as can be demonstrated with a block argument to lambda — which is, like loop, not a keyword but a method in Kernel:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">foo</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">foo</span>
   <span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#d88200">:inside</span>
   <span style="color:#111">lambda</span> <span style="color:#111">{</span> <span style="color:#111">x</span> <span style="color:#111">}</span>
 <span style="color:#00a8c8">end</span>
 <span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#d88200">:outside</span>
 <span style="color:#111">p</span> <span style="color:#111">foo</span><span style="color:#f92672">.</span><span style="color:#111">call</span> <span style="color:#75715e"># =&gt; :inside</span>
 </code></pre></div><p><strong>A local variable will be put into scope whenever it is assigned a value.</strong> Which means: whenever the interpreter sees an assignment, even if this assignment is never executed. Whenever an assignment is parsed, space is allocated to the variable, so it starts existing. Classic example:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">known</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">known</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 <span style="color:#00a8c8">if</span> <span style="color:#00a8c8">false</span>
   <span style="color:#111">var</span> <span style="color:#f92672">=</span> <span style="color:#d88200">:false</span>
 <span style="color:#00a8c8">end</span>
@@ -516,7 +517,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <p><strong>Instance variables <code>@var</code> are scoped at the instance level</strong>, i.e. they are available within instance methods. Instance variables that are used but not explicitly initialized evaluate to <code>nil</code>.</p>
 <p><strong>Class instance variables</strong> are instance variables at class level, and they belong to that class exclusively. They are thus good for storing class-specific stuff that you don&rsquo;t want to be shared across all subclasses and instances.</p>
 <p>Here is an overview of this:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Test</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Test</span>
   <span style="color:#111">@ivar1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># class instance variable</span>
   <span style="color:#111">@@var1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># class variable</span>
 
@@ -650,7 +651,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <li>can refer to variables from the context in which is was created.</li>
 </ul>
 <p>The means that it contains references to the variable bindings, not copies of the values. So if the value associated with a variable changes later (either being changed outside the closure or by the closure itself), the context reflects that change.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;fred&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;fred&#39;</span>
 <span style="color:#f92672">&gt;</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">proc</span> <span style="color:#111">{}</span>
 <span style="color:#f92672">&gt;</span> <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">binding</span><span style="color:#f92672">.</span><span style="color:#111">eval</span><span style="color:#111">(</span><span style="color:#d88200">&#39;name&#39;</span><span style="color:#111">)</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;fred&#34;</span>
@@ -658,7 +659,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#f92672">&gt;</span> <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">binding</span><span style="color:#f92672">.</span><span style="color:#111">eval</span><span style="color:#111">(</span><span style="color:#d88200">&#39;name&#39;</span><span style="color:#111">)</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;bob&#34;</span>
 </code></pre></div><p><strong>Example: counters</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">make_counter</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">make_counter</span>
   <span style="color:#111">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
   <span style="color:#00a8c8">return</span> <span style="color:#111">proc</span> <span style="color:#111">{</span> <span style="color:#111">n</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span> <span style="color:#111">}</span>
 <span style="color:#00a8c8">end</span>
@@ -689,7 +690,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <p>Like any object, they can be assigned to variables, put into arrays and hashes, passed to methods as arguments (in whatever number and order), returned from methods, and so on.</p>
 <h2 id="lambdas">Lambdas</h2>
 <p><em>Lambdas</em> are also <code>Proc</code> objects, just of a slightly different flavor.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">proc</span> <span style="color:#111">{}</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">proc</span> <span style="color:#111">{}</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#75715e">#&lt;Proc:0x00000000ffdca0&gt;</span>
 
 <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">lambda</span> <span style="color:#111">{}</span>
@@ -705,14 +706,14 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 </li>
 </ul>
 <p><em>Lambdas</em> differ from other <em>procs</em> in two major respects. First, <strong>arity rules</strong>: <em>lambdas</em> behave like methods, while <em>procs</em> and blocks are lenient (see below). Second, <strong>control flow</strong>, in particular behavior upon <code>return</code>: <em>Lambdas</em> return only from the block that defines them, and hand control back to the calling context - independent of the context in which they were defined. That is, the following two cases both print output to the screen:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">test</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">test</span>
   <span style="color:#111">my_lambda</span> <span style="color:#f92672">=</span> <span style="color:#111">lambda</span> <span style="color:#111">{</span> <span style="color:#00a8c8">return</span> <span style="color:#111">}</span>
   <span style="color:#111">my_lambda</span><span style="color:#f92672">.</span><span style="color:#111">call</span>
   <span style="color:#111">puts</span> <span style="color:#d88200">&#39;This will be output to screen.&#39;</span>
 <span style="color:#00a8c8">end</span>
 
 <span style="color:#111">test</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">lambda</span> <span style="color:#111">{</span> <span style="color:#00a8c8">return</span> <span style="color:#111">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">lambda</span> <span style="color:#111">{</span> <span style="color:#00a8c8">return</span> <span style="color:#111">}</span>
 
 <span style="color:#00a8c8">def</span> <span style="color:#75af00">test</span><span style="color:#111">(</span><span style="color:#111">some_lambda</span><span style="color:#111">)</span>
   <span style="color:#111">some_lambda</span><span style="color:#f92672">.</span><span style="color:#111">call</span>
@@ -721,7 +722,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 
 <span style="color:#111">test</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#111">)</span>
 </code></pre></div><p>Other <em>procs</em> behave like being part of the enclosing method (meaning: the method that is enclosing them when they are defined) by returning not only from their block but also from that method.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">calling</span><span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">calling</span><span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">)</span>
   <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">call</span>
 <span style="color:#00a8c8">end</span>
 
@@ -738,7 +739,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#75715e"># =&gt; 42</span>
 </code></pre></div><p>Note that <code>return</code> is tied to the context at the time of creation of the <em>proc</em>. So if the <em>proc</em> is either defined at the top-level, from which you can&rsquo;t return, or if the creating context no longer exists upon calling, e.g. by calling the <em>proc</em> at the top-level of the program, this will result in a <code>LocalJumpError</code>.</p>
 <p>If there is a need to return early from a <em>proc</em>, use <code>next</code>, which returns from the current block (just like <code>return</code> in a <em>lambda</em>).</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">meditate</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">meditate</span>
   <span style="color:#111">puts</span> <span style="color:#d88200">&#39;Adjusting posture...&#39;</span>
   <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">Proc</span><span style="color:#f92672">.</span><span style="color:#111">new</span> <span style="color:#00a8c8">do</span>
         <span style="color:#111">puts</span> <span style="color:#d88200">&#39;Ringing bell...&#39;</span>
@@ -767,15 +768,15 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <p>&ndash; Ruby Cookbook</p>
 </blockquote>
 <p>Each Ruby method can optionally be provided a block, which is independent of the argument list. It can be made explicit in the argument signature, however, by means of <code>&amp;</code> (see <a href="/and-and-curry.md" title="the section on `&amp;`">&amp; and curry</a>), e.g.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">method</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">args</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">method</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">args</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span>
 <span style="color:#00a8c8">end</span>
 </code></pre></div><p>This is necessary if you want to further process the block, e.g. pass it to another method:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">method</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">args</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">method</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">args</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span>
   <span style="color:#111">another_method</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span>
 <span style="color:#00a8c8">end</span>
 </code></pre></div><p>Methods cannot be provided more than one block, because they are not method arguments, they are part of the method invocation syntax.</p>
 <p><code>yield</code> is a keyword that tells Ruby to execute the block that was passed to the method. If there was no block (which can be checked using <code>Kernel#block_given?</code>), this results in a <code>LocalJumpError</code>.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">method_implicit</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">method_implicit</span>
   <span style="color:#00a8c8">yield</span> <span style="color:#00a8c8">if</span> <span style="color:#111">block_given?</span>
 <span style="color:#00a8c8">end</span>
 
@@ -786,7 +787,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 </code></pre></div><p>Blocks can be captured in <em>proc</em> objects with either <code>proc { ... }</code> or <code>lambda { ... }</code>.</p>
 <h2 id="methods">Methods</h2>
 <p>Methods are not objects, but you can get a <code>Method</code> object by means of <code>Object#method</code>:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">m</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#111">method</span><span style="color:#111">(</span><span style="color:#d88200">:+</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">m</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#111">method</span><span style="color:#111">(</span><span style="color:#d88200">:+</span><span style="color:#111">)</span>
 <span style="color:#111">m</span><span style="color:#f92672">.</span><span style="color:#111">call</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># =&gt; 3</span>
 
 <span style="color:#00a8c8">module</span> <span style="color:#111">Demo</span>
@@ -808,7 +809,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 </ul>
 <h3 id="scope">Scope</h3>
 <p>Block arguments are local to the block.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">execute</span><span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">execute</span><span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">)</span>
   <span style="color:#111">str</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;string in method scope&#39;</span>
   <span style="color:#111">puts</span> <span style="color:#111">str</span>
   <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">call</span>
@@ -816,13 +817,13 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 
 <span style="color:#111">str</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;string in scope when proc is created&#39;</span>
 <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">proc</span> <span style="color:#111">{</span> <span style="color:#111">puts</span> <span style="color:#111">str</span> <span style="color:#111">}</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">call</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">call</span>
 <span style="color:#111">string</span> <span style="color:#00a8c8">in</span> <span style="color:#111">scope</span> <span style="color:#00a8c8">when</span> <span style="color:#111">proc</span> <span style="color:#111">is</span> <span style="color:#111">created</span>
 
 <span style="color:#f92672">&gt;</span> <span style="color:#111">execute</span><span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">)</span>
 <span style="color:#111">string</span> <span style="color:#00a8c8">in</span> <span style="color:#111">method</span> <span style="color:#111">scope</span>
 <span style="color:#111">string</span> <span style="color:#00a8c8">in</span> <span style="color:#111">scope</span> <span style="color:#00a8c8">when</span> <span style="color:#111">proc</span> <span style="color:#111">is</span> <span style="color:#111">created</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">var</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">var</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">proc</span> <span style="color:#111">{</span> <span style="color:#111">puts</span> <span style="color:#d88200">&#34;var = </span><span style="color:#d88200">#{</span><span style="color:#111">var</span><span style="color:#d88200">}</span><span style="color:#d88200">&#34;</span> <span style="color:#111">}</span> <span style="color:#75715e"># NameError if var is no yet defined at this point</span>
 
 <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">call</span> <span style="color:#75715e"># =&gt; var = 1</span>
@@ -831,7 +832,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 
 <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">call</span> <span style="color:#75715e"># =&gt; var = 2</span>
 </code></pre></div><p><strong>Example: Opening and closing resources</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">file_sandwich</span><span style="color:#111">(</span><span style="color:#111">file_name</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">file_sandwich</span><span style="color:#111">(</span><span style="color:#111">file_name</span><span style="color:#111">)</span>
   <span style="color:#111">file</span> <span style="color:#f92672">=</span> <span style="color:#111">open</span><span style="color:#111">(</span><span style="color:#111">file_name</span><span style="color:#111">)</span>
   <span style="color:#00a8c8">yield</span><span style="color:#111">(</span><span style="color:#111">file</span><span style="color:#111">)</span>
 <span style="color:#00a8c8">ensure</span>
@@ -839,7 +840,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#00a8c8">end</span>
 </code></pre></div><p><em>Executing around:</em> If you need to do something (repeatedly) before and after some operation, put the details of that something into a method that takes a block.</p>
 <p><strong>Example: Logging</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Whatever</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Whatever</span>
   <span style="color:#00a8c8">include</span> <span style="color:#00a8c8">Logging</span>
 
   <span style="color:#00a8c8">def</span> <span style="color:#75af00">do_something</span>
@@ -863,7 +864,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#00a8c8">end</span>
 </code></pre></div><p>Other examples are measuring execution time, etc.</p>
 <p><strong>Example: Block for initialization</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Specification</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Specification</span>
   <span style="color:#00a8c8">attr_accessor</span> <span style="color:#d88200">:name</span><span style="color:#111">,</span> <span style="color:#d88200">:version</span><span style="color:#111">,</span> <span style="color:#d88200">:description</span>
   <span style="color:#00a8c8">def</span> <span style="color:#75af00">initialize</span>
     <span style="color:#75715e"># ...</span>
@@ -877,7 +878,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
   <span style="color:#111">s</span><span style="color:#f92672">.</span><span style="color:#111">description</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;...&#39;</span>
 <span style="color:#00a8c8">end</span>
 </code></pre></div><p><strong>Example: Storing operations in blocks to delay execution and to stay agnostic with respect to where a resource comes from</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Book</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">class</span> <span style="color:#75af00">Book</span>
   <span style="color:#00a8c8">def</span> <span style="color:#75af00">initialize</span><span style="color:#111">(</span><span style="color:#111">author</span><span style="color:#111">,</span> <span style="color:#111">title</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span>
     <span style="color:#111">@author</span> <span style="color:#f92672">=</span> <span style="color:#111">author</span>
     <span style="color:#111">@title</span> <span style="color:#f92672">=</span> <span style="color:#111">title</span>
@@ -893,7 +894,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#111">book</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">Book</span><span style="color:#f92672">.</span><span style="color:#111">new</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Author&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Title&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#00a8c8">FTP</span><span style="color:#f92672">.</span><span style="color:#111">get</span><span style="color:#111">(</span><span style="color:#d88200">&#39;address&#39;</span><span style="color:#111">)</span> <span style="color:#111">}</span>
 </code></pre></div><h2 id="the--operator">The &amp; operator</h2>
 <p>The <code>&amp;</code> operator tells Ruby to use an object as a block. If expects that object to be a <em>proc</em>; if it is not, it first calls <code>to_proc</code> on it.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">execute</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span> <span style="color:#75715e"># `&amp;` takes the block that is part of the method invocation,</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">execute</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span> <span style="color:#75715e"># `&amp;` takes the block that is part of the method invocation,</span>
                     <span style="color:#75715e"># turns it into a `Proc` object (by calling `to_proc`),</span>
                     <span style="color:#75715e"># and binds it to the variable `block`.</span>
   <span style="color:#111">block</span><span style="color:#f92672">.</span><span style="color:#111">call</span>
@@ -913,7 +914,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <li>
 <p><code>Symbol</code>: It allows you to say <code>&amp;:capitalize</code> and get back a <em>proc</em> that captures the <code>capitalize</code> method. Note that, like above, the <code>&amp;</code> in <code>array.map(&amp;:capitalize)</code> tells <code>map</code> that <code>:capitalize.to_proc</code> takes the place of the block that can be part of the method invocation (as in <code>array.map { |item| item.capitalize }</code>).</p>
 <p><code>Symbol#to_proc</code> basically works like this:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby">  <span style="color:#00a8c8">class</span> <span style="color:#75af00">Symbol</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby">  <span style="color:#00a8c8">class</span> <span style="color:#75af00">Symbol</span>
     <span style="color:#00a8c8">def</span> <span style="color:#75af00">to_proc</span>
       <span style="color:#111">proc</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">obj</span><span style="color:#111">,</span> <span style="color:#111">args</span><span style="color:#f92672">|</span> <span style="color:#111">obj</span><span style="color:#f92672">.</span><span style="color:#111">send</span><span style="color:#111">(</span><span style="color:#111">self</span><span style="color:#111">,</span> <span style="color:#f92672">*</span><span style="color:#111">args</span><span style="color:#111">)</span> <span style="color:#111">}</span>
     <span style="color:#00a8c8">end</span>
@@ -925,14 +926,14 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 </ul>
 <p>It can also be defined by any class as a class or instance method.</p>
 <h2 id="currying">Currying</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">proc</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#111">y</span><span style="color:#f92672">|</span> <span style="color:#111">x</span> <span style="color:#f92672">+</span> <span style="color:#111">y</span> <span style="color:#111">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">proc</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#111">y</span><span style="color:#f92672">|</span> <span style="color:#111">x</span> <span style="color:#f92672">+</span> <span style="color:#111">y</span> <span style="color:#111">}</span>
 <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">curry</span> <span style="color:#75715e"># =&gt; &lt;Proc&gt;</span>
 
 <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">call</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>         <span style="color:#75715e"># =&gt; &lt;Proc&gt;</span>
 <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">call</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">call</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span> <span style="color:#75715e"># =&gt; 3</span>
 </code></pre></div><h1 id="enumerable-each">Enumerable: each</h1>
 <p><code>Enumerable</code> provides a range of collection-related behavior. In order for a class (usually a class implementing collections, such as <code>Array</code>, <code>Hash</code>, <code>Set</code>, and <code>Range</code>) to include and use it, <code>Enumerable</code> needs to be able to traverse through the collection - more specifically, the class must implement <code>each</code>, a method that yields successive members of the collection. In the simplest case it calls a block with one argument and binds the current member to that argument. When done, it returns the collection.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">[</span><span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;u&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;y&#34;</span><span style="color:#f92672">].</span><span style="color:#111">each</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">c</span><span style="color:#f92672">|</span> <span style="color:#111">puts</span> <span style="color:#d88200">&#34;Give me a </span><span style="color:#d88200">#{</span><span style="color:#111">c</span><span style="color:#f92672">.</span><span style="color:#111">upcase</span><span style="color:#d88200">}</span><span style="color:#d88200">!&#34;</span> <span style="color:#111">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">[</span><span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;u&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;y&#34;</span><span style="color:#f92672">].</span><span style="color:#111">each</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">c</span><span style="color:#f92672">|</span> <span style="color:#111">puts</span> <span style="color:#d88200">&#34;Give me a </span><span style="color:#d88200">#{</span><span style="color:#111">c</span><span style="color:#f92672">.</span><span style="color:#111">upcase</span><span style="color:#d88200">}</span><span style="color:#d88200">!&#34;</span> <span style="color:#111">}</span>
 <span style="color:#00a8c8">Give</span> <span style="color:#111">me</span> <span style="color:#111">a</span> <span style="color:#111">R!</span>
 <span style="color:#00a8c8">Give</span> <span style="color:#111">me</span> <span style="color:#111">a</span> <span style="color:#111">U!</span>
 <span style="color:#00a8c8">Give</span> <span style="color:#111">me</span> <span style="color:#111">a</span> <span style="color:#111">B!</span>
@@ -942,14 +943,14 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <ul>
 <li><code>each_with_index</code> calls a block with two arguments: the current element and the index of that element. Like each, it returns the collection.</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">collection</span><span style="color:#f92672">.</span><span style="color:#111">each_with_index</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">element</span><span style="color:#111">,</span> <span style="color:#111">index</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">collection</span><span style="color:#f92672">.</span><span style="color:#111">each_with_index</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">element</span><span style="color:#111">,</span> <span style="color:#111">index</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#111">collection</span>
 </code></pre></div><ul>
 <li><code>each_with_object</code> additionally expects an object, and calls a block with two arguments: the current element and that object (which is passed to and returned from each iteration of the block). It returns the initial object.</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">collection</span><span style="color:#f92672">.</span><span style="color:#111">each_with_object</span><span style="color:#111">(</span><span style="color:#111">initial_memo</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">element</span><span style="color:#111">,</span> <span style="color:#111">memo</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">collection</span><span style="color:#f92672">.</span><span style="color:#111">each_with_object</span><span style="color:#111">(</span><span style="color:#111">initial_memo</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">element</span><span style="color:#111">,</span> <span style="color:#111">memo</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#111">initial_memo</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">[</span><span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;u&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;y&#34;</span><span style="color:#f92672">].</span><span style="color:#111">each_with_object</span><span style="color:#111">(</span><span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">c</span><span style="color:#111">,</span> <span style="color:#111">str</span><span style="color:#f92672">|</span> <span style="color:#111">str</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">c</span> <span style="color:#111">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">[</span><span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;u&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;y&#34;</span><span style="color:#f92672">].</span><span style="color:#111">each_with_object</span><span style="color:#111">(</span><span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">c</span><span style="color:#111">,</span> <span style="color:#111">str</span><span style="color:#f92672">|</span> <span style="color:#111">str</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">c</span> <span style="color:#111">}</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;ruby&#34;</span>
 <span style="color:#f92672">[</span><span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;u&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;y&#34;</span><span style="color:#f92672">].</span><span style="color:#111">each_with_object</span><span style="color:#111">(</span><span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">c</span><span style="color:#111">,</span> <span style="color:#111">str</span><span style="color:#f92672">|</span> <span style="color:#111">p</span> <span style="color:#111">(</span><span style="color:#111">str</span> <span style="color:#f92672">+</span> <span style="color:#111">c</span><span style="color:#111">)</span> <span style="color:#111">}</span>
 <span style="color:#d88200">&#34;r&#34;</span>
@@ -958,10 +959,10 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#d88200">&#34;y&#34;</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#d88200">&#34;&#34;</span>
 </code></pre></div><p>In addition, classes that include <code>Enumerable</code> might define further variants of each that are specific for that class. For example, <code>Array</code> also defines <code>each_index</code>, in case you don&rsquo;t care about the elements but only their indices.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">array</span><span style="color:#f92672">.</span><span style="color:#111">each_index</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">index</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">array</span><span style="color:#f92672">.</span><span style="color:#111">each_index</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">index</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 <span style="color:#f92672">=&gt;</span> <span style="color:#111">array</span>
 </code></pre></div><p>And <code>Hash</code> defines a few variants that are specific to hashes:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">hash</span><span style="color:#f92672">.</span><span style="color:#111">each_key</span>   <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">key</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">hash</span><span style="color:#f92672">.</span><span style="color:#111">each_key</span>   <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">key</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 <span style="color:#111">hash</span><span style="color:#f92672">.</span><span style="color:#111">each_value</span> <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">value</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 <span style="color:#111">hash</span><span style="color:#f92672">.</span><span style="color:#111">each_pair</span>  <span style="color:#111">{</span> <span style="color:#f92672">|</span><span style="color:#111">key</span><span style="color:#111">,</span> <span style="color:#111">value</span><span style="color:#f92672">|</span> <span style="color:#f92672">...</span> <span style="color:#111">}</span>
 </code></pre></div><p>They all return the hash they&rsquo;re called on, and <code>each_pair</code> is basically the same as <code>each</code>, just providing a more descriptive name.</p>
@@ -980,14 +981,14 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <h2 id="external-iteration">External iteration</h2>
 <p>How to iterate is controlled from the outside, by whoever uses the iterator. In order to allow this, build an <code>Enumerator</code> object. (<code>Enumerator</code> implements <code>each</code> and includes <code>Enumerable</code>, so enumerators are also endowed with methods for internal iteration.)</p>
 <p>An <code>Enumerator</code> object can be built from most of the <code>Enumerable</code> methods by not providing a block:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">array</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#111">array</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">]</span>
 <span style="color:#111">array</span><span style="color:#f92672">.</span><span style="color:#111">each</span> <span style="color:#75715e"># same as: array.enum_for(:each), or: Enumerator.new(array, :each)</span>
 <span style="color:#111">array</span><span style="color:#f92672">.</span><span style="color:#111">map</span>  <span style="color:#75715e"># same as: array.enum_for(:map),  or: Enumerator.new(array, :map)</span>
 </code></pre></div><p>When implementing an iteration method like those, it&rsquo;s good practice to include this option as follows:</p>
-<pre><code class="language-rubby" data-lang="rubby">return enum_for(__callee__) unless block_given?
+<pre tabindex="0"><code class="language-rubby" data-lang="rubby">return enum_for(__callee__) unless block_given?
 </code></pre><p>An enumerator can also be constructed explicitly as instance of the <code>Enumerator</code> class. Construction requires a block that takes a yielder as argument. A yielder is an <code>Enumerator::Yielder</code> object that passes control around. It let&rsquo;s us yield each item of the enumerator to blocks passed to <code>Enumerable</code> method calls, like <code>next</code>, <code>peek</code>, <code>rewind</code>, etc.</p>
 <p><strong>Example: infinite sequence of natural numbers</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">natural_numbers</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">natural_numbers</span>
   <span style="color:#00a8c8">Enumerator</span><span style="color:#f92672">.</span><span style="color:#111">new</span> <span style="color:#00a8c8">do</span> <span style="color:#f92672">|</span><span style="color:#111">yielder</span><span style="color:#f92672">|</span>
     <span style="color:#111">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     <span style="color:#00a8c8">loop</span> <span style="color:#00a8c8">do</span>
@@ -999,7 +1000,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 
 <span style="color:#111">puts</span> <span style="color:#111">natural_numbers</span><span style="color:#f92672">.</span><span style="color:#111">first</span><span style="color:#111">(</span><span style="color:#ae81ff">10</span><span style="color:#111">)</span>
 </code></pre></div><p><strong>Example: repeatedly execute a block</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">repeatedly</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">repeatedly</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#111">block</span><span style="color:#111">)</span>
   <span style="color:#00a8c8">Enumerator</span><span style="color:#f92672">.</span><span style="color:#111">new</span> <span style="color:#00a8c8">do</span> <span style="color:#f92672">|</span><span style="color:#111">yielder</span><span style="color:#f92672">|</span>
     <span style="color:#00a8c8">loop</span> <span style="color:#00a8c8">do</span>
       <span style="color:#111">yielder</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">block</span><span style="color:#f92672">.</span><span style="color:#111">call</span>
@@ -1010,7 +1011,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <span style="color:#111">enum</span> <span style="color:#f92672">=</span> <span style="color:#111">repeatedly</span> <span style="color:#111">{</span> <span style="color:#111">puts</span> <span style="color:#d88200">&#39;Yay!&#39;</span> <span style="color:#111">}</span>
 <span style="color:#111">enum</span><span style="color:#f92672">.</span><span style="color:#111">first</span> <span style="color:#ae81ff">10</span>
 </code></pre></div><p>For finite enumerators:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">loop</span> <span style="color:#00a8c8">do</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">loop</span> <span style="color:#00a8c8">do</span>
   <span style="color:#00a8c8">raise</span> <span style="color:#00a8c8">StopIteration</span> <span style="color:#00a8c8">if</span> <span style="color:#111">there_is_no_next_value</span>
   <span style="color:#111">yielder</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">next_value</span>
 <span style="color:#00a8c8">end</span>
@@ -1018,7 +1019,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <p>Global variable holding the current exception: <code>$!</code></p>
 <p>When another exception is thrown before the current one is handled, it replaces the current one (which is thrown away).</p>
 <h2 id="structure">Structure</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">begin</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">begin</span>
   <span style="color:#75715e"># ...</span>
 <span style="color:#00a8c8">rescue</span>
   <span style="color:#75715e"># in case of failure</span>
@@ -1028,7 +1029,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
   <span style="color:#75715e"># always executed (e.g. cleaning up connection to external service, that would otherwise be left dangling)</span>
 <span style="color:#00a8c8">end</span>   
 </code></pre></div><p>Every method is implicitly a <code>begin</code> block.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">fnord</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">fnord</span>
   <span style="color:#75715e"># ...</span>
 <span style="color:#00a8c8">rescue</span>
   <span style="color:#75715e"># ...</span>
@@ -1043,7 +1044,7 @@ This comes with two important facts. (Examples are stolen and adapted from <a hr
 <li>Use exceptions only for exceptional situations. Not every time you get an answer you don&rsquo;t like. And not for control flow. (Raising an exception is just another form of <code>goto</code> statement, and it&rsquo;s expensive performance-wise.) For example, invalid user input is not unexpected, since you can predict it will happen during normal operation.</li>
 <li>If unsure what is the best fallback strategy, leave the decision to the caller. E.g.</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">fnord</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#00a8c8">def</span> <span style="color:#75af00">fnord</span>
   <span style="color:#75715e"># ...</span>
   <span style="color:#00a8c8">if</span> <span style="color:#111">all_went_well?</span>
     <span style="color:#75715e"># yeah</span>

@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.92.2" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,10 @@
   <meta property="og:title" content="Rust" />
 <meta property="og:description" content="Early draft. Work in progress." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cunger.github.io/notes/dev/rust/" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/rust/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2022-01-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-01-17T00:00:00+00:00" />
+
 
   
 
@@ -122,12 +123,12 @@ headingSelector: 'h1'
 
 
     <h3 id="comments">Comments</h3>
-<pre><code>// Comment
+<pre tabindex="0"><code>// Comment
 
 /// Documentation comment
 /// (can include Markdown)
 </code></pre><h3 id="cargo">Cargo</h3>
-<pre><code>cargo new project-name  // creates new project,
+<pre tabindex="0"><code>cargo new project-name  // creates new project,
                         // including git init
 
 cargo build             // compiles project and creates an executable:
@@ -204,14 +205,14 @@ cargo update            // automatically updating creates and regenerating Cargo
 <p>Expressions evaluate to a value, statements do not.</p>
 <p>A block is an expression that consists of a list of statements, possibly followed by one expression.
 For example:</p>
-<pre><code>let y = {
+<pre tabindex="0"><code>let y = {
   let x = 0;
   x + 1
 };
 // y is 1
 </code></pre><h2 id="variables-and-constants">Variables and constants</h2>
 <p>Variables are immutable, unless explicitly specified as mutable.</p>
-<pre><code>let one: i32 = 1;
+<pre tabindex="0"><code>let one: i32 = 1;
 let one_million = 1_000_000;   // type is inferred
 
 let mut var = 1;             
@@ -224,7 +225,7 @@ const SOME_CONSTANT: i32 = 0; // no type inference for constants
 <h1 id="functions">Functions</h1>
 <p>A return value is given by either a <code>return</code> statement or if the last line of the function body is an expression (without a semicolon, otherwise it would be a statement!).
 A function without a return value implicitly returns the empty tuple <code>()</code>.</p>
-<pre><code>// Entry point of the program
+<pre tabindex="0"><code>// Entry point of the program
 fn main() {
   say_hello_to(&quot;world&quot;);
 }
@@ -238,7 +239,7 @@ fn signature() -&gt; char {
   '😬'  // Important: If this line ends with a semicolon, it is a statement, not a return value!
 }
 </code></pre><h1 id="control-flow">Control flow</h1>
-<pre><code>if &lt;boolean condition&gt; {
+<pre tabindex="0"><code>if &lt;boolean condition&gt; {
 
 } else if &lt;boolean condition&gt; {
 
@@ -252,7 +253,7 @@ let number = if &lt;condition&gt; { 1 } else { 2 };
 <li><code>break &lt;expression&gt;</code>;</li>
 <li><code>break 'loop-name</code>;</li>
 </ul>
-<pre><code>'counting_up: loop {
+<pre tabindex="0"><code>'counting_up: loop {
   loop {
     // ...
     break 'counting_up;
@@ -269,7 +270,7 @@ let result = loop {
     break counter;
   }
 }
-</code></pre><pre><code>let xs = [1, 2, 3, 4, 5];
+</code></pre><pre tabindex="0"><code>let xs = [1, 2, 3, 4, 5];
 for x in xs {
   // ...
 }

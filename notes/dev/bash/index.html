@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.92.2" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,10 @@
   <meta property="og:title" content="Bash" />
 <meta property="og:description" content="Boom. Bang." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cunger.github.io/notes/dev/bash/" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/bash/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
 
   
 
@@ -118,7 +119,7 @@ headingSelector: 'h1'
 
     <h1 id="commands">Commands</h1>
 <h2 id="simple-commands">Simple commands</h2>
-<pre><code>[ var=value ... ] name [ arg ... ] [ redirection ... ]
+<pre tabindex="0"><code>[ var=value ... ] name [ arg ... ] [ redirection ... ]
 </code></pre><p>The variable assignments apply to the environment of this one command.</p>
 <p>To figure out what to execute, bash uses the <code>name</code> to search for:</p>
 <ul>
@@ -126,7 +127,7 @@ headingSelector: 'h1'
 <li>a builtin</li>
 <li>a program (i.e. an external command; bash will look into <code>PATH</code> for finding it)</li>
 </ul>
-<pre><code>$ type -a echo
+<pre tabindex="0"><code>$ type -a echo
 echo is a shell builtin
 echo is /bin/echo
 
@@ -137,19 +138,19 @@ $ type -a ls
 ls is aliased to `ls --color=auto'
 ls is /bin/ls
 </code></pre><h2 id="composing-commands">Composing commands</h2>
-<pre><code>[!] command [ | command ... ]
+<pre tabindex="0"><code>[!] command [ | command ... ]
 </code></pre><p>The pipe <code>|</code> connects the standard output file descriptor of the first command to the standard input file descriptor of the second one.
 Using <code>|&amp;</code> also connects the standard error of the first command to the input of the second one (which obviously only makes sense if it can handle error messages).</p>
-<pre><code>command ; command
+<pre tabindex="0"><code>command ; command
 </code></pre><p>Execute the first one, then execute the second one.</p>
-<pre><code>command &amp;&amp; command
+<pre tabindex="0"><code>command &amp;&amp; command
 command || command
 </code></pre><p><code>&amp;&amp;</code>: Execute the second one only of the first one was successful (i.e. returns exit code 0).<br>
 <code>||</code>: Execute the second one only of the first one failed (i.e. returns exit code 1 or higher).</p>
 <h1 id="exit-codes">Exit codes</h1>
 <p>If a script does not specify an exit code, its exit code will be the exit code of the last command run.
 The exit code of the last command run is accessible via <code>$?</code>, for example:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">touch some.file
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">touch some.file
 
 <span style="color:#00a8c8">if</span> <span style="color:#f92672">[</span> <span style="color:#111">$?</span> -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
 <span style="color:#00a8c8">then</span>
@@ -168,19 +169,19 @@ The exit code of the last command run is accessible via <code>$?</code>, for exa
 <li>standard error (<code>2</code>, terminal display)</li>
 </ul>
 <p>Every process started by bash will inherit those, unless they are explicitly changed by redirection. For example:</p>
-<pre><code>echo &quot;Fnord!&quot; &gt;log.text 2&gt;/dev/null
+<pre tabindex="0"><code>echo &quot;Fnord!&quot; &gt;log.text 2&gt;/dev/null
 </code></pre><p>Note that <code>&gt;</code> defaults to <code>1&gt;</code>. Also, if you want to send both output and errors to the same stream, you need to duplicate the file descriptor, e.g. <code>command &gt;file 2&gt;&amp;1</code>. Otherwise there will be two streams writing to the same descriptor, which gives unpredictable results.
 Also note that redirections are evaluated from left to right.</p>
 <p>Redirections with <code>&gt;</code> are for output (where <code>&gt;&gt;</code> appends to the end of a file), redirections with <code>&lt;</code> are for input (e.g. <code>read line &lt;file</code>, where <code>&lt;</code> defaults to <code>0&lt;</code>).</p>
 <p><code>&amp;&gt;</code> redirects both <code>1</code> and <code>2</code> to a file (or <code>&amp;&gt;&gt;</code> for appending), e.g.:</p>
-<pre><code>ping 127.0.0.1 &amp;&gt;log
+<pre tabindex="0"><code>ping 127.0.0.1 &amp;&gt;log
 </code></pre><h1 id="variables">Variables</h1>
 <ul>
 <li>All variables declared inside a function will be shared with the calling environment.</li>
 <li>All variables declared <code>local</code> will not be shared.</li>
 </ul>
 <p>Variable assignment with default value: <code>${VAR:-Default}</code>. Use <code>1</code> a <code>VAR</code> for <code>$1</code>, for example:</p>
-<pre><code>local value=${1:-&quot;Fnord&quot;}
+<pre tabindex="0"><code>local value=${1:-&quot;Fnord&quot;}
 </code></pre><h1 id="parameter-expansions">Parameter expansions</h1>
 <p>For a full list, see the <a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion">Bash reference</a>.</p>
 <ul>
@@ -206,18 +207,18 @@ Also note that redirections are evaluated from left to right.</p>
 <h2 id="the-importance-of-quoting">The importance of quoting</h2>
 <p>Always quote variable expansions! As in <code>echo &quot;$result&quot;</code>, or <code>fun &quot;$1&quot; &quot;$2&quot;</code>.</p>
 <p>Also, when in doubt, quote. For example:</p>
-<pre><code>$ rm -vr /home/$username
+<pre tabindex="0"><code>$ rm -vr /home/$username
 </code></pre><p>If <code>$username</code> accidentally contains a space as first character, the whole <code>/home</code> directory will be deleted. This will not happen when the argument is quoted:</p>
-<pre><code>$ rm -vr &quot;/home/$username&quot;
+<pre tabindex="0"><code>$ rm -vr &quot;/home/$username&quot;
 </code></pre><h1 id="conditionals-and-tests">Conditionals and tests</h1>
 <p>Use <code>[[</code> for strings and <code>((</code> for numerals.</p>
 <h1 id="loops">Loops</h1>
-<pre><code>while read url
+<pre tabindex="0"><code>while read url
 do
   curl &quot;$url&quot; &gt;&gt; collected_results.html
 done &lt; list_of_urls.txt
-</code></pre><pre><code>$ touch file{0,1,2,3,4}.txt
-</code></pre><pre><code>$ ls -ld {,usr,usr/local}/{bin,sbin,lib}
+</code></pre><pre tabindex="0"><code>$ touch file{0,1,2,3,4}.txt
+</code></pre><pre tabindex="0"><code>$ ls -ld {,usr,usr/local}/{bin,sbin,lib}
 </code></pre>
 
     

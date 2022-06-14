@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.92.2" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,10 @@
   <meta property="og:title" content="Web Basics" />
 <meta property="og:description" content="TCP/IP, HTTP, REST, and security." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cunger.github.io/notes/dev/web/" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/web/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
 
   
 
@@ -185,13 +186,13 @@ Such connections involve network protocol handshaking to establish them, as well
 <p>A request is <em>safe</em> if it does not request any action besides the retrieval of data. E.g. GET, HEAD. Not POST, PUT, DELETE.</p>
 <p>A request is <em>idempotent</em> if the result is the same no matter how often it is executed (aside from errors or expiration effects). E.g. GET, HEAD, DELETE. Not POST.</p>
 <h3 id="examples">Examples</h3>
-<pre><code>GET /about HTTP/1.1
+<pre tabindex="0"><code>GET /about HTTP/1.1
 -------------------
 Host: example.com
 User-Agent: ...
 -------------------
 </code></pre><p>In case of a POST request sending data to the server, this data is sent as the request body:</p>
-<pre><code>POST /user HTTP/1.1
+<pre tabindex="0"><code>POST /user HTTP/1.1
 -------------------
 Host: example.com
 User-Agent: ...
@@ -208,14 +209,14 @@ first_name=alice&amp;action=update
 <p>Required is the status, all other parts are optional.</p>
 <p>Usually a browser issues several requests when pointed to a URL, e.g. requesting resources required to display an HTML page (images, stylesheets, scripts, etc) and following redirects.</p>
 <h3 id="example">Example</h3>
-<pre><code>HTTP/1.x 200 OK
+<pre tabindex="0"><code>HTTP/1.x 200 OK
 ---------------
 Last-Modified: ...
 ---------------
 &lt;html&gt;
 ...
 &lt;/html&gt;
-</code></pre><pre><code>HTTP/1.x 303 See other
+</code></pre><pre tabindex="0"><code>HTTP/1.x 303 See other
 ---------------
 Location: ...
 ---------------
@@ -255,11 +256,11 @@ Location: ...
 <p>A Uniform Resource Identifier (URI) is a compact string of characters for identifying an abstract or physical resource.
 &ndash; <a href="https://www.ietf.org/rfc/rfc2396.txt">https://www.ietf.org/rfc/rfc2396.txt</a></p>
 </blockquote>
-<pre><code>url = scheme &quot;://&quot; host [ &quot;:&quot; port ] [ path [ &quot;#&quot; anchor ] [ &quot;?&quot; query ]]
+<pre tabindex="0"><code>url = scheme &quot;://&quot; host [ &quot;:&quot; port ] [ path [ &quot;#&quot; anchor ] [ &quot;?&quot; query ]]
 </code></pre><p>The <code>scheme</code> specifies a protocol, telling how the resource can be accessed, e.g. <code>http</code>, <code>https</code>, <code>ftp</code>, <code>mailto</code>, <code>git</code>.</p>
 <p>The <code>host</code> is either a hostname (e.g. <code>example.com</code>) or an IP address.</p>
 <p><strong>Example:</strong></p>
-<pre><code>https://example.com:3000/character?first_name=elaine&amp;last_name=marley
+<pre tabindex="0"><code>https://example.com:3000/character?first_name=elaine&amp;last_name=marley
 </code></pre><p>Default <code>port</code>s:</p>
 <ul>
 <li><code>80</code> for HTTP</li>
@@ -292,11 +293,11 @@ Location: ...
 </ol>
 <p>HTTP also allows for a chain of HTTP intermediaries between client and server (proxies, caches, etc).</p>
 <h2 id="curl">cURL</h2>
-<pre><code>curl http://localhost:3000
-</code></pre><pre><code>curl -X GET &quot;http://localhost:3000/books&quot; -v -A &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0&quot;
+<pre tabindex="0"><code>curl http://localhost:3000
+</code></pre><pre tabindex="0"><code>curl -X GET &quot;http://localhost:3000/books&quot; -v -A &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0&quot;
 </code></pre><p><code>-A</code> for User-Agent
 <code>-H</code> for headers</p>
-<pre><code>curl -X POST &quot;http://localhost:3000/login&quot; -d &quot;username=guybrush&quot; -d &quot;password=APirateIWasMeantToBe&quot; -v
+<pre tabindex="0"><code>curl -X POST &quot;http://localhost:3000/login&quot; -d &quot;username=guybrush&quot; -d &quot;password=APirateIWasMeantToBe&quot; -v
 </code></pre><p><code>-d</code> results in the data being POST-ed as an <code>application/x-www-form-urlencoded</code> string.</p>
 <h2 id="ajax">AJAX</h2>
 <p><em>Asynchronous JavaScript and XML</em> (AJAX) is used for displaying dynamic content, in particular issuing requests and processing responses without full page refreshes. When triggering a request, the response is handled by a callback (usually a client-side JS function), which then, e.g., updates the HTML page (by directly changing the DOM tree).</p>
@@ -316,7 +317,7 @@ Location: ...
 <li><em>Scoped cookies:</em> A <code>path</code> and <code>domain</code> attribute can be specified to limit the scope of the cookie to a specific domain, sub-domain, or path.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code>Cookie: key=value; expires=Sun, 24-Sep-2017 23:59:59 GMT; path=/; domain=.yoursite.com
+<pre tabindex="0"><code>Cookie: key=value; expires=Sun, 24-Sep-2017 23:59:59 GMT; path=/; domain=.yoursite.com
 </code></pre><h1 id="web-application-security">Web application security</h1>
 <h2 id="https">HTTPS</h2>
 <p>Any request and response is plain text, thus vulnerable to being intercepted when sent across a network.</p>
@@ -325,11 +326,11 @@ Location: ...
 <h2 id="same-origin-policy-and-cors">Same-origin policy and CORS</h2>
 <p>Resources from the same origin can access each other without restrictions, where <em>same origin</em> means same protocol, hostname and port. Therefore HTML pages can embed, e.g., scripts from the same origin.</p>
 <p>Cross-origin resource sharing (CORS) has been developed to allow resources to also access resources from another origin. Servers can specify in an HTTP header the set of origins that are permitted to send cross-origin requests. In the simplest case, the request states its origin:</p>
-<pre><code>Origin: http://www.example.com
+<pre tabindex="0"><code>Origin: http://www.example.com
 </code></pre><p>And the response specifies which origins are allowed:</p>
-<pre><code>Access-Control-Allow-Origin: http://www.example.com
+<pre tabindex="0"><code>Access-Control-Allow-Origin: http://www.example.com
 </code></pre><p>For completely public content (e.g. fonts on Google Fonts):</p>
-<pre><code>Access-Control-Allow-Origin: *
+<pre tabindex="0"><code>Access-Control-Allow-Origin: *
 </code></pre><h2 id="session-hijacking">Session hijacking</h2>
 <p>Obvious security problems with HTTP:</p>
 <p><em>Packet sniffing</em>: intercepting packets sent back and forth between client and server, when attached to the same network

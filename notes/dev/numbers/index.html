@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.92.2" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,10 @@
   <meta property="og:title" content="Numbers" />
 <meta property="og:description" content="And arithmetics." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cunger.github.io/notes/dev/numbers/" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/numbers/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
 
   
 
@@ -130,14 +131,14 @@ headingSelector: 'h1'
 <li>In decimal notation: from <code>0</code> to <code>255</code> (there are <code>2^8 = 256</code> combinations of eight <code>0</code>s and <code>1</code>s)</li>
 <li>In hexadecimal notation: from <code>00</code> to <code>FF</code></li>
 </ul>
-<pre><code>Hex 0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
+<pre tabindex="0"><code>Hex 0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 Dec 0    1    2    3    4    5    6    7    8    9    10   11   12   13   14   15
 Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
 </code></pre><p>Bytes are combined into <em>words</em> of 1 to 8 bytes. Most common architectures today use 32 or 64 bits in groups of 4 and 8 bytes, respectively, for addressing memory.</p>
 <h1 id="integers">Integers</h1>
 <p>Integers are represented using a series of bits, i.e. in a base-2 system.</p>
 <p>For example:</p>
-<pre><code>8    4    2    1     =
+<pre tabindex="0"><code>8    4    2    1     =
 2^3  2^2  2^1  2^0
 0    0    0    0     0
 0    0    0    1     1

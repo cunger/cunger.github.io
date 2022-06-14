@@ -2,7 +2,7 @@
 <html lang="en-gb">
 
 <head>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.92.2" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,10 @@
   <meta property="og:title" content="CSS" />
 <meta property="og:description" content="Box model, selectors, positioning." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cunger.github.io/notes/dev/css/" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/css/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
 
   
 
@@ -117,26 +118,26 @@ headingSelector: 'h1'
 
 
     <h1 id="comments">Comments</h1>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* ... */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* ... */</span>
 </code></pre></div><h1 id="selectors">Selectors</h1>
 <p>CSS selectors specify which HTML elements are styled.</p>
 <ul>
 <li><strong>Type selectors</strong> select elements by their element type.</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;p&gt;...&lt;/p&gt; */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;p&gt;...&lt;/p&gt; */</span>
 <span style="color:#f92672">p</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 </code></pre></div><ul>
 <li><strong>Class selectors</strong> select elements based on the element&rsquo;s attribute value.</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div class=&#34;awesome&#34;&gt;...&lt;/div&gt; */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div class=&#34;awesome&#34;&gt;...&lt;/div&gt; */</span>
 <span style="color:#111">.</span><span style="color:#75af00">awesome</span> <span style="color:#111">{</span><span style="color:#960050;background-color:#1e0010">...</span><span style="color:#111">}</span>
 </code></pre></div><ul>
 <li><strong>ID selectors</strong> target a unique element with a specific ID attribute value.</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div id=&#34;justme&#34;&gt;...&lt;/div&gt; */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div id=&#34;justme&#34;&gt;...&lt;/div&gt; */</span>
 <span style="color:#111">#</span><span style="color:#111">justme</span> <span style="color:#111">{</span><span style="color:#960050;background-color:#1e0010">...</span><span style="color:#111">}</span>
 </code></pre></div><p>Combining selectors:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* targets elements of type p with class=&#34;hotdog&#34; or class=&#34;burger&#34; */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* targets elements of type p with class=&#34;hotdog&#34; or class=&#34;burger&#34; */</span>
 <span style="color:#f92672">p</span><span style="color:#111">.</span><span style="color:#75af00">hotdog</span><span style="color:#f92672">,</span>
 <span style="color:#f92672">p</span><span style="color:#111">.</span><span style="color:#75af00">burger</span> <span style="color:#111">{</span>
   <span style="color:#960050;background-color:#1e0010">...</span>
@@ -147,7 +148,7 @@ headingSelector: 'h1'
 <li><code>p .mustard</code> selects all elements that are of type <code>p</code> or have <code>class=&quot;mustard&quot;</code> (independent of their type)</li>
 </ul>
 <h3 id="descendant-selectors">Descendant selectors</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Any descendant */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Any descendant */</span>
 <span style="color:#f92672">header</span> <span style="color:#f92672">a</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span> <span style="color:#75715e">/* (targets elements of type a within elements of type header) */</span>
 
 <span style="color:#75715e">/* Direct child */</span>
@@ -160,7 +161,7 @@ headingSelector: 'h1'
 <span style="color:#75715e">/* Note that these selectors select p siblings following the header element,
 </span><span style="color:#75715e">   but do not select p elements preceding it. */</span>
 </code></pre></div><h3 id="attribute-selectors">Attribute selectors</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Element with attribute present, regardless of the value */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Element with attribute present, regardless of the value */</span>
 <span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">target</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
 <span style="color:#75715e">/* Element with attribute with a particular value */</span>
 <span style="color:#f92672">a</span><span style="color:#f92672">[</span><span style="color:#f92672">href</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;#&#34;</span><span style="color:#f92672">]</span> <span style="color:#111">{</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#111">}</span>
@@ -207,7 +208,7 @@ The universal selector <code>*</code> has a specificity of <code>0-0-0</code>.</
 if all else is equal, the rule later in the source code is applied</li>
 </ul>
 <p>Since the specificity of anchor classes is the same for all of them, their order determines which one is applied last. That&rsquo;s why they should be specified in the following order:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">a</span><span style="color:#111">:</span><span style="color:#75af00">link</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">a</span><span style="color:#111">:</span><span style="color:#75af00">link</span>
 <span style="color:#f92672">a</span><span style="color:#111">:</span><span style="color:#75af00">visited</span>
 <span style="color:#f92672">a</span><span style="color:#111">:</span><span style="color:#75af00">hover</span>
 <span style="color:#f92672">a</span><span style="color:#111">:</span><span style="color:#75af00">active</span>
@@ -243,7 +244,7 @@ if all else is equal, the rule later in the source code is applied</li>
 <p>It needs to have <code>content</code> defined in order to be rendered, even if only <code>content: &quot;&quot;;</code>.
 Also, pseudo-elements don&rsquo;t work on replace elements (e.g. <code>img</code> and form elements, such as <code>input</code>, <code>button</code>, <code>textarea</code>, <code>select</code>).</p>
 <p><code>:n-th*(...)</code> pseudo elements allow for specifying a counter using the variable <code>n</code>, which will count up (i.e. <code>0, 1, 2, ...</code>), or <code>-n</code>, which will count down (i.e. <code>0, -1, -2, ...</code>). Examples:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*(</span><span style="color:#f92672">2n</span><span style="color:#f92672">)</span>   <span style="color:#75715e">/* = element:n-th*(even)  */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*(</span><span style="color:#f92672">2n</span><span style="color:#f92672">)</span>   <span style="color:#75715e">/* = element:n-th*(even)  */</span>
 <span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*(</span><span style="color:#f92672">2n</span><span style="color:#f92672">+</span><span style="color:#f92672">1</span><span style="color:#f92672">)</span> <span style="color:#75715e">/* = element:n-th*(odd)  */</span>
 <span style="color:#f92672">element</span><span style="color:#111">:</span><span style="color:#75af00">n-th</span><span style="color:#f92672">*(</span><span style="color:#f92672">-n</span><span style="color:#f92672">+</span><span style="color:#f92672">2</span><span style="color:#f92672">)</span> <span style="color:#75715e">/* selects the first two elements (n =&gt; 2, 1, 0, -1, -2, ...) */</span>
 </code></pre></div><h2 id="colors">Colors</h2>
@@ -270,13 +271,13 @@ with <code>0</code> black and <code>f</code> white
 <li><code>1rem</code> represents the calculated font-size of the root element</li>
 <li><code>1vh</code> and <code>1vw</code> represent 1% of the viewport&rsquo;s height and width, respectively (not universally supported, though), and is, e.g., useful for <em>viewport sized typography</em>:</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">h1</span> <span style="color:#111">{</span> <span style="color:#00a8c8">font-size</span><span style="color:#111">:</span> <span style="color:#ae81ff">20</span><span style="color:#00a8c8">vw</span><span style="color:#111">;</span> <span style="color:#111">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">h1</span> <span style="color:#111">{</span> <span style="color:#00a8c8">font-size</span><span style="color:#111">:</span> <span style="color:#ae81ff">20</span><span style="color:#00a8c8">vw</span><span style="color:#111">;</span> <span style="color:#111">}</span>
 <span style="color:#f92672">p</span>  <span style="color:#111">{</span> <span style="color:#00a8c8">font-size</span><span style="color:#111">:</span> <span style="color:#ae81ff">2</span><span style="color:#00a8c8">vmin</span><span style="color:#111">;</span> <span style="color:#111">}</span>
 </code></pre></div><ul>
 <li><code>%</code> relates to the length of the same property of the parent element (for paddings and margins it always relates to the element&rsquo;s width)</li>
 </ul>
 <p>Use fallbacks when using units that are not universally supported, e.g.:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">p</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">p</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">font-size</span><span style="color:#111">:</span> <span style="color:#ae81ff">20</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span> <span style="color:#00a8c8">font-size</span><span style="color:#111">:</span> <span style="color:#ae81ff">1.25</span><span style="color:#00a8c8">rem</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
 <span style="color:#f92672">nav</span> <span style="color:#111">{</span>
@@ -297,13 +298,13 @@ with <code>0</code> black and <code>f</code> white
 <p><img src="https://learn.shayhowe.com/assets/images/courses/html-css/opening-the-box-model/box-model.png" alt="Box model"></p>
 <p>Padding is part of an element, while the margin is not (it&rsquo;s space between elements). Both padding and margin are transparent. As a result, padding shows the background of the element, margin the background of its container.</p>
 <p>Shorthands for <code>margin</code> (and, analogously, for <code>padding</code>):</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">margin</span><span style="color:#111">:</span> <span style="color:#ae81ff">10</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>           <span style="color:#75715e">/* same value for all four sides */</span>
   <span style="color:#00a8c8">margin</span><span style="color:#111">:</span> <span style="color:#ae81ff">10</span><span style="color:#00a8c8">px</span> <span style="color:#ae81ff">5</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>       <span style="color:#75715e">/* top + bottom, left + right */</span>
   <span style="color:#00a8c8">margin</span><span style="color:#111">:</span> <span style="color:#ae81ff">10</span><span style="color:#00a8c8">px</span> <span style="color:#ae81ff">5</span><span style="color:#00a8c8">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">6</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span> <span style="color:#75715e">/* top, right, bottom, left */</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>If <code>height</code> is specified as percentage, it is interpreted w.r.t. its containing element. If the height of the containing element cannot be calculated, the <code>height</code> property of its child is reset to <code>auto</code> (usually meaning the height that the content requires). Example:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Without height on body and html, height of div cannot be calculated. */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Without height on body and html, height of div cannot be calculated. */</span>
 <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
 <span style="color:#f92672">html</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">height</span><span style="color:#111">:</span> <span style="color:#ae81ff">100</span><span style="color:#00a8c8">%</span><span style="color:#111">;</span>
@@ -325,7 +326,7 @@ Exceptions are <code>inline-block</code> and floated elements.</li>
 </ul>
 <p>Left and right margins as well as paddings don&rsquo;t collapse.</p>
 <h3 id="borders">Borders</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">border</span><span style="color:#111">:</span> <span style="color:#ae81ff">1</span><span style="color:#00a8c8">px</span> <span style="color:#00a8c8">solid</span> <span style="color:#ae81ff">#000</span><span style="color:#111">;</span> <span style="color:#75715e">/* width style color */</span>
   <span style="color:#75715e">/* same for individual sides with border-top, border-bottom, border-left, border-right */</span>
 <span style="color:#111">}</span>
@@ -374,7 +375,7 @@ Exceptions are <code>inline-block</code> and floated elements.</li>
 <p>See: <a href="https://css-tricks.com/all-about-floats/">https://css-tricks.com/all-about-floats/</a></p>
 <p>The <code>float</code> property removes an element from the <em>normal</em> flow of a document, and moves it to the left or right edge of its parent element (or the page if there is no parent). It requires an element to be a block element, and will adapt its <code>display</code> value accordingly if it isn&rsquo;t.</p>
 <p>Non-floated elements appearing after the floated ones will be positioned in the normal flow, and ignore the floated ones - only their content wraps around the floated ones. Example:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">nav</span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">nav</span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
     <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Home<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
     <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Kapitel 1<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
@@ -394,19 +395,19 @@ Exceptions are <code>inline-block</code> and floated elements.</li>
 After floating <code>nav</code> to the left:
 <img src="/images/docs/float-left-not.png" alt="the content of main wraps around nav"></p>
 <p>In order for a non-floated box to behave as if the floated one was in the normal flow, it has to clear the float with <code>clear: both | left | right</code>.</p>
-<p>Note that when floating an element, order in the HTML document matters. If, for example, an image is first removed from the normal flow, then the following text will wrap around it (see <a href="https://alistapart.com/d/css-floats-101/example_h.html):">https://alistapart.com/d/css-floats-101/example_h.html):</a></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
+<p>Note that when floating an element, order in the HTML document matters. If, for example, an image is first removed from the normal flow, then the following text will wrap around it (see <a href="https://alistapart.com/d/css-floats-101/example_h.html)">https://alistapart.com/d/css-floats-101/example_h.html)</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">img</span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
 <span style="color:#111">&lt;/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
-</code></pre></div><p>But if the text is first set and the image is removed from the normal flow afterwards, it will affect the following elements but not the text (see <a href="https://alistapart.com/d/css-floats-101/example_i.html):">https://alistapart.com/d/css-floats-101/example_i.html):</a></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
+</code></pre></div><p>But if the text is first set and the image is removed from the normal flow afterwards, it will affect the following elements but not the text (see <a href="https://alistapart.com/d/css-floats-101/example_i.html)">https://alistapart.com/d/css-floats-101/example_i.html)</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">p</span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">img</span><span style="color:#111">&gt;</span>
 <span style="color:#111">&lt;/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
 </code></pre></div><p>Also note that since floated elements are not in the normal flow, they don&rsquo;t affect the size of their parent element. Therefore containers with only floated elements in them, collapse - as far as the container is concerned, it&rsquo;s empty. That&rsquo;s also the reason why the image in <a href="https://alistapart.com/d/css-floats-101/example_i.html">the second example</a> sticks out of the box.</p>
 <p>In order to contain floats, the containing element needs an element that clears the float. This can be done using pseudo-elements (see <a href="http://nicolasgallagher.com/micro-clearfix-hack/"><em>micro clearfix</em></a>):</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">group</span><span style="color:#111">::</span><span style="color:#75af00">before</span><span style="color:#f92672">,</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">group</span><span style="color:#111">::</span><span style="color:#75af00">before</span><span style="color:#f92672">,</span>
 <span style="color:#111">.</span><span style="color:#75af00">group</span><span style="color:#111">::</span><span style="color:#75af00">after</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">content</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">display</span><span style="color:#111">:</span> <span style="color:#00a8c8">table</span><span style="color:#111">;</span>
@@ -423,7 +424,7 @@ After floating <code>nav</code> to the left:
 Since the margin area takes the background color of the containing element, this gives the impression of two columns.</p>
 <h2 id="horizontal-lists-with-floats">Horizontal lists with floats</h2>
 <p>Each floated box is taken out of the normal flow and floated as far up and left/right as possible, so consecutive floated boxes will appear next to each other (until they fill the width of their containing element, then they begin to wrap, called <em>float drop</em>).</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">ul</span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Item 1<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Item 2<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
   <span style="color:#111">&lt;</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>Item 3<span style="color:#111">&lt;/</span><span style="color:#f92672">li</span><span style="color:#111">&gt;</span>
@@ -459,7 +460,7 @@ Without any of the properties <code>left</code>, <code>right</code>, <code>top</
 </li>
 </ul>
 <p>In order to center an <code>absolute</code> or <code>fixed</code> element:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">width</span><span style="color:#111">:</span> <span style="color:#ae81ff">200</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">position</span><span style="color:#111">:</span> <span style="color:#00a8c8">absolute</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">top</span><span style="color:#111">:</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
@@ -489,15 +490,15 @@ Without any of the properties <code>left</code>, <code>right</code>, <code>top</
 <p><em>Mobile first:</em> Write CSS for mobile version and use media queries to add rules (and images, etc.) for larger screens. This way, load time and bandwidth use on mobile devices can be minimized.</p>
 <h2 id="importing-css-with-media-queries">Importing CSS with media queries</h2>
 <p>HTML:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">link</span> <span style="color:#75af00">href</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;file.css&#34;</span> <span style="color:#75af00">rel</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;stylesheet&#34;</span> <span style="color:#75af00">media</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;media-query&#34;</span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#111">&lt;</span><span style="color:#f92672">link</span> <span style="color:#75af00">href</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;file.css&#34;</span> <span style="color:#75af00">rel</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;stylesheet&#34;</span> <span style="color:#75af00">media</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;media-query&#34;</span><span style="color:#111">&gt;</span>
 </code></pre></div><p>CSS:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">@</span><span style="color:#00a8c8">import</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#d88200">&#39;file.css&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">media-query</span><span style="color:#111">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">@</span><span style="color:#00a8c8">import</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#d88200">&#39;file.css&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">media-query</span><span style="color:#111">;</span>
 
 <span style="color:#111">@</span><span style="color:#00a8c8">media</span> <span style="color:#f92672">media-query</span> <span style="color:#111">{</span>
   <span style="color:#f92672">...</span>
 <span style="color:#111">}</span>
 </code></pre></div><h2 id="syntax">Syntax</h2>
-<pre><code>media-query := (logic)? media and (media features)
+<pre tabindex="0"><code>media-query := (logic)? media and (media features)
 
 logic := only | not
 media := screen | projection | print | ...
@@ -505,9 +506,9 @@ media := screen | projection | print | ...
 media features := feature
                 | feature : value
 </code></pre><p>Features include, among others, <strong>device orientation</strong>:</p>
-<pre><code>orientation : portrait | landscape
+<pre tabindex="0"><code>orientation : portrait | landscape
 </code></pre><p>and <strong>width</strong>:</p>
-<pre><code>           width: 600px;
+<pre tabindex="0"><code>           width: 600px;
        min-width: 400px;
        max-width: 800px;
 
@@ -517,7 +518,7 @@ max-device-width: 800px;
 </code></pre><p>Where <code>width</code> refers to the width of the viewport, and <code>device-width</code> refers to the width of the screen (independent of device orientation).
 And analogously for <code>height</code>.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Include background image only if the viewport provides enough space */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Include background image only if the viewport provides enough space */</span>
 
 <span style="color:#111">@</span><span style="color:#00a8c8">media</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">400px</span><span style="color:#f92672">)</span> <span style="color:#111">{</span>
   <span style="color:#f92672">h1</span> <span style="color:#111">{</span>
@@ -525,7 +526,7 @@ And analogously for <code>height</code>.</p>
   <span style="color:#111">}</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>Expressions can be composed with <code>and</code> and <code>,</code> (meaning or). For example:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* screen that has (a min-width of 400px or orientation landscape) and a max-width of 800px */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* screen that has (a min-width of 400px or orientation landscape) and a max-width of 800px */</span>
 <span style="color:#111">@</span><span style="color:#00a8c8">media</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">400px</span><span style="color:#f92672">,</span> <span style="color:#f92672">orientation</span><span style="color:#f92672">:</span> <span style="color:#f92672">landscape</span><span style="color:#f92672">)</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">800px</span><span style="color:#f92672">)</span> <span style="color:#111">{</span>
 <span style="color:#111">}</span>
 </code></pre></div><h1 id="guidelines">Guidelines</h1>
@@ -536,7 +537,7 @@ And analogously for <code>height</code>.</p>
 <li>Prefer classes over IDs, unless something is really unique, like a hook for JS.</li>
 <li>Prefer simple layering over nesting, for example:</li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div class=&#34;flash flash-success&#34;&gt; ... &lt;/div&gt; */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* &lt;div class=&#34;flash flash-success&#34;&gt; ... &lt;/div&gt; */</span>
 
 <span style="color:#111">.</span><span style="color:#75af00">flash</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">font-size</span><span style="color:#111">:</span> <span style="color:#ae81ff">19</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>
@@ -563,20 +564,20 @@ And analogously for <code>height</code>.</p>
 <h1 id="examples">Examples</h1>
 <h2 id="backgrounds-and-images">Backgrounds and images</h2>
 <p>Not all browsers support <code>rgba</code> colors (e.g. IE8), so provide a safe fallback as well.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#ae81ff">#b2b2b2</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#111">rgba</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">.3</span><span style="color:#111">);</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>Use <code>border-radius: 100%;</code> to create circular images.</p>
 <p>Scaling an image when viewport gets smaller than image size:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">img</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">img</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">max-width</span><span style="color:#111">:</span> <span style="color:#ae81ff">800</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">width</span><span style="color:#111">:</span> <span style="color:#ae81ff">100</span><span style="color:#00a8c8">%</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
 </code></pre></div><h2 id="image-sprites">Image sprites</h2>
 <p>Include the sprite sheet as background image and shift it using
 <code>background-position: &lt;pixels shifted right&gt; &lt;pixels shifted down&gt;;</code>. For example:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">button</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">button</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;button_sprite.png&#34;</span><span style="color:#111">);</span>
   <span style="color:#00a8c8">height</span><span style="color:#111">:</span> <span style="color:#ae81ff">20</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">width</span><span style="color:#111">:</span> <span style="color:#ae81ff">20</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>
@@ -593,7 +594,7 @@ And analogously for <code>height</code>.</p>
 <span style="color:#111">}</span>
 </code></pre></div><h2 id="centering-content">Centering content</h2>
 <p>Horizontally:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">element</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">element</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">display</span><span style="color:#111">:</span> <span style="color:#00a8c8">block</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">margin</span><span style="color:#111">:</span> <span style="color:#ae81ff">0</span> <span style="color:#00a8c8">auto</span><span style="color:#111">;</span>
   <span style="color:#75715e">/* usually together with max-width */</span>
@@ -606,7 +607,7 @@ And analogously for <code>height</code>.</p>
   <span style="color:#00a8c8">align-items</span><span style="color:#111">:</span> <span style="color:#00a8c8">center</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>In the center of the page:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">img</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">img</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">display</span><span style="color:#111">:</span> <span style="color:#00a8c8">block</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">position</span><span style="color:#111">:</span> <span style="color:#00a8c8">fixed</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">top</span><span style="color:#111">:</span> <span style="color:#ae81ff">50</span><span style="color:#00a8c8">%</span><span style="color:#111">;</span>
@@ -615,12 +616,12 @@ And analogously for <code>height</code>.</p>
 <span style="color:#111">}</span>
 </code></pre></div><p>For more comprehensive information, see <a href="https://css-tricks.com/centering-css-complete-guide/">CSS Tricks</a> and <a href="https://www.w3.org/Style/Examples/007/center.en.html">W3C</a>.</p>
 <h2 id="containing-floats-aka-clearfix">Containing floats (aka clearfix)</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">group</span><span style="color:#111">::</span><span style="color:#75af00">after</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">group</span><span style="color:#111">::</span><span style="color:#75af00">after</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">content</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">display</span><span style="color:#111">:</span> <span style="color:#00a8c8">block</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">clear</span><span style="color:#111">:</span> <span style="color:#00a8c8">both</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">group</span> <span style="color:#111">{</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#111">.</span><span style="color:#75af00">group</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">overflow</span><span style="color:#111">:</span> <span style="color:#00a8c8">auto</span><span style="color:#111">;</span>
   <span style="color:#111">zoom</span><span style="color:#111">:</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
@@ -629,7 +630,7 @@ And analogously for <code>height</code>.</p>
 <code>display: inline-block</code> and <code>float: left, overflow: auto</code> both achieve the same thing
 (where the former displays whitespaces between the elements while the latter doesn&rsquo;t).</p>
 <h2 id="lists">Lists</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* How to style list elements with a custom style (with fallback bullets) */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* How to style list elements with a custom style (with fallback bullets) */</span>
 <span style="color:#f92672">ul</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">list-style-type</span><span style="color:#111">:</span> <span style="color:#00a8c8">disc</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">list-style-image</span><span style="color:#111">:</span> <span style="color:#111">url</span><span style="color:#111">(</span><span style="color:#d88200">&#34;arrow.png&#34;</span><span style="color:#111">);</span>
@@ -650,18 +651,18 @@ And analogously for <code>height</code>.</p>
 
 <span style="color:#75715e">/* How to spread a list horizontally, e.g. for a nav bar */</span>
 <span style="color:#f92672">li</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">display</span><span style="color:#111">:</span> <span style="color:#00a8c8">inline</span><span style="color:#f92672">-</span><span style="color:#00a8c8">block</span><span style="color:#111">;</span>
+  <span style="color:#00a8c8">display</span><span style="color:#111">:</span> <span style="color:#00a8c8">inline-block</span><span style="color:#111">;</span>
   <span style="color:#00a8c8">margin</span><span style="color:#111">:</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span><span style="color:#00a8c8">px</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
 <span style="color:#75715e">/* display can also be inline, e.g. to include a list into running text,
 </span><span style="color:#75715e">   but then no margin can be added */</span>
 </code></pre></div><p>Margins between list elements:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">li</span> <span style="color:#f92672">+</span> <span style="color:#f92672">li</span> <span style="color:#111">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">li</span> <span style="color:#f92672">+</span> <span style="color:#f92672">li</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">margin-top</span><span style="color:#111">:</span> <span style="color:#ae81ff">1</span><span style="color:#00a8c8">em</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
 </code></pre></div><p>Also see <a href="http://alistapart.com/article/axiomatic-css-and-lobotomized-owls"><code>* + *</code></a>.</p>
 <h2 id="forms">Forms</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* mark required input fields more prominently than optional ones */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* mark required input fields more prominently than optional ones */</span>
 <span style="color:#f92672">input</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">border</span><span style="color:#111">:</span> <span style="color:#ae81ff">1</span><span style="color:#00a8c8">px</span> <span style="color:#00a8c8">solid</span> <span style="color:#ae81ff">#eee</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
@@ -677,7 +678,7 @@ And analogously for <code>height</code>.</p>
   <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#ae81ff">#e5ff89</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
 </code></pre></div><h2 id="tables">Tables</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Color alternating rows */</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Color alternating rows */</span>
 <span style="color:#f92672">tr</span><span style="color:#111">:</span><span style="color:#75af00">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">even</span><span style="color:#f92672">)</span> <span style="color:#111">{</span>
   <span style="color:#00a8c8">background</span><span style="color:#111">:</span> <span style="color:#ae81ff">#ccc</span><span style="color:#111">;</span>
 <span style="color:#111">}</span>
