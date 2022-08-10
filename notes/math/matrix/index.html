@@ -21,7 +21,7 @@
 
 
   <meta property="og:title" content="Matrizen" />
-<meta property="og:description" content="Matrizen, deren Eigenschaften und Interpretationen" />
+<meta property="og:description" content="Matrizen, deren Eigenschaften und Anwendungen" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/notes/math/matrix/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2020-08-26T00:00:00+00:00" />
@@ -94,7 +94,7 @@
     <div id="hero">
       <h1> Matrizen </h1>
       <p class="hero-lead">
-         Matrizen, deren Eigenschaften und Interpretationen
+         Matrizen, deren Eigenschaften und Anwendungen
       </p>
 
     </div>
@@ -1876,11 +1876,121 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 </ul>
 <p>Jede Matrix ist die Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen).</p>
 <h1 id="matrizen-als-gleichungssysteme">Matrizen als Gleichungssysteme</h1>
-<h1 id="literatur">Literatur</h1>
-<ul>
-<li>Luise Unger: Skript Lineare Algebra (1143), FernUniversität Hagen.</li>
-<li>Klaus Jänich: Lineare Algebra.</li>
-</ul>
+<p>Wenn wir ein System von 
+<span>
+                  
+        \(m\)
+    
+</span>
+ linearen Gleichungen mit 
+<span>
+                  
+        \(n\)
+    
+</span>
+ Unbekannten 
+<span>
+                  
+        \(x_1,\ldots,x_n\)
+    
+</span>
+ haben:
+
+<span>
+     
+        $$\begin{aligned}a_{11}x_1&#43;\cdots &#43;a_{1n}x_n &amp; = b_1\\ &amp; \ \vdots \\ a_{m1}x_1&#43;\cdots &#43;a_{mn}x_n &amp; = b_m\end{aligned}$$
+    
+</span>
+
+Dann kann das dargestellt werden als Matrizengleichung 
+<span>
+                  
+        \(Ax=b\)
+    
+</span>
+ mit folgender Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ und Vektoren 
+<span>
+                  
+        \(b\)
+    
+</span>
+ und 
+<span>
+                  
+        \(x\)
+    
+</span>
+:
+
+<span>
+     
+        $$A = \begin{pmatrix} a_{11} &amp; \ldots &amp; a_{1n} \\ \vdots &amp; \cdots &amp; \vdots \\ a_{m1} &amp; \ldots &amp; a_{mn} \end{pmatrix},\quad b = \begin{pmatrix} b_1 \\ \vdots \\ b_m \end{pmatrix},\quad x = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}$$
+    
+</span>
+</p>
+<p>Ist 
+<span>
+                  
+        \(m&gt;n\)
+    
+</span>
+, also wenn es mehr Gleichungen als Unbekannte gibt, gibt es oft keine Lösung.</p>
+<p>Ist 
+<span>
+                  
+        \(m&lt;n\)
+    
+</span>
+, also wenn es mehr Unbekannte als Gleichungen gibt, gibt es oft mehrere (ggf. unendlich viele) Lösungen.</p>
+<p>Im Fall 
+<span>
+                  
+        \(m=n\)
+    
+</span>
+ ist 
+<span>
+                  
+        \(A\)
+    
+</span>
+ eine quadratische 
+<span>
+                  
+        \(n\times n\)
+    
+</span>
+-Matrix. Wenn 
+<span>
+                  
+        \(A\)
+    
+</span>
+ <a href="#invertierbarkeit">invertierbar</a> ist, dann ist die Lösung des Gleichungssystems 
+<span>
+                  
+        \(x=A^{-1}b\)
+    
+</span>
+ (denn 
+<span>
+                  
+        \(Ax=A(A^{-1}b)=Ib=b\)
+    
+</span>
+). Die Lösung des Gleichungssystems zu finden, hängt also eng mit der Frage zusammen, ob 
+<span>
+                  
+        \(A\)
+    
+</span>
+ invertierbar ist.</p>
 
 
     

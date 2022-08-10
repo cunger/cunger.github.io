@@ -130,20 +130,32 @@ headingSelector: 'h1'
 </span>
  ist</p>
 <ul>
-<li><strong>surjektiv</strong>, wenn jedes Element des Wertebereichs im Bild von 
+<li><strong>surjektiv</strong> (<em>onto</em>), wenn jedes Element des Wertebereichs im Bild von 
 <span>
                   
         \(f\)
     
 </span>
  liegt.</li>
-<li><strong>injektiv</strong>, wenn jedes Element im Bild von 
+<li><strong>injektiv</strong> (<em>one-to-one</em>), wenn jedes Element im Bild von 
 <span>
                   
         \(f\)
     
 </span>
- genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.</li>
+ genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben, d.h. wenn 
+<span>
+                  
+        \(a\neq b\)
+    
+</span>
+ impliziert, dass 
+<span>
+                  
+        \(f(a)\neq f(b)\)
+    
+</span>
+.</li>
 </ul>
 <h1 id="strukturerhaltung">Strukturerhaltung</h1>
 <p>Für algebraische Strukturen sind besonders die <a href=".../algebra/#strukturerhaltende-abbildungen">strukturerhaltenden Abbildungen</a> zwischen ihnen interessant.</p>
@@ -409,7 +421,7 @@ Zu jeder Umgebung
     
 </span>
 </p>
-<h3 id="hahahugoshortcode-s42-hbhb-kriterium">
+<h3 id="hahahugoshortcode-s44-hbhb-kriterium">
 <span>
                   
         \(\varepsilon-\delta\)
@@ -790,8 +802,7 @@ Wenn
 .)</p>
 <p>Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
 <h2 id="änderungsrate">Änderungsrate</h2>
-<p>Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes, beschreibt also die lokale Änderungsrate der Funktion.</p>
-<p>Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
+<p>Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
 <span>
                   
         \([x,a]\)
@@ -805,13 +816,33 @@ Wenn
     
 </span>
 
+Verringert man das Intervall immer weiter, lässt also 
+<span>
+                  
+        \(x\)
+    
+</span>
+ gegen 
+<span>
+                  
+        \(a\)
+    
+</span>
+ laufen, bekommt man die lokale Änderungsrate an der Stelle 
+<span>
+                  
+        \(a\)
+    
+</span>
+. Das ist die Ableitung bzw. der Differentialquotient (oder Differential): der Grenzwert des Differenzenquotienten.
 
 <span>
      
         $$f&#39;(a) = \text{lim}_{x\to a}\frac{f(x)-f(a)}{x-a}$$
     
 </span>
-</p>
+
+Die lokale Änderungsrate entspricht also dem Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes.</p>
 <p>Eine äquivalente Formulierung ergibt sich, wenn man 
 <span>
                   
