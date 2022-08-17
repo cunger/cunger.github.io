@@ -984,6 +984,70 @@ Wobei
 </ul>
 </li>
 </ul>
+<h2 id="alternative-berechnungen">Alternative Berechnungen</h2>
+<p>Aus den eben genannten Eigenschaften ergibt sich, dass man die Determinante einer Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ auch berechnen kann, indem man 
+<span>
+                  
+        \(A\)
+    
+</span>
+ in eine obere Dreiecksmatrix umformt. Die Determinante der oberen Dreiecksmatrix ist das Produkt ihrer Diagonalelemente und anhand dieser Determinante und den angewandten Elementarumformungen kann man die Determinante der ursprünglichen Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ berechnen.</p>
+<p>Die Determinante ist außerdem das Produkt der <a href="#eigenwerte-eigenvektoren-eigenraum">Eigenwerte</a> von 
+<span>
+                  
+        \(A\)
+    
+</span>
+ (in ihrer Vielfachheit).</p>
+<p>Ist 
+<span>
+                  
+        \(A\)
+    
+</span>
+ symmetrisch, so gibt es eine zu 
+<span>
+                  
+        \(A\)
+    
+</span>
+ ähnliche Matrix 
+<span>
+                  
+        \(B\)
+    
+</span>
+, deren Diagonalelemente genau die Eigenwerte von 
+<span>
+                  
+        \(A\)
+    
+</span>
+ sind. Denn die Eigenvektoren von 
+<span>
+                  
+        \(A\)
+    
+</span>
+ formen die Basis, unter der 
+<span>
+                  
+        \(A\)
+    
+</span>
+ eine Diagonalmatrix ist.</p>
 <h1 id="invertierbarkeit">Invertierbarkeit</h1>
 <p>Für eine 
 <span>
@@ -1009,10 +1073,42 @@ Wobei
 <li>
 <span>
                   
-        \(\text{rang}(A)=n\)
+        \(\text{det}(A)\neq 0\)
     
 </span>
-</li>
+ (d.h. wenn 
+<span>
+                  
+        \(\text{det}(A)\)
+    
+</span>
+ im Körper oder Ring, über dem die Matrix definiert ist, invertierbar ist)</li>
+<li>
+<span>
+                  
+        \(Ax=0\)
+    
+</span>
+ hat nur die triviale Lösung 
+<span>
+                  
+        \(x=0\)
+    
+</span>
+, d.h. 
+<span>
+                  
+        \(\text{ker}(A)=\{0\}\)
+    
+</span>
+.</li>
+<li>0 ist kein Eigenvektor von 
+<span>
+                  
+        \(A\)
+    
+</span>
+.</li>
 <li>Die Spaltenvektoren von 
 <span>
                   
@@ -1030,29 +1126,10 @@ Wobei
 <li>
 <span>
                   
-        \(\text{det}(A)\neq 0\)
+        \(\text{rang}(A)=n\)
     
 </span>
- (d.h. wenn 
-<span>
-                  
-        \(\text{det}(A)\)
-    
-</span>
- im Körper oder Ring, über dem die Matrix definiert ist, invertierbar ist)</li>
-<li>0 ist kein Eigenvektor von 
-<span>
-                  
-        \(A\)
-    
-</span>
- bzw. 
-<span>
-                  
-        \(\text{ker}(A)\neq\{0\}\)
-    
-</span>
-.</li>
+</li>
 </ul>
 <p><strong>Berechnung der Inversen:</strong></p>
 <p>Gilt 
@@ -1874,7 +1951,20 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 </ul>
 </li>
 </ul>
-<p>Jede Matrix ist die Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen).</p>
+<p>Jede Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ ist die Darstellung einer linearen Abbildung (nämlich diejenige, deren Darstellungsmatrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ ist), genauer gesagt eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen). Die Darstellungsmatrizen einer Abbildung haben die gleiche Determinante. Die Determinante ist also unabhängig von der gewählten Basis und damit charakteristisch für die dargestellte Abbildung.</p>
+<p>Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie <a href="#normalformen">ähnlich</a> sind.</p>
 <h1 id="matrizen-als-gleichungssysteme">Matrizen als Gleichungssysteme</h1>
 <p>Wenn wir ein System von 
 <span>
