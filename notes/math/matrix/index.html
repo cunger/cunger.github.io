@@ -167,6 +167,19 @@ headingSelector: 'h1'
     
 </span>
  bezeichnet.</p>
+<p>Eine Matrix kann gesehen werden als 
+<span>
+                  
+        \(n\)
+    
+</span>
+ Vektoren (die Spalten) in einem 
+<span>
+                  
+        \(m\)
+    
+</span>
+-dimensionalen Raum.</p>
 <p>Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Dann ergeben sich folgende Unterschiede:</p>
 <ul>
 <li>Matrizen über kommutativen Ringen können nicht notwendigerweise in eine Normalform überführt werden.</li>
@@ -219,6 +232,22 @@ headingSelector: 'h1'
 </span>
 .</p>
 <p><img src="/images/docs/matrixmultiplication.png" alt="Matrizenmultiplikation"></p>
+<p>Anders ausgedrückt: Das Produkt einer Matrix mit einem Vektor ist die Linearkombination der Spaltenvekoren der Matrix mit den Vektoreinträgen als Koeffizienten. Zum Beispiel:</p>
+
+<span>
+     
+        $$\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\  \begin{pmatrix}a\\ b\end{pmatrix} = a\cdot \begin{pmatrix}1\\ 3\end{pmatrix} &#43; b \cdot \begin{pmatrix}2\\ 4\end{pmatrix}$$
+    
+</span>
+
+<p>Und übertragen auf Matrizenmultiplikation:</p>
+
+<span>
+     
+        $$\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\  \begin{pmatrix}a &amp; c\\ b &amp; d\end{pmatrix} = ( a\cdot \begin{pmatrix}1\\ 3\end{pmatrix} &#43; b \cdot \begin{pmatrix}2\\ 4\end{pmatrix} \quad c\cdot \begin{pmatrix}1\\ 3\end{pmatrix} &#43; d \cdot \begin{pmatrix}2\\ 4\end{pmatrix} )$$
+    
+</span>
+
 <p>Eine Matrix 
 <span>
                   
@@ -719,7 +748,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
  praktisch handhabbar.</p>
-<h2 id="für-hahahugoshortcode-s81-hbhb-trivial">Für 
+<h2 id="für-hahahugoshortcode-s85-hbhb-trivial">Für 
 <span>
                   
         \(n=1\)
@@ -733,7 +762,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
 
-<h2 id="für-hahahugoshortcode-s83-hbhb-einfach">Für 
+<h2 id="für-hahahugoshortcode-s87-hbhb-einfach">Für 
 <span>
                   
         \(n=2\)
@@ -799,7 +828,7 @@ d.h.
     
 </span>
 .</p>
-<h2 id="für-hahahugoshortcode-s93-hbhb-sarrus-regel">Für 
+<h2 id="für-hahahugoshortcode-s97-hbhb-sarrus-regel">Für 
 <span>
                   
         \(n=3\)
@@ -813,7 +842,7 @@ d.h.
 <li>gestrichelte Linie: negatives Produkt der Elemente</li>
 </ul>
 <p>Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.</p>
-<h2 id="für-hahahugoshortcode-s94-hbhb-laplace-entwicklung">Für 
+<h2 id="für-hahahugoshortcode-s98-hbhb-laplace-entwicklung">Für 
 <span>
                   
         \(n&gt;3\)
@@ -2081,6 +2110,11 @@ Dann kann das dargestellt werden als Matrizengleichung
     
 </span>
  invertierbar ist.</p>
+<h2 id="ressourcen">Ressourcen</h2>
+<ul>
+<li>Klaus Jänich</li>
+<li>Gilbert Strang</li>
+</ul>
 
 
     
