@@ -1161,13 +1161,35 @@ Wobei
 </li>
 </ul>
 <h2 id="berechnung-der-inversen">Berechnung der Inversen</h2>
-<p>In einfachen Fällen kann man 
+<p>Für invertierbare 
+<span>
+                  
+        \(2\times 2\)
+    
+</span>
+ Matrizen 
+<span>
+                  
+        \(\begin{pmatrix}a &amp; b \\ c &amp; d\end{pmatrix}\)
+    
+</span>
+ gilt:
+
+<span>
+                  
+        \(\begin{pmatrix}a &amp; b \\ c &amp; d\end{pmatrix}^{-1} = \dfrac{1}{ad-bc}\begin{pmatrix}d &amp; -b \\ -c &amp; a\end{pmatrix}\)
+    
+</span>
+</p>
+<p>Es gibt zwei Möglichkeiten, darauf zu kommen.
+In einfachen Fällen kann man 
 <span>
                   
         \(A^{-1}A=I\)
     
 </span>
- nutzen, um die Inverse zu berechnen. Ist 
+ nutzen, um die Inverse zu berechnen.</p>
+<p>Ist 
 <span>
                   
         \(A\)
@@ -1261,7 +1283,8 @@ Gilt
         \(A^{-1}\)
     
 </span>
- zu überführen. Praktisch heißt das, man bildet im obigen Beispiel die Matrix
+ zu überführen.</p>
+<p>Praktisch heißt das, man bildet im obigen Beispiel die Matrix
 
 <span>
      
@@ -1269,11 +1292,11 @@ Gilt
     
 </span>
 
-und formt sie um in
+und formt sie durch elementare Umformungen um in
 
 <span>
      
-        $$\begin{pmatrix} 1 &amp; 0 &amp; | &amp; -20/9 &amp; 4/3 \\ 0 &amp; 1 &amp; | &amp; -3 &amp; 2\end{pmatrix}$$
+        $$\begin{pmatrix} 1 &amp; 0 &amp; | &amp; 5 &amp; -3 \\ 0 &amp; 1 &amp; | &amp; -3 &amp; 2\end{pmatrix}$$
     
 </span>
 
