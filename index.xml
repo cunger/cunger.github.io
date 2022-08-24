@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebraische Strukturen</title>
       <link>http://cunger.github.io/notes/math/algebra/</link>
@@ -239,6 +239,15 @@
       
       <guid>http://cunger.github.io/notes/math/complex-numbers/</guid>
       <description>Cartesian and polar coordinates, arithmetic operations, Euler&amp;rsquo;s formula.</description>
+    </item>
+    
+    <item>
+      <title>Ressourcen</title>
+      <link>http://cunger.github.io/notes/math/img/references/</link>
+      <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/math/img/references/</guid>
+      <description>Literatur, Kurse, usw.</description>
     </item>
     
     <item>
