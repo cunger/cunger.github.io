@@ -1567,7 +1567,6 @@ Das bedeutet, dass
 </span>
  stellen die gleiche Transformation dar, nur in unterschiedlichen Koordinatensystemen.
 Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.</p>
-<p><img src="/images/docs/aehnlichkeitsdiagramm.jpg" alt="Diagramm für Ähnlichkeit"></p>
 <p><strong>Berechnung:</strong> 
 <span>
                   
@@ -1835,19 +1834,19 @@ davon sind
 <li>Aus diesen Informationen können wir die Jordan-Normalform bauen.</li>
 </ol>
 <h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
-<p>Eine Matrix 
+<p>Jede Matrix 
 <span>
                   
         \(A\in M_{mn}(\mathbb{K})\)
     
 </span>
- kann eine lineare Abbildung 
+ stellt eine lineare Abbildung 
 <span>
                   
         \(f:\mathbb{K}^n\to\mathbb{K}^m\)
     
 </span>
- zwischen endlichen Vektorräumen darstellen. Sie bildet dann die Vektoren 
+ zwischen endlichen Vektorräumen dar. Sie bildet die Vektoren 
 <span>
                   
         \(x\in\mathbb{K}^n\)
@@ -1865,14 +1864,20 @@ davon sind
         \(f(x)=Ax\)
     
 </span>
-. (Dabei können diese Vektoren zum Beispiel auch die Koordinatenvektoren beliebiger Vektoren aus 
+ (die Multiplikation der Matrix 
 <span>
                   
-        \(\mathbb{K}\)
+        \(A\)
     
 </span>
- sein.)</p>
-<p>Linear ist eine solche Abbildung, weil die Matrizenmultiplikation sowohl Addition als auch Skalarmultiplikation respektiert:</p>
+ mit einem beliebigen Vektor 
+<span>
+                  
+        \(x\)
+    
+</span>
+ entspricht die Anwendung der Transformation auf diesen Vektor).</p>
+<p>Linear ist die dargestellte Abbildung, weil die Matrizenmultiplikation sowohl Addition als auch Skalarmultiplikation respektiert:</p>
 <ul>
 <li>
 <span>
@@ -1889,73 +1894,49 @@ davon sind
 </span>
 </li>
 </ul>
-<p>In einem zweidimensionalen Raum kann man Linearität anschaulich so verstehen, dass die Transformation des Raumes seine Gridlinien parallel lässt und der Abstand zwischen ihnen überall gleich bleibt.</p>
-<p>Da jeder Vektor als Linearkombination der kanonischen Basisvektoren dargestellt werden kann, ist eine lineare Abbildung zwischen Vektorräumen vollständig dadurch bestimmt, worauf diese Basisvektoren abgebildet werden.
-Eine Matrix als Darstellung einer linearen Abbildung enthält als Spalten nun genau die Vektoren, auf die die Basisvektoren abgebildet werden.
-Nehmen wir die kanonischen Basisvektoren von 
-<span>
-                  
-        \(x\in\mathbb{K}^n\)
-    
-</span>
-:
-
-<span>
-     
-        $$e_1 = \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \ldots, e_n = \begin{pmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{pmatrix}$$
-    
-</span>
-</p>
-<p>Multiplikation einer Matrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- mit einem Basisvektor 
-<span>
-                  
-        \(e_i\)
-    
-</span>
- ergibt genau die i-te Spalte der Matrix, d.h. 
-<span>
-                  
-        \(Ae_i\)
-    
-</span>
- ist der Vektor, auf den 
-<span>
-                  
-        \(e_i\)
-    
-</span>
- abgebildet wird.</p>
-<p>Allgemeiner bedeutet die Multiplikation der Matrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- mit einem beliebigen Vektor 
+<p>Jeder Vektor 
 <span>
                   
         \(x\)
     
 </span>
- die Anwendung der Transformation auf diesen Vektor.
-Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werden kann, aufgrund der Linearität erhält man also:
+ kann als Linearkombination 
+<span>
+                  
+        \(c_1b_1&#43;\cdots &#43;c_nb_n\)
+    
+</span>
+ von Basisvektoren 
+<span>
+                  
+        \(b_1,\ldots,b_n\)
+    
+</span>
+ dargestellt werden. Aufgrund der Linearität ergibt sich:
 
 <span>
      
-        $$Ax=A(c_1e_1&#43;\cdots &#43;c_ne_n)=c_1Ae_1&#43;\cdots &#43; c_nAe_n$$
+        $$Ax=A(c_1b_1&#43;\cdots &#43;c_nb_n)=c_1Ab_1&#43;\cdots &#43; c_nAb_n$$
     
 </span>
 </p>
+<p>Das bedeutet, dass eine lineare Abbildung vollständig dadurch bestimmt ist, worauf die Basisvektoren abgebildet werden. Die <strong>Darstellungsmatrix</strong> einer linearen Abbildung enthält als Spalten demnach genau die Vektoren 
+<span>
+                  
+        \(f(b_1),\ldots,f(b_n)\)
+    
+</span>
+, auf die die Basisvektoren abgebildet werden.
+Was wiederum bedeutet, dass die Einträge der Darstellungsmatrix davon abhängen, welche Basis man betrachtet.</p>
+<p>Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie <a href="#normalformen">ähnlich</a> sind (bzw. kongruent im Fall von Bilinearformen).</p>
+<p>Betrachtet man allgemeine Vektorräume, z.B. mit Polynomen oder Funktionen als Vektoren, kann man ggf. nicht direkt mit den Vektoren, sondern nur mit ihren Koordinatenvektoren arbeiten.</p>
 <p>Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich folgendes Bild:</p>
 <ul>
 <li>
 <p>Die Elementarmatrizen entsprechen Basistransformationen (Rotation, Verschieben, Stauchen oder Strecken) und dass jede Matrix als Produkt von Elementarmatrizen darstellbar ist, bedeutet dass eine Transformation als Komposition von Basistransformationen beschrieben werden kann.</p>
+</li>
+<li>
+<p>In einem zweidimensionalen Raum kann man Linearität anschaulich so verstehen, dass die Transformation des Raumes seine Gridlinien parallel lässt und der Abstand zwischen ihnen überall gleich bleibt.</p>
 </li>
 <li>
 <p>Eine Diagonalmatrix stellt einer Transformation dar, die die Basisvektoren nur skaliert.</p>
@@ -2043,166 +2024,18 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 </ul>
 </li>
 <li>
-<p>Der <strong>Rang</strong> einer Matrix entspricht der Anzahl des Dimensionen des Outputs der Transformation.</p>
+<p>Der <strong>Rang</strong> einer Matrix entspricht der Anzahl der Dimensionen des Outputs der Transformation.</p>
 </li>
 <li>
 <p>Die <strong>Determinante</strong> einer Matrix ist der Faktor, um den ein Teil des Raumes durch die Transformation gestaucht oder gestreckt wird (z.B. der Inhalt einer Fläche im zweidimensionalen Raum oder das Volumen im dreidimensionalen Raum).</p>
 <ul>
 <li>Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.</li>
 <li>Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.</li>
+<li>Die Darstellungsmatrizen einer Abbildung haben die gleiche Determinante. Die Determinante ist also unabhängig von der gewählten Basis und damit charakteristisch für die dargestellte Abbildung.</li>
 </ul>
 </li>
 </ul>
-<p>Jede Matrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- ist die Darstellung einer linearen Abbildung (nämlich diejenige, deren Darstellungsmatrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- ist), genauer gesagt eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen). Die Darstellungsmatrizen einer Abbildung haben die gleiche Determinante. Die Determinante ist also unabhängig von der gewählten Basis und damit charakteristisch für die dargestellte Abbildung.</p>
-<p>Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie <a href="#normalformen">ähnlich</a> sind.</p>
-<h2 id="koordinatenvektoren-basiswechsel-und-darstellungsmatrix">Koordinatenvektoren, Basiswechsel und Darstellungsmatrix</h2>
-<p>Jeder Vektor 
-<span>
-                  
-        \(v\)
-    
-</span>
- eines n-dimensionalen Vektorraums ist eine Linearkombination der Basisvektoren. Der <strong>Koordinatenvektor</strong>, der 
-<span>
-                  
-        \(v\)
-    
-</span>
- repräsentiert, ist derjenige Vektor 
-<span>
-                  
-        \(\text{Repr}_B(v)\)
-    
-</span>
- in 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
-, dessen Elemente die Koeffizienten der Linearkombination bezüglich der Basis 
-<span>
-                  
-        \(B\)
-    
-</span>
- sind.</p>
-<p>Beispiele:</p>
-<ul>
-<li>Ist 
-<span>
-                  
-        \(v=(x^2-x)\in \mathbb{R}[x]\)
-    
-</span>
-, dann ist sein Koordinatenvektor 
-<span>
-                  
-        \(\text{Repr}_E(v) = \begin{pmatrix}1\\1\\0\end{pmatrix}\)
-    
-</span>
- bezüglich der Standardbasis 
-<span>
-                  
-        \(\langle x^2,x^1,x^0\rangle\)
-    
-</span>
-, weil 
-<span>
-                  
-        \(v=x^2-x= 1\cdot x^2 - 1\cdot x^1 &#43; 0\cdot x^0\)
-    
-</span>
-.</li>
-<li>Ist 
-<span>
-                  
-        \(v=\begin{pmatrix}2 \\-1 \end{pmatrix}\in\mathbb{R}^2\)
-    
-</span>
-, dann ist der Koordinatenvektor 
-<span>
-                  
-        \(\text{Repr}_E(v)\)
-    
-</span>
- bezüglich der Standardbasis 
-<span>
-                  
-        \(E\)
-    
-</span>
- trivialerweise gleich 
-<span>
-                  
-        \(v\)
-    
-</span>
-, weil
-
-<span>
-                  
-        \(\begin{pmatrix}2 \\-1 \end{pmatrix} = 2\begin{pmatrix}1 \\0 \end{pmatrix} -1 \begin{pmatrix}0 \\1 \end{pmatrix}\)
-    
-</span>
-.
-Der Koordinatenvektor von 
-<span>
-                  
-        \(v\)
-    
-</span>
- bezüglich einer anderen Basis, zum Beispiel 
-<span>
-                  
-        \(B=\langle\begin{pmatrix}2 \\1 \end{pmatrix}, \begin{pmatrix}-2 \\4 \end{pmatrix}\rangle\)
-    
-</span>
-
-ist dann 
-<span>
-                  
-        \(\text{Repr}_B(v)=\begin{pmatrix}a \\b \end{pmatrix}\)
-    
-</span>
-, wobei 
-<span>
-                  
-        \(a,b\)
-    
-</span>
- die Koeffizienten der Linearkombination der Basisvektoren 
-<span>
-                  
-        \(B\)
-    
-</span>
- ist, die 
-<span>
-                  
-        \(v\)
-    
-</span>
- ergibt, d.h. die Lösung von 
-<span>
-                  
-        \(\begin{pmatrix}2 \\-1 \end{pmatrix} = a\begin{pmatrix}2 \\1 \end{pmatrix} &#43; b \begin{pmatrix}-2 \\4 \end{pmatrix}\)
-    
-</span>
-.</li>
-</ul>
+<h2 id="basiswechsel">Basiswechsel</h2>
 <p>Eine <strong>Basiswechselmatrix</strong> 
 <span>
                   
@@ -2258,6 +2091,66 @@ Es gilt
 <span>
                   
         \({}_BM_D\cdot {}_DM_B = I\)
+    
+</span>
+.
+Und ist die Zielbasis die Einheitsbasis, ist es besonders einfach, denn es ist 
+<span>
+                  
+        \(\text{Repr}_E(b)=b\)
+    
+</span>
+.</p>
+<p>Um die Matrixdarstellung 
+<span>
+                  
+        \(t\)
+    
+</span>
+ einer gegebenen Transformation in ihre Matrixdarstellung 
+<span>
+                  
+        \(t&#39;\)
+    
+</span>
+ bezüglich anderer Basen zu übersetzen, geht man in folgendem Diagramm den Weg von 
+<span>
+                  
+        \(\mathbb{R}^n_{B&#39;}\)
+    
+</span>
+ zu 
+<span>
+                  
+        \(\mathbb{R}^n_{D&#39;}\)
+    
+</span>
+ über 
+<span>
+                  
+        \(t\)
+    
+</span>
+ (hoch-rechts-runter).</p>
+
+<span>
+     
+        $$\begin{matrix} &amp; \mathbb{R}^n_B &amp; \xrightarrow{t} &amp; \mathbb{R}^n_D &amp; \\ &amp; &amp; &amp; &amp; \\ {}_{B&#39;}M_B &amp; \big\uparrow &amp; &amp; \big\downarrow &amp; {}_DM_{D&#39;} \\ &amp; &amp; &amp; &amp; \\ &amp; \mathbb{R}^n_{B&#39;} &amp; \xrightarrow[t&#39;]{} &amp; \mathbb{R}^n_{D&#39;} &amp; \end{matrix}$$
+    
+</span>
+
+<p>Die Hintereinanderausführung dieser Schritte entspricht folgender Matrizenmultiplikation:
+
+<span>
+     
+        $$t&#39; = {}_DM_{D&#39;}\cdot t\cdot {}_{B&#39;}M_B$$
+    
+</span>
+
+Wobei 
+<span>
+                  
+        \({}_{B&#39;}M_B = ({}_BM_{B&#39;})^{-1}\)
     
 </span>
 .</p>

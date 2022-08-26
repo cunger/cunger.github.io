@@ -1042,6 +1042,148 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
 .</li>
 </ul>
 <p>Eine <strong>Basis</strong> eines Vektorraums ist eine Menge linear unabhängiger Vektoren, mit deren Hilfe sich jeder Vektor eindeutig as Linearkombination darstellen lässt.</p>
+<h2 id="koordinatenvektoren">Koordinatenvektoren</h2>
+<p>Jeder Vektor 
+<span>
+                  
+        \(v\)
+    
+</span>
+ eines n-dimensionalen Vektorraums ist eine Linearkombination der Basisvektoren. Der <strong>Koordinatenvektor</strong>, der 
+<span>
+                  
+        \(v\)
+    
+</span>
+ bezüglich einer Basis 
+<span>
+                  
+        \(B\)
+    
+</span>
+ repräsentiert, ist derjenige Vektor 
+<span>
+                  
+        \(\text{Repr}_B(v)\)
+    
+</span>
+ in 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+, dessen Elemente die Koeffizienten der Linearkombination bezüglich der Basis 
+<span>
+                  
+        \(B\)
+    
+</span>
+ sind.</p>
+<p>Beispiele:</p>
+<ul>
+<li>Ist 
+<span>
+                  
+        \(v=(x^2-x)\in \mathbb{R}[x]\)
+    
+</span>
+, dann ist sein Koordinatenvektor 
+<span>
+                  
+        \(\text{Repr}_E(v) = \begin{pmatrix}1\\1\\0\end{pmatrix}\)
+    
+</span>
+ bezüglich der Standardbasis 
+<span>
+                  
+        \(\langle x^2,x^1,x^0\rangle\)
+    
+</span>
+, weil 
+<span>
+                  
+        \(v=x^2-x= 1\cdot x^2 - 1\cdot x^1 &#43; 0\cdot x^0\)
+    
+</span>
+.</li>
+<li>Ist 
+<span>
+                  
+        \(v=\begin{pmatrix}2 \\-1 \end{pmatrix}\in\mathbb{R}^2\)
+    
+</span>
+, dann ist der Koordinatenvektor 
+<span>
+                  
+        \(\text{Repr}_E(v)\)
+    
+</span>
+ bezüglich der Standardbasis 
+<span>
+                  
+        \(E\)
+    
+</span>
+ trivialerweise gleich 
+<span>
+                  
+        \(v\)
+    
+</span>
+, weil
+
+<span>
+                  
+        \(\begin{pmatrix}2 \\-1 \end{pmatrix} = 2\begin{pmatrix}1 \\0 \end{pmatrix} -1 \begin{pmatrix}0 \\1 \end{pmatrix}\)
+    
+</span>
+.
+Der Koordinatenvektor von 
+<span>
+                  
+        \(v\)
+    
+</span>
+ bezüglich einer anderen Basis, zum Beispiel 
+<span>
+                  
+        \(B=\langle\begin{pmatrix}2 \\1 \end{pmatrix}, \begin{pmatrix}-2 \\4 \end{pmatrix}\rangle\)
+    
+</span>
+
+ist dann 
+<span>
+                  
+        \(\text{Repr}_B(v)=\begin{pmatrix}a \\b \end{pmatrix}\)
+    
+</span>
+, wobei 
+<span>
+                  
+        \(a,b\)
+    
+</span>
+ die Koeffizienten der Linearkombination der Basisvektoren 
+<span>
+                  
+        \(B\)
+    
+</span>
+ ist, die 
+<span>
+                  
+        \(v\)
+    
+</span>
+ ergibt, d.h. die Lösung von 
+<span>
+                  
+        \(\begin{pmatrix}2 \\-1 \end{pmatrix} = a\begin{pmatrix}2 \\1 \end{pmatrix} &#43; b \begin{pmatrix}-2 \\4 \end{pmatrix}\)
+    
+</span>
+.</li>
+</ul>
 <h2 id="untervektorräume">Untervektorräume</h2>
 <p>Untervektorräume sind Teilmengen von Vektorräumen, die selber wieder eine Vektorraum sind. D.h. zu einem Vektorraum 
 <span>
