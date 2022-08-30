@@ -180,10 +180,7 @@ headingSelector: 'h1'
     
 </span>
 -dimensionalen Raum.</p>
-<p>Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Dann ergeben sich folgende Unterschiede:</p>
-<ul>
-<li>Matrizen über kommutativen Ringen können nicht notwendigerweise in eine Normalform überführt werden.</li>
-</ul>
+<p>Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Matrizen über kommutativen Ringen können aber nicht notwendigerweise in eine Normalform überführt werden.</p>
 <h1 id="matrizenrechnung">Matrizenrechnung</h1>
 <p>Addition und Skalarmultiplikation passieren elementweise.</p>
 <p>Die Matrizenmultiplikation ist eine Verknüpfung 
@@ -248,6 +245,19 @@ headingSelector: 'h1'
     
 </span>
 
+<p>Die Matrizenmultiplikation ist assoziativ (d.h. 
+<span>
+                  
+        \((AB)C = A(BC)\)
+    
+</span>
+), aber nicht kommutativ (d.h. im Allgemeinen gilt nicht 
+<span>
+                  
+        \(AB=BA\)
+    
+</span>
+).</p>
 <p>Eine Matrix 
 <span>
                   
@@ -748,7 +758,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
  praktisch handhabbar.</p>
-<h2 id="für-hahahugoshortcode-s85-hbhb-trivial">Für 
+<h2 id="für-hahahugoshortcode-s87-hbhb-trivial">Für 
 <span>
                   
         \(n=1\)
@@ -762,7 +772,7 @@ elementaren Zeilenumformung:</p>
     
 </span>
 
-<h2 id="für-hahahugoshortcode-s87-hbhb-einfach">Für 
+<h2 id="für-hahahugoshortcode-s89-hbhb-einfach">Für 
 <span>
                   
         \(n=2\)
@@ -828,7 +838,7 @@ d.h.
     
 </span>
 .</p>
-<h2 id="für-hahahugoshortcode-s97-hbhb-sarrus-regel">Für 
+<h2 id="für-hahahugoshortcode-s99-hbhb-sarrus-regel">Für 
 <span>
                   
         \(n=3\)
@@ -842,7 +852,7 @@ d.h.
 <li>gestrichelte Linie: negatives Produkt der Elemente</li>
 </ul>
 <p>Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.</p>
-<h2 id="für-hahahugoshortcode-s98-hbhb-laplace-entwicklung">Für 
+<h2 id="für-hahahugoshortcode-s100-hbhb-laplace-entwicklung">Für 
 <span>
                   
         \(n&gt;3\)
@@ -1078,19 +1088,20 @@ Wobei
 </span>
  eine Diagonalmatrix ist.</p>
 <h1 id="invertierbarkeit">Invertierbarkeit</h1>
-<p>Für eine 
+<p>Eine 
 <span>
                   
         \(n\times n\)
     
 </span>
- Matrix 
+-Matrix 
 <span>
                   
         \(A\)
     
 </span>
- sind die folgenden Aussagen äquivalent:</p>
+ ist genau dann invertierbar, wenn die Transformation, die sie darstellt, bijektiv ist.</p>
+<p>Die folgenden Aussagen sind äquivalent:</p>
 <ul>
 <li>
 <span>
@@ -1158,7 +1169,13 @@ Wobei
         \(\text{rang}(A)=n\)
     
 </span>
-</li>
+, d.h. 
+<span>
+                  
+        \(A\)
+    
+</span>
+ hate vollen Rang.</li>
 </ul>
 <h2 id="berechnung-der-inversen">Berechnung der Inversen</h2>
 <p>Für invertierbare 
@@ -1301,6 +1318,354 @@ und formt sie durch elementare Umformungen um in
 </span>
 
 woraus man die Inverse ablesen kann.</p>
+<h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
+<p>Jede Matrix 
+<span>
+                  
+        \(A\in M_{mn}(\mathbb{K})\)
+    
+</span>
+ stellt eine lineare Abbildung 
+<span>
+                  
+        \(f:\mathbb{K}^n\to\mathbb{K}^m\)
+    
+</span>
+ zwischen endlichen Vektorräumen dar. Sie bildet die Vektoren 
+<span>
+                  
+        \(x\in\mathbb{K}^n\)
+    
+</span>
+ auf die Vektoren 
+<span>
+                  
+        \(Ax\in\mathbb{K}^m\)
+    
+</span>
+ ab, d.h. 
+<span>
+                  
+        \(f(x)=Ax\)
+    
+</span>
+ (die Multiplikation der Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+ mit einem beliebigen Vektor 
+<span>
+                  
+        \(x\)
+    
+</span>
+ entspricht die Anwendung der Transformation auf diesen Vektor).</p>
+<p>Linear ist die dargestellte Abbildung, weil die Matrizenmultiplikation sowohl Addition als auch Skalarmultiplikation respektiert:</p>
+<ul>
+<li>
+<span>
+                  
+        \(A(x&#43;y) = Ax &#43; Ay\)
+    
+</span>
+</li>
+<li>
+<span>
+                  
+        \(A(cx) = c(Ax)\)
+    
+</span>
+</li>
+</ul>
+<p>Jeder Vektor 
+<span>
+                  
+        \(x\)
+    
+</span>
+ kann als Linearkombination 
+<span>
+                  
+        \(c_1b_1&#43;\cdots &#43;c_nb_n\)
+    
+</span>
+ von Basisvektoren 
+<span>
+                  
+        \(b_1,\ldots,b_n\)
+    
+</span>
+ dargestellt werden. Aufgrund der Linearität ergibt sich:
+
+<span>
+     
+        $$Ax=A(c_1b_1&#43;\cdots &#43;c_nb_n)=c_1Ab_1&#43;\cdots &#43; c_nAb_n$$
+    
+</span>
+</p>
+<p>Das bedeutet, dass eine lineare Abbildung vollständig dadurch bestimmt ist, worauf die Basisvektoren abgebildet werden. Die <strong>Darstellungsmatrix</strong> einer linearen Abbildung enthält als Spalten demnach genau die Vektoren 
+<span>
+                  
+        \(f(b_1),\ldots,f(b_n)\)
+    
+</span>
+, auf die die Basisvektoren abgebildet werden.
+Was wiederum bedeutet, dass die Einträge der Darstellungsmatrix davon abhängen, welche Basis man betrachtet.</p>
+<p>Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie <a href="#normalformen">ähnlich</a> sind (bzw. kongruent im Fall von Bilinearformen).</p>
+<p>Da endliche Vektorräume viel mehr sind als 
+<span>
+                  
+        \(\mathbb{K}^n\)
+    
+</span>
+, z.B. wenn die Vektoren Funktionen sind, arbeitet man im allgemeinen nicht direkt mit den Vektoren, sondern mit ihren Koordinatenvektoren.</p>
+<p>Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich folgendes Bild:</p>
+<ul>
+<li>
+<p>Die Elementarmatrizen entsprechen Basistransformationen (Rotation, Verschieben, Stauchen oder Strecken) und dass jede Matrix als Produkt von Elementarmatrizen darstellbar ist, bedeutet dass eine Transformation als Komposition von Basistransformationen beschrieben werden kann.</p>
+</li>
+<li>
+<p>In einem zweidimensionalen Raum kann man Linearität anschaulich so verstehen, dass die Transformation des Raumes seine Gridlinien parallel lässt und der Abstand zwischen ihnen überall gleich bleibt.</p>
+</li>
+<li>
+<p>Eine Diagonalmatrix stellt einer Transformation dar, die die Basisvektoren nur skaliert.</p>
+</li>
+<li>
+<p>Die <strong>Matrizenmultiplikation</strong> 
+<span>
+                  
+        \(AB\)
+    
+</span>
+ entspricht der Komposition der dargestellten Transformationen: 
+<span>
+                  
+        \((f_A\circ f_B)(x) = f_A(f_B(x)) = A(Bx) = (AB)x\)
+    
+</span>
+.
+Das heißt das Produkt 
+<span>
+                  
+        \(AB\)
+    
+</span>
+ bedeutet, dass erst die Transformation 
+<span>
+                  
+        \(B\)
+    
+</span>
+ ausgeführt wird, dann 
+<span>
+                  
+        \(A\)
+    
+</span>
+. Das macht auch intuitiv deutlich, warum 
+<span>
+                  
+        \((AB)^{-1} = B^{-1}A^{-1}\)
+    
+</span>
+:
+
+<span>
+     
+        $$\cdot \xrightarrow{B} \cdot \xrightarrow{A} \cdot \\ \xrightarrow[AB]{\qquad\ \quad} $$
+    
+</span>
+</p>
+</li>
+<li>
+<p>Die <strong>Inverse</strong> einer Matrix entspricht der inversen Transformation:</p>
+<ul>
+<li>
+<span>
+                  
+        \(Ax=v\)
+    
+</span>
+ bedeutet, dass die Tranformation 
+<span>
+                  
+        \(A\)
+    
+</span>
+ den Vektor 
+<span>
+                  
+        \(x\)
+    
+</span>
+ auf den Vektor 
+<span>
+                  
+        \(v\)
+    
+</span>
+ abbildet.</li>
+<li>Daraus folgt 
+<span>
+                  
+        \(x=A^{-1}v\)
+    
+</span>
+, d.h. man findet 
+<span>
+                  
+        \(x\)
+    
+</span>
+, indem man die inverse Transformation 
+<span>
+                  
+        \(A^{-1}\)
+    
+</span>
+ auf 
+<span>
+                  
+        \(v\)
+    
+</span>
+ anwendet.</li>
+</ul>
+<p>Eine Matrix also genau dann invertierbar, wenn die dargestellte Transformation bijektiv ist.</p>
+</li>
+<li>
+<p>Der <strong>Rang</strong> einer Matrix entspricht der Anzahl der Dimensionen des Outputs der Transformation.</p>
+</li>
+<li>
+<p>Die <strong>Determinante</strong> einer Matrix ist der Faktor, um den ein Teil des Raumes durch die Transformation gestaucht oder gestreckt wird (z.B. der Inhalt einer Fläche im zweidimensionalen Raum oder das Volumen im dreidimensionalen Raum).</p>
+<ul>
+<li>Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.</li>
+<li>Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.</li>
+<li>Die Darstellungsmatrizen einer Abbildung haben die gleiche Determinante. Die Determinante ist also unabhängig von der gewählten Basis und damit charakteristisch für die dargestellte Abbildung.</li>
+</ul>
+</li>
+</ul>
+<h2 id="basiswechsel">Basiswechsel</h2>
+<p>Eine <strong>Basiswechselmatrix</strong> 
+<span>
+                  
+        \({}_BM_D\)
+    
+</span>
+ ist diejenige Matrix bzw. Transformation, die einen Koordinatenvektor bezüglich 
+<span>
+                  
+        \(B\)
+    
+</span>
+ auf einen Koordinatenvektor bezüglich 
+<span>
+                  
+        \(D\)
+    
+</span>
+ abbildet:
+
+<span>
+     
+        $${}_BM_D\cdot \text{Repr}_B(v) = \text{Repr}_D(v)$$
+    
+</span>
+
+Ihre Spalten sind die Darstellungen 
+<span>
+                  
+        \(\text{Repr}_D(b)\)
+    
+</span>
+ der Basisvektoren 
+<span>
+                  
+        \(b\in B\)
+    
+</span>
+ bezüglich der Zielbasis 
+<span>
+                  
+        \(D\)
+    
+</span>
+.
+Es gilt 
+<span>
+                  
+        \({}_BM_D = ({}_DM_B)^{-1}\)
+    
+</span>
+ und 
+<span>
+                  
+        \({}_BM_D\cdot {}_DM_B = I\)
+    
+</span>
+.
+Und ist die Zielbasis die Einheitsbasis, ist es besonders einfach, denn es ist 
+<span>
+                  
+        \(\text{Repr}_E(b)=b\)
+    
+</span>
+.</p>
+<p>Um die Matrixdarstellung 
+<span>
+                  
+        \(t\)
+    
+</span>
+ einer gegebenen Transformation in ihre Matrixdarstellung 
+<span>
+                  
+        \(t&#39;\)
+    
+</span>
+ bezüglich anderer Basen zu übersetzen, geht man in folgendem Diagramm den Weg von 
+<span>
+                  
+        \(\mathbb{R}^n_{B&#39;}\)
+    
+</span>
+ zu 
+<span>
+                  
+        \(\mathbb{R}^n_{D&#39;}\)
+    
+</span>
+ über 
+<span>
+                  
+        \(t\)
+    
+</span>
+ (hoch-rechts-runter).</p>
+
+<span>
+     
+        $$\begin{matrix} &amp; \mathbb{R}^n_B &amp; \xrightarrow{t} &amp; \mathbb{R}^n_D &amp; \\ &amp; &amp; &amp; &amp; \\ {}_{B&#39;}M_B &amp; \big\uparrow &amp; &amp; \big\downarrow &amp; {}_DM_{D&#39;} \\ &amp; &amp; &amp; &amp; \\ &amp; \mathbb{R}^n_{B&#39;} &amp; \xrightarrow[t&#39;]{} &amp; \mathbb{R}^n_{D&#39;} &amp; \end{matrix}$$
+    
+</span>
+
+<p>Die Hintereinanderausführung dieser Schritte entspricht folgender Matrizenmultiplikation:
+
+<span>
+     
+        $$t&#39; = {}_DM_{D&#39;}\cdot t\cdot {}_{B&#39;}M_B$$
+    
+</span>
+
+Wobei 
+<span>
+                  
+        \({}_{B&#39;}M_B = ({}_BM_{B&#39;})^{-1}\)
+    
+</span>
+.</p>
 <h1 id="das-charakteristische-polynom-einer-matrix">Das charakteristische Polynom einer Matrix</h1>
 <p>Für Matrizen 
 <span>
@@ -1458,7 +1823,13 @@ Wie oft eine Nullstelle vorkommt, nennt man die <strong>algebraische Vielfachhei
         \(\lambda\)
     
 </span>
- zu bestimmen, berechnet man die Nullstellen des charakteristischen Polynoms.</li>
+ zu bestimmen, berechnet man die Nullstellen des charakteristischen Polynoms
+<span>
+                  
+        \(\text{det}(xI_n-A)\)
+    
+</span>
+.</li>
 <li>Die Gleichung 
 <span>
                   
@@ -1502,7 +1873,69 @@ Setzt man die Eigenwerte
 </ol>
 <h1 id="normalformen">Normalformen</h1>
 <p>Matrizen lassen sich nach <strong>Ähnlichkeit</strong> in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen.
-Technisch heißt das:</p>
+Technisch sind zwei Matrizen 
+<span>
+                  
+        \(A,B\)
+    
+</span>
+ <strong>ähnlich</strong>, wenn es eine invertierbare Matrix 
+<span>
+                  
+        \(P\)
+    
+</span>
+ gibt, so dass:
+
+<span>
+     
+        $$A=P^{-1}BP$$
+    
+</span>
+
+(Siehe Diagonalisierung.)</p>
+<p>Matrizen lassen sich auch nach <strong>Kongruenz</strong> in Äquivalenzklassen (sogenannte <strong>Kongruenzklassen</strong>) einteilen:
+Zwei Matrizen 
+<span>
+                  
+        \(A,B\)
+    
+</span>
+ sind <strong>kongruent</strong>, wenn es eine invertierbare Matrix 
+<span>
+                  
+        \(P\)
+    
+</span>
+ gibt, so dass
+
+<span>
+     
+        $$A=P^TBP$$
+    
+</span>
+</p>
+<p>Da in der Regel 
+<span>
+                  
+        \(P^T\neq P^{-1}\)
+    
+</span>
+, sind kongruente Matrizen in der Regel nicht ähnlich.</p>
+<p>Ähnliche Matrizen haben:</p>
+<ul>
+<li>den gleichen Rang,</li>
+<li>die gleiche Determinante,</li>
+<li>das gleiche charakteristische Polynom und Minimalpolynom,</li>
+<li>die gleichen Eigenwerte,</li>
+<li>die gleiche Jordan-Normalform.</li>
+</ul>
+<p>Diese Punkte sind alle notwendig, hinreichend ist aber nur der letzte. Das heißt:</p>
+<ul>
+<li>Wenn zwei Matrizen gleiche Ränge, Determinanten, charakteristische Polynome oder Eigenwerte haben, sind sie nicht zwangsläufig ähnlich. Aber wenn sie sich in diesen Eigenschaften unterscheiden, wissen wir, dass sie nicht ähnlich sind.</li>
+<li>Wenn zwei Matrizen die gleiche Jordan-Normalform haben, sind sie ähnlich.</li>
+</ul>
+<h2 id="diagonalisierung">Diagonalisierung</h2>
 <p>Zwei Matrizen 
 <span>
                   
@@ -1567,6 +2000,13 @@ Das bedeutet, dass
 </span>
  stellen die gleiche Transformation dar, nur in unterschiedlichen Koordinatensystemen.
 Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.</p>
+
+<span>
+     
+        $$\begin{matrix} \text{Basis }1 &amp; Px &amp; \xrightarrow{A} &amp; APx &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; P\ \big\uparrow &amp; &amp; \big\downarrow\ P^{-1} &amp; \\ &amp; &amp; &amp; &amp; \\ \text{Basis }2 &amp; x &amp; \xrightarrow[B]{} &amp; P^{-1}APx &amp; \end{matrix}$$
+    
+</span>
+
 <p><strong>Berechnung:</strong> 
 <span>
                   
@@ -1585,55 +2025,124 @@ Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wa
         \(P\)
     
 </span>
- wählt.
-(Wenn 
+ wählt:</p>
+<ul>
+<li>Eigenwerte von 
+<span>
+                  
+        \(A\)
+    
+</span>
+ bestimmen, d.h. die Nullstellen des charakteristischen Polynoms. Zerfällt das charakteristische Polynom nicht in Linearfaktoren, bzw. liegen nicht alle seine Nullstellen in 
+<span>
+                  
+        \(\mathbb{K}\)
+    
+</span>
+, dann ist 
+<span>
+                  
+        \(A\)
+    
+</span>
+ nicht diagonalisierbar.</li>
+<li>Zu jedem Eigenwert 
+<span>
+                  
+        \(\lambda\)
+    
+</span>
+ den Eigenraum 
+<span>
+                  
+        \(V_\lambda = \text{ker}(A-\lambda I)\)
+    
+</span>
+ und eine Basis davon bestimmen. Ist 
+<span>
+                  
+        \(\text{dim}(V_\lambda)\neq\text{Vielfachheit von }\lambda\)
+    
+</span>
+, dann ist 
+<span>
+                  
+        \(A\)
+    
+</span>
+ nicht diagonalisierbar.</li>
+<li>Die Basisvektoren der Eigenräume sind die Spalten von 
 <span>
                   
         \(P\)
     
 </span>
- orthogonal sein soll, muss man entsprechend die Orthonormalbasis der Eigenräume bilden.)</p>
-<p>Ähnliche Matrizen haben:</p>
-<ul>
-<li>den gleichen Rang,</li>
-<li>die gleiche Determinante,</li>
-<li>das gleiche charakteristische Polynom und Minimalpolynom,</li>
-<li>die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),</li>
-<li>die gleiche Jordan-Normalform.</li>
-</ul>
-<p>Diese Punkte sind alle notwendig, hinreichend ist aber nur der letzte. Das heißt:</p>
-<ul>
-<li>Wenn zwei Matrizen unterschiedliche Ränge, Determinanten, charakteristische Polynome oder Eigenwerte haben, sind sie nicht ähnlich.</li>
-<li>Wenn zwei Matrizen die gleiche Jordan-Normalform haben, sind sie ähnlich.</li>
-</ul>
-<p>Matrizen lassen sich auch nach <strong>Kongruenz</strong> in Äquivalenzklassen (sogenannte <strong>Kongruenzklassen</strong>) einteilen:
-Zwei Matrizen 
-<span>
-                  
-        \(A,B\)
-    
-</span>
- sind <strong>kongruent</strong>, wenn es eine invertierbare Matrix 
+. Wenn 
 <span>
                   
         \(P\)
     
 </span>
- gibt, so dass
+ orthogonal sein soll, muss man entsprechend die Orthonormalbasis der Eigenräume bilden, siehe <a href="../algebra/#gram-schmidt">Gram-Schmidt-Verfahren zur Orthogonalisierung</a>.</li>
+<li>Die Diagonalmatrix ist dann 
+<span>
+                  
+        \(P^{-1}AP\)
+    
+</span>
+.</li>
+</ul>
+<p>Im Prinzip ist es ein Basiswechsel, bei dem man weder die Zielbasis noch die Zielmatrix kennt. Man weiß aber, dass ähnliche Matrizen (unter Berücksichtigung des Basiswechsels) die gleichen Eigenvektoren haben: Ist 
+<span>
+                  
+        \(x\)
+    
+</span>
+ ein Eigenvektor von 
+<span>
+                  
+        \(A\)
+    
+</span>
+, d.h. 
+<span>
+                  
+        \(Ax=\lambda x\)
+    
+</span>
+, dann ist 
+<span>
+                  
+        \(P^{-1}x\)
+    
+</span>
+ ein Eigenvektor von 
+<span>
+                  
+        \(B\)
+    
+</span>
+, denn:
 
 <span>
      
-        $$A=P^TBP$$
+        $$B(P^{-1}x) = (P^{-1}AP)(P^{-1}x) = P^{-1}A(PP^{-1})x = P^{-1}Ax = P^{-1}\lambda x$$
     
 </span>
 </p>
-<p>Da in der Regel 
+<p>Eine Diagonalmatrix stellt daher eine Transformation dar, die Vektoren nur skaliert.</p>
+<p>Eine Matrix auf jeden Fall diagonalisierbar, wenn</p>
+<ul>
+<li>sie symmetrisch ist (d.h. 
 <span>
                   
-        \(P^T\neq P^{-1}\)
+        \(A^T=A\)
     
 </span>
-, sind kongruente Matrizen in der Regel nicht ähnlich.</p>
+) - die Diagonalelemente sind dann genau die Eigenwerte der Matrix;</li>
+<li>sie die maximale Anzahl Eigenwerte hat (= Anzahl der Dimensionen des Vektorraums), denn dann sind die zugehörigen Eigenvektoren linear unabhängig und es gibt eine Basis aus Eigenvektoren, d.h. der Vektorraum ist die Summe der Eigenräume;</li>
+<li>das charakteristische Polynom in Linearfaktoren zerfällt und die algebraische und geometrische Vielfachheit der Eigenwerte übereinstimmen.</li>
+</ul>
 <h2 id="treppennormalform">Treppennormalform</h2>
 <ul>
 <li>Alle Nullreihen stehen ganz unten.</li>
@@ -1651,44 +2160,6 @@ Zwei Matrizen
 </span>
 </p>
 <p><strong>Berechnung:</strong> Gaußsches Eliminationsverfahren</p>
-<h2 id="diagonalisierbarkeit">Diagonalisierbarkeit</h2>
-<p>Eine Matrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist (d.h. zu einer Matrix, in der alle Einträge, die nicht Diagonalelemente sind, 0 sind), d.h. wenn es eine invertierbare Matrix 
-<span>
-                  
-        \(S\)
-    
-</span>
- gibt, so dass 
-<span>
-                  
-        \(S^{-1}AS\)
-    
-</span>
- eine Diagonalmatrix ist. Die Eigenwerte der Matrix sind dann die Diagonalelemente von 
-<span>
-                  
-        \(S^{-1}AS\)
-    
-</span>
- und 
-<span>
-                  
-        \(S\)
-    
-</span>
- hat als Spalten die zugehörigen Eigenvektoren.</p>
-<p>Eine Matrix auf jeden Fall diagonalisierbar, wenn</p>
-<ul>
-<li>sie symmetrisch ist;</li>
-<li>sie die maximale Anzahl Eigenwerte hat (= Anzahl der Dimensionen des Vektorraums), denn dann sind die zugehörigen Eigenvektoren linear unabhängig und es gibt eine Basis aus Eigenvektoren, d.h. der Vektorraum ist die Summe der Eigenräume;</li>
-<li>das charakteristische Polynom in Linearfaktoren zerfällt und die algebraische und geometrische Vielfachheit der Eigenwerte übereinstimmen.</li>
-</ul>
 <h2 id="jordan-normalform">Jordan-Normalform</h2>
 <p>Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen. Das kann man mit der Jordan-Normalform.</p>
 <p>Eine Jordan-Matrix enthälten auf der Diagonalen Jordan-Blöcke und sonst 0. Ein Jordan-Block ist eine quadratische Matrix mit einem Eigenwert auf der Diagonalen, 1 auf einer der Nebendiagonalen und sonst 0. Zum Beispiel:</p>
@@ -1833,333 +2304,6 @@ davon sind
 </li>
 <li>Aus diesen Informationen können wir die Jordan-Normalform bauen.</li>
 </ol>
-<h1 id="matrizen-als-lineare-transformationen">Matrizen als lineare Transformationen</h1>
-<p>Jede Matrix 
-<span>
-                  
-        \(A\in M_{mn}(\mathbb{K})\)
-    
-</span>
- stellt eine lineare Abbildung 
-<span>
-                  
-        \(f:\mathbb{K}^n\to\mathbb{K}^m\)
-    
-</span>
- zwischen endlichen Vektorräumen dar. Sie bildet die Vektoren 
-<span>
-                  
-        \(x\in\mathbb{K}^n\)
-    
-</span>
- auf die Vektoren 
-<span>
-                  
-        \(Ax\in\mathbb{K}^m\)
-    
-</span>
- ab, d.h. 
-<span>
-                  
-        \(f(x)=Ax\)
-    
-</span>
- (die Multiplikation der Matrix 
-<span>
-                  
-        \(A\)
-    
-</span>
- mit einem beliebigen Vektor 
-<span>
-                  
-        \(x\)
-    
-</span>
- entspricht die Anwendung der Transformation auf diesen Vektor).</p>
-<p>Linear ist die dargestellte Abbildung, weil die Matrizenmultiplikation sowohl Addition als auch Skalarmultiplikation respektiert:</p>
-<ul>
-<li>
-<span>
-                  
-        \(A(x&#43;y) = Ax &#43; Ay\)
-    
-</span>
-</li>
-<li>
-<span>
-                  
-        \(A(cx) = c(Ax)\)
-    
-</span>
-</li>
-</ul>
-<p>Jeder Vektor 
-<span>
-                  
-        \(x\)
-    
-</span>
- kann als Linearkombination 
-<span>
-                  
-        \(c_1b_1&#43;\cdots &#43;c_nb_n\)
-    
-</span>
- von Basisvektoren 
-<span>
-                  
-        \(b_1,\ldots,b_n\)
-    
-</span>
- dargestellt werden. Aufgrund der Linearität ergibt sich:
-
-<span>
-     
-        $$Ax=A(c_1b_1&#43;\cdots &#43;c_nb_n)=c_1Ab_1&#43;\cdots &#43; c_nAb_n$$
-    
-</span>
-</p>
-<p>Das bedeutet, dass eine lineare Abbildung vollständig dadurch bestimmt ist, worauf die Basisvektoren abgebildet werden. Die <strong>Darstellungsmatrix</strong> einer linearen Abbildung enthält als Spalten demnach genau die Vektoren 
-<span>
-                  
-        \(f(b_1),\ldots,f(b_n)\)
-    
-</span>
-, auf die die Basisvektoren abgebildet werden.
-Was wiederum bedeutet, dass die Einträge der Darstellungsmatrix davon abhängen, welche Basis man betrachtet.</p>
-<p>Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie <a href="#normalformen">ähnlich</a> sind (bzw. kongruent im Fall von Bilinearformen).</p>
-<p>Da endliche Vektorräume viel mehr sind als 
-<span>
-                  
-        \(\mathbb{K}^n\)
-    
-</span>
-, z.B. wenn die Vektoren Funktionen sind, arbeitet man im allgemeinen nicht direkt mit den Vektoren, sondern mit ihren Koordinatenvektoren.</p>
-<p>Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich folgendes Bild:</p>
-<ul>
-<li>
-<p>Die Elementarmatrizen entsprechen Basistransformationen (Rotation, Verschieben, Stauchen oder Strecken) und dass jede Matrix als Produkt von Elementarmatrizen darstellbar ist, bedeutet dass eine Transformation als Komposition von Basistransformationen beschrieben werden kann.</p>
-</li>
-<li>
-<p>In einem zweidimensionalen Raum kann man Linearität anschaulich so verstehen, dass die Transformation des Raumes seine Gridlinien parallel lässt und der Abstand zwischen ihnen überall gleich bleibt.</p>
-</li>
-<li>
-<p>Eine Diagonalmatrix stellt einer Transformation dar, die die Basisvektoren nur skaliert.</p>
-</li>
-<li>
-<p>Die <strong>Matrizenmultiplikation</strong> 
-<span>
-                  
-        \(AB\)
-    
-</span>
- entspricht der Komposition der beiden Transformationen (
-<span>
-                  
-        \(A\circ B\)
-    
-</span>
-, d.h. erst wird 
-<span>
-                  
-        \(B\)
-    
-</span>
- ausgeführt, dann 
-<span>
-                  
-        \(A\)
-    
-</span>
-).</p>
-</li>
-<li>
-<p>Die <strong>Inverse</strong> einer Matrix entspricht der inversen Transformation:</p>
-<ul>
-<li>
-<span>
-                  
-        \(Ax=v\)
-    
-</span>
- bedeutet, dass die Tranformation 
-<span>
-                  
-        \(A\)
-    
-</span>
- den Vektor 
-<span>
-                  
-        \(x\)
-    
-</span>
- auf den Vektor 
-<span>
-                  
-        \(v\)
-    
-</span>
- abbildet.</li>
-<li>Daraus folgt 
-<span>
-                  
-        \(x=A^{-1}v\)
-    
-</span>
-, d.h. man findet 
-<span>
-                  
-        \(x\)
-    
-</span>
-, indem man die inverse Transformation 
-<span>
-                  
-        \(A^{-1}\)
-    
-</span>
- auf 
-<span>
-                  
-        \(v\)
-    
-</span>
- anwendet.</li>
-</ul>
-</li>
-<li>
-<p>Der <strong>Rang</strong> einer Matrix entspricht der Anzahl der Dimensionen des Outputs der Transformation.</p>
-</li>
-<li>
-<p>Die <strong>Determinante</strong> einer Matrix ist der Faktor, um den ein Teil des Raumes durch die Transformation gestaucht oder gestreckt wird (z.B. der Inhalt einer Fläche im zweidimensionalen Raum oder das Volumen im dreidimensionalen Raum).</p>
-<ul>
-<li>Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.</li>
-<li>Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.</li>
-<li>Die Darstellungsmatrizen einer Abbildung haben die gleiche Determinante. Die Determinante ist also unabhängig von der gewählten Basis und damit charakteristisch für die dargestellte Abbildung.</li>
-</ul>
-</li>
-</ul>
-<h2 id="basiswechsel">Basiswechsel</h2>
-<p>Eine <strong>Basiswechselmatrix</strong> 
-<span>
-                  
-        \({}_BM_D\)
-    
-</span>
- ist diejenige Matrix bzw. Transformation, die einen Koordinatenvektor bezüglich 
-<span>
-                  
-        \(B\)
-    
-</span>
- auf einen Koordinatenvektor bezüglich 
-<span>
-                  
-        \(D\)
-    
-</span>
- abbildet:
-
-<span>
-     
-        $${}_BM_D\cdot \text{Repr}_B(v) = \text{Repr}_D(v)$$
-    
-</span>
-
-Ihre Spalten sind die Darstellungen 
-<span>
-                  
-        \(\text{Repr}_D(b)\)
-    
-</span>
- der Basisvektoren 
-<span>
-                  
-        \(b\in B\)
-    
-</span>
- bezüglich der Zielbasis 
-<span>
-                  
-        \(D\)
-    
-</span>
-.
-Es gilt 
-<span>
-                  
-        \({}_BM_D = ({}_DM_B)^{-1}\)
-    
-</span>
- und 
-<span>
-                  
-        \({}_BM_D\cdot {}_DM_B = I\)
-    
-</span>
-.
-Und ist die Zielbasis die Einheitsbasis, ist es besonders einfach, denn es ist 
-<span>
-                  
-        \(\text{Repr}_E(b)=b\)
-    
-</span>
-.</p>
-<p>Um die Matrixdarstellung 
-<span>
-                  
-        \(t\)
-    
-</span>
- einer gegebenen Transformation in ihre Matrixdarstellung 
-<span>
-                  
-        \(t&#39;\)
-    
-</span>
- bezüglich anderer Basen zu übersetzen, geht man in folgendem Diagramm den Weg von 
-<span>
-                  
-        \(\mathbb{R}^n_{B&#39;}\)
-    
-</span>
- zu 
-<span>
-                  
-        \(\mathbb{R}^n_{D&#39;}\)
-    
-</span>
- über 
-<span>
-                  
-        \(t\)
-    
-</span>
- (hoch-rechts-runter).</p>
-
-<span>
-     
-        $$\begin{matrix} &amp; \mathbb{R}^n_B &amp; \xrightarrow{t} &amp; \mathbb{R}^n_D &amp; \\ &amp; &amp; &amp; &amp; \\ {}_{B&#39;}M_B &amp; \big\uparrow &amp; &amp; \big\downarrow &amp; {}_DM_{D&#39;} \\ &amp; &amp; &amp; &amp; \\ &amp; \mathbb{R}^n_{B&#39;} &amp; \xrightarrow[t&#39;]{} &amp; \mathbb{R}^n_{D&#39;} &amp; \end{matrix}$$
-    
-</span>
-
-<p>Die Hintereinanderausführung dieser Schritte entspricht folgender Matrizenmultiplikation:
-
-<span>
-     
-        $$t&#39; = {}_DM_{D&#39;}\cdot t\cdot {}_{B&#39;}M_B$$
-    
-</span>
-
-Wobei 
-<span>
-                  
-        \({}_{B&#39;}M_B = ({}_BM_{B&#39;})^{-1}\)
-    
-</span>
-.</p>
 <h1 id="matrizen-als-gleichungssysteme">Matrizen als Gleichungssysteme</h1>
 <p>Wenn wir ein System von 
 <span>
