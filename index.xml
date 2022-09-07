@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebraische Strukturen</title>
       <link>http://cunger.github.io/notes/math/algebra/</link>
@@ -242,11 +242,20 @@
     </item>
     
     <item>
+      <title>Toolbox</title>
+      <link>http://cunger.github.io/notes/math/toolbox/</link>
+      <pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/math/toolbox/</guid>
+      <description>Muster und Strategien</description>
+    </item>
+    
+    <item>
       <title>Ressourcen</title>
-      <link>http://cunger.github.io/notes/math/img/references/</link>
+      <link>http://cunger.github.io/notes/math/references/</link>
       <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/math/img/references/</guid>
+      <guid>http://cunger.github.io/notes/math/references/</guid>
       <description>Literatur, Kurse, usw.</description>
     </item>
     
@@ -256,12 +265,10 @@
       <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>I’m a professional software engineer with 7+ years of experience in application development and a now fading background in research.
+      <description>I’m a professional software engineer with experience in application and web development and a fading background in research.
   💾 GitHub
  📎 LinkedIn
- 🌍 Bielefeld, Germany
- ☢️ I have a strong interest in nuclear technology and hold a basic certificate in radiation protection.
-🛠️ I love to be a technical enabler. For me, software is a tool that is most valuable when it supports experts to do their job well.</description>
+ These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly. If you happen to look at them as well (and maybe even have suggestions, questions, or found errata), please reach out or buy me a coffee.</description>
     </item>
     
     <item>

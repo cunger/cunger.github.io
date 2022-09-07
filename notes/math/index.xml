@@ -6,7 +6,7 @@
     <description>Recent content in Mathematics on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/notes/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/notes/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebraische Strukturen</title>
       <link>http://cunger.github.io/notes/math/algebra/</link>
@@ -71,11 +71,20 @@
     </item>
     
     <item>
+      <title>Toolbox</title>
+      <link>http://cunger.github.io/notes/math/toolbox/</link>
+      <pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/math/toolbox/</guid>
+      <description>Muster und Strategien</description>
+    </item>
+    
+    <item>
       <title>Ressourcen</title>
-      <link>http://cunger.github.io/notes/math/img/references/</link>
+      <link>http://cunger.github.io/notes/math/references/</link>
       <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/math/img/references/</guid>
+      <guid>http://cunger.github.io/notes/math/references/</guid>
       <description>Literatur, Kurse, usw.</description>
     </item>
     
