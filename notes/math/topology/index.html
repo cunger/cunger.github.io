@@ -420,6 +420,21 @@ Eine Menge
     
 </span>
  sind, heißt die <strong>abgeschlossene Hülle</strong>.</p>
+<h2 id="trennungseigenschaften">Trennungseigenschaften</h2>
+<p><strong>Hausdorffsches Trennungsaxiom:</strong> Ein topologischer Raum heißt <strong>Hausdorff-Raum</strong>, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.</p>
+<p>Jeder metrische Raum ist ein Hausdorff-Raum.</p>
+<p>Beispiele für Nicht-Hausdorff-Räume:</p>
+<ul>
+<li>Eine Menge 
+<span>
+                  
+        \(X\)
+    
+</span>
+ mit mehr als einem Element und der trivialen Topologie (da dann jede Umgebung automatisch die ganze Menge enthält).</li>
+</ul>
+<p>In einem Hausdorff-Raum kann eine Folge höchstens einen Grenzwert haben.
+In einem trivialen topologischen Raum konvergiert jede Folge gegen jeden Punkt.</p>
 <h2 id="kompaktheit">Kompaktheit</h2>
 <p>Ein topologischer Raum 
 <span>
@@ -440,7 +455,13 @@ Eine Menge
         \(U_i\in T\)
     
 </span>
-</p>
+ (und 
+<span>
+                  
+        \(U_i\)
+    
+</span>
+ offen)</p>
 <p>eine endliche Teilüberdeckung</p>
 <p>
 <span>
@@ -461,33 +482,36 @@ Eine Menge
     
 </span>
  endlich</p>
-<p>enthält.</p>
-<p>Kompakte Räume kann man verstehen als eine Verallgemeinerung endlicher Räume. Zum Beispiel kann man mithilfe der Kompatkheit den Schritt von unendlich vielen Umgebungen zu endlich vielen machen und Beweise dann sehr ähnlich führen wie im endlichen Fall.</p>
-<p>Eine Teilmenge 
+<p>enthält. Und eine Teilmenge 
 <span>
                   
-        \(M\)
+        \(A\subset X\)
     
 </span>
- eines topologischen Raumes ist:</p>
-<ul>
-<li><strong>überdeckunsgkompakt</strong>, wenn es zu jeder offenen Überdeckung 
+ ist genau dann kompakt, wenn 
 <span>
                   
-        \(M\subseteq \bigcup_{i\in I} U_i\)
+        \((A,T)\)
     
 </span>
- eine endliche Teilüberdeckung 
+ kompakt ist.</p>
+<p>Wichtig ist nicht, dass es eine endliche Überdeckung gibt (die gibt es immer), sondern dass man aus jeder beliebigen Überdeckung eine endliche auswählen kann. Zum Beispiel ist 
 <span>
                   
-        \(M\subseteq\bigcup_{j\in J} U_j\)
+        \(X:=\{\frac{1}{n}\,\mid\,n\in\mathbb{N}_&#43;\}\)
     
 </span>
- gibt;</li>
-<li><strong>folgenkompakt</strong>, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört (anders ausgedrückt: wenn jede Folge Häufungspunkte hat, die zur Menge gehören).</li>
-</ul>
-<p>In beliebigen topologischen Räumen sind beide Arten von Kompaktheit nicht unbedingt gleich.</p>
-<p>Wenn ein metrischer Raum kompakt ist, dann ist er abgeschlossen und beschränkt. Für Teilmengen von 
+ nicht kompakt, da man für die Überdeckung, in der jede Umgebung genau einen Punkt enthält (z.B. 
+<span>
+                  
+        \(U_n=(\frac{1}{n&#43;1},\frac{1}{n-1})\)
+    
+</span>
+) keine endliche Teilüberdeckung finden kann. Anders sieht das aus, wenn es um die Punkte einer konvergenten Folge geht und ihr Grenzwert enthalten ist: Da es in jeder Überdeckung eine Umgebung gibt, die den Grenzwert enthält, liegen schon alle bis auf endlich viele Punkte in dieser Umgebung (und man muss nur noch endlich viele weitere Umgebungen für die endlich vielen anderen Punkte auswählen).</p>
+<p>Kompakte Räume kann man verstehen als eine Verallgemeinerung endlicher Räume. Zum Beispiel kann man mithilfe der Kompaktheit den Schritt von unendlich vielen Umgebungen zu endlich vielen machen und Beweise dann sehr ähnlich führen wie im endlichen Fall.</p>
+<p>Kompaktheit nach der obigen Definition heißt auch <strong>überdeckunsgkompakt</strong>. Zusätzlich ist ein topologischer Raum <strong>folgenkompakt</strong>, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört (anders ausgedrückt: wenn jede Folge Häufungspunkte hat, die zur Menge gehören). Metrische Räume sind überdeckungskompakt genau dann, wenn sie folgenkompakt sind, aber in beliebigen topologischen Räumen sind diese beiden Arten von Kompaktheit nicht unbedingt gleich.</p>
+<p>Jede überdeckungskompakte Menge ist beschränkt.
+Wenn ein metrischer Raum kompakt ist, dann ist er abgeschlossen und beschränkt; für Teilmengen von 
 <span>
                   
         \(\mathbb{R}^n\)
@@ -518,21 +542,6 @@ Eine Menge
     
 </span>
  ist auch nicht kompakt.</p>
-<p>Kompaktheit einer Menge bedeutet auch, dass sie keine Folgen enthalten darf, die entweder keinen Grenzwert haben oder gegen einen Grenzwert konvergieren, der nicht in der Menge liegt.</p>
-<h2 id="trennungseigenschaften">Trennungseigenschaften</h2>
-<p><strong>Hausdorffsches Trennungsaxiom:</strong> Ein topologischer Raum heißt <strong>Hausdorff-Raum</strong>, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.</p>
-<p>Beispiele für Nicht-Hausdorff-Räume:</p>
-<ul>
-<li>Eine Menge 
-<span>
-                  
-        \(X\)
-    
-</span>
- mit mehr als einem Element und der trivialen Topologie.</li>
-</ul>
-<p>In einem Hausdorff-Raum kann eine Folge höchstens einen Grenzwert haben.
-In einem trivialen topologischen Raum konvergiert jede Folge gegen jeden Punkt.</p>
 <h1 id="normierte-und-metrische-räume">Normierte und metrische Räume</h1>
 <p>Begriffe wie der der Umgebung, des Grenzwerts und der Konvergenz benutzen das Konzept des Abstandes. Konvergenz, zum Beispiel, kann man über die 
 <span>
@@ -591,7 +600,7 @@ In einem trivialen topologischen Raum konvergiert jede Folge gegen jeden Punkt.<
 </span>
 .</p>
 <p>Will man diese Begriffe verallgemeinern für andere mathematische Objekte, wie Folgen von Vektoren, komplexe Zahlen und Funktionen, müsste man sie spezifisch für jedes dieser Objekte neu definieren.
-Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusammen mit einem allgemeinen Konzept für Abstand zwischen Objekten in diese Räumen und darauf aufbauend allgemeine Begriffe wie den der Konvergenz.</p>
+Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusammen mit einem allgemeinen Konzept für Abstand zwischen Objekten in diesen Räumen, und darauf aufbauend allgemeine Begriffe wie den der Konvergenz.</p>
 <p><strong>Metrische Räume</strong> sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine <strong>Metrik</strong> ist eine Abbildung 
 <span>
                   
@@ -874,13 +883,15 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
         \(x_0\)
     
 </span>
- definieren als 
+ definieren als:
+
 <span>
-                  
-        \(\{ x\in M \,|\, d(x,x_0) &lt; \varepsilon \}\)
+     
+        $$U_\varepsilon(x_0)=\{ x\in M \,|\, d(x,x_0) &lt; \varepsilon \}$$
     
 </span>
-. Eine Menge 
+
+Eine Menge 
 <span>
                   
         \(U\)
@@ -936,8 +947,9 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
     
 </span>
 -Umgebung.)
-Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und umgekehrt.</p>
-<p>Auf normierte Räume übertragen sich diese Definitionen, indem man die durch die Norm induzierte Metrik betrachtet.</p>
+Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und umgekehrt.
+Auf normierte Räume übertragen sich diese Definitionen, indem man die durch die Norm induzierte Metrik betrachtet.</p>
+<p>Nun ist jeder metrische Raum auch ein topologischer Raum (und sogar ein Hausdorff-Raum), mit der folgenden induzierten Topologie:</p>
 <ul>
 <li>
 <p>Eine Menge 
@@ -946,19 +958,7 @@ Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und 
         \(M\)
     
 </span>
- ist <strong>offen</strong> bzgl. einer Norm, wenn 
-<span>
-                  
-        \(M\)
-    
-</span>
- Umgebung von jedem 
-<span>
-                  
-        \(x\in M\)
-    
-</span>
- ist, d.h. wenn es zu jedem 
+ ist <strong>offen</strong>, wenn es für jedes 
 <span>
                   
         \(x\in M\)
@@ -985,7 +985,7 @@ Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und 
  liegt. Eine Menge ist also genau dann offen, wenn sie nur aus inneren Punkten besteht, d.h. keinen ihrer Randpunkte enthält.</p>
 </li>
 <li>
-<p>Eine Menge ist <strong>geschlossen</strong> bzgl. einer Norm, wenn es für jeden Punkt außerhalb der Menge eine 
+<p>Eine Menge ist <strong>geschlossen</strong>, wenn es für jeden Punkt außerhalb der Menge eine 
 <span>
                   
         \(\varepsilon\)
@@ -994,13 +994,14 @@ Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und 
 -Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist genau dann geschlossen, wenn sie alle ihre Häufungspunkte enthält.</p>
 </li>
 </ul>
+<p>Zum Beispiel induziert die diskrete Metrik die diskrete Topologie, unter der alle Teilmengen offen sind.</p>
 <p>Eine Teilmenge von 
 <span>
                   
         \(\mathbb{R}^n\)
     
 </span>
- ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.</p>
+ ist offen oder geschlossen unabhängig davon, welche Metrik bzw. Norm betrachtet wird.</p>
 <p><strong>Faustregeln:</strong></p>
 <ul>
 <li>
@@ -1074,8 +1075,6 @@ Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und 
 ).</p>
 </li>
 </ul>
-<p>Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
-Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.</p>
 <p>Für jede Metrik 
 <span>
                   
@@ -1089,10 +1088,121 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
     
 </span>
  eine Metrik und die erzeugte Topologie ist die gleiche.</p>
-<p><strong>Sätze:</strong></p>
-<ul>
-<li>Eine Abbildung zwischen topologischen Räumen ist stetig gdw das Urbild jeder offenen (oder abgeschlossenen) Menge auch offen (oder abgeschlossen) ist.</li>
-</ul>
+<h1 id="stetige-funktionen-auf-topologischen-räumen">Stetige Funktionen auf topologischen Räumen</h1>
+<p>Sind Definitions- und Wertebereich einer Funktion topologische Räume, so ist die Wahl der Topologie entscheidend für die Stetigkeit der Funktion. Stetigkeit lässt sich in diesem Kontext allgemein wie folgt definieren:
+Sind 
+<span>
+                  
+        \((X,T_X)\)
+    
+</span>
+ und 
+<span>
+                  
+        \((Y,T_Y)\)
+    
+</span>
+ topologische Räume, dann ist eine Funktion 
+<span>
+                  
+        \(f:X\to Y\)
+    
+</span>
+ <strong>stetig</strong> in 
+<span>
+                  
+        \(x\in X\)
+    
+</span>
+, wenn für jede Umgebung 
+<span>
+                  
+        \(U\)
+    
+</span>
+ von 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+ (bzgl. 
+<span>
+                  
+        \((X,T_X)\)
+    
+</span>
+) das Urbild 
+<span>
+                  
+        \(f^{-1}(U)\)
+    
+</span>
+ eine Umgebung von 
+<span>
+                  
+        \(x\)
+    
+</span>
+ (bzgl. 
+<span>
+                  
+        \((Y,T_Y)\)
+    
+</span>
+) ist.</p>
+<p>Eine Abbildung zwischen topologischen Räumen ist genau dann stetig, wenn das Urbild jeder offenen (oder abgeschlossenen) Menge auch offen (oder abgeschlossen) ist.</p>
+<p>Stetige Abbildungen erhalten Kompaktheit: Seien 
+<span>
+                  
+        \(X,Y\)
+    
+</span>
+ Hausdorff-Räume und 
+<span>
+                  
+        \(f:X\to Y\)
+    
+</span>
+ eine stetige Abbildung. Ist 
+<span>
+                  
+        \(A\subset X\)
+    
+</span>
+ kompakt, so ist auch 
+<span>
+                  
+        \(f(A)\subset Y\)
+    
+</span>
+ kompakt. Wenn 
+<span>
+                  
+        \(X,Y\)
+    
+</span>
+ metrische Räume sind, ist 
+<span>
+                  
+        \(f\)
+    
+</span>
+ sogar gleichmäßig stetig.</p>
+<p>Für reellwertige, stetige Funktionen gilt der <strong>Satz von Weierstraß</strong>:
+Eine stetige Funktion 
+<span>
+                  
+        \(f:A\to\mathbb{R}\)
+    
+</span>
+, die auf einer kompakten Teilmenge 
+<span>
+                  
+        \(A\)
+    
+</span>
+ eines Hausdorff-Raumes definiert ist, ist beschränkt und nimmt ihr Minimum und Maximum an.</p>
 <h1 id="folgen-und-reihen">Folgen und Reihen</h1>
 <p>Eine <strong>Folge</strong> ist eine Abbildung mit 
 <span>
