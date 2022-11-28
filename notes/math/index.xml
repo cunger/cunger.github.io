@@ -6,7 +6,7 @@
     <description>Recent content in Mathematics on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 07 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/notes/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/notes/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebraische Strukturen</title>
       <link>http://cunger.github.io/notes/math/algebra/</link>
@@ -31,7 +31,7 @@
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/notes/math/matrix/</guid>
-      <description>Matrizen, deren Eigenschaften und Anwendungen</description>
+      <description>Matrizen, deren Eigenschaften und Anwendungen.</description>
     </item>
     
     <item>
@@ -53,6 +53,15 @@
     </item>
     
     <item>
+      <title>Kurven</title>
+      <link>http://cunger.github.io/notes/math/curves/</link>
+      <pubDate>Mon, 28 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/math/curves/</guid>
+      <description>Die Bewegung eines Punktes durch den Raum.</description>
+    </item>
+    
+    <item>
       <title>Differentialgleichungen</title>
       <link>http://cunger.github.io/notes/math/differential-equations/</link>
       <pubDate>Fri, 25 Jun 2021 00:00:00 +0000</pubDate>
@@ -67,7 +76,7 @@
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/notes/math/complex-numbers/</guid>
-      <description>(In Arbeit)</description>
+      <description>(Draft, work in progress)</description>
     </item>
     
     <item>
