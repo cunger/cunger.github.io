@@ -789,40 +789,15 @@ Wenn
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h1 id="differenzierbarkeit">Differenzierbarkeit</h1>
-<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie linear approximiert werden kann. (Wobei <em>linear</em> hier bedeutet, dass die Funktion ein Polynom vom Grad 
+<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also an einer Stelle differenzierbar, wenn sie dort hinreichend gut linear approximiert werden kann. (Wobei <em>linear</em> hier bedeutet, dass die Funktion ein Polynom vom Grad 
 <span>
                   
         \(\leq 1\)
     
 </span>
  ist.)</p>
-<p>Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben. In allgemeinen metrischen Räumen ist eine lineare Approximation nicht immer möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren. Aber für Anwendungen sind sowieso Funktionen über euklidischen Räumen wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- nach 
-<span>
-                  
-        \(\mathbb{R}\)
-    
-</span>
- und vektorwertige Funktionen von 
-<span>
-                  
-        \(\mathbb{R}^n\)
-    
-</span>
- nach 
-<span>
-                  
-        \(\mathbb{R}^m\)
-    
-</span>
-.)</p>
 <p>Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.</p>
-<h2 id="änderungsrate">Änderungsrate</h2>
+<h2 id="änderungsrate-und-lineare-approximierbarkeit">Änderungsrate und lineare Approximierbarkeit</h2>
 <p>Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall 
 <span>
                   
@@ -925,7 +900,7 @@ Wobei
     
 </span>
  Vektoren unterschiedlicher Räume sein können, ist der Quotient beider in vielen Fällen gar nicht vernünftig definiert.)
-Das Differential ist dann die Abbildung 
+Das <strong>Differential</strong> ist dann die eindeutig bestimmte Abbildung 
 <span>
                   
         \(L:\mathbb{R}^n\to\mathbb{R}\)
@@ -939,8 +914,7 @@ Das Differential ist dann die Abbildung
     
 </span>
 
-<p>Daraus ergibt sich eine leicht andere Sichtweise:
-Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts 
+<p>Daraus ergibt sich die Sichtweise, dass die Ableitung einer Funktion die Steigung der linearen Abbildung ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts 
 <span>
                   
         \(f(x)\)
@@ -978,7 +952,6 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
 </span>
  mit einem sehr kleinen Fehler approximiert.</p>
 <p>Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt &ldquo;annähernd linear&rdquo; ist.</p>
-<h2 id="lineare-approximierbarkeit">Lineare Approximierbarkeit</h2>
 <p>Aus der Approximation
 
 <span>
@@ -987,14 +960,14 @@ Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betr
     
 </span>
 
-ergibt sich direkt:
+ergibt sich direkt
 
 <span>
-     
-        $$f(x)\approx f(a) &#43; f&#39;(a)\cdot (x-a)$$
+                  
+        \(f(x)\approx f(a) &#43; f&#39;(a)\cdot (x-a)\)
     
 </span>
-
+.
 Daher kann man Differenzierbarkeit wie folgt definieren:</p>
 <p>
 <span>
@@ -1002,7 +975,7 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
         \(f:M\to \mathbb{R}^m\)
     
 </span>
- ist genau dann differenzierbar in 
+ ist genau dann <strong>differenzierbar</strong> in 
 <span>
                   
         \(a\)
@@ -1025,7 +998,7 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
 <li>
 <span>
                   
-        \(f(x) = f(a) &#43; c\cdot(x-a) &#43; r(x)\)
+        \(f(x) = f(a) &#43; c\,(x-a) &#43; r(x)\)
     
 </span>
 </li>
@@ -1040,7 +1013,7 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
 <p>Hier versteht man 
 <span>
                   
-        \(f(a) &#43; c(x-a)\)
+        \(f(a) &#43; c\,(x-a)\)
     
 </span>
  als Näherung von 
@@ -1049,7 +1022,7 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
         \(f(x)\)
     
 </span>
- und 
+, und 
 <span>
                   
         \(r(x)\)
@@ -1071,13 +1044,13 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
 <p>Da 
 <span>
                   
-        \(r(x) = f(x) - f(a) - c(x-a)\)
+        \(r(x) = f(x) - f(a) - c\,(x-a)\)
     
 </span>
  ist, gelten diese Bedingungen genau dann, wenn 
 <span>
      
-        $$\lim_{x\to a}\frac{f(x) - f(a) - c(x-a)}{x-a}=\lim_{x\to a}\frac{f(x) - (a)}{x-a} - c = 0,$$
+        $$\lim_{x\to a}\frac{f(x) - f(a) - c\,(x-a)}{x-a}=\lim_{x\to a}\frac{f(x) - (a)}{x-a} - c = 0,$$
     
 </span>
  also wenn 
@@ -1087,14 +1060,14 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
     
 </span>
 </p>
-<p>Im mehrdimensionalen Fall heißt das:
+<p>Im mehrdimensionalen Fall heißt das,
 
 <span>
                   
         \(f:M\to Y\)
     
 </span>
- ist genau dann differenzierbar in 
+ ist genau dann <strong>differenzierbar</strong> in 
 <span>
                   
         \(a\)
@@ -1106,7 +1079,7 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
         \(A=f&#39;(a)\in Y\)
     
 </span>
- (die <strong>Jacobi-Matrix</strong>, siehe lineare Abbildung als Matrix), wenn es eine Funktion 
+ (die <strong>Jacobi-Matrix</strong>, siehe <a href="../matrix/#matrizen-als-lineare-transformationen">Matrizen für lineare Abbildung</a>), wenn es eine Funktion 
 <span>
                   
         \(r:M\to Y\)
@@ -1130,14 +1103,33 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
 </li>
 </ul>
 <p>Die Wahl der Norm spielt keine Rolle.</p>
-<h2 id="operatoren">Operatoren</h2>
-<p><strong>Differentialoperator:</strong> 
+<p>Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben. In allgemeinen metrischen Räumen ist eine lineare Approximation nicht immer möglich. Da kann man aber über isometrische Näherungen ein metrisches Differential definieren. (Für Anwendungen sind vor allem Funktionen über euklidischen Räumen wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von 
 <span>
                   
-        \(\frac{d}{dx}:f\to f&#39;\)
+        \(\mathbb{R}^n\)
     
 </span>
-</p>
+ nach 
+<span>
+                  
+        \(\mathbb{R}\)
+    
+</span>
+ und vektorwertige Funktionen von 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ nach 
+<span>
+                  
+        \(\mathbb{R}^m\)
+    
+</span>
+.)</p>
+<h2 id="operatoren">Operatoren</h2>
+<h3 id="richtungsableitung">Richtungsableitung</h3>
 <p>Bei mehrdimensionalen Funktionen ist die <strong>Richtungsableitung</strong> die momentane relative Änderung des Funktionswertes 
 <span>
                   
@@ -1157,6 +1149,14 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
     
 </span>
  fortbewegt. Sie beschreibt also ist das lokale Verhalten der Komponentenfunktion bei Änderung dieser Komponente. Das Differential weist im Prinzip jedem Vektor die Richtungsableitung in Richtung des Vektors zu.</p>
+<p><strong>Differentialoperator:</strong> 
+<span>
+                  
+        \(\frac{d}{dx}:f\to f&#39;\)
+    
+</span>
+</p>
+<h3 id="partielle-ableitung">Partielle Ableitung</h3>
 <p>Ein Spezialfall der Richtungsableitung ist die <strong>partielle Ableitung</strong>. Die partielle Ableitung einer Funktion mehrerer Veränderlicher ist nichts anderes als die Ableitung der Funktion, die man erhält, wenn man alle Veränderlichen bis auf eine festhält.</p>
 <p><strong>Differentialoperator:</strong> 
 <span>
@@ -1165,6 +1165,19 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
     
 </span>
 </p>
+<h3 id="gradient">Gradient</h3>
+<blockquote>
+<p>In kartesischen Koordinaten sind die Komponenten des Gradientvektors die partiellen Ableitungen im Punkt P, der Gradient zeigt deshalb in die Richtung der größten Änderung. Der Betrag des Gradienten gibt den Wert der größten Änderungsrate an diesem Punkt an.
+(<a href="https://www.wikiwand.com/de/Gradient_(Mathematik)">https://www.wikiwand.com/de/Gradient_(Mathematik)</a>)</p>
+</blockquote>
+<p><strong>Differentialoperator:</strong> 
+<span>
+                  
+        \(\nabla\)
+    
+</span>
+ (grad, Vektoranalysis)</p>
+<h2 id="wichtige-sätze-1">Wichtige Sätze</h2>
 <p>Wenn 
 <span>
                   
@@ -1189,20 +1202,20 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
         \(a\)
     
 </span>
- auch differenzierbar.</p>
-<h2 id="gradient">Gradient</h2>
-<p><strong>Differentialoperator:</strong> 
+ differenzierbar.</p>
+<p>Wenn 
 <span>
                   
-        \(\nabla\)
+        \(f\)
     
 </span>
- (grad, Vektoranalysis)</p>
-<blockquote>
-<p>In kartesischen Koordinaten sind die Komponenten des Gradientvektors die partiellen Ableitungen im Punkt P, der Gradient zeigt deshalb in die Richtung der größten Änderung. Der Betrag des Gradienten gibt den Wert der größten Änderungsrate an diesem Punkt an.
-(<a href="https://www.wikiwand.com/de/Gradient_(Mathematik)">https://www.wikiwand.com/de/Gradient_(Mathematik)</a>)</p>
-</blockquote>
-<p>(<a href="https://www.wikiwand.com/en/Differential_operator">https://www.wikiwand.com/en/Differential_operator</a>)</p>
+ in einem Punkt 
+<span>
+                  
+        \(a\)
+    
+</span>
+ differenzierbar ist, ist sie in dem Punkt auch stetig.</p>
 <h1 id="integrierbarkeit">Integrierbarkeit</h1>
 
 
