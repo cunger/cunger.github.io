@@ -789,7 +789,9 @@ Wenn
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h1 id="differenzierbarkeit">Differenzierbarkeit</h1>
-<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also an einer Stelle differenzierbar, wenn sie dort hinreichend gut linear approximiert werden kann. (Wobei <em>linear</em> hier bedeutet, dass die Funktion ein Polynom vom Grad 
+<p>Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle.
+Die Änderungsrate entspricht der Steigung derjenigen linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert.
+Eine Funktion ist also an einer Stelle differenzierbar, wenn sie dort hinreichend gut linear approximiert werden kann. (Wobei <em>linear</em> hier bedeutet, dass die Funktion ein Polynom vom Grad 
 <span>
                   
         \(\leq 1\)
@@ -900,7 +902,7 @@ Wobei
     
 </span>
  Vektoren unterschiedlicher Räume sein können, ist der Quotient beider in vielen Fällen gar nicht vernünftig definiert.)
-Das <strong>Differential</strong> ist dann die eindeutig bestimmte Abbildung 
+Das <strong>Differential</strong> ist dann die eindeutig bestimmte lineare Abbildung 
 <span>
                   
         \(L:\mathbb{R}^n\to\mathbb{R}\)
@@ -914,7 +916,8 @@ Das <strong>Differential</strong> ist dann die eindeutig bestimmte Abbildung
     
 </span>
 
-<p>Daraus ergibt sich die Sichtweise, dass die Ableitung einer Funktion die Steigung der linearen Abbildung ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts 
+<p>Und eine Funktion ist <strong>differenzierbar</strong>, wenn diese lineare Abbildung existiert.
+Daraus ergibt sich die Sichtweise, dass die Ableitung einer Funktion die Steigung der linearen Abbildung ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts 
 <span>
                   
         \(f(x)\)
@@ -968,7 +971,7 @@ ergibt sich direkt
     
 </span>
 .
-Daher kann man Differenzierbarkeit wie folgt definieren:</p>
+Daher kann man Differenzierbarkeit auch wie folgt definieren:</p>
 <p>
 <span>
                   
@@ -1016,7 +1019,7 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
         \(f(a) &#43; c\,(x-a)\)
     
 </span>
- als Näherung von 
+ als lokale lineare Näherung von 
 <span>
                   
         \(f(x)\)
@@ -1028,7 +1031,25 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
         \(r(x)\)
     
 </span>
- als Fehler, also als Differenz zwischen der eigentlichen Funktion und ihrer Näherung. Wenn 
+ als Fehler, also als Differenz zwischen dieser Näherung und der eigentlichen Funktion. Die zweite Bedingung bedeutet, dass 
+<span>
+                  
+        \(r\)
+    
+</span>
+ für 
+<span>
+                  
+        \(x\to a\)
+    
+</span>
+ schneller gegen 0 geht als 
+<span>
+                  
+        \(x-a\)
+    
+</span>
+ (und daher schneller als linear). Wenn 
 <span>
                   
         \(x=a\)
@@ -1102,7 +1123,13 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
 </span>
 </li>
 </ul>
-<p>Die Wahl der Norm spielt keine Rolle.</p>
+<p>Die Wahl der Norm spielt keine Rolle, da alle Normen über 
+<span>
+                  
+        \(\mathbb{R}^n\)
+    
+</span>
+ äquivalent sind.</p>
 <p>Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben. In allgemeinen metrischen Räumen ist eine lineare Approximation nicht immer möglich. Da kann man aber über isometrische Näherungen ein metrisches Differential definieren. (Für Anwendungen sind vor allem Funktionen über euklidischen Räumen wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von 
 <span>
                   
@@ -1128,9 +1155,12 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
     
 </span>
 .)</p>
-<h2 id="operatoren">Operatoren</h2>
+<h2 id="partielle-und-totale-differenzierbarkeit">Partielle und totale Differenzierbarkeit</h2>
+<p>Die <strong>partielle Differenzierbarkeit</strong> einer Funktion in einem Punkt bedeutet, dass sich die Funktion in dem Punkt lokal in einer der Koordinatenrichtungen approximieren lässt, aber möglicherweise durch verschiedene lineare Abbildungen. Total differenzierbar, also approximierbar durch eine einzige lineare Abbildung, ist die Funktion erst dann, wenn die partiellen Ableitungen alle stetig sind.</p>
+<h2 id="differentialoperatoren">Differentialoperatoren</h2>
+<p>Differentialoperatoren bilden eine Funktion auf eine andere Funktion ab, die eine Ableitung enthält.</p>
 <h3 id="richtungsableitung">Richtungsableitung</h3>
-<p>Bei mehrdimensionalen Funktionen ist die <strong>Richtungsableitung</strong> die momentane relative Änderung des Funktionswertes 
+<p>Die <strong>Richtungsableitung</strong> ist die momentane relative Änderung des Funktionswertes 
 <span>
                   
         \(f(x)\)
@@ -1148,17 +1178,42 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
         \(h\)
     
 </span>
- fortbewegt. Sie beschreibt also ist das lokale Verhalten der Komponentenfunktion bei Änderung dieser Komponente. Das Differential weist im Prinzip jedem Vektor die Richtungsableitung in Richtung des Vektors zu.</p>
-<p><strong>Differentialoperator:</strong> 
+ fortbewegt. Sie beschreibt also das lokale Verhalten der Komponentenfunktion bei Änderung dieser Komponente. Das Differential weist im Prinzip jedem Vektor die Richtungsableitung in Richtung des Vektors zu (und hängt damit von der Richtung und der Länge des Vektors ab).</p>
+<p><strong>Operator:</strong> 
 <span>
                   
-        \(\frac{d}{dx}:f\to f&#39;\)
+        \(\partial_h\)
+    
+</span>
+ für 
+<span>
+                  
+        \(f:M\to\mathbb{R}\)
+    
+</span>
+ mit 
+<span>
+                  
+        \(M\subset\mathbb{R}^n\)
+    
+</span>
+ offen, 
+<span>
+                  
+        \(a\in M,h\in\mathbb{R}^n\)
+    
+</span>
+ und
+
+<span>
+     
+        $$\partial_h f(a) := \lim_{x\to 0} \frac{f(a&#43;xh) - f(a)}{x}$$
     
 </span>
 </p>
 <h3 id="partielle-ableitung">Partielle Ableitung</h3>
 <p>Ein Spezialfall der Richtungsableitung ist die <strong>partielle Ableitung</strong>. Die partielle Ableitung einer Funktion mehrerer Veränderlicher ist nichts anderes als die Ableitung der Funktion, die man erhält, wenn man alle Veränderlichen bis auf eine festhält.</p>
-<p><strong>Differentialoperator:</strong> 
+<p><strong>Operator:</strong> 
 <span>
                   
         \(\frac{\partial}{\partial x_i}:f\to \frac{\partial f}{\partial x_i}\)
@@ -1166,10 +1221,7 @@ Daher kann man Differenzierbarkeit wie folgt definieren:</p>
 </span>
 </p>
 <h3 id="gradient">Gradient</h3>
-<blockquote>
-<p>In kartesischen Koordinaten sind die Komponenten des Gradientvektors die partiellen Ableitungen im Punkt P, der Gradient zeigt deshalb in die Richtung der größten Änderung. Der Betrag des Gradienten gibt den Wert der größten Änderungsrate an diesem Punkt an.
-(<a href="https://www.wikiwand.com/de/Gradient_(Mathematik)">https://www.wikiwand.com/de/Gradient_(Mathematik)</a>)</p>
-</blockquote>
+<p>Der Gradient bestimmt die größte Änderungsrate, also die Richtungsbaleitung in Richtung der größten Änderung.</p>
 <p><strong>Differentialoperator:</strong> 
 <span>
                   
