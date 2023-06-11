@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.92.2" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diskrete Kosinustransformation | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Diskrete Kosinustransformation" />
+<meta property="og:description" content="Ein Blick ins mathematische Herz der JPEG-Bildkompression" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/notes/appliedmath/dct/" /><meta property="article:section" content="notes" />
+<meta property="article:published_time" content="2023-05-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-05-20T00:00:00+00:00" />
+
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/notes/appliedmath/dct/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/notes">Notes</a></li>
+       <li><a href="/blog">Blog</a></li>
+       <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Diskrete Kosinustransformation </h1>
+      <p class="hero-lead">
+         Ein Blick ins mathematische Herz der JPEG-Bildkompression
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <h1 id="digitale-bilder-und-bildkompression">Digitale Bilder und Bildkompression</h1>
+<p>In der Digitalfotographie werden Bilder als <strong>Bitmaps</strong> aufgenommen und dargestellt: als 
+<span>
+                  
+        \(M\times N\)
+    
+</span>
+-Raster von quadratischen Bildelementen (<em>Pixeln</em>), wobei 
+<span>
+                  
+        \(M\)
+    
+</span>
+ die Breite und 
+<span>
+                  
+        \(N\)
+    
+</span>
+ die Höhe des Bildes in Pixeln ist.</p>
+
+
+<img src="/images/docs/beispielbild-ausschnitt.png" alt="Ausschnitt" width="800"/>
+
+
+<p>Jeder einzelne Pixel kann 
+<span>
+                  
+        \(2^b\)
+    
+</span>
+ Werte annehmen, üblicherweise von 
+<span>
+                  
+        \(0\)
+    
+</span>
+ bis 
+<span>
+                  
+        \(2^b-1\)
+    
+</span>
+ für ein geeignetes 
+<span>
+                  
+        \(b\in\mathbb{N}\)
+    
+</span>
+. Dabei wird 
+<span>
+                  
+        \(b\)
+    
+</span>
+ als <strong>Bittiefe</strong> bezeichnet und entspricht der Anzahl von Bits, die für die Speicherung der Information eines Pixels benötigt werden.
+Üblicherweise ist 
+<span>
+                  
+        \(b=8\)
+    
+</span>
+, so dass jeder Pixelwert in genau einem Byte (8 Bits) gespeichert werden kann.
+Größere Bittiefen von 12, 14 oder 16 werden für höherwertige Fotographie und Druck oder Anwendungen in der Medizin und Astronomie verwendet.</p>
+<p>Bei einer Bittiefe von 8 liegen Werte dann im Intervall [0,255], wobei in einem Graustufenbild 0 schwarz und 255 weiß entspricht.</p>
+
+
+<img src="/images/docs/pixelraster-graustufen.png" alt="Pixelraster (Graustufen)" width="340" style="display: block; margin: auto; padding: 10px;"/>
+
+
+<p>Ein Farbbild hingegen setzt sich aus mehreren Pixelrastern zusammen, nämlich einem pro Farbkanal.
+Im Fall von RGB hat man also drei Pixelraster, jeweils eins für Rotwerte, eins für Grünwerte und eins für Blauwerte:</p>
+
+
+<img src="/images/docs/pixelraster-rgb-channels.png" alt="Pixelraster (RGB)" width="800"/>
+
+
+<p>JPEG arbeitet mit dem Farbraum YCbCr, teilt die Informationen eines Bildes also in drei Kanäle auf: Y für die Grundhelligkeit, Cb für Chroma Blau (Farbintensität auf der Achse Blau-Gelb) und Cr für Chroma Rot (Farbintensität auf der Achse Rot-Grün).</p>
+
+
+<img src="/images/docs/beispielbild-garten.JPG" alt="Farbbild" width="400"/>
+<img src="/images/docs/beispielbild-garten-Y.png" alt="Farbbild: Y-Kanal" width="400"/>
+<img src="/images/docs/beispielbild-garten-Cb.png" alt="Farbbild: Cb-Kanal" width="400"/>
+<img src="/images/docs/beispielbild-garten-Cr.png" alt="Farbbild: Cr-Kanal" width="400"/>
+
+
+<p><em>Zerlegung eines Bildes in die einzelnen YCbCr-Kanäle. Oben links sieht man das Originalbild, oben rechts die Grundhelligkeit (Y), unten links die Blau-Gelb-Chroma (Cb) und unten rechts die Rot-Grün-Chroma (Cr).</em></p>
+<p>Diese Darstellung von Bildern eignet sich allerdings schlecht für ihre Speicherung und Übertragung, da die Menge der dafür benötigten Daten vor allem bei höheren Auflösungen sehr umfangreich ist.
+Eine übliche Monitorauflösung von 1920x1200, zum Beispiel, entspricht einem Raster von 786.432 Pixeln. Bei einem Farbbild mit drei Kanälen sind das 2.359.296 Werte, für die je ein Byte benötig wird, man ist also bei einer Dateigröße von mehr als 2 MB. Bei Digitalkameras ist man schnell in der Größenordnung von 40 Megapixeln, was einer ungefähren Dateigröße von 115 MB pro Bild entspricht.</p>
+<p>Um effizient mit Bilddaten arbeiten zu können, will man sie daher komprimieren, d.h. in eine kompaktere Darstellung überführen, die weniger Daten benötigt und dann zur Speicherung und Übertragung verwendet werden kann. Um das Bild schließlich wieder darzustellen, wird die komprimierte Darstellung zurück in ein Bildraster überführt.</p>
+
+
+<img src="/images/docs/bildkompression-allgemein.png" alt="Diagramm Bildkompression" width="600" style="display: block; margin: auto; padding: 10px;"/>
+
+
+<p>Bei einer verlustfreien Kompression ist die dekodierte Darstellung exakt die gleiche wie die ursprüngliche Darstellung vor der Kodierung, es gehen also keine Informationen verloren. Will man eine hohe Kompressionsrate erreichen, ist das allerdings oft nur mit einer verlustbehafteten Kompression möglich. Bei der Kodierung gehen dann Informationen verloren, die bei der Dekodierung nur annäherungsweise wieder hergestellt werden können; das rekonstruierte Bild entspricht also nicht exakt dem Originalbild.</p>
+<p>Das Ziel bei der Bildkompression ist es nun, eine möglichst hohe Kompressionsrate bei möglichst guter Bildqualität zu erreichen, also möglichst wenig Informationen speichern oder übertragen zu müssen, ohne dass der Unterschied zwischen Originalbild und rekonstruiertem Bild visuell wahrnehmbar ist.
+JPEG ist ein sehr weit verbreiteter Kompressionsstandard,
+der genau das schafft: Das oben erwähnte Beispielbild von reichlich 2 MB benötigt als JPEG in guter Bildqualität nur noch ungefähr 0,2 MB.</p>
+<p>Ein wesentlicher Teil des Algorithmus hinter JPEG besteht darin, das Bild zuerst in eine Darstellung zu transformieren, die im Gegensatz zum Pixelraster sehr effizient komprimiert werden kann. Dazu wird das Bildraster zuerst in Blöcke zerlegt. Jeden Block kann man als Vektor darstellen, der dann auf einen anderen Vektor angebildet wird, der die visuell relevanten Informationen in einen wenigen Elementen konzentriert (Diskrete Kosinustransformation). Alle anderen Elemente werden bei der Kompression dann fallengelassen (Quantisierung und Kodierung).</p>
+
+
+<img src="/images/docs/bildkompression-jpeg.png" alt="Diagramm JPEG-Bildkompression" width="800"/>
+
+
+<p>Im Fall eines Farbbildes werden die Farbkanäle prinzipiell gleich verarbeitet, man kann aber die Kompressionsrate für jeden Farbkanal unterschiedlich wählen. Zum Beispiel ist die menschliche Wahrnehmung sehr viel sensitiver für Grundhelligkeit als für Chroma, weswegen man für den Y-Kanal eine höhere Abtastrate und geringere Kompressionsrate wählt, während man für Cb und Cr mit einer geringeren Abtastrate und größeren Kompressionsrate davonkommt.</p>
+<h1 id="vektordarstellungen-von-pixelrastern">Vektordarstellungen von Pixelrastern</h1>
+<p>Wir wollen im Folgenden nur einen Kanal betrachten, also entweder ein Graustufenbild oder nur einen der Kanäle eines Farbbildes. Mathematisch ist es egal, welchen wir wählen, da alle Kanäle mit denselben 
+<span>
+                  
+        \(2^b\)
+    
+</span>
+ Werten arbeiten und in Bezug auf die hier betrachteten Transformationsschritte gleich behandelt werden.</p>
+<p>Der erste Schritt bei der JPEG-Kompression ist ein sogenannter <strong>Level Shift</strong>, der die Werte mithilfe einer Abbildung von 
+<span>
+                  
+        \([0,2^b - 1]\)
+    
+</span>
+ auf 
+<span>
+                  
+        \([-2^{b-1},2^{b-1} - 1]\)
+    
+</span>
+ so verschiebt, dass die 0 zentriert ist; im Fall von 
+<span>
+                  
+        \(b=8\)
+    
+</span>
+ von [0,255] auf [-127, 128].</p>
+
+
+<div style="margin-top: 10px; margin-bottom: 20px;">
+<img src="/images/docs/pixelraster-graustufen.png" alt="Pixelraster (Graustufen)" width="340" style="vertical-align: middle;"/>
+---->
+<img src="/images/docs/pixelraster-graustufen-shifted.png" alt="Pixelraster (Graustufen)" width="340" style="vertical-align: middle;"/>
+</div>
+
+
+<p>Außerdem wird nicht mit dem Bildraster als Ganzem gearbeitet. Statt dessen wird das Raster zunächst in 8x8-Blöcke zerlegt. (Ist die Höhe oder Breite des Bildes nicht durch 8 teilbar, wird das Pixelraster um entsprechend viele Reihen oder Spalten erweitert, die am Ende wieder entfernt werden.)
+Alle Verarbeitungsschritte werden getrennt auf jeden dieser Blöcke angewendet.</p>
+<p>Solche 8x8-Blöcke lassen sich mathematisch als 8x8-Matrix darstellen - oder einfacher als 64-elementige Vektoren, also Elemente im Raum 
+<span>
+                  
+        \(\mathbb{R}^{64}\)
+    
+</span>
+. (Im Prinzip reicht hier auch 
+<span>
+                  
+        \(\mathbb{Z}^{64}\)
+    
+</span>
+, aber für die Koeffizientendarstellung später brauchen wir reelle Werte.)</p>
+<p>Der Einfachheit halber betrachten wir aber vorerst nur eine Dimension, nur die Zeilen der Blöcke, d.h. Vektoren im 
+<span>
+                  
+        \(\mathbb{R}^{8}\)
+    
+</span>
+.
+Die Erweiterung auf zwei Dimensionen ist am Ende unkompliziert.</p>
+<h2 id="vektor-als-linearkombination-bezüglich-der-kanonischen-basis">Vektor als Linearkombination bezüglich der kanonischen Basis</h2>
+<p>Die kanonische Basis des 
+<span>
+                  
+        \(\mathbb{R}^{8}\)
+    
+</span>
+ ist:</p>
+<p>
+<span>
+     
+        $$e_1 = \begin{pmatrix}1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\end{pmatrix}$$
+    
+</span>
+
+
+<span>
+     
+        $$e_2 = \begin{pmatrix}0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\end{pmatrix}$$
+    
+</span>
+
+
+<span>
+     
+        $$\vdots$$
+    
+</span>
+
+
+<span>
+     
+        $$e_8 = \begin{pmatrix}0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1\end{pmatrix}$$
+    
+</span>
+</p>
+<p>Eine Zeile eines 8x8-Blocks eines Bildrasters kann als eine Linearkombination dieser Einheitsvektoren dargestellt werden.</p>
+<p>
+<span>
+     
+        $$\begin{pmatrix}121 &amp; 127 &amp; 128 &amp; 125 &amp; 88 &amp; 14 &amp; -40 &amp; -60\end{pmatrix}$$
+    
+</span>
+
+
+<span>
+     
+        $$= 121\,e_1 &#43; 127\,e_2 &#43; 128\,e_3 &#43; 125\,e_4 &#43; 88\,e_5 &#43; 14\,e_6 - 40\,e_7 - 60\,e_8$$
+    
+</span>
+</p>
+<p>Da die genaue Abmessung der Blöcke keine Rolle spielt, werden wir im Folgenden allgemein von Vektoren im 
+<span>
+                  
+        \(\mathbb{R}^{N}\)
+    
+</span>
+ reden (und im zweidimensionalen Fall dann schießlich im 
+<span>
+                  
+        \(\mathbb{R}^{N\cdot N}\)
+    
+</span>
+).</p>
+<p>Eine Vektordarstellung bezüglich der kanonischen Basis erfasst die räumliche Verteilung von Graustufen- bzw. Farbwerten.
+Sie hat allerdings einen entscheidenden Nachteil: Sie lässt sich nur schwer komprimieren, da die für das Bild wichtigen Informationen wenig Redundanzen aufweisen, über den gesamten Vektor verteilt sind und diese Verteilung keinen statistischen Gleichmäßigkeiten folgt.</p>
+<p>Die Grundidee des JPEG-Standards ist deswegen, den räumlichen Vektor in einem ersten Schritt auf einen Vektor abzubilden, der die für die menschliche Wahrnehmung wesentlichen Informationen des Bildes in einigen wenigen Elementen konzentriert. Die restlichen Elemente, die visuell weniger gut wahrnehmbare Informationen erfassen, können dann bei der Kompression verlorengehen. %Dadurch lässt sich die Menge der zu speichernden Informationen deutlich verringern, während der Informationsverlust bei der Rekonstruktion des Bildes kaum sichtbar ist.</p>
+<p>Diese Transformation selber komprimiert aber noch nicht; das Ziel ist lediglich eine Darstellung des Bildes zu erhalten, die sich im nächsten Schritt gut komprimieren lässt, ohne die Qualität des rekonstruierten Bildes wahrnehmbar zu beeinträchtigen.</p>
+<h2 id="vektor-als-stützstellendarstellung-einer-kontinuierlichen-funktion">Vektor als Stützstellendarstellung einer kontinuierlichen Funktion</h2>
+<p>Bisher haben wir einen Vektor 
+<span>
+                  
+        \(p = \begin{pmatrix} p_0 &amp; p_1 &amp; \ldots &amp; p_{N-1}\end{pmatrix}\)
+    
+</span>
+ in 
+<span>
+                  
+        \(\mathbb{R}^{N}\)
+    
+</span>
+ bezüglich der kanonischen Basis.
+Einen solchen Vektor können wir als <strong>Stützstellendarstellung</strong> einer kontinuierlichen, stetigen Funktion 
+<span>
+                  
+        \(f\)
+    
+</span>
+ verstehen. Das bedeutet, dass der Vektor 
+<span>
+                  
+        \(p\)
+    
+</span>
+ für 
+<span>
+                  
+        \(i = 0,\ldots, N-1\)
+    
+</span>
+ genau die Funktionswerte 
+<span>
+                  
+        \(p_i = f(x_i)\)
+    
+</span>
+ der Funktion an den Stützstellen 
+<span>
+                  
+        \(x_0,\ldots,x_{N-1}\)
+    
+</span>
+ enthält.</p>
+<p>Im Fall unseres Beispielvektors
+
+<span>
+                  
+        \(\begin{pmatrix}121 &amp; 127 &amp; 128 &amp; 125 &amp; 88 &amp; 14 &amp; -40 &amp; -60\end{pmatrix}\)
+    
+</span>
+
+kennen wir also folgende Werte an den Stützstellen 
+<span>
+                  
+        \(i=0,\ldots,7\)
+    
+</span>
+.</p>
+
+
+<img src="/images/docs/stuetzstellen1.png" alt="Stützstellen" width="600"/>
+
+
+<p>Bekannt sind also nur 
+<span>
+                  
+        \(N\)
+    
+</span>
+ Werte der Funktion 
+<span>
+                  
+        \(f\)
+    
+</span>
+ in einem beschränkten Intervall. Um die Menge der möglichen Funktionen, die diese Werte durchlaufen, so weit einzuschränken, dass wir praktisch damit weiterarbeiten können, treffen wir ein paar zusätzliche Annahmen.</p>
+<p>Zunächst nehmen wir an, dass die zugrundeliegende kontinuierliche Funktion 
+<span>
+                  
+        \(f\)
+    
+</span>
+ periodisch ist, mit einer Periode von 
+<span>
+                  
+        \(2N\)
+    
+</span>
+, so dass unsere bisherige Stützstellendarstellung 
+<span>
+                  
+        \(p\)
+    
+</span>
+ genau eine halbe Phase dieser periodischen Funktion abdeckt.
+Eine Fortsetzung der Funktion erhalten wir, indem wir die gebenenen Werte zu beiden Seiten unseres Intervalls spiegeln.
+Hier gibt es mehrere Möglichkeiten; für JPEG relevant ist eine Spiegelung achsensymmetrisch zur y-Achse in den Punkten zwischen den Stützstellen. Wir erweitern die Funktion also in beide Richtungen als <em>gerade</em> Funktion, d.h. so dass 
+<span>
+                  
+        \(f(-x)=f(x)\)
+    
+</span>
+, und so dass sich die Randpunkte unseres ursprünglichen Vektors wiederholen.</p>
+
+
+<img src="/images/docs/stuetzstellen2.png" alt="Stützstellen" width="800"/>
+
+
+<p>Wir nehmen also an, dass unser diskreter Vektor 
+<span>
+                  
+        \(p\)
+    
+</span>
+ die Werte einer kontinuierlichen, periodischen, geraden Funktion 
+<span>
+                  
+        \(f:\mathbb{R}\to\mathbb{R}\)
+    
+</span>
+ an 
+<span>
+                  
+        \(N\)
+    
+</span>
+ Stützstellen darstellt.</p>
+<h2 id="vektor-als-koordinatendarstellung-bezüglich-kosinusbasisfunktionen">Vektor als Koordinatendarstellung bezüglich Kosinusbasisfunktionen</h2>
+<p>Die zugrundeliegende Funktion kennen wir nicht genau, aber aufgrund der über diese Funktion getroffenen Annahmen wissen wir, dass sie als Reihe von gewichteten Kosinusfunktionen dargestellt werden kann (mit Koeffizienten 
+<span>
+                  
+        \(c_k\in\mathbb{R}\)
+    
+</span>
+):
+
+<span>
+     
+        $$f(x) = \sum_{k=0}^\infty c_k\cos(kx)$$
+    
+</span>
+</p>
+<p>Für unseren Anwendungsfall interessiert uns allerdings nicht die ganze Reihe. Da wir eine endliche Darstellung, idealerweise wieder eine Vektordarstellung im 
+<span>
+                  
+        \(\mathbb{R}^N\)
+    
+</span>
+, suchen, beschränken wir uns auf die 
+<span>
+                  
+        \(N\)
+    
+</span>
+-elementige Partialsumme 
+<span>
+                  
+        \(\sum_{k=0}^{N-1} c_k\cos(kx)\)
+    
+</span>
+.
+Wir approximieren die zugrundeliegende Funktion 
+<span>
+                  
+        \(f\)
+    
+</span>
+ also durch ein trigonometrisches Polynom.</p>
+<p>Wo genau liegen nun die Stützstellen?
+Da 
+<span>
+                  
+        \(\cos(x)\)
+    
+</span>
+ eine Periode von 
+<span>
+                  
+        \(2\pi\)
+    
+</span>
+ hat, wir aber eine Periode von 
+<span>
+                  
+        \(2N\)
+    
+</span>
+ Einheiten annehmen, sind die Abschnitte von einer Stützstelle zur nächsten 
+<span>
+                  
+        \(\frac{2\pi}{2N}=\frac{\pi}{N}\)
+    
+</span>
+ groß (die sogenannte <em>Kreisfrequenz</em>).
+Die Stützstellen werden außerdem um 
+<span>
+                  
+        \(\frac{1}{2}\)
+    
+</span>
+ phasenverschoben und sind statt 
+<span>
+                  
+        \(i\frac{\pi}{N}\)
+    
+</span>
+
+demnach 
+<span>
+                  
+        \((i&#43;\frac{1}{2})\frac{\pi}{N}\)
+    
+</span>
+.</p>
+<p>Damit die Kosinusfunktionen 
+<span>
+                  
+        \(\cos(kx)\)
+    
+</span>
+ als Basis unserer Vektordarstellung im 
+<span>
+                  
+        \(\mathbb{R}^N\)
+    
+</span>
+ dienen können, wollen wir sie zusätzlich normalisieren. Dazu skalieren wir sie um folgenden Faktor 
+<span>
+                  
+        \(s_k\)
+    
+</span>
+:
+
+<span>
+     
+        $$s_k = \begin{cases} \sqrt{\frac{1}{N}} &amp; \text{wenn } k=0 \\ \sqrt{\frac{2}{N}} &amp; \text{sonst} \end{cases}$$
+    
+</span>
+</p>
+<p>Wir definieren also für Wellenzahlen 
+<span>
+                  
+        \(k\in\{0,1,\ldots,N-1\}\)
+    
+</span>
+ und 
+<span>
+                  
+        \(i\in\{0,1,\ldots,N-1\}\)
+    
+</span>
+ die Basisfunktionen und Stützstellen wie folgt:</p>
+<p>
+<span>
+     
+        $$\text{Basisfunktionen}\colon b_k(x_i)=s_k \cos\left( k x_i \right)$$
+    
+</span>
+
+
+<span>
+     
+        $$\text{Stützstellen}\colon x_i = (i&#43;\frac{1}{2}) \frac{\pi}{N}$$
+    
+</span>
+</p>
+<p>Setzt man die Stützstellen ein, ergibt sich:</p>
+
+<span>
+     
+        $$b_k(x_i)=s_k\cos\left(k\,(i&#43;\frac{1}{2})\frac{\pi}{N}\right) = s_k\cos\left(\frac{(2i&#43;1)k\,\pi}{2N}\right)$$
+    
+</span>
+
+<p>Für 
+<span>
+                  
+        \(N=8\)
+    
+</span>
+ sehen die Funktionen und Stützstellen damit wie folgt aus. (Die Funktionswerte der Basisfunktionen 
+<span>
+                  
+        \(b_k\)
+    
+</span>
+ an den Stützstellen 
+<span>
+                  
+        \(x_i\)
+    
+</span>
+ werden am Ende unsere neuen Basisvektoren.)</p>
+
+
+<img src="/images/docs/basisvektoren.png" alt="Basisvektoren" width="800"/>
+
+
+<p>Die Funktionswerte 
+<span>
+                  
+        \(f(x)\)
+    
+</span>
+ der Funktion, die unserem Stützstellenvektors zugrundeliegt, lassen sich also als Linearkombination der Basisfunktionen darstellen, mit Koeffizienten 
+<span>
+                  
+        \(c_k\in\mathbb{R}\)
+    
+</span>
+:
+
+<span>
+     
+        $$f(x) \sim c_0 b_0(x) &#43; c_1 b_1(x) &#43; \ldots &#43; c_{N-1} b_{N-1}(x) = \sum_{k=0}^{N-1}c_k s_k \cos(kx)$$
+    
+</span>
+</p>
+<p>Bei Audiosignalen ist die Intuition hinter einer solchen Darstellung, dass das Signal in Grundschwingungen verschiedener Frequenzen zerlegt werden kann.
+Bei Bildern hingegen kann man die Basisfunktionen als Kontraste mit steigender Frequenz verstehen (siehe MathWorks' <a href="https://www.mathworks.com/help/images/basis8.gif">grafische Darstellung der Basisfunktionen</a>). Die Linearkombination gibt dann an, welche Kontraste zu welchem Anteil im Bildraster vorkommen, wobei ein großer Koeffizientenwert bedeutet, dass der Kontrast stark ausgeprägt ist, die Unterschiede zwischen benachbarten Pixeln also relativ groß sind.</p>
+<p>Für den Anwendungsfall der Kompression interessieren uns nur die Koeffizienten, da die Basisfunktionen fix sind und nicht als Information mit gespeichert und übertragen werden müssen.
+Die Koordinatendarstellung liefert uns damit eine weitere diskrete Darstellung der Bildinformation:
+Neben der ursprünglichen Stützstellendarstellung eines Pixelrasters
+
+<span>
+     
+        $$p=\begin{pmatrix} p_0 &amp; \ldots &amp; p_{N-1} \end{pmatrix}$$
+    
+</span>
+
+wo die Elemente 
+<span>
+                  
+        \(p_i\)
+    
+</span>
+ die Graustufen- oder Farbwerte an dem räumlichen Index 
+<span>
+                  
+        \(i\)
+    
+</span>
+ sind,
+haben wir eine Koeffizientendarstellung
+
+<span>
+     
+        $$c=\begin{pmatrix} c_0 &amp; \ldots &amp; c_{N-1} \end{pmatrix}$$
+    
+</span>
+
+Die Vektorelemente in 
+<span>
+                  
+        \(c\)
+    
+</span>
+ haben dabei keine räumliche Bedeutung mehr.
+Entscheidend ist, dass sich in der Koeffizientendarstellung 
+<span>
+                  
+        \(c\)
+    
+</span>
+ die visuell wichtigen Information des Bildes in einigen wenigen Koeffizienten konzentriert.
+Die Koeffizientendarstellung erlaubt es also prinzipiell, sehr viel mehr Informationen wegzuwerfen als die Stützstellendarstellung, ohne einen deutliche Informationsverlust zu erleiden.</p>
+<p>Um das für die Bildkompression ausnutzen zu können, brauchen wir aber noch eine Abbildung von 
+<span>
+                  
+        \(p\)
+    
+</span>
+ auf 
+<span>
+                  
+        \(c\)
+    
+</span>
+ und umgekehrt.</p>
+<h1 id="diskrete-kosinustransformation">Diskrete Kosinustransformation</h1>
+<p>Bisher haben wir zwei Vektordarstellungen in 
+<span>
+                  
+        \(\mathbb{R}^N\)
+    
+</span>
+ betrachtet: eine Darstellung 
+<span>
+                  
+        \(p\)
+    
+</span>
+ bezüglich der kanonischen Basis, die wir als Stützstellendarstellung einer zugrundeliegenden Funktion 
+<span>
+                  
+        \(f\)
+    
+</span>
+ interpretiert haben, und eine Koordinatendarstellung 
+<span>
+                  
+        \(c\)
+    
+</span>
+  von 
+<span>
+                  
+        \(f\)
+    
+</span>
+ bezüglich einer Basis von Kosinusfunktionen verschiedener Frequenzen.
+Die Darstellung 
+<span>
+                  
+        \(c\)
+    
+</span>
+ stellt sich dabei als sehr viel besser komprimierbar heraus. Um das nutzen zu können, brauchen wir eine Abbildung von der Stützstellendarstellung 
+<span>
+                  
+        \(p\)
+    
+</span>
+ auf die Koeffizientendarstellung 
+<span>
+                  
+        \(c\)
+    
+</span>
+ und umgekehrt.
+Beide Darstellungen sind Vektoren im Raum 
+<span>
+                  
+        \(\mathbb{R}^N\)
+    
+</span>
+ und wir werden sehen, dass die Abbildung zwischen ihnen einem Basiswechsel entspricht.</p>
+<p>Betrachten wir zuerst die Abbildung eines Koeffizientenvektors 
+<span>
+                  
+        \(c\)
+    
+</span>
+ auf den entsprechenden Stützstellenvektor 
+<span>
+                  
+        \(p\)
+    
+</span>
+. Dazu berechnen wir den Funktionswert 
+<span>
+                  
+        \(f(x_i)\)
+    
+</span>
+ (eine Linearkombination der Basisfunktionen 
+<span>
+                  
+        \(b_k\)
+    
+</span>
+) an den einzelnen Stützstellen 
+<span>
+                  
+        \(x_i\)
+    
+</span>
+ durch Einsetzen:</p>
+<p>(1)
+
+<span>
+     
+        $$f(x_i) = \sum_{k=0}^{N-1}c_k b_k = \sum_{k=0}^{N-1}c_k s_k\cos(k x_i) = \sum_{k=0}^{N-1}c_k\,s_k \cos(k\,(i&#43;\frac{1}{2})\frac{\pi}{N})$$
+    
+</span>
+</p>
+<p>Die Funktionswerte 
+<span>
+                  
+        \(f(x_i)\)
+    
+</span>
+ bilden die Elemente des Vektors 
+<span>
+                  
+        \(p=\begin{pmatrix} p_0 &amp; \ldots &amp; p_i &amp; \ldots &amp; p_{N-1} \end{pmatrix}\)
+    
+</span>
+, der sich also wie folgt zusammensetzt:</p>
+<p>
+<span>
+     
+        $$p_0 = f(x_0) = c_0b_0(x_0) &#43; c_1b_1(x_0) &#43; \ldots &#43; c_{N-1}b_{N-1}(x_0)$$
+    
+</span>
+
+
+<span>
+     
+        $$\ldots$$
+    
+</span>
+
+
+<span>
+     
+        $$p_i = f(x_i) = c_0b_0(x_i) &#43; c_1b_1(x_i) &#43; \ldots &#43; c_{N-1}b_{N-1}(x_i)$$
+    
+</span>
+
+
+<span>
+     
+        $$\ldots$$
+    
+</span>
+
+
+<span>
+     
+        $$p_{N-1} = f(x_{N-1}) = c_0b_0(x_{N-1}) &#43; c_1b_1(x_{N-1}) &#43; \ldots &#43; c_{N-1}b_{N-1}(x_{N-1})$$
+    
+</span>
+</p>
+<p>Der Vektor 
+<span>
+                  
+        \(p\)
+    
+</span>
+ ist demnach das Produkt aus dem Koeffizientenvektor 
+<span>
+                  
+        \(c=\begin{pmatrix} c_0 &amp; c_1 &amp; \ldots &amp; c_{N-1} \end{pmatrix}\)
+    
+</span>
+ und einer Matrix mit den Basisfunktionen als Elemente, die wir 
+<span>
+                  
+        \(T\)
+    
+</span>
+ nennen:</p>
+<p>(2)
+
+<span>
+     
+        $$p = c\cdot T = \begin{pmatrix} c_0 &amp; c_1 &amp; \ldots &amp; c_{N-1} \end{pmatrix} \cdot    \begin{pmatrix}    b_0(x_0) &amp; b_0(x_1) &amp; \ldots &amp; b_0(x_{N-1}) \\   \vdots &amp; \vdots &amp; &amp; \vdots \\    b_i(x_0) &amp; b_i(x_1) &amp; \ldots &amp; b_i(x_{N-1}) \\    \vdots &amp; \vdots &amp; &amp; \vdots \\    b_{N-1}(x_0) &amp; b_{N-1}(x_1) &amp; \ldots &amp; b_{N-1}(x_{N-1})    \end{pmatrix}$$
+    
+</span>
+</p>
+<p>Die Elemente der Matrix 
+<span>
+                  
+        \(T\)
+    
+</span>
+ sind also:</p>
+
+<span>
+     
+        $$T_{ij} = b_i(x_j) = s_i \cos(i\cdot(j&#43;\frac{1}{2})\cdot\frac{\pi}{N}) = \begin{cases}    \sqrt{\frac{1}{N}} &amp; \text{ falls } i = 0 \\    \sqrt{\frac{2}{N}}\cos(i\cdot(j&#43;\frac{1}{2})\cdot\frac{\pi}{N}) &amp; \text{ sonst }\end{cases}$$
+    
+</span>
+
+<p>Die Matrix 
+<span>
+                  
+        \(T\)
+    
+</span>
+ ist orthogonal, d.h. ihre Spaltenvektoren 
+<span>
+                  
+        \(t_k,t_l\)
+    
+</span>
+ sind normalisiert und paarweise orthogonal bezüglich dem Standardskalarprodukt des 
+<span>
+                  
+        \(\mathbb{R}^N\)
+    
+</span>
+:
+
+<span>
+     
+        $$\langle t_k,t_l\rangle = t_k^\top t_l= \sum_{n=0}^{N-1} t_{kn} t_{ln} = \begin{cases} 1 &amp; \text{ falls } k=l \\ 0 &amp; \text{ sonst} \end{cases}$$
+    
+</span>
+</p>
+<p>Die Spaltenvektoren von 
+<span>
+                  
+        \(T\)
+    
+</span>
+ sind demnach linear unabhängig und bilden eine Orthonormalbasis von 
+<span>
+                  
+        \(\mathbb{R}^N\)
+    
+</span>
+. Die Matrix 
+<span>
+                  
+        \(T\)
+    
+</span>
+ selber ist also eine Basiswechselmatrix. Aus der Orthogonalität von 
+<span>
+                  
+        \(T\)
+    
+</span>
+ folgt, dass sie invertierbar ist, wobei die Inverse 
+<span>
+                  
+        \(T^{-1}\)
+    
+</span>
+ gleich der Transponierten 
+<span>
+                  
+        \(T^\top\)
+    
+</span>
+ ist.</p>
+<p>Aus 
+<span>
+                  
+        \(p = c\cdot T\)
+    
+</span>
+ folgt daher 
+<span>
+                  
+        \(p\cdot T^{-1} = c\)
+    
+</span>
+ und damit auch 
+<span>
+                  
+        \(p\cdot T^\top = c\)
+    
+</span>
+, d.h.:</p>
+<p>(3)
+
+<span>
+     
+        $$c = \begin{pmatrix} p_0 &amp; \ldots &amp; p_i &amp; \ldots &amp; p_{N-1} \end{pmatrix} \cdot \begin{pmatrix}    b_0(x_0) &amp; b_1(x_0) &amp; \ldots &amp; b_{N-1}(x_0) \\    \vdots &amp; \vdots &amp; &amp; \vdots \\    b_0(x_i) &amp; b_1(x_i) &amp; \ldots &amp; b_{N-1}(x_i) \\    \vdots &amp; \vdots &amp; &amp; \vdots \\    b_0(x_{N-1}) &amp; b_1(x_{N-1}) &amp; \ldots &amp; b_{N-1}(x_{N-1})    \end{pmatrix}$$
+    
+</span>
+</p>
+<p>Daraus ergeben sich die Koeffizienten, die die Vektorelemente von 
+<span>
+                  
+        \(c\)
+    
+</span>
+ bilden, wie folgt:</p>
+<p>(4)
+
+<span>
+     
+        $$c_i = p_0\,b_i(x_0) &#43; p_1\,b_i(x_1) &#43; \ldots &#43; p_{N-1}\,b_i(x_{N-1})$$
+    
+</span>
+
+
+<span>
+     
+        $$= \sum_{k=0}^{N-1} p_k\,b_i(x_k)$$
+    
+</span>
+
+
+<span>
+     
+        $$= \sum_{k=0}^{N-1} p_k\,s_i \cos(i\cdot(k&#43;\frac{1}{2})\cdot\frac{\pi}{N})$$
+    
+</span>
+</p>
+<p>Mit (2) und (3) haben wir Abbildungen 
+<span>
+                  
+        \(\mathbb{R}^{N}\to\mathbb{R}^{N}\)
+    
+</span>
+ zwischen 
+<span>
+                  
+        \(p\)
+    
+</span>
+ und 
+<span>
+                  
+        \(c\)
+    
+</span>
+, die <strong>Diskrete Kosinustransformation II</strong> genannt werden.</p>
+<h2 id="1d">1D</h2>
+<p>Im eindimensionalen Fall definiert man die Abbildung 
+<span>
+                  
+        \(p\mapsto c\)
+    
+</span>
+ und ihre Inverse 
+<span>
+                  
+        \(c\mapsto p\)
+    
+</span>
+ üblicherweise als Formel, um aus den Elementen von 
+<span>
+                  
+        \(p\)
+    
+</span>
+ die Elemente von 
+<span>
+                  
+        \(c\)
+    
+</span>
+ zu berechnen und umgekehrt. Diese Formeln ergeben sich direkt aus (1) und (4), nur unter Umbenennung von Indizes, wobei 
+<span>
+                  
+        \(i,\in\{0,\ldots,N-1\}\)
+    
+</span>
+ jeweils Vektorindizes sind:</p>
+<p>
+<span>
+     
+        $$p_i = \sum_{k=0}^{N-1}c_k\,s_k\cos(k\cdot(i&#43;\frac{1}{2})\cdot\frac{\pi}{N})$$
+    
+</span>
+
+
+<span>
+     
+        $$c_k = \sum_{i=0}^{N-1}p_i\,s_k\cos(k\cdot(i&#43;\frac{1}{2})\cdot\frac{\pi}{N})$$
+    
+</span>
+</p>
+<h2 id="2d">2D</h2>
+<p>Der zweidimensionale Fall lässt sich auf den eindimensionalen Fall zurückführen, indem beide Dimensionen getrennt transformiert werden.
+Das Bildraster 
+<span>
+                  
+        \(P\)
+    
+</span>
+ ist eine 
+<span>
+                  
+        \(N\times N\)
+    
+</span>
+-Matrix, deren Zeilenvektoren die Vektoren 
+<span>
+                  
+        \(p\)
+    
+</span>
+ sind. Zunächst werden diese Zeilenvektoren eindimensional transformiert, indem man sie mit 
+<span>
+                  
+        \(T^\top\)
+    
+</span>
+ multipliziert. Das Ergebnis ist eine 
+<span>
+                  
+        \(N\times N\)
+    
+</span>
+-Matrix 
+<span>
+                  
+        \(A = P\cdot T^\top\)
+    
+</span>
+. Um die Spalten auf die gleiche Weise zu transformieren, transponiert man diese Matrix 
+<span>
+                  
+        \(A\)
+    
+</span>
+, multipliziert sie erneut mit 
+<span>
+                  
+        \(T^\top\)
+    
+</span>
+ und transponiert sie anschließend wieder zurück. Das Ergebnis ist die Matrix 
+<span>
+                  
+        \(C=(A^\top\cdot T^\top)^\top = T\cdot A\)
+    
+</span>
+, deren Elemente nun Koeffizienten sind.
+Aus 
+<span>
+                  
+        \(C = T\cdot A\)
+    
+</span>
+ und 
+<span>
+                  
+        \(A = P\cdot T^\top\)
+    
+</span>
+ ergibt sich direkt, dass:
+
+<span>
+     
+        $$C = T\cdot P\cdot T^\top$$
+    
+</span>
+</p>
+<p>Die zweidimensionale Formel für die Berechnung von Elementen 
+<span>
+                  
+        \(C_{ij}\)
+    
+</span>
+ der Koeffizientenmatrix aus Elementen 
+<span>
+                  
+        \(P_{xy}\)
+    
+</span>
+ der Bildmatrix und umgekehrt entspricht dann einer Hintereinanderausführung der entsprechenden eindimensionalen Formeln, wobei 
+<span>
+                  
+        \(i,j,x,y\in\{0,\ldots,N-1\}\)
+    
+</span>
+ jeweils Vektorindizes sind:</p>
+<p>
+<span>
+     
+        $$P_{xy} = \sum_{i=0}^{N-1}\sum_{j=0}^{N-1} C_{ij}\,s_x\, s_y\, \cos(x\cdot(i&#43;\frac{1}{2})\cdot\frac{\pi}{N})\, \cos(y\cdot(j&#43;\frac{1}{2})\cdot\frac{\pi}{N})$$
+    
+</span>
+
+
+<span>
+     
+        $$C_{ij} = \sum_{x=0}^{N-1}\sum_{y=0}^{N-1} P_{xy}\,s_x\, s_y\, \cos(x\cdot(i&#43;\frac{1}{2})\cdot\frac{\pi}{N})\, \cos(y\cdot(j&#43;\frac{1}{2})\cdot\frac{\pi}{N})$$
+    
+</span>
+</p>
+<p>Da die Basisfunktionen im Voraus berechnet werden können, ist die Transformation insgesamt effizient berechenbar.</p>
+<h1 id="beispiel">Beispiel</h1>
+<p>Betrachten wir das Pixelraster vom Beginn:</p>
+
+
+<img src="/images/docs/pixelraster-graustufen-shifted.png" alt="Pixelraster (Graustufen)" width="340" style="display: block; margin: auto; padding: 10px;"/>
+
+
+<p>Nach Anwendung der Diskreten Kosinustransformation bekommen wir ein Raster von Koeffizienten, in dem sich große Werte vor allem links oben konzentrieren:</p>
+
+<span>
+     
+        $$\begin{array}{rrrrrrr} 441.4 &amp;	313.7 &amp; -10.6 &amp;	27.5 &amp; -6.5 &amp; -2.6 &amp; 0.4 &amp; -4.0 \\ 539.2 &amp; -236.3 &amp; -61.2 &amp; -11.5 &amp; -5.6 &amp; 5.4 &amp; -0.3 &amp; 5.0 \\ -175.5 &amp; -86.2 &amp; 124.0 &amp; 3.4 &amp; 9.1 &amp; -3.6 &amp; 0.9 &amp; -2.7 \\ 17.8 &amp; 136.7 &amp; -30.0 &amp; -42.8 &amp; 5.4 &amp; -8.3 &amp; 3.5 &amp; 0.0 \\ -26.1 &amp; -44.0 &amp; -45.2 &amp; 23.8 &amp; 11.0 &amp; 0.6 &amp; -3.0 &amp; 1.8 \\ 20.6 &amp; 20.0 &amp; 16.4 &amp; 21.1 &amp; -16.4 &amp; 1.3 &amp; 0.4 &amp; -4.1 \\ -12.3 &amp; -17.8 &amp; -2.9 &amp; -8.3 &amp; -9.2 &amp; 5.3 &amp; 2.1 &amp; 5.0 \\ 8.5 &amp; 3.8 &amp; 9.5 &amp; -11.3 &amp; 15.8 &amp; -3.1 &amp; -5.9 &amp; -0.2 \end{array}$$
+    
+</span>
+
+<p>Der Informationsverlust passiert nun im nächsten Schritt der <strong>Quantisierung</strong>. Das Ziel ist es, Koeffizienten nur so präzise wie nötig zu speichern. Kleine Koeffizienten, zum Beispiel, spielen für die visuelle Wahrnehmung kaum eine Rolle.
+Dazu werden nun alle Koeffizienten 
+<span>
+                  
+        \(C_{ij}\)
+    
+</span>
+ mit einer Schrittgröße 
+<span>
+                  
+        \(Q_{ij}\)
+    
+</span>
+ geteilt und ganzzahlig gerundet:</p>
+
+<span>
+     
+        $$C&#39;_{ij}=\text{round}_\text{int}(\frac{C_{ij}}{Q_{ij}})$$
+    
+</span>
+
+<p>Die Schrittwerte werden einer Quantisierungstabelle entnommen und bestimmen, wie groß der Informationsverlust und damit auch die Kompressionsrate (und letztendlich die Bildqualität) ist. Intuitiv entspricht die Schrittgröße einem Wahrnehmungsschwellwert: bis zu welchem Koeefizienten man den Beitrag der entsprechenden Basisfunktion visuell wahrnehmen kann.</p>
+<p>Je nachdem, welche Tabelle des JPEG-Standards man anwendet, ergeben sich zum Beispiel diese Raster:</p>
+
+<span>
+     
+        $$\begin{array}{r} 28 &amp; 29 &amp; -1 &amp; 2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 45 &amp; -20 &amp; -4 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ -13 &amp; -7 &amp; 8 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 8 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 6 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \qquad \begin{array}{r} 26 &amp; 17 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 30 &amp; -11 &amp; -2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ -7 &amp; -3 &amp; 2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}$$
+    
+</span>
+
+<p>Ordnet man diese Werte nun nach folgendem Muster, bekommt man eine Reihe, in der die Elemente so geordnet sind, dass die von Null verschiedenen Elemente am Anfang stehen und man einen Großteil der Information nicht mehr speichern muss.</p>
+
+
+<img src="/images/docs/jpeg-zigzag.png" alt="Basisvektoren" width="200" style="display: block; margin: auto; padding: 10px;"/>
+
+
+<p>Um die Quantisierung beim Dekodieren wieder rückgängig zu machen, multipliziert man die Werte mit der Schrittgröße:
+
+<span>
+                  
+        \(C_{ij}=C&#39;_{ij}Q_{ij}\)
+    
+</span>
+.
+Die Koeffizientenraster, die man so rekonstruiert, entsprechen aufgrund des Informationsverlustes nicht exakt den ursprünglichen Koeffizienten, aber rekonstruiert man daraus wieder ein Pixelraster, ist der Unterschied visuell nur bei hoher Kompressionsrate sichtbar.</p>
+<p>Zumindestens gilt das für natürliche Bilder, wo Übergänge auf Pixelebene fließend sind. Denn die Quantisierungstabellen gehen von der Annahme aus, dass sehr harte Übergänge von einem Pixel zum nächsten nicht vorkommen. Ist das in einer Bitmap der Fall, z.B. bei Textdokumenten, dann sind die Informationen gleichmäßiger über die Koeffizienten verteilt, was dazu führt, dass bei der Kompression fälschlicherweise auch für die Wahrnehmung relevante Informationen weggeworfen werden, was dann sichtbare Fehler bei der Rekonstruktion (sogenannte JPEG-Artefakte) zur Folge hat.</p>
+<h1 id="referenzen">Referenzen</h1>
+<p>Berner, Julius: <a href="https://jberner.info/data/BSc_Thesis_Berner.pdf">Diskrete Kosinustransformation in der Bildverarbeitung.</a> BSc Thesis, Universität Wien, 2016.</p>
+<p>Burger, Wilhelm und Mark James Burge: Digitale Bildverarbeitung. Springer eXamen.press, 2006.</p>
+<p>Pound, Mike: <a href="https://www.youtube.com/watch?v=Q2aEzeMDHMA">Discrete Cosine Transform (JPEG Pt2)</a>. YouTube, 2015.</p>
+<p>Lang, Hans Werner: <a href="https://www.inf.hs-flensburg.de/lang/algorithmen/fft/dct.htm">Diskrete Cosinus-Transformation (DCT).</a> Hochschule Flensburg, 2005.</p>
+<p>Wallace, Gregory K. <a href="https://ieeexplore.ieee.org/document/125072/">The JPEG Still Picture Compression Standard.</a> IEEE Transactions on Consumer Electronics, 38(1), 1992.</p>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2022 (c) Christina Unger</span></li>
+      <li>
+        Rendered with <a href="https://gohugo.io/">Hugo</a>. Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

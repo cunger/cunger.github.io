@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Applied Mathematics on Escape Velocity</title>
+    <link>http://cunger.github.io/notes/appliedmath/</link>
+    <description>Recent content in Applied Mathematics on Escape Velocity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 20 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/notes/appliedmath/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diskrete Kosinustransformation</title>
+      <link>http://cunger.github.io/notes/appliedmath/dct/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/appliedmath/dct/</guid>
+      <description>Ein Blick ins mathematische Herz der JPEG-Bildkompression</description>
+    </item>
+    
+  </channel>
+</rss>
