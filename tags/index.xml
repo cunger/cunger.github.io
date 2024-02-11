@@ -6,20 +6,47 @@
     <description>Recent content in Tags on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>books</title>
-      <link>http://cunger.github.io/tags/books/</link>
-      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      <title>network</title>
+      <link>http://cunger.github.io/tags/network/</link>
+      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/tags/books/</guid>
+      <guid>http://cunger.github.io/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>applied math</title>
+      <link>http://cunger.github.io/tags/applied-math/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/tags/applied-math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dsp</title>
+      <link>http://cunger.github.io/tags/dsp/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/tags/dsp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image compression</title>
+      <link>http://cunger.github.io/tags/image-compression/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/tags/image-compression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>climate change</title>
       <link>http://cunger.github.io/tags/climate-change/</link>
-      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/tags/climate-change/</guid>
       <description></description>

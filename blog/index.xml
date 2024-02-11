@@ -1,36 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Escape Velocity</title>
+    <title>🐇🕳️ on Escape Velocity</title>
     <link>http://cunger.github.io/blog/</link>
-    <description>Recent content in Blog on Escape Velocity</description>
+    <description>Recent content in 🐇🕳️ on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Books galore</title>
-      <link>http://cunger.github.io/blog/books/</link>
-      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Network programming</title>
+      <link>http://cunger.github.io/blog/network-programming/</link>
+      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/blog/books/</guid>
-      <description>Nancy Leveson: Engineering a safer world.
-Wassili Golowanow: Die Insel.
-Merlin Sheldrake: Entangled life: How fungi make our worlds, change our minds &amp;amp; shape our futures.
-Charles Seife: Decoding the universe.
-Jurek Becker: Am Strand von Bochum ist allerhand los.
-Ryusho Kadota, Akira Tokuhiro, Simon Varnam: On the brink: The inside story of Fukushima Daiichi.
-Adam Higginbotham: Midnight in Chernobyl.
-Fabian Scheidler: The end of the megamachine: a brief history of a failing civilization.</description>
+      <guid>http://cunger.github.io/blog/network-programming/</guid>
+      <description>Computer networking 101 The point of a network is to send data between machines.
+The nodes of the network are physical devices like computers or printers. The connection between them can be wired, for example Ethernet cables, or wireless, like WiFi.
+Each physical node has a network interface card, a piece of hardware that can translate between digital data and the signals sent over the network.
+Since the operating system controls access to hardware, it controls the network interface.</description>
     </item>
     
     <item>
-      <title>We are all terraformers</title>
-      <link>http://cunger.github.io/blog/we-are-all-terraformers/</link>
-      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Diskrete Kosinustransformation</title>
+      <link>http://cunger.github.io/blog/dct/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/blog/we-are-all-terraformers/</guid>
-      <description>Today is Drawdown Day and it starts with a cool morning breeze, the first one since last week&amp;rsquo;s heat wave.
-The radio announces that it&amp;rsquo;s 7 am as I pass by the basalt statues on my way to work. Although I must have seen them a hundred times, I still marvel at them. Ten tons of sequestered carbon, formed into a row of extinct animals, marching as if they were leaving Earth.</description>
+      <guid>http://cunger.github.io/blog/dct/</guid>
+      <description>Digitale Bilder und Bildkompression In der Digitalfotographie werden Bilder als Bitmaps aufgenommen und dargestellt: als  \(M\times N\)  -Raster von quadratischen Bildelementen (Pixeln), wobei  \(M\)  die Breite und  \(N\)  die Höhe des Bildes in Pixeln ist.
+Jeder einzelne Pixel kann  \(2^b\)  Werte annehmen, üblicherweise von  \(0\)  bis  \(2^b-1\)  für ein geeignetes  \(b\in\mathbb{N}\)  . Dabei wird  \(b\)  als Bittiefe bezeichnet und entspricht der Anzahl von Bits, die für die Speicherung der Information eines Pixels benötigt werden.</description>
     </item>
     
     <item>
