@@ -97,5 +97,15 @@
       <description>Literatur, Kurse, usw.</description>
     </item>
     
+    <item>
+      <title>Diskrete Kosinustransformation</title>
+      <link>http://cunger.github.io/notes/math/dct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/math/dct/</guid>
+      <description>Digitale Bilder und Bildkompression In der Digitalfotographie werden Bilder als Bitmaps aufgenommen und dargestellt: als  \(M\times N\)  -Raster von quadratischen Bildelementen (Pixeln), wobei  \(M\)  die Breite und  \(N\)  die Höhe des Bildes in Pixeln ist.
+Jeder einzelne Pixel kann  \(2^b\)  Werte annehmen, üblicherweise von  \(0\)  bis  \(2^b-1\)  für ein geeignetes  \(b\in\mathbb{N}\)  . Dabei wird  \(b\)  als Bittiefe bezeichnet und entspricht der Anzahl von Bits, die für die Speicherung der Information eines Pixels benötigt werden.</description>
+    </item>
+    
   </channel>
 </rss>

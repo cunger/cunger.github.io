@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>numbers on Escape Velocity</title>
+    <link>http://cunger.github.io/tags/numbers/</link>
+    <description>Recent content in numbers on Escape Velocity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language><atom:link href="http://cunger.github.io/tags/numbers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Numbers</title>
+      <link>http://cunger.github.io/notes/dev/numbers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/numbers/</guid>
+      <description>Bits and byte ranges The smallest unit of information are the bits (binary digits) 1 and 0.
+Most computers don&amp;rsquo;t access individual bits in memory, but use blocks of 8 bits (bytes) as smallest addressable unit of memory.
+Byte ranges:
+ In binary notation: from 00000000 to 11111111 In decimal notation: from 0 to 255 (there are 2^8 = 256 combinations of eight 0s and 1s) In hexadecimal notation: from 00 to FF  Hex 0 1 2 3 4 5 6 7 8 9 A B C D E F Dec 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111 Bytes are combined into words of 1 to 8 bytes.</description>
+    </item>
+    
+  </channel>
+</rss>
