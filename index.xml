@@ -6,7 +6,7 @@
     <description>Recent content on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 28 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebraische Strukturen</title>
       <link>http://cunger.github.io/notes/math/algebra/</link>
@@ -209,15 +209,25 @@ Since the operating system controls access to hardware, it controls the network 
     </item>
     
     <item>
-      <title>About</title>
+      <title>Ada for the curious</title>
+      <link>http://cunger.github.io/booklets/ada-for-the-curious/</link>
+      <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/booklets/ada-for-the-curious/</guid>
+      <description>This booklet is for developers who are curious about Ada.
+Contrary to some 🦕 associations you might have, Ada is a modern language, with modules, a strong type system, and easy-to-use concurrency. It&amp;rsquo;s blazing fast, backed by a cool community, and it&amp;rsquo;s easy to learn.
+Instead of giving an extensive introduction to everything you can easily look up yourself, I want to highlight some of the aspects that make Ada worth looking into.</description>
+    </item>
+    
+    <item>
+      <title>Hi, I&#39;m Christina</title>
       <link>http://cunger.github.io/about/</link>
       <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>Hi, I&amp;rsquo;m Christina, a software engineer with 8 years of experience in building and maintaining large code bases, a background in formal logic, and a strong interest in nuclear technology and software system safety.
+      <description>Software engineer with 8 years of experience in building and maintaining large code bases, a foundation in formal logic and applied mathematics, and a strong interest in nuclear technology and software system dependability.
 I enjoy working with complex legacy systems, and thrive in multidisciplinary settings and non-mainstream niches.
-Links I have stuff on GitHub and LinkedIn.
-What&amp;rsquo;s this? These pages are notes for my future self, as I&amp;rsquo;m sure it will need to look up stuff regularly.</description>
+Technologies  .badge { display: inline-block; text-align: left; background: #e2e2e2; font-size: 14px; font-weight: 600; padding: 6px 16px 6px 16px; margin: 6px 6px 0 0; border-radius: 8px; white-space: nowrap; } .</description>
     </item>
     
     <item>

@@ -78,8 +78,20 @@
     <loc>http://cunger.github.io/notes/math/references/</loc>
     <lastmod>2022-08-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://cunger.github.io/tags/ada/</loc>
+    <lastmod>2024-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/booklets/ada-for-the-curious/</loc>
+    <lastmod>2024-06-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cunger.github.io/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/tags/</loc>
+    <lastmod>2024-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/booklets/</loc>
+    <lastmod>2024-06-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/notes/</loc>
     <lastmod>2022-11-28T00:00:00+00:00</lastmod>
@@ -105,9 +117,5 @@
     <loc>http://cunger.github.io/notes/dev/numbers/</loc>
   </url><url>
     <loc>http://cunger.github.io/tags/numbers/</loc>
-  </url><url>
-    <loc>http://cunger.github.io/tags/</loc>
-  </url><url>
-    <loc>http://cunger.github.io/books/</loc>
   </url>
 </urlset>
