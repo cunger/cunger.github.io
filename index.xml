@@ -220,14 +220,14 @@ Instead of giving an extensive introduction to everything you can easily look up
     </item>
     
     <item>
-      <title>Hi, I&#39;m Christina</title>
+      <title>About me</title>
       <link>http://cunger.github.io/about/</link>
       <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>Software engineer with 8 years of experience in building and maintaining large code bases, a foundation in formal logic and applied mathematics, and a strong interest in nuclear technology and software system dependability.
-I enjoy working with complex legacy systems, and thrive in multidisciplinary settings and non-mainstream niches.
-Technologies  .badge { display: inline-block; text-align: left; background: #e2e2e2; font-size: 14px; font-weight: 600; padding: 6px 16px 6px 16px; margin: 6px 6px 0 0; border-radius: 8px; white-space: nowrap; } .</description>
+      <description>Hi, I&amp;rsquo;m Christina, a software engineer with 8 years of experience in building and maintaining large code bases.
+I particularly enjoy working with complex legacy systems. I love digging through layers of patchwork architecture grown over years and decades, step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
+I have a background in formal logic and a strong interest in nuclear technology (fission and fusion).</description>
     </item>
     
     <item>
