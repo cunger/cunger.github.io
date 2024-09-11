@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.92.2" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ada for the curious | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Ada for the curious" />
+<meta property="og:description" content="This post is for developers who are curious about Ada.
+Contrary to some associations you might have (🦕?), Ada is a modern language, with modules, a strong type system, and easy-to-use concurrency. It&rsquo;s blazing fast (🚀!), backed by a cool community, and it&rsquo;s easy to learn.
+Instead of giving an extensive introduction to syntax you can easily look up yourself, I want to highlight some of the aspects that make Ada worth looking into." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/blog/ada-for-the-curious/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-06-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-06-22T00:00:00+00:00" />
+
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/blog/ada-for-the-curious/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/notes">🐇🕳️ Rabbit holes</a></li>
+       <li><a href="/blog">📚 Blog</a></li>
+       <li><a href="/about">About me</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Ada for the curious </h1>
+      <p class="hero-lead">
+         
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <p>This post is for developers who are curious about Ada.</p>
+<p>Contrary to some associations you might have (🦕?), Ada is a modern language,
+with modules, a strong type system, and easy-to-use concurrency.
+It&rsquo;s blazing fast (🚀!), backed by a cool community, and it&rsquo;s easy to learn.</p>
+<p>Instead of giving an extensive introduction to syntax you can easily look up yourself,
+I want to highlight some of the aspects that make Ada worth looking into.</p>
+<p>Consider it a teaser that gets you to know Ada enough to decide whether you like it or not,
+and provides pointers where to explore further if you do.</p>
+<p>Let&rsquo;s skip <a href="https://en.wikibooks.org/wiki/Ada_Programming/Basic#%22Hello,_world!%22_programs">&ldquo;Hello, world!&quot;</a>
+and start with a countdown instead:</p>
+<pre tabindex="0"><code>with Ada.Text_IO; use Ada.Text_IO;
+
+procedure Countdown is
+begin
+   for I in reverse 1 .. 10 loop
+      Put_Line (Integer'Image (I));
+   end loop;
+
+   Put_Line (&quot;Lift off!&quot;);
+end Countdown;
+</code></pre><p>Ada might look unfamiliar if you grew up with C-family languages,
+because its syntax was based on Pascal. But it&rsquo;s a classical procedural language.</p>
+<p>So what&rsquo;s special about it?</p>
+<h1 id="what-makes-ada-different">What makes Ada different</h1>
+<p>The development of Ada was originally sponsored by the US Department of Defense,
+when they noticed they spend way too much money on building and fixing embedded systems.
+Since the first version in 1983, the language has developed continuously and far beyond embedded systems,
+but the most important point to understand about Ada&rsquo;s origin is:</p>
+<p><strong>Ada was designed specifically for safety-critical software.</strong></p>
+<p>More than anything else, this has shaped who Ada is.</p>
+<p>You notice it when looking at the main application areas of Ada: aircrafts, ships,
+railway control, medical devices, defense, space.
+But you also notice it as a programmer using Ada.</p>
+<p>Ada wants you to produce correct programs. Therefore:</p>
+<ul>
+<li>Ada wants to make it easy for you to properly engineer a solution.</li>
+<li>Ada wants to make it easy for you to express your intent
+clearly - both towards the compiler and towards your fellow humans.</li>
+<li>Ada wants to make it hard for you to make errors.</li>
+</ul>
+<p><strong>As a consequence, Ada is easy to understand and easy to get right.</strong></p>
+<p>I let you judge yourself.
+For me, personally, Ada feels very different in a subtle way.
+And that&rsquo;s because the language is working with you, and not against you.
+It gently forces you to design when you code. And it provides safety nets everywhere.</p>
+<p>Of course this comes at a cost.
+It means that Ada is not ideal for fast prototyping or for dynamic meta-programming.
+Ada was made to write well-designed, solid code, that works well and
+that your colleagues can still read when coming back to it after years.</p>
+<p>That&rsquo;s where Ada shines.</p>
+<p>But that doesn&rsquo;t mean you can&rsquo;t use it for small fun projects.</p>
+<p>If you prefer designing over debugging, I bet you will enjoy Ada.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/3e-BGblAMC4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h1 id="what-makes-ada-fun">What makes Ada fun</h1>
+<p>Here are a few characteristics of Ada that &hellip;</p>
+<h2 id="separation-of-concerns">Separation of concerns</h2>
+<p>and how this blends design and implementation</p>
+<p>specification and body</p>
+<p>design in code</p>
+<p>building blocks</p>
+<pre tabindex="0"><code>declare
+   -- local declarations (visible within this unit but nowhere else)
+   -- can include constants, variables,functions, procedures
+   -- note that declared variables are not initialized by default
+begin
+   -- sequence of statements or nested blocks
+exception
+   -- handling exceptions
+end;
+</code></pre><h2 id="simplicity">Simplicity</h2>
+<p>There is <a href="https://inf.ethz.ch/news-and-events/spotlights/infk-news-channel/2021/11/niklaus-wirth-video-interview.html">a very nice interview</a>
+with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
+where he remembers that during his time, all existing programming languages were unneccessarily complex.
+He wanted to design a language that is as simple as possible, of course without losing power.</p>
+<p>In Ada, you see some of this legacy.
+For example, you define an exception like this:</p>
+<pre tabindex="0"><code>Timestamp_Is_In_The_Past : exception;
+</code></pre><p>You raise it like this:</p>
+<pre tabindex="0"><code>raise Timestamp_Is_In_The_Past;
+</code></pre><p>Or, if you want to include more information, like this:</p>
+<pre tabindex="0"><code>raise Timestamp_Is_In_The_Past with &quot;Input timestamp cannot be in the past&quot;;
+</code></pre><p>That&rsquo;s it. For basic exceptions, this is arguably all you need.</p>
+<h2 id="the-type-system">The type system</h2>
+<p>I never thought the answer to what are the cool features of a language would be: its type system.
+I also thought I knew strong typing.
+Until I met Ada.</p>
+<p>Imagine there is an integer type and nobody is using it</p>
+<p>Ada offers a few safety nets. One of the nicest is baked into the type system; Richard Riehle calls it precision datatypes.</p>
+<p>First, you can derive one type from another. Both types are different, and you will never be able to mix them.
+For example, if you define:</p>
+<pre tabindex="0"><code>𝚝𝚢𝚙𝚎 𝙿𝚘𝚞𝚗𝚍_𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
+𝚝𝚢𝚙𝚎 𝙽𝚎𝚠𝚝𝚘𝚗_𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
+</code></pre><p>Then providing <code>Pound_Seconds</code> when a function expects <code>Newton_Seconds</code>, or taking the sum of both, will not work. You need to explicitely convert one into the other. (I&rsquo;m sure <a href="">the Mars Climate Orbiter</a> would have liked this.)</p>
+<p>What is even better is that you can define the range that the type should cover.
+For example, we can define temperature like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#111">𝚝𝚢𝚙𝚎</span> <span style="color:#111">𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_𝙲</span> <span style="color:#111">𝚒𝚜</span> <span style="color:#111">𝚗𝚎𝚠</span> <span style="color:#111">𝙵𝚕𝚘𝚊𝚝</span> <span style="color:#111">𝚛𝚊𝚗𝚐𝚎</span> <span style="color:#f92672">-</span><span style="color:#111">𝟸𝟽𝟹</span><span style="color:#111">.</span><span style="color:#111">𝟷𝟻</span><span style="color:#111">..</span><span style="color:#111">𝟹𝟶𝟶_𝟶𝟶𝟶_𝟶𝟶𝟶</span><span style="color:#111">.</span><span style="color:#111">𝟶</span><span style="color:#111">;</span>
+<span style="color:#111">𝚝𝚢𝚙𝚎</span> <span style="color:#111">𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_K</span> <span style="color:#111">𝚒𝚜</span> <span style="color:#111">𝚗𝚎𝚠</span> <span style="color:#111">𝙵𝚕𝚘𝚊𝚝</span> <span style="color:#111">𝚛𝚊𝚗𝚐𝚎</span> <span style="color:#ae81ff">0.</span><span style="color:#111">.</span><span style="color:#00a8c8">Float</span><span style="color:#111">&#39;</span><span style="color:#75af00">Last</span><span style="color:#111">;</span>
+</code></pre></div><p>Anything below -𝟸𝟽𝟹.𝟷𝟻 degrees Celcius or 0 Kelvin is not a valid temperature, and it&rsquo;s not something you have to remember to check yourself; Ada checks it for you at compile time and runtime.
+(If you are not building a fusion reactor, your accepted range might be much smaller, of course.)</p>
+<p>This way of specifying conditions directly in the types allows you to express your intent as clearly and unambiguously as possible.
+For example:</p>
+<pre tabindex="0"><code>type Latitude  is new Float range 0.0 .. 360.0;
+type Longitude is new Float range 0.0 .. 360.0;
+
+type Coordinate is record
+   Lat  : Latitude;
+   Long : Longitude;
+end record;
+</code></pre><p>Now you have to work hard to mix up latitude and longitude in your code.</p>
+<p>This is helpful even if you don&rsquo;t want to restrict the data range.
+Consider the neat trick of declaring floating-point types like this:</p>
+<pre tabindex="0"><code> type Some_Float is new Float range Float'Range;
+</code></pre><p>This means your derived type has the same range as <code>Float</code>, but excluding anything that is not in its range: NaN, infinity, or whatever non-numeric values your machine defines. So if your code ends up with something that is not a number, numeric operations raise a constraint error instead of propagating the non-numeric value through your whole program.</p>
+<h2 id="array-indices">Array indices</h2>
+<h2 id="variant-records">Variant records</h2>
+<h2 id="tasking-or-how-to-do-concurrency-in-an-easy-way">Tasking, or how to do concurrency in an easy way</h2>
+<p>Since 83, btw.</p>
+<h1 id="the-ecosystem-and-community">The ecosystem and community</h1>
+<p>The Ada ecosystem can be a bit confusing in the beginning.
+But the core is simple:
+Ada is a free language. It&rsquo;s an ISO standard and not owned by any company.</p>
+<p>There are free and proprietary compilers.
+The one you will come across first and most often is called <a href="https://gcc.gnu.org/wiki/GNAT">GNAT</a>,
+a free Ada compiler integrated into GCC.</p>
+<p>Ada has a small but friendly and &hellip; community.</p>
+<p><strong>Forum:</strong></p>
+<p><strong>Discord:</strong></p>
+<p><strong>Reddit:</strong></p>
+<p><strong>Monthly Meetup:</strong></p>
+<h1 id="resources-to-learn-ada">Resources to learn Ada</h1>
+<p>Similar to this post, David Given has written an overview of Ada features called
+<a href="https://cowlark.com/2014-04-27-ada/index.html">A random walk through Ada</a>.</p>
+<p>But if you want to get your hands wet instead, there are two entry points
+I would recommend.</p>
+<p>AdaCore, a driving force behind many current developments in Ada,
+has <a href="https://learn.adacore.com/">a collection of excellent tutorials</a> for people from different perspectives,
+which allow you to play with Ada directly in the browser.
+I highly recommend these tutorials as starting point.</p>
+<p>The next great entry point, when you want to build and run Ada on your own machine,
+is <a href="https://ada-lang.io/">ada-lang.io</a>.
+It provides not only resources but also the package manager Alire,
+built by the community exactly for people like you.</p>
+<p>Starting can be as easy as:</p>
+<ul>
+<li>Download Alire.</li>
+<li>Select the default toolchain.</li>
+<li>Create a new repository.</li>
+<li>Build and run it.</li>
+</ul>
+<p>I provide an Alire project template below in <a href="enough-ada-to-do-advanet-of-code">Enough Ada to do Advent of Code</a>.</p>
+<p>Once you want to know the language in more depth, there is no way around
+<a href="https://doi.org/10.1017/9781009181358">Programming in Ada 2012</a> by John Barnes,
+and the <a href="http://ada-auth.org/standards/22rm/html/RM-TOC.html">Ada Reference Manual (ARM)</a>
+(or a <a href="https://ada-lang.io/docs/arm/">prettier version of it</a>).
+Both are very extensive and quite accessible,
+but feel free to not worry about them in the beginning - even though people will probably point you
+to both if you ask for pointers.</p>
+<p>If you want to explore the rest of the iceberg, <a href="https://github.com/ohenley/awesome-ada">Awesome Ada</a>
+provides a pretty comprehensive list of resources.</p>
+<h2 id="ada-code-worth-reading">Ada code worth reading</h2>
+<p>Ada is an industrial language used in aerospace, defence, rails, medicine, and a couple of other fields.
+So most Ada code - especially most well-written, fire-proven Ada code - is not on GitHub.
+(That&rsquo;s also why Ada doesn&rsquo;t show up in the TIOBE index.)</p>
+<p>Still, here are a few repositories worth exploring if you want to get a feeling
+for bigger Ada projects.</p>
+<p>&hellip;</p>
+<p><a href="https://alire.ada.dev/crates.html">https://alire.ada.dev/crates.html</a></p>
+<p>If you want, peak at my <a href="https://github.com/cunger/100hoursofada/blob/main/minesweeper/src/board/minesweeper-boards-generation.adb">code that generates a random Minesweeper board</a>.</p>
+<p><a href="https://github.com/Fabien-Chouteau/eagle-lander">Lunar lander simulator</a></p>
+<h1 id="a-note-for-c-programmers">A note for C programmers</h1>
+<p>The most important change when coming from C is that in Ada you don&rsquo;t need pointers.</p>
+<p>Seriously. <strong>You do not need pointers.</strong></p>
+<p>Almost everything you want to do, you can do without pointers - and usually more safely so.
+Avoid pointers in the beginning; come back to them only later for more advanced stuff.</p>
+<h1 id="enough-ada-to-do-advent-of-code">Enough Ada to do Advent of Code</h1>
+<h2 id="project-template">Project template</h2>
+<h2 id="reading-input-from-files">Reading input from files</h2>
+<h1 id="todo-move-to-different-resources">TODO Move to different resources</h1>
+<h2 id="setting-up-tests">Setting up tests</h2>
+<p>(It&rsquo;s less easy to set up tests than in other languages. But it&rsquo;s still easier to get the code right.)</p>
+<p>AUnit</p>
+<p>a less powerful but low-effort way</p>
+<p>Setting up e2e tests in Python</p>
+<h2 id="run-ada-in-the-browser">Run Ada in the browser</h2>
+<p>WASM</p>
+<h2 id="let-spark-prove-you-right">Let SPARK prove you right</h2>
+<p>The step from code to proof is surprisingly small.</p>
+<p>State-of-the-art formal verification.</p>
+<h2 id="are-there-jobs-in-ada">Are there jobs in Ada?</h2>
+<p>You can find some of the companies using Ada when checking <a href="https://www.adacore.com/company/our-customers">the list of customers of AdaCore</a>.
+This list is certainly not complete, but the picture is pretty representative.</p>
+<p>Companies range from big names, like Thales, Airbus, and the Automotive Team at NVIDIA,
+to start-ups you probably never heard of, like <a href="https://www.latencetech.com/">Latence Tech</a>.</p>
+<p>Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title.</p>
+<p>One good strategy in addition to looking for jobs is to put yourself out there as Ada developer, writing and talking about Ada, so recruiters can find you.</p>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2022 (c) Christina Unger</span></li>
+      <li>
+        Rendered with <a href="https://gohugo.io/">Hugo</a>. Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

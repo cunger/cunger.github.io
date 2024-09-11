@@ -1,44 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>🐇🕳️ on Escape Velocity</title>
+    <title>📚 Blog on Escape Velocity</title>
     <link>http://cunger.github.io/blog/</link>
-    <description>Recent content in 🐇🕳️ on Escape Velocity</description>
+    <description>Recent content in 📚 Blog on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Network programming</title>
-      <link>http://cunger.github.io/blog/network-programming/</link>
-      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
+      <title>Ada for the curious</title>
+      <link>http://cunger.github.io/blog/ada-for-the-curious/</link>
+      <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/blog/network-programming/</guid>
-      <description>Computer networking 101 The point of a network is to send data between machines.
-The nodes of the network are physical devices like computers or printers. The connection between them can be wired, for example Ethernet cables, or wireless, like WiFi.
-Each physical node has a network interface card, a piece of hardware that can translate between digital data and the signals sent over the network.
-Since the operating system controls access to hardware, it controls the network interface.</description>
-    </item>
-    
-    <item>
-      <title>Diskrete Kosinustransformation</title>
-      <link>http://cunger.github.io/blog/dct/</link>
-      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/blog/dct/</guid>
-      <description>Digitale Bilder und Bildkompression In der Digitalfotographie werden Bilder als Bitmaps aufgenommen und dargestellt: als  \(M\times N\)  -Raster von quadratischen Bildelementen (Pixeln), wobei  \(M\)  die Breite und  \(N\)  die Höhe des Bildes in Pixeln ist.
-Jeder einzelne Pixel kann  \(2^b\)  Werte annehmen, üblicherweise von  \(0\)  bis  \(2^b-1\)  für ein geeignetes  \(b\in\mathbb{N}\)  . Dabei wird  \(b\)  als Bittiefe bezeichnet und entspricht der Anzahl von Bits, die für die Speicherung der Information eines Pixels benötigt werden.</description>
-    </item>
-    
-    <item>
-      <title>Climate change reloaded</title>
-      <link>http://cunger.github.io/blog/climate-change-reloaded/</link>
-      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/blog/climate-change-reloaded/</guid>
-      <description>When I first learned about climate change, there was plenty of uncertainty and time. It was one of many problems. And it was easy to ignore.
-Now the game has changed.
-Here are my main takeaways from studying the current climate landscape at Terra.do. Don&amp;rsquo;t take them as hard facts, but as an invitation to reconsider and update what you understand and think about climate change.
-It&amp;rsquo;s serious. Climate change is happening.</description>
+      <guid>http://cunger.github.io/blog/ada-for-the-curious/</guid>
+      <description>This post is for developers who are curious about Ada.
+Contrary to some associations you might have (🦕?), Ada is a modern language, with modules, a strong type system, and easy-to-use concurrency. It&amp;rsquo;s blazing fast (🚀!), backed by a cool community, and it&amp;rsquo;s easy to learn.
+Instead of giving an extensive introduction to syntax you can easily look up yourself, I want to highlight some of the aspects that make Ada worth looking into.</description>
     </item>
     
   </channel>

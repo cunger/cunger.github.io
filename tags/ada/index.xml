@@ -9,13 +9,13 @@
     <lastBuildDate>Sat, 22 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/tags/ada/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ada for the curious</title>
-      <link>http://cunger.github.io/booklets/ada-for-the-curious/</link>
+      <link>http://cunger.github.io/blog/ada-for-the-curious/</link>
       <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/booklets/ada-for-the-curious/</guid>
-      <description>This booklet is for developers who are curious about Ada.
-Contrary to some 🦕 associations you might have, Ada is a modern language, with modules, a strong type system, and easy-to-use concurrency. It&amp;rsquo;s blazing fast, backed by a cool community, and it&amp;rsquo;s easy to learn.
-Instead of giving an extensive introduction to everything you can easily look up yourself, I want to highlight some of the aspects that make Ada worth looking into.</description>
+      <guid>http://cunger.github.io/blog/ada-for-the-curious/</guid>
+      <description>This post is for developers who are curious about Ada.
+Contrary to some associations you might have (🦕?), Ada is a modern language, with modules, a strong type system, and easy-to-use concurrency. It&amp;rsquo;s blazing fast (🚀!), backed by a cool community, and it&amp;rsquo;s easy to learn.
+Instead of giving an extensive introduction to syntax you can easily look up yourself, I want to highlight some of the aspects that make Ada worth looking into.</description>
     </item>
     
   </channel>
