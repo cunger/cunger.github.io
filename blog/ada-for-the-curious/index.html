@@ -177,22 +177,92 @@ that your colleagues can still read when coming back to it after years.</p>
 </div>
 
 <h1 id="what-makes-ada-fun">What makes Ada fun</h1>
-<p>Here are a few characteristics of Ada that &hellip;</p>
+<p>Here are a few characteristics of Ada that many people like about it.
+This is subjective, of course, but it gives you a taste of why Ada might be worthwhile exloring.</p>
 <h2 id="separation-of-concerns">Separation of concerns</h2>
-<p>and how this blends design and implementation</p>
-<p>specification and body</p>
-<p>design in code</p>
-<p>building blocks</p>
-<pre tabindex="0"><code>declare
-   -- local declarations (visible within this unit but nowhere else)
-   -- can include constants, variables,functions, procedures
-   -- note that declared variables are not initialized by default
-begin
-   -- sequence of statements or nested blocks
-exception
-   -- handling exceptions
-end;
-</code></pre><h2 id="simplicity">Simplicity</h2>
+<p>Like separating header and implementation in C, Ada separates packages into a specification (<code>.ads</code>) and a body (<code>.adb</code>),
+which tends to blend design and code.
+This approach is not specific to Ada, of course, but it emphasizes Ada&rsquo;s focus on engineering software:</p>
+<blockquote>
+<p>Ada as an engineering tool, requires the software developers to adopt an engineering attitude to using it. It is not enough to simply be a good computer programmer when human safety is at risk. Software at that level of risk must be engineered.</p>
+</blockquote>
+<p>(Richard Riehle: Ada Distilled)</p>
+<p>Here is an example. Assume we wanted to implement Conway&rsquo;s Game of Life.
+We could start thinking about how to call it from a main procedure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#75715e">-- main.adb
+</span><span style="color:#75715e"></span><span style="color:#f92672">with</span> <span style="color:#111">Game_Of_Life</span><span style="color:#111">;</span>
+<span style="color:#f92672">use</span>  <span style="color:#111">Game_Of_Life</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Main</span> <span style="color:#00a8c8">is</span>
+<span style="color:#00a8c8">begin</span>
+
+   <span style="color:#111">Init_Board</span> <span style="color:#111">(</span>
+      <span style="color:#111">Rows</span>    <span style="color:#111">=&gt;</span> <span style="color:#ae81ff">800</span><span style="color:#111">,</span>
+      <span style="color:#111">Columns</span> <span style="color:#111">=&gt;</span> <span style="color:#ae81ff">600</span><span style="color:#111">,</span>
+      <span style="color:#111">Pattern</span> <span style="color:#111">=&gt;</span> <span style="color:#111">Glider_Collision</span>
+   <span style="color:#111">);</span>
+
+   <span style="color:#111">Run</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">end</span> <span style="color:#75af00">Main</span><span style="color:#111">;</span>
+</code></pre></div><p>This defines what we need in the public part of our package specification:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#75715e">-- game_of_life.ads
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">package</span> <span style="color:#75af00">Game_Of_Life</span> <span style="color:#00a8c8">is</span>
+
+    <span style="color:#00a8c8">type</span> <span style="color:#00a8c8">Patterns</span> <span style="color:#00a8c8">is</span> <span style="color:#111">(</span>
+       <span style="color:#111">Ants</span><span style="color:#111">,</span>
+       <span style="color:#111">Blinker</span><span style="color:#111">,</span>
+       <span style="color:#111">Dart</span><span style="color:#111">,</span>
+       <span style="color:#111">Fountain</span><span style="color:#111">,</span>
+       <span style="color:#111">Glider_Collision</span><span style="color:#111">,</span>
+       <span style="color:#111">Herschel_Climber</span><span style="color:#111">,</span>
+       <span style="color:#111">Spaceship</span>
+    <span style="color:#111">);</span>
+    <span style="color:#75715e">-- Predefined patterns, taken from the pattern catalogue at playgameoflife.com/lexicon.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">-- Their size is adapted to the board size.
+</span><span style="color:#75715e"></span>
+    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Init_Board</span> <span style="color:#111">(</span><span style="color:#111">Rows</span> <span style="color:#111">: </span><span style="color:#111">Positive</span><span style="color:#111">,</span> <span style="color:#111">Columns</span> <span style="color:#111">: </span><span style="color:#111">Positive</span><span style="color:#111">,</span> <span style="color:#111">Pattern</span> <span style="color:#111">: </span><span style="color:#111">Patterns</span><span style="color:#111">);</span>
+    <span style="color:#75715e">-- Creates a game board with the specified number of rows and columns,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">-- and initializes the living cells according to the given start pattern.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">-- TODO: Requires a minimum size to fit the pattern.
+</span><span style="color:#75715e"></span>
+    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Run</span><span style="color:#111">;</span>
+    <span style="color:#75715e">-- Runs the simulation.
+</span><span style="color:#75715e"></span>
+<span style="color:#00a8c8">private</span>
+   
+    <span style="color:#75715e">-- Specifications of all private types, functions, and procedures.
+</span><span style="color:#75715e"></span>
+<span style="color:#00a8c8">end</span> <span style="color:#75af00">Game_Of_Life</span><span style="color:#111">;</span>
+</code></pre></div><p>If you have a specification file with proper comments, this can serve as a very helpful
+documentation of a library.
+(Check the <code>.ads</code> files in <a href="https://github.com/AdaCore/gnatcoll-core/blob/master/core/src/gnatcoll-email-utils.ads">the gnatcoll-core repository</a>
+for examples.)</p>
+<p>Then we mirror the specification in the body, providing the actual implementation of the procedures.
+Doing so would usually inform which private specifications we need in the package specification.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#75715e">-- game_of_life.adb
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">package</span> <span style="color:#00a8c8">body</span> <span style="color:#75af00">Game_Of_Life</span> <span style="color:#00a8c8">is</span>
+
+    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Init_Board</span> <span style="color:#111">(</span><span style="color:#111">Rows</span> <span style="color:#111">: </span><span style="color:#111">Positive</span><span style="color:#111">,</span> <span style="color:#111">Columns</span> <span style="color:#111">: </span><span style="color:#111">Positive</span><span style="color:#111">)</span> <span style="color:#00a8c8">is</span>
+    <span style="color:#00a8c8">begin</span>
+       <span style="color:#75715e">-- Implementation left out.
+</span><span style="color:#75715e"></span>       <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">end</span> <span style="color:#75af00">Init_Board</span><span style="color:#111">;</span>
+
+    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Load_Pattern</span> <span style="color:#111">(</span><span style="color:#111">Start_Pattern</span> <span style="color:#111">: </span><span style="color:#111">Pattern</span><span style="color:#111">)</span> <span style="color:#00a8c8">is</span>
+    <span style="color:#00a8c8">begin</span>
+       <span style="color:#75715e">-- Implementation left out.
+</span><span style="color:#75715e"></span>       <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">end</span> <span style="color:#75af00">Load_Pattern</span><span style="color:#111">;</span>
+
+    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Run</span> <span style="color:#00a8c8">is</span>
+    <span style="color:#00a8c8">begin</span>
+       <span style="color:#75715e">-- Implementation left out.
+</span><span style="color:#75715e"></span>       <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">end</span> <span style="color:#75af00">Run</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">end</span> <span style="color:#75af00">Game_Of_Life</span><span style="color:#111">;</span>
+</code></pre></div><h2 id="simplicity">Simplicity</h2>
 <p>There is <a href="https://inf.ethz.ch/news-and-events/spotlights/infk-news-channel/2021/11/niklaus-wirth-video-interview.html">a very nice interview</a>
 with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
 where he remembers that during his time, all existing programming languages were unneccessarily complex.
@@ -205,11 +275,21 @@ For example, you define an exception like this:</p>
 </code></pre><p>Or, if you want to include more information, like this:</p>
 <pre tabindex="0"><code>raise Timestamp_Is_In_The_Past with &quot;Input timestamp cannot be in the past&quot;;
 </code></pre><p>That&rsquo;s it. For basic exceptions, this is arguably all you need.</p>
-<h2 id="the-type-system">The type system</h2>
+<p>&hellip;
+building blocks</p>
+<pre tabindex="0"><code>declare
+   -- local declarations of constants and variables
+   -- (possibly including functions and procedures)
+begin
+   -- sequence of statements or nested blocks
+exception
+   -- handling exceptions
+end;
+</code></pre><h2 id="the-type-system">The type system</h2>
 <p>I never thought the answer to what are the cool features of a language would be: its type system.
 I also thought I knew strong typing.
 Until I met Ada.</p>
-<p>Imagine there is an integer type and nobody is using it</p>
+<p>Imagine there is an integer type and nobody is using it.</p>
 <p>Ada offers a few safety nets. One of the nicest is baked into the type system; Richard Riehle calls it precision datatypes.</p>
 <p>First, you can derive one type from another. Both types are different, and you will never be able to mix them.
 For example, if you define:</p>
@@ -237,6 +317,8 @@ Consider the neat trick of declaring floating-point types like this:</p>
 <pre tabindex="0"><code> type Some_Float is new Float range Float'Range;
 </code></pre><p>This means your derived type has the same range as <code>Float</code>, but excluding anything that is not in its range: NaN, infinity, or whatever non-numeric values your machine defines. So if your code ends up with something that is not a number, numeric operations raise a constraint error instead of propagating the non-numeric value through your whole program.</p>
 <h2 id="array-indices">Array indices</h2>
+<p>Many languages have arrays / lists (with an opinion whether they start with index 0 or 1) and maps / dictionaries as separate types.
+Pascal used to blend both, and Ada does so too.</p>
 <h2 id="variant-records">Variant records</h2>
 <h2 id="tasking-or-how-to-do-concurrency-in-an-easy-way">Tasking, or how to do concurrency in an easy way</h2>
 <p>Since 83, btw.</p>
