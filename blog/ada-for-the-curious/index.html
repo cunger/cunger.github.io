@@ -317,9 +317,40 @@ Consider the neat trick of declaring floating-point types like this:</p>
 <pre tabindex="0"><code> type Some_Float is new Float range Float'Range;
 </code></pre><p>This means your derived type has the same range as <code>Float</code>, but excluding anything that is not in its range: NaN, infinity, or whatever non-numeric values your machine defines. So if your code ends up with something that is not a number, numeric operations raise a constraint error instead of propagating the non-numeric value through your whole program.</p>
 <h2 id="array-indices">Array indices</h2>
-<p>Many languages have arrays / lists (with an opinion whether they start with index 0 or 1) and maps / dictionaries as separate types.
-Pascal used to blend both, and Ada does so too.</p>
-<h2 id="variant-records">Variant records</h2>
+<p>0-based? 1-based? Anything-based!</p>
+<p>One of the nice features that Ada adopted from Pascal is the fact that array indices can come from any enumerable, bounded type. (The index type can be unbound when declaring the array but needs to be constrained before the array is used.)</p>
+<p>So no discussion necessary whether array indices should start with 0 or 1. You define how they start. And whether they use integers at all.</p>
+<p>It actually simply means you get arrays and maps in one datatype, which feels very natural once you have it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#75715e">-- When defining an array type, you specify the index type
+</span><span style="color:#75715e">-- as well as the value type.
+</span><span style="color:#75715e"></span>
+<span style="color:#00a8c8">type</span> <span style="color:#00a8c8">Sensor_Id</span> <span style="color:#00a8c8">is</span> <span style="color:#00a8c8">range</span> <span style="color:#ae81ff">100</span> <span style="color:#111">..</span> <span style="color:#ae81ff">999</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">type</span> <span style="color:#00a8c8">Sensor_Status</span> <span style="color:#00a8c8">is</span> <span style="color:#111">(</span><span style="color:#111">Active</span><span style="color:#111">,</span> <span style="color:#111">Inactive</span><span style="color:#111">);</span>
+
+<span style="color:#00a8c8">type</span> <span style="color:#00a8c8">Sensors</span> <span style="color:#00a8c8">is</span> <span style="color:#00a8c8">array</span> <span style="color:#111">(</span><span style="color:#111">Sensor_Id</span><span style="color:#111">)</span> <span style="color:#00a8c8">of</span> <span style="color:#111">Sensor_Status</span><span style="color:#111">;</span>
+
+<span style="color:#75715e">-- When initializing such an array, you can set the values by position,
+</span><span style="color:#75715e">-- like (Active, Active, Active, Inactive),
+</span><span style="color:#75715e">-- or by index:
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">Initial_Status</span> <span style="color:#111">:</span> <span style="color:#00a8c8">constant</span> <span style="color:#111">Sensors</span> <span style="color:#111">:=</span> <span style="color:#111">(</span>
+   <span style="color:#ae81ff">101</span> <span style="color:#111">=&gt;</span> <span style="color:#111">Active</span><span style="color:#111">,</span>
+   <span style="color:#ae81ff">235</span> <span style="color:#111">=&gt;</span> <span style="color:#111">Active</span><span style="color:#111">,</span>
+   <span style="color:#ae81ff">470</span> <span style="color:#111">=&gt;</span> <span style="color:#111">Active</span><span style="color:#111">,</span>
+   <span style="color:#ae81ff">999</span> <span style="color:#111">=&gt;</span> <span style="color:#111">Active</span><span style="color:#111">,</span>
+   <span style="color:#00a8c8">others</span> <span style="color:#111">=&gt;</span> <span style="color:#111">Inactive</span>
+<span style="color:#111">);</span>
+</code></pre></div><p>Finally, attributes like <code>'First</code>, <code>'Last</code>, and <code>'Range</code> make it possible to define loops in a way that&rsquo;s hard to get wrong even if you change the underlying index range later.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#00a8c8">for</span> <span style="color:#111">Id</span> <span style="color:#f92672">in</span> <span style="color:#111">Sensor_Id</span><span style="color:#111">&#39;</span><span style="color:#75af00">First</span> <span style="color:#111">..</span> <span style="color:#111">Sensor_Id</span><span style="color:#111">&#39;</span><span style="color:#75af00">Last</span> <span style="color:#00a8c8">loop</span>
+   <span style="color:#00a8c8">if</span> <span style="color:#111">Sensors</span> <span style="color:#111">(</span><span style="color:#111">Id</span><span style="color:#111">)</span> <span style="color:#f92672">=</span> <span style="color:#111">Active</span> <span style="color:#00a8c8">then</span>
+      <span style="color:#111">Sensors</span> <span style="color:#111">(</span><span style="color:#111">Id</span><span style="color:#111">)</span> <span style="color:#111">:=</span> <span style="color:#111">Inactive</span><span style="color:#111">;</span>
+   <span style="color:#00a8c8">end</span> <span style="color:#00a8c8">if</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">end</span> <span style="color:#00a8c8">loop</span><span style="color:#111">;</span>
+
+<span style="color:#75715e">-- equivalent to:
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">for</span> <span style="color:#111">Id</span> <span style="color:#f92672">in</span> <span style="color:#111">Sensors</span><span style="color:#111">&#39;</span><span style="color:#75af00">Range</span> <span style="color:#00a8c8">loop</span>
+   <span style="color:#75715e">-- ...
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">end</span> <span style="color:#00a8c8">loop</span><span style="color:#111">;</span>
+</code></pre></div><h2 id="variant-records">Variant records</h2>
 <h2 id="tasking-or-how-to-do-concurrency-in-an-easy-way">Tasking, or how to do concurrency in an easy way</h2>
 <p>Since 83, btw.</p>
 <h1 id="the-ecosystem-and-community">The ecosystem and community</h1>
