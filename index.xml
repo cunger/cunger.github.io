@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>Ada cookbook</title>
+      <link>http://cunger.github.io/notes/dev/ada-cookbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/ada-cookbook/</guid>
+      <description>Common things to do in Ada</description>
+    </item>
+    
+    <item>
       <title>Polynome</title>
       <link>http://cunger.github.io/notes/math/polynomials/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
@@ -53,15 +62,12 @@
     </item>
     
     <item>
-      <title>Network programming</title>
-      <link>http://cunger.github.io/notes/dev/network-programming/</link>
+      <title>Bash</title>
+      <link>http://cunger.github.io/notes/dev/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/dev/network-programming/</guid>
-      <description>Computer networking 101 The point of a network is to send data between machines.
-The nodes of the network are physical devices like computers or printers. The connection between them can be wired, for example Ethernet cables, or wireless, like WiFi.
-Each physical node has a network interface card, a piece of hardware that can translate between digital data and the signals sent over the network.
-Since the operating system controls access to hardware, it controls the network interface.</description>
+      <guid>http://cunger.github.io/notes/dev/bash/</guid>
+      <description>Boom. Bang.</description>
     </item>
     
     <item>
@@ -80,6 +86,15 @@ Since the operating system controls access to hardware, it controls the network 
       
       <guid>http://cunger.github.io/notes/physics/electromagnetic-radiation/</guid>
       <description>Making waves.</description>
+    </item>
+    
+    <item>
+      <title>Numbers</title>
+      <link>http://cunger.github.io/notes/dev/numbers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/numbers/</guid>
+      <description>And their representation in computers</description>
     </item>
     
     <item>
@@ -107,6 +122,15 @@ Since the operating system controls access to hardware, it controls the network 
       
       <guid>http://cunger.github.io/notes/nuke/neutronics/</guid>
       <description>Neutrons, energy distribution, neutron interactions.</description>
+    </item>
+    
+    <item>
+      <title>Network programming</title>
+      <link>http://cunger.github.io/notes/dev/network-programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/network-programming/</guid>
+      <description>Doomed to be a draft</description>
     </item>
     
     <item>
@@ -247,18 +271,6 @@ I have a background in formal logic and a strong interest in nuclear technology 
       <guid>http://cunger.github.io/notes/math/dct/</guid>
       <description>Digitale Bilder und Bildkompression In der Digitalfotographie werden Bilder als Bitmaps aufgenommen und dargestellt: als  \(M\times N\)  -Raster von quadratischen Bildelementen (Pixeln), wobei  \(M\)  die Breite und  \(N\)  die Höhe des Bildes in Pixeln ist.
 Jeder einzelne Pixel kann  \(2^b\)  Werte annehmen, üblicherweise von  \(0\)  bis  \(2^b-1\)  für ein geeignetes  \(b\in\mathbb{N}\)  . Dabei wird  \(b\)  als Bittiefe bezeichnet und entspricht der Anzahl von Bits, die für die Speicherung der Information eines Pixels benötigt werden.</description>
-    </item>
-    
-    <item>
-      <title>Numbers</title>
-      <link>http://cunger.github.io/notes/dev/numbers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/notes/dev/numbers/</guid>
-      <description>Bits and byte ranges The smallest unit of information are the bits (binary digits) 1 and 0.
-Most computers don&amp;rsquo;t access individual bits in memory, but use blocks of 8 bits (bytes) as smallest addressable unit of memory.
-Byte ranges:
- In binary notation: from 00000000 to 11111111 In decimal notation: from 0 to 255 (there are 2^8 = 256 combinations of eight 0s and 1s) In hexadecimal notation: from 00 to FF  Hex 0 1 2 3 4 5 6 7 8 9 A B C D E F Dec 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Bin 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111 Bytes are combined into words of 1 to 8 bytes.</description>
     </item>
     
   </channel>

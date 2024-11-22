@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.92.2" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ada cookbook | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Ada cookbook" />
+<meta property="og:description" content="Common things to do in Ada" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/ada-cookbook/" /><meta property="article:section" content="notes" />
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/notes/dev/ada-cookbook/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/notes">🐇🕳️ Rabbit holes</a></li>
+       <li><a href="/blog">📚 Blog</a></li>
+       <li><a href="/about">About me</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Ada cookbook </h1>
+      <p class="hero-lead">
+         Common things to do in Ada
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <h1 id="string-handling">String handling</h1>
+<h2 id="iterating-over-all-characters-in-a-string">Iterating over all characters in a string</h2>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#00a8c8">declare</span>
+   <span style="color:#00a8c8">Str</span>  <span style="color:#111">:</span> <span style="color:#00a8c8">constant</span> <span style="color:#00a8c8">String</span> <span style="color:#111">:=</span> <span style="color:#d88200">&#34;Fnord&#34;</span><span style="color:#111">;</span>
+   <span style="color:#111">Char</span> <span style="color:#111">:</span> <span style="color:#00a8c8">Character</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">begin</span>
+   <span style="color:#00a8c8">for</span> <span style="color:#111">I</span> <span style="color:#f92672">in</span> <span style="color:#111">Str</span><span style="color:#111">&#39;</span><span style="color:#75af00">Range</span> <span style="color:#00a8c8">loop</span>
+      <span style="color:#111">Char</span> <span style="color:#111">:=</span> <span style="color:#111">Str</span> <span style="color:#111">(</span><span style="color:#111">I</span><span style="color:#111">);</span>
+   <span style="color:#00a8c8">end</span> <span style="color:#00a8c8">loop</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">end</span><span style="color:#111">;</span>
+</code></pre></div><h2 id="matching-a-regex">Matching a regex</h2>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#f92672">with</span> <span style="color:#111">GNAT.Regpat</span><span style="color:#111">;</span> <span style="color:#f92672">use</span> <span style="color:#111">GNAT.Regpat</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">declare</span>
+   <span style="color:#00a8c8">Pattern</span> <span style="color:#111">:</span> <span style="color:#00a8c8">constant</span> <span style="color:#111">Pattern_Matcher</span> <span style="color:#111">:=</span> <span style="color:#111">Compile</span> <span style="color:#111">(</span><span style="color:#d88200">&#34;(\d+)x(\d+)x(\d+)&#34;</span><span style="color:#111">);</span>
+   <span style="color:#00a8c8">Example</span> <span style="color:#111">:</span> <span style="color:#00a8c8">constant</span> <span style="color:#00a8c8">String</span> <span style="color:#111">:=</span> <span style="color:#d88200">&#34;10x2x3&#34;</span><span style="color:#111">;</span>
+   <span style="color:#111">Matches</span> <span style="color:#111">:</span> <span style="color:#111">Match_Array</span> <span style="color:#111">(</span><span style="color:#ae81ff">0</span> <span style="color:#111">..</span> <span style="color:#ae81ff">3</span><span style="color:#111">);</span>
+   <span style="color:#111">Length</span>  <span style="color:#111">:</span> <span style="color:#00a8c8">Natural</span><span style="color:#111">;</span>
+   <span style="color:#111">Width</span>   <span style="color:#111">:</span> <span style="color:#00a8c8">Natural</span><span style="color:#111">;</span>
+   <span style="color:#111">Height</span>  <span style="color:#111">:</span> <span style="color:#00a8c8">Natural</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">begin</span>
+   <span style="color:#111">Match</span> <span style="color:#111">(</span><span style="color:#111">Pattern</span><span style="color:#111">,</span> <span style="color:#111">Line</span><span style="color:#111">,</span> <span style="color:#111">Matches</span><span style="color:#111">);</span>
+   <span style="color:#00a8c8">if</span> <span style="color:#111">Matches</span> <span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#f92672">/=</span> <span style="color:#111">No_Match</span> <span style="color:#00a8c8">then</span>
+      <span style="color:#111">Length</span> <span style="color:#111">:=</span> <span style="color:#00a8c8">Natural</span><span style="color:#111">&#39;</span><span style="color:#75af00">Value</span> <span style="color:#111">(</span><span style="color:#111">Example</span> <span style="color:#111">(</span><span style="color:#111">Matches</span> <span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">).</span><span style="color:#111">First</span> <span style="color:#111">..</span> <span style="color:#111">Matches</span> <span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">).</span><span style="color:#111">Last</span><span style="color:#111">));</span>
+      <span style="color:#111">Width</span>  <span style="color:#111">:=</span> <span style="color:#00a8c8">Natural</span><span style="color:#111">&#39;</span><span style="color:#75af00">Value</span> <span style="color:#111">(</span><span style="color:#111">Example</span> <span style="color:#111">(</span><span style="color:#111">Matches</span> <span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">).</span><span style="color:#111">First</span> <span style="color:#111">..</span> <span style="color:#111">Matches</span> <span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">).</span><span style="color:#111">Last</span><span style="color:#111">));</span>
+      <span style="color:#111">Height</span> <span style="color:#111">:=</span> <span style="color:#00a8c8">Natural</span><span style="color:#111">&#39;</span><span style="color:#75af00">Value</span> <span style="color:#111">(</span><span style="color:#111">Example</span> <span style="color:#111">(</span><span style="color:#111">Matches</span> <span style="color:#111">(</span><span style="color:#ae81ff">3</span><span style="color:#111">).</span><span style="color:#111">First</span> <span style="color:#111">..</span> <span style="color:#111">Matches</span> <span style="color:#111">(</span><span style="color:#ae81ff">3</span><span style="color:#111">).</span><span style="color:#111">Last</span><span style="color:#111">));</span>
+   <span style="color:#00a8c8">end</span> <span style="color:#00a8c8">if</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">end</span><span style="color:#111">;</span>
+</code></pre></div><h1 id="files">Files</h1>
+<h2 id="reading-input-from-a-file">Reading input from a file</h2>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#f92672">with</span> <span style="color:#111">Ada.Text_IO</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Process_Input</span> <span style="color:#00a8c8">is</span>
+   <span style="color:#111">Input</span> <span style="color:#111">:</span> <span style="color:#111">Ada</span><span style="color:#111">.</span><span style="color:#111">Text_IO</span><span style="color:#111">.</span><span style="color:#00a8c8">File_Type</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">begin</span>
+   <span style="color:#75715e">-- Open the input file in read mode.
+</span><span style="color:#75715e"></span>   <span style="color:#111">Ada</span><span style="color:#111">.</span><span style="color:#111">Text_IO</span><span style="color:#111">.</span><span style="color:#111">Open</span> <span style="color:#111">(</span><span style="color:#111">Input</span><span style="color:#111">,</span> <span style="color:#111">Ada</span><span style="color:#111">.</span><span style="color:#111">Text_IO</span><span style="color:#111">.</span><span style="color:#111">In_File</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;input.txt&#34;</span><span style="color:#111">);</span>
+
+   <span style="color:#75715e">-- Walk through the file line by line.
+</span><span style="color:#75715e"></span>   <span style="color:#00a8c8">while</span> <span style="color:#f92672">not</span> <span style="color:#111">Ada</span><span style="color:#111">.</span><span style="color:#111">Text_IO</span><span style="color:#111">.</span><span style="color:#111">End_Of_File</span> <span style="color:#111">(</span><span style="color:#111">Input</span><span style="color:#111">)</span> <span style="color:#00a8c8">loop</span>
+      <span style="color:#00a8c8">declare</span>
+         <span style="color:#00a8c8">Line</span> <span style="color:#111">:</span> <span style="color:#00a8c8">constant</span> <span style="color:#00a8c8">String</span> <span style="color:#111">:=</span> <span style="color:#111">Ada</span><span style="color:#111">.</span><span style="color:#111">Text_IO</span><span style="color:#111">.</span><span style="color:#111">Get_Line</span> <span style="color:#111">(</span><span style="color:#111">Input</span><span style="color:#111">);</span>
+      <span style="color:#00a8c8">begin</span>
+         <span style="color:#75715e">-- Do something with Line.
+</span><span style="color:#75715e"></span>      <span style="color:#00a8c8">end</span><span style="color:#111">;</span>
+   <span style="color:#00a8c8">end</span> <span style="color:#00a8c8">loop</span><span style="color:#111">;</span>
+
+   <span style="color:#75715e">-- Finally, close the file again.
+</span><span style="color:#75715e"></span>   <span style="color:#111">Ada</span><span style="color:#111">.</span><span style="color:#111">Text_IO</span><span style="color:#111">.</span><span style="color:#111">Close</span> <span style="color:#111">(</span><span style="color:#111">Input</span><span style="color:#111">);</span>
+<span style="color:#00a8c8">end</span> <span style="color:#75af00">Process_Input</span><span style="color:#111">;</span>
+</code></pre></div>
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2022 (c) Christina Unger</span></li>
+      <li>
+        Rendered with <a href="https://gohugo.io/">Hugo</a>. Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

@@ -11,6 +11,8 @@
     <loc>http://cunger.github.io/notes/physics/basics/</loc>
     <lastmod>2019-11-16T12:00:51+01:00</lastmod>
   </url><url>
+    <loc>http://cunger.github.io/notes/dev/ada-cookbook/</loc>
+  </url><url>
     <loc>http://cunger.github.io/notes/math/polynomials/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -20,7 +22,7 @@
     <loc>http://cunger.github.io/notes/nuke/nuclear-reactions/</loc>
     <lastmod>2019-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/notes/dev/network-programming/</loc>
+    <loc>http://cunger.github.io/notes/dev/bash/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/matrix/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
@@ -30,6 +32,8 @@
   </url><url>
     <loc>http://cunger.github.io/notes/physics/electromagnetic-radiation/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/notes/dev/numbers/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/topology/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
@@ -42,6 +46,8 @@
   </url><url>
     <loc>http://cunger.github.io/notes/nuke/neutronics/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/notes/dev/network-programming/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/functions/</loc>
     <lastmod>2021-08-17T00:00:00+00:00</lastmod>
@@ -104,6 +110,8 @@
   </url><url>
     <loc>http://cunger.github.io/tags/applied-math/</loc>
   </url><url>
+    <loc>http://cunger.github.io/tags/bash/</loc>
+  </url><url>
     <loc>http://cunger.github.io/categories/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/dct/</loc>
@@ -113,8 +121,6 @@
     <loc>http://cunger.github.io/tags/image-compression/</loc>
   </url><url>
     <loc>http://cunger.github.io/tags/network/</loc>
-  </url><url>
-    <loc>http://cunger.github.io/notes/dev/numbers/</loc>
   </url><url>
     <loc>http://cunger.github.io/tags/numbers/</loc>
   </url>
