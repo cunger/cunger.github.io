@@ -323,19 +323,18 @@ Doing so would usually inform which private specifications we need in the packag
 with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
 where he remembers that during his time, all existing programming languages were unneccessarily complex.
 He wanted to design a language that is as simple as possible without losing power.</p>
-<p>In Ada, you see some of this legacy. Let&rsquo;s look at two examples.</p>
-<p>First, exceptions.</p>
+<p>In Ada, you see some of this legacy. One example are exceptions.</p>
 <p>In Ada, exceptions are like objects, not types. You define an exception like this:</p>
 <pre tabindex="0"><code>Timestamp_Is_In_The_Past : exception;
 </code></pre><p>You raise it like this:</p>
 <pre tabindex="0"><code>raise Timestamp_Is_In_The_Past;
 </code></pre><p>Or, if you want to include more information, like this:</p>
 <pre tabindex="0"><code>raise Timestamp_Is_In_The_Past with &quot;Input timestamp cannot be in the past&quot;;
-</code></pre><p>That&rsquo;s it. For basic exceptions, this is arguably all you need.
-<strong>(TODO: hierarchies you probably want)</strong></p>
-<p>Second, concurrency.</p>
-<p>Ada has concurrency since 1983.
-&hellip; tasks, and one way for synchronous and one for asynchronous communication between tasks.</p>
+</code></pre><p>That&rsquo;s it. For basic exceptions, this is arguably all you need. (With the exception of an error hierarchy maybe.)</p>
+<h2 id="safe-real-time-programming">Safe real-time programming</h2>
+<p>Concurrent and real-time programming are standard parts of Ada since its beginning.
+Their semantics is the same independent of whether you execute them on Linux, an RTOS, or on a bare metal target.
+And it&rsquo;s as deterministic and safe as you can get. <a href="https://blog.adacore.com/theres-a-mini-rtos-in-my-language">Read more about it.</a></p>
 <h1 id="the-ecosystem-and-community">The ecosystem and community</h1>
 <p>The Ada ecosystem can be a bit confusing in the beginning.
 But the core is simple:
