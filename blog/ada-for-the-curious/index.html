@@ -232,7 +232,8 @@ When defining an array type, you simply specify the index type as well as the va
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">for</span> <span style="color:#111">Pos</span> <span style="color:#f92672">in</span> <span style="color:#111">Positions</span><span style="color:#111">&#39;</span><span style="color:#75af00">Range</span> <span style="color:#00a8c8">loop</span>
    <span style="color:#111">...</span>
 <span style="color:#00a8c8">end</span> <span style="color:#00a8c8">loop</span><span style="color:#111">;</span>
-</code></pre></div><h2 id="separation-of-concerns">Separation of concerns</h2>
+</code></pre></div><p>Most importantly, arrays are memory-safe. The index type and range is part of the array, and both compiler and runtie check that all reads and writesare within the bounds of the array.</p>
+<h2 id="separation-of-concerns">Separation of concerns</h2>
 <p>Like separating header and implementation in C, Ada separates packages into a specification (<code>.ads</code>) and a body (<code>.adb</code>),
 which tends to blend design and code.
 This approach is not specific to Ada, of course, but it emphasizes Ada&rsquo;s focus on engineering software.
@@ -378,8 +379,8 @@ to both if you ask for pointers.</p>
 provides a pretty comprehensive list of resources.</p>
 <p>If you want to dive into existing Ada code bases, here are a few suggestions:</p>
 <ul>
-<li><a href="https://github.com/johnperry-math/AoC2023/tree/642ff0f6151e031b90fb9edfa5c143395a94b344">John Perry (AoC 2023)</a>
-did many Advent of Code puzzles in both Ada and Rust, and wrote about his solutions and experiences with both.</li>
+<li><a href="https://github.com/johnperry-math/AoC2023/blob/2df768bacb3c7f5c0ee23a495c3b5fe0c7464284/More_Detailed_Comparison.md">John Perry (AoC 2023)</a>
+did many Advent of Code puzzles in both Ada and Rust, and wrote a detailed comparison.</li>
 <li><a href="https://github.com/AdaCore/gnatcoll-core/tree/master/core/src">GNATcoll</a> is a collection of components, like for working with JSON data or file systems in Ada. It&rsquo;s clean and well-documented code.</li>
 <li>The <a href="https://github.com/Fabien-Chouteau/eagle-lander">Apollo 11 lunar lander simulator</a> is equally well organized and fun to read.</li>
 <li><a href="https://github.com/adachess/AdaChess/tree/main">AdaChess</a> is a chess engine written in Ada.</li>
