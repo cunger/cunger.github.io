@@ -6,11 +6,11 @@
     <description>Recent content in Tags on Escape Velocity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 22 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ada</title>
       <link>http://cunger.github.io/tags/ada/</link>
-      <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/tags/ada/</guid>
       <description></description>
@@ -19,9 +19,27 @@
     <item>
       <title>applied math</title>
       <link>http://cunger.github.io/tags/applied-math/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/tags/applied-math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dsp</title>
+      <link>http://cunger.github.io/tags/dsp/</link>
+      <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/tags/dsp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image compression</title>
+      <link>http://cunger.github.io/tags/image-compression/</link>
+      <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/tags/image-compression/</guid>
       <description></description>
     </item>
     
@@ -31,24 +49,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dsp</title>
-      <link>http://cunger.github.io/tags/dsp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/tags/dsp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>image compression</title>
-      <link>http://cunger.github.io/tags/image-compression/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/tags/image-compression/</guid>
       <description></description>
     </item>
     
