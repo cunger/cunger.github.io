@@ -233,17 +233,6 @@
     </item>
     
     <item>
-      <title>What I&#39;m doing now</title>
-      <link>http://cunger.github.io/now/</link>
-      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/now/</guid>
-      <description>☕🐣 Learning Reading through the The Scientist and Engineer&amp;rsquo;s Guide to Digital Signal Processing. Particularly interested in radar/sonar, but have to cover the basics first.
-🦥 Training GMB. Recently finished Elements and started Integral Strength.
-📚 Curently reading  Power Metal: The Race for the Resources That Will Shape the Future (Vince Beiser)  </description>
-    </item>
-    
-    <item>
       <title>Ada for the curious</title>
       <link>http://cunger.github.io/blog/ada-for-the-curious/</link>
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
@@ -270,9 +259,9 @@ Jeder einzelne Pixel kann  \(2^b\)  Werte annehmen, üblicherweise von  \(0\)  b
       <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>Hi, I&amp;rsquo;m Christina, a professional software engineer with 8 years of experience in building and maintaining large code bases.
+      <description>Hi, I&amp;rsquo;m Christina, a professional software engineer with 8 years of experience in building and maintaining large code bases, working across the whole software lifecycle.
 I particularly enjoy working with complex legacy systems. I love digging through patchwork architecture grown over years and decades, step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
-I have a background in formal logic and a strong interest in nuclear technology (fission and fusion).</description>
+I have a background in formal logic and a strong interest in digital signal processing and nuclear technology (fission and fusion).</description>
     </item>
     
     <item>
