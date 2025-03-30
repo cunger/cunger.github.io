@@ -2,107 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://cunger.github.io/notes/dev/ada-for-the-curious/</loc>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/notes/dev/</loc>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/notes/math/dct/</loc>
+    <lastmod>2024-06-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/notes/physics/basics/</loc>
+    <lastmod>2019-11-16T12:00:51+01:00</lastmod>
+  </url><url>
     <loc>http://cunger.github.io/notes/math/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/notes/math/algebra/</loc>
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/notes/physics/basics/</loc>
-    <lastmod>2019-11-16T12:00:51+01:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/energy/</loc>
+    <lastmod>2019-11-16T11:38:21+01:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/notes/dev/ada-cookbook/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/polynomials/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/notes/physics/energy/</loc>
-    <lastmod>2019-11-16T11:38:21+01:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/</loc>
+    <lastmod>2019-11-16T12:19:28+01:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/notes/nuke/nuclear-reactions/</loc>
-    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/electromagnetic-radiation/</loc>
+    <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/notes/dev/bash/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/matrix/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/notes/nuke/</loc>
+    <loc>http://cunger.github.io/notes/physics/forces/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cunger.github.io/notes/physics/electromagnetic-radiation/</loc>
-    <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/notes/dev/numbers/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/topology/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/notes/physics/</loc>
-    <lastmod>2019-11-16T12:19:28+01:00</lastmod>
-  </url><url>
-    <loc>http://cunger.github.io/notes/physics/forces/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cunger.github.io/notes/nuke/neutronics/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/atoms/</loc>
+    <lastmod>2019-11-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/notes/dev/network-programming/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/functions/</loc>
     <lastmod>2021-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/notes/nuke/reactors/</loc>
+    <loc>http://cunger.github.io/notes/physics/balances/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cunger.github.io/notes/physics/atoms/</loc>
-    <lastmod>2019-11-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cunger.github.io/notes/dev/</loc>
   </url><url>
     <loc>http://cunger.github.io/notes/math/curves/</loc>
     <lastmod>2022-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/notes/physics/balances/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://cunger.github.io/notes/physics/transport/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cunger.github.io/notes/math/differential-equations/</loc>
-    <lastmod>2021-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/notes/physics/fluid-flow/</loc>
     <lastmod>2019-11-16T12:19:28+01:00</lastmod>
   </url><url>
+    <loc>http://cunger.github.io/notes/math/differential-equations/</loc>
+    <lastmod>2021-06-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cunger.github.io/notes/math/complex-numbers/</loc>
     <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cunger.github.io/notes/physics/nuclear-reactions/</loc>
+    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/notes/math/toolbox/</loc>
     <lastmod>2022-09-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://cunger.github.io/notes/physics/neutronics/</loc>
+    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cunger.github.io/notes/math/references/</loc>
     <lastmod>2022-08-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/tags/ada/</loc>
-    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+    <loc>http://cunger.github.io/notes/physics/reactors/</loc>
+    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/blog/ada-for-the-curious/</loc>
+    <loc>http://cunger.github.io/tags/ada/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://cunger.github.io/notes/</loc>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cunger.github.io/tags/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cunger.github.io/blog/</loc>
-    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://cunger.github.io/tags/applied-math/</loc>
-    <lastmod>2024-06-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cunger.github.io/blog/dct/</loc>
     <lastmod>2024-06-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/tags/dsp/</loc>
@@ -110,9 +108,6 @@
   </url><url>
     <loc>http://cunger.github.io/tags/image-compression/</loc>
     <lastmod>2024-06-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cunger.github.io/notes/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cunger.github.io/about/</loc>
     <lastmod>2022-06-14T00:00:00+00:00</lastmod>

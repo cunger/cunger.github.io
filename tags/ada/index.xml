@@ -8,23 +8,21 @@
     <language>en-gb</language>
     <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/tags/ada/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Ada for the curious</title>
+      <link>http://cunger.github.io/notes/dev/ada-for-the-curious/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/ada-for-the-curious/</guid>
+      <description>For developers curious about Ada</description>
+    </item>
+    
+    <item>
       <title>Ada cookbook</title>
       <link>http://cunger.github.io/notes/dev/ada-cookbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/notes/dev/ada-cookbook/</guid>
-      <description>Common things to do in Ada</description>
-    </item>
-    
-    <item>
-      <title>Ada for the curious</title>
-      <link>http://cunger.github.io/blog/ada-for-the-curious/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/blog/ada-for-the-curious/</guid>
-      <description>This post is for developers who are curious about Ada.
-Contrary to some associations you might have (🦕?), Ada is a modern language, with modules, a strong type system, and easy-to-use concurrency. It&amp;rsquo;s blazing fast (🚀!), backed by a small but friendly community, and it&amp;rsquo;s easy to learn.
-Instead of giving an extensive introduction to syntax you can easily look up yourself, I want to highlight some of the aspects that make Ada worth looking into.</description>
+      <description>Or at least the start of one</description>
     </item>
     
   </channel>
