@@ -21,7 +21,7 @@
 
 
   <meta property="og:title" content="Ada for the curious" />
-<meta property="og:description" content="For developers curious about Ada" />
+<meta property="og:description" content="For developers curious about Ada. Still work in progress." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://cunger.github.io/notes/dev/ada-for-the-curious/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2024-12-01T00:00:00+00:00" />
@@ -87,7 +87,7 @@
     <div id="hero">
       <h1> Ada for the curious </h1>
       <p class="hero-lead">
-         For developers curious about Ada
+         For developers curious about Ada. Still work in progress.
       </p>
 
     </div>
@@ -180,12 +180,11 @@ that can still be read when coming back to it after years.</p>
   <iframe src="https://www.youtube.com/embed/3e-BGblAMC4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<h1 id="what-makes-ada-fun">What makes Ada fun</h1>
+<h1 id="what-makes-ada-interesting">What makes Ada interesting</h1>
 <p>Here are a few characteristics of Ada that many people like about it.
 This is subjective, of course, but it gives you a taste of why Ada might be worthwhile exloring.</p>
 <h2 id="the-type-system">The type system</h2>
-<p>Yes, we start the list of fun features with the type system.
-Because one of the nicest safety nets that Ada offers is range restrictions on the type level.</p>
+<p>One of the nicest safety nets that Ada offers is range restrictions on the type level.</p>
 <p>Let&rsquo;s assume you deal with temperature readings.
 Instead of using a generic floating-point type and check whether the values you get are in your expected range,
 Ada lets you define a custom type as having floating-point values within a specific range - and the compiler
@@ -230,7 +229,7 @@ When defining an array type, you simply specify the index type as well as the va
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">for</span> <span style="color:#111">Pos</span> <span style="color:#f92672">in</span> <span style="color:#111">Positions</span><span style="color:#111">&#39;</span><span style="color:#75af00">Range</span> <span style="color:#00a8c8">loop</span>
    <span style="color:#111">...</span>
 <span style="color:#00a8c8">end</span> <span style="color:#00a8c8">loop</span><span style="color:#111">;</span>
-</code></pre></div><p>Most importantly, arrays are memory-safe. The index type and range is part of the array, and both compiler and runtie check that all reads and writesare within the bounds of the array.</p>
+</code></pre></div><p>Most importantly, arrays are memory-safe. The index type and range is part of the array, and both compiler and runtime check that all reads and writes are within the bounds of the array. (We return this below in <a href="#memory-safety-and-formal-verification">Memory safety and formal verification</a>.)</p>
 <h2 id="separation-of-concerns">Separation of concerns</h2>
 <p>Like separating header and implementation in C, Ada separates packages into a specification (<code>.ads</code>) and a body (<code>.adb</code>),
 which tends to blend design and code.
@@ -239,101 +238,25 @@ Richard Riehle put it like this:</p>
 <blockquote>
 <p>Ada as an engineering tool, requires the software developers to adopt an engineering attitude to using it. It is not enough to simply be a good computer programmer when human safety is at risk. Software at that level of risk must be engineered.</p>
 </blockquote>
-<p>Here is an example. Assume we wanted to implement Conway&rsquo;s Game of Life.
-We could start thinking about how to call it from a main procedure:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#75715e">-- main.adb
-</span><span style="color:#75715e"></span>
-<span style="color:#f92672">with</span> <span style="color:#111">Game_Of_Life</span><span style="color:#111">;</span>
-<span style="color:#f92672">use</span>  <span style="color:#111">Game_Of_Life</span><span style="color:#111">;</span>
-
-<span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Main</span> <span style="color:#00a8c8">is</span>
-<span style="color:#00a8c8">begin</span>
-
-   <span style="color:#111">Init_Board</span> <span style="color:#111">(</span>
-      <span style="color:#111">Rows</span>    <span style="color:#111">=&gt;</span> <span style="color:#ae81ff">800</span><span style="color:#111">,</span>
-      <span style="color:#111">Columns</span> <span style="color:#111">=&gt;</span> <span style="color:#ae81ff">600</span><span style="color:#111">,</span>
-      <span style="color:#111">Pattern</span> <span style="color:#111">=&gt;</span> <span style="color:#111">Glider_Collision</span>
-   <span style="color:#111">);</span>
-
-   <span style="color:#111">Run</span><span style="color:#111">;</span>
-
-<span style="color:#00a8c8">end</span> <span style="color:#75af00">Main</span><span style="color:#111">;</span>
-</code></pre></div><p>This defines what we need in the public part of our package specification:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#75715e">-- game_of_life.ads
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">package</span> <span style="color:#75af00">Game_Of_Life</span> <span style="color:#00a8c8">is</span>
-
-    <span style="color:#00a8c8">type</span> <span style="color:#00a8c8">Patterns</span> <span style="color:#00a8c8">is</span> <span style="color:#111">(</span>
-       <span style="color:#111">Ants</span><span style="color:#111">,</span>
-       <span style="color:#111">Blinker</span><span style="color:#111">,</span>
-       <span style="color:#111">Dart</span><span style="color:#111">,</span>
-       <span style="color:#111">Fountain</span><span style="color:#111">,</span>
-       <span style="color:#111">Glider_Collision</span><span style="color:#111">,</span>
-       <span style="color:#111">Herschel_Climber</span><span style="color:#111">,</span>
-       <span style="color:#111">Spaceship</span>
-    <span style="color:#111">);</span>
-    <span style="color:#75715e">-- Predefined patterns, taken from the pattern catalogue at playgameoflife.com/lexicon.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">-- Their size is adapted to the board size.
-</span><span style="color:#75715e"></span>
-    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Init_Board</span> <span style="color:#111">(</span><span style="color:#111">Rows</span> <span style="color:#111">: </span><span style="color:#111">Positive</span><span style="color:#111">,</span> <span style="color:#111">Columns</span> <span style="color:#111">: </span><span style="color:#111">Positive</span><span style="color:#111">,</span> <span style="color:#111">Pattern</span> <span style="color:#111">: </span><span style="color:#111">Patterns</span><span style="color:#111">);</span>
-    <span style="color:#75715e">-- Creates a game board with the specified number of rows and columns,
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">-- and initializes the living cells according to the given start pattern.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">-- TODO: Requires a minimum size to fit the pattern.
-</span><span style="color:#75715e"></span>
-    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Run</span><span style="color:#111">;</span>
-    <span style="color:#75715e">-- Runs the simulation.
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">private</span>
-   
-    <span style="color:#75715e">-- Specifications of all private types, functions, and procedures.
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">end</span> <span style="color:#75af00">Game_Of_Life</span><span style="color:#111">;</span>
-</code></pre></div><p>If you have a specification file with proper comments, this can serve as a very helpful
-documentation of a library.
-(Check the <code>.ads</code> files in <a href="https://github.com/AdaCore/gnatcoll-core/blob/master/core/src/gnatcoll-email-utils.ads">the gnatcoll-core repository</a>
-for examples.)</p>
-<p>Then we mirror the specification in the body, providing the actual implementation of the procedures.
-Doing so would usually inform which private specifications we need in the package specification.</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ada" data-lang="ada"><span style="color:#75715e">-- game_of_life.adb
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">package</span> <span style="color:#00a8c8">body</span> <span style="color:#75af00">Game_Of_Life</span> <span style="color:#00a8c8">is</span>
-
-    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Init_Board</span> <span style="color:#111">(</span><span style="color:#111">Rows</span> <span style="color:#111">: </span><span style="color:#111">Positive</span><span style="color:#111">,</span> <span style="color:#111">Columns</span> <span style="color:#111">: </span><span style="color:#111">Positive</span><span style="color:#111">)</span> <span style="color:#00a8c8">is</span>
-    <span style="color:#00a8c8">begin</span>
-       <span style="color:#75715e">-- Implementation left out.
-</span><span style="color:#75715e"></span>       <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
-    <span style="color:#00a8c8">end</span> <span style="color:#75af00">Init_Board</span><span style="color:#111">;</span>
-
-    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Load_Pattern</span> <span style="color:#111">(</span><span style="color:#111">Start_Pattern</span> <span style="color:#111">: </span><span style="color:#111">Pattern</span><span style="color:#111">)</span> <span style="color:#00a8c8">is</span>
-    <span style="color:#00a8c8">begin</span>
-       <span style="color:#75715e">-- Implementation left out.
-</span><span style="color:#75715e"></span>       <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
-    <span style="color:#00a8c8">end</span> <span style="color:#75af00">Load_Pattern</span><span style="color:#111">;</span>
-
-    <span style="color:#00a8c8">procedure</span> <span style="color:#75af00">Run</span> <span style="color:#00a8c8">is</span>
-    <span style="color:#00a8c8">begin</span>
-       <span style="color:#75715e">-- Implementation left out.
-</span><span style="color:#75715e"></span>       <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
-    <span style="color:#00a8c8">end</span> <span style="color:#75af00">Run</span><span style="color:#111">;</span>
-
-<span style="color:#00a8c8">end</span> <span style="color:#75af00">Game_Of_Life</span><span style="color:#111">;</span>
-</code></pre></div><h2 id="simplicity">Simplicity</h2>
+<p>If you have a specification file with proper comments, this can also serve as a very helpful documentation of a library.
+You can check the <code>.ads</code> files in <a href="https://github.com/AdaCore/gnatcoll-core/blob/master/core/src/gnatcoll-email-utils.ads">the gnatcoll-core repository</a>
+for examples.</p>
+<h2 id="memory-safety-and-formal-verification">Memory safety and formal verification</h2>
+<p>CVE&rsquo;s <a href="https://cwe.mitre.org/top25/index.html">Top 25 Most Dangerous Software Weaknesses</a> reveals many recurring issues - with memory management errors still high on the list: out-of-bounds read and write, buffer overflows, null pointer dereferencing, use-after-free, and so forth. Both <a href="https://github.com/Microsoft/MSRC-Security-Research/blob/master/presentations/2019_02_BlueHatIL/2019_01%20-%20BlueHatIL%20-%20Trends%2C%20challenge%2C%20and%20shifts%20in%20software%20vulnerability%20mitigation.pdf">Microsoft</a> and <a href="https://security.googleblog.com/2021/09/an-update-on-memory-safety-in-chrome.html">Google Chrome</a> have confirmed that approximately 70% of the vulnerabilities they address stem from insecure memory handling.</p>
+<p>Ada is memory safe. And it goes beyond compiler checks and promises.</p>
+<p>It offers a formally verifiable subset, SPARK, which allows for mathematical proofs of correctness,
+covering things like the absence of out-of-bound access in arrays (statically proofing it at compile time, not only promising that it will raise an exception at runtime) and functional correctness of algorithms.
+And all of this with built-in tooling, which is really almost as easy as adding <code>with SPARK_Mode</code>.
+<strong>Welcome to proof-driven development.</strong></p>
+<p>And this focus on safety extends to concurrent and real-time programming, which have been part of the Ada standard since its beginning.
+Their semantics is the same independent of whether you execute them on Linux or an RTOS, and it&rsquo;s as deterministic and safe as you can get. <a href="https://blog.adacore.com/theres-a-mini-rtos-in-my-language">Read more about it here.</a></p>
+<p>And tasking is not very complicated or hard to grasp - which lowers the risk of making mistakes and which brings me to the last point I want to mention: simplicity.</p>
+<h2 id="simplicity">Simplicity</h2>
 <p>There is <a href="https://inf.ethz.ch/news-and-events/spotlights/infk-news-channel/2021/11/niklaus-wirth-video-interview.html">a very nice interview</a>
 with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
 where he remembers that during his time, all existing programming languages were unneccessarily complex.
 He wanted to design a language that is as simple as possible without losing power.</p>
-<p>In Ada, you see some of this legacy. One example are exceptions.</p>
-<p>In Ada, exceptions are like objects, not types. You define an exception like this:</p>
-<pre tabindex="0"><code>Timestamp_Is_In_The_Past : exception;
-</code></pre><p>You raise it like this:</p>
-<pre tabindex="0"><code>raise Timestamp_Is_In_The_Past;
-</code></pre><p>Or, if you want to include more information, like this:</p>
-<pre tabindex="0"><code>raise Timestamp_Is_In_The_Past with &quot;Input timestamp cannot be in the past&quot;;
-</code></pre><p>That&rsquo;s it. For basic exceptions, this is arguably all you need. (With the exception of an error hierarchy maybe.)</p>
-<h2 id="safe-real-time-programming">Safe real-time programming</h2>
-<p>Concurrent and real-time programming are standard parts of Ada since its beginning.
-Their semantics is the same independent of whether you execute them on Linux, an RTOS, or on a bare metal target.
-And it&rsquo;s as deterministic and safe as you can get. <a href="https://blog.adacore.com/theres-a-mini-rtos-in-my-language">Read more about it.</a></p>
+<p>In Ada, you see some of this legacy.</p>
 <h1 id="the-ecosystem-and-community">The ecosystem and community</h1>
 <p>The Ada ecosystem can be a bit confusing in the beginning.
 But the core is simple:
@@ -377,8 +300,6 @@ to both if you ask for pointers.</p>
 provides a pretty comprehensive list of resources.</p>
 <p>If you want to dive into existing Ada code bases, here are a few suggestions:</p>
 <ul>
-<li><a href="https://github.com/johnperry-math/AoC2023/blob/2df768bacb3c7f5c0ee23a495c3b5fe0c7464284/More_Detailed_Comparison.md">John Perry (AoC 2023)</a>
-did many Advent of Code puzzles in both Ada and Rust, and wrote a detailed comparison.</li>
 <li><a href="https://github.com/AdaCore/gnatcoll-core/tree/master/core/src">GNATcoll</a> is a collection of components, like for working with JSON data or file systems in Ada. It&rsquo;s clean and well-documented code.</li>
 <li>The <a href="https://github.com/Fabien-Chouteau/eagle-lander">Apollo 11 lunar lander simulator</a> is equally well organized and fun to read.</li>
 <li><a href="https://github.com/adachess/AdaChess/tree/main">AdaChess</a> is a chess engine written in Ada.</li>
@@ -386,13 +307,19 @@ did many Advent of Code puzzles in both Ada and Rust, and wrote a detailed compa
 to demonstrate how you can do without pointers even in cases whether you would tend to grab for them.</li>
 <li>A lot more in <a href="https://alire.ada.dev/crates.html">the list of Ada crates</a>.</li>
 </ul>
-<p>For a still small but growing collection of notes on how to do what in Ada, see my <a href="../../notes/dev/ada-cookbook/">Ada cookbook</a>.</p>
-<h2 id="are-there-jobs-in-ada">Are there jobs in Ada?</h2>
+<h1 id="ada-or-rust">Ada or Rust?</h1>
+<p>Here are several pointers for looking into comparisons:</p>
+<ul>
+<li><a href="https://github.com/johnperry-math/AoC2023/blob/2df768bacb3c7f5c0ee23a495c3b5fe0c7464284/More_Detailed_Comparison.md">John Perry (AoC 2023)</a>
+did many Advent of Code puzzles in both Ada and Rust, and wrote a detailed comparison.</li>
+<li>AdaCore has a more business-oriented view on whether to <a href="https://blog.adacore.com/should-i-choose-ada-spark-or-rust-over-c-c#">choose Ada/SPARK or Rust over C/C++</a>.</li>
+<li>Zayn Otley looked at <a href="https://www.linkedin.com/pulse/adaspark-vs-rust-empirical-evidence-superior-safety-critical-otley-ubzye/">Empirical Evidence of Superior Safety in Critical Systems</a> and mentions where Rust falls short in comparison with Ada/SPARK.</li>
+</ul>
+<h1 id="who-is-using-ada">Who is using Ada?</h1>
 <p>You can find some of the companies using Ada when checking <a href="https://www.adacore.com/company/our-customers">the list of customers of AdaCore</a>.
-This list is certainly not complete, but the picture is pretty representative.</p>
-<p>Companies range from big names, like Thales, Airbus, and the Automotive Team at NVIDIA,
+This list is certainly not complete, but the picture is pretty representative.
+Companies range from big names, like Thales, Airbus, and the automotive team at NVIDIA,
 to start-ups you probably never heard of, like <a href="https://www.latencetech.com/">Latence Tech</a>.</p>
-<p>Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title.</p>
 
 
     

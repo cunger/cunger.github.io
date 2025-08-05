@@ -13,7 +13,7 @@
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/notes/dev/ada-for-the-curious/</guid>
-      <description>For developers curious about Ada</description>
+      <description>For developers curious about Ada. Still work in progress.</description>
     </item>
     
     <item>
@@ -257,7 +257,7 @@
       
       <guid>http://cunger.github.io/about/</guid>
       <description>Hi, I&amp;rsquo;m Christina, a professional software engineer with 8 years of experience in building and maintaining large code bases, working across the whole software lifecycle.
-I focus on Java backend development for money, and Ada for fun. (Although I wouldn&amp;rsquo;t mind swapping them.)
+I mainly do Java backend development for money, and Ada for fun.
 I have a strong interest in software quality and particularly enjoy working with complex legacy systems, digging through patchwork architecture grown over years and decades, step by step understanding and taming systems that are hard to work with but too valueable to simply give up on.</description>
     </item>
     
