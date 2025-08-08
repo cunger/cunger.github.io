@@ -8,30 +8,21 @@
     <language>en-gb</language>
     <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/notes/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ada for the curious</title>
-      <link>http://cunger.github.io/notes/dev/ada-for-the-curious/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <title>Performance basics</title>
+      <link>http://cunger.github.io/notes/dev/performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/dev/ada-for-the-curious/</guid>
-      <description>For developers curious about Ada. Still work in progress.</description>
+      <guid>http://cunger.github.io/notes/dev/performance/</guid>
+      <description>In general and in Java</description>
     </item>
     
     <item>
-      <title>Ada cookbook</title>
-      <link>http://cunger.github.io/notes/dev/ada-cookbook/</link>
+      <title>Network programming</title>
+      <link>http://cunger.github.io/notes/dev/network-programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/dev/ada-cookbook/</guid>
-      <description>Or at least the start of one</description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>http://cunger.github.io/notes/dev/bash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/notes/dev/bash/</guid>
-      <description>Boom. Bang.</description>
+      <guid>http://cunger.github.io/notes/dev/network-programming/</guid>
+      <description>Doomed to be a draft</description>
     </item>
     
     <item>
@@ -44,12 +35,30 @@
     </item>
     
     <item>
-      <title>Network programming</title>
-      <link>http://cunger.github.io/notes/dev/network-programming/</link>
+      <title>Ada for the curious</title>
+      <link>http://cunger.github.io/notes/dev/ada-for-the-curious/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/ada-for-the-curious/</guid>
+      <description>For developers curious about Ada</description>
+    </item>
+    
+    <item>
+      <title>Ada cookbook</title>
+      <link>http://cunger.github.io/notes/dev/ada-cookbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/dev/network-programming/</guid>
-      <description>Doomed to be a draft</description>
+      <guid>http://cunger.github.io/notes/dev/ada-cookbook/</guid>
+      <description>Or at least the start of one&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>http://cunger.github.io/notes/dev/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/bash/</guid>
+      <description>Boom. Bang.</description>
     </item>
     
   </channel>
