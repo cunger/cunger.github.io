@@ -8,15 +8,6 @@
     <language>en-gb</language>
     <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://cunger.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ada for the curious</title>
-      <link>http://cunger.github.io/notes/dev/ada-for-the-curious/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/notes/dev/ada-for-the-curious/</guid>
-      <description>For developers curious about Ada</description>
-    </item>
-    
-    <item>
       <title>Diskrete Kosinustransformation</title>
       <link>http://cunger.github.io/notes/math/dct/</link>
       <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
@@ -32,6 +23,15 @@
       
       <guid>http://cunger.github.io/notes/physics/basics/</guid>
       <description>Nothing more. Nothing less.</description>
+    </item>
+    
+    <item>
+      <title>Performance basics</title>
+      <link>http://cunger.github.io/notes/dev/performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/performance/</guid>
+      <description>In general and in Java</description>
     </item>
     
     <item>
@@ -53,12 +53,12 @@
     </item>
     
     <item>
-      <title>Ada cookbook</title>
-      <link>http://cunger.github.io/notes/dev/ada-cookbook/</link>
+      <title>Network programming</title>
+      <link>http://cunger.github.io/notes/dev/network-programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/dev/ada-cookbook/</guid>
-      <description>Or at least the start of one</description>
+      <guid>http://cunger.github.io/notes/dev/network-programming/</guid>
+      <description>Doomed to be a draft</description>
     </item>
     
     <item>
@@ -80,12 +80,21 @@
     </item>
     
     <item>
-      <title>Bash</title>
-      <link>http://cunger.github.io/notes/dev/bash/</link>
+      <title>Numbers</title>
+      <link>http://cunger.github.io/notes/dev/numbers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/dev/bash/</guid>
-      <description>Boom. Bang.</description>
+      <guid>http://cunger.github.io/notes/dev/numbers/</guid>
+      <description>And their representation in computers</description>
+    </item>
+    
+    <item>
+      <title>Ada for the curious</title>
+      <link>http://cunger.github.io/notes/dev/ada-for-the-curious/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/ada-for-the-curious/</guid>
+      <description>For developers curious about Ada</description>
     </item>
     
     <item>
@@ -107,15 +116,6 @@
     </item>
     
     <item>
-      <title>Numbers</title>
-      <link>http://cunger.github.io/notes/dev/numbers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cunger.github.io/notes/dev/numbers/</guid>
-      <description>And their representation in computers</description>
-    </item>
-    
-    <item>
       <title>Topologie</title>
       <link>http://cunger.github.io/notes/math/topology/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
@@ -134,12 +134,12 @@
     </item>
     
     <item>
-      <title>Network programming</title>
-      <link>http://cunger.github.io/notes/dev/network-programming/</link>
+      <title>Ada cookbook</title>
+      <link>http://cunger.github.io/notes/dev/ada-cookbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cunger.github.io/notes/dev/network-programming/</guid>
-      <description>Doomed to be a draft</description>
+      <guid>http://cunger.github.io/notes/dev/ada-cookbook/</guid>
+      <description>Or at least the start of one&amp;hellip;</description>
     </item>
     
     <item>
@@ -158,6 +158,15 @@
       
       <guid>http://cunger.github.io/notes/physics/balances/</guid>
       <description>Equations for mass and energy balances. Macro and micro balances.</description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>http://cunger.github.io/notes/dev/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cunger.github.io/notes/dev/bash/</guid>
+      <description>Boom. Bang.</description>
     </item>
     
     <item>
@@ -256,9 +265,11 @@
       <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>Hi, I&amp;rsquo;m Christina, a professional software engineer with 8 years of experience in building and maintaining large code bases, working across the whole software lifecycle.
-I focus on Java backend development for money, and Ada for fun. (Although I wouldn&amp;rsquo;t mind swapping them.)
-I have a strong interest in software quality and particularly enjoy working with complex legacy systems, digging through patchwork architecture grown over years and decades, step by step understanding and taming systems that are hard to work with but too valueable to simply give up on.</description>
+      <description>Hi, I&amp;rsquo;m Christina, a professional software engineer working across the whole software lifecycle, striving in multidisciplinary settings and non-mainstream niches.
+🌍 🛰️ I work at OKAPI:Orbits.
+🛠️ Backend development in Java (and sometimes Python, TypeScript, and Fortran). Interested in performance analysis and tuning, and in understanding and evolving complex legacy code bases.
+📚 ☕ My favorite way to spend early mornings is by learning mathematics and playing with Ada.
+I have some code on GitHub, but most lives in proprietary company repositories.</description>
     </item>
     
     <item>

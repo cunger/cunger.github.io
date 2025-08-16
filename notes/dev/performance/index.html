@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta name="generator" content="Hugo 0.92.2" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Performance basics | Escape Velocity</title>
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Christina Unger">
+
+
+  <meta property="og:title" content="Performance basics" />
+<meta property="og:description" content="In general and in Java" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cunger.github.io/notes/dev/performance/" /><meta property="article:section" content="notes" />
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  
+
+  <link rel="canonical" href="http://cunger.github.io/notes/dev/performance/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+
+  
+  
+</head>
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Escape Velocity</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Escape Velocity</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       <li><a href="/notes">📚 Technical notes</a></li>
+       <li><a href="https://ko-fi.com/sayitwithasticker/shop" target="_blank">✨ Stickers</a></li>
+       <li><a href="/about">About me</a></li>
+      </ul>
+    </nav>
+    <nav id="top-nav-extra">
+      <ul>
+        
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Performance basics </h1>
+      <p class="hero-lead">
+         In general and in Java
+      </p>
+
+    </div>
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h1'
+})
+}
+);
+</script>
+
+
+
+
+    <h1 id="computer-architecture-and-main-performance-bottlenecks">Computer architecture and main performance bottlenecks</h1>
+<p>Modern digital computers build on the basic von Neumann architecture and consist of the following main components:</p>
+<ul>
+<li>A CPU (Central Processing Unit), the computational core of the computer, comprising a control unit, an arithmetic and logic unit, and registers.</li>
+<li>Memory that stores data and instructions.</li>
+<li>Input and output devices.</li>
+</ul>
+<p>These basic components are nowadays extended by several levels of caches and are usually multiplied - both putting several cores on one CPU (around 8 on a standard laptop, and 20-50 on compute machines), and connecting several CPUs on one node (usually two).</p>
+<p>Also, modern processors can contain SIMD (Single Instruction Multiple Data) elements that can perform the same instruction on several data points simultaneously.</p>
+<p>The following picture shows a simplified depiction of the architecture of modern computers, here consisting of two CPUs with multiple cores.
+Each CPU has its own memory bank, i.e. part of the shared memory. Other CPUs on the same node can also access that memory bank, but then data has to transit via a memory bus, which makes the path longer.
+The main performance bottlenecks are (1) computational capacity and (2) memory bandwidth.</p>
+
+
+<img src="/images/docs/perf-computer-architecture.png" alt="Modern computer architecture" width="100%" style="display: block; margin: auto; padding: 10px;" />
+
+
+<p>The performance of an application or algorithm can hit two main bottlenecks, concerning the following two machine capabilities.</p>
+<ol>
+<li>Computational capacity refers to the speed of the processor, more specifically how many floating-point operations it can do per second (FLOP/s, or more commonly GFLOP/s).</li>
+<li>CPUs access memory via a memory bus. Memory bandwidth refers to the amount of data that can be transferred between CPU and memory (GB/s).</li>
+</ol>
+<p>If computational capacity is the main bottleneck, we call the application or algorithm <strong>compute-bound</strong>, i.e. it is limited by how many operations the CPU can do. In this case, parallelization to spread workload across more cores is a straightforward option to reduce pressure on this bottleneck.</p>
+<p>If memory bandwidth is the main bottleneck, we call the application or algorithm <strong>memory-bound</strong>, i.e. it is limited by how fast data can be transferred to the CPU. This means the CPU could do more work but spends time waiting for data. So, parallelization across more on the same node would not increase performance meaningfully, as the memory bandwidth is already saturated. In this case, improving data locality and cache behavior is more promising.</p>
+<h1 id="memory-hierarchy-and-data-locality">Memory hierarchy and data locality</h1>
+<p>The main trade-off with memory is between size and speed of access. Modern computers therefore contain different kinds of memory, each allowing a different decision for that trade-off. The general hierarchy of the main types of memory comprises registers and caches on the CPU, random-access memory (RAM), and persisted memory on disk.</p>
+
+
+<img src="/images/docs/perf-memory-hierarchy.png" alt="Memory hierarchy" width="360" style="display: block; margin: auto; padding: 10px;" />
+
+
+<p>The higher in the hierarchy, the faster is memory access but the smaller is memory size. Vice versa, the lower in the hierarchy, the bigger is memory size but the slower is memory access.</p>
+<p>For fast computations, we want the data required for those computations as high up in the hierarchy as possible, i.e. as close to the processor as possible, ideally in caches on the CPU. This is often referred to as data locality.</p>
+<p>Computers have a cache management policy for loading and keeping data in cache, which depends mainly on two locality properties:</p>
+<ul>
+<li><strong>Spatial locality:</strong> If data is accessed, nearby data is likely to be accessed as well, so it is pre-fetched (possibly dropping data farther away to free cache space).</li>
+<li><strong>Temporal locality:</strong> If data is accessed now, it is likely to be accessed again soon, so it is kept in cache (possibly dropping data that hasn&rsquo;t been accessed for a longer time).</li>
+</ul>
+<p>For example, iterating over an array benefits from spatial locality if the array is stored consecutively in memory, while pre-computed local variables used in each iteration benefit from temporal locality.</p>
+<p>Important to note about two-dimensional arrays is that they need to be stored linearly in memory. This can happen either in row-major order (storing one row after the other, for example done in C) or in column-major order (storing one column after the other, for example done in Fortran). This has a big impact on spatial locality when iterating over all elements of a two-dimensional array: Since Fortran stores it in column-major order, the inner loop should be over the column index, so that it can benefit from pre-fetching memory-adjacent data.</p>
+
+
+<img src="/images/docs/perf-row-column-major-order.png" alt="Row-major and columns-major order" width="600" style="display: block; margin: auto; padding: 10px;" />
+
+
+<p><em>Illustration of row-major order (left) and column-major order (right). (Source: Wikimedia)</em></p>
+<h1 id="java-under-the-hood">Java under the hood</h1>
+<p>In order to understand performance of a Java application, both in terms of speed and in terms of resource usage, it helps to have a general understanding of the JVM, the memory model it uses, and how that memory is managed.</p>
+<h2 id="jvm">JVM</h2>
+<p>Here is a rough schematic of how the JVM works internally.</p>
+
+
+<img src="/images/docs/perf-jvm.png" alt="JVM schematics" width="600" style="display: block; margin: auto; padding: 10px;" />
+
+
+<p>The primary Java compiler is <code>javac</code>. It compiles source code (in <code>.java</code> files) into bytecode (in <code>.class</code> files). Bytecode comprises different instruction types, such as object creation and manipulation, method invocation and return, type conversion, arithmetic operations, stack management, and control transfer. It is not machine code; for example, it does not contain instructions to allocate or access specific memory addresses.</p>
+<p>The idea behind bytecode is to have a compact representation that runs predictable on any system with a compatible JVM (&ldquo;write once, run everywhere&rdquo;), in a memory-safe way.</p>
+<p>At runtime, bytecode is loaded by the classloader and is run by the JVM interpreter.</p>
+<p>At the same time, the JVM profiles what happens, to see which parts of the code would benefit from optimization, for example what methods are used often, with what arguments, and so on. These parts are then compiled into machine code by the just-in-time (JIT) compiler. The result of JIT compilation is often more efficient than ahead-of-time compilation because it can take into account the actual runtime behavior of your program. It also means that it&rsquo;s not easy to reason about performance of single methods in isolation.
+Memory</p>
+<p>When the JVM starts up, it requests memory from the operating system and separates that into three main areas.</p>
+
+
+<img src="/images/docs/perf-memory.png" alt="Memory organization" width="260" style="display: block; margin: auto; padding: 10px;"/>
+
+
+<p>The stack is used to store method calls, local variables, and references to objects in the heap. It really is a stack (last in first out). You see part of the stack when you inspect the stack trace of an exception, which shows the call hierarchy that was on the stack when the exception occurred.</p>
+<p>You would get a stack overflow when you try to run an infinite recursion, putting a method and its arguments on the stack again and again and again without ever removing them.</p>
+<p>The heap is dynamically allocated memory. It constitutes the main pool of memory of an application; all objects your Java program creates live there. The JVM allocates space on the heap when it creates new objects, and garbage collection later frees it again (if possible). The JVM extends or shrinks heap space depending on the memory needs of the running application, within the configured limits.</p>
+<p>An <code>OutOfMemoryError</code> happens when heap space is full, garbage collection fails to free any of it, and it cannot be extended.</p>
+<p>Each thread has its own stack, while heap space is shared among threads.</p>
+<p>The metaspace contains metadata about classes: their names, types, attributes, method names, etc. This is also garbage collected but much less often than the heap, because it&rsquo;s usually quite long-lived information.</p>
+<h2 id="garbage-collection">Garbage collection</h2>
+<p>The garbage collector looks at heap memory, identifies which objects are still used – meaning some reachable part of your program still holds a pointer to that object – and deletes the ones which are not referenced anymore, to reclaim the memory.</p>
+<p>To make this process efficient, the JVM separates heap space into several regions, following a so-called generational model, based on the observation that most objects are actually quite short-lived.</p>
+
+
+<img src="/images/docs/perf-java-memory.png" alt="JVM memory organization" width="700" style="display: block; margin: auto; padding: 10px;" />
+
+
+<p>All objects are allocated in the Young Generation part. When this fills up, minor garbage collection runs. Minor garbage collection looks only at the Young Generation space, deleting the dead objects there and moving the surviving ones into the survivor space – and, when they reach a certain age, eventually into the Old Generation.</p>
+<p>Slower and thus less often executed is a major (or full) garbage collection, which looks at all live objects, including the Old Generation part and the metaspace.</p>
+<p>Garbage collection can be a &ldquo;stop the world&rdquo; event, meaning that all application threads are paused until the operation is done. This makes it a trade-off between how fast you free up memory and how often you interrupt the application.</p>
+<p>Garbage collectors try to find an optimal balance of how often they run and how much space is freed with each run. Since what is considered optimal depends on the type of application, there are different algorithms and you can configure what you want to optimize for.</p>
+<p>Note that calling <code>System.gc()</code> manually is only a suggestion to the JVM; it doesn&rsquo;t mean that garbage is executed immediately.</p>
+<h2 id="memory-leaks">Memory leaks</h2>
+<p>Performance issues can arise when objects are not needed anymore but are still referenced and thus their memory cannot be reclaimed by garbage collection. If you either grow such objects over time or keep creating more and more of them, this can lead to a memory leak, when the application takes up more and more memory which cannot be freed.</p>
+<p><strong>Static references</strong></p>
+<p>Static fields belong to the class, not to individual instances. Instances are frequently garbage collected, while classes and their static fields can remain in memory for the whole lifetime of the application.
+So if you have static objects, especially lists or maps, that you keep growing, this leads to trouble.</p>
+<p>Note that static references are not bad per se. With singletons, for example, we intentionally decide to create an object as static reference (possibly a large one or one that is expensive to load), so we know we have exactly one instance throughout the lifetime of the application and don&rsquo;t have to create several instances repeatedly.</p>
+<p>Use static fields and large collections wisely.</p>
+<p><strong>Unclosed resources</strong></p>
+<p>When you open resources such as file streams or database connections, they take up memory. If these resources are not closed, this can lead to resource leaks.</p>
+<p>Always close resources after use, also in case an exception occurs. Ideally use try-with-resource statements for automatic resource management.</p>
+<p><strong>Inner classes</strong></p>
+<p>Non-static inner classes hold an implicit reference to their outer class. If instances of these inner classes are passed around and kept alive in the application, they can keep their outer class instances in memory too.</p>
+<p><strong>Caching</strong></p>
+<p>The whole point of a cache is to keep stuff that is used often in memory, to make accessing it more efficient. Obviously, this works well only as long as the cache does not keep growing without ever being cleared.</p>
+<h2 id="tools">Tools</h2>
+<ul>
+<li><a href="https://visualvm.github.io/">VisualVM</a></li>
+<li>Java Flight Recorder (JFR) &amp; Java Mission Control (JMC): JFR is used for collecting diagnostic and profiling data about a running Java application, while JMC is used for analyzing this data.</li>
+</ul>
+<h1 id="references">References</h1>
+<ul>
+<li>Georg Hager &amp; Gerhard Wellein: Introduction to High Performance Computing for Scientists and Engineers .</li>
+</ul>
+
+
+    
+    </div>
+  </div>
+</main>
+  <footer> <footer id="footer">
+  <nav>
+    <ul>
+      <li><span>2022-2025 (c) Christina Unger</span></li>
+      <li>
+        Rendered with <a href="https://gohugo.io/">Hugo</a>. Theme based on <a href="https://kube.elemnts.net/">Kube</a>.
+      </li>
+    </ul>
+  </nav>
+</footer>
+ </footer>
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
