@@ -265,10 +265,12 @@
       <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cunger.github.io/about/</guid>
-      <description>Hi, I&amp;rsquo;m Christina, a professional software engineer working across the whole software lifecycle, striving in multidisciplinary settings and non-mainstream niches.
+      <description>Hi, I&amp;rsquo;m Christina, a professional software engineer working across the whole software lifecycle.
 🌍 🛰️ I work at OKAPI:Orbits.
-🛠️ Backend development in Java (and sometimes Python, TypeScript, and Fortran). Interested in performance analysis and tuning, and in understanding and evolving complex legacy code bases.
-📚 ☕ My favorite way to spend early mornings is by learning mathematics and playing with Ada.
+📎 Main interests:
+ Software quality Performance analysis and tuning Understanding and evolving complex legacy code bases  🛠️ Java, Ada (and some Python, TypeScript, and Fortran)
+📚 ☕ My favorite way to spend early mornings is learning mathematics.
+📯 In my spare time, I&amp;rsquo;m deputy spokesperson of Ada Germany.
 I have some code on GitHub, but most lives in proprietary company repositories.</description>
     </item>
     
